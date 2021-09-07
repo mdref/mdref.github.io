@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							★ Changelog -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Client/Curl/: Changelog">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Client/Curl/: Changelog.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client">
+							Client
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client/Curl">
+							Curl
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Client/Curl/: Changelog">★ Changelog</a></strong>
+
+							
+																																
+						</ul>
+																													
+						<li>&ldsh; <a href="./http/Client/Curl/User">User</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl/Features">Features</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl/Versions">Versions</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="http\Client\Curl.Changelog">http\Client\Curl Changelog</h1>
+
+<ol>
+<li>v2.1.0
+
+<ul>
+<li>Added request options:
+
+<ul>
+<li>$dns_interface</li>
+<li>$dns_local_ip4</li>
+<li>$dns_local_ip6</li>
+<li>$expect_100_timeout</li>
+</ul></li>
+</ul></li>
+<li><p>v2.1.2</p>
+
+<ul>
+<li>Added request option constants:
+
+<ul>
+<li>http\Client\Curl\POSTREDIR_303</li>
+<li>http\Client\Curl\AUTH_SPNEGO</li>
+<li>http\Client\Curl\SSL_VERSION_TLSv1_0</li>
+<li>http\Client\Curl\SSL_VERSION_TLSv1_1</li>
+<li>http\Client\Curl\SSL_VERSION_TLSv1_2</li>
+</ul></li>
+</ul></li>
+<li>v2.3.0
+
+<ul>
+<li>Added request options:
+
+<ul>
+<li>$proxyheader</li>
+<li>$unix_socket_path</li>
+</ul></li>
+<li>Added SSL request options:
+
+<ul>
+<li>$pinned_publickey</li>
+<li>$tlsauth</li>
+<li>$verifystatus</li>
+</ul></li>
+<li>Added request option constants:
+
+<ul>
+<li>http\Client\Curl\HTTP_VERSION_2_0</li>
+<li>http\Client\Curl\TLS_AUTH_SRP</li>
+</ul></li>
+</ul></li>
+<li>v2.5.1
+
+<ul>
+<li>Added request options:
+
+<ul>
+<li>$proxy_service_name</li>
+<li>$service_name</li>
+</ul></li>
+<li>Added SSL request options:
+
+<ul>
+<li>$falsestart</li>
+</ul></li>
+</ul></li>
+<li>v2.5.6
+
+<ul>
+<li>Added request option constants:
+
+<ul>
+<li>http\Client\Curl\HTTP_VERSION_2TLS</li>
+</ul></li>
+</ul></li>
+<li>v2.6.0, v3.1.0
+
+<ul>
+<li>Added methods:
+
+<ul>
+<li>http\Client::setDebug()</li>
+</ul></li>
+<li>Added client configure options:
+
+<ul>
+<li>$share_cookies</li>
+<li>$share_ssl</li>
+</ul></li>
+<li>Changed client configure options:
+
+<ul>
+<li>bool $use_eventloop changed to mixed to accept an http\Client\Curl\User implementation</li>
+</ul></li>
+<li>Added constants:
+
+<ul>
+<li>http\Client\Curl::FEATURES</li>
+<li>http\Client\Curl::VERSIONS</li>
+</ul></li>
+<li>Added namespaces:
+
+<ul>
+<li>http\Client\Curl\Features</li>
+<li>http\Client\Curl\Versions</li>
+</ul></li>
+<li>Added interfaces:
+
+<ul>
+<li>http\Client\Curl\User</li>
+</ul></li>
+</ul></li>
+<li>v4.1.0
+
+<ul>
+<li>Added request options:
+
+<ul>
+<li>http\Client\Curl::$abstract_unix_socket</li>
+<li>http\Client\Curl::$altsvc</li>
+<li>http\Client\Curl::$altsvc_ctrl</li>
+<li>http\Client\Curl::$aws_sigv4</li>
+<li>http\Client\Curl::$doh_url</li>
+<li>http\Client\Curl::$dns_shuffle_addresses</li>
+<li>http\Client\Curl::$haproxy_protocol</li>
+<li>http\Client\Curl::$hsts</li>
+<li>http\Client\Curl::$hsts_ctrl</li>
+<li>http\Client\Curl::$http09_allowed</li>
+<li>http\Client\Curl::$maxage_conn</li>
+<li>http\Client\Curl::$pinned_publickey</li>
+<li>http\Client\Curl::$proxy_ssl</li>
+<li>http\Client\Curl::$socks5_auth</li>
+<li>http\Client\Curl::$tcp_fastopen</li>
+<li>http\Client\Curl::$tls13_ciphers</li>
+<li>http\Client\Curl::$xoauth2_bearer</li>
+</ul></li>
+<li>Added request option constants:
+
+<ul>
+<li>http\Client\Curl\AUTH_AWS_SIGV4</li>
+<li>http\Client\Curl\AUTH_BEARER</li>
+<li>http\Client\Curl\AUTH_NONE</li>
+<li>http\Client\Curl\HTTP_VERSION_2_PRIOR_KNOWLEDGE</li>
+<li>http\Client\Curl\HTTP_VERSION_3</li>
+<li>http\Client\Curl\SSL_VERSION_MAX_*</li>
+<li>http\Client\Curl\SSL_VERSION_TLSv1_3</li>
+</ul></li>
+<li>Added library version constants:
+
+<ul>
+<li>http\Client\Curl\Versions\BROTLI</li>
+<li>http\Client\Curl\Versions\CAINFO</li>
+<li>http\Client\Curl\Versions\CAPATH</li>
+<li>http\Client\Curl\Versions\HYPER</li>
+<li>http\Client\Curl\Versions\ICONV</li>
+<li>http\Client\Curl\Versions\NGHTTP2</li>
+<li>http\Client\Curl\Versions\QUIC</li>
+<li>http\Client\Curl\Versions\ZSTD</li>
+</ul></li>
+</ul></li>
+</ol>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Client/Curl/: Changelog';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Statement::prepare -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Statement/prepare">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Statement/prepare.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Statement">
+							Statement
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Statement/prepare">Statement::prepare</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/Statement/__construct">Statement::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement/bind">Statement::bind</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement/deallocate">Statement::deallocate</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement/deallocateAsync">Statement::deallocateAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement/desc">Statement::desc</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement/descAsync">Statement::descAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement/exec">Statement::exec</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement/execAsync">Statement::execAsync</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Statement/prepareAsync">Statement::prepareAsync</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="void.pq\Statement::prepare()">void pq\Statement::prepare()</h1>
+
+<p>Re-prepare a statement that has been deallocated. This is a no-op on already open statements.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<p>None.</p>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>pq\Exception\InvalidArgumentException</li>
+<li>pq\Exception\BadMethodCallException</li>
+<li>pq\Exception\RuntimeException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>    &lt;?php
+
+    $connection = new pq\Connection;
+    $types = new pq\Types($connection);
+    $statement = $connection-&gt;prepare("st1",
+            "SELECT \$1, \$2", [pq\Types::XML, pq\Types::JSON]);
+
+    // some code which executes the statement
+
+    $statement-&gt;deallocate();
+    $statement-&gt;prepare();
+
+    ?&gt;
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Statement/prepare';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

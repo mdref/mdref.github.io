@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Exception -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Exception">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Exception.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Exception">Exception</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq/Exception/BadMethodCallException">BadMethodCallException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Exception/DomainException">DomainException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Exception/InvalidArgumentException">InvalidArgumentException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Exception/RuntimeException">RuntimeException</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/COPY">COPY</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cancel">Cancel</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection">Connection</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Converter">Converter</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cursor">Cursor</a></li>
+																			
+						<li>&ldsh; <a href="./pq/DateTime">DateTime</a></li>
+																													
+						<li>&ldsh; <a href="./pq/LOB">LOB</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result">Result</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement">Statement</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction">Transaction</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Types">Types</a></li>
+																																																										
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="interface.pq\Exception">interface pq\Exception</h1>
+
+<p>A base interface for all pq\Exception classes.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>INVALID_ARGUMENT<br>
+An invalid argument was passed to a method (pq\Exception\InvalidArgumentException).</li>
+<li>RUNTIME<br>
+A runtime exception occurred (pq\Exception\RuntimeException).</li>
+<li>CONNECTION_FAILED<br>
+The connection failed (pq\Exception\RuntimeException).</li>
+<li>IO<br>
+An input/output exception occurred (pq\Exception\RuntimeException).</li>
+<li>ESCAPE<br>
+Escaping an argument or identifier failed internally (pq\Exception\RuntimeException).</li>
+<li>UNINITIALIZED<br>
+An object's constructor was not called (pq\Exception\BadMethodCallException).</li>
+<li>BAD_METHODCALL<br>
+Calling this method was not expected (yet) (pq\Exception\BadMethodCallException).</li>
+<li>SQL<br>
+SQL syntax error (pq\Exception\DomainException).</li>
+<li>DOMAIN<br>
+Implementation domain error (pq\Exception\DomainException).</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+try {
+    $connection = new pq\Connection;
+} catch (pq\Exception $e) {
+    printf("%s (%d)\n", $e-&gt;getMessage(), $e-&gt;getCode());
+}
+
+?&gt;
+</code></pre>
+
+
+
+
+<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq/Exception/BadMethodCallException">BadMethodCallException</a></h3>
+		<p>A method call was not expected.</p>
+
+		<p>class pq\Exception\BadMethodCallException extends BadMethodCallException implements pq\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Exception/DomainException">DomainException</a></h3>
+		<p>Implementation or SQL syntax error.</p>
+
+		<p>class pq\Exception\DomainException extends DomainException implements pq\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Exception/InvalidArgumentException">InvalidArgumentException</a></h3>
+		<p>An invalid argument was passed to a method.</p>
+
+		<p>class pq\Exception\InvalidArgumentException extends InvalidArgumentException implements pq\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Exception/RuntimeException">RuntimeException</a></h3>
+		<p>A runtime exception occurred.</p>
+
+		<p>class pq\Exception\RuntimeException extends RuntimeException implements pq\Exception</p>
+	</li>
+	
+</ul>
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Exception';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

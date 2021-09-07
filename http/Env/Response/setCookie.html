@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Response::setCookie -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Env/Response/setCookie">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Env/Response/setCookie.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Env">
+							Env
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Env/Response">
+							Response
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Env/Response/setCookie">Response::setCookie</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/__construct">Response::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/__invoke">Response::__invoke</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/isCachedByEtag">Response::isCachedByEtag</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/isCachedByLastModified">Response::isCachedByLastModified</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/send">Response::send</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setCacheControl">Response::setCacheControl</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setContentDisposition">Response::setContentDisposition</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setContentEncoding">Response::setContentEncoding</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setContentType">Response::setContentType</a></li>
+																													
+						<li>&ldsh; <a href="./http/Env/Response/setEnvRequest">Response::setEnvRequest</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setEtag">Response::setEtag</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setLastModified">Response::setLastModified</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setThrottleRate">Response::setThrottleRate</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="http\Env\Response.http\Env\Response::setCookie(mixed.$cookie)">http\Env\Response http\Env\Response::setCookie(mixed $cookie)</h1>
+
+<p>Add cookies to the response to send.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>mixed $cookie<br>
+The cookie to send.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>http\Env\Response, self.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>http\Exception\InvalidArgumentException</li>
+<li>http\Exception\UnexpectedValueException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+$r = new http\Env\Response;
+$r-&gt;setCookie("visit=true; path=/");
+$r-&gt;send(STDOUT);
+
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Set-Cookie: visit=true; path=/; 
+ETag: ""
+</code></pre>
+
+<h3 id="Another.example:">Another example:</h3>
+
+<pre><code>&lt;?php
+
+$c = new http\Cookie;
+$c-&gt;addCookie("foo", "bar");
+$c-&gt;setMaxAge(360);
+$c-&gt;setDomain(".example.org");
+$c-&gt;setPath("/");
+$c-&gt;setFlags(http\Cookie::SECURE | http\Cookie::HTTPONLY);
+
+$r = new http\Env\Response;
+$r-&gt;setCookie($c);
+$r-&gt;send(STDOUT);
+
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Set-Cookie: foo=bar; domain=.example.org; path=/; max-age=360; secure; httpOnly; 
+ETag: ""
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Env/Response/setCookie';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

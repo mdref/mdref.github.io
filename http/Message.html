@@ -1,0 +1,678 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Message -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Message">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Message.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Message">Message</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/Message/Body">Body</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/Parser">Parser</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/__construct">Message::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/__toString">Message::__toString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/addBody">Message::addBody</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/addHeader">Message::addHeader</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/addHeaders">Message::addHeaders</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/count">Message::count</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/current">Message::current</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/detach">Message::detach</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getBody">Message::getBody</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getHeader">Message::getHeader</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getHeaders">Message::getHeaders</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getHttpVersion">Message::getHttpVersion</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getInfo">Message::getInfo</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getParentMessage">Message::getParentMessage</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getRequestMethod">Message::getRequestMethod</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getRequestUrl">Message::getRequestUrl</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getResponseCode">Message::getResponseCode</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getResponseStatus">Message::getResponseStatus</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/getType">Message::getType</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/isMultipart">Message::isMultipart</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/key">Message::key</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/next">Message::next</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/prepend">Message::prepend</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/reverse">Message::reverse</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/rewind">Message::rewind</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/serialize">Message::serialize</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/setBody">Message::setBody</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/setHeader">Message::setHeader</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/setHeaders">Message::setHeaders</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/setHttpVersion">Message::setHttpVersion</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/setInfo">Message::setInfo</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/setRequestMethod">Message::setRequestMethod</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/setRequestUrl">Message::setRequestUrl</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/setResponseCode">Message::setResponseCode</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/setResponseStatus">Message::setResponseStatus</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/setType">Message::setType</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/splitMultipartBody">Message::splitMultipartBody</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/toCallback">Message::toCallback</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/toStream">Message::toStream</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/toString">Message::toString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/unserialize">Message::unserialize</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Message/valid">Message::valid</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client">Client</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie">Cookie</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding">Encoding</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env">Env</a></li>
+																			
+						<li>&ldsh; <a href="./http/Exception">Exception</a></li>
+																			
+						<li>&ldsh; <a href="./http/Header">Header</a></li>
+																													
+						<li>&ldsh; <a href="./http/Params">Params</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString">QueryString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Url">Url</a></li>
+																																																										
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.http\Message.implements.Countable,.Serializable,.Iterator">class http\Message implements Countable, Serializable, Iterator</h1>
+
+<p>The message class builds the foundation for any request and response message.</p>
+
+<p>See http\Client\Request and http\Client\Response, as well as http\Env\Request and http\Env\Response.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>TYPE_NONE<br>
+No specific type of message.</li>
+<li>TYPE_REQUEST<br>
+A request message.</li>
+<li>TYPE_RESPONSE<br>
+A response message.</li>
+</ul>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>protected int $type = http\Message::TYPE_NONE<br>
+The message type. See http\Message::TYPE_* constants.</li>
+<li>protected http\Message\Body $body = NULL<br>
+The message's body.</li>
+<li>protected string $requestMethod = ""<br>
+The request method if the message is of type request.</li>
+<li>protected string $requestUrl = ""<br>
+The request url if the message is of type request.</li>
+<li>protected string $responseStatus = ""<br>
+The response status phrase if the message is of type response.</li>
+<li>protected int $responseCode = 0<br>
+The response code if the message is of type response.</li>
+<li>protected string $httpVersion = NULL<br>
+A custom HTTP protocol version.</li>
+<li>protected array $headers = NULL<br>
+Any message headers.</li>
+<li>protected http\Message $parentMessage<br>
+Any parent message.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Message/__construct">Message::__construct</a></h3>
+		<p>Create a new HTTP message.</p>
+
+		<p>void http\Message::__construct([mixed $message = NULL[, bool $greedy = true])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/__toString">Message::__toString</a></h3>
+		<p>Retrieve the message serialized to a string.</p>
+
+		<p>string http\Message::__toString()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/addBody">Message::addBody</a></h3>
+		<p>Append the data of $body to the message's body.</p>
+
+		<p>http\Message http\Message::addBody(http\Message\Body $body)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/addHeader">Message::addHeader</a></h3>
+		<p>Add an header, appending to already existing headers.</p>
+
+		<p>http\Message http\Message::addHeader(string $name, mixed $value)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/addHeaders">Message::addHeaders</a></h3>
+		<p>Add headers, optionally appending values, if header keys already exist.</p>
+
+		<p>http\Message http\Message::addHeaders(array $headers[, bool $append = false])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/count">Message::count</a></h3>
+		<p>Implements Countable.</p>
+
+		<p>int http\Message::count()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/current">Message::current</a></h3>
+		<p>Implements iterator.</p>
+
+		<p>http\Message http\Message::current()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/detach">Message::detach</a></h3>
+		<p>Detach a clone of this message from any message chain.</p>
+
+		<p>http\Message http\Message::detach()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getBody">Message::getBody</a></h3>
+		<p>Retrieve the message's body.</p>
+
+		<p>http\Message\Body http\Message::getBody()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getHeader">Message::getHeader</a></h3>
+		<p>Retrieve a single header, optionally hydrated into a http\Header extending class.</p>
+
+		<p>mixed http\Message::getHeader(string $header[, string $into_class = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getHeaders">Message::getHeaders</a></h3>
+		<p>Retrieve all message headers.</p>
+
+		<p>array http\Message::getHeaders()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getHttpVersion">Message::getHttpVersion</a></h3>
+		<p>Retrieve the HTTP protocol version of the message.</p>
+
+		<p>string http\Message::getHttpVersion()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getInfo">Message::getInfo</a></h3>
+		<p>Retrieve the first line of a request or response message.</p>
+
+		<p>string http\Message::getInfo()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getParentMessage">Message::getParentMessage</a></h3>
+		<p>Retrieve any parent message.</p>
+
+		<p>http\Message http\Message::getParentMessage()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getRequestMethod">Message::getRequestMethod</a></h3>
+		<p>Retrieve the request method of the message.</p>
+
+		<p>string http\Message::getRequestMethod()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getRequestUrl">Message::getRequestUrl</a></h3>
+		<p>Retrieve the request URL of the message.</p>
+
+		<p>string http\Message::getRequestUrl()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getResponseCode">Message::getResponseCode</a></h3>
+		<p>Retrieve the response code of the message.</p>
+
+		<p>int http\Message::getResponseCode()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getResponseStatus">Message::getResponseStatus</a></h3>
+		<p>Retrieve the response status of the message.</p>
+
+		<p>string http\Message::getResponseStatus()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/getType">Message::getType</a></h3>
+		<p>Retrieve the type of the message.</p>
+
+		<p>int http\Message::getType()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/isMultipart">Message::isMultipart</a></h3>
+		<p>Check whether this message is a multipart message based on it's content type.</p>
+
+		<p>bool http\Message::isMultipart([string &amp;$boundary = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/key">Message::key</a></h3>
+		<p>Implements Iterator.</p>
+
+		<p>int http\Message::key()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/next">Message::next</a></h3>
+		<p>Implements Iterator.</p>
+
+		<p>void http\Message::next()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/prepend">Message::prepend</a></h3>
+		<p>Prepend message(s) $message to this message, or the top most message of this message chain.</p>
+
+		<p>http\Message http\Message::prepend(http\Message $message[, bool $top = true])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/reverse">Message::reverse</a></h3>
+		<p>Reverse the message chain and return the former top-most message.</p>
+
+		<p>http\Message http\Messae::reverse()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/rewind">Message::rewind</a></h3>
+		<p>Implements Iterator.</p>
+
+		<p>void http\Message::rewind()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/serialize">Message::serialize</a></h3>
+		<p>Implements Serializable.</p>
+
+		<p>string http\Message::serialize()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/setBody">Message::setBody</a></h3>
+		<p>Set the message's body.</p>
+
+		<p>http\Message http\Message::setBody(http\Message\Body $body)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/setHeader">Message::setHeader</a></h3>
+		<p>Set a single header.</p>
+
+		<p>http\Message http\Message::setHeader(string $header[, mixed $value = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/setHeaders">Message::setHeaders</a></h3>
+		<p>Set the message headers.</p>
+
+		<p>http\Message http\Message::setHeaders(array $headers = NULL)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/setHttpVersion">Message::setHttpVersion</a></h3>
+		<p>Set the HTTP protocol version of the message.</p>
+
+		<p>http\Message http\Message::setHttpVersion(string $http_version)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/setInfo">Message::setInfo</a></h3>
+		<p>Set the complete message info, i.e. type and response resp. request information, at once.</p>
+
+		<p>http\Message http\Message::setInfo(string $http_info)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/setRequestMethod">Message::setRequestMethod</a></h3>
+		<p>Set the request method of the message.</p>
+
+		<p>http\Message http\Message::setRequestMethod(string $method)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/setRequestUrl">Message::setRequestUrl</a></h3>
+		<p>Set the request URL of the message.</p>
+
+		<p>http\Message http\Message::setRequestUrl(string $url)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/setResponseCode">Message::setResponseCode</a></h3>
+		<p>Set the response status code.</p>
+
+		<p>http\Message http\Message::setResponseCode(int $response_code[, bool $strict = true])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/setResponseStatus">Message::setResponseStatus</a></h3>
+		<p>Set the response status phrase.</p>
+
+		<p>http\Message http\Message::setResponseStatus(string $response_status)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/setType">Message::setType</a></h3>
+		<p>Set the message type and reset the message info.</p>
+
+		<p>http\Message http\Message::setType(int $type)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/splitMultipartBody">Message::splitMultipartBody</a></h3>
+		<p>Splits the body of a multipart message.</p>
+
+		<p>http\Message http\Message::splitMultipartBody()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/toCallback">Message::toCallback</a></h3>
+		<p>Stream the message through a callback.</p>
+
+		<p>http\Message http\Message::toCallback(callable $callback)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/toStream">Message::toStream</a></h3>
+		<p>Stream the message into stream $stream, starting from $offset, streaming $maxlen at most.</p>
+
+		<p>http\Message http\Message::toStream(resource $stream)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/toString">Message::toString</a></h3>
+		<p>Retrieve the message serialized to a string.</p>
+
+		<p>string http\Message::toString([bool $include_parent = false])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/unserialize">Message::unserialize</a></h3>
+		<p>Implements Serializable.</p>
+
+		<p>void http\Message::unserualize(string $data)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/valid">Message::valid</a></h3>
+		<p>Implements Iterator.</p>
+
+		<p>bool http\Message::valid()</p>
+	</li>
+	
+</ul>
+
+
+<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Message/Body">Body</a></h3>
+		<p>The message body, represented as a PHP (temporary) stream.</p>
+
+		<p>class http\Message\Body implements Serializable</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Message/Parser">Parser</a></h3>
+		<p>The parser which is underlying http\Message.</p>
+
+		<p>class http\Message\Parser</p>
+	</li>
+	
+</ul>
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Message';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

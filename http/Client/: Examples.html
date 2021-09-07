@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							★ Examples -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Client/: Examples">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Client/: Examples.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client">
+							Client
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Client/: Examples">★ Examples</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client/: Changelog">★ Changelog</a></li>
+																													
+						<li>&ldsh; <a href="./http/Client/Curl">Curl</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request">Request</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Response">Response</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/__construct">Client::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/addCookies">Client::addCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/addSslOptions">Client::addSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/attach">Client::attach</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/configure">Client::configure</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/count">Client::count</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/dequeue">Client::dequeue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/detach">Client::detach</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/enableEvents">Client::enableEvents</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/enablePipelining">Client::enablePipelining</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/enqueue">Client::enqueue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableConfiguration">Client::getAvailableConfiguration</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableDrivers">Client::getAvailableDrivers</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableOptions">Client::getAvailableOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getCookies">Client::getCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getHistory">Client::getHistory</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getObservers">Client::getObservers</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getOptions">Client::getOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getProgressInfo">Client::getProgressInfo</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getResponse">Client::getResponse</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getSslOptions">Client::getSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getTransferInfo">Client::getTransferInfo</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/notify">Client::notify</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/once">Client::once</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/requeue">Client::requeue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/reset">Client::reset</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/send">Client::send</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setCookies">Client::setCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setDebug">Client::setDebug</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setOptions">Client::setOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setSslOptions">Client::setSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/wait">Client::wait</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="http\Client.Examples">http\Client Examples</h1>
+
+<h2 id="Sending.a.simple.GET.request:">Sending a simple GET request:</h2>
+
+<pre><code>&lt;?php
+
+$request = new http\Client\Request("GET",
+    "http://localhost",
+    ["User-Agent"=&gt;"My Client/0.1"]
+);
+$request-&gt;setOptions(["timeout"=&gt;1]);
+
+$client = new http\Client;
+$client-&gt;enqueue($request)-&gt;send();
+
+// pop the last retrieved response
+$response = $client-&gt;getResponse();
+printf("%s returned '%s' (%d)\n",
+    $response-&gt;getTransferInfo("effective_url"),
+    $response-&gt;getInfo(),
+    $response-&gt;getResponseCode()
+);
+?&gt;
+</code></pre>
+
+<h3 id="Yields:">Yields:</h3>
+
+<pre><code>http://localhost/ returned 'HTTP/1.1 200 OK' (200)
+</code></pre>
+
+<h2 id="Submitting.a.standard.form:">Submitting a standard form:</h2>
+
+<pre><code>&lt;?php
+
+$request = new http\Client\Request("POST",
+    "http://localhost/post.php",
+    ["Content-Type" =&gt; "application/x-www-form-urlencoded"]
+);
+$request-&gt;getBody()-&gt;append(new http\QueryString([
+    "user" =&gt; "mike",
+    "name" =&gt; "Michael Wallner"
+]));
+
+$client = new http\Client;
+$client-&gt;setOptions(["ssl" =&gt; [
+    "version" =&gt; http\Client\Curl\SSL_VERSION_TLSv1
+]]);
+$client-&gt;enqueue($request)-&gt;send();
+
+// ask for the response for this specific request
+$response = $client-&gt;getResponse($request);
+printf("-&gt; %s\n", $response-&gt;getInfo());
+
+?&gt;
+</code></pre>
+
+<h3 id="Yields:">Yields:</h3>
+
+<pre><code>-&gt; HTTP/1.1 200 OK
+</code></pre>
+
+<h2 id="Submitting.a.multipart.form:">Submitting a multipart form:</h2>
+
+<pre><code>&lt;?php
+
+$request = new http\Client\Request("POST",
+    "http://localhost/post.php"
+);
+
+// http\Message\Body::addForm() will automatically add
+// Content-Type: multipart/form-data to the request headers
+$request-&gt;getBody()-&gt;addForm([
+    "user" =&gt; "mike",
+    "name" =&gt; "Michael Wallner"
+], [
+    [
+        "name" =&gt; "image",
+        "type" =&gt; "image/jpeg",
+        "file" =&gt; "image.jpg"
+    ]
+]);
+
+$client = new http\Client;
+$client-&gt;setOptions(["ssl" =&gt; [
+    "version" =&gt; http\Client\Curl\SSL_VERSION_TLSv1
+]]);
+$client-&gt;enqueue($request)-&gt;send();
+
+// ask for the response for this specific request
+$response = $client-&gt;getResponse($request);
+printf("-&gt; %.2F kB\n @ %.2F Mbit",
+    .001 * $response-&gt;getTransferInfo("size_upload"),
+    .0000008 * $response-&gt;getTransferInfo("speed_upload")
+);
+?&gt;
+</code></pre>
+
+<h3 id="Yields:">Yields:</h3>
+
+<pre><code>-&gt; 15.98 kB @ 6.77 Mbit
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Client/: Examples';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

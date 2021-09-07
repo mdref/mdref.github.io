@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Cancel::cancel -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Cancel/cancel">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Cancel/cancel.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Cancel">
+							Cancel
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Cancel/cancel">Cancel::cancel</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/Cancel/__construct">Cancel::__construct</a></li>
+																																																																																																				
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="void.pq\Cancel::cancel()">void pq\Cancel::cancel()</h1>
+
+<p>Perform the cancellation request.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<p>None.</p>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>pq\Exception\InvalidArgumentException</li>
+<li>pq\Exception\BadMethodCallException</li>
+<li>pq\Exception\RuntimeException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+$conn = new pq\Connection;
+$cancel = new pq\Cancel($conn);
+
+$conn-&gt;execAsync("SELECT pg_sleep(1)");
+$cancel-&gt;cancel();
+
+var_dump($conn-&gt;getResult());
+
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>object(pq\Result)#4 (8) {
+  ["status"]=&gt;
+  int(7)
+  ["statusMessage"]=&gt;
+  string(11) "FATAL_ERROR"
+  ["errorMessage"]=&gt;
+  string(47) "ERROR:  canceling statement due to user request"
+  ["numRows"]=&gt;
+  int(0)
+  ["numCols"]=&gt;
+  int(0)
+  ["affectedRows"]=&gt;
+  int(0)
+  ["fetchType"]=&gt;
+  int(0)
+  ["autoConvert"]=&gt;
+  int(65535)
+}
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Cancel/cancel';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

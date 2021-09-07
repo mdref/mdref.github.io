@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Response::setContentDisposition -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Env/Response/setContentDisposition">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Env/Response/setContentDisposition.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Env">
+							Env
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Env/Response">
+							Response
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Env/Response/setContentDisposition">Response::setContentDisposition</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/__construct">Response::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/__invoke">Response::__invoke</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/isCachedByEtag">Response::isCachedByEtag</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/isCachedByLastModified">Response::isCachedByLastModified</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/send">Response::send</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setCacheControl">Response::setCacheControl</a></li>
+																													
+						<li>&ldsh; <a href="./http/Env/Response/setContentEncoding">Response::setContentEncoding</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setContentType">Response::setContentType</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setCookie">Response::setCookie</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setEnvRequest">Response::setEnvRequest</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setEtag">Response::setEtag</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setLastModified">Response::setLastModified</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setThrottleRate">Response::setThrottleRate</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="http\Env\Response.http\Env\Response::setContentDisposition(array.$disposition_params)">http\Env\Response http\Env\Response::setContentDisposition(array $disposition_params)</h1>
+
+<p>Set the reponse's content disposition parameters.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>array $disposition_params<br>
+MIME content disposition as http\Params array.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>http\Env\Response, self.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>http\Exception\InvalidArgumentException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php ob_end_Clean();chdir(__DIR__."/../../..");
+$res = new http\Env\Response;
+$res-&gt;setBody(new http\Message\Body(fopen("http.zip", "r")));
+$res-&gt;setContentType("application/zip");
+$res-&gt;setContentDisposition(["attachment" =&gt; ["filename" =&gt; "download.zip"]]);
+$res-&gt;send();
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>Accept-Ranges: bytes
+X-Powered-By: PHP/5.5.5
+Content-Type: application/zip
+Content-Disposition: attachment;filename=download.zip
+ETag: "12009be-527d3e84-a0"
+Last-Modified: Fri, 08 Nov 2013 19:41:56 GMT
+
+PK...
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Env/Response/setContentDisposition';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

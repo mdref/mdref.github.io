@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							raphf -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/raphf">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-raphf/edit/master/raphf.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+					
+							&circlearrowright; <strong><a href="./raphf">raphf</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./raphf/clean_persistent_handles">clean_persistent_handles</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./raphf/stat_persistent_handles">stat_persistent_handles</a>
+									
+								</li>
+								
+							</ul>
+							
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="pecl/raphf">pecl/raphf</h1>
+
+<h2 id="About:">About:</h2>
+
+<p>The "Resource and Persistent Handle Factory" extension provides facilities to manage those in a convenient manner.</p>
+
+<h2 id="Installation:">Installation:</h2>
+
+<p>This extension is hosted at <a href="http://pecl.php.net">PECL</a> and can be installed with <a href="http://pear.php.net">PEAR</a>'s pecl command:</p>
+
+<pre><code># pecl install raphf
+</code></pre>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+    Please note, that v1.x of ext-raphf works for PHP-5 and v2.x/master works for PHP-7 only.</p>
+</blockquote>
+
+<h3 id="PHARext">PHARext</h3>
+
+<p>Watch out for <a href="https://replicator.pharext.org?raphf">PECL replicates</a>
+and pharext packages attached to <a href="https://github.com/m6w6/ext-raphf/releases">releases</a>.</p>
+
+<h3 id="Checkout">Checkout</h3>
+
+<pre><code>git clone github.com:m6w6/ext-raphf
+cd ext-raphf
+/path/to/phpize
+./configure --with-php-config=/path/to/php-config
+make
+sudo make install
+</code></pre>
+
+<h2 id="INI.Directives:">INI Directives:</h2>
+
+<ul>
+<li>raphf.persistent_handle.limit = -1<br>
+The per process/thread persistent handle limit.</li>
+</ul>
+
+<h2 id="Internals:">Internals:</h2>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+    This extension mostly only provides infrastructure for other extensions.
+    See the API docs here:
+    <a href="https://m6w6.github.io/ext-raphf/v1.1.x">v1.1.x</a>,
+    <a href="https://m6w6.github.io/ext-raphf/master">master</a>.</p>
+</blockquote>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="raphf/clean_persistent_handles">clean_persistent_handles</a></h3>
+		<p>Clean persistent handles whith id $name->$ident.</p>
+
+		<p>void raphf\clean_persistent_handles([string name = NULL[, string $ident]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="raphf/stat_persistent_handles">stat_persistent_handles</a></h3>
+		<p>Retrieve statistics about current process'/thread's persistent handles.</p>
+
+		<p>object raphf\stat_persistent_handles()</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'raphf';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

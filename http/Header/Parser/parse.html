@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Parser::parse -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Header/Parser/parse">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Header/Parser/parse.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Header">
+							Header
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Header/Parser">
+							Parser
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Header/Parser/parse">Parser::parse</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Header/Parser/getState">Parser::getState</a></li>
+																													
+						<li>&ldsh; <a href="./http/Header/Parser/stream">Parser::stream</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="int.http\Header\Parser::parse(string.$data,.int.$flags,.array.&amp;$message.=.NULL)">int http\Header\Parser::parse(string $data, int $flags, array &amp;$message = NULL)</h1>
+
+<p>Parse a string.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>string $data<br>
+The (part of the) header to parse.</li>
+<li>int $flags<br>
+Any combination of <a href="http/Header/Parser#Parser.flags:">parser flags</a>.</li>
+<li>array &amp;$header = NULL 
+Successfully parsed headers.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>int, http\Header\Parser::STATE_* constant.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>http\Exception\InvalidArgumentException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+$headers = [
+    "One: ","header\n",
+    "Two: header\n\tlines\n",
+    "Three",": header\n lines\n here\n",
+    "More: than one header\n",
+    "More: ", "than: ", "you: ", "expect\n",
+    "\n",
+];
+
+$states = [-1=&gt;"FAILURE",0=&gt;"START","KEY","VALUE","VALUE_EX","HEADER_DONE","DONE"];
+$parser = new http\Header\Parser;
+do {
+    $state = $parser-&gt;parse($part = array_shift($headers), 
+        $headers ? 0 : http\Header\Parser::CLEANUP, 
+        $result);
+    printf("%2\$-32s | %1\$s\n", $states[$state], addcslashes($part, "\r\n\t\0"));
+} while ($headers &amp;&amp; $state !== http\Header\Parser::STATE_FAILURE);
+
+var_dump($result);
+
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>Test
+One:                             | VALUE
+header\n                         | VALUE_EX
+Two: header\n\tlines\n           | VALUE_EX
+Three                            | KEY
+: header\n lines\n here\n        | VALUE_EX
+More: than one header\n          | VALUE_EX
+More:                            | VALUE
+than:                            | VALUE
+you:                             | VALUE
+expect\n                         | VALUE_EX
+\n                               | DONE
+array(4) {
+  ["One"]=&gt;
+  string(6) "header"
+  ["Two"]=&gt;
+  string(12) "header lines"
+  ["Three"]=&gt;
+  string(17) "header lines here"
+  ["More"]=&gt;
+  array(2) {
+    [0]=&gt;
+    string(15) "than one header"
+    [1]=&gt;
+    string(17) "than: you: expect"
+  }
+}
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Header/Parser/parse';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

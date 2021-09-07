@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							stat_persistent_handles -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/raphf/stat_persistent_handles">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-raphf/edit/master/raphf/stat_persistent_handles.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./raphf">
+							raphf
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./raphf/stat_persistent_handles">stat_persistent_handles</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./raphf/clean_persistent_handles">clean_persistent_handles</a></li>
+																																																																				
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="object.raphf\stat_persistent_handles()">object raphf\stat_persistent_handles()</h1>
+
+<p>Retrieve statistics about current process'/thread's persistent handles.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<p>None.</p>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>object, stdClass instance</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>var_dump(raphf\stat_persistent_handles());
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>object(stdClass)#6 (3) {
+    ["http\Client\Curl"]=&gt;
+    array(0) {
+    }
+    ["http\Client\Curl\Request"]=&gt;
+    array(1) {
+    ["php.net:80"]=&gt;
+    array(2) {
+      ["used"]=&gt;
+      int(2)
+      ["free"]=&gt;
+      int(1)
+    }
+    }
+    ["pq\Connection"]=&gt;
+    array(0) {
+    }
+}
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'raphf/stat_persistent_handles';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

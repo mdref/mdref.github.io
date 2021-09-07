@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Expr -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Query/Expr">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq-gateway/edit/master/pq-gateway/pq/Query/Expr.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq-gateway">
+							pq-gateway
+						</a>
+						<ul>
+							<li>
+																												
+					&uarr; <a href="./pq-gateway/pq/Query">
+							Query
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq-gateway/pq/Query/Expr">Expr</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Expr/__construct">Expr::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Expr/__toString">Expr::__toString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Expr/add">Expr::add</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Expr/isNull">Expr::isNull</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/AsyncExecutor">AsyncExecutor</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Executor">Executor</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/ExecutorInterface">ExecutorInterface</a></li>
+																													
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Expressible">Expressible</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/ExpressibleInterface">ExpressibleInterface</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Writer">Writer</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/WriterInterface">WriterInterface</a></li>
+																																																																																																							
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.pq\Query\Expr">class pq\Query\Expr</h1>
+
+<p>A query expression.</p>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>protected string $expression<br>
+The expression.</li>
+<li>protected pq\Query\Expr $next<br>
+The next expression in a linked list.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Expr/__construct">Expr::__construct</a></h3>
+		<p>Create a new expression.</p>
+
+		<p>void pq\Query\Expr::__construct(string $e[, string ...$args])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Expr/__toString">Expr::__toString</a></h3>
+		<p>Retrieve the string representation.</p>
+
+		<p>string pq\Query\Expr::__toString()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Expr/add">Expr::add</a></h3>
+		<p>Add an expression at the end of the linked list.</p>
+
+		<p>pq\Query\Expr pq\Query\Expr::add(pq\Query\Expr $next)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Expr/isNull">Expr::isNull</a></h3>
+		<p>Whether the expression is the literal NULL.</p>
+
+		<p>bool pq\Query\Expr::isNull()</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq-gateway/pq/Query/Expr';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Converter::convertToString -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Converter/convertToString">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Converter/convertToString.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Converter">
+							Converter
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Converter/convertToString">Converter::convertToString</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/Converter/convertFromString">Converter::convertFromString</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Converter/convertTypes">Converter::convertTypes</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="string.pq\Converter::convertToString(mixed.$value,.int.$type)">string pq\Converter::convertToString(mixed $value, int $type)</h1>
+
+<p>Convert a value to a string for use in a query.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>mixed $value<br>
+The PHP value which should be converted to a string.</li>
+<li>int $type<br>
+The type OID the converter should handle. Irrelevant for singly-type converters.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>string, a textual representation of the value accepted by the PostgreSQL server.</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+abstract class Example implements pq\Converter {
+    function convertToString($uuid, $type)  {
+        return uuid_unparse($uuid);
+    }
+}
+
+?&gt;
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Converter/convertToString';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

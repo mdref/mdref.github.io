@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Exception -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Exception">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Exception.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Exception">Exception</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/Exception/BadConversionException">BadConversionException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Exception/BadHeaderException">BadHeaderException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Exception/BadMessageException">BadMessageException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Exception/BadMethodCallException">BadMethodCallException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Exception/BadQueryStringException">BadQueryStringException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Exception/BadUrlException">BadUrlException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Exception/InvalidArgumentException">InvalidArgumentException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Exception/RuntimeException">RuntimeException</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Exception/UnexpectedValueException">UnexpectedValueException</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client">Client</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie">Cookie</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding">Encoding</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env">Env</a></li>
+																													
+						<li>&ldsh; <a href="./http/Header">Header</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message">Message</a></li>
+																			
+						<li>&ldsh; <a href="./http/Params">Params</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString">QueryString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Url">Url</a></li>
+																																																										
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="interface.http\Exception">interface http\Exception</h1>
+
+<p>The http extension's Exception interface.</p>
+
+<p>Use it to catch any Exception thrown by pecl/http.</p>
+
+<p>The individual exception classes extend their equally named native PHP extensions, if such exist, and implement this empty interface. For example the http\Exception\BadMethodCallException extends SPL's BadMethodCallException.</p>
+
+<h2 id="Properties:">Properties:</h2>
+
+<p>None.</p>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+$req = new http\Env\Request;
+
+try {
+    $messages = $req-&gt;splitMultipartBody();
+} catch (http\Exception\BadMethodCallException $e) {
+    // doh, no multipart message
+} catch (http\Exception\BadMessageException $e) {
+    // failure while parsing
+} catch (http\Exception $e) {
+    // here we used the interface to catch any http\Exception
+} catch (Exception $e) {
+    // catch any other exception (unlikely, though)
+}
+?&gt;
+</code></pre>
+
+
+
+
+<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Exception/BadConversionException">BadConversionException</a></h3>
+		<p>A bad conversion (e.g. character conversion) was encountered.</p>
+
+		<p>class http\Exception\BadConversionException extends DomainException implements http\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Exception/BadHeaderException">BadHeaderException</a></h3>
+		<p>A bad HTTP header was encountered.</p>
+
+		<p>class http\Exception\BadHeaderException extends DomainException implements http\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Exception/BadMessageException">BadMessageException</a></h3>
+		<p>A bad HTTP message was encountered.</p>
+
+		<p>class http\Exception\BadMessageException extends DomainException implements http\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Exception/BadMethodCallException">BadMethodCallException</a></h3>
+		<p>A method was called on an object, which was in an invalid or unexpected state.</p>
+
+		<p>class http\Exception\BadMethodCallException extends BadMethodCallException implements http\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Exception/BadQueryStringException">BadQueryStringException</a></h3>
+		<p>A bad querystring was encountered.</p>
+
+		<p>class http\Exception\BadQueryStringException extends DomainException implements http\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Exception/BadUrlException">BadUrlException</a></h3>
+		<p>A bad HTTP URL was encountered.</p>
+
+		<p>class http\Exception\BadUrlException extends DomainException implements http\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Exception/InvalidArgumentException">InvalidArgumentException</a></h3>
+		<p>One or more invalid arguments were passed to a method.</p>
+
+		<p>class http\Exception\InvalidArgumentException extends InvalidArgumentException implements http\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Exception/RuntimeException">RuntimeException</a></h3>
+		<p>A generic runtime exception.</p>
+
+		<p>class http\Exception\RuntimeException extends RuntimeException implements http\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Exception/UnexpectedValueException">UnexpectedValueException</a></h3>
+		<p>An unexpected value was encountered.</p>
+
+		<p>class http\Exception\UnexpectedValueException extends UnexpectedValueException implements http\Exception</p>
+	</li>
+	
+</ul>
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Exception';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

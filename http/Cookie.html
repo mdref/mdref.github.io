@@ -1,0 +1,436 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Cookie -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Cookie">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Cookie.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Cookie">Cookie</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/__construct">Cookie::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/__toString">Cookie::__toString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/addCookie">Cookie::addCookie</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/addCookies">Cookie::addCookies</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/addExtra">Cookie::addExtra</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/addExtras">Cookie::addExtras</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/getCookie">Cookie::getCookie</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/getCookies">Cookie::getCookies</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/getDomain">Cookie::getDomain</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/getExpires">Cookie::getExpires</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/getExtra">Cookie::getExtra</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/getExtras">Cookie::getExtras</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/getFlags">Cookie::getFlags</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/getMaxAge">Cookie::getMaxAge</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/getPath">Cookie::getPath</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/setCookie">Cookie::setCookie</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/setCookies">Cookie::setCookies</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/setDomain">Cookie::setDomain</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/setExpires">Cookie::setExpires</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/setExtra">Cookie::setExtra</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/setExtras">Cookie::setExtras</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/setFlags">Cookie::setFlags</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/setMaxAge">Cookie::setMaxAge</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/setPath">Cookie::setPath</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/toArray">Cookie::toArray</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Cookie/toString">Cookie::toString</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client">Client</a></li>
+																													
+						<li>&ldsh; <a href="./http/Encoding">Encoding</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env">Env</a></li>
+																			
+						<li>&ldsh; <a href="./http/Exception">Exception</a></li>
+																			
+						<li>&ldsh; <a href="./http/Header">Header</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message">Message</a></li>
+																			
+						<li>&ldsh; <a href="./http/Params">Params</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString">QueryString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Url">Url</a></li>
+																																																										
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.http\Cookie">class http\Cookie</h1>
+
+<p>A class representing a list of cookies with specific attributes.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>PARSE_RAW<br>
+Do not decode cookie contents.</li>
+<li>SECURE<br>
+The cookies' flags have the secure attribute set.</li>
+<li>HTTPONLY<br>
+The cookies' flags have the httpOnly attribute set.</li>
+</ul>
+
+<h2 id="Properties:">Properties:</h2>
+
+<p>None.</p>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Cookie/__construct">Cookie::__construct</a></h3>
+		<p>Create a new cookie list.</p>
+
+		<p>void http\Cookie::__construct([mixed $cookies = NULL[, int $flags = 0[, array $allowed_extras = NULL]]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/__toString">Cookie::__toString</a></h3>
+		<p>String cast handler. Alias of http\Cookie::toString().</p>
+
+		<p>string http\Cookie::__toString()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/addCookie">Cookie::addCookie</a></h3>
+		<p>Add a cookie.</p>
+
+		<p>http\Cookie http\Cookie::addCookie(string $cookie_name, string $cookie_value)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/addCookies">Cookie::addCookies</a></h3>
+		<p>(Re)set the cookies.</p>
+
+		<p>http\Cookie http\Cookie::addCookies(array $cookies)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/addExtra">Cookie::addExtra</a></h3>
+		<p>Add an extra attribute to the cookie list.</p>
+
+		<p>http\Cookie http\Cookie::addExtra(string $extra_name, string $extra_value)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/addExtras">Cookie::addExtras</a></h3>
+		<p>Add several extra attributes.</p>
+
+		<p>http\Cookie http\Cookie::addExtras(array $extras)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/getCookie">Cookie::getCookie</a></h3>
+		<p>Retrieve a specific cookie value.</p>
+
+		<p>string http\Cookie::getCookie(string $cookie_name)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/getCookies">Cookie::getCookies</a></h3>
+		<p>Get the list of cookies.</p>
+
+		<p>array http\Cookie::getCookies()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/getDomain">Cookie::getDomain</a></h3>
+		<p>Retrieve the effective domain of the cookie list.</p>
+
+		<p>string http\Cookie::getDomain()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/getExpires">Cookie::getExpires</a></h3>
+		<p>Get the currently set expires attribute.</p>
+
+		<p>int http\Cookie::getExpires()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/getExtra">Cookie::getExtra</a></h3>
+		<p>Retrieve an extra attribute.</p>
+
+		<p>string http\Cookie::getExtra(string $name)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/getExtras">Cookie::getExtras</a></h3>
+		<p>Retrieve the list of extra attributes.</p>
+
+		<p>array http\Cookie::getExtras()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/getFlags">Cookie::getFlags</a></h3>
+		<p>Get the currently set flags.</p>
+
+		<p>int http\Cookie::getFlags()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/getMaxAge">Cookie::getMaxAge</a></h3>
+		<p>Get the currently set max-age attribute of the cookie list.</p>
+
+		<p>int http\Cookie::getMaxAge()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/getPath">Cookie::getPath</a></h3>
+		<p>Retrieve the path the cookie(s) of this cookie list are effective at.</p>
+
+		<p>string http\Cookie::getPath()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/setCookie">Cookie::setCookie</a></h3>
+		<p>(Re)set a cookie.</p>
+
+		<p>http\Cookie http\Cookie::setCookie(string $cookie_name, string $cookie_value)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/setCookies">Cookie::setCookies</a></h3>
+		<p>(Re)set the cookies.</p>
+
+		<p>http\Cookie http\Cookie::setCookies([array $cookies = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/setDomain">Cookie::setDomain</a></h3>
+		<p>Set the effective domain of the cookie list.</p>
+
+		<p>http\Cookie http\Cookie::setDomain([string $value = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/setExpires">Cookie::setExpires</a></h3>
+		<p>Set the traditional expires timestamp.</p>
+
+		<p>http\Cookie http\Cookie::setExpires([int $value = -1])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/setExtra">Cookie::setExtra</a></h3>
+		<p>(Re)set an extra attribute.</p>
+
+		<p>http\Cookie http\Cookie::setExtra(string $extra_name[, string $extra_value = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/setExtras">Cookie::setExtras</a></h3>
+		<p>(Re)set the extra attributes.</p>
+
+		<p>http\Cookie http\Cookie::setExtras([array $extras = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/setFlags">Cookie::setFlags</a></h3>
+		<p>Set the flags to specified $value.</p>
+
+		<p>http\Cookie http\Cookie::setFlags([int $value = 0])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/setMaxAge">Cookie::setMaxAge</a></h3>
+		<p>Set the maximum age the cookie may have on the client side.</p>
+
+		<p>http\Cookie http\Cookie::setMaxAge([int $value = -1])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/setPath">Cookie::setPath</a></h3>
+		<p>Set the path the cookie(s) of this cookie list should be effective at.</p>
+
+		<p>http\Cookie http\Cookie::setPath([string $path = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/toArray">Cookie::toArray</a></h3>
+		<p>Get the cookie list as array.</p>
+
+		<p>array http\Cookie::toArray()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Cookie/toString">Cookie::toString</a></h3>
+		<p>Retrieve the string representation of the cookie list.</p>
+
+		<p>string http\Cookie::toString()</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Cookie';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

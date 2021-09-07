@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Response::__invoke -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Env/Response/__invoke">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Env/Response/__invoke.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Env">
+							Env
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Env/Response">
+							Response
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Env/Response/__invoke">Response::__invoke</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/__construct">Response::__construct</a></li>
+																													
+						<li>&ldsh; <a href="./http/Env/Response/isCachedByEtag">Response::isCachedByEtag</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/isCachedByLastModified">Response::isCachedByLastModified</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/send">Response::send</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setCacheControl">Response::setCacheControl</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setContentDisposition">Response::setContentDisposition</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setContentEncoding">Response::setContentEncoding</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setContentType">Response::setContentType</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setCookie">Response::setCookie</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setEnvRequest">Response::setEnvRequest</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setEtag">Response::setEtag</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setLastModified">Response::setLastModified</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Response/setThrottleRate">Response::setThrottleRate</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="bool.http\Response::__invoke(string.$data[,.int.$ob_flags.=.0])">bool http\Response::__invoke(string $data[, int $ob_flags = 0])</h1>
+
+<p>Output buffer handler.
+Appends output data to the body.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>string $data<br>
+The data output.</li>
+<li>Optional int $ob_flags = 0<br>
+Output buffering flags passed from the output buffering control layer.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>bool, success.</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+$res = new http\Env\Response;
+$res-&gt;setContentType("text/plain");
+
+ob_start($res);
+// yeah, well
+// not the greatest application logic...
+echo "Hello world!\n";
+
+$res-&gt;send();
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>Accept-Ranges: bytes
+X-Powered-By: PHP/5.5.5
+Content-Type: text/plain
+ETag: "b2a9e441"
+
+Hello world!
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Env/Response/__invoke';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

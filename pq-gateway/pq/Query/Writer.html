@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Writer -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Query/Writer">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq-gateway/edit/master/pq-gateway/pq/Query/Writer.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq-gateway">
+							pq-gateway
+						</a>
+						<ul>
+							<li>
+																												
+					&uarr; <a href="./pq-gateway/pq/Query">
+							Query
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq-gateway/pq/Query/Writer">Writer</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Writer/__construct">Writer::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Writer/__toString">Writer::__toString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Writer/criteria">Writer::criteria</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Writer/getParams">Writer::getParams</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Writer/getTypes">Writer::getTypes</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Writer/param">Writer::param</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Writer/reduce">Writer::reduce</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Writer/reset">Writer::reset</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Writer/write">Writer::write</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/AsyncExecutor">AsyncExecutor</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Executor">Executor</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/ExecutorInterface">ExecutorInterface</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Expr">Expr</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Expressible">Expressible</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/ExpressibleInterface">ExpressibleInterface</a></li>
+																													
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/WriterInterface">WriterInterface</a></li>
+																																																																																																							
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.pq\Query\Writer.implements.pq\Query\WriterInterface">class pq\Query\Writer implements pq\Query\WriterInterface</h1>
+
+<p>A query writer implementation.</p>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>protected string $query<br>
+The assembled query.</li>
+<li>protected array $params<br>
+The query parameters.</li>
+<li>protected array $types<br>
+The query parameters' types.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Writer/__construct">Writer::__construct</a></h3>
+		<p>Create a new query writer.</p>
+
+		<p>void pq\Query\Writer::__construct([string $query = &quot;&quot;[, array $params = array()[, array $types = array()]]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Writer/__toString">Writer::__toString</a></h3>
+		<p>Retrieve the assembled query.</p>
+
+		<p>string pq\Query\Writer::__toString()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Writer/criteria">Writer::criteria</a></h3>
+		<p>Write nested AND/OR criteria to the query string.</p>
+
+		<p>pq\Query\Writer pq\Query\Writer::criteria(array $criteria)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Writer/getParams">Writer::getParams</a></h3>
+		<p>Retrieve the query parameters.</p>
+
+		<p>array pq\Query\Writer::getParams()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Writer/getTypes">Writer::getTypes</a></h3>
+		<p>Get the query parameters' types.</p>
+
+		<p>array pq\Query\Writer::getTypes()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Writer/param">Writer::param</a></h3>
+		<p>Remember the parameter with any associated type and return $N to be written to the query string.</p>
+
+		<p>string pq\Query\Writer::param(mixed $param[, int $type = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Writer/reduce">Writer::reduce</a></h3>
+		<p>An array_reduce() helper for pq\Query\Writer::write().</p>
+
+		<p>protected string pq\Query\Writer::reduce(string $q, mixed $v)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Writer/reset">Writer::reset</a></h3>
+		<p>Reset the query writer to initial state.</p>
+
+		<p>pq\Query\Writer pq\Query\Writer::reset()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Writer/write">Writer::write</a></h3>
+		<p>Write a part of the query string.</p>
+
+		<p>pq\Query\Writer pq\Query\Writer::write()</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq-gateway/pq/Query/Writer';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

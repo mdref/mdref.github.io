@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							★ Executing Queries -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Connection/: Executing Queries">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Connection/: Executing Queries.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Connection">
+							Connection
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Connection/: Executing Queries">★ Executing Queries</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/Connection/: Asynchronous Usage">★ Asynchronous Usage</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/: Changelog">★ Changelog</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Connection/: General Usage">★ General Usage</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/__construct">Connection::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/declare">Connection::declare</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/declareAsync">Connection::declareAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/escapeBytea">Connection::escapeBytea</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/exec">Connection::exec</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/execAsync">Connection::execAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/execParams">Connection::execParams</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/execParamsAsync">Connection::execParamsAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/flush">Connection::flush</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/getResult">Connection::getResult</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/listen">Connection::listen</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/listenAsync">Connection::listenAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/notify">Connection::notify</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/notifyAsync">Connection::notifyAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/off">Connection::off</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/on">Connection::on</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/poll">Connection::poll</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/prepare">Connection::prepare</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/prepareAsync">Connection::prepareAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/quote">Connection::quote</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/quoteName">Connection::quoteName</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/reset">Connection::reset</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/resetAsync">Connection::resetAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/setConverter">Connection::setConverter</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/startTransaction">Connection::startTransaction</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/startTransactionAsync">Connection::startTransactionAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/trace">Connection::trace</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unescapeBytea">Connection::unescapeBytea</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unlisten">Connection::unlisten</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unlistenAsync">Connection::unlistenAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unsetConverter">Connection::unsetConverter</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="Executing.queries">Executing queries</h1>
+
+<p>ext/pq provides three means to execute queries against the PostgreSQL server:</p>
+
+<ul>
+<li>pq\Connection::exec()<br>
+Simple plain execution of a query.</li>
+<li>pq\Connection::execParams()<br>
+Automatic prepare &amp; execute of an unnamed statement.</li>
+<li>pq\Connection::prepare() and pq\Statement::exec()<br>
+Explicit prepare &amp; execute of an named statement.</li>
+</ul>
+
+<h2 id="Simple.plain.execution.of.a.query">Simple plain execution of a query</h2>
+
+<p>pq\Connection::exec() accepts a single argument, a <strong><em>query string</em></strong>, containing a single or multiple SQL queries, separated by semi-colon.</p>
+
+<pre><code>&lt;?php
+$result = $c-&gt;exec("SELECT 1*s,2*s,3*s FROM generate_series(1,3) s");
+?&gt;
+</code></pre>
+
+<p>An object of class pq\Result is returned on success. See [Fetching results](pq/Result/: Fetching Results) for details.</p>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+  Only the last result will be returned, if the query string contains more than one SQL query.</p>
+</blockquote>
+
+<h2 id="Automatic.prepare.&amp;.execute.of.an.unnamed.statement">Automatic prepare &amp; execute of an unnamed statement</h2>
+
+<p>pq\Connection::execParams() accepts a <strong><em>query string</em></strong> with a single SQL query as first argument, which will be prepared as an unnamed statement.</p>
+
+<p>The second argument is an <strong><em>array of parameters</em></strong> to execute the prepared statement with.</p>
+
+<p>If the third argument is present, an <strong><em>array with pg_type OIDs</em></strong>, those types will be used for the parameters. See [Using types](pq/Types/: Overview) for details.</p>
+
+<pre><code>&lt;?php
+$result = $c-&gt;execParams("SELECT int($1) * s, int($2) * s, int($3) * s FROM generate_series(1,3) s", array(1,2,3));
+?&gt;
+</code></pre>
+
+<p>An object of class pq\Result is returned on success. See [Fetching results](pq/Result/: Fetching Results) for details.</p>
+
+<h2 id="Explicit.prepare.&amp;.execute.of.a.named.statement">Explicit prepare &amp; execute of a named statement</h2>
+
+<p>pq\Connection::prepare() requires the <strong><em>statement name</em></strong> as string as first argument. This name is used later to refer to this prepared statement. See <a href="pq/Statement">Prepared statements</a> for details.</p>
+
+<p>The second argument is a <strong><em>query string</em></strong> containing a single SQL query, which will be prepared on the server.</p>
+
+<p>If the third argument is present, an <strong><em>array with pg_type OIDs</em></strong>, those types will be used for the parameters. See [Using types](pq/Types/: Overview) for details.</p>
+
+<pre><code>&lt;?php
+
+$statement = $c-&gt;prepare("my_stm", "SELECT \$1::int*s,\$2::int*s,\$3::int*s FROM generate_series(1,3) s");
+$result = $statement-&gt;exec(array(1,2,3));
+
+?&gt;
+</code></pre>
+
+<p>An object of class pq\Statement will be returned on success. See <a href="pq/Statement">Prepared statements</a> for details.</p>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Connection/: Executing Queries';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

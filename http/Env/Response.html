@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Response -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Env/Response">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Env/Response.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Env">
+							Env
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Env/Response">Response</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/: Changelog">★ Changelog</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/__construct">Response::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/__invoke">Response::__invoke</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/isCachedByEtag">Response::isCachedByEtag</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/isCachedByLastModified">Response::isCachedByLastModified</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/send">Response::send</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/setCacheControl">Response::setCacheControl</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/setContentDisposition">Response::setContentDisposition</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/setContentEncoding">Response::setContentEncoding</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/setContentType">Response::setContentType</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/setCookie">Response::setCookie</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/setEnvRequest">Response::setEnvRequest</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/setEtag">Response::setEtag</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/setLastModified">Response::setLastModified</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Response/setThrottleRate">Response::setThrottleRate</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Env/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Request">Request</a></li>
+																													
+						<li>&ldsh; <a href="./http/Env/Url">Url</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getRequestBody">Env::getRequestBody</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getRequestHeader">Env::getRequestHeader</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getResponseCode">Env::getResponseCode</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getResponseHeader">Env::getResponseHeader</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getResponseStatusForAllCodes">Env::getResponseStatusForAllCodes</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getResponseStatusForCode">Env::getResponseStatusForCode</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/negotiate">Env::negotiate</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/negotiateCharset">Env::negotiateCharset</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/negotiateContentType">Env::negotiateContentType</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/negotiateEncoding">Env::negotiateEncoding</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/negotiateLanguage">Env::negotiateLanguage</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/setResponseCode">Env::setResponseCode</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/setResponseHeader">Env::setResponseHeader</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.http\Env\Response.extends.http\Message">class http\Env\Response extends http\Message</h1>
+
+<p>The http\Env\Response class' instances represent the server's current HTTP response.</p>
+
+<p>See http\Message for inherited members.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>CONTENT_ENCODING_NONE<br>
+Do not use content encoding.</li>
+<li>CONTENT_ENCODING_GZIP<br>
+Support "Accept-Encoding" requests with gzip and deflate encoding.</li>
+<li>CACHE_NO<br>
+No caching info available.</li>
+<li>CACHE_HIT<br>
+The cache was hit.</li>
+<li>CACHE_MISS<br>
+The cache was missed.</li>
+</ul>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>protected http\Env\Request $request = NULL<br>
+A request instance which overrides the environments default request.</li>
+<li>protected string $contentType = NULL<br>
+The response's MIME content type.</li>
+<li>protected string $contentDisposition = NULL<br>
+The response's MIME content disposition.</li>
+<li>protected int $contentEncoding = NULL<br>
+See http\Env\Response::CONTENT_ENCODING_* constants.</li>
+<li>protected string $cacheControl = NULL<br>
+How the client should treat this response in regards to caching.</li>
+<li>protected string $etag = NULL<br>
+A custom ETag.</li>
+<li>protected int $lastModified = NULL<br>
+A "Last-Modified" time stamp.</li>
+<li>protected int $throttleDelay = NULL<br>
+Any throttling delay.</li>
+<li>protected int $throttleChunk = NULL<br>
+The chunk to send every $throttleDelay seconds.</li>
+<li>protected array $cookies = NULL<br>
+The response's cookies.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Env/Response/__construct">Response::__construct</a></h3>
+		<p>Create a new env response message instance.</p>
+
+		<p>void http\Env\Response::__construct()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/__invoke">Response::__invoke</a></h3>
+		<p>Output buffer handler.</p>
+
+		<p>bool http\Response::__invoke(string $data[, int $ob_flags = 0])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/isCachedByEtag">Response::isCachedByEtag</a></h3>
+		<p>Manually test the header $header_name of the environment's request for a cache hit.</p>
+
+		<p>int http\Env\Response::isCachedByEtag([string $header_name = &quot;If-None-Match&quot;])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/isCachedByLastModified">Response::isCachedByLastModified</a></h3>
+		<p>Manually test the header $header_name of the environment's request for a cache hit.</p>
+
+		<p>int http\Env\Response::isCachedByLastModified([string $header_name = &quot;If-Modified-Since&quot;])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/send">Response::send</a></h3>
+		<p>Send the response through the SAPI or $stream.</p>
+
+		<p>bool http\Env\Response::send([resource $stream = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/setCacheControl">Response::setCacheControl</a></h3>
+		<p>Make suggestions to the client how it should cache the response.</p>
+
+		<p>http\Env\Response http\Env\Response::setCacheControl(string $cache_control)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/setContentDisposition">Response::setContentDisposition</a></h3>
+		<p>Set the reponse's content disposition parameters.</p>
+
+		<p>http\Env\Response http\Env\Response::setContentDisposition(array $disposition_params)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/setContentEncoding">Response::setContentEncoding</a></h3>
+		<p>Enable support for "Accept-Encoding" requests with deflate or gzip.</p>
+
+		<p>http\Env\Response http\Env\Response::setContentEncoding(int $content_encoding)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/setContentType">Response::setContentType</a></h3>
+		<p>Set the MIME content type of the response.</p>
+
+		<p>http\Env\Response http\Env\Response::setContentType(string $content_type)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/setCookie">Response::setCookie</a></h3>
+		<p>Add cookies to the response to send.</p>
+
+		<p>http\Env\Response http\Env\Response::setCookie(mixed $cookie)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/setEnvRequest">Response::setEnvRequest</a></h3>
+		<p>Override the environment's request.</p>
+
+		<p>http\Env\Response http\Env\Response::setEnvRequest(http\Message $env_request)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/setEtag">Response::setEtag</a></h3>
+		<p>Set a custom ETag.</p>
+
+		<p>http\Env\Response http\Env\Response::setEtag(string $etag)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/setLastModified">Response::setLastModified</a></h3>
+		<p>Set a custom last modified time stamp.</p>
+
+		<p>http\Env\Response http\Env\Response::setLastModified(int $last_modified)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Response/setThrottleRate">Response::setThrottleRate</a></h3>
+		<p>Enable throttling.</p>
+
+		<p>http\Env\Response http\Env\Response::setThrottleRate(int $chunk_size[, float $delay = 1])</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Env/Response';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

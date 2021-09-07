@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							★ Asynchronous Usage -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Connection/: Asynchronous Usage">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Connection/: Asynchronous Usage.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Connection">
+							Connection
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Connection/: Asynchronous Usage">★ Asynchronous Usage</a></strong>
+
+							
+																																
+						</ul>
+																													
+						<li>&ldsh; <a href="./pq/Connection/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/: Executing Queries">★ Executing Queries</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/: General Usage">★ General Usage</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/__construct">Connection::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/declare">Connection::declare</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/declareAsync">Connection::declareAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/escapeBytea">Connection::escapeBytea</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/exec">Connection::exec</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/execAsync">Connection::execAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/execParams">Connection::execParams</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/execParamsAsync">Connection::execParamsAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/flush">Connection::flush</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/getResult">Connection::getResult</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/listen">Connection::listen</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/listenAsync">Connection::listenAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/notify">Connection::notify</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/notifyAsync">Connection::notifyAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/off">Connection::off</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/on">Connection::on</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/poll">Connection::poll</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/prepare">Connection::prepare</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/prepareAsync">Connection::prepareAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/quote">Connection::quote</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/quoteName">Connection::quoteName</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/reset">Connection::reset</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/resetAsync">Connection::resetAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/setConverter">Connection::setConverter</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/startTransaction">Connection::startTransaction</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/startTransactionAsync">Connection::startTransactionAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/trace">Connection::trace</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unescapeBytea">Connection::unescapeBytea</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unlisten">Connection::unlisten</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unlistenAsync">Connection::unlistenAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unsetConverter">Connection::unsetConverter</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="pq\Connection:.Asynchronous.Usage">pq\Connection: Asynchronous Usage</h1>
+
+<p>Whenever you start an asynchronous operation, you will have to probe pq\Connection::poll() to determine the current status of the operation.</p>
+
+<p>You can then use the <strong><em>public readonly</em></strong> property pq\Connection::$socket with <code>stream_select()</code> to wait for read/write-readiness.</p>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>
+  You cannot use the connection for anything else while an asynchronous operation is active.</p>
+</blockquote>
+
+<h2 id="Connect.or.reset.asynchronously:">Connect or reset asynchronously:</h2>
+
+<p>First, you can establish or reset a connection asynchronously.</p>
+
+<h3 id="Start.asynchronous.connect:">Start asynchronous connect:</h3>
+
+<pre><code>&lt;?php
+
+$c = new pq\Connection(null, pq\Connection::ASYNC);
+
+?&gt;
+</code></pre>
+
+<h3 id="Start.asynchronous.reset:">Start asynchronous reset:</h3>
+
+<pre><code>&lt;?php
+
+$c-&gt;resetAsync();
+
+?&gt;
+</code></pre>
+
+<h3 id="Complete.asynchronous.operation:">Complete asynchronous operation:</h3>
+
+<p>Keep in mind that you have to test for write-readiness once <em>before</em> starting the polling loop on connect/reset.</p>
+
+<pre><code>&lt;?php
+
+// wait until the stream becomes writable
+$w = array($c-&gt;socket);
+$r = $e = null;
+
+if (stream_select($r, $w, $e, null)) {
+
+    // loop until the connection is established
+    while (true) {
+
+        switch ($c-&gt;poll()) {
+
+            case pq\Connection::POLLING_READING:
+            // we should wait for the stream to be read-ready
+            $r = array($c-&gt;socket);
+            stream_select($r, $w, $e, NULL);
+            break;
+
+            case pq\Connection::POLLING_WRITING:
+                // we should wait for the stream to be write-ready
+                $w = array($c-&gt;socket);
+                $r = $e = null;
+                stream_select($r, $w, $e, null);
+                break;
+
+            case pq\Connection::POLLING_FAILED:
+                printf("Connection failed: %s\n", $c-&gt;errorMessage);
+                break 2;
+
+            case pq\Connection::POLLING_OK:
+                printf("Connection completed\n");
+                break 2;
+        }
+    }   
+}
+
+?&gt;
+</code></pre>
+
+<p>If you use an appropriate timeout in the <code>stream_select()</code> call and do something else at the end of the while loop, you probably got the idea...</p>
+
+<h2 id="Execute.queries.asynchronously:">Execute queries asynchronously:</h2>
+
+<pre><code>&lt;?php
+
+$c = new pq\Connection;
+$c-&gt;execAsync("SELECT 1+2+3; SELECT 2,3,4", function ($res) {
+  var_dump($res);
+});
+
+?&gt;
+</code></pre>
+
+<p>The body of the while loop looks slightly different, when executing queries asynchronously, because you only have to wait for read-readiness.</p>
+
+<p>You can use the <strong><em>public readonly</em></strong> property pq\Connection::$busy to test if a call to pq\Connection::getResult() would block, and if so wait for read-readiness and then call pq\Connection::poll().</p>
+
+<pre><code>&lt;?php
+
+do {
+  while ($c-&gt;busy) {
+    $r = array($c-&gt;socket);
+    $w = $e = null;
+    if (stream_select($r, $w, $e, null)) {
+      $c-&gt;poll();
+    }
+  }
+} while ($c-&gt;getResult());
+
+?&gt;
+</code></pre>
+
+<p>If pq\Connection::getResult() returns NULL, there's nothing more in the pipeline.</p>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Connection/: Asynchronous Usage';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

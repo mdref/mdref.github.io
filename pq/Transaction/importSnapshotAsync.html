@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Transaction::importSnapshotAsync -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Transaction/importSnapshotAsync">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Transaction/importSnapshotAsync.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Transaction">
+							Transaction
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Transaction/importSnapshotAsync">Transaction::importSnapshotAsync</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/__construct">Transaction::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/commit">Transaction::commit</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/commitAsync">Transaction::commitAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/createLOB">Transaction::createLOB</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/exportLOB">Transaction::exportLOB</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/exportSnapshot">Transaction::exportSnapshot</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/exportSnapshotAsync">Transaction::exportSnapshotAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/importLOB">Transaction::importLOB</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/importSnapshot">Transaction::importSnapshot</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Transaction/openLOB">Transaction::openLOB</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/rollback">Transaction::rollback</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/rollbackAsync">Transaction::rollbackAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/savepoint">Transaction::savepoint</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/savepointAsync">Transaction::savepointAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction/unlinkLOB">Transaction::unlinkLOB</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="void.pq\Transaction::importSnapshotAsync(string.$snapshot_id)">void pq\Transaction::importSnapshotAsync(string $snapshot_id)</h1>
+
+<p>[Asynchronously](pq/Connection/: Asynchronous Usage) import a snapshot from another transaction to synchronize with.
+See pq\Transaction::importSnapshot().</p>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+    The transaction must have an isolation level of at least pq\Transaction::REPEATABLE_READ.</p>
+</blockquote>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>string $snapshot_id<br>
+The snapshot identifier obtained by exporting a snapshot from a transaction.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>pq\Exception\InvalidArgumentException</li>
+<li>pq\Exception\BadMethodCallException</li>
+<li>pq\Exception\RuntimeException</li>
+</ul>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Transaction/importSnapshotAsync';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

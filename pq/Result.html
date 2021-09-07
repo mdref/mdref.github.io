@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Result -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Result">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Result.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Result">Result</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/: Changelog">★ Changelog</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/: Fetching Results">★ Fetching Results</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/bind">Result::bind</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/count">Result::count</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/desc">Result::desc</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/fetchAll">Result::fetchAll</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/fetchAllCols">Result::fetchAllCols</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/fetchBound">Result::fetchBound</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/fetchCol">Result::fetchCol</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/fetchRow">Result::fetchRow</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result/map">Result::map</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/COPY">COPY</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cancel">Cancel</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection">Connection</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Converter">Converter</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cursor">Cursor</a></li>
+																			
+						<li>&ldsh; <a href="./pq/DateTime">DateTime</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Exception">Exception</a></li>
+																			
+						<li>&ldsh; <a href="./pq/LOB">LOB</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Statement">Statement</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction">Transaction</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Types">Types</a></li>
+																																																										
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.pq\Result.implements.Traversable,.Countable">class pq\Result implements Traversable, Countable</h1>
+
+<p>A query result.</p>
+
+<p>See [Fetching Results](pq/Result/: Fetching Results) for a general overview.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<h3 id="Status.values:">Status values:</h3>
+
+<ul>
+<li>EMPTY_QUERY<br>
+The query sent to the server was empty.</li>
+<li>COMMAND_OK<br>
+The query did not generate a result set and completed successfully.</li>
+<li>TUPLES_OK<br>
+The query successfully generated a result set.</li>
+<li>SINGLE_TUPLE<br>
+The result contains a single row of the result set when using pq\Connection::$unbuffered.</li>
+<li>COPY_OUT<br>
+COPY data can be received from the server.</li>
+<li>COPY_IN<br>
+COPY data can be sent to the server.</li>
+<li>COPY_BOTH<br>
+COPY in/out data transfer in progress.</li>
+<li>BAD_RESPONSE<br>
+The server sent a bad response.</li>
+<li>NONFATAL_ERROR<br>
+A nonfatal error (notice or warning) occurred.</li>
+<li>FATAL_ERROR<br>
+A fatal error occurred.</li>
+</ul>
+
+<h3 id="Fetch.types:">Fetch types:</h3>
+
+<ul>
+<li>FETCH_ARRAY<br>
+Fetch rows numerically indexed, where the index start with 0.</li>
+<li>FETCH_ASSOC<br>
+Fetch rows associatively indexed by column name.</li>
+<li>FETCH_OBJECT<br>
+Fetch rows as stdClass instance, where the column names are the property names.</li>
+</ul>
+
+<h3 id="Conversion.bits:">Conversion bits:</h3>
+
+<ul>
+<li>CONV_BOOL<br>
+Automatically convert 'f' and 't' to FALSE and TRUE and vice versa.</li>
+<li>CONV_INT<br>
+Automatically convert integral strings to either int if it fits into maximum integer size or else to float and vice versa.</li>
+<li>CONV_FLOAT<br>
+Automatically convert floating point numbers.</li>
+<li>CONV_SCALAR<br>
+Do all scalar conversions listed above.</li>
+<li>CONV_ARRAY<br>
+Automatically convert arrays.</li>
+<li>CONV_DATETIME<br>
+Automatically convert date strings to pq\DateTime and vice versa.</li>
+<li>CONV_JSON<br>
+Automatically convert JSON.</li>
+<li>CONV_ALL<br>
+Do all of the above.</li>
+</ul>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>public (readonly) int $status<br>
+A <a href="pq/Result#Status.values:">status constant</a>.</li>
+<li>public (readonly) string $statusMessage<br>
+The accompanying status message.</li>
+<li>public (readonly) string $errorMessage<br>
+Any error message if $status indicates an error.</li>
+<li>public (readonly) int $numRows<br>
+The number of rows in the result set.</li>
+<li>public (readonly) int $numCols<br>
+The number of fields in a single tuple of the result set.</li>
+<li>public (readonly) int $affectedRows<br>
+The number of rows affected by a statement.</li>
+<li>public (readonly) array $diag<br>
+Error details. See <a href="https://www.postgresql.org/docs/current/static/libpq-exec.html#LIBPQ-PQRESULTERRORFIELD">PQresultErrorField</a> docs.</li>
+<li>public int $fetchType = pq\Result::FETCH_ARRAY<br>
+The <a href="pq/Result#Fetch.types:">type of return value</a> the fetch methods should return when no fetch type argument was given. Defaults to pq\Connection::$defaultFetchType.</li>
+<li>public int $autoConvert = pq\Result::CONV_ALL<br>
+What <a href="pq/Result#Conversion.bits:">type of conversions</a> to perform automatically.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq/Result/bind">Result::bind</a></h3>
+		<p>Bind a variable to a result column.</p>
+
+		<p>bool pq\Result::bind(mixed $col, mixed &amp;$var)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Result/count">Result::count</a></h3>
+		<p>Count number of rows in this result set.</p>
+
+		<p>int pq\Result::count()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Result/desc">Result::desc</a></h3>
+		<p>Describe a prepared statement.</p>
+
+		<p>array pq\Result::desc()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Result/fetchAll">Result::fetchAll</a></h3>
+		<p>Fetch all rows at once.</p>
+
+		<p>array pq\Result::fetchAll([int $fetch_type = pq\Result::$fetchType])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Result/fetchAllCols">Result::fetchAllCols</a></h3>
+		<p>Fetch all rows of a single column.</p>
+
+		<p>array pq\Result::fetchAllCols([int $col = 0])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Result/fetchBound">Result::fetchBound</a></h3>
+		<p>Iteratively fetch a row into bound variables.</p>
+
+		<p>array pq\Result::fetchBound()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Result/fetchCol">Result::fetchCol</a></h3>
+		<p>Iteratively fetch a single column.</p>
+
+		<p>bool pq\Result::fetchCol(mixed &amp;$ref[, mixed $col = 0])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Result/fetchRow">Result::fetchRow</a></h3>
+		<p>Iteratively fetch a row.</p>
+
+		<p>mixed pq\Result::fetchRow([int $fetch_type = pq\Result::$fetchType])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Result/map">Result::map</a></h3>
+		<p>Fetch the complete result set as a simple map, a <em>multi dimensional array</em>, each dimension indexed by a column.</p>
+
+		<p>array pq\Result::map([mixed $keys = 0[, mixed $vals = NULL[, int $fetch_type = pq\Result::$fetchType]]])</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Result';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

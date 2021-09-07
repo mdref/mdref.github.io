@@ -1,0 +1,334 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Transaction -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Transaction">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Transaction.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Transaction">Transaction</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/__construct">Transaction::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/commit">Transaction::commit</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/commitAsync">Transaction::commitAsync</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/createLOB">Transaction::createLOB</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/exportLOB">Transaction::exportLOB</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/exportSnapshot">Transaction::exportSnapshot</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/exportSnapshotAsync">Transaction::exportSnapshotAsync</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/importLOB">Transaction::importLOB</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/importSnapshot">Transaction::importSnapshot</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/importSnapshotAsync">Transaction::importSnapshotAsync</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/openLOB">Transaction::openLOB</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/rollback">Transaction::rollback</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/rollbackAsync">Transaction::rollbackAsync</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/savepoint">Transaction::savepoint</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/savepointAsync">Transaction::savepointAsync</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction/unlinkLOB">Transaction::unlinkLOB</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/COPY">COPY</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cancel">Cancel</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection">Connection</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Converter">Converter</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cursor">Cursor</a></li>
+																			
+						<li>&ldsh; <a href="./pq/DateTime">DateTime</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Exception">Exception</a></li>
+																			
+						<li>&ldsh; <a href="./pq/LOB">LOB</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result">Result</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement">Statement</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Types">Types</a></li>
+																																																										
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.pq\Transaction">class pq\Transaction</h1>
+
+<p>A database transaction.</p>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+    Transactional properties like pq\Transaction::$isolation, pq\Transaction::$readonly and pq\Transaction::$deferrable can be changed after the transaction begun and the first query has been executed. Doing this will lead to appropriate <code>SET TRANSACTION</code> queries.</p>
+</blockquote>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>READ_COMMITTED<br>
+Transaction isolation level where only rows committed before the transaction began can be seen.</li>
+<li>REPEATABLE_READ<br>
+Transaction isolation level where only rows committed before the first query was executed in this transaction.</li>
+<li>SERIALIZABLE<br>
+Transaction isolation level that guarantees serializable repeatability which might lead to serialization_failure on high concurrency.</li>
+</ul>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>public (readonly) pq\Connection $connection<br>
+The connection the transaction was started on.</li>
+<li>public int $isolation = pq\Transaction::READ_COMMITTED<br>
+The transaction isolation level.</li>
+<li>public bool $readonly = FALSE<br>
+Whether this transaction performs read only queries.</li>
+<li>public bool $deferrable = FALSE<br>
+Whether the transaction is deferrable. See pq\Connection::startTransaction().</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq/Transaction/__construct">Transaction::__construct</a></h3>
+		<p>Start a transaction.</p>
+
+		<p>void pq\Transaction::__construct(pq\Connection $conn[, bool $async = FALSE[, int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/commit">Transaction::commit</a></h3>
+		<p>Commit the transaction or release the previous savepoint.</p>
+
+		<p>void pq\Transaction::commit()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/commitAsync">Transaction::commitAsync</a></h3>
+		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) commit the transaction or release the previous savepoint.</p>
+
+		<p>void pq\Transaction::commitAsync()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/createLOB">Transaction::createLOB</a></h3>
+		<p>Create a new <em>large object</em> and open it.</p>
+
+		<p>pq\LOB pq\Transaction::createLOB([int $mode = pq\LOB::RW])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/exportLOB">Transaction::exportLOB</a></h3>
+		<p>Export a <em>large object</em> to a local file.</p>
+
+		<p>void pq\Transaction::exportLOB(int $oid, string $path)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/exportSnapshot">Transaction::exportSnapshot</a></h3>
+		<p>Export a snapshot for transaction synchronization.</p>
+
+		<p>string pq\Transaction::exportSnapshot()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/exportSnapshotAsync">Transaction::exportSnapshotAsync</a></h3>
+		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) export a snapshot for transaction synchronization.</p>
+
+		<p>void pq\Transaction::exportSnapshotAsync()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/importLOB">Transaction::importLOB</a></h3>
+		<p>Import a local file into a <em>large object</em>.</p>
+
+		<p>int pq\Transaction::importLOB(string $local_path[, int $oid = pq\LOB::INVALID_OID)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/importSnapshot">Transaction::importSnapshot</a></h3>
+		<p>Import a snapshot from another transaction to synchronize with.</p>
+
+		<p>void pq\Transaction::importSnapshot(string $snapshot_id)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/importSnapshotAsync">Transaction::importSnapshotAsync</a></h3>
+		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) import a snapshot from another transaction to synchronize with.</p>
+
+		<p>void pq\Transaction::importSnapshotAsync(string $snapshot_id)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/openLOB">Transaction::openLOB</a></h3>
+		<p>Open a <em>large object</em>.</p>
+
+		<p>pq\LOB pq\Transaction::openLOB(int $oid[, int $mode = pq\LOB::RW])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/rollback">Transaction::rollback</a></h3>
+		<p>Rollback the transaction or to the previous savepoint within this transaction.</p>
+
+		<p>void pq\Transaction::rollback()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/rollbackAsync">Transaction::rollbackAsync</a></h3>
+		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) rollback the transaction or to the previous savepoint within this transaction.</p>
+
+		<p>void pq\Transaction::rollbackAsync()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/savepoint">Transaction::savepoint</a></h3>
+		<p>Create a <code>SAVEPOINT</code> within this transaction.</p>
+
+		<p>void pq\Transaction::savepoint()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/savepointAsync">Transaction::savepointAsync</a></h3>
+		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) create a <code>SAVEPOINT</code> within this transaction.</p>
+
+		<p>void pq\Transaction::savepointAsync()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction/unlinkLOB">Transaction::unlinkLOB</a></h3>
+		<p>Unlink a <em>large object</em>.</p>
+
+		<p>void pq\Transaction::unlinkLOB(int $oid)</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Transaction';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

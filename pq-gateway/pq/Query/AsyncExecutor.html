@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							AsyncExecutor -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Query/AsyncExecutor">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq-gateway/edit/master/pq-gateway/pq/Query/AsyncExecutor.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq-gateway">
+							pq-gateway
+						</a>
+						<ul>
+							<li>
+																												
+					&uarr; <a href="./pq-gateway/pq/Query">
+							Query
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq-gateway/pq/Query/AsyncExecutor">AsyncExecutor</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/AsyncExecutor/execute">AsyncExecutor::execute</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/AsyncExecutor/setCallbacks">AsyncExecutor::setCallbacks</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																													
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Executor">Executor</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/ExecutorInterface">ExecutorInterface</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Expr">Expr</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Expressible">Expressible</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/ExpressibleInterface">ExpressibleInterface</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Writer">Writer</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/WriterInterface">WriterInterface</a></li>
+																																																																																																							
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.pq\Query\AsyncExecutor.extends.pq\Query\Executor">class pq\Query\AsyncExecutor extends pq\Query\Executor</h1>
+
+<p>An asynchronous query executor implementation.
+See pq\Query\Executor for inherited methods and properties.</p>
+
+<h2 id="Example.with.[React/Promise](https://github.com/reactphp/promise)">Example with <a href="https://github.com/reactphp/promise">React/Promise</a></h2>
+
+<pre><code>&lt;?php
+
+use pq\Connection, pq\Result;
+use pq\Query\AsyncExecutor, pq\Query\Writer;
+
+use React\Promise\Deferred;
+
+$conn = new Connection;
+$exec = new AsyncExecutor($conn);
+$exec-&gt;setCallbacks(
+# init context
+function() {
+    return new Deferred;
+},
+# done
+function(Deferred $context, $result) {
+    $context-&gt;resolve($result);
+},
+# then
+function(Deferred $context, callable $cb) {
+    return $context-&gt;promise()-&gt;then($cb);
+});
+
+# a contrived query
+$query = new Writer("SELECT \$1::int, \$2::int", [1, 2]);
+$exec-&gt;execute($query, function(Result $result) {
+    var_dump($result-&gt;fetchAll());
+});
+
+# this call blocks; see pq\Connection::getResult() etc.
+$conn-&gt;getResult();
+
+?&gt;
+</code></pre>
+
+<h2 id="Example.with.[Amphp/Amp](https://github.com/amphp/amp)">Example with <a href="https://github.com/amphp/amp">Amphp/Amp</a></h2>
+
+<pre><code>&lt;?php
+
+use pq\Connection, pq\Result;
+use pq\Query\AsyncExecutor, pq\Query\Writer;
+
+use Amphp\Deferred;
+
+$conn = new Connection;
+$exec = new AsyncExecutor($conn);
+$exec-&gt;setCallbacks(
+# init context
+function() {
+    return new Deferred;
+},
+# done
+function(Deferred $context, $result) {
+    $context-&gt;succeed($result);
+},
+# then
+function(Deferred $context, callable $cb) {
+    return $context-&gt;promise()-&gt;when(function($error, $result) use ($cb) {
+        $cb($result);
+    });
+});
+
+# a contrived query
+$query = new Writer("SELECT \$1::int, \$2::int", [1, 2]);
+$exec-&gt;execute($query, function(Result $result) {
+    var_dump($result-&gt;fetchAll());
+});
+
+# this call blocks; see pq\Connection::getResult() etc.
+$conn-&gt;getResult();
+
+?&gt;
+</code></pre>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/AsyncExecutor/execute">AsyncExecutor::execute</a></h3>
+		<p>Execute the query asynchronously and let the callback process the result on resolve.</p>
+
+		<p>Promise pq\Query\AsyncExecutor::execute(pq\Query\WriterInterface $query, callable $callback)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/AsyncExecutor/setCallbacks">AsyncExecutor::setCallbacks</a></h3>
+		<p>Set the callbacks the asynchronous executor should use to resolve the result.</p>
+
+		<p>void pq\Query\AsyncExecutor::setCallbacks(callable $init, callable $done, callable $then)</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq-gateway/pq/Query/AsyncExecutor';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

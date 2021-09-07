@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							QueryString::__construct -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/QueryString/__construct">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/QueryString/__construct.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/QueryString">
+							QueryString
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/QueryString/__construct">QueryString::__construct</a></strong>
+
+							
+																																
+						</ul>
+																													
+						<li>&ldsh; <a href="./http/QueryString/__toString">QueryString::__toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/get">QueryString::get</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/getArray">QueryString::getArray</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/getBool">QueryString::getBool</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/getFloat">QueryString::getFloat</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/getGlobalInstance">QueryString::getGlobalInstance</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/getInt">QueryString::getInt</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/getIterator">QueryString::getIterator</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/getObject">QueryString::getObject</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/getString">QueryString::getString</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/mod">QueryString::mod</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/offsetExists">QueryString::offsetExists</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/offsetGet">QueryString::offsetGet</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/offsetSet">QueryString::offsetSet</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/offsetUnset">QueryString::offsetUnset</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/serialize">QueryString::serialize</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/set">QueryString::set</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/toArray">QueryString::toArray</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/toString">QueryString::toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/unserialize">QueryString::unserialize</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString/xlate">QueryString::xlate</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="void.http\QueryString::__construct([mixed.$params.=.NULL])">void http\QueryString::__construct([mixed $params = NULL])</h1>
+
+<p>Create an independent querystring instance.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>Optional mixed $params = NULL<br>
+The query parameters to use or parse.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>http\Exception\BadQueryStringException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>$qs = new http\QueryString("foo=bar&amp;a[]=1&amp;a[]=2");
+print_r($qs-&gt;toArray());
+</code></pre>
+
+<p>Would yield:</p>
+
+<pre><code>Array
+(
+    [foo] =&gt; bar
+    [a] =&gt; Array
+        (
+            [0] =&gt; 1
+            [1] =&gt; 2
+        )
+
+)
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/QueryString/__construct';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

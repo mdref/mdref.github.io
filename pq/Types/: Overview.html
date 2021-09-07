@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							★ Overview -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Types/: Overview">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Types/: Overview.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Types">
+							Types
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Types/: Overview">★ Overview</a></strong>
+
+							
+																																
+						</ul>
+																													
+						<li>&ldsh; <a href="./pq/Types/__construct">Types::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Types/refresh">Types::refresh</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="pq\Types.AKA.pg_type">pq\Types AKA pg_type</h1>
+
+<p>The pq\Types class provides an easy interface to access information stored in PostgreSQL's pg_type relation, f.e. type OIDs and names.</p>
+
+<p>The first argument to the pq\Types constructor must be an instance of pq\Connection.
+An optional array of namespace names is expected as second argument, where 'public' and 'pg_catalog' are queried by default if no namespaces are specified.</p>
+
+<pre><code>&lt;?php
+
+$types = new pq\Types(new pq\Connection);
+
+?&gt;
+</code></pre>
+
+<p>The types are standard objects indexed by OID and by name and accessible by array key/index:</p>
+
+<pre><code>&lt;?php
+
+$text = $types["text"];
+$text = $types[25];
+
+printf("TEXT type (oid=%d, name=%s)\n", $text-&gt;oid, $text-&gt;typname);
+
+?&gt;
+</code></pre>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+    The pg_type relation fields have a <code>typ</code> prefix.</p>
+</blockquote>
+
+<h2 id="Usage.when.[executing.queries](pq/Connection/:.Executing.Queries)">Usage when [executing queries](pq/Connection/: Executing Queries)</h2>
+
+<pre><code>&lt;?php
+
+$connection = new pq\Connection;
+$types = new pq\Types($connection);
+$result = $connection-&gt;execParams(
+    "SELECT \$1 + \$2", 
+    array(10, 20), 
+    array($types["int4"]-&gt;oid, $types["int4"]-&gt;oid));
+
+?&gt;
+</code></pre>
+
+<p>You can pass a type OID for each parameter of a pepared statement.  The PostgreSQL server will try to infer a type by context for any parameters for which no type OID was specified.</p>
+
+<h2 id="Static.types">Static types</h2>
+
+<p>pq\Types has class constants for the standard types' OIDs already defined.</p>
+
+<pre><code>&lt;?php
+$connection = new pq\Connection;
+$result = $connection-&gt;execParams("SELECT \$1 + \$2", 
+    array(10, 20), 
+    array(pq\Types::INT4, pq\Types::INT4));
+</code></pre>
+
+<h3 id="pq\Datetime">pq\Datetime</h3>
+
+<p>Date/time values will automatically be converted to pq\Datetime objects.</p>
+
+<pre><code>&lt;?php
+
+$conn = new pq\Connection();
+$data = $conn-&gt;exec("
+    SELECT 
+         NOW()::date
+        ,NOW()::abstime
+        ,NOW()::timestamp
+        ,NOW()::timestamptz
+")-&gt;fetchRow(pq\Result::FETCH_ARRAY);
+
+foreach ($data as $datetime) {
+    printf("%-40s (%s)\n", $datetime, $datetime-&gt;format);
+}
+
+?&gt;
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>2013-09-20                               (Y-m-d)
+2013-09-20 14:34:38                      (Y-m-d H:i:s)
+2013-09-20 14:34:38.494886               (Y-m-d H:i:s.u)
+2013-09-20 14:34:38.494886+0200          (Y-m-d H:i:s.uO)
+</code></pre>
+
+<h2 id="Custom.converters">Custom converters</h2>
+
+<p>ext-pq provides the interface pq\Converter which one can implement to perform custom type conversions in a transparent manner. Consider the following naive example converting <code>HSTORE</code> columns on the fly:</p>
+
+<pre><code>&lt;?php
+
+class Hstore implements pq\Converter
+{
+    private $oid;
+
+    function __construct(pq\Types $types) {
+        $this-&gt;oid = $types["hstore"]-&gt;oid;
+    }
+
+    function convertTypes() {
+        return [$this-&gt;oid];
+    }
+
+    function convertFromString($string, $type) {
+        return eval("return [$string];");
+    }
+
+    function convertToString($data, $type) {
+        $string = "";
+        foreach ($data as $k =&gt; $v) {
+            $string .= "\"".addslashes($k)."\"=&gt;";
+            if (isset($v)) {
+                $string .= "\"".addslashes($v)."\",";
+            } else {
+                $string .= "NULL,";
+            }
+        }
+        return $string;
+    }
+}
+
+$conn = new pq\Connection();
+$type = new pq\Types($conn);
+$conv = new Hstore($type);
+$conn-&gt;setConverter($conv);
+$conn-&gt;exec("SELECT '\"foo\"=&gt;\"bar\"'::hstore hs")-&gt;fetchCol(0, $data);
+
+print_r($data);
+
+?&gt;
+</code></pre>
+
+<p>Output would be the following:</p>
+
+<pre><code>Array
+(
+    [foo] =&gt; bar
+)
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Types/: Overview';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

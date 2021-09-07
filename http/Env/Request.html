@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Request -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Env/Request">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Env/Request.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Env">
+							Env
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Env/Request">Request</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Request/: Changelog">★ Changelog</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Request/__construct">Request::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Request/getCookie">Request::getCookie</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Request/getFiles">Request::getFiles</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Request/getForm">Request::getForm</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Env/Request/getQuery">Request::getQuery</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Env/: Changelog">★ Changelog</a></li>
+																													
+						<li>&ldsh; <a href="./http/Env/Response">Response</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Url">Url</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getRequestBody">Env::getRequestBody</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getRequestHeader">Env::getRequestHeader</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getResponseCode">Env::getResponseCode</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getResponseHeader">Env::getResponseHeader</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getResponseStatusForAllCodes">Env::getResponseStatusForAllCodes</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/getResponseStatusForCode">Env::getResponseStatusForCode</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/negotiate">Env::negotiate</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/negotiateCharset">Env::negotiateCharset</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/negotiateContentType">Env::negotiateContentType</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/negotiateEncoding">Env::negotiateEncoding</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/negotiateLanguage">Env::negotiateLanguage</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/setResponseCode">Env::setResponseCode</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/setResponseHeader">Env::setResponseHeader</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.http\Env\Request.extends.http\Message">class http\Env\Request extends http\Message</h1>
+
+<p>The http\Env\Request class' instances represent the server's current HTTP request.</p>
+
+<p>See http\Message for inherited members.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<p>None.</p>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>protected http\QueryString $query = NULL<br>
+The request's query parameters. ($_GET)</li>
+<li>protected http\QueryString $form = NULL<br>
+The request's form parameters. ($_POST)</li>
+<li>protected array $files = NULL<br>
+The request's form uploads. ($_FILES)</li>
+<li>protected array $cookie = NULL<br>
+The request's cookies. ($_COOKIE)</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Env/Request/__construct">Request::__construct</a></h3>
+		<p>Create an instance of the server's current HTTP request.</p>
+
+		<p>void http\Env\Request::__construct()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Request/getCookie">Request::getCookie</a></h3>
+		<p>Retrieve an URL query value ($_GET).</p>
+
+		<p>mixed http\Env\Request::getCookie([string $name = NULL[, mixed $type = NULL[, mixed $defval = NULL[, bool $delete = false]]]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Request/getFiles">Request::getFiles</a></h3>
+		<p>Retrieve the uploaded files list ($_FILES).</p>
+
+		<p>array http\Env\Request::getFiles()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Request/getForm">Request::getForm</a></h3>
+		<p>Retrieve a form value ($_POST).</p>
+
+		<p>mixed http\Env\Request::getForm([string $name = NULL[, mixed $type = NULL[, mixed $defval = NULL[, bool $delete = false]]]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Env/Request/getQuery">Request::getQuery</a></h3>
+		<p>Retrieve an URL query value ($_GET).</p>
+
+		<p>mixed http\Env\Request::getQuery([string $name = NULL[, mixed $type = NULL[, mixed $defval = NULL[, bool $delete = false]]]])</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Env/Request';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							QueryString -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/QueryString">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/QueryString.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/QueryString">QueryString</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/__construct">QueryString::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/__toString">QueryString::__toString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/get">QueryString::get</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/getArray">QueryString::getArray</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/getBool">QueryString::getBool</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/getFloat">QueryString::getFloat</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/getGlobalInstance">QueryString::getGlobalInstance</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/getInt">QueryString::getInt</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/getIterator">QueryString::getIterator</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/getObject">QueryString::getObject</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/getString">QueryString::getString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/mod">QueryString::mod</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/offsetExists">QueryString::offsetExists</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/offsetGet">QueryString::offsetGet</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/offsetSet">QueryString::offsetSet</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/offsetUnset">QueryString::offsetUnset</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/serialize">QueryString::serialize</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/set">QueryString::set</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/toArray">QueryString::toArray</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/toString">QueryString::toString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/unserialize">QueryString::unserialize</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/QueryString/xlate">QueryString::xlate</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client">Client</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie">Cookie</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding">Encoding</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env">Env</a></li>
+																			
+						<li>&ldsh; <a href="./http/Exception">Exception</a></li>
+																			
+						<li>&ldsh; <a href="./http/Header">Header</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message">Message</a></li>
+																			
+						<li>&ldsh; <a href="./http/Params">Params</a></li>
+																													
+						<li>&ldsh; <a href="./http/Url">Url</a></li>
+																																																										
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.http\QueryString.implements.Serializable,.ArrayAccess,.IteratorAggregate">class http\QueryString implements Serializable, ArrayAccess, IteratorAggregate</h1>
+
+<p>The http\QueryString class provides versatile facilities to retrieve, use and manipulate query strings and form data.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>TYPE_BOOL<br>
+Cast requested value to bool.</li>
+<li>TYPE_INT<br>
+Cast requested value to int.</li>
+<li>TYPE_FLOAT<br>
+Cast requested value to float.</li>
+<li>TYPE_STRING<br>
+Cast requested value to string.</li>
+<li>TYPE_ARRAY<br>
+Cast requested value to an array.</li>
+<li>TYPE_OBJECT<br>
+Cast requested value to an object.</li>
+</ul>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>private http\QueryString $instance = NULL<br>
+The global instance. See http\QueryString::getGlobalInstance().</li>
+<li>private array $queryArray = NULL<br>
+The data.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/QueryString/__construct">QueryString::__construct</a></h3>
+		<p>Create an independent querystring instance.</p>
+
+		<p>void http\QueryString::__construct([mixed $params = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/__toString">QueryString::__toString</a></h3>
+		<p>Get the string representation of the querystring (x-www-form-urlencoded).</p>
+
+		<p>string http\QueryString::__toString()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/get">QueryString::get</a></h3>
+		<p>Retrieve an querystring value.</p>
+
+		<p>mixed http\QueryString::get([string $name = NULL[, mixed $type = NULL[, mixed $defval = NULL[, bool $delete = false]]]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/getArray">QueryString::getArray</a></h3>
+		<p>Retrieve an array value with at offset $name.</p>
+
+		<p>array http\QueryString::getArray(string $name[, mixed $defval = NULL[, bool $delete = false]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/getBool">QueryString::getBool</a></h3>
+		<p>Retrieve a boolean value at offset $name.</p>
+
+		<p>bool http\QueryString::getBool(string $name[, mixed $defval = NULL[, bool $delete = false)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/getFloat">QueryString::getFloat</a></h3>
+		<p>Retrieve a float value at offset $name.</p>
+
+		<p>float http\QueryString::getFloat(string $name[, mixed $defval = NULL[, bool $delete = false)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/getGlobalInstance">QueryString::getGlobalInstance</a></h3>
+		<p>Retrieve the global querystring instance referencing $_GET.</p>
+
+		<p>static http\QueryString http\QueryString::getGlobalInstance()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/getInt">QueryString::getInt</a></h3>
+		<p>Retrieve a int value at offset $name.</p>
+
+		<p>int http\QueryString::getInt(string $name[, mixed $defval = NULL[, bool $delete = false)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/getIterator">QueryString::getIterator</a></h3>
+		<p>Implements IteratorAggregate.</p>
+
+		<p>Iterator http\QueryString::getIterator()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/getObject">QueryString::getObject</a></h3>
+		<p>Retrieve a object value with at offset $name.</p>
+
+		<p>object http\QueryString::getObject(string $name[, mixed $defval = NULL[, bool $delete = false)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/getString">QueryString::getString</a></h3>
+		<p>Retrieve a string value with at offset $name.</p>
+
+		<p>string http\QueryString::getString(string $name[, mixed $defval = NULL[, bool $delete = false)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/mod">QueryString::mod</a></h3>
+		<p>Set additional $params to a clone of this instance.</p>
+
+		<p>http\QueryString http\QueryString::mod(mixed $params = NULL)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/offsetExists">QueryString::offsetExists</a></h3>
+		<p>Implements ArrayAccess.</p>
+
+		<p>bool http\QueryString::offsetExists(string $name)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/offsetGet">QueryString::offsetGet</a></h3>
+		<p>Implements ArrayAccess.</p>
+
+		<p>mixed http\QueryString::offsetGet(string $name)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/offsetSet">QueryString::offsetSet</a></h3>
+		<p>Implements ArrayAccess.</p>
+
+		<p>void http\QueryString::offsetSet(string $name, mixed $data)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/offsetUnset">QueryString::offsetUnset</a></h3>
+		<p>Implements ArrayAccess.</p>
+
+		<p>void http\QueryString::offsetUnset(string $name)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/serialize">QueryString::serialize</a></h3>
+		<p>Implements Serializable.</p>
+
+		<p>string http\QueryString::serialize()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/set">QueryString::set</a></h3>
+		<p>Set additional querystring entries.</p>
+
+		<p>http\QueryString http\QueryString::set(mixed $params)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/toArray">QueryString::toArray</a></h3>
+		<p>Simply returns http\QueryString::$queryArray.</p>
+
+		<p>array http\QueryString::toArray()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/toString">QueryString::toString</a></h3>
+		<p>Get the string representation of the querystring (x-www-form-urlencoded).</p>
+
+		<p>string http\QueryString::toString()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/unserialize">QueryString::unserialize</a></h3>
+		<p>Implements Serializable.</p>
+
+		<p>void http\QueryString::unserialize(string $serialized)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/QueryString/xlate">QueryString::xlate</a></h3>
+		<p>Translate character encodings of the querystring with ext/iconv.</p>
+
+		<p>http\QueryString http\QueryString::xlate($from_enc, $to_enc)</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/QueryString';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Url -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Url">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Url.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Url">Url</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/Url/: Changelog">★ Changelog</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Url/__construct">Url::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Url/__toString">Url::__toString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Url/mod">Url::mod</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Url/toArray">Url::toArray</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Url/toString">Url::toString</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client">Client</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie">Cookie</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding">Encoding</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env">Env</a></li>
+																			
+						<li>&ldsh; <a href="./http/Exception">Exception</a></li>
+																			
+						<li>&ldsh; <a href="./http/Header">Header</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message">Message</a></li>
+																			
+						<li>&ldsh; <a href="./http/Params">Params</a></li>
+																			
+						<li>&ldsh; <a href="./http/QueryString">QueryString</a></li>
+																																																																				
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.http\Url">class http\Url</h1>
+
+<p>The http\Url class provides versatile means to parse, construct and manipulate URLs.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>REPLACE<br>
+Replace parts of the old URL with parts of the new.</li>
+<li>JOIN_PATH<br>
+Whether a relative path should be joined into the old path.</li>
+<li>JOIN_QUERY<br>
+Whether the querystrings should be joined.</li>
+<li>STRIP_USER<br>
+Strip the user information from the URL.</li>
+<li>STRIP_PASS<br>
+Strip the password from the URL.</li>
+<li>STRIP_AUTH<br>
+Strip user and password information from URL (same as STRIP_USER|STRIP_PASS).</li>
+<li>STRIP_PORT<br>
+Do not include the port.</li>
+<li>STRIP_PATH<br>
+Do not include the URL path.</li>
+<li>STRIP_QUERY<br>
+Do not include the URL querystring.</li>
+<li>STRIP_FRAGMENT<br>
+Strip the fragment (hash) from the URL.</li>
+<li>STRIP_ALL<br>
+Strip everything except scheme and host information.</li>
+<li>FROM_ENV<br>
+Import initial URL parts from the SAPI environment.</li>
+<li>SANITIZE_PATH<br>
+Whether to sanitize the URL path (consolidate double slashes, directory jumps etc.)</li>
+<li>PARSE_MBUTF8<br>
+Parse UTF-8 encoded multibyte sequences.</li>
+<li>PARSE_MBLOC<br>
+Parse locale encoded multibyte sequences (on systems with wide character support).</li>
+<li>PARSE_TOIDN<br>
+Parse and convert multibyte hostnames according to IDNA (with IDNA support).</li>
+<li>PARSE_TOIDN_2003<br>
+Explicitly request IDNA2003 implementation if available (libidn, idnkit or ICU).</li>
+<li>PARSE_TOIDN_2008<br>
+Explicitly request IDNA2008 implementation if available (libidn2, idnkit2 or ICU).</li>
+<li>PARSE_TOPCT<br>
+Percent encode multibyte sequences in the userinfo, path, query and fragment parts of the URL.</li>
+<li>IGNORE_ERRORS<br>
+Continue parsing when encountering errors.</li>
+<li>SILENT_ERRORS<br>
+Suppress errors/exceptions.</li>
+<li>STDFLAGS<br>
+Standard flags used by default internally for e.g. http\Message::setRequestUrl().
+Enables joining path and query, sanitizing path, multibyte/unicode, international domain names and transient percent encoding.</li>
+</ul>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>public string $scheme = NULL<br>
+The URL's scheme.</li>
+<li>public string $user = NULL<br>
+Authenticating user.</li>
+<li>public string $pass = NULL<br>
+Authentication password.</li>
+<li>public string $host = NULL<br>
+Hostname/domain.</li>
+<li>public string $port = NULL<br>
+Port.</li>
+<li>public string $path = NULL<br>
+URL path.</li>
+<li>public string $query = NULL<br>
+URL querystring.</li>
+<li>public string $fragment = NULL<br>
+URL fragment (hash).</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Url/__construct">Url::__construct</a></h3>
+		<p>Create an instance of an http\Url.</p>
+
+		<p>void http\Url::__construct([mixed $old_url = NULL[, mixed $new_url = NULL[, int $flags = 0]]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Url/__toString">Url::__toString</a></h3>
+		<p>String cast handler. Alias of http\Url::toString().</p>
+
+		<p>string http\Url::__toString()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Url/mod">Url::mod</a></h3>
+		<p>Clone this URL and apply $parts to the cloned URL.</p>
+
+		<p>http\Url http\Url::mod(mixed $parts[, int $flags = http\Url::JOIN_PATH|http\Url::JOIN_QUERY|http\Url::SANITIZE_PATH])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Url/toArray">Url::toArray</a></h3>
+		<p>Retrieve the URL parts as array.</p>
+
+		<p>array http\Url::toArray()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Url/toString">Url::toString</a></h3>
+		<p>Get the string prepresentation of the URL.</p>
+
+		<p>string http\Url::toString()</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Url';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

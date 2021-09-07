@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							COPY -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/COPY">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/COPY.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/COPY">COPY</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq/COPY/__construct">COPY::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/COPY/end">COPY::end</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/COPY/get">COPY::get</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/COPY/put">COPY::put</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																													
+						<li>&ldsh; <a href="./pq/Cancel">Cancel</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection">Connection</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Converter">Converter</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cursor">Cursor</a></li>
+																			
+						<li>&ldsh; <a href="./pq/DateTime">DateTime</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Exception">Exception</a></li>
+																			
+						<li>&ldsh; <a href="./pq/LOB">LOB</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result">Result</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement">Statement</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction">Transaction</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Types">Types</a></li>
+																																																										
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.pq\COPY">class pq\COPY</h1>
+
+<p>Fast import/export using COPY.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>FROM_STDIN<br>
+Start a COPY operation from STDIN to the PostgreSQL server.</li>
+<li>TO_STDOUT<br>
+Start a COPY operation from the server to STDOUT.</li>
+</ul>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>public (readonly) pq\Connection $connection<br>
+The connection to the PostgreSQL server.</li>
+<li>public (readonly) string $expression<br>
+The expression of the COPY statement used to start the operation.</li>
+<li>public (readonly) int $direction<br>
+The drection of the COPY operation (pq\COPY::FROM_STDIN or pq\COPY::TO_STDOUT).</li>
+<li>public (readonly) string $options<br>
+Any additional options used to start the COPY operation.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq/COPY/__construct">COPY::__construct</a></h3>
+		<p>Start a COPY operation.</p>
+
+		<p>void pq\COPY::__construct(pq\Connection $conn, string $expression, int $direction[, string $options = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/COPY/end">COPY::end</a></h3>
+		<p>End the COPY operation to the server during pq\Result::COPY_IN state.</p>
+
+		<p>void pq\COPY::end([string $error = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/COPY/get">COPY::get</a></h3>
+		<p>Receive data from the server during pq\Result::COPY_OUT state.</p>
+
+		<p>bool pq\COPY::get(string &amp;$data)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/COPY/put">COPY::put</a></h3>
+		<p>Send data to the server during pq\Result::COPY_IN state.</p>
+
+		<p>void pq\COPY::put(string $data)</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/COPY';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

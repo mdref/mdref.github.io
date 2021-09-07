@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Expressible -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Query/Expressible">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq-gateway/edit/master/pq-gateway/pq/Query/Expressible.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq-gateway">
+							pq-gateway
+						</a>
+						<ul>
+							<li>
+																												
+					&uarr; <a href="./pq-gateway/pq/Query">
+							Query
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq-gateway/pq/Query/Expressible">Expressible</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Expressible/__construct">Expressible::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Expressible/__toString">Expressible::__toString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Expressible/get">Expressible::get</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Expressible/isExpr">Expressible::isExpr</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Expressible/mod">Expressible::mod</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Query/Expressible/set">Expressible::set</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/AsyncExecutor">AsyncExecutor</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Executor">Executor</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/ExecutorInterface">ExecutorInterface</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Expr">Expr</a></li>
+																													
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/ExpressibleInterface">ExpressibleInterface</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/Writer">Writer</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Query/WriterInterface">WriterInterface</a></li>
+																																																																																																							
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.pq\Query\Expressible.implements.pq\Query\ExpressibleInterface">class pq\Query\Expressible implements pq\Query\ExpressibleInterface</h1>
+
+<p>An implementation to express column data changes.
+See pq\Query\Expressible::mod() for an example.</p>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>protected string $name<br>
+The name.</li>
+<li>protected mixed $data<br>
+The data.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Expressible/__construct">Expressible::__construct</a></h3>
+		<p>Create a new column data change expression.</p>
+
+		<p>void pq\Query\Expressible::__construct(string $name, mixed $data)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Expressible/__toString">Expressible::__toString</a></h3>
+		<p>Retrieve the contained value as string.</p>
+
+		<p>string pq\Query\Expressible::__toString()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Expressible/get">Expressible::get</a></h3>
+		<p>Retrieve the contained value.</p>
+
+		<p>mixed pq\Query\Expressible::get()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Expressible/isExpr">Expressible::isExpr</a></h3>
+		<p>Check whether the implementor already contains a expression, i.e. pq\Query\Expr.</p>
+
+		<p>bool pq\Query\Expressible::isExpr()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Expressible/mod">Expressible::mod</a></h3>
+		<p>Modify the contained data, turning it into an expression, i.e. pq\Query\Expr.</p>
+
+		<p>pq\Query\Expressible pq\Query\Expressible::mod(mixed $data[, string $op = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Query/Expressible/set">Expressible::set</a></h3>
+		<p>Set the contained data.</p>
+
+		<p>pq\Query\Expressible pq\Query\Expressible::set(mixed $data)</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq-gateway/pq/Query/Expressible';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

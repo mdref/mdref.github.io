@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Response::getCookies -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Client/Response/getCookies">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Client/Response/getCookies.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client">
+							Client
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client/Response">
+							Response
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Client/Response/getCookies">Response::getCookies</a></strong>
+
+							
+																																
+						</ul>
+																													
+						<li>&ldsh; <a href="./http/Client/Response/getTransferInfo">Response::getTransferInfo</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="mixed.http\Client\Response::getCookies([int.$flags.=.0[,.array.$allowed_extras.=.NULL]])">mixed http\Client\Response::getCookies([int $flags = 0[, array $allowed_extras = NULL]])</h1>
+
+<p>Extract response cookies.
+Parses any "Set-Cookie" response headers into an http\Cookie list. See http\Cookie::__construct().</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>Optional int $flags = 0<br>
+Cookie parser flags.</li>
+<li>Optional array $allowed_extras = NULL<br>
+List of keys treated as extras.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>array, list of http\Cookie instances.</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+$response = (new http\Client)
+    -&gt;enqueue(new http\Client\Request("GET", "http://php.net/"))
+    -&gt;send()
+    -&gt;getResponse();
+
+foreach ($response-&gt;getCookies() as $cookie) {
+    /* @var $cookie http\Cookie */
+    foreach ($cookie-&gt;getCookies() as $name =&gt; $value) {
+        printf("Got a cookie named '%s' with value '%s'\n\tdomain=%s\n\t  path=%s\n", 
+            $name, $value, $cookie-&gt;getDomain(), $cookie-&gt;getPath());
+    }
+}
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>Got a cookie named 'COUNTRY' with value 'USA,72.52.91.14'
+    domain=.php.net
+      path=/
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Client/Response/getCookies';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

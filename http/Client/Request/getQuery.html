@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Request::getQuery -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Client/Request/getQuery">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Client/Request/getQuery.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client">
+							Client
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client/Request">
+							Request
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Client/Request/getQuery">Request::getQuery</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client/Request/__construct">Request::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request/addQuery">Request::addQuery</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request/addSslOptions">Request::addSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request/getContentType">Request::getContentType</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request/getOptions">Request::getOptions</a></li>
+																													
+						<li>&ldsh; <a href="./http/Client/Request/getSslOptions">Request::getSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request/setContentType">Request::setContentType</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request/setOptions">Request::setOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request/setQuery">Request::setQuery</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request/setSslOptions">Request::setSslOptions</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="string.http\Client\Request::getQuery()">string http\Client\Request::getQuery()</h1>
+
+<p>Retrieve the currently set querystring.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<p>None.</p>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>string, the currently set querystring.</li>
+<li>NULL, if no querystring is set.</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+var_dump((new http\Client\Request)-&gt;getQuery());
+var_dump((new http\Client\Request("GET", "http://localhost/?foo"))-&gt;getQuery());
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>NULL
+string(3) "foo"
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Client/Request/getQuery';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

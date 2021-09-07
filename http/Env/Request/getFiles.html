@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Request::getFiles -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Env/Request/getFiles">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Env/Request/getFiles.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Env">
+							Env
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Env/Request">
+							Request
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Env/Request/getFiles">Request::getFiles</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Env/Request/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Request/__construct">Request::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Request/getCookie">Request::getCookie</a></li>
+																													
+						<li>&ldsh; <a href="./http/Env/Request/getForm">Request::getForm</a></li>
+																			
+						<li>&ldsh; <a href="./http/Env/Request/getQuery">Request::getQuery</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="array.http\Env\Request::getFiles()">array http\Env\Request::getFiles()</h1>
+
+<p>Retrieve the uploaded files list ($_FILES).</p>
+
+<h2 id="Params:">Params:</h2>
+
+<p>None.</p>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>array, the consolidated upload files array.</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<p>Here's an example how the original $_FILES array and the http\Env\Request's files array compare:</p>
+
+<pre><code>$r = new http\Env\Request;
+$f = array();
+
+foreach ($_FILES as $name =&gt; $data) {
+    foreach ((array) $data["tmp_name"] as $i =&gt; $file) {
+        $f[$name][$i] = array(
+            "file" =&gt; $file,
+            "name" =&gt; $data["name"][$i],
+            "size" =&gt; $data["size"][$i],
+            "type" =&gt; $data["type"][$i],
+            "error"=&gt; $data["error"][$i]
+        );
+    }
+}
+assert($f == $r-&gt;getFiles());
+</code></pre>
+
+<p>You can see that the second and third dimensions are swapped and <code>tmp_name</code> became <code>file</code>, e.g:</p>
+
+<pre><code>array(
+    "upload" =&gt; array(
+        array(
+            "file" =&gt; "/tmp/phpXXXXXX",
+            "name" =&gt; "picture.jpeg",
+            "size" =&gt; 12345,
+            "type" =&gt; "image/jpeg",
+            "error"=&gt; 0
+        )
+    )
+);
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Env/Request/getFiles';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

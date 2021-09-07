@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Cursor::fetch -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Cursor/fetch">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Cursor/fetch.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Cursor">
+							Cursor
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Cursor/fetch">Cursor::fetch</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/Cursor/__construct">Cursor::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cursor/close">Cursor::close</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cursor/closeAsync">Cursor::closeAsync</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Cursor/fetchAsync">Cursor::fetchAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cursor/move">Cursor::move</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cursor/moveAsync">Cursor::moveAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cursor/open">Cursor::open</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cursor/openAsync">Cursor::openAsync</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="pq\Result.pq\Cursor::fetch([string.$spec.=.&quot;1&quot;])">pq\Result pq\Cursor::fetch([string $spec = "1"])</h1>
+
+<p>Fetch rows from the cursor.
+See pq\Cursor::move().</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>Optional string $spec = "1"<br>
+What to fetch.</li>
+</ul>
+
+<h3 id="Fetch.argument:">Fetch argument:</h3>
+
+<p>FETCH and MOVE usually accepts arguments like the following, where <code>count</code> is the number of rows:</p>
+
+<ul>
+<li>NEXT</li>
+<li>PRIOR</li>
+<li>FIRST</li>
+<li>LAST</li>
+<li>ABSOLUTE <code>count</code></li>
+<li>RELATIVE <code>count</code></li>
+<li><code>count</code></li>
+<li>ALL</li>
+<li>FORWARD</li>
+<li>FORWARD <code>count</code></li>
+<li>FORWARD ALL</li>
+<li>BACKWARD</li>
+<li>BACKWARD <code>count</code></li>
+<li>BACKWARD ALL</li>
+</ul>
+
+<p>See the <a href="http://www.postgresql.org/docs/current/static/sql-fetch.html">official PostgreSQL documentation</a> for details.</p>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>pq\Result, the fetched row(s).</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>pq\Exception\InvalidArgumentException</li>
+<li>pq\Exception\BadMethodCallException</li>
+<li>pq\Exception\RuntimeException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+$c = new pq\Connection;
+$p = new pq\Cursor($c, "mycursor", pq\Cursor::WITH_HOLD,
+    "SELECT * FROM generate_series(0,29) s WHERE (s%2)=0");
+
+for ($r = $p-&gt;fetch(2); $r-&gt;numRows; $p-&gt;move(1), $r = $p-&gt;fetch(2)) {
+    foreach ($r as $row) {
+        foreach ($row as $col) {
+            echo "  $col";
+        }
+        echo "\n";
+    }
+}
+
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>0
+2
+6
+8
+12
+14
+18
+20
+24
+26
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Cursor/fetch';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

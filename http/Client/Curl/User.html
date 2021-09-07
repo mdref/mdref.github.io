@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							User -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Client/Curl/User">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Client/Curl/User.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client">
+							Client
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client/Curl">
+							Curl
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Client/Curl/User">User</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Curl/User/: Examples">★ Examples</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Curl/User/init">User::init</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Curl/User/once">User::once</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Curl/User/send">User::send</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Curl/User/socket">User::socket</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Curl/User/timer">User::timer</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Curl/User/wait">User::wait</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl/: Changelog">★ Changelog</a></li>
+																													
+						<li>&ldsh; <a href="./http/Client/Curl/Features">Features</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl/Versions">Versions</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="interface.http\Client\Curl\User">interface http\Client\Curl\User</h1>
+
+<p>Interface to an user event loop implementation for http\Client::configure()'s $use_eventloop option.</p>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+  This interface was added in v2.6.0, resp. v3.1.0.</p>
+</blockquote>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>POLL_NONE<br>
+No action.</li>
+<li>POLL_IN<br>
+Poll for read readiness.</li>
+<li>POLL_OUT<br>
+Poll for write readiness.</li>
+<li>POLL_INOUT<br>
+Poll for read/write readiness.</li>
+<li>POLL_REMOVE<br>
+Stop polling for activity on this descriptor.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Client/Curl/User/init">User::init</a></h3>
+		<p>Initialize the event loop.</p>
+
+		<p>void http\Client\Curl\User::init(callable $run)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Curl/User/once">User::once</a></h3>
+		<p>Run the loop as long as it does not block.</p>
+
+		<p>void http\Client\Curl\User::once()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Curl/User/send">User::send</a></h3>
+		<p>Run the loop.</p>
+
+		<p>void http\Client\Curl\User::send()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Curl/User/socket">User::socket</a></h3>
+		<p>Register (or deregister) a socket watcher.</p>
+
+		<p>void http\Client\Curl\User::socket(resource $socket, int $poll)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Curl/User/timer">User::timer</a></h3>
+		<p>Register a timeout watcher.</p>
+
+		<p>void http\Client\Curl\User::timer(int $timeout_ms)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Curl/User/wait">User::wait</a></h3>
+		<p>Wait/poll/select (block the loop) until events fire.</p>
+
+		<p>void http\Client\Curl\User::wait([int $timeout_ms = null])</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Client/Curl/User';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

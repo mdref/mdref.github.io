@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Request -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Client/Request">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Client/Request.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client">
+							Client
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Client/Request">Request</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/__construct">Request::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/addQuery">Request::addQuery</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/addSslOptions">Request::addSslOptions</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/getContentType">Request::getContentType</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/getOptions">Request::getOptions</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/getQuery">Request::getQuery</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/getSslOptions">Request::getSslOptions</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/setContentType">Request::setContentType</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/setOptions">Request::setOptions</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/setQuery">Request::setQuery</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Client/Request/setSslOptions">Request::setSslOptions</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/: Examples">★ Examples</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl">Curl</a></li>
+																													
+						<li>&ldsh; <a href="./http/Client/Response">Response</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/__construct">Client::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/addCookies">Client::addCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/addSslOptions">Client::addSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/attach">Client::attach</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/configure">Client::configure</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/count">Client::count</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/dequeue">Client::dequeue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/detach">Client::detach</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/enableEvents">Client::enableEvents</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/enablePipelining">Client::enablePipelining</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/enqueue">Client::enqueue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableConfiguration">Client::getAvailableConfiguration</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableDrivers">Client::getAvailableDrivers</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableOptions">Client::getAvailableOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getCookies">Client::getCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getHistory">Client::getHistory</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getObservers">Client::getObservers</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getOptions">Client::getOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getProgressInfo">Client::getProgressInfo</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getResponse">Client::getResponse</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getSslOptions">Client::getSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getTransferInfo">Client::getTransferInfo</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/notify">Client::notify</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/once">Client::once</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/requeue">Client::requeue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/reset">Client::reset</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/send">Client::send</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setCookies">Client::setCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setDebug">Client::setDebug</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setOptions">Client::setOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setSslOptions">Client::setSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/wait">Client::wait</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.http\Client\Request.extends.http\Message">class http\Client\Request extends http\Message</h1>
+
+<p>The http\Client\Request class provides an HTTP message implementation tailored to represent a request message to be sent by the client.</p>
+
+<p>See http\Client::enqueue().</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<p>None.</p>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>protected array $options = NULL<br>
+Array of options for this request, which override client options.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Client/Request/__construct">Request::__construct</a></h3>
+		<p>Create a new client request message to be enqueued and sent by http\Client.</p>
+
+		<p>void http\Client\Request::__construct([string $meth = NULL[, string $url = NULL[, array $headers = NULL[, http\Message\Body $body = NULL]]]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Request/addQuery">Request::addQuery</a></h3>
+		<p>Add querystring data.</p>
+
+		<p>http\Client\Request http\Client\Request::addQuery(mixed $query_data)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Request/addSslOptions">Request::addSslOptions</a></h3>
+		<p>Add specific SSL options.</p>
+
+		<p>http\Client\Request http\Client\Request::addSslOptions([array $ssl_options = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Request/getContentType">Request::getContentType</a></h3>
+		<p>Extract the currently set "Content-Type" header.</p>
+
+		<p>string http\Client\Request::getContentType()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Request/getOptions">Request::getOptions</a></h3>
+		<p>Get priorly set options.</p>
+
+		<p>array http\Client\Request::getOptions()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Request/getQuery">Request::getQuery</a></h3>
+		<p>Retrieve the currently set querystring.</p>
+
+		<p>string http\Client\Request::getQuery()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Request/getSslOptions">Request::getSslOptions</a></h3>
+		<p>Retrieve priorly set SSL options.</p>
+
+		<p>array http\Client\Request::getSslOptions()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Request/setContentType">Request::setContentType</a></h3>
+		<p>Set the MIME content type of the request message.</p>
+
+		<p>http\Client\Request http\Client\Request::setContentType(string $content_type)</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Request/setOptions">Request::setOptions</a></h3>
+		<p>Set client options.</p>
+
+		<p>http\Client\Request http\Client\Request::setOptions([array $options = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Request/setQuery">Request::setQuery</a></h3>
+		<p>(Re)set the querystring.</p>
+
+		<p>http\Client\Request http\Client\Request::setQuery([mixed $query_data = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Client/Request/setSslOptions">Request::setSslOptions</a></h3>
+		<p>Specifically set SSL options.</p>
+
+		<p>http\Client\Request http\Client\Request::setSslOptions([array $ssl_options = NULL])</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Client/Request';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

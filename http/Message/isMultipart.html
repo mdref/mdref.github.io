@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Message::isMultipart -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Message/isMultipart">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Message/isMultipart.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Message">
+							Message
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Message/isMultipart">Message::isMultipart</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Message/Body">Body</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Parser">Parser</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/__construct">Message::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/__toString">Message::__toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/addBody">Message::addBody</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/addHeader">Message::addHeader</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/addHeaders">Message::addHeaders</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/count">Message::count</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/current">Message::current</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/detach">Message::detach</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getBody">Message::getBody</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getHeader">Message::getHeader</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getHeaders">Message::getHeaders</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getHttpVersion">Message::getHttpVersion</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getInfo">Message::getInfo</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getParentMessage">Message::getParentMessage</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getRequestMethod">Message::getRequestMethod</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getRequestUrl">Message::getRequestUrl</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getResponseCode">Message::getResponseCode</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getResponseStatus">Message::getResponseStatus</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/getType">Message::getType</a></li>
+																													
+						<li>&ldsh; <a href="./http/Message/key">Message::key</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/next">Message::next</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/prepend">Message::prepend</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/reverse">Message::reverse</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/rewind">Message::rewind</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/serialize">Message::serialize</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/setBody">Message::setBody</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/setHeader">Message::setHeader</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/setHeaders">Message::setHeaders</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/setHttpVersion">Message::setHttpVersion</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/setInfo">Message::setInfo</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/setRequestMethod">Message::setRequestMethod</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/setRequestUrl">Message::setRequestUrl</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/setResponseCode">Message::setResponseCode</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/setResponseStatus">Message::setResponseStatus</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/setType">Message::setType</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/splitMultipartBody">Message::splitMultipartBody</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/toCallback">Message::toCallback</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/toStream">Message::toStream</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/toString">Message::toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/unserialize">Message::unserialize</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/valid">Message::valid</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="bool.http\Message::isMultipart([string.&amp;$boundary.=.NULL])">bool http\Message::isMultipart([string &amp;$boundary = NULL])</h1>
+
+<p>Check whether this message is a multipart message based on it's content type.
+If the message is a multipart message and a reference $boundary is given, the boundary string of the multipart message will be stored in $boundary.</p>
+
+<p>See http\Message::splitMultipartBody().</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>Optional string &amp;$boundary = NULL<br>
+A reference where the boundary string will be stored.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>bool, whether this is a message with a multipart "Content-Type".</li>
+</ul>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Message/isMultipart';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

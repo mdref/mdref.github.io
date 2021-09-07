@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Deflate -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Encoding/Stream/Deflate">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Encoding/Stream/Deflate.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Encoding">
+							Encoding
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Encoding/Stream">
+							Stream
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Encoding/Stream/Deflate">Deflate</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/Deflate/encode">Deflate::encode</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Encoding/Stream/Debrotli">Debrotli</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding/Stream/Dechunk">Dechunk</a></li>
+																													
+						<li>&ldsh; <a href="./http/Encoding/Stream/Enbrotli">Enbrotli</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding/Stream/Inflate">Inflate</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding/Stream/__construct">Stream::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding/Stream/done">Stream::done</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding/Stream/finish">Stream::finish</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding/Stream/flush">Stream::flush</a></li>
+																			
+						<li>&ldsh; <a href="./http/Encoding/Stream/update">Stream::update</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.http\Encoding\Stream\Deflate.extends.http\Encoding\Stream">class http\Encoding\Stream\Deflate extends http\Encoding\Stream</h1>
+
+<p>A deflate stream supporting deflate, zlib and gzip encodings.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>TYPE_GZIP<br>
+Gzip encoding. RFC1952</li>
+<li>TYPE_ZLIB<br>
+Zlib encoding. RFC1950</li>
+<li>TYPE_RAW<br>
+Deflate encoding. RFC1951</li>
+<li>LEVEL_DEF<br>
+Default compression level.</li>
+<li>LEVEL_MIN<br>
+Least compression level.</li>
+<li>LEVEL_MAX<br>
+Greatest compression level.</li>
+<li>STRATEGY_DEF<br>
+Default compression strategy.</li>
+<li>STRATEGY_FILT<br>
+Filtered compression strategy.</li>
+<li>STRATEGY_HUFF<br>
+Huffman strategy only.</li>
+<li>STRATEGY_RLE<br>
+Run-length encoding strategy.</li>
+<li>STRATEGY_FIXED<br>
+Encoding with fixed Huffman codes only.</li>
+</ul>
+
+<blockquote>
+  <p><strong>A note on the compression strategy:</strong></p>
+  
+  <p>The strategy parameter is used to tune the compression algorithm.</p>
+  
+  <p>Use the value DEFAULT_STRATEGY for normal data, FILTERED for data produced by a filter (or predictor), HUFFMAN_ONLY to force Huffman encoding only (no string match), or RLE to limit match distances to one (run-length encoding).</p>
+  
+  <p>Filtered data consists mostly of small values with a somewhat random distribution. In this case, the compression algorithm is tuned to compress them better. The effect of FILTERED is to force more Huffman coding and less string matching; it is somewhat intermediate between DEFAULT_STRATEGY and HUFFMAN_ONLY.</p>
+  
+  <p>RLE is designed to be almost as fast as HUFFMAN_ONLY, but give better compression for PNG image data.</p>
+  
+  <p>FIXED prevents the use of dynamic Huffman codes, allowing for a simpler decoder for special applications.</p>
+  
+  <p>The strategy parameter only affects the compression ratio but not the correctness of the compressed output even if it is not set appropriately.</p>
+  
+  <p><em>Source: <a href="http://www.zlib.net/manual.html">zlib Manual</a></em></p>
+</blockquote>
+
+<h2 id="Properties:">Properties:</h2>
+
+<p>None.</p>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/Deflate/encode">Deflate::encode</a></h3>
+		<p>Encode data with deflate/zlib/gzip encoding.</p>
+
+		<p>static string http\Encoding\Stream\Deflate::encode(string $data[, int $flags = 0])</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Encoding/Stream/Deflate';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

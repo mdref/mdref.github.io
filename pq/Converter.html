@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Converter -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Converter">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Converter.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Converter">Converter</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq/Converter/convertFromString">Converter::convertFromString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Converter/convertToString">Converter::convertToString</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Converter/convertTypes">Converter::convertTypes</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/COPY">COPY</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cancel">Cancel</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection">Connection</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Cursor">Cursor</a></li>
+																			
+						<li>&ldsh; <a href="./pq/DateTime">DateTime</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Exception">Exception</a></li>
+																			
+						<li>&ldsh; <a href="./pq/LOB">LOB</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result">Result</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement">Statement</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction">Transaction</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Types">Types</a></li>
+																																																										
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="interface.pq\Converter">interface pq\Converter</h1>
+
+<p>Interface for type conversions.</p>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+/**
+ * Naive geometric point
+ */
+class Point {
+    public $x;
+    public $y;
+    function __construct($x, $y) {
+        $this-&gt;x = $x;
+        $this-&gt;y = $y;
+    }
+}
+
+/**
+ * A simple Box
+ */
+class Box {
+    public $p1;
+    public $p2;
+    function __construct(Point $p1, Point $p2) {
+        $this-&gt;p1 = $p1;
+        $this-&gt;p2 = $p2;
+    }
+}
+
+/**
+ * Our converter handles only objects of type box
+ */
+class BoxConverter implements pq\Converter {
+    private $oid;
+    function __construct(pq\Types $types) {
+        $this-&gt;oid = $types["box"]-&gt;oid;
+    }
+
+    /**
+     * @return array
+     * @see pq\Converter::convertTypes()
+     */
+    function convertTypes() {
+        return [$this-&gt;oid];
+    }
+
+    /**
+     * @return string
+     * @param $box Box
+     * @see pq\Converter::convertToString()
+     */
+    function convertToString($box, $type) {
+        return sprintf("(%F,%F),(%F,%F)", 
+            $box-&gt;p1-&gt;x, $box-&gt;p1-&gt;y,
+            $box-&gt;p2-&gt;x, $box-&gt;p2-&gt;y
+        );
+    }
+
+    /**
+     * @return Box
+     * @param string $data
+     * @see pq\Converter::convertFromString()
+     */
+    function convertFromString($data, $type) {
+        list($p1x, $p1y, $p2x, $p2y) = sscanf($data, "(%f,%f),(%f,%f)");
+        return new Box(new Point($p1x, $p1y), new Point($p2x, $p2y));
+    }
+}
+
+$conn  = new pq\Connection;
+$types = new pq\Types($conn);
+$conv  = new BoxConverter($types);
+$inbox = new Box(new Point(1.1, 2.2), new Point(3.3, 4.4));
+
+$conn-&gt;setConverter($conv);
+$result = $conn-&gt;execParams("SELECT \$1", [$inbox], [$types["box"]-&gt;oid]);
+$result-&gt;fetchCol($outbox);
+
+var_dump($outbox);
+
+?&gt; 
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>object(Box)#163 (2) {
+  ["p1"]=&gt;
+  object(Point)#164 (2) {
+    ["x"]=&gt;
+    float(3.3)
+    ["y"]=&gt;
+    float(4.4)
+  }
+  ["p2"]=&gt;
+  object(Point)#165 (2) {
+    ["x"]=&gt;
+    float(1.1)
+    ["y"]=&gt;
+    float(2.2)
+  }
+}
+</code></pre>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq/Converter/convertFromString">Converter::convertFromString</a></h3>
+		<p>Convert a string received from the PostgreSQL server back to a PHP type.</p>
+
+		<p>mixed pq\Converter::convertFromString(string $data, int $type)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Converter/convertToString">Converter::convertToString</a></h3>
+		<p>Convert a value to a string for use in a query.</p>
+
+		<p>string pq\Converter::convertToString(mixed $value, int $type)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Converter/convertTypes">Converter::convertTypes</a></h3>
+		<p>Announce which types the implementing converter can handle.</p>
+
+		<p>array pq\Converter::convertTypes()</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Converter';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

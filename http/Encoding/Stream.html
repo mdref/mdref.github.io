@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Stream -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Encoding/Stream">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Encoding/Stream.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Encoding">
+							Encoding
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Encoding/Stream">Stream</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/Debrotli">Debrotli</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/Dechunk">Dechunk</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/Deflate">Deflate</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/Enbrotli">Enbrotli</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/Inflate">Inflate</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/__construct">Stream::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/done">Stream::done</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/finish">Stream::finish</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/flush">Stream::flush</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./http/Encoding/Stream/update">Stream::update</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																																																																																																				
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="abstract.class.http\Encoding\Stream">abstract class http\Encoding\Stream</h1>
+
+<p>Base class for encoding stream implementations.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>FLUSH_NONE<br>
+Do no intermittent flushes.</li>
+<li>FLUSH_SYNC<br>
+Flush at appropriate transfer points.</li>
+<li>FLUSH_FULL<br>
+Flush at each IO operation.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/__construct">Stream::__construct</a></h3>
+		<p>Base constructor for encoding stream implementations.</p>
+
+		<p>void http\Encoding\Stream::__construct([int $flags = 0])</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/done">Stream::done</a></h3>
+		<p>Check whether the encoding stream is already done.</p>
+
+		<p>bool http\Encoding\Stream::done()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/finish">Stream::finish</a></h3>
+		<p>Finish and reset the encoding stream.</p>
+
+		<p>string http\Encoding\Stream::finish()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/flush">Stream::flush</a></h3>
+		<p>Flush the encoding stream.</p>
+
+		<p>string http\Encoding\Stream::flush()</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/update">Stream::update</a></h3>
+		<p>Update the encoding stream with more input.</p>
+
+		<p>string http\Encoding\Stream::update(string $data)</p>
+	</li>
+	
+</ul>
+
+
+<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/Debrotli">Debrotli</a></h3>
+		<p>A <a href="https://brotli.org">brotli</a> decoding stream.</p>
+
+		<p>class http\Encoding\Stream\Debrotli extends http\Encoding\Stream</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/Dechunk">Dechunk</a></h3>
+		<p>A stream decoding data encoded with chunked transfer encoding.</p>
+
+		<p>class http\Encoding\Stream\Dechunk extends http\Encoding\Stream</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/Deflate">Deflate</a></h3>
+		<p>A deflate stream supporting deflate, zlib and gzip encodings.</p>
+
+		<p>class http\Encoding\Stream\Deflate extends http\Encoding\Stream</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/Enbrotli">Enbrotli</a></h3>
+		<p>A <a href="https://brotli.org">brotli</a> encoding stream.</p>
+
+		<p>class http\Encoding\Stream\Enbrotli extends http\Encoding\Stream</p>
+	</li>
+	
+	<li>
+		<h3><a href="http/Encoding/Stream/Inflate">Inflate</a></h3>
+		<p>A inflate stream supporting deflate, zlib and gzip encodings.</p>
+
+		<p>class http\Encoding\Stream\Inflate extends http\Encoding\Stream</p>
+	</li>
+	
+</ul>
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Encoding/Stream';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,392 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Row -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Gateway/Row">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq-gateway/edit/master/pq-gateway/pq/Gateway/Row.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq-gateway">
+							pq-gateway
+						</a>
+						<ul>
+							<li>
+																												
+					&uarr; <a href="./pq-gateway/pq/Gateway">
+							Gateway
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq-gateway/pq/Gateway/Row">Row</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/__construct">Row::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/__get">Row::__get</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/__invoke">Row::__invoke</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/__isset">Row::__isset</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/__set">Row::__set</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/__unset">Row::__unset</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/allOf">Row::allOf</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/cell">Row::cell</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/changes">Row::changes</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/create">Row::create</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/criteria">Row::criteria</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/delete">Row::delete</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/export">Row::export</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/exportPublic">Row::exportPublic</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/getData">Row::getData</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/getIdentity">Row::getIdentity</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/getTable">Row::getTable</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/isDirty">Row::isDirty</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/jsonSerialize">Row::jsonSerialize</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/ofWhich">Row::ofWhich</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/prime">Row::prime</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/refresh">Row::refresh</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq-gateway/pq/Gateway/Row/update">Row::update</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Gateway/Cell">Cell</a></li>
+																													
+						<li>&ldsh; <a href="./pq-gateway/pq/Gateway/Rowset">Rowset</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Gateway/Table">Table</a></li>
+																																																																																																							
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.pq\Gateway\Row.implements.JsonSerializable">class pq\Gateway\Row implements JsonSerializable</h1>
+
+<p>The row gateway.</p>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>protected pq\Gateway\Table $table<br>
+The originating table.</li>
+<li>protected array $data<br>
+The row's data.</li>
+<li>protected array $cell<br>
+The list of cells abstracting access to the row's data.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/__construct">Row::__construct</a></h3>
+		<p>Create a new row gateway.</p>
+
+		<p>void pq\Gateway\Row::__construct(pq\Gateway\Table $table[, array $data = NULL[, bool $prime = FALSE]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/__get">Row::__get</a></h3>
+		<p>Cell read accessor through properties.</p>
+
+		<p>pq\Gateway\Cell pq\Gateway\Row::__get(string $p)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/__invoke">Row::__invoke</a></h3>
+		<p>Copy constructor.</p>
+
+		<p>pq\Gateway\Row pq\Gateway\Row::__invoke(array $data)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/__isset">Row::__isset</a></h3>
+		<p>Check whether the column isset.</p>
+
+		<p>bool pq\Gateway\Row::__isset(string $p)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/__set">Row::__set</a></h3>
+		<p>Cell write accessor through properties.</p>
+
+		<p>void pq\Gateway\Row::__set(string $p)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/__unset">Row::__unset</a></h3>
+		<p>Unset the columnd within the row.</p>
+
+		<p>void pq\Gateway\Row::__unset(string $p)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/allOf">Row::allOf</a></h3>
+		<p>Find the child rows by foreign key.</p>
+
+		<p>mixed pq\Gateway\Row::allOf(mixed $foreign[, string $ref = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0]]]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/cell">Row::cell</a></h3>
+		<p>Create or retrieve an already primed cell.</p>
+
+		<p>protected pq\Gateway\Cell pq\Gateway\Row::cell(string $col)</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/changes">Row::changes</a></h3>
+		<p>Export modified data.</p>
+
+		<p>protected pq\Gateway\Row::changes()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/create">Row::create</a></h3>
+		<p>Create this row in the database.</p>
+
+		<p>pq\Gateway\Row pq\Gateway\Row::create()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/criteria">Row::criteria</a></h3>
+		<p>Convert the row's identity to to where criteria.</p>
+
+		<p>protected array pq\Gateway\Row::criteria()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/delete">Row::delete</a></h3>
+		<p>Delete this row in the database.</p>
+
+		<p>pq\Query\Row pq\Query\Row::delete()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/export">Row::export</a></h3>
+		<p>Export the current state.</p>
+
+		<p>array pq\Gateway\Row::export()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/exportPublic">Row::exportPublic</a></h3>
+		<p>Export current state with security sensitive data removed.</p>
+
+		<p>array pq\Gateway\Row::exportPublic()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/getData">Row::getData</a></h3>
+		<p>Retrieve the original row data.</p>
+
+		<p>array pq\Gateway\Row::getData()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/getIdentity">Row::getIdentity</a></h3>
+		<p>Retrieve a list of columns and their values (the primary key, if it exists, else all columns) to identify the row in the table.</p>
+
+		<p>array pq\Gateway\Row::getIdentity()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/getTable">Row::getTable</a></h3>
+		<p>Retrieve the table from which this row originates.</p>
+
+		<p>pq\Gateway\Table pq\Gateway\Row::getTable()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/isDirty">Row::isDirty</a></h3>
+		<p>Whether the row has been modified.</p>
+
+		<p>bool pq\Gateway\Row::isDirty()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/jsonSerialize">Row::jsonSerialize</a></h3>
+		<p>Implements JsonSerializable.</p>
+
+		<p>array pq\Gateway\Row::jsonSerialize()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/ofWhich">Row::ofWhich</a></h3>
+		<p>Find the parent row by foreign key.</p>
+
+		<p>mixed pq\Gateway\Row::ofWhich(mixed $foreign[, string $ref = NULL])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/prime">Row::prime</a></h3>
+		<p>Prime the cells with dirty data.</p>
+
+		<p>protected pq\Gateway\Row pq\Gateway\Row::prime()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/refresh">Row::refresh</a></h3>
+		<p>Refresh the columns data from the table.</p>
+
+		<p>pq\Gateway\Row pq\Gateway\Row::refresh()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq-gateway/pq/Gateway/Row/update">Row::update</a></h3>
+		<p>Update this row in the database.</p>
+
+		<p>pq\Gateway\Row pq\Gateway\Row::update()</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq-gateway/pq/Gateway/Row';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

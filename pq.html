@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							pq -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+					
+							&circlearrowright; <strong><a href="./pq">pq</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq/COPY">COPY</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Cancel">Cancel</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Connection">Connection</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Converter">Converter</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Cursor">Cursor</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/DateTime">DateTime</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Exception">Exception</a>
+										
+									<ul>
+												
+										<li>&rdsh; <a href="./pq/Exception/BadMethodCallException">BadMethodCallException</a>
+										</li>
+																	
+										<li>&rdsh; <a href="./pq/Exception/DomainException">DomainException</a>
+										</li>
+																	
+										<li>&rdsh; <a href="./pq/Exception/InvalidArgumentException">InvalidArgumentException</a>
+										</li>
+																	
+										<li>&rdsh; <a href="./pq/Exception/RuntimeException">RuntimeException</a>
+										</li>
+								
+									</ul>
+
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/LOB">LOB</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Result">Result</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Statement">Statement</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Transaction">Transaction</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Types">Types</a>
+									
+								</li>
+								
+							</ul>
+							
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="pecl/pq">pecl/pq</h1>
+
+<h2 id="About:">About:</h2>
+
+<p>This is a modern binding to the mature <a href="http://www.postgresql.org/docs/current/static/libpq.html">libpq</a>, the official PostgreSQL C-client library.</p>
+
+<h3 id="Highlights:">Highlights:</h3>
+
+<ul>
+<li>Nearly 100% support for [asynchronous usage](pq/Connection/: Asynchronous Usage).</li>
+<li>Extended [type support by pg_type](pq/Types/: Overview).</li>
+<li>Fetching simple <a href="pq/Result/map">multi-dimensional array maps</a>.</li>
+<li>Working <a href="https://bitbucket.org/m6w6/pq-gateway">Gateway implementation</a>.</li>
+</ul>
+
+<h2 id="Installation:">Installation:</h2>
+
+<p>This extension is hosted at <a href="http://pecl.php.net">PECL</a> and can be installed with <a href="http://pear.php.net">PEAR</a>'s pecl command:</p>
+
+<pre><code># pecl install pq
+</code></pre>
+
+<h3 id="PHARext">PHARext</h3>
+
+<p>Watch out for <a href="https://replicator.pharext.org?pq">PECL replicates</a>
+and pharext packages attached to <a href="https://github.com/m6w6/ext-pq/releases">releases</a>.</p>
+
+<h3 id="Checkout">Checkout</h3>
+
+<pre><code>git clone github.com:m6w6/ext-pq
+cd ext-pq
+/path/to/phpize
+./configure --with-php-config=/path/to/php-config
+make
+sudo make install
+</code></pre>
+
+<h2 id="Dependencies:">Dependencies:</h2>
+
+<p>This extension unconditionally depends on the pre-loaded presence of the following PHP extensions:</p>
+
+<ul>
+<li>raphf</li>
+<li>spl</li>
+</ul>
+
+<p>It optionally depends on the following extensions:</p>
+
+<ul>
+<li>json</li>
+</ul>
+
+	<h2 id="Editor.Stub:">Editor Stub:</h2>
+	<p>This extension provides a stub file four your editor's auto-completion.</p>
+					<div>
+					<p><strong>Download the Stub file:</strong></p>
+					<ul style="list-style-type: '&raquo;'">
+						<li>
+														<a href="pq.stub.php">pq.stub.php</a><br>
+														<small>
+								Last modified:
+								2021-03-08 12:59:57 UTC							</small>
+						</li>
+					</ul>
+				</div>
+
+
+
+<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq/COPY">COPY</a></h3>
+		<p>Fast import/export using COPY.</p>
+
+		<p>class pq\COPY</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Cancel">Cancel</a></h3>
+		<p>Request cancellation of an asynchronous query.</p>
+
+		<p>class pq\Cancel</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Connection">Connection</a></h3>
+		<p>The connection to the PostgreSQL server.</p>
+
+		<p>class pq\Connection</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Converter">Converter</a></h3>
+		<p>Interface for type conversions.</p>
+
+		<p>interface pq\Converter</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Cursor">Cursor</a></h3>
+		<p>Declare a cursor.</p>
+
+		<p>class pq\Cursor</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/DateTime">DateTime</a></h3>
+		<p>A simple DateTime wrapper with predefined formats which supports stringification and JSON.</p>
+
+		<p>class pq\DateTime extends DateTime implements JsonSerializable</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Exception">Exception</a></h3>
+		<p>A base interface for all pq\Exception classes.</p>
+
+		<p>interface pq\Exception</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/LOB">LOB</a></h3>
+		<p>A <em>large object</em>.</p>
+
+		<p>class pq\LOB</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Result">Result</a></h3>
+		<p>A query result.</p>
+
+		<p>class pq\Result implements Traversable, Countable</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Statement">Statement</a></h3>
+		<p>A named prepared statement.</p>
+
+		<p>class pq\Statement</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Transaction">Transaction</a></h3>
+		<p>A database transaction.</p>
+
+		<p>class pq\Transaction</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Types">Types</a></h3>
+		<p>Accessor to the PostgreSQL <code>pg_type</code> relation.</p>
+
+		<p>class pq\Types implements ArrayAccess</p>
+	</li>
+	
+</ul>
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							★ Fetching Results -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Result/: Fetching Results">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Result/: Fetching Results.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Result">
+							Result
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Result/: Fetching Results">★ Fetching Results</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/Result/: Changelog">★ Changelog</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Result/bind">Result::bind</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/count">Result::count</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/desc">Result::desc</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/fetchAll">Result::fetchAll</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/fetchAllCols">Result::fetchAllCols</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/fetchBound">Result::fetchBound</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/fetchCol">Result::fetchCol</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/fetchRow">Result::fetchRow</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/map">Result::map</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="pq\Result:.Overview">pq\Result: Overview</h1>
+
+<p>An synchronous pq\Connection::exec*() call, or calls to pq\Connection::getResult() after using [asynchronous queries](pq/Connection/: Asynchronous Usage) returns an instance of pq\Result on success. See [Query execution](pq/Connection/: Executing Queries), optionally with [types](pq/Types/: Overview) and <a href="pq/Statement">Prepared Statements</a> for details about how to execute queries.</p>
+
+<h2 id="Fetch.types:">Fetch types:</h2>
+
+<p>pq\Result supports the follwing fetch types:</p>
+
+<ul>
+<li>pq\Result::FETCH_ARRAY<br>
+Fetch the row as <strong><em>numerically indexed array</em></strong>.</li>
+<li>pq\Result::FETCH_ASSOC<br>
+Fetch the row as <strong><em>associative array</em></strong> indexed by column name.</li>
+<li>pq\Result::FETCH_OBJECT<br>
+Fetch the row as stdClass <strong><em>object</em></strong>.</li>
+</ul>
+
+<p>The fetch type is inherited from pq\Connection::$defaultFetchType can be set through the <strong><em>public</em></strong> property named pq\Result::$fetchType, to be used when no fetch type is specified in the call to a fetch method.</p>
+
+<h2 id="Number.of.rows:">Number of rows:</h2>
+
+<p>The number of rows can be obtained from the <strong><em>public readonly</em></strong> property pq\Result::$numRows, or passing the result instance, which implements the Countable interface, to the count() function.</p>
+
+<h2 id="Number.of.columns:">Number of columns:</h2>
+
+<p>The number of columns each row has, can be obtained from the <strong><em>public readonly</em></strong> property pq\Result::$numCols.</p>
+
+<h2 id="Fetching.everything.as.an.array.of.rows:">Fetching everything as an array of rows:</h2>
+
+<p>pq\Result::fetchAll() fetches the complete result set as an array of arrays or objects, depending on the default fetch type, as explained above, or the <strong><em>fetch type</em></strong> passed as first argument to the method.</p>
+
+<pre><code>&lt;?php
+
+try {
+    $connection = new pq\Connection;
+
+    $result = $connection-&gt;exec("SELECT id, name, email FROM accounts WHERE email LIKE '_@%'");
+
+    foreach ($result-&gt;fetchAll(pq\Result::FETCH_OBJECT) as $row)  {
+        echo "ID:   {$row-&gt;id}\n";
+        echo "Name: {$row-&gt;name}\n";
+        echo "Mail: {$row-&gt;email}\n\n";
+    }
+} catch (\pq\Exception $e) {
+    echo $e-&gt;getMessage(), "\n";
+}
+
+?&gt;
+</code></pre>
+
+<p>pq\Result implements the virtual Traversable interface, so the above task can also be accomplished by this code:</p>
+
+<pre><code>&lt;?php
+
+try {
+    $connection = new pq\Connection;
+    $connection-&gt;defaultFetchType = pq\Result::FETCH_OBJECT;
+
+    $result = $connection-&gt;exec("SELECT id, name, email FROM accounts WHERE email LIKE '_@%'");
+
+    foreach ($result as $row)  {
+        echo "ID:   {$row-&gt;id}\n";
+        echo "Name: {$row-&gt;name}\n";
+        echo "Mail: {$row-&gt;email}\n\n";
+    }
+} catch (\pq\Exception $e) {
+    echo $e-&gt;getMessage(), "\n";
+}
+
+?&gt;
+</code></pre>
+
+<h2 id="Iteratively.fetching.row.by.row:">Iteratively fetching row by row:</h2>
+
+<p>pq\Result::fetchRow() will return FALSE when the end of the result set has been reached.</p>
+
+<pre><code>&lt;?php
+
+try {
+    $connection = new pq\Connection;
+
+    $result = $connection-&gt;exec("SELECT id, name, email FROM accounts WHERE email LIKE '_@%'");
+
+    while (list($id, $name, $email) = $result-&gt;fetchRow())  {
+        echo "ID:   {$id}\n";
+        echo "Name: {$name}\n";
+        echo "Mail: {$email}\n\n";
+    }
+} catch (\pq\Exception $e) {
+    echo $e-&gt;getMessage(), "\n";
+}
+
+?&gt;
+</code></pre>
+
+<p>As with most <code>fetch*()</code> methods, the fetch type can be passed as argument here, too.</p>
+
+<h2 id="Fetching.a.single.column.by.row:">Fetching a single column by row:</h2>
+
+<p>Because a column value can be NULL or FALSE, pq\Result::fetchCol() stores the <strong><em>value</em></strong> into the first argument <strong><em>passed by reference</em></strong>. The demanded <strong><em>column index/name</em></strong> can be passed as second argument, where <strong><em>column indices start with 0</em></strong>, which is also the default.</p>
+
+<pre><code>&lt;?php
+
+try {
+    $connection = new pq\Connection;
+
+    $result = $connection-&gt;exec("SELECT email FROM accounts WHERE email LIKE '_@%'");
+
+    while ($result-&gt;fetchCol($email))  {
+        echo "Mail: {$email}\n";
+    }
+} catch (\pq\Exception $e) {
+    echo $e-&gt;getMessage(), "\n";
+}
+
+?&gt;
+</code></pre>
+
+<p>When the end of the result set has been reached, pq\Result::fetchCol() will return FALSE.</p>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>
+  pq\Result::fetchCol() does not accept a fetch type argument.</p>
+</blockquote>
+
+<h2 id="Fetching.bound.variables:">Fetching bound variables:</h2>
+
+<p>It is possible to bind variables to result columns by reference by calling pq\Result::bind() for each demanded column and then retreive the results by calling pq\Result::fetchBound() iteratively.</p>
+
+<pre><code>&lt;?php
+
+try {
+    $connection = new pq\Connection;
+
+    $result = $connection-&gt;exec("SELECT id, name, email FROM accounts WHERE email LIKE '_@%'");
+
+    $result-&gt;bind("id", $id);
+    $result-&gt;bind("name", $name);
+    $result-&gt;bind("email", $email);
+
+    while ($result-&gt;fetchBound()) {
+        echo "ID:   {$id}\n";
+        echo "Name: {$name}\n";
+        echo "Mail: {$email}\n\n";
+    }
+} catch (\pq\Exception $e) {
+    echo $e-&gt;getMessage(), "\n";
+}
+
+?&gt;
+</code></pre>
+
+<p>pq\Result::bind() expects the <strong><em>column index/name</em></strong> as first argument and the <strong><em>variable to bind by reference to this result column</em></strong> as second argument.</p>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>
+  pq\Result::fetchBound() does not accept a fetch type argument.</p>
+</blockquote>
+
+<h2 id="Fetching.simple.maps:">Fetching simple maps:</h2>
+
+<p>pq\Result::map() fetches the complete result set as a simple map, a <strong><em>multi dimensional array</em></strong>, each dimension indexed by a column.</p>
+
+<p>Consider the following example:</p>
+
+<pre><code>&lt;?php
+
+try {
+    $connection = new pq\Connection;
+
+    $result = $connection-&gt;exec("SELECT a,b,c from generate_series(1,3) a, 
+                                                   generate_series(4,6) b, 
+                                                   generate_series(7,9) c");
+
+    foreach($result-&gt;map(array(0,1,2)) as $a =&gt; $aa) {
+        foreach ($aa as $b =&gt; $bb) {
+            foreach ($bb as $c =&gt; $res) {
+                printf("%s,%s,%s = %s   ", $a, $b, $c, implode(",", $res));
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+} catch (\pq\Exception $e) {
+    echo $e-&gt;getMessage(), "\n";
+}
+
+?&gt;
+</code></pre>
+
+<p>It should produce:</p>
+
+<pre><code>1,4,7 = 1,4,7   1,4,8 = 1,4,8   1,4,9 = 1,4,9   
+1,5,7 = 1,5,7   1,5,8 = 1,5,8   1,5,9 = 1,5,9   
+1,6,7 = 1,6,7   1,6,8 = 1,6,8   1,6,9 = 1,6,9   
+
+2,4,7 = 2,4,7   2,4,8 = 2,4,8   2,4,9 = 2,4,9  // This should help generate maps 
+2,5,7 = 2,5,7   2,5,8 = 2,5,8   2,5,9 = 2,5,9  // of f.e. statistical data with   
+2,6,7 = 2,6,7   2,6,8 = 2,6,8   2,6,9 = 2,6,9  // some GROUP BYs etc.           
+
+3,4,7 = 3,4,7   3,4,8 = 3,4,8   3,4,9 = 3,4,9   
+3,5,7 = 3,5,7   3,5,8 = 3,5,8   3,5,9 = 3,5,9   
+3,6,7 = 3,6,7   3,6,8 = 3,6,8   3,6,9 = 3,6,9   
+</code></pre>
+
+<p>pq\Result::map() optionally expects an <strong><em>array containing the column indices/names used to index the map</em></strong> as first argument, and uses the first column (at index 0) by default. The second argument can optionally be an <strong><em>array of column indices/names</em></strong> which should build up the leaf entry of the map. A <strong><em>fetch type</em></strong> can also be specified as optional third argument.</p>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Result/: Fetching Results';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Client::enablePipelining -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Client/enablePipelining">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Client/enablePipelining.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client">
+							Client
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Client/enablePipelining">Client::enablePipelining</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/: Examples">★ Examples</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl">Curl</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request">Request</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Response">Response</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/__construct">Client::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/addCookies">Client::addCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/addSslOptions">Client::addSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/attach">Client::attach</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/configure">Client::configure</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/count">Client::count</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/dequeue">Client::dequeue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/detach">Client::detach</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/enableEvents">Client::enableEvents</a></li>
+																													
+						<li>&ldsh; <a href="./http/Client/enqueue">Client::enqueue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableConfiguration">Client::getAvailableConfiguration</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableDrivers">Client::getAvailableDrivers</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableOptions">Client::getAvailableOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getCookies">Client::getCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getHistory">Client::getHistory</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getObservers">Client::getObservers</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getOptions">Client::getOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getProgressInfo">Client::getProgressInfo</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getResponse">Client::getResponse</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getSslOptions">Client::getSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getTransferInfo">Client::getTransferInfo</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/notify">Client::notify</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/once">Client::once</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/requeue">Client::requeue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/reset">Client::reset</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/send">Client::send</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setCookies">Client::setCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setDebug">Client::setDebug</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setOptions">Client::setOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setSslOptions">Client::setSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/wait">Client::wait</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="http\Client.http\Client::enablePipelining([bool.$enable.=.true])">http\Client http\Client::enablePipelining([bool $enable = true])</h1>
+
+<p>Enable sending pipelined requests to the same host if the driver supports it.</p>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+  This method has been deprecated in 2.3.0, please use http\Client::configure() instead.</p>
+</blockquote>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>Optional bool $enable = true<br>
+Whether to enable pipelining.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>http\Client, self.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>http\Exception\InvalidArgumentException</li>
+<li>http\Exception\UnexpectedValueException</li>
+</ul>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Client/enablePipelining';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

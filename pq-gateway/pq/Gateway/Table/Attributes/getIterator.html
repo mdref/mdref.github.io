@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Attributes::getIterator -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Gateway/Table/Attributes/getIterator">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq-gateway/edit/master/pq-gateway/pq/Gateway/Table/Attributes/getIterator.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq-gateway">
+							pq-gateway
+						</a>
+						<ul>
+							<li>
+																												
+					&uarr; <a href="./pq-gateway/pq/Gateway">
+							Gateway
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq-gateway/pq/Gateway/Table">
+							Table
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq-gateway/pq/Gateway/Table/Attributes">
+							Attributes
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq-gateway/pq/Gateway/Table/Attributes/getIterator">Attributes::getIterator</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Gateway/Table/Attributes/__construct">Attributes::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Gateway/Table/Attributes/count">Attributes::count</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Gateway/Table/Attributes/getColumn">Attributes::getColumn</a></li>
+																			
+						<li>&ldsh; <a href="./pq-gateway/pq/Gateway/Table/Attributes/getColumns">Attributes::getColumns</a></li>
+																																																																																																																	
+					</ul>
+																												
+						</li>
+								
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="ArrayIterator.pq\Gateway\Table\Attributes::getIterator()">ArrayIterator pq\Gateway\Table\Attributes::getIterator()</h1>
+
+<p>Implements IteratorAggregate.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<p>None.</p>
+
+<h2 id="Returns:">Returns:</h2>
+
+<p>ArrayIterator, columnd list (indexed by column number <strong>and</strong> name).</p>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+use pq\Gateway\Table;
+
+class ColNameIterator extends FilterIterator {
+    public function __construct(Table\Attributes $attrs) {
+        parent::__construct($attrs-&gt;getIterator());
+    }
+    public function accept() {
+        return !is_numeric($this-&gt;key());
+    }
+}
+
+$table = new pq\Gateway\Table("account");
+$attrs = $table-&gt;getAttributes();
+foreach (new ColNameIterator($attrs) as $col =&gt; $att) {
+    printf("%10s: %s\n", $col, http_build_query($att, null, ", "));
+}
+
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>        id: index=1, name=id, type=2950, hasdefault=1, nullable=0
+  password: index=2, name=password, type=1042, hasdefault=0, nullable=1
+      name: index=3, name=name, type=1043, hasdefault=0, nullable=1
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq-gateway/pq/Gateway/Table/Attributes/getIterator';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

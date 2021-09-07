@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Cookie::__construct -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Cookie/__construct">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Cookie/__construct.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Cookie">
+							Cookie
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Cookie/__construct">Cookie::__construct</a></strong>
+
+							
+																																
+						</ul>
+																													
+						<li>&ldsh; <a href="./http/Cookie/__toString">Cookie::__toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/addCookie">Cookie::addCookie</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/addCookies">Cookie::addCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/addExtra">Cookie::addExtra</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/addExtras">Cookie::addExtras</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/getCookie">Cookie::getCookie</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/getCookies">Cookie::getCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/getDomain">Cookie::getDomain</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/getExpires">Cookie::getExpires</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/getExtra">Cookie::getExtra</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/getExtras">Cookie::getExtras</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/getFlags">Cookie::getFlags</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/getMaxAge">Cookie::getMaxAge</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/getPath">Cookie::getPath</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/setCookie">Cookie::setCookie</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/setCookies">Cookie::setCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/setDomain">Cookie::setDomain</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/setExpires">Cookie::setExpires</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/setExtra">Cookie::setExtra</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/setExtras">Cookie::setExtras</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/setFlags">Cookie::setFlags</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/setMaxAge">Cookie::setMaxAge</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/setPath">Cookie::setPath</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/toArray">Cookie::toArray</a></li>
+																			
+						<li>&ldsh; <a href="./http/Cookie/toString">Cookie::toString</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="void.http\Cookie::__construct([mixed.$cookies.=.NULL[,.int.$flags.=.0[,.array.$allowed_extras.=.NULL]]])">void http\Cookie::__construct([mixed $cookies = NULL[, int $flags = 0[, array $allowed_extras = NULL]]])</h1>
+
+<p>Create a new cookie list.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>Optional mixed $cookies = NULL<br>
+The string or list of cookies to parse or set.</li>
+<li>Optional int $flags = 0<br>
+Parse flags. See http\Cookie::PARSE_* constants.</li>
+<li>Optional array $allowed_extras = NULL<br>
+List of extra attribute names to recognize.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>http\Exception\InvalidArgumentException</li>
+<li>http\Exception\RuntimeException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+$cookie = new http\Cookie("c1=v1; c2=v2; extra=foo; ".
+    "expires=Thu, Nov  7 2013 10:00:00 GMT; path=/a/b/c", 
+    0, ["extra"]);
+var_dump([
+    "cookies" =&gt; $cookie-&gt;getCookies(),
+    "extras" =&gt; $cookie-&gt;getExtras(),
+    "expires" =&gt; $cookie-&gt;getExpires(),
+    "max-age" =&gt; $cookie-&gt;getMaxAge(),
+    "domain" =&gt; $cookie-&gt;getDomain(),
+    "path" =&gt; $cookie-&gt;getPath(),
+    "flags" =&gt; $cookie-&gt;getFlags(),
+    "string" =&gt; (string) $cookie
+]);
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>array(8) {
+  ["cookies"]=&gt;
+  array(2) {
+    ["c1"]=&gt;
+    string(2) "v1"
+    ["c2"]=&gt;
+    string(2) "v2"
+  }
+  ["extras"]=&gt;
+  array(1) {
+    ["extra"]=&gt;
+    string(3) "foo"
+  }
+  ["expires"]=&gt;
+  int(1383818400)
+  ["max-age"]=&gt;
+  int(-1)
+  ["domain"]=&gt;
+  NULL
+  ["path"]=&gt;
+  string(6) "/a/b/c"
+  ["flags"]=&gt;
+  int(0)
+  ["string"]=&gt;
+  string(77) "c1=v1; c2=v2; path=/a/b/c; expires=Thu, 07 Nov 2013 10:00:00 GMT; extra=foo; "
+}
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Cookie/__construct';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

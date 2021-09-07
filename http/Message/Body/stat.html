@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Body::stat -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Message/Body/stat">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Message/Body/stat.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Message">
+							Message
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Message/Body">
+							Body
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Message/Body/stat">Body::stat</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/__construct">Body::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/__toString">Body::__toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/addForm">Body::addForm</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/addPart">Body::addPart</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/append">Body::append</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/etag">Body::etag</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/getBoundary">Body::getBoundary</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/getResource">Body::getResource</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/serialize">Body::serialize</a></li>
+																													
+						<li>&ldsh; <a href="./http/Message/Body/toCallback">Body::toCallback</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/toStream">Body::toStream</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/toString">Body::toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/unserialize">Body::unserialize</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="mixed.http\Message\Body::stat([string.$field.=.NULL])">mixed http\Message\Body::stat([string $field = NULL])</h1>
+
+<p>Stat size, atime, mtime and/or ctime.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>Optional string $field = NULL<br>
+A single stat field to retrieve.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>int, the requested stat field.</li>
+<li>object, stdClass instance holding all four stat fields.</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+$body = new http\Message\Body(fopen(__FILE__, "r"));
+var_dump($body-&gt;stat(), $body-&gt;stat()-&gt;size, $body-&gt;stat("s"));
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>object(stdClass)#2 (4) {
+  ["size"]=&gt;
+  int(661)
+  ["atime"]=&gt;
+  int(1383830756)
+  ["mtime"]=&gt;
+  int(1383830753)
+  ["ctime"]=&gt;
+  int(1383830753)
+}
+int(661)
+int(661)
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Message/Body/stat';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

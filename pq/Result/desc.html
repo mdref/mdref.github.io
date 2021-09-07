@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Result::desc -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Result/desc">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Result/desc.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Result">
+							Result
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Result/desc">Result::desc</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/Result/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/: Fetching Results">★ Fetching Results</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/bind">Result::bind</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/count">Result::count</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Result/fetchAll">Result::fetchAll</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/fetchAllCols">Result::fetchAllCols</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/fetchBound">Result::fetchBound</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/fetchCol">Result::fetchCol</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/fetchRow">Result::fetchRow</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result/map">Result::map</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="array.pq\Result::desc()">array pq\Result::desc()</h1>
+
+<p>Describe a prepared statement.</p>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+    This will only return meaningful information for a result of pq\Statement::desc().</p>
+</blockquote>
+
+<h2 id="Params:">Params:</h2>
+
+<p>None.</p>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>array, list of parameter type OIDs for the prepared statement.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>pq\Exception\InvalidArgumentException</li>
+<li>pq\Exception\BadMethodCallException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+$connection = new pq\Connection;
+$types = new pq\Types($connection);
+$statement = $connection-&gt;prepare("test1", "SELECT NOW() - \$1");
+$description = $statement-&gt;desc();
+
+printf("%s\n", $types[$description[0]]-&gt;typname);
+
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>timestamptz
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Result/desc';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

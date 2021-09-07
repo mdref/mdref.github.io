@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Connection::__construct -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Connection/__construct">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Connection/__construct.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./pq/Connection">
+							Connection
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Connection/__construct">Connection::__construct</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/Connection/: Asynchronous Usage">★ Asynchronous Usage</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/: Executing Queries">★ Executing Queries</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/: General Usage">★ General Usage</a></li>
+																													
+						<li>&ldsh; <a href="./pq/Connection/declare">Connection::declare</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/declareAsync">Connection::declareAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/escapeBytea">Connection::escapeBytea</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/exec">Connection::exec</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/execAsync">Connection::execAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/execParams">Connection::execParams</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/execParamsAsync">Connection::execParamsAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/flush">Connection::flush</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/getResult">Connection::getResult</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/listen">Connection::listen</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/listenAsync">Connection::listenAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/notify">Connection::notify</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/notifyAsync">Connection::notifyAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/off">Connection::off</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/on">Connection::on</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/poll">Connection::poll</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/prepare">Connection::prepare</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/prepareAsync">Connection::prepareAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/quote">Connection::quote</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/quoteName">Connection::quoteName</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/reset">Connection::reset</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/resetAsync">Connection::resetAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/setConverter">Connection::setConverter</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/startTransaction">Connection::startTransaction</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/startTransactionAsync">Connection::startTransactionAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/trace">Connection::trace</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unescapeBytea">Connection::unescapeBytea</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unlisten">Connection::unlisten</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unlistenAsync">Connection::unlistenAsync</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection/unsetConverter">Connection::unsetConverter</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="void.pq\Connection::__construct([string.$dsn.=.&quot;&quot;[,.int.$flags.=.0]])">void pq\Connection::__construct([string $dsn = ""[, int $flags = 0]])</h1>
+
+<p>Create a new PostgreSQL connection.
+See also [General Usage](pq/Connection/: General Usage).</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>Optional string $dsn = ""<br>
+A <strong><em>connection string</em></strong> as described <a href="http://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING">in the PostgreSQL documentation</a>.</li>
+<li>Optional int $flags = 0<br>
+See <a href="pq/Connection#Connection.Flags:">connection flag constants</a>.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>pq\Exception\InvalidArgumentException</li>
+<li>pq\Exception\BadMethodCallException</li>
+<li>pq\Exception\RuntimeException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+$connection = new pq\Connection("dbname=test user=test password=test",
+    pq\Connection::ASYNC | pq\Connection::PERSISTENT);
+
+?&gt;
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Connection/__construct';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Body::addPart -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Message/Body/addPart">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Message/Body/addPart.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Message">
+							Message
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Message/Body">
+							Body
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Message/Body/addPart">Body::addPart</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/__construct">Body::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/__toString">Body::__toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/addForm">Body::addForm</a></li>
+																													
+						<li>&ldsh; <a href="./http/Message/Body/append">Body::append</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/etag">Body::etag</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/getBoundary">Body::getBoundary</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/getResource">Body::getResource</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/serialize">Body::serialize</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/stat">Body::stat</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/toCallback">Body::toCallback</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/toStream">Body::toStream</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/toString">Body::toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/unserialize">Body::unserialize</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="http\Message\Body.http\Message\Body::addPart(http\Message.$part)">http\Message\Body http\Message\Body::addPart(http\Message $part)</h1>
+
+<p>Add a part to a multipart body.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>http\Message $part<br>
+The message part.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>http\Message\Body, self.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>http\Exception\InvalidArgumentException</li>
+<li>http\Exception\RuntimeException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+$multi = new http\Message\Body;
+$multi-&gt;addPart(new http\Message("Content-type: text/plain\n\nHello part 1!"));
+$multi-&gt;addPart(new http\Message("Content-type: text/plain\n\nHello part 2!"));
+
+echo $multi;
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>--8a72b190.3fe908df
+Content-Type: text/plain
+Content-Length: 13
+
+Hello part 1!
+--8a72b190.3fe908df
+Content-Type: text/plain
+Content-Length: 13
+
+Hello part 2!
+--8a72b190.3fe908df--
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Message/Body/addPart';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

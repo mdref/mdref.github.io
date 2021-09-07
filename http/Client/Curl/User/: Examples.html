@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							★ Examples -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Client/Curl/User/: Examples">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Client/Curl/User/: Examples.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client">
+							Client
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client/Curl">
+							Curl
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client/Curl/User">
+							User
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Client/Curl/User/: Examples">★ Examples</a></strong>
+
+							
+																																
+						</ul>
+																													
+						<li>&ldsh; <a href="./http/Client/Curl/User/init">User::init</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl/User/once">User::once</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl/User/send">User::send</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl/User/socket">User::socket</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl/User/timer">User::timer</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl/User/wait">User::wait</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="http\Client\Curl\User.Examples">http\Client\Curl\User Examples</h1>
+
+<h2 id="Example.using.the.[pecl/ev](http://pecl.php.net/ev).loop:">Example using the <a href="http://pecl.php.net/ev">pecl/ev</a> loop:</h2>
+
+<pre><code>&lt;?php
+
+class UserHandler implements http\Client\Curl\User
+{
+    private $client;
+    private $run;
+    private $ios = [];
+    private $timeout;
+
+
+    function __construct(http\Client $client) {
+        $this-&gt;client = $client;
+    }
+
+    function init(callable $run) {
+        $this-&gt;run = $run;
+    }
+
+    function timer(int $timeout_ms) {
+        echo "T";
+        if (isset($this-&gt;timeout)) {
+            $this-&gt;timeout-&gt;set($timeout_ms/1000, 0);
+            $this-&gt;timeout-&gt;start();
+        } else {
+            $this-&gt;timeout = new EvTimer($timeout_ms/1000, 0, function() {
+                if (!call_user_func($this-&gt;run, $this-&gt;client)) {
+                    if ($this-&gt;timeout) {
+                        $this-&gt;timeout-&gt;stop();
+                        $this-&gt;timeout = null;
+                    }
+                }
+            });
+        }
+    }
+
+    function socket($socket, int $action) {
+        echo "S";
+
+        switch ($action) {
+        case self::POLL_NONE:
+            break;
+        case self::POLL_REMOVE:
+            if (isset($this-&gt;ios[(int) $socket])) {
+                echo "U";
+                $this-&gt;ios[(int) $socket]-&gt;stop();
+                unset($this-&gt;ios[(int) $socket]);
+            }
+            break;
+
+        default:
+            $ev = 0;
+            if ($action &amp; self::POLL_IN) {
+                $ev |= Ev::READ;
+            }
+            if ($action &amp; self::POLL_OUT) {
+                $ev |= Ev::WRITE;
+            }
+            if (isset($this-&gt;ios[(int) $socket])) {
+                $this-&gt;ios[(int) $socket]-&gt;set($socket, $ev);
+            } else {
+                $this-&gt;ios[(int) $socket] = new EvIo($socket, $ev, function($watcher, $events) use($socket) {
+                    $action = 0;
+                    if ($events &amp; Ev::READ) {
+                        $action |= self::POLL_IN;
+                    }
+                    if ($events &amp; Ev::WRITE) {
+                        $action |= self::POLL_OUT;
+                    }
+                    if (!call_user_func($this-&gt;run, $this-&gt;client, $socket, $action)) {
+                        if ($this-&gt;timeout) {
+                            $this-&gt;timeout-&gt;stop();
+                            $this-&gt;timeout = null;
+                        }
+                    }
+                });
+            }
+            break;
+        }
+    }
+
+    function once() {
+        throw new BadMethodCallException("this example uses Ev::run()");
+    }
+
+    function wait(int $timeout_ms = null) {
+        throw new BadMethodCallException("this example uses Ev::run()");
+    }
+
+    function send() {
+        throw new BadMethodCallException("this example uses Ev::run()");
+    }
+}
+
+$client = new http\Client;
+$client-&gt;configure([
+        "use_eventloop" =&gt; new UserHandler($client)
+]);
+$client-&gt;enqueue(new http\Client\Request("GET", "http://example.com/"), function($r) {
+    var_dump($r-&gt;getResponseCode());
+});
+
+Ev::run();
+
+?&gt;
+</code></pre>
+
+<h3 id="Yields:">Yields:</h3>
+
+<pre><code>TTTTTTTTSTSTSUint(200)
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Client/Curl/User/: Examples';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

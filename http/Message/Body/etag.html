@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Body::etag -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Message/Body/etag">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Message/Body/etag.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Message">
+							Message
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Message/Body">
+							Body
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Message/Body/etag">Body::etag</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/__construct">Body::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/__toString">Body::__toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/addForm">Body::addForm</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/addPart">Body::addPart</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/append">Body::append</a></li>
+																													
+						<li>&ldsh; <a href="./http/Message/Body/getBoundary">Body::getBoundary</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/getResource">Body::getResource</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/serialize">Body::serialize</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/stat">Body::stat</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/toCallback">Body::toCallback</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/toStream">Body::toStream</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/toString">Body::toString</a></li>
+																			
+						<li>&ldsh; <a href="./http/Message/Body/unserialize">Body::unserialize</a></li>
+																																																																																										
+					</ul>
+																												
+						</li>
+								
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="string.http\Message\Body::etag()">string http\Message\Body::etag()</h1>
+
+<p>Retrieve the ETag of the body.</p>
+
+<h2 id="Params:">Params:</h2>
+
+<p>None.</p>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>string, an Apache style ETag of inode, mtime and size in hex concatenated by hyphens if the message body stream is stat-able.</li>
+<li>string, a content hash (which algorithm is determined by INI http.etag.mode) if the stream is not stat-able.</li>
+<li>false, if http.etag.mode is not a known hash algorithm.</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+$temp = (new http\Message\Body)-&gt;etag();
+$file = (new http\Message\Body(fopen(__FILE__,"r")))-&gt;etag();
+
+ini_set("http.etag.mode", "bogus");
+$fail = (new http\Message\Body)-&gt;etag();
+
+var_dump(compact("temp", "file", "fail"));
+?&gt;
+</code></pre>
+
+<p>Yields:</p>
+
+<pre><code>array(3) {
+  ["temp"]=&gt;
+  string(8) "00000000"
+  ["file"]=&gt;
+  string(20) "138043f-527b91d5-28c"
+  ["fail"]=&gt;
+  bool(false)
+}
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Message/Body/etag';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Client::setDebug -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/http/Client/setDebug">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-http/edit/master/http/Client/setDebug.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./http">
+							http
+						</a>
+						<ul>
+							<li>
+																	
+					&uarr; <a href="./http/Client">
+							Client
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./http/Client/setDebug">Client::setDebug</a></strong>
+
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./http/Client/: Changelog">★ Changelog</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/: Examples">★ Examples</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Curl">Curl</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Request">Request</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/Response">Response</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/__construct">Client::__construct</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/addCookies">Client::addCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/addSslOptions">Client::addSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/attach">Client::attach</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/configure">Client::configure</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/count">Client::count</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/dequeue">Client::dequeue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/detach">Client::detach</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/enableEvents">Client::enableEvents</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/enablePipelining">Client::enablePipelining</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/enqueue">Client::enqueue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableConfiguration">Client::getAvailableConfiguration</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableDrivers">Client::getAvailableDrivers</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getAvailableOptions">Client::getAvailableOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getCookies">Client::getCookies</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getHistory">Client::getHistory</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getObservers">Client::getObservers</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getOptions">Client::getOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getProgressInfo">Client::getProgressInfo</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getResponse">Client::getResponse</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getSslOptions">Client::getSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/getTransferInfo">Client::getTransferInfo</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/notify">Client::notify</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/once">Client::once</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/requeue">Client::requeue</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/reset">Client::reset</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/send">Client::send</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setCookies">Client::setCookies</a></li>
+																													
+						<li>&ldsh; <a href="./http/Client/setOptions">Client::setOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/setSslOptions">Client::setSslOptions</a></li>
+																			
+						<li>&ldsh; <a href="./http/Client/wait">Client::wait</a></li>
+																																																																																										
+					</ul>
+													
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="http\Client.http\Client::setDebug(callable.$callback)">http\Client http\Client::setDebug(callable $callback)</h1>
+
+<p>Set client debugging callback.</p>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+  This method has been added in v2.6.0, resp. v3.1.0.</p>
+</blockquote>
+
+<h2 id="Params:">Params:</h2>
+
+<ul>
+<li>callable $callback as function(http\Client $c, http\Client\Request $r, int $type, string $data)<br>
+The debug callback. For $type see http\Client::DEBUG_* constants.</li>
+</ul>
+
+<h2 id="Returns:">Returns:</h2>
+
+<ul>
+<li>http\Client, self.</li>
+</ul>
+
+<h2 id="Throws:">Throws:</h2>
+
+<ul>
+<li>http\Exception\InvalidArgumentException</li>
+</ul>
+
+<h2 id="Example:">Example:</h2>
+
+<pre><code>&lt;?php
+
+(new http\Client)-&gt;setDebug(function($c, $r, $type, $data) {
+    if ($type === http\Client::DEBUG_INFO) {
+        printf("INFO: %s\n", $data);
+    } else {
+        repeat:
+        if ($type &amp; http\Client::DEBUG_OUT) {
+            $sep = "&gt;";
+        } elseif ($type &amp; http\Client::DEBUG_IN) {
+            $sep = "&lt;";
+        }
+        if ($type &amp; http\Client::DEBUG_SSL) {
+            printf("%s &lt;%d bytes of SSL data&gt;\n", $sep, strlen($data));
+        } else {
+            printf("%s %s\n", $sep, str_replace("\n", "\n$sep ", rtrim($data, "\n")));
+        }
+    }
+})-&gt;enqueue(new http\Client\Request("GET", "http://example.com"))-&gt;send();
+
+?&gt;
+</code></pre>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+  Except for http\Client::DEBUG_INFO, which always occurs separately, the debug
+  callback's $type argument contains a bitmask of (http\Client::DEBUG_IN or http\Client::DEBUG_OUT)
+  and (http\Client::DEBUG_HEADER or http\Client::DEBUG_BODY or http\Client::DEBUG_SSL).</p>
+</blockquote>
+
+<h3 id="Yields:">Yields:</h3>
+
+<pre><code>INFO:   Trying 93.184.216.34...
+
+INFO: Connected to example.com (93.184.216.34) port 80 (#0)
+
+&gt; GET / HTTP/1.1
+&gt; Host: example.com
+&gt; User-Agent: PECL_HTTP/2.6.0dev PHP/5.6.19RC1 libcurl/7.50.0-DEV
+&gt; Accept: */*
+&gt;
+&lt; HTTP/1.1 200 OK
+&lt; Cache-Control: max-age=604800
+&lt; Content-Type: text/html
+&lt; Date: Thu, 18 Aug 2016 17:55:10 GMT
+&lt; Etag: "359670651+gzip+ident"
+&lt; Expires: Thu, 25 Aug 2016 17:55:10 GMT
+&lt; Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
+&lt; Server: ECS (iad/182A)
+&lt; Vary: Accept-Encoding
+&lt; X-Cache: HIT
+&lt; x-ec-custom-error: 1
+&lt; Content-Length: 1270
+&lt;
+&lt; &lt;!doctype html&gt;
+&lt; &lt;html&gt;
+&lt; &lt;head&gt;
+&lt;     &lt;title&gt;Example Domain&lt;/title&gt;
+&lt;
+&lt;     &lt;meta charset="utf-8" /&gt;
+&lt;     &lt;meta http-equiv="Content-type" content="text/html; charset=utf-8" /&gt;
+&lt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+&lt;     &lt;style type="text/css"&gt;
+&lt;     body {
+&lt;         background-color: #f0f0f2;
+&lt;         margin: 0;
+&lt;         padding: 0;
+&lt;         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+&lt;
+&lt;     }
+&lt;     div {
+&lt;         width: 600px;
+&lt;         margin: 5em auto;
+&lt;         padding: 50px;
+&lt;         background-color: #fff;
+&lt;         border-radius: 1em;
+&lt;     }
+&lt;     a:link, a:visited {
+&lt;         color: #38488f;
+&lt;         text-decoration: none;
+&lt;     }
+&lt;     @media (max-width: 700px) {
+&lt;         body {
+&lt;             background-color: #fff;
+&lt;         }
+&lt;         div {
+&lt;             width: auto;
+&lt;             margin: 0 auto;
+&lt;             border-radius: 0;
+&lt;             padding: 1em;
+&lt;         }
+&lt;     }
+&lt;     &lt;/style&gt;
+&lt; &lt;/head&gt;
+&lt;
+&lt; &lt;body&gt;
+&lt; &lt;div&gt;
+&lt;     &lt;h1&gt;Example Domain&lt;/h1&gt;
+&lt;     &lt;p&gt;This domain is established to be used for illustrative examples in documents. You may use this
+&lt;     domain in examples without prior coordination or asking for permission.&lt;/p&gt;
+&lt;     &lt;p&gt;&lt;a href="http://www.iana.org/domains/example"&gt;More information...&lt;/a&gt;&lt;/p&gt;
+&lt; &lt;/div&gt;
+&lt; &lt;/body&gt;
+&lt; &lt;/html&gt;
+INFO: Connection #0 to host example.com left intact
+</code></pre>
+
+
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'http/Client/setDebug';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>

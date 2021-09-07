@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+							Cursor -
+						mdref
+		</title>
+		<meta name="viewport" content="width=1200, initial-scale=0.5">
+					<base href="/">
+			<meta http-equiv="Content-Location" content="/pq/Cursor">
+			<link rel="stylesheet" href="index.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="shortcut icon" href="/favicon.ico">
+	</head>
+	<body>
+		<div class="page">
+		
+<div class="sidebar">
+	
+	<div class="edit">
+		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Cursor.md">Edit</a>
+	</div>
+	
+	
+	<ul>
+		<li>&lsh; <a href="./">Home</a>
+			
+			<ul>
+				<li>
+											
+					&uarr; <a href="./pq">
+							pq
+						</a>
+						<ul>
+							<li>
+											
+							&circlearrowright; <strong><a href="./pq/Cursor">Cursor</a></strong>
+
+							
+							<ul>
+								
+								<li>
+									&rdsh; <a href="./pq/Cursor/__construct">Cursor::__construct</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Cursor/close">Cursor::close</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Cursor/closeAsync">Cursor::closeAsync</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Cursor/fetch">Cursor::fetch</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Cursor/fetchAsync">Cursor::fetchAsync</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Cursor/move">Cursor::move</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Cursor/moveAsync">Cursor::moveAsync</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Cursor/open">Cursor::open</a>
+									
+								</li>
+								
+								<li>
+									&rdsh; <a href="./pq/Cursor/openAsync">Cursor::openAsync</a>
+									
+								</li>
+								
+							</ul>
+							
+																																
+						</ul>
+																			
+						<li>&ldsh; <a href="./pq/COPY">COPY</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Cancel">Cancel</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Connection">Connection</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Converter">Converter</a></li>
+																													
+						<li>&ldsh; <a href="./pq/DateTime">DateTime</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Exception">Exception</a></li>
+																			
+						<li>&ldsh; <a href="./pq/LOB">LOB</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Result">Result</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Statement">Statement</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Transaction">Transaction</a></li>
+																			
+						<li>&ldsh; <a href="./pq/Types">Types</a></li>
+																																																										
+				</li>
+			</ul>
+			
+		</li>
+	</ul>
+</div>
+					
+<h1 id="class.pq\Cursor">class pq\Cursor</h1>
+
+<p>Declare a cursor.</p>
+
+<h2 id="Constants:">Constants:</h2>
+
+<ul>
+<li>BINARY<br>
+Causes the cursor to return data in binary rather than in text format. You probably do not want to use that.</li>
+<li>INSENSITIVE<br>
+The data returned by the cursor should be unaffected by updates to the tables underlying the cursor that take place after the cursor was opened.</li>
+<li>WITH_HOLD<br>
+The cursor should stay usable after the transaction that created it was successfully committed.</li>
+<li>SCROLL<br>
+Force that rows can be retrieved in any order from the cursor.</li>
+<li>NO_SCROLL<br>
+Force that rows are only retrievable in sequiential order.</li>
+</ul>
+
+<blockquote>
+  <p><strong><em>NOTE:</em></strong><br>
+    See the <a href="http://www.postgresql.org/docs/current/static/sql-declare.html#SQL-DECLARE-NOTES">notes in the official PostgreSQL documentation</a> for more information.</p>
+</blockquote>
+
+<h2 id="Properties:">Properties:</h2>
+
+<ul>
+<li>public (readonly) pq\Connection $connection<br>
+The connection the cursor was declared on.</li>
+<li>public (readonly) string $name<br>
+The identifying name of the cursor.</li>
+</ul>
+
+
+
+<h2 id="Functions:">Functions:</h2>
+<ul>
+	
+	<li>
+		<h3><a href="pq/Cursor/__construct">Cursor::__construct</a></h3>
+		<p>Declare a cursor.</p>
+
+		<p>void pq\Cursor::__construct(pq\Connection $conn, string $name, int $flags, string $query[, bool $async = FALSE])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Cursor/close">Cursor::close</a></h3>
+		<p>Close an open cursor.</p>
+
+		<p>void pq\Cursor::close()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Cursor/closeAsync">Cursor::closeAsync</a></h3>
+		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) close an open cursor.</p>
+
+		<p>void pq\Cursor::closeAsync()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Cursor/fetch">Cursor::fetch</a></h3>
+		<p>Fetch rows from the cursor.</p>
+
+		<p>pq\Result pq\Cursor::fetch([string $spec = &quot;1&quot;])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Cursor/fetchAsync">Cursor::fetchAsync</a></h3>
+		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) fetch rows from the cursor.</p>
+
+		<p>void pq\Cursor::fetchAsync([string $spec = &quot;1&quot;[, callable $callback = NULL]])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Cursor/move">Cursor::move</a></h3>
+		<p>Move the cursor.</p>
+
+		<p>pq\Result pq\Cursor::move([string $spec = &quot;1&quot;])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Cursor/moveAsync">Cursor::moveAsync</a></h3>
+		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) move the cursor.</p>
+
+		<p>void pq\Cursor::moveAsync([string $spec = &quot;1&quot;])</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Cursor/open">Cursor::open</a></h3>
+		<p>Reopen a cursor.</p>
+
+		<p>void pq\Cursor::open()</p>
+	</li>
+	
+	<li>
+		<h3><a href="pq/Cursor/openAsync">Cursor::openAsync</a></h3>
+		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) reopen a cursor.</p>
+
+		<p>void pq\Cursor::openAsync()</p>
+	</li>
+	
+</ul>
+
+		
+			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
+			<script>
+				var disqus_shortname = 'mdref';
+				var disqus_identifier = 'pq/Cursor';
+			</script>
+
+			<footer>
+				
+<ul>
+	<li><a href="https://github.com/m6w6/mdref">mdref-v2.0
+</a></li>
+	<li><a href="LICENSE">&copy; 2013-2021		All rights reserved.</a></li>
+	<li>
+</li>
+</ul>
+
+			</footer>
+		
+			<script src="index.js"></script>
+		
+		</div>
+	</body>
+</html>
