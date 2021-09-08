@@ -130,38 +130,29 @@
 	</ul>
 </div>
 					
-<h1 id="http\Client.http\Client::notify([http\Client\Request.$request.=.NULL[,.object.$progress.=.NULL]])">http\Client http\Client::notify([http\Client\Request $request = NULL[, object $progress = NULL]])</h1>
-
+<h1>http\Client http\Client::notify([http\Client\Request $request = NULL[, object $progress = NULL]])</h1>
 <p>Implements SplSubject. Notify attached observers about progress with $request.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional http\Client\Request $request = NULL<br>
+<li>Optional http\Client\Request $request = NULL<br />
 The request to notify about.</li>
-<li>Optional object $progress = NULL<br>
+<li>Optional object $progress = NULL<br />
 stdClass instance holding progress information.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Client, self.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\UnexpectedValueException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 class Observer implements SplObserver {
     function update(SplSubject $client, http\Client\Request $request = NULL, $progress = NULL) {
-        printf("%s %d%%\n", $progress-&gt;info,
+        printf(&quot;%s %d%%\n&quot;, $progress-&gt;info,
             $progress-&gt;dltotal ? ($progress-&gt;dlnow*100/$progress-&gt;dltotal) : 0);
     }
 }
@@ -169,13 +160,11 @@ class Observer implements SplObserver {
 $client = new http\Client;
 
 $client-&gt;attach(new Observer);
-$client-&gt;enqueue(new http\Client\Request("GET", "https://php.net/images/logos/php-logo.eps"));
+$client-&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;https://php.net/images/logos/php-logo.eps&quot;));
 $client-&gt;send();
 ?&gt;
 </code></pre>
-
 <p>May yield:</p>
-
 <pre><code>start 0%
 setup 0%
 setup 0%

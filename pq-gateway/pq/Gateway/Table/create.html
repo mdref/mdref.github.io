@@ -130,37 +130,30 @@
 	</ul>
 </div>
 					
-<h1 id="mixed.pq\Gateway\Table::create([array.$data.=.NULL[,.string.$returning.=.&quot;*&quot;]])">mixed pq\Gateway\Table::create([array $data = NULL[, string $returning = "*"]])</h1>
-
+<h1>mixed pq\Gateway\Table::create([array $data = NULL[, string $returning = &quot;*&quot;]])</h1>
 <p>Create a row in the table.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional array $data = NULL<br>
+<li>Optional array $data = NULL<br />
 The row data.</li>
-<li>Optional string $returning = "*"<br>
+<li>Optional string $returning = &quot;*&quot;<br />
 What the INSERT should return.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
 Else:</li>
 <li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
 <li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
 <li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Gateway\Table;
 
-$accounts = new Table("account");
-$mike = $accounts-&gt;create(["name" =&gt; "mike"])-&gt;current();
+$accounts = new Table(&quot;account&quot;);
+$mike = $accounts-&gt;create([&quot;name&quot; =&gt; &quot;mike&quot;])-&gt;current();
 
 ?&gt;
 </code></pre>

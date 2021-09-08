@@ -126,38 +126,31 @@
 	</ul>
 </div>
 					
-<h1 id="void.pq\Connection::unlisten(string.$channel)">void pq\Connection::unlisten(string $channel)</h1>
-
+<h1>void pq\Connection::unlisten(string $channel)</h1>
 <p>Stop listening for notifications on channel $channel.
 See pq\Connection::listen().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $channel<br>
+<li>string $channel<br />
 The name of a channel which is currently listened on.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 <li>pq\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 $conn = new pq\Connection;
-$conn-&gt;listen("foo", function($channel, $message, $backend_pid) {
-    printf("Got message '%s' on channel '%s' from backend %d\n", 
-        $message, $channel, $backend_pid);
+$conn-&gt;listen(&quot;foo&quot;, function($channel, $message, $backend_pid) {
+	printf(&quot;Got message '%s' on channel '%s' from backend %d\n&quot;, 
+		$message, $channel, $backend_pid);
 });
 
-$conn-&gt;notify("foo", "bar");
-$conn-&gt;unlisten("foo");
+$conn-&gt;notify(&quot;foo&quot;, &quot;bar&quot;);
+$conn-&gt;unlisten(&quot;foo&quot;);
 
 ?&gt;
 </code></pre>

@@ -90,20 +90,16 @@
 	</ul>
 </div>
 					
-<h1 id="void.http\Client\Curl\User::init(callable.$run)">void http\Client\Curl\User::init(callable $run)</h1>
-
+<h1>void http\Client\Curl\User::init(callable $run)</h1>
 <p>Initialize the event loop.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>callable $run as function(http\Client $c, resource $s = null, int $action = http\Client\Curl\User::POLL_NONE) : int<br>
+<li>callable $run as function(http\Client $c, resource $s = null, int $action = http\Client\Curl\User::POLL_NONE) : int<br />
 Internal callback returning the number of unfinished requests pending.</li>
 </ul>
-
 <blockquote>
-  <p><strong><em>NOTE</em></strong>:<br>
-  The callback should be run when a timeout occurs or a watched socket needs action.</p>
+<p><em><strong>NOTE</strong></em>:<br />
+The callback should be run when a timeout occurs or a watched socket needs action.</p>
 </blockquote>
 
 

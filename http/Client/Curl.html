@@ -154,518 +154,467 @@
 	</ul>
 </div>
 					
-<h1 id="namespace.http\Client\Curl">namespace http\Client\Curl</h1>
-
+<h1>namespace http\Client\Curl</h1>
 <p>The http\Client\Curl namespace holds option value constants specific to the curl driver of the http\Client.</p>
-
-<p>Head down for the <a href="http/Client/Curl#Options:">list of available request options</a> as well as the 
+<p>Head down for the <a href="http/Client/Curl#Options:">list of available request options</a> as well as the
 <a href="http/Client/Curl#Configuration:">list of available client configuration options</a>.</p>
-
-<h2 id="Constants:">Constants:</h2>
-
-<h3 id="Features.and.Versions">Features and Versions</h3>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
+<h3>Features and Versions<a id="Features.and.Versions" href="#Features.and.Versions" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>FEATURES<br>
-Bitmask of available libcurl features.<br>
+<li>FEATURES<br />
+Bitmask of available libcurl features.<br />
 See http\Client\Curl\Features namespace.</li>
-<li>VERSIONS<br>
-List of library versions of or linked into libcurl,<br>
-e.g. "libcurl/7.50.0 OpenSSL/1.0.2h zlib/1.2.8 libidn/1.32 nghttp2/1.12.0".<br>
+<li>VERSIONS<br />
+List of library versions of or linked into libcurl,<br />
+e.g. &quot;libcurl/7.50.0 OpenSSL/1.0.2h zlib/1.2.8 libidn/1.32 nghttp2/1.12.0&quot;.<br />
 See http\Client\Curl\Versions namespace.</li>
 </ul>
-
-<h3 id="HTTP.Protocol.Version">HTTP Protocol Version</h3>
-
+<h3>HTTP Protocol Version<a id="HTTP.Protocol.Version" href="#HTTP.Protocol.Version" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>HTTP_VERSION_1_0<br>
+<li>HTTP_VERSION_1_0<br />
 Use HTTP/1.0 protocol version.</li>
-<li>HTTP_VERSION_1_1<br>
+<li>HTTP_VERSION_1_1<br />
 Use HTTP/1.1 protocol version.</li>
-<li>HTTP_VERSION_2_0<br>
+<li>HTTP_VERSION_2_0<br />
 Attempt to use HTTP/2 protocol version. Available if libcurl is v7.33.0 or more recent and was built with nghttp2 support.</li>
-<li>HTTP_VERSION_2TLS<br>
+<li>HTTP_VERSION_2TLS<br />
 Attempt to use version 2 for HTTPS, version 1.1 for HTTP. Available if libcurl is v7.47.0 or more recent and was built with http2 support.</li>
-<li>HTTP_VERSION_2_PRIOR_KNOWLEDGE<br>
+<li>HTTP_VERSION_2_PRIOR_KNOWLEDGE<br />
 Declare prior knowledge that the server supports plain (non-TLS) HTTP/2. Available if libcurl is v7.49.0 or more recent and was built with http2 support.</li>
-<li>HTTP_VERSION_3<br>
+<li>HTTP_VERSION_3<br />
 Force usage of HTTP/3. See also http\Client\Curl::$altsvc. Available if libcurl is v7.66.0 or more recent.</li>
-<li>HTTP_VERSION_ANY<br>
+<li>HTTP_VERSION_ANY<br />
 Use any HTTP protocol version.</li>
 </ul>
-
-<h3 id="SSL.Protocol.Version">SSL Protocol Version</h3>
-
+<h3>SSL Protocol Version<a id="SSL.Protocol.Version" href="#SSL.Protocol.Version" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>SSL_VERSION_TLSv1_0<br>
+<li>SSL_VERSION_TLSv1_0<br />
 Use TLS v1.0 encryption. Available if libcurl is v7.34.0 or more recent.</li>
-<li>SSL_VERSION_TLSv1_1<br>
+<li>SSL_VERSION_TLSv1_1<br />
 Use TLS v1.1 encryption. Available if libcurl is v7.34.0 or more recent.</li>
-<li>SSL_VERSION_TLSv1_2<br>
+<li>SSL_VERSION_TLSv1_2<br />
 Use TLS v1.2 encryption. Available if libcurl is v7.34.0 or more recent.</li>
-<li>SSL_VERSION_TLSv1_3<br>
+<li>SSL_VERSION_TLSv1_3<br />
 Use TLS v1.3 encryption. Available if libcurl is v7.52.0 or more recent.</li>
-<li>SSL_VERSION_TLSv1<br>
+<li>SSL_VERSION_TLSv1<br />
 Use any TLS v1 encryption.</li>
-<li>SSL_VERSION_SSLv2<br>
+<li>SSL_VERSION_SSLv2<br />
 Use SSL v2 encryption.</li>
-<li>SSL_VERSION_SSLv3<br>
+<li>SSL_VERSION_SSLv3<br />
 Use SSL v3 encryption.</li>
-<li>SSL_VERSION_ANY<br>
+<li>SSL_VERSION_ANY<br />
 Use any encryption.</li>
-<li>SSL_VERSION_MAX_DEFAULT<br>
+<li>SSL_VERSION_MAX_DEFAULT<br />
 Use max default encryption. To be bitwise ORed to a http\Client\Curl\SSL_VERSION_ constant. Available if libcurl is v7.54.0 or more recent.</li>
-<li>SSL_VERSION_MAX_TLSv1_0<br>
+<li>SSL_VERSION_MAX_TLSv1_0<br />
 Use upt to TLS v1.0 encryption. To be bitwise ORed to a http\Client\Curl\SSL_VERSION_ constant. Available if libcurl is v7.54.0 or more recent.</li>
-<li>SSL_VERSION_MAX_TLSv1_1<br>
+<li>SSL_VERSION_MAX_TLSv1_1<br />
 Use up to TLS v1.1 encryption. To be bitwise ORed to a http\Client\Curl\SSL_VERSION_ constant. Available if libcurl is v7.54.0 or more recent.</li>
-<li>SSL_VERSION_MAX_TLSv1_2<br>
+<li>SSL_VERSION_MAX_TLSv1_2<br />
 Use up to TLS v1.2 encryption. To be bitwise ORed to a http\Client\Curl\SSL_VERSION_ constant. Available if libcurl is v7.54.0 or more recent.</li>
-<li>SSL_VERSION_MAX_TLSv1_3<br>
+<li>SSL_VERSION_MAX_TLSv1_3<br />
 Use up to TLS v1.3 encryption. To be bitwise ORed to a http\Client\Curl\SSL_VERSION_ constant. Available if libcurl is v7.54.0 or more recent.</li>
 </ul>
-
-<h3 id="TLS.Auth.Types">TLS Auth Types</h3>
-
+<h3>TLS Auth Types<a id="TLS.Auth.Types" href="#TLS.Auth.Types" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>TLSAUTH_SRP<br>
+<li>TLSAUTH_SRP<br />
 Use TLS SRP authentication. Available if libcurl is v7.21.4 or more recent and was built with gnutls or openssl with TLS-SRP support.</li>
 </ul>
-
-<h3 id="DNS.IP.Version">DNS IP Version</h3>
-
+<h3>DNS IP Version<a id="DNS.IP.Version" href="#DNS.IP.Version" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>IPRESOLVE_V4<br>
+<li>IPRESOLVE_V4<br />
 Use IPv4 resolver.</li>
-<li>IPRESOLVE_V6<br>
+<li>IPRESOLVE_V6<br />
 Use IPv6 resolver.</li>
-<li>IPRESOLVE_ANY<br>
+<li>IPRESOLVE_ANY<br />
 Use any resolver.</li>
 </ul>
-
-<h3 id="Authentication.Type">Authentication Type</h3>
-
+<h3>Authentication Type<a id="Authentication.Type" href="#Authentication.Type" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>AUTH_NONE<br>
+<li>AUTH_NONE<br />
 Don't use authentication.</li>
-<li>AUTH_BASIC<br>
+<li>AUTH_BASIC<br />
 Use Basic authentication.</li>
-<li>AUTH_DIGEST<br>
+<li>AUTH_DIGEST<br />
 Use Digest authentication.</li>
-<li>AUTH_DIGEST_IE<br>
+<li>AUTH_DIGEST_IE<br />
 Use IE (lower v7) quirks with Digest authentication. Available if libcurl is v7.19.3 or more recent.</li>
-<li>AUTH_NTLM<br>
+<li>AUTH_NTLM<br />
 Use NTLM authentication.</li>
-<li>AUTH_GSSNEG<br>
+<li>AUTH_GSSNEG<br />
 Use GSS-Negotiate authentication.</li>
-<li>AUTH_SPNEGO<br>
+<li>AUTH_SPNEGO<br />
 Use HTTP Netgotiate authentication (SPNEGO, RFC4559). Available if libcurl is v7.38.0 or more recent.</li>
-<li>AUTH_BEARER<br>
+<li>AUTH_BEARER<br />
 Bearer authentication. Set bearer with http\Client\Curl::$xoauth2_bearer request option. Available if libcurl is v7.61.0 or more recent.</li>
-<li>AUTH_AWS_SIGV4<br>
+<li>AUTH_AWS_SIGV4<br />
 Use AWS SIGv4 authentication. Available if libcurl is v7.75.0 or more recent.</li>
-<li>AUTH_ANY<br>
+<li>AUTH_ANY<br />
 Use any authentication.</li>
 </ul>
-
-<h3 id="Proxy.Protocol.Version">Proxy Protocol Version</h3>
-
+<h3>Proxy Protocol Version<a id="Proxy.Protocol.Version" href="#Proxy.Protocol.Version" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>PROXY_SOCKS4<br>
+<li>PROXY_SOCKS4<br />
 Use SOCKSv4 proxy protocol.</li>
-<li>PROXY_SOCKS4A<br>
+<li>PROXY_SOCKS4A<br />
 Use SOCKSv4a proxy protocol.</li>
-<li>PROXY_SOCKS5_HOSTNAME<br>
+<li>PROXY_SOCKS5_HOSTNAME<br />
 Use SOCKS5h proxy protocol.</li>
-<li>PROXY_SOCKS5<br>
+<li>PROXY_SOCKS5<br />
 Use SOCKS5 proxy protoccol.</li>
-<li>PROXY_HTTP<br>
+<li>PROXY_HTTP<br />
 Use HTTP/1.1 proxy protocol.</li>
-<li>PROXY_HTTP_1_0<br>
+<li>PROXY_HTTP_1_0<br />
 Use HTTP/1.0 proxy protocol. Available if libcurl is v7.19.4 or more recent.</li>
 </ul>
-
-<h3 id="POST.Redirection.Behavior">POST Redirection Behavior</h3>
-
+<h3>POST Redirection Behavior<a id="POST.Redirection.Behavior" href="#POST.Redirection.Behavior" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>POSTREDIR_301<br>
+<li>POSTREDIR_301<br />
 Keep POSTing on 301 redirects. Available if libcurl is v7.19.1 or more recent.</li>
-<li>POSTREDIR_302<br>
+<li>POSTREDIR_302<br />
 Keep POSTing on 302 redirects. Available if libcurl is v7.19.1 or more recent.</li>
-<li>POSTREDIR_303<br>
+<li>POSTREDIR_303<br />
 Keep POSTing on 303 redirects. Available if libcurl is v7.19.1 or more recent.</li>
-<li>POSTREDIR_ALL<br>
+<li>POSTREDIR_ALL<br />
 Keep POSTing on any redirect. Available if libcurl is v7.19.1 or more recent.</li>
 </ul>
-
-<h3 id="Alt-Svc.Cache.Control">Alt-Svc Cache Control</h3>
-
+<h3>Alt-Svc Cache Control<a id="Alt-Svc.Cache.Control" href="#Alt-Svc.Cache.Control" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>ALTSVC_READONLYFILE<br>
+<li>ALTSVC_READONLYFILE<br />
 Do only read from but not write to the Alt-Svc cache file. Available if libcurl is v7.64.1 or more recent.</li>
-<li>ALTSVC_H1<br>
+<li>ALTSVC_H1<br />
 Accept alternative services offered over HTTP/1.1. Available if libcurl is v7.64.1 or more recent.</li>
-<li>ALTSVC_H2<br>
+<li>ALTSVC_H2<br />
 Accept alternative services offered over HTTP/2. Available if libcurl is v7.64.1 or more recent.</li>
-<li>ALTSVC_H3<br>
+<li>ALTSVC_H3<br />
 Accept alternative services offered over HTTP/3. Available if libcurl is v7.64.1 or more recent.</li>
 </ul>
-
-<h3 id="HSTS.Cache.Control">HSTS Cache Control</h3>
-
+<h3>HSTS Cache Control<a id="HSTS.Cache.Control" href="#HSTS.Cache.Control" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>HSTS_ENABLE<br>
+<li>HSTS_ENABLE<br />
 Enable the cache. Available if libcurl is v7.74.0 or more recent.</li>
-<li>HSTS_READONLYFILE<br>
+<li>HSTS_READONLYFILE<br />
 Do only read from but not write to the HSTS cache file. Available if libcurl is v7.74.0 or more recent.</li>
 </ul>
-
-<h2 id="Options:">Options:</h2>
-
+<h2>Options:<a id="Options:" href="#Options:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>The option names used here are more or less derived from the corresponding CURLOPT_* names.</p>
-
-<h3 id="HTTP">HTTP</h3>
-
+<h3>HTTP<a id="HTTP" href="#HTTP" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>int $protocol<br>
+<li>int $protocol<br />
 The HTTP protocol version. See http\Client\Curl\HTTP_VERSION_* constants.</li>
-<li>bool $http09_allowed<br>
+<li>bool $http09_allowed<br />
 Allow HTTP/0.9 responses. Available if libcurl is v7.64.0 or more recent. Prior to v7.64.0, responses without headers were treated as HTTP/0.9 responses and uncoditionally allowed. Enable this option to restore that behavior.</li>
 </ul>
-
-<h3 id="Proxies">Proxies</h3>
-
+<h3>Proxies<a id="Proxies" href="#Proxies" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>string $proxyhost<br>
+<li>string $proxyhost<br />
 The hostname of the proxy.</li>
-<li>int $proxytype<br>
+<li>int $proxytype<br />
 See http\Client\Curl\PROXY_* constants.</li>
-<li>int $proxyport<br>
+<li>int $proxyport<br />
 The port number of the proxy.</li>
-<li>string $proxyauth<br>
+<li>string $proxyauth<br />
 user:password</li>
-<li>int $proxyauthtype<br>
+<li>int $proxyauthtype<br />
 See http\Client\Curl\AUTH_* constants.</li>
-<li>bool $proxytunnel<br>
+<li>bool $proxytunnel<br />
 Tunnel all operations through the proxy.</li>
-<li>string $noproxy<br>
+<li>string $noproxy<br />
 Comma separated list of hosts where no proxy should be used. Available if libcurl is v7.19.4 or more recent.</li>
-<li>array $proxyheader<br>
+<li>array $proxyheader<br />
 List of key/value pairs of headers which should only be sent to a proxy. Available if libcurl is v7.37.0 or more recent.</li>
-<li>string $proxy_service_name<br>
-Proxy service name. The default service name is "HTTP" for HTTP based proxies and "rcmd" for SOCKS5. Available if libcurl is v7.43.0 or more recent and has built-in GSSAPI support.</li>
-<li>int $socks5_auth<br>
-SOCKS5 proxy authentication type. Available if libcurl is v7.55.0 or more recent.<br>
+<li>string $proxy_service_name<br />
+Proxy service name. The default service name is &quot;HTTP&quot; for HTTP based proxies and &quot;rcmd&quot; for SOCKS5. Available if libcurl is v7.43.0 or more recent and has built-in GSSAPI support.</li>
+<li>int $socks5_auth<br />
+SOCKS5 proxy authentication type. Available if libcurl is v7.55.0 or more recent.<br />
 Available settings:
-
 <ul>
 <li>http\Client\Curl\AUTH_NONE</li>
 <li>http\Client\Curl\AUTH_BASIC</li>
 <li>http\Client\Curl\AUTH_GSSNEG</li>
-</ul></li>
-<li>bool $haproxy_protocol<br>
+</ul>
+</li>
+<li>bool $haproxy_protocol<br />
 Send special <a href="https://github.com/haproxy/haproxy/blob/master/doc/proxy-protocol.txt">HAProxy protocol</a> preamble. Available if libcurl is v7.60.0 or more recent.</li>
 </ul>
-
-<h3 id="DNS">DNS</h3>
-
+<h3>DNS<a id="DNS" href="#DNS" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>int $dns_cache_timeout<br>
+<li>int $dns_cache_timeout<br />
 Resolved hosts will be kept fot this number of seconds.</li>
-<li>int $ipresolve<br>
+<li>int $ipresolve<br />
 See http\Client\Curl\IPRESOLVE_* constants.</li>
-<li>array $resolve<br>
+<li>array $resolve<br />
 A list of HOST:PORT:ADDRESS mappings which pre-populate the DNS cache. Available if libcurl is v7.21.3 or more recent.</li>
-<li>string $dns_servers<br>
+<li>string $dns_servers<br />
 Comma separated list of custom DNS servers of the form HOST[:PORT]. Available if libcurl is v7.24.0 or more recent and has built-in c-ares support.</li>
-<li>string $dns_interface<br>
-The name of the network interface <strong><em>name</em></strong> that the DNS resolver should bind to. Available if libcurl is v7.33.0 or more recent and has built-in c-ares support.</li>
-<li>string $dns_local_ip4<br>
-The local IPv4 <strong><em>address</em></strong> that the resolver should bind to. Available if libcurl is v7.33.0 or more recent and has built-in c-ares support.</li>
-<li>string $dns_local_ip6<br>
-The local IPv6 <strong><em>address</em></strong> that the resolver should bind to. Available if libcurl is v7.33.0 or more recent and has built-in c-ares support.</li>
-<li>bool $dns_shuffle_addresses<br>
+<li>string $dns_interface<br />
+The name of the network interface <em><strong>name</strong></em> that the DNS resolver should bind to. Available if libcurl is v7.33.0 or more recent and has built-in c-ares support.</li>
+<li>string $dns_local_ip4<br />
+The local IPv4 <em><strong>address</strong></em> that the resolver should bind to. Available if libcurl is v7.33.0 or more recent and has built-in c-ares support.</li>
+<li>string $dns_local_ip6<br />
+The local IPv6 <em><strong>address</strong></em> that the resolver should bind to. Available if libcurl is v7.33.0 or more recent and has built-in c-ares support.</li>
+<li>bool $dns_shuffle_addresses<br />
 Enforce shuffling DNS addresses returned from the system. Available if libcurl is v7.60.0 or more recent.</li>
-<li>string $doh_url<br>
+<li>string $doh_url<br />
 URL to use for DNS-over-HTTPS. Note the HTTPS. Available if libcurl is v7.62.0 or more recent.</li>
 </ul>
-
-<h3 id="Limits">Limits</h3>
-
+<h3>Limits<a id="Limits" href="#Limits" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>int $low_speed_limit<br>
+<li>int $low_speed_limit<br />
 Minimum speed in bytes per second.</li>
-<li>int $low_speed_time<br>
+<li>int $low_speed_time<br />
 Maximum time in seconds the transfer can be below $low_speed_limit before cancelling.</li>
-<li>int $maxfilesize<br>
+<li>int $maxfilesize<br />
 Maximum download size.</li>
-<li>int $maxage_conn<br>
+<li>int $maxage_conn<br />
 Maximum time in seconds an idle connection is checked to still be alive for a new transfer. Defaults to 118 seconds. Available if libcurl is v7.65.0 or more recent.</li>
 </ul>
-
-<h3 id="Connection.handling">Connection handling</h3>
-
+<h3>Connection handling<a id="Connection.handling" href="#Connection.handling" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>bool $fresh_connect<br>
+<li>bool $fresh_connect<br />
 Force a new connection.</li>
-<li>bool $forbid_reuse<br>
+<li>bool $forbid_reuse<br />
 Force closing the connection.</li>
 </ul>
-
-<h3 id="Networking">Networking</h3>
-
+<h3>Networking<a id="Networking" href="#Networking" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>string $interface<br>
+<li>string $interface<br />
 Outgoing interface name.</li>
-<li>array $portrange<br>
+<li>array $portrange<br />
 A tuple of min/max ports.</li>
-<li>int $port<br>
+<li>int $port<br />
 Override the URL's port.</li>
-<li>int $address_scope<br>
+<li>int $address_scope<br />
 RFC4007 zone_id. Available if libcurl is v7.19.0 or more recent.</li>
-<li>bool $tcp_keepalive<br>
+<li>bool $tcp_keepalive<br />
 Whether to use TCP keepalive. Available if libcurl is v7.25.0 or more recent.</li>
-<li>int $tcp_keepidle<br>
+<li>int $tcp_keepidle<br />
 Seconds to wait before sending keepalive probes. Available if libcurl is v7.25.0 or more recent.</li>
-<li>int $tcp_keepintvl<br>
+<li>int $tcp_keepintvl<br />
 Interval in seconds to wait between sending keepalive probes. Available if libcurl is v7.25.0 or more recent.</li>
-<li>bool $tcp_nodelay<br>
+<li>bool $tcp_nodelay<br />
 Disable <a href="http://tools.ietf.org/html/rfc896">Nagle's algotrithm</a>.</li>
-<li>bool $tcp_fastopen<br>
+<li>bool $tcp_fastopen<br />
 Enable <a href="http://tools.ietf.org/html/rfc7413">TCP Fast Open</a> on supported platforms.</li>
-<li>string $unix_socket_path<br>
+<li>string $unix_socket_path<br />
 Connect to the webserver listening at $unix_socket_path instead of opening a TCP connection to it. Available if libcurl is v7.40.0 or more recent and has built-in unix socket support.</li>
-<li>string $abstract_unix_socket<br>
+<li>string $abstract_unix_socket<br />
 Similar to $unix_socket_path but for abstract namespaces independent of the filesystem. The preceding NULL byte is adedd automatically. Available if libcurl is v7.53.0 on supporting platforms and has built-in unix socket support.</li>
-<li>bool $path_as_is<br>
-Do <em>not</em> squash sequences of "/../" or "/./" that may exist in the URL's path.</li>
+<li>bool $path_as_is<br />
+Do <em>not</em> squash sequences of &quot;/../&quot; or &quot;/./&quot; that may exist in the URL's path.</li>
 </ul>
-
-<h3 id="Authentication">Authentication</h3>
-
+<h3>Authentication<a id="Authentication" href="#Authentication" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>string $httpauth<br>
+<li>string $httpauth<br />
 user:password</li>
-<li>int $httpauthtype<br>
+<li>int $httpauthtype<br />
 See http\Client\Curl\AUTH_* constants.</li>
-<li>string $service_name<br>
-The name of the service for DIGEST-MD5, SPNEGO and KERBEROS5 authentication mechanisms. The default service name is "HTTP". Available if libcurl is v7.43.0 or more recent.</li>
-<li>string $xoauth2_bearer<br>
+<li>string $service_name<br />
+The name of the service for DIGEST-MD5, SPNEGO and KERBEROS5 authentication mechanisms. The default service name is &quot;HTTP&quot;. Available if libcurl is v7.43.0 or more recent.</li>
+<li>string $xoauth2_bearer<br />
 Bearer token for http\Client\Curl\AUTH_BEARER. Available if libcurl is v7.61.0 or more recent.</li>
-<li>string $aws_sigv4<br>
+<li>string $aws_sigv4<br />
 Provide AWS V4 signature authentication in the form of <code>provider1[:provider2[:region[:service]]]</code>. Defaults to <code>aws:amz</code> if http\Client\Curl\AUTH_AWS_SIGV4 was used for $httpauthtype. Available if libcurl is v7.75.0 or more recent.</li>
 </ul>
-
-<h3 id="Redirection">Redirection</h3>
-
+<h3>Redirection<a id="Redirection" href="#Redirection" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>int $redirect<br>
+<li>int $redirect<br />
 How many redirects to follow.</li>
-<li>bool $unrestricted_auth<br>
+<li>bool $unrestricted_auth<br />
 Whether to keep sending authentication credentials on redirects to different hosts.</li>
-<li>int $postredir<br>
+<li>int $postredir<br />
 See http\Client\Curl\POSTREDIR_* constants. Available if libcurl is v7.19.1 or more recent.</li>
 </ul>
-
-<h3 id="Retries">Retries</h3>
-
+<h3>Retries<a id="Retries" href="#Retries" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>int $retrycount<br>
+<li>int $retrycount<br />
 Retry this often.</li>
-<li>float $retrydelay<br>
+<li>float $retrydelay<br />
 Pause this number of seconds between retries.</li>
 </ul>
-
-<h3 id="Special.headers">Special headers</h3>
-
+<h3>Special headers<a id="Special.headers" href="#Special.headers" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>string $referer<br>
+<li>string $referer<br />
 Custom Referer header.</li>
-<li>bool $autoreferer<br>
+<li>bool $autoreferer<br />
 Whether to automatically send referers.</li>
-<li>string $useragent<br>
+<li>string $useragent<br />
 Custom User-Agent header. Setting this option to NULL will use the default user agent, use the empty string to prevent this header being sent at all.</li>
-<li>string $etag<br>
+<li>string $etag<br />
 Custom ETag.</li>
-<li>bool $compress<br>
+<li>bool $compress<br />
 Whether to request compressed content (through Accept-Encoding).</li>
-<li>int $lastmodified<br>
+<li>int $lastmodified<br />
 Custom If-(Un)Modified since time. If less than zero, the current time will be added.</li>
-<li>string $altsvc<br>
+<li>string $altsvc<br />
 Specify a file name to use as <code>Alt-Svc</code> cache. Available if libcurl is v7.64.1 or more recent.</li>
-<li>int $altsvc_ctrl<br>
+<li>int $altsvc_ctrl<br />
 Specify how to handle <code>Alt-Svc</code> announcements as a bitmask of http\Client\Curl\ALTSVC_* constants. Available if libcurl is v7.64.1 or more recent.</li>
-<li>string $hsts<br>
+<li>string $hsts<br />
 Specify a file name to use as HSTS cache. Availalbe if libcurl is v7.74.0 or more recent.</li>
-<li>int $hsts_ctrl<br>
+<li>int $hsts_ctrl<br />
 Specify how to handle the HSTS cache as a bitmask of http\Client\Curl\HSTS_* constatns. Available if libcurl is v7.74.0</li>
 </ul>
-
-<h3 id="Resume/Ranges">Resume/Ranges</h3>
-
+<h3>Resume/Ranges<a id="Resume.Ranges" href="#Resume.Ranges" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>int $resume<br>
+<li>int $resume<br />
 Resume from this byte offset.</li>
-<li>array $range<br>
+<li>array $range<br />
 Fetch specific ranges (if server supports byte ranges).</li>
 </ul>
-
-<h3 id="Cookies">Cookies</h3>
-
+<h3>Cookies<a id="Cookies" href="#Cookies" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>bool $encodecookies<br>
+<li>bool $encodecookies<br />
 Whether to URLencode cookies.</li>
-<li>array $cookies<br>
-List of custom cookies in the form ["name" => "value"].</li>
-<li>bool $cookiesession<br>
+<li>array $cookies<br />
+List of custom cookies in the form [&quot;name&quot; =&gt; &quot;value&quot;].</li>
+<li>bool $cookiesession<br />
 Ignore previous session cookies to be loaded from $cookiestore.</li>
-<li>string $cookiestore<br>
+<li>string $cookiestore<br />
 Path to a Netscape cookie file, from which cookies will be loaded resp. to which cookies will be written.</li>
 </ul>
-
-<h3 id="Timeouts">Timeouts</h3>
-
+<h3>Timeouts<a id="Timeouts" href="#Timeouts" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>float $timeout<br>
+<li>float $timeout<br />
 Seconds the complete transfer may take.</li>
-<li>float $connecttimeout<br>
+<li>float $connecttimeout<br />
 Seconds the connect may take.</li>
-<li>float $expect_100_timeout<br>
-Senconds to wait for the server to send a response to "Expect: 100-Continue" before just proceeding with the request. Available if libcurl is v7.36.0 or more recent.</li>
+<li>float $expect_100_timeout<br />
+Senconds to wait for the server to send a response to &quot;Expect: 100-Continue&quot; before just proceeding with the request. Available if libcurl is v7.36.0 or more recent.</li>
 </ul>
-
-<h3 id="SSL">SSL</h3>
-
+<h3>SSL<a id="SSL" href="#SSL" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>array $ssl<br>
-Subarray of SSL related options:
-
+<li>
+<p>array $ssl<br />
+Subarray of SSL related options:</p>
 <ul>
-<li>string $cert<br>
+<li>string $cert<br />
 SSL certificate file.</li>
-<li>string $certtype<br>
+<li>string $certtype<br />
 Certificate type (DER, PEM). (Secure Transport additionally supports P12).</li>
-<li>string $key<br>
+<li>string $key<br />
 Private key file.</li>
-<li>string $keytype<br>
+<li>string $keytype<br />
 PK type (PEM, DER, ENG).</li>
-<li>string $keypasswd<br>
+<li>string $keypasswd<br />
 The password for the private key.</li>
-<li>string $engine<br>
+<li>string $engine<br />
 Crypto engine to use for the private key.</li>
-<li>int $version<br>
+<li>int $version<br />
 See http\Client\Curl\SSL_VERSION_* constants.</li>
-<li>bool $verifypeer<br>
+<li>bool $verifypeer<br />
 Whether to apply peer verification.</li>
-<li>bool $verifyhost<br>
+<li>bool $verifyhost<br />
 Whether to apply host verification.</li>
-<li>string $cipher_list<br>
+<li>string $cipher_list<br />
 One or more cipher strings separated by colons.</li>
-<li>string $cainfo<br>
+<li>string $cainfo<br />
 CA bundle to verify the peer with.</li>
-<li>string $capath<br>
+<li>string $capath<br />
 Directory with prepared CA certs to verify the peer with.</li>
-<li>string $random_file<br>
+<li>string $random_file<br />
 A file used to read from to seed the random engine.</li>
-<li>string $egdsocket<br>
+<li>string $egdsocket<br />
 A Entropy Gathering Daemon socket.</li>
-<li>string $issuercert<br>
+<li>string $issuercert<br />
 CA PEM cert file for peer verification. Available if libcurl is v7.19.0 or more recent.</li>
-<li>string $crlfile<br>
+<li>string $crlfile<br />
 File with the concatenation of CRL in PEM format. Available if libcurl was built with OpenSSL support.</li>
-<li>bool $certinfo<br>
+<li>bool $certinfo<br />
 Enable gathering of SSL certificate chain information. Available if libcurl is v7.19.1 or more recent.</li>
-<li>string $pinned_publickey<br>
+<li>string $pinned_publickey<br />
 File with a public key to pin. Available if libcurl is v7.39.0 or more recent.</li>
-<li>int $tlsauthtype<br>
+<li>int $tlsauthtype<br />
 TLS_AUTH_* constant. Available if libcurl is v7.21.4 or more recent.</li>
-<li>string $tlsauthuser<br>
+<li>string $tlsauthuser<br />
 TLS-SRP username. Available if libcurl is v7.21.4 or more recent.</li>
-<li>string $tlsauthpass<br>
+<li>string $tlsauthpass<br />
 TLS-SRP password. Available if libcurl is v7.21.4 or more recent.</li>
-<li>bool $verifystatus<br>
+<li>bool $verifystatus<br />
 Enable OCSP. Available if libcurl is v7.41.0 or more recent and was built with OpenSSL, GnuTLS or NSS support.</li>
-<li>bool $falsestart<br>
+<li>bool $falsestart<br />
 Whether false start should be used during the TLS handshake. Available if libcurl is v7.42.0 or more recent and was built with NSS or SecureTransport support.</li>
-<li>string $tls13_ciphers<br>
+<li>string $tls13_ciphers<br />
 TLSv1.3 cipher list. Available if libcurl is v7.61.0 or more recent.</li>
-</ul></li>
-<li>array $proxy_ssl<br>
-Subarray of SSL related options to use for the proxy:<br>
-> See the respective $ssl options above for descriptions.
-
-<ul>
-<li>string $cert<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $certtype<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $key<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $keytype<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $keypasswd<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>int $version<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>bool $verifypeer<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>bool $verifyhost<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $cipher_list<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $cainfo<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $capath<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $crlfile<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $pinned_publickey<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>int $tlsauthtype<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $tlsauthuser<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $tlsauthpass<br>
-Available if libcurl is v7.52.0 or more recent.</li>
-<li>string $pinned_publickey<br>
-Available if libcurl is v7.59.0 or more recent.</li>
-<li>string $tls13_ciphers<br>
-Available if libcurl is v7.61.0 or more recent.</li>
-<li>string $issuercert<br>
-Available if libcurl is v7.71.0 or more recent.</li>
-</ul></li>
 </ul>
-
-<h2 id="Configuration:">Configuration:</h2>
-
+</li>
+<li>
+<p>array $proxy_ssl<br />
+Subarray of SSL related options to use for the proxy:</p>
+<blockquote>
+<p>See the respective $ssl options above for descriptions.</p>
+</blockquote>
 <ul>
-<li>int $maxconnects<br>
+<li>string $cert<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $certtype<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $key<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $keytype<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $keypasswd<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>int $version<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>bool $verifypeer<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>bool $verifyhost<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $cipher_list<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $cainfo<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $capath<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $crlfile<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $pinned_publickey<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>int $tlsauthtype<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $tlsauthuser<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $tlsauthpass<br />
+Available if libcurl is v7.52.0 or more recent.</li>
+<li>string $pinned_publickey<br />
+Available if libcurl is v7.59.0 or more recent.</li>
+<li>string $tls13_ciphers<br />
+Available if libcurl is v7.61.0 or more recent.</li>
+<li>string $issuercert<br />
+Available if libcurl is v7.71.0 or more recent.</li>
+</ul>
+</li>
+</ul>
+<h2>Configuration:<a id="Configuration:" href="#Configuration:" class="permalink" aria-hidden="true" title="">#</a></h2>
+<ul>
+<li>int $maxconnects<br />
 Size of the connection cache.</li>
-<li>int $max_host_connections<br>
+<li>int $max_host_connections<br />
 Maximum number of connections to a single host. Available if libcurl is v7.30.0 or more recent.</li>
-<li>int $max_pipeline_length<br>
+<li>int $max_pipeline_length<br />
 Maximum number of requests in a pipeline. Available if libcurl is v7.30.0 or more recent.</li>
-<li>int $max_total_connections<br>
+<li>int $max_total_connections<br />
 Maximum number of simultaneous open connections of this client. Available if libcurl is v7.30.0 or more recent.</li>
-<li>int $max_concurrent_streams<br>
+<li>int $max_concurrent_streams<br />
 Maximum count of simultanous streams to support over one HTTP/2 connection. Defaults to 100. Available if libcurl is v7.67.0 or more recent.</li>
-<li>bool $pipelining<br>
+<li>bool $pipelining<br />
 Whether to enable HTTP/1.1 pipelining. Available if libcurl is <strong>not</strong> v7.62.0 or more recent.</li>
-<li>int $chunk_length_penalty_size<br>
+<li>int $chunk_length_penalty_size<br />
 Chunk length threshold for pipelining; no more requests on this pipeline if exceeded. Available if libcurl is v7.30.0 or more recent, but less than v7.62.0.</li>
-<li>int $content_length_penalty_size<br>
+<li>int $content_length_penalty_size<br />
 Size threshold for pipelining; no more requests on this pipeline if exceeded. Available if libcurl is v7.30.0 or more recent, but less than v7.62.0.</li>
-<li>array $pipelining_server_bl<br>
+<li>array $pipelining_server_bl<br />
 Simple list of server software names to blacklist for pipelining. Available if libcurl is v7.30.0 or more recent, but less than v7.62.0.</li>
-<li>array $pipelining_site_bl<br>
+<li>array $pipelining_site_bl<br />
 Simple list of server host names to blacklist for pipelining. Available if libcurl is v7.30.0 or more recent, but less than v7.62.0.</li>
-<li>mixed $use_eventloop<br>
+<li>mixed $use_eventloop<br />
 Whether to use an event loop. This option accepts either bool, whether to use
 the internal event loop, or an instance of an http\Client\Curl\User implementation.
 The internal event loop is only available if pecl/http was built with libevent support.</li>
-<li>bool $share_cookies<br>
+<li>bool $share_cookies<br />
 Whether to let the client share cookies between requests.</li>
-<li>bool $share_ssl<br>
+<li>bool $share_ssl<br />
 Whether to let the client share SSL/TLS sessions between requests. Available if libcurl is v7.23.0 or more recent.</li>
 </ul>
 

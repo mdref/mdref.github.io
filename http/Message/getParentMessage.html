@@ -144,43 +144,32 @@
 	</ul>
 </div>
 					
-<h1 id="http\Message.http\Message::getParentMessage()">http\Message http\Message::getParentMessage()</h1>
-
+<h1>http\Message http\Message::getParentMessage()</h1>
 <p>Retrieve any parent message.
 See http\Message::reverse().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Message, the parent message.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\BadMethodCallException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $message = new http\Message(
-    "GET / HTTP/1.0\n".
-    "HTTP/1.0 200 Ok"
+    &quot;GET / HTTP/1.0\n&quot;.
+    &quot;HTTP/1.0 200 Ok&quot;
 );
 var_dump($message-&gt;getParentMessage()-&gt;toString());
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
-<pre><code>string(16) "GET / HTTP/1.0
-"
+<pre><code>string(16) &quot;GET / HTTP/1.0
+&quot;
 </code></pre>
 
 

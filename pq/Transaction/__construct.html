@@ -88,41 +88,34 @@
 	</ul>
 </div>
 					
-<h1 id="void.pq\Transaction::__construct(pq\Connection.$conn[,.bool.$async.=.FALSE[,.int.$isolation.=.pq\Transaction::READ_COMMITTED[,.bool.$readonly.=.FALSE[,.bool.$deferrable.=.FALSE]]]])">void pq\Transaction::__construct(pq\Connection $conn[, bool $async = FALSE[, int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]]])</h1>
-
+<h1>void pq\Transaction::__construct(pq\Connection $conn[, bool $async = FALSE[, int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]]])</h1>
 <p>Start a transaction.
 See pq\Connection::startTransaction().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>pq\Connection $conn<br>
+<li>pq\Connection $conn<br />
 The connection to start the transaction on.</li>
-<li>Optional bool $async = FALSE<br>
-Whether to start the transaction [asynchronously](pq/Connection/: Asynchronous Usage).</li>
-<li>Optional int $isolation = pq\Transaction::READ_COMMITTED<br>
+<li>Optional bool $async = FALSE<br />
+Whether to start the transaction <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronously</a>.</li>
+<li>Optional int $isolation = pq\Transaction::READ_COMMITTED<br />
 The transaction isolation level (defaults to pq\Connection::$defaultTransactionIsolation).</li>
-<li>Optional bool $readonly = FALSE<br>
+<li>Optional bool $readonly = FALSE<br />
 Whether the transaction is readonly (defaults to pq\Connection::$defaultTransactionReadonly).</li>
-<li>Optional bool $deferrable = FALSE<br>
+<li>Optional bool $deferrable = FALSE<br />
 Whether the transaction is deferrable (defaults to pq\Connection::$defaultTransactionDeferrable).</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 <li>pq\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 $connection = new pq\Connection;
 $transaction = new pq\Transaction(
-    $connection, FALSE, pq\Transaction::REPEATABLE_READ);
+	$connection, FALSE, pq\Transaction::REPEATABLE_READ);
 
 ?&gt;
 </code></pre>

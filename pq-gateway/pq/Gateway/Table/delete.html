@@ -130,23 +130,18 @@
 	</ul>
 </div>
 					
-<h1 id="mixed.pq\Gateway\Table::delete(array.$where,[,.$returning.=.NULL])">mixed pq\Gateway\Table::delete(array $where,[, $returning = NULL])</h1>
-
+<h1>mixed pq\Gateway\Table::delete(array $where,[, $returning = NULL])</h1>
 <p>Delete rows from the table.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>array $where<br>
+<li>array $where<br />
 Removal criteria.</li>
-<li>Optional string $returning = NULL<br>
+<li>Optional string $returning = NULL<br />
 What the DELETE should return.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
 Else:</li>
 <li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
 <li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>

@@ -108,36 +108,29 @@
 	</ul>
 </div>
 					
-<h1 id="pq\Gateway\Rowset.pq\Gateway\Rowset::setRowPrototype(mixed.$row)">pq\Gateway\Rowset pq\Gateway\Rowset::setRowPrototype(mixed $row)</h1>
-
+<h1>pq\Gateway\Rowset pq\Gateway\Rowset::setRowPrototype(mixed $row)</h1>
 <p>Set the row prototype.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>mixed $row<br>
+<li>mixed $row<br />
 The name of a class extending pq\Gateway\Row or a callable as function(array $data).</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Gateway\Rowset, self.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Gateway as gw;
 
 class Account extends gw\Row {
-    // ...
+	// ...
 }
 
-$table = new gw\Table("account");
+$table = new gw\Table(&quot;account&quot;);
 $table-&gt;setRowsetPrototype(
-    (new gw\Rowset($table))-&gt;setRowPrototype(new Account($table))
+	(new gw\Rowset($table))-&gt;setRowPrototype(new Account($table))
 );
 
 ?&gt;

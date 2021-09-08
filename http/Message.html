@@ -292,43 +292,37 @@
 	</ul>
 </div>
 					
-<h1 id="class.http\Message.implements.Countable,.Serializable,.Iterator">class http\Message implements Countable, Serializable, Iterator</h1>
-
+<h1>class http\Message implements Countable, Serializable, Iterator</h1>
 <p>The message class builds the foundation for any request and response message.</p>
-
 <p>See http\Client\Request and http\Client\Response, as well as http\Env\Request and http\Env\Response.</p>
-
-<h2 id="Constants:">Constants:</h2>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>TYPE_NONE<br>
+<li>TYPE_NONE<br />
 No specific type of message.</li>
-<li>TYPE_REQUEST<br>
+<li>TYPE_REQUEST<br />
 A request message.</li>
-<li>TYPE_RESPONSE<br>
+<li>TYPE_RESPONSE<br />
 A response message.</li>
 </ul>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>protected int $type = http\Message::TYPE_NONE<br>
+<li>protected int $type = http\Message::TYPE_NONE<br />
 The message type. See http\Message::TYPE_* constants.</li>
-<li>protected http\Message\Body $body = NULL<br>
+<li>protected http\Message\Body $body = NULL<br />
 The message's body.</li>
-<li>protected string $requestMethod = ""<br>
+<li>protected string $requestMethod = &quot;&quot;<br />
 The request method if the message is of type request.</li>
-<li>protected string $requestUrl = ""<br>
+<li>protected string $requestUrl = &quot;&quot;<br />
 The request url if the message is of type request.</li>
-<li>protected string $responseStatus = ""<br>
+<li>protected string $responseStatus = &quot;&quot;<br />
 The response status phrase if the message is of type response.</li>
-<li>protected int $responseCode = 0<br>
+<li>protected int $responseCode = 0<br />
 The response code if the message is of type response.</li>
-<li>protected string $httpVersion = NULL<br>
+<li>protected string $httpVersion = NULL<br />
 A custom HTTP protocol version.</li>
-<li>protected array $headers = NULL<br>
+<li>protected array $headers = NULL<br />
 Any message headers.</li>
-<li>protected http\Message $parentMessage<br>
+<li>protected http\Message $parentMessage<br />
 Any parent message.</li>
 </ul>
 

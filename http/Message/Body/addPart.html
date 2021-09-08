@@ -94,43 +94,32 @@
 	</ul>
 </div>
 					
-<h1 id="http\Message\Body.http\Message\Body::addPart(http\Message.$part)">http\Message\Body http\Message\Body::addPart(http\Message $part)</h1>
-
+<h1>http\Message\Body http\Message\Body::addPart(http\Message $part)</h1>
 <p>Add a part to a multipart body.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>http\Message $part<br>
+<li>http\Message $part<br />
 The message part.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Message\Body, self.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $multi = new http\Message\Body;
-$multi-&gt;addPart(new http\Message("Content-type: text/plain\n\nHello part 1!"));
-$multi-&gt;addPart(new http\Message("Content-type: text/plain\n\nHello part 2!"));
+$multi-&gt;addPart(new http\Message(&quot;Content-type: text/plain\n\nHello part 1!&quot;));
+$multi-&gt;addPart(new http\Message(&quot;Content-type: text/plain\n\nHello part 2!&quot;));
 
 echo $multi;
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>--8a72b190.3fe908df
 Content-Type: text/plain
 Content-Length: 13

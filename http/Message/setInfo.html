@@ -144,43 +144,30 @@
 	</ul>
 </div>
 					
-<h1 id="http\Message.http\Message::setInfo(string.$http_info)">http\Message http\Message::setInfo(string $http_info)</h1>
-
+<h1>http\Message http\Message::setInfo(string $http_info)</h1>
 <p>Set the complete message info, i.e. type and response resp. request information, at once.
 See http\Message::getInfo().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $http_info<br>
+<li>string $http_info<br />
 The message info (first line of an HTTP message).</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Message, self.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\BadHeaderException</li>
 </ul>
-
-<h2 id="Format.of.the.message.info:">Format of the message info:</h2>
-
+<h2>Format of the message info:<a id="Format.of.the.message.info:" href="#Format.of.the.message.info:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>The message info looks similar to the following line for a response, see also http\Message::setResponseCode() and http\Message::setResponseStatus():</p>
-
 <pre><code>HTTP/1.1 200 Ok
 </code></pre>
-
 <p>The message info looks similar to the following line for a request, see also http\Message::setRequestMethod() and http\Message::setRequestUrl():</p>
-
 <pre><code>GET / HTTP/1.1
 </code></pre>
-
 <p>See http\Message::setHttpVersion().</p>
 
 

@@ -95,46 +95,38 @@
 	</ul>
 </div>
 					
-<h1 id="class.http\Header\Parser">class http\Header\Parser</h1>
-
+<h1>class http\Header\Parser</h1>
 <p>The parser which is underlying http\Header and http\Message.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  This class has been added in v2.3.0.</p>
+<p><em><strong>NOTE:</strong></em><br />
+This class has been added in v2.3.0.</p>
 </blockquote>
-
-<h2 id="Constants:">Constants:</h2>
-
-<h3 id="Parser.flags:">Parser flags:</h3>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
+<h3>Parser flags:<a id="Parser.flags:" href="#Parser.flags:" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>CLEANUP<br>
+<li>CLEANUP<br />
 Finish up parser at end of (incomplete) input.</li>
 </ul>
-
-<h3 id="Parser.states:">Parser states:</h3>
-
+<h3>Parser states:<a id="Parser.states:" href="#Parser.states:" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>STATE_FAILURE<br>
+<li>STATE_FAILURE<br />
 Parse failure.</li>
-<li>STATE_START<br>
+<li>STATE_START<br />
 Expecting HTTP info (request/response line) or headers.</li>
-<li>STATE_KEY<br>
+<li>STATE_KEY<br />
 Expecting a key or already parsing a key.</li>
-<li>STATE_VALUE<br>
+<li>STATE_VALUE<br />
 Expecting a value or already parsing the value.</li>
-<li>STATE_VALUE_EX<br>
+<li>STATE_VALUE_EX<br />
 At EOL of an header, checking whether a folded header line follows.</li>
-<li>STATE_HEADER_DONE<br>
+<li>STATE_HEADER_DONE<br />
 A header was completed.</li>
-<li>STATE_DONE<br>
+<li>STATE_DONE<br />
 Finished parsing the headers.</li>
 </ul>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  Most of this states won't be returned to the user, because the parser immediately jumps to the next expected state.</p>
+<p><em><strong>NOTE:</strong></em><br />
+Most of this states won't be returned to the user, because the parser immediately jumps to the next expected state.</p>
 </blockquote>
 
 

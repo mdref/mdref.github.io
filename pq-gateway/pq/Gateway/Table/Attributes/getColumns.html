@@ -86,112 +86,103 @@
 	</ul>
 </div>
 					
-<h1 id="array.pq\Gateway\Table\Attributes::getColumns()">array pq\Gateway\Table\Attributes::getColumns()</h1>
-
+<h1>array pq\Gateway\Table\Attributes::getColumns()</h1>
 <p>Retrieve all columns of the table.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>array, attributes list (indexed by column number <strong>and</strong> columnd name).</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Gateway\Table;
 
-$atts = new Table\Attributes(new Table("account"));
+$atts = new Table\Attributes(new Table(&quot;account&quot;));
 var_dump($atts-&gt;getColumns());
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>array(6) {
-  ["id"]=&gt;
+  [&quot;id&quot;]=&gt;
   object(stdClass)#12 (5) {
-    ["index"]=&gt;
-    int(1)
-    ["name"]=&gt;
-    string(2) "id"
-    ["type"]=&gt;
-    int(2950)
-    ["hasdefault"]=&gt;
-    bool(true)
-    ["nullable"]=&gt;
-    bool(false)
+	[&quot;index&quot;]=&gt;
+	int(1)
+	[&quot;name&quot;]=&gt;
+	string(2) &quot;id&quot;
+	[&quot;type&quot;]=&gt;
+	int(2950)
+	[&quot;hasdefault&quot;]=&gt;
+	bool(true)
+	[&quot;nullable&quot;]=&gt;
+	bool(false)
   }
   [1]=&gt;
   object(stdClass)#12 (5) {
-    ["index"]=&gt;
-    int(1)
-    ["name"]=&gt;
-    string(2) "id"
-    ["type"]=&gt;
-    int(2950)
-    ["hasdefault"]=&gt;
-    bool(true)
-    ["nullable"]=&gt;
-    bool(false)
+	[&quot;index&quot;]=&gt;
+	int(1)
+	[&quot;name&quot;]=&gt;
+	string(2) &quot;id&quot;
+	[&quot;type&quot;]=&gt;
+	int(2950)
+	[&quot;hasdefault&quot;]=&gt;
+	bool(true)
+	[&quot;nullable&quot;]=&gt;
+	bool(false)
   }
-  ["password"]=&gt;
+  [&quot;password&quot;]=&gt;
   object(stdClass)#13 (5) {
-    ["index"]=&gt;
-    int(2)
-    ["name"]=&gt;
-    string(8) "password"
-    ["type"]=&gt;
-    int(1042)
-    ["hasdefault"]=&gt;
-    bool(false)
-    ["nullable"]=&gt;
-    bool(true)
+	[&quot;index&quot;]=&gt;
+	int(2)
+	[&quot;name&quot;]=&gt;
+	string(8) &quot;password&quot;
+	[&quot;type&quot;]=&gt;
+	int(1042)
+	[&quot;hasdefault&quot;]=&gt;
+	bool(false)
+	[&quot;nullable&quot;]=&gt;
+	bool(true)
   }
   [2]=&gt;
   object(stdClass)#13 (5) {
-    ["index"]=&gt;
-    int(2)
-    ["name"]=&gt;
-    string(8) "password"
-    ["type"]=&gt;
-    int(1042)
-    ["hasdefault"]=&gt;
-    bool(false)
-    ["nullable"]=&gt;
-    bool(true)
+	[&quot;index&quot;]=&gt;
+	int(2)
+	[&quot;name&quot;]=&gt;
+	string(8) &quot;password&quot;
+	[&quot;type&quot;]=&gt;
+	int(1042)
+	[&quot;hasdefault&quot;]=&gt;
+	bool(false)
+	[&quot;nullable&quot;]=&gt;
+	bool(true)
   }
-  ["name"]=&gt;
+  [&quot;name&quot;]=&gt;
   object(stdClass)#14 (5) {
-    ["index"]=&gt;
-    int(3)
-    ["name"]=&gt;
-    string(4) "name"
-    ["type"]=&gt;
-    int(1043)
-    ["hasdefault"]=&gt;
-    bool(false)
-    ["nullable"]=&gt;
-    bool(true)
+	[&quot;index&quot;]=&gt;
+	int(3)
+	[&quot;name&quot;]=&gt;
+	string(4) &quot;name&quot;
+	[&quot;type&quot;]=&gt;
+	int(1043)
+	[&quot;hasdefault&quot;]=&gt;
+	bool(false)
+	[&quot;nullable&quot;]=&gt;
+	bool(true)
   }
   [3]=&gt;
   object(stdClass)#14 (5) {
-    ["index"]=&gt;
-    int(3)
-    ["name"]=&gt;
-    string(4) "name"
-    ["type"]=&gt;
-    int(1043)
-    ["hasdefault"]=&gt;
-    bool(false)
-    ["nullable"]=&gt;
-    bool(true)
+	[&quot;index&quot;]=&gt;
+	int(3)
+	[&quot;name&quot;]=&gt;
+	string(4) &quot;name&quot;
+	[&quot;type&quot;]=&gt;
+	int(1043)
+	[&quot;hasdefault&quot;]=&gt;
+	bool(false)
+	[&quot;nullable&quot;]=&gt;
+	bool(true)
   }
 }
 </code></pre>

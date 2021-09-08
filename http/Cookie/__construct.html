@@ -108,74 +108,65 @@
 	</ul>
 </div>
 					
-<h1 id="void.http\Cookie::__construct([mixed.$cookies.=.NULL[,.int.$flags.=.0[,.array.$allowed_extras.=.NULL]]])">void http\Cookie::__construct([mixed $cookies = NULL[, int $flags = 0[, array $allowed_extras = NULL]]])</h1>
-
+<h1>void http\Cookie::__construct([mixed $cookies = NULL[, int $flags = 0[, array $allowed_extras = NULL]]])</h1>
 <p>Create a new cookie list.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional mixed $cookies = NULL<br>
+<li>Optional mixed $cookies = NULL<br />
 The string or list of cookies to parse or set.</li>
-<li>Optional int $flags = 0<br>
+<li>Optional int $flags = 0<br />
 Parse flags. See http\Cookie::PARSE_* constants.</li>
-<li>Optional array $allowed_extras = NULL<br>
+<li>Optional array $allowed_extras = NULL<br />
 List of extra attribute names to recognize.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
-$cookie = new http\Cookie("c1=v1; c2=v2; extra=foo; ".
-    "expires=Thu, Nov  7 2013 10:00:00 GMT; path=/a/b/c", 
-    0, ["extra"]);
+$cookie = new http\Cookie(&quot;c1=v1; c2=v2; extra=foo; &quot;.
+    &quot;expires=Thu, Nov  7 2013 10:00:00 GMT; path=/a/b/c&quot;, 
+    0, [&quot;extra&quot;]);
 var_dump([
-    "cookies" =&gt; $cookie-&gt;getCookies(),
-    "extras" =&gt; $cookie-&gt;getExtras(),
-    "expires" =&gt; $cookie-&gt;getExpires(),
-    "max-age" =&gt; $cookie-&gt;getMaxAge(),
-    "domain" =&gt; $cookie-&gt;getDomain(),
-    "path" =&gt; $cookie-&gt;getPath(),
-    "flags" =&gt; $cookie-&gt;getFlags(),
-    "string" =&gt; (string) $cookie
+    &quot;cookies&quot; =&gt; $cookie-&gt;getCookies(),
+    &quot;extras&quot; =&gt; $cookie-&gt;getExtras(),
+    &quot;expires&quot; =&gt; $cookie-&gt;getExpires(),
+    &quot;max-age&quot; =&gt; $cookie-&gt;getMaxAge(),
+    &quot;domain&quot; =&gt; $cookie-&gt;getDomain(),
+    &quot;path&quot; =&gt; $cookie-&gt;getPath(),
+    &quot;flags&quot; =&gt; $cookie-&gt;getFlags(),
+    &quot;string&quot; =&gt; (string) $cookie
 ]);
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>array(8) {
-  ["cookies"]=&gt;
+  [&quot;cookies&quot;]=&gt;
   array(2) {
-    ["c1"]=&gt;
-    string(2) "v1"
-    ["c2"]=&gt;
-    string(2) "v2"
+    [&quot;c1&quot;]=&gt;
+    string(2) &quot;v1&quot;
+    [&quot;c2&quot;]=&gt;
+    string(2) &quot;v2&quot;
   }
-  ["extras"]=&gt;
+  [&quot;extras&quot;]=&gt;
   array(1) {
-    ["extra"]=&gt;
-    string(3) "foo"
+    [&quot;extra&quot;]=&gt;
+    string(3) &quot;foo&quot;
   }
-  ["expires"]=&gt;
+  [&quot;expires&quot;]=&gt;
   int(1383818400)
-  ["max-age"]=&gt;
+  [&quot;max-age&quot;]=&gt;
   int(-1)
-  ["domain"]=&gt;
+  [&quot;domain&quot;]=&gt;
   NULL
-  ["path"]=&gt;
-  string(6) "/a/b/c"
-  ["flags"]=&gt;
+  [&quot;path&quot;]=&gt;
+  string(6) &quot;/a/b/c&quot;
+  [&quot;flags&quot;]=&gt;
   int(0)
-  ["string"]=&gt;
-  string(77) "c1=v1; c2=v2; path=/a/b/c; expires=Thu, 07 Nov 2013 10:00:00 GMT; extra=foo; "
+  [&quot;string&quot;]=&gt;
+  string(77) &quot;c1=v1; c2=v2; path=/a/b/c; expires=Thu, 07 Nov 2013 10:00:00 GMT; extra=foo; &quot;
 }
 </code></pre>
 

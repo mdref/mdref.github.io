@@ -130,105 +130,93 @@
 	</ul>
 </div>
 					
-<h1 id="http\Client.Examples">http\Client Examples</h1>
-
-<h2 id="Sending.a.simple.GET.request:">Sending a simple GET request:</h2>
-
+<h1>http\Client Examples</h1>
+<h2>Sending a simple GET request:<a id="Sending.a.simple.GET.request:" href="#Sending.a.simple.GET.request:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
-$request = new http\Client\Request("GET",
-    "http://localhost",
-    ["User-Agent"=&gt;"My Client/0.1"]
+$request = new http\Client\Request(&quot;GET&quot;,
+    &quot;http://localhost&quot;,
+    [&quot;User-Agent&quot;=&gt;&quot;My Client/0.1&quot;]
 );
-$request-&gt;setOptions(["timeout"=&gt;1]);
+$request-&gt;setOptions([&quot;timeout&quot;=&gt;1]);
 
 $client = new http\Client;
 $client-&gt;enqueue($request)-&gt;send();
 
 // pop the last retrieved response
 $response = $client-&gt;getResponse();
-printf("%s returned '%s' (%d)\n",
-    $response-&gt;getTransferInfo("effective_url"),
+printf(&quot;%s returned '%s' (%d)\n&quot;,
+    $response-&gt;getTransferInfo(&quot;effective_url&quot;),
     $response-&gt;getInfo(),
     $response-&gt;getResponseCode()
 );
 ?&gt;
 </code></pre>
-
-<h3 id="Yields:">Yields:</h3>
-
+<h3>Yields:<a id="Yields:" href="#Yields:" class="permalink" aria-hidden="true" title="">#</a></h3>
 <pre><code>http://localhost/ returned 'HTTP/1.1 200 OK' (200)
 </code></pre>
-
-<h2 id="Submitting.a.standard.form:">Submitting a standard form:</h2>
-
+<h2>Submitting a standard form:<a id="Submitting.a.standard.form:" href="#Submitting.a.standard.form:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
-$request = new http\Client\Request("POST",
-    "http://localhost/post.php",
-    ["Content-Type" =&gt; "application/x-www-form-urlencoded"]
+$request = new http\Client\Request(&quot;POST&quot;,
+    &quot;http://localhost/post.php&quot;,
+    [&quot;Content-Type&quot; =&gt; &quot;application/x-www-form-urlencoded&quot;]
 );
 $request-&gt;getBody()-&gt;append(new http\QueryString([
-    "user" =&gt; "mike",
-    "name" =&gt; "Michael Wallner"
+    &quot;user&quot; =&gt; &quot;mike&quot;,
+    &quot;name&quot; =&gt; &quot;Michael Wallner&quot;
 ]));
 
 $client = new http\Client;
-$client-&gt;setOptions(["ssl" =&gt; [
-    "version" =&gt; http\Client\Curl\SSL_VERSION_TLSv1
+$client-&gt;setOptions([&quot;ssl&quot; =&gt; [
+	&quot;version&quot; =&gt; http\Client\Curl\SSL_VERSION_TLSv1
 ]]);
 $client-&gt;enqueue($request)-&gt;send();
 
 // ask for the response for this specific request
 $response = $client-&gt;getResponse($request);
-printf("-&gt; %s\n", $response-&gt;getInfo());
+printf(&quot;-&gt; %s\n&quot;, $response-&gt;getInfo());
 
 ?&gt;
 </code></pre>
-
-<h3 id="Yields:">Yields:</h3>
-
+<h3>Yields:<a id="Yields:-1" href="#Yields:-1" class="permalink" aria-hidden="true" title="">#</a></h3>
 <pre><code>-&gt; HTTP/1.1 200 OK
 </code></pre>
-
-<h2 id="Submitting.a.multipart.form:">Submitting a multipart form:</h2>
-
+<h2>Submitting a multipart form:<a id="Submitting.a.multipart.form:" href="#Submitting.a.multipart.form:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
-$request = new http\Client\Request("POST",
-    "http://localhost/post.php"
+$request = new http\Client\Request(&quot;POST&quot;,
+    &quot;http://localhost/post.php&quot;
 );
 
 // http\Message\Body::addForm() will automatically add
 // Content-Type: multipart/form-data to the request headers
 $request-&gt;getBody()-&gt;addForm([
-    "user" =&gt; "mike",
-    "name" =&gt; "Michael Wallner"
+    &quot;user&quot; =&gt; &quot;mike&quot;,
+    &quot;name&quot; =&gt; &quot;Michael Wallner&quot;
 ], [
     [
-        "name" =&gt; "image",
-        "type" =&gt; "image/jpeg",
-        "file" =&gt; "image.jpg"
+        &quot;name&quot; =&gt; &quot;image&quot;,
+        &quot;type&quot; =&gt; &quot;image/jpeg&quot;,
+        &quot;file&quot; =&gt; &quot;image.jpg&quot;
     ]
 ]);
 
 $client = new http\Client;
-$client-&gt;setOptions(["ssl" =&gt; [
-    "version" =&gt; http\Client\Curl\SSL_VERSION_TLSv1
+$client-&gt;setOptions([&quot;ssl&quot; =&gt; [
+    &quot;version&quot; =&gt; http\Client\Curl\SSL_VERSION_TLSv1
 ]]);
 $client-&gt;enqueue($request)-&gt;send();
 
 // ask for the response for this specific request
 $response = $client-&gt;getResponse($request);
-printf("-&gt; %.2F kB\n @ %.2F Mbit",
-    .001 * $response-&gt;getTransferInfo("size_upload"),
-    .0000008 * $response-&gt;getTransferInfo("speed_upload")
+printf(&quot;-&gt; %.2F kB\n @ %.2F Mbit&quot;,
+    .001 * $response-&gt;getTransferInfo(&quot;size_upload&quot;),
+    .0000008 * $response-&gt;getTransferInfo(&quot;speed_upload&quot;)
 );
 ?&gt;
 </code></pre>
-
-<h3 id="Yields:">Yields:</h3>
-
+<h3>Yields:<a id="Yields:-2" href="#Yields:-2" class="permalink" aria-hidden="true" title="">#</a></h3>
 <pre><code>-&gt; 15.98 kB @ 6.77 Mbit
 </code></pre>
 

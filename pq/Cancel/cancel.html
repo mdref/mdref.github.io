@@ -60,55 +60,46 @@
 	</ul>
 </div>
 					
-<h1 id="void.pq\Cancel::cancel()">void pq\Cancel::cancel()</h1>
-
+<h1>void pq\Cancel::cancel()</h1>
 <p>Perform the cancellation request.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 <li>pq\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 $conn = new pq\Connection;
 $cancel = new pq\Cancel($conn);
 
-$conn-&gt;execAsync("SELECT pg_sleep(1)");
+$conn-&gt;execAsync(&quot;SELECT pg_sleep(1)&quot;);
 $cancel-&gt;cancel();
 
 var_dump($conn-&gt;getResult());
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>object(pq\Result)#4 (8) {
-  ["status"]=&gt;
+  [&quot;status&quot;]=&gt;
   int(7)
-  ["statusMessage"]=&gt;
-  string(11) "FATAL_ERROR"
-  ["errorMessage"]=&gt;
-  string(47) "ERROR:  canceling statement due to user request"
-  ["numRows"]=&gt;
+  [&quot;statusMessage&quot;]=&gt;
+  string(11) &quot;FATAL_ERROR&quot;
+  [&quot;errorMessage&quot;]=&gt;
+  string(47) &quot;ERROR:  canceling statement due to user request&quot;
+  [&quot;numRows&quot;]=&gt;
   int(0)
-  ["numCols"]=&gt;
+  [&quot;numCols&quot;]=&gt;
   int(0)
-  ["affectedRows"]=&gt;
+  [&quot;affectedRows&quot;]=&gt;
   int(0)
-  ["fetchType"]=&gt;
+  [&quot;fetchType&quot;]=&gt;
   int(0)
-  ["autoConvert"]=&gt;
+  [&quot;autoConvert&quot;]=&gt;
   int(65535)
 }
 </code></pre>

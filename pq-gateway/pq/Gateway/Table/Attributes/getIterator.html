@@ -86,47 +86,38 @@
 	</ul>
 </div>
 					
-<h1 id="ArrayIterator.pq\Gateway\Table\Attributes::getIterator()">ArrayIterator pq\Gateway\Table\Attributes::getIterator()</h1>
-
+<h1>ArrayIterator pq\Gateway\Table\Attributes::getIterator()</h1>
 <p>Implements IteratorAggregate.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>ArrayIterator, columnd list (indexed by column number <strong>and</strong> name).</p>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Gateway\Table;
 
 class ColNameIterator extends FilterIterator {
-    public function __construct(Table\Attributes $attrs) {
-        parent::__construct($attrs-&gt;getIterator());
-    }
-    public function accept() {
-        return !is_numeric($this-&gt;key());
-    }
+	public function __construct(Table\Attributes $attrs) {
+		parent::__construct($attrs-&gt;getIterator());
+	}
+	public function accept() {
+		return !is_numeric($this-&gt;key());
+	}
 }
 
-$table = new pq\Gateway\Table("account");
+$table = new pq\Gateway\Table(&quot;account&quot;);
 $attrs = $table-&gt;getAttributes();
 foreach (new ColNameIterator($attrs) as $col =&gt; $att) {
-    printf("%10s: %s\n", $col, http_build_query($att, null, ", "));
+	printf(&quot;%10s: %s\n&quot;, $col, http_build_query($att, null, &quot;, &quot;));
 }
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
-<pre><code>        id: index=1, name=id, type=2950, hasdefault=1, nullable=0
+<pre><code>		id: index=1, name=id, type=2950, hasdefault=1, nullable=0
   password: index=2, name=password, type=1042, hasdefault=0, nullable=1
-      name: index=3, name=name, type=1043, hasdefault=0, nullable=1
+	  name: index=3, name=name, type=1043, hasdefault=0, nullable=1
 </code></pre>
 
 

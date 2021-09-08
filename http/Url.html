@@ -102,78 +102,73 @@
 	</ul>
 </div>
 					
-<h1 id="class.http\Url">class http\Url</h1>
-
+<h1>class http\Url</h1>
 <p>The http\Url class provides versatile means to parse, construct and manipulate URLs.</p>
-
-<h2 id="Constants:">Constants:</h2>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>REPLACE<br>
+<li>REPLACE<br />
 Replace parts of the old URL with parts of the new.</li>
-<li>JOIN_PATH<br>
+<li>JOIN_PATH<br />
 Whether a relative path should be joined into the old path.</li>
-<li>JOIN_QUERY<br>
+<li>JOIN_QUERY<br />
 Whether the querystrings should be joined.</li>
-<li>STRIP_USER<br>
+<li>STRIP_USER<br />
 Strip the user information from the URL.</li>
-<li>STRIP_PASS<br>
+<li>STRIP_PASS<br />
 Strip the password from the URL.</li>
-<li>STRIP_AUTH<br>
+<li>STRIP_AUTH<br />
 Strip user and password information from URL (same as STRIP_USER|STRIP_PASS).</li>
-<li>STRIP_PORT<br>
+<li>STRIP_PORT<br />
 Do not include the port.</li>
-<li>STRIP_PATH<br>
+<li>STRIP_PATH<br />
 Do not include the URL path.</li>
-<li>STRIP_QUERY<br>
+<li>STRIP_QUERY<br />
 Do not include the URL querystring.</li>
-<li>STRIP_FRAGMENT<br>
+<li>STRIP_FRAGMENT<br />
 Strip the fragment (hash) from the URL.</li>
-<li>STRIP_ALL<br>
+<li>STRIP_ALL<br />
 Strip everything except scheme and host information.</li>
-<li>FROM_ENV<br>
+<li>FROM_ENV<br />
 Import initial URL parts from the SAPI environment.</li>
-<li>SANITIZE_PATH<br>
+<li>SANITIZE_PATH<br />
 Whether to sanitize the URL path (consolidate double slashes, directory jumps etc.)</li>
-<li>PARSE_MBUTF8<br>
+<li>PARSE_MBUTF8<br />
 Parse UTF-8 encoded multibyte sequences.</li>
-<li>PARSE_MBLOC<br>
+<li>PARSE_MBLOC<br />
 Parse locale encoded multibyte sequences (on systems with wide character support).</li>
-<li>PARSE_TOIDN<br>
+<li>PARSE_TOIDN<br />
 Parse and convert multibyte hostnames according to IDNA (with IDNA support).</li>
-<li>PARSE_TOIDN_2003<br>
+<li>PARSE_TOIDN_2003<br />
 Explicitly request IDNA2003 implementation if available (libidn, idnkit or ICU).</li>
-<li>PARSE_TOIDN_2008<br>
+<li>PARSE_TOIDN_2008<br />
 Explicitly request IDNA2008 implementation if available (libidn2, idnkit2 or ICU).</li>
-<li>PARSE_TOPCT<br>
+<li>PARSE_TOPCT<br />
 Percent encode multibyte sequences in the userinfo, path, query and fragment parts of the URL.</li>
-<li>IGNORE_ERRORS<br>
+<li>IGNORE_ERRORS<br />
 Continue parsing when encountering errors.</li>
-<li>SILENT_ERRORS<br>
+<li>SILENT_ERRORS<br />
 Suppress errors/exceptions.</li>
-<li>STDFLAGS<br>
+<li>STDFLAGS<br />
 Standard flags used by default internally for e.g. http\Message::setRequestUrl().
 Enables joining path and query, sanitizing path, multibyte/unicode, international domain names and transient percent encoding.</li>
 </ul>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>public string $scheme = NULL<br>
+<li>public string $scheme = NULL<br />
 The URL's scheme.</li>
-<li>public string $user = NULL<br>
+<li>public string $user = NULL<br />
 Authenticating user.</li>
-<li>public string $pass = NULL<br>
+<li>public string $pass = NULL<br />
 Authentication password.</li>
-<li>public string $host = NULL<br>
+<li>public string $host = NULL<br />
 Hostname/domain.</li>
-<li>public string $port = NULL<br>
+<li>public string $port = NULL<br />
 Port.</li>
-<li>public string $path = NULL<br>
+<li>public string $path = NULL<br />
 URL path.</li>
-<li>public string $query = NULL<br>
+<li>public string $query = NULL<br />
 URL querystring.</li>
-<li>public string $fragment = NULL<br>
+<li>public string $fragment = NULL<br />
 URL fragment (hash).</li>
 </ul>
 

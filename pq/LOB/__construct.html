@@ -68,24 +68,19 @@
 	</ul>
 </div>
 					
-<h1 id="void.pq\LOB::__construct(pq\Transaction.$txn[,.int.$oid.=.pq\LOB::INVALID_OID[,.int.$mode.=.pq\LOB::RW]])">void pq\LOB::__construct(pq\Transaction $txn[, int $oid = pq\LOB::INVALID_OID[, int $mode = pq\LOB::RW]])</h1>
-
+<h1>void pq\LOB::__construct(pq\Transaction $txn[, int $oid = pq\LOB::INVALID_OID[, int $mode = pq\LOB::RW]])</h1>
 <p>Open or create a <em>large object</em>.
 See pq\Transaction::openLOB() and pq\Transaction::createLOB().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>pq\Transaction $txn<br>
+<li>pq\Transaction $txn<br />
 The transaction which wraps the <em>large object</em> operations.</li>
-<li>Optional int $oid = pq\LOB::INVALID_OID<br>
+<li>Optional int $oid = pq\LOB::INVALID_OID<br />
 The OID of the existing <em>large object</em> to open.</li>
-<li>Optional int $mode = pq\LOB::RW<br>
+<li>Optional int $mode = pq\LOB::RW<br />
 Access mode (read, write or read/write).</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>

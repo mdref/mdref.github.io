@@ -144,39 +144,30 @@
 	</ul>
 </div>
 					
-<h1 id="http\Message.http\Message::splitMultipartBody()">http\Message http\Message::splitMultipartBody()</h1>
-
+<h1>http\Message http\Message::splitMultipartBody()</h1>
 <p>Splits the body of a multipart message.
 See http\Message::isMultipart() and http\Message\Body::addPart().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Message, a message chain of all messages of the multipart body.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\BadMethodCallException</li>
 <li>http\Exception\BadMessageException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $body = new http\Message\Body;
-$body-&gt;addPart(new http\Message("Content-type: text/plain\n\nHello "));
-$body-&gt;addPart(new http\Message("Content-type: text/plain\n\nWorld!"));
+$body-&gt;addPart(new http\Message(&quot;Content-type: text/plain\n\nHello &quot;));
+$body-&gt;addPart(new http\Message(&quot;Content-type: text/plain\n\nWorld!&quot;));
 
 $msg = new http\Message;
-$msg-&gt;setHeader("Content-Type", 
-    "multipart/mixed; boundary=" . $body-&gt;getBoundary());
+$msg-&gt;setHeader(&quot;Content-Type&quot;, 
+    &quot;multipart/mixed; boundary=&quot; . $body-&gt;getBoundary());
 $msg-&gt;setBody($body);
 var_dump($msg-&gt;isMultipart($bnd), $bnd);
 
@@ -187,11 +178,9 @@ foreach ($parts-&gt;reverse() as $part) {
 }
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>bool(true)
-string(17) "16658735.3fe37486"
+string(17) &quot;16658735.3fe37486&quot;
 int(2)
 Hello World!
 </code></pre>

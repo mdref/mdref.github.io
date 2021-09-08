@@ -90,30 +90,24 @@
 	</ul>
 </div>
 					
-<h1 id="static.string.http\Env::negotiate(string.$params,.array.$supported[,.string.$prim_typ_sep[,.array.&amp;$result]])">static string http\Env::negotiate(string $params, array $supported[, string $prim_typ_sep[, array &amp;$result]])</h1>
-
+<h1>static string http\Env::negotiate(string $params, array $supported[, string $prim_typ_sep[, array &amp;$result]])</h1>
 <p>Generic negotiator. For specific client negotiation see http\Env::negotiateContentType() and related methods.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  The first element of $supported serves as a default if no operand matches.</p>
+<p><em><strong>NOTE:</strong></em><br />
+The first element of $supported serves as a default if no operand matches.</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $params<br>
+<li>string $params<br />
 HTTP header parameter's value to negotiate.</li>
-<li>array $supported<br>
+<li>array $supported<br />
 List of supported negotiation operands.</li>
-<li>Optional string $prim_typ_sep<br>
-A "primary type separator", i.e. that would be a hyphen for content language negotiation (en-US, de-DE, etc.).</li>
-<li>Optional array &amp;$result<br>
+<li>Optional string $prim_typ_sep<br />
+A &quot;primary type separator&quot;, i.e. that would be a hyphen for content language negotiation (en-US, de-DE, etc.).</li>
+<li>Optional array &amp;$result<br />
 Out parameter recording negotiation results.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>NULL, if negotiation fails.</li>
 <li>string, the closest match negotiated, or the default (first entry of $supported).</li>

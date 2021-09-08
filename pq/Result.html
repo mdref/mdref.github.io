@@ -131,91 +131,80 @@
 	</ul>
 </div>
 					
-<h1 id="class.pq\Result.implements.Traversable,.Countable">class pq\Result implements Traversable, Countable</h1>
-
+<h1>class pq\Result implements Traversable, Countable</h1>
 <p>A query result.</p>
-
-<p>See [Fetching Results](pq/Result/: Fetching Results) for a general overview.</p>
-
-<h2 id="Constants:">Constants:</h2>
-
-<h3 id="Status.values:">Status values:</h3>
-
+<p>See <a href="pq/Result/:%20Fetching%20Results">Fetching Results</a> for a general overview.</p>
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
+<h3>Status values:<a id="Status.values:" href="#Status.values:" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>EMPTY_QUERY<br>
+<li>EMPTY_QUERY<br />
 The query sent to the server was empty.</li>
-<li>COMMAND_OK<br>
+<li>COMMAND_OK<br />
 The query did not generate a result set and completed successfully.</li>
-<li>TUPLES_OK<br>
+<li>TUPLES_OK<br />
 The query successfully generated a result set.</li>
-<li>SINGLE_TUPLE<br>
+<li>SINGLE_TUPLE<br />
 The result contains a single row of the result set when using pq\Connection::$unbuffered.</li>
-<li>COPY_OUT<br>
+<li>COPY_OUT<br />
 COPY data can be received from the server.</li>
-<li>COPY_IN<br>
+<li>COPY_IN<br />
 COPY data can be sent to the server.</li>
-<li>COPY_BOTH<br>
+<li>COPY_BOTH<br />
 COPY in/out data transfer in progress.</li>
-<li>BAD_RESPONSE<br>
+<li>BAD_RESPONSE<br />
 The server sent a bad response.</li>
-<li>NONFATAL_ERROR<br>
+<li>NONFATAL_ERROR<br />
 A nonfatal error (notice or warning) occurred.</li>
-<li>FATAL_ERROR<br>
+<li>FATAL_ERROR<br />
 A fatal error occurred.</li>
 </ul>
-
-<h3 id="Fetch.types:">Fetch types:</h3>
-
+<h3>Fetch types:<a id="Fetch.types:" href="#Fetch.types:" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>FETCH_ARRAY<br>
+<li>FETCH_ARRAY<br />
 Fetch rows numerically indexed, where the index start with 0.</li>
-<li>FETCH_ASSOC<br>
+<li>FETCH_ASSOC<br />
 Fetch rows associatively indexed by column name.</li>
-<li>FETCH_OBJECT<br>
+<li>FETCH_OBJECT<br />
 Fetch rows as stdClass instance, where the column names are the property names.</li>
 </ul>
-
-<h3 id="Conversion.bits:">Conversion bits:</h3>
-
+<h3>Conversion bits:<a id="Conversion.bits:" href="#Conversion.bits:" class="permalink" aria-hidden="true" title="">#</a></h3>
 <ul>
-<li>CONV_BOOL<br>
+<li>CONV_BOOL<br />
 Automatically convert 'f' and 't' to FALSE and TRUE and vice versa.</li>
-<li>CONV_INT<br>
+<li>CONV_INT<br />
 Automatically convert integral strings to either int if it fits into maximum integer size or else to float and vice versa.</li>
-<li>CONV_FLOAT<br>
+<li>CONV_FLOAT<br />
 Automatically convert floating point numbers.</li>
-<li>CONV_SCALAR<br>
+<li>CONV_SCALAR<br />
 Do all scalar conversions listed above.</li>
-<li>CONV_ARRAY<br>
+<li>CONV_ARRAY<br />
 Automatically convert arrays.</li>
-<li>CONV_DATETIME<br>
+<li>CONV_DATETIME<br />
 Automatically convert date strings to pq\DateTime and vice versa.</li>
-<li>CONV_JSON<br>
+<li>CONV_JSON<br />
 Automatically convert JSON.</li>
-<li>CONV_ALL<br>
+<li>CONV_ALL<br />
 Do all of the above.</li>
 </ul>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>public (readonly) int $status<br>
+<li>public (readonly) int $status<br />
 A <a href="pq/Result#Status.values:">status constant</a>.</li>
-<li>public (readonly) string $statusMessage<br>
+<li>public (readonly) string $statusMessage<br />
 The accompanying status message.</li>
-<li>public (readonly) string $errorMessage<br>
+<li>public (readonly) string $errorMessage<br />
 Any error message if $status indicates an error.</li>
-<li>public (readonly) int $numRows<br>
+<li>public (readonly) int $numRows<br />
 The number of rows in the result set.</li>
-<li>public (readonly) int $numCols<br>
+<li>public (readonly) int $numCols<br />
 The number of fields in a single tuple of the result set.</li>
-<li>public (readonly) int $affectedRows<br>
+<li>public (readonly) int $affectedRows<br />
 The number of rows affected by a statement.</li>
-<li>public (readonly) array $diag<br>
+<li>public (readonly) array $diag<br />
 Error details. See <a href="https://www.postgresql.org/docs/current/static/libpq-exec.html#LIBPQ-PQRESULTERRORFIELD">PQresultErrorField</a> docs.</li>
-<li>public int $fetchType = pq\Result::FETCH_ARRAY<br>
+<li>public int $fetchType = pq\Result::FETCH_ARRAY<br />
 The <a href="pq/Result#Fetch.types:">type of return value</a> the fetch methods should return when no fetch type argument was given. Defaults to pq\Connection::$defaultFetchType.</li>
-<li>public int $autoConvert = pq\Result::CONV_ALL<br>
+<li>public int $autoConvert = pq\Result::CONV_ALL<br />
 What <a href="pq/Result#Conversion.bits:">type of conversions</a> to perform automatically.</li>
 </ul>
 

@@ -130,49 +130,39 @@
 	</ul>
 </div>
 					
-<h1 id="object.http\Client::getProgressInfo(http\Client\Request.$request)">object http\Client::getProgressInfo(http\Client\Request $request)</h1>
-
+<h1>object http\Client::getProgressInfo(http\Client\Request $request)</h1>
 <p>Retrieve the progress information for $request.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>http\Client\Request $request<br>
+<li>http\Client\Request $request<br />
 The request to retrieve the current progress information for.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>object, stdClass instance holding progress information.</li>
 <li>NULL, if $request is not enqueued.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\UnexpectedValueException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>The progress info may look like follows:</p>
-
 <pre><code>object(stdClass)#6 (7) {
-  ["started"]=&gt;
+  [&quot;started&quot;]=&gt;
   bool(true)
-  ["finished"]=&gt;
+  [&quot;finished&quot;]=&gt;
   bool(true)
-  ["info"]=&gt;
-  string(8) "finished"
-  ["dltotal"]=&gt;
+  [&quot;info&quot;]=&gt;
+  string(8) &quot;finished&quot;
+  [&quot;dltotal&quot;]=&gt;
   float(0)
-  ["dlnow"]=&gt;
+  [&quot;dlnow&quot;]=&gt;
   float(33561)
-  ["ultotal"]=&gt;
+  [&quot;ultotal&quot;]=&gt;
   float(0)
-  ["ulnow"]=&gt;
+  [&quot;ulnow&quot;]=&gt;
   float(0)
 }
 </code></pre>

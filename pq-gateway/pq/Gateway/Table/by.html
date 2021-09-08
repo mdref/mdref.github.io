@@ -130,65 +130,56 @@
 	</ul>
 </div>
 					
-<h1 id="mixed.pq\Gateway\Table::by(pq\Gateway\Row.$me[,.string.$ref.=.NULL])">mixed pq\Gateway\Table::by(pq\Gateway\Row $me[, string $ref = NULL])</h1>
-
+<h1>mixed pq\Gateway\Table::by(pq\Gateway\Row $me[, string $ref = NULL])</h1>
 <p>Find the row inthis table referenced by another table's row by foreign key.
 See pq\Gateway\Table::find(), pq\Gateway\Table::of() and pq\Gateway\Row::ofWhich().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>pq\Gateway\Row $me<br>
+<li>pq\Gateway\Row $me<br />
 A row of another table referenced by this table through a foreign key.</li>
-<li>Optional string $ref = NULL<br>
+<li>Optional string $ref = NULL<br />
 The identifying name of the relation.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
 Else:</li>
 <li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
 <li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
 <li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Gateway\Table;
 
-$accounts = new Table("account");
-$account_emails = new Table("account_email");
-$email = $account_emails-&gt;find(["email=" =&gt; "mike@php.net"])-&gt;current();
+$accounts = new Table(&quot;account&quot;);
+$account_emails = new Table(&quot;account_email&quot;);
+$email = $account_emails-&gt;find([&quot;email=&quot; =&gt; &quot;mike@php.net&quot;])-&gt;current();
 
 $account1 = $accounts-&gt;by($email)-&gt;current();
-$account2 = $email-&gt;ofWhich("account")-&gt;current();
+$account2 = $email-&gt;ofWhich(&quot;account&quot;)-&gt;current();
 
 var_dump($account1-&gt;getData(), $account2-&gt;getData());
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>array(3) {
-  ["id"]=&gt;
-  string(36) "f9710801-c900-4774-848c-22c85deecd83"
-  ["password"]=&gt;
+  [&quot;id&quot;]=&gt;
+  string(36) &quot;f9710801-c900-4774-848c-22c85deecd83&quot;
+  [&quot;password&quot;]=&gt;
   NULL
-  ["name"]=&gt;
-  string(4) "mike"
+  [&quot;name&quot;]=&gt;
+  string(4) &quot;mike&quot;
 }
 array(3) {
-  ["id"]=&gt;
-  string(36) "f9710801-c900-4774-848c-22c85deecd83"
-  ["password"]=&gt;
+  [&quot;id&quot;]=&gt;
+  string(36) &quot;f9710801-c900-4774-848c-22c85deecd83&quot;
+  [&quot;password&quot;]=&gt;
   NULL
-  ["name"]=&gt;
-  string(4) "mike"
+  [&quot;name&quot;]=&gt;
+  string(4) &quot;mike&quot;
 }
 </code></pre>
 

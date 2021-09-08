@@ -126,34 +126,26 @@
 	</ul>
 </div>
 					
-<h1 id="pq\Cursor.pq\Connection::declareAsync(string.$name,.int.$flags,.string.$query)">pq\Cursor pq\Connection::declareAsync(string $name, int $flags, string $query)</h1>
-
-<p>[Asynchronously](pq/Connection/: Asynchronous Usage) declare a cursor for a query.</p>
-
+<h1>pq\Cursor pq\Connection::declareAsync(string $name, int $flags, string $query)</h1>
+<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> declare a cursor for a query.</p>
 <blockquote>
-  <p><strong><em>NOTE</em></strong>:<br>
-    If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.</p>
+<p><em><strong>NOTE</strong></em>:<br />
+If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $name<br>
+<li>string $name<br />
 The identifying name of the cursor.</li>
-<li>int $flags<br>
+<li>int $flags<br />
 Any combination of pq\Cursor constants.</li>
-<li>string $query<br>
+<li>string $query<br />
 The query for which to open a cursor.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Cursor, an open cursor instance.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\RuntimeException</li>

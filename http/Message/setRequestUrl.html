@@ -144,67 +144,51 @@
 	</ul>
 </div>
 					
-<h1 id="http\Message.http\Message::setRequestUrl(string.$url)">http\Message http\Message::setRequestUrl(string $url)</h1>
-
+<h1>http\Message http\Message::setRequestUrl(string $url)</h1>
 <p>Set the request URL of the message.
 See http\Message::getRequestUrl() and http\Message::setRequestMethod().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $url<br>
+<li>string $url<br />
 The request URL.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Message, self.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\BadMethodCallException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  The request URL in a request message usually only consists of the path and the querystring.</p>
+<p><em><strong>NOTE:</strong></em><br />
+The request URL in a request message usually only consists of the path and the querystring.</p>
 </blockquote>
-
 <pre><code>&lt;?php
 $m = new http\Message;
 $m-&gt;setType(http\Message::TYPE_REQUEST);
-$m-&gt;setRequestMethod("GET");
-$m-&gt;setRequestUrl("http://foo.bar/baz?q");
+$m-&gt;setRequestMethod(&quot;GET&quot;);
+$m-&gt;setRequestUrl(&quot;http://foo.bar/baz?q&quot;);
 echo $m;
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>GET http://foo.bar/baz?q HTTP/1.1
 </code></pre>
-
 <p>Maybe you did not really expect this, so let's try this:</p>
-
 <pre><code>&lt;?php
 $m = new http\Message;
-$u = new http\Url("http://foo.bar/baz?q");
+$u = new http\Url(&quot;http://foo.bar/baz?q&quot;);
 $m-&gt;setType(http\Message::TYPE_REQUEST);
-$m-&gt;setRequestMethod("GET");
-$m-&gt;setRequestUrl($u-&gt;path ."?". $u-&gt;query);
-$m-&gt;setHeader("Host", $u-&gt;host);
+$m-&gt;setRequestMethod(&quot;GET&quot;);
+$m-&gt;setRequestUrl($u-&gt;path .&quot;?&quot;. $u-&gt;query);
+$m-&gt;setHeader(&quot;Host&quot;, $u-&gt;host);
 echo $m;
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>GET /baz?q HTTP/1.1
 Host: foo.bar
 </code></pre>

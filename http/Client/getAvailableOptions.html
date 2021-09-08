@@ -130,187 +130,175 @@
 	</ul>
 </div>
 					
-<h1 id="array.http\Client::getAvailableOptions()">array http\Client::getAvailableOptions()</h1>
-
+<h1>array http\Client::getAvailableOptions()</h1>
 <p>Retrieve a list of available request options and their default values.</p>
-
 <p>See f.e. the <a href="http/Client/Curl#Options:">request options for the Curl driver</a>.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>array, list of key/value pairs of available request options and their default values.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
-$client = new http\Client("curl");
+$client = new http\Client(&quot;curl&quot;);
 var_dump($client-&gt;getAvailableOptions());
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>array(49) {
-  ["proxyhost"]=&gt;
+  [&quot;proxyhost&quot;]=&gt;
   NULL
-  ["proxytype"]=&gt;
+  [&quot;proxytype&quot;]=&gt;
   int(0)
-  ["proxyport"]=&gt;
+  [&quot;proxyport&quot;]=&gt;
   int(0)
-  ["proxyauth"]=&gt;
+  [&quot;proxyauth&quot;]=&gt;
   NULL
-  ["proxyauthtype"]=&gt;
+  [&quot;proxyauthtype&quot;]=&gt;
   int(-18)
-  ["proxytunnel"]=&gt;
+  [&quot;proxytunnel&quot;]=&gt;
   bool(false)
-  ["noproxy"]=&gt;
+  [&quot;noproxy&quot;]=&gt;
   NULL
-  ["proxyheader"]=&gt;
+  [&quot;proxyheader&quot;]=&gt;
   NULL
-  ["unix_socket_path"]=&gt;
+  [&quot;unix_socket_path&quot;]=&gt;
   NULL
-  ["dns_cache_timeout"]=&gt;
+  [&quot;dns_cache_timeout&quot;]=&gt;
   int(60)
-  ["ipresolve"]=&gt;
+  [&quot;ipresolve&quot;]=&gt;
   int(0)
-  ["resolve"]=&gt;
+  [&quot;resolve&quot;]=&gt;
   NULL
-  ["low_speed_limit"]=&gt;
+  [&quot;low_speed_limit&quot;]=&gt;
   int(0)
-  ["low_speed_time"]=&gt;
+  [&quot;low_speed_time&quot;]=&gt;
   int(0)
-  ["fresh_connect"]=&gt;
+  [&quot;fresh_connect&quot;]=&gt;
   bool(false)
-  ["forbid_reuse"]=&gt;
+  [&quot;forbid_reuse&quot;]=&gt;
   bool(false)
-  ["interface"]=&gt;
+  [&quot;interface&quot;]=&gt;
   NULL
-  ["portrange"]=&gt;
+  [&quot;portrange&quot;]=&gt;
   NULL
-  ["port"]=&gt;
+  [&quot;port&quot;]=&gt;
   int(0)
-  ["address_scope"]=&gt;
+  [&quot;address_scope&quot;]=&gt;
   int(0)
-  ["httpauth"]=&gt;
+  [&quot;httpauth&quot;]=&gt;
   NULL
-  ["httpauthtype"]=&gt;
+  [&quot;httpauthtype&quot;]=&gt;
   int(-18)
-  ["redirect"]=&gt;
+  [&quot;redirect&quot;]=&gt;
   int(0)
-  ["unrestricted_auth"]=&gt;
+  [&quot;unrestricted_auth&quot;]=&gt;
   bool(false)
-  ["postredir"]=&gt;
+  [&quot;postredir&quot;]=&gt;
   int(0)
-  ["retrycount"]=&gt;
+  [&quot;retrycount&quot;]=&gt;
   int(0)
-  ["retrydelay"]=&gt;
+  [&quot;retrydelay&quot;]=&gt;
   float(0)
-  ["referer"]=&gt;
+  [&quot;referer&quot;]=&gt;
   NULL
-  ["autoreferer"]=&gt;
+  [&quot;autoreferer&quot;]=&gt;
   bool(true)
-  ["useragent"]=&gt;
-  string(51) "PECL_HTTP/2.3.0dev PHP/5.6.6-dev libcurl/7.41.0-DEV"
-  ["resume"]=&gt;
+  [&quot;useragent&quot;]=&gt;
+  string(51) &quot;PECL_HTTP/2.3.0dev PHP/5.6.6-dev libcurl/7.41.0-DEV&quot;
+  [&quot;resume&quot;]=&gt;
   int(0)
-  ["range"]=&gt;
+  [&quot;range&quot;]=&gt;
   NULL
-  ["etag"]=&gt;
+  [&quot;etag&quot;]=&gt;
   NULL
-  ["compress"]=&gt;
+  [&quot;compress&quot;]=&gt;
   bool(false)
-  ["lastmodified"]=&gt;
+  [&quot;lastmodified&quot;]=&gt;
   int(0)
-  ["encodecookies"]=&gt;
+  [&quot;encodecookies&quot;]=&gt;
   bool(true)
-  ["cookies"]=&gt;
+  [&quot;cookies&quot;]=&gt;
   NULL
-  ["cookiesession"]=&gt;
+  [&quot;cookiesession&quot;]=&gt;
   bool(false)
-  ["cookiestore"]=&gt;
+  [&quot;cookiestore&quot;]=&gt;
   NULL
-  ["maxfilesize"]=&gt;
+  [&quot;maxfilesize&quot;]=&gt;
   int(0)
-  ["protocol"]=&gt;
+  [&quot;protocol&quot;]=&gt;
   int(0)
-  ["timeout"]=&gt;
+  [&quot;timeout&quot;]=&gt;
   float(0)
-  ["connecttimeout"]=&gt;
+  [&quot;connecttimeout&quot;]=&gt;
   float(3)
-  ["expect_100_timeout"]=&gt;
+  [&quot;expect_100_timeout&quot;]=&gt;
   float(1)
-  ["tcp_nodelay"]=&gt;
+  [&quot;tcp_nodelay&quot;]=&gt;
   bool(false)
-  ["tcp_keepalive"]=&gt;
+  [&quot;tcp_keepalive&quot;]=&gt;
   bool(false)
-  ["tcp_keepidle"]=&gt;
+  [&quot;tcp_keepidle&quot;]=&gt;
   int(60)
-  ["tcp_keepintvl"]=&gt;
+  [&quot;tcp_keepintvl&quot;]=&gt;
   int(60)
-  ["ssl"]=&gt;
+  [&quot;ssl&quot;]=&gt;
   array(24) {
-    ["cert"]=&gt;
-    NULL
-    ["certtype"]=&gt;
-    string(3) "PEM"
-    ["key"]=&gt;
-    NULL
-    ["keytype"]=&gt;
-    string(3) "PEM"
-    ["keypasswd"]=&gt;
-    NULL
-    ["engine"]=&gt;
-    NULL
-    ["version"]=&gt;
-    int(0)
-    ["verifypeer"]=&gt;
-    bool(true)
-    ["verifyhost"]=&gt;
-    bool(true)
-    ["verifystatus"]=&gt;
-    bool(false)
-    ["cipher_list"]=&gt;
-    NULL
-    ["cainfo"]=&gt;
-    string(34) "/etc/ssl/certs/ca-certificates.crt"
-    ["capath"]=&gt;
-    NULL
-    ["random_file"]=&gt;
-    NULL
-    ["egdsocket"]=&gt;
-    NULL
-    ["issuercert"]=&gt;
-    NULL
-    ["crlfile"]=&gt;
-    NULL
-    ["certinfo"]=&gt;
-    bool(false)
-    ["enable_npn"]=&gt;
-    bool(true)
-    ["enable_alpn"]=&gt;
-    bool(true)
-    ["pinned_publickey"]=&gt;
-    NULL
-    ["tlsauthtype"]=&gt;
-    int(0)
-    ["tlsauthuser"]=&gt;
-    NULL
-    ["tlsauthpass"]=&gt;
-    NULL
+	[&quot;cert&quot;]=&gt;
+	NULL
+	[&quot;certtype&quot;]=&gt;
+	string(3) &quot;PEM&quot;
+	[&quot;key&quot;]=&gt;
+	NULL
+	[&quot;keytype&quot;]=&gt;
+	string(3) &quot;PEM&quot;
+	[&quot;keypasswd&quot;]=&gt;
+	NULL
+	[&quot;engine&quot;]=&gt;
+	NULL
+	[&quot;version&quot;]=&gt;
+	int(0)
+	[&quot;verifypeer&quot;]=&gt;
+	bool(true)
+	[&quot;verifyhost&quot;]=&gt;
+	bool(true)
+	[&quot;verifystatus&quot;]=&gt;
+	bool(false)
+	[&quot;cipher_list&quot;]=&gt;
+	NULL
+	[&quot;cainfo&quot;]=&gt;
+	string(34) &quot;/etc/ssl/certs/ca-certificates.crt&quot;
+	[&quot;capath&quot;]=&gt;
+	NULL
+	[&quot;random_file&quot;]=&gt;
+	NULL
+	[&quot;egdsocket&quot;]=&gt;
+	NULL
+	[&quot;issuercert&quot;]=&gt;
+	NULL
+	[&quot;crlfile&quot;]=&gt;
+	NULL
+	[&quot;certinfo&quot;]=&gt;
+	bool(false)
+	[&quot;enable_npn&quot;]=&gt;
+	bool(true)
+	[&quot;enable_alpn&quot;]=&gt;
+	bool(true)
+	[&quot;pinned_publickey&quot;]=&gt;
+	NULL
+	[&quot;tlsauthtype&quot;]=&gt;
+	int(0)
+	[&quot;tlsauthuser&quot;]=&gt;
+	NULL
+	[&quot;tlsauthpass&quot;]=&gt;
+	NULL
   }
 }
 </code></pre>

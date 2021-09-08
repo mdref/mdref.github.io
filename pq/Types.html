@@ -91,26 +91,21 @@
 	</ul>
 </div>
 					
-<h1 id="class.pq\Types.implements.ArrayAccess">class pq\Types implements ArrayAccess</h1>
-
+<h1>class pq\Types implements ArrayAccess</h1>
 <p>Accessor to the PostgreSQL <code>pg_type</code> relation.
-See [here for an overview](pq/Types/: Overview).</p>
-
-<h2 id="Example:">Example:</h2>
-
+See <a href="pq/Types/:%20Overview">here for an overview</a>.</p>
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 $connection = new pq\Connection;
 $types = new pq\Types($connection);
-foreach ($types["int2vector"] as $key=&gt;$val) {
-    printf("%-20s = %s\n", $key, is_bool($val) ? ($val?'t':'f') : $val);
+foreach ($types[&quot;int2vector&quot;] as $key=&gt;$val) {
+	printf(&quot;%-20s = %s\n&quot;, $key, is_bool($val) ? ($val?'t':'f') : $val);
 }
 
 ?&gt;
 </code></pre>
-
 <p>Yields for a PostgreSQL v9.3 server:</p>
-
 <pre><code>oid                  = 22
 typname              = int2vector
 typnamespace         = 11
@@ -143,313 +138,308 @@ typdefaultbin        =
 typdefault           = 
 typacl               = 
 </code></pre>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-    The following OID constants are obtained from the postgres server headers at build time and differ
-    between major versions. Dynamic type information, f.e. from extensions or the actual version of
-    the postgres connected to, can be accessed through the ArrayAccess interface of pq\Types.</p>
+<p><em><strong>NOTE:</strong></em><br />
+The following OID constants are obtained from the postgres server headers at build time and differ
+between major versions. Dynamic type information, f.e. from extensions or the actual version of
+the postgres connected to, can be accessed through the ArrayAccess interface of pq\Types.</p>
 </blockquote>
-
-<h2 id="Constants:">Constants:</h2>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>BOOL<br>
+<li>BOOL<br />
 OID of the <code>bool</code> type.</li>
-<li>BYTEA<br>
+<li>BYTEA<br />
 OID of the <code>bytea</code> type.</li>
-<li>CHAR<br>
+<li>CHAR<br />
 OID of the <code>char</code> type.</li>
-<li>NAME<br>
+<li>NAME<br />
 OID of the <code>name</code> type.</li>
-<li>INT8<br>
+<li>INT8<br />
 OID of the <code>int8</code> type.</li>
-<li>INT2<br>
+<li>INT2<br />
 OID of the <code>int2</code> type.</li>
-<li>INT2VECTOR<br>
+<li>INT2VECTOR<br />
 OID of the <code>int2vector</code> type.</li>
-<li>INT4<br>
+<li>INT4<br />
 OID of the <code>int4</code> type.</li>
-<li>REGPROC<br>
+<li>REGPROC<br />
 OID of the <code>regproc</code> type.</li>
-<li>TEXT<br>
+<li>TEXT<br />
 OID of the <code>text</code> type.</li>
-<li>OID<br>
+<li>OID<br />
 OID of the <code>oid</code> type.</li>
-<li>TID<br>
+<li>TID<br />
 OID of the <code>tid</code> type.</li>
-<li>XID<br>
+<li>XID<br />
 OID of the <code>xid</code> type.</li>
-<li>CID<br>
+<li>CID<br />
 OID of the <code>cid</code> type.</li>
-<li>OIDVECTOR<br>
+<li>OIDVECTOR<br />
 OID of the <code>oidvector</code> type.</li>
-<li>PG_TYPE<br>
+<li>PG_TYPE<br />
 OID of the <code>pg_type</code> type.</li>
-<li>PG_ATTRIBUTE<br>
+<li>PG_ATTRIBUTE<br />
 OID of the <code>pg_attribute</code> type.</li>
-<li>PG_PROC<br>
+<li>PG_PROC<br />
 OID of the <code>pg_proc</code> type.</li>
-<li>PG_CLASS<br>
+<li>PG_CLASS<br />
 OID of the <code>pg_class</code> type.</li>
-<li>JSON<br>
+<li>JSON<br />
 OID of the <code>json</code> type.</li>
-<li>XML<br>
+<li>XML<br />
 OID of the <code>xml</code> type.</li>
-<li>XMLARRAY<br>
+<li>XMLARRAY<br />
 OID of the <code>xmlarray</code> type.</li>
-<li>JSONARRAY<br>
+<li>JSONARRAY<br />
 OID of the <code>jsonarray</code> type.</li>
-<li>PG_NODE_TREE<br>
+<li>PG_NODE_TREE<br />
 OID of the <code>pg_node_tree</code> type.</li>
-<li>SMGR<br>
+<li>SMGR<br />
 OID of the <code>smgr</code> type.</li>
-<li>POINT<br>
+<li>POINT<br />
 OID of the <code>point</code> type.</li>
-<li>LSEG<br>
+<li>LSEG<br />
 OID of the <code>lseg</code> type.</li>
-<li>PATH<br>
+<li>PATH<br />
 OID of the <code>path</code> type.</li>
-<li>BOX<br>
+<li>BOX<br />
 OID of the <code>box</code> type.</li>
-<li>POLYGON<br>
+<li>POLYGON<br />
 OID of the <code>polygon</code> type.</li>
-<li>LINE<br>
+<li>LINE<br />
 OID of the <code>line</code> type.</li>
-<li>LINEARRAY<br>
+<li>LINEARRAY<br />
 OID of the <code>linearray</code> type.</li>
-<li>FLOAT4<br>
+<li>FLOAT4<br />
 OID of the <code>float4</code> type.</li>
-<li>FLOAT8<br>
+<li>FLOAT8<br />
 OID of the <code>float8</code> type.</li>
-<li>UNKNOWN<br>
+<li>UNKNOWN<br />
 OID of the <code>unknown</code> type.</li>
-<li>CIRCLE<br>
+<li>CIRCLE<br />
 OID of the <code>circle</code> type.</li>
-<li>CIRCLEARRAY<br>
+<li>CIRCLEARRAY<br />
 OID of the <code>circlearray</code> type.</li>
-<li>MONEY<br>
+<li>MONEY<br />
 OID of the <code>money</code> type.</li>
-<li>MONEYARRAY<br>
+<li>MONEYARRAY<br />
 OID of the <code>moneyarray</code> type.</li>
-<li>MACADDR<br>
+<li>MACADDR<br />
 OID of the <code>macaddr</code> type.</li>
-<li>INET<br>
+<li>INET<br />
 OID of the <code>inet</code> type.</li>
-<li>CIDR<br>
+<li>CIDR<br />
 OID of the <code>cidr</code> type.</li>
-<li>BOOLARRAY<br>
+<li>BOOLARRAY<br />
 OID of the <code>boolarray</code> type.</li>
-<li>BYTEAARRAY<br>
+<li>BYTEAARRAY<br />
 OID of the <code>byteaarray</code> type.</li>
-<li>CHARARRAY<br>
+<li>CHARARRAY<br />
 OID of the <code>chararray</code> type.</li>
-<li>NAMEARRAY<br>
+<li>NAMEARRAY<br />
 OID of the <code>namearray</code> type.</li>
-<li>INT2ARRAY<br>
+<li>INT2ARRAY<br />
 OID of the <code>int2array</code> type.</li>
-<li>INT2VECTORARRAY<br>
+<li>INT2VECTORARRAY<br />
 OID of the <code>int2vectorarray</code> type.</li>
-<li>INT4ARRAY<br>
+<li>INT4ARRAY<br />
 OID of the <code>int4array</code> type.</li>
-<li>REGPROCARRAY<br>
+<li>REGPROCARRAY<br />
 OID of the <code>regprocarray</code> type.</li>
-<li>TEXTARRAY<br>
+<li>TEXTARRAY<br />
 OID of the <code>textarray</code> type.</li>
-<li>OIDARRAY<br>
+<li>OIDARRAY<br />
 OID of the <code>oidarray</code> type.</li>
-<li>TIDARRAY<br>
+<li>TIDARRAY<br />
 OID of the <code>tidarray</code> type.</li>
-<li>XIDARRAY<br>
+<li>XIDARRAY<br />
 OID of the <code>xidarray</code> type.</li>
-<li>CIDARRAY<br>
+<li>CIDARRAY<br />
 OID of the <code>cidarray</code> type.</li>
-<li>OIDVECTORARRAY<br>
+<li>OIDVECTORARRAY<br />
 OID of the <code>oidvectorarray</code> type.</li>
-<li>BPCHARARRAY<br>
+<li>BPCHARARRAY<br />
 OID of the <code>bpchararray</code> type.</li>
-<li>VARCHARARRAY<br>
+<li>VARCHARARRAY<br />
 OID of the <code>varchararray</code> type.</li>
-<li>INT8ARRAY<br>
+<li>INT8ARRAY<br />
 OID of the <code>int8array</code> type.</li>
-<li>POINTARRAY<br>
+<li>POINTARRAY<br />
 OID of the <code>pointarray</code> type.</li>
-<li>LSEGARRAY<br>
+<li>LSEGARRAY<br />
 OID of the <code>lsegarray</code> type.</li>
-<li>PATHARRAY<br>
+<li>PATHARRAY<br />
 OID of the <code>patharray</code> type.</li>
-<li>BOXARRAY<br>
+<li>BOXARRAY<br />
 OID of the <code>boxarray</code> type.</li>
-<li>FLOAT4ARRAY<br>
+<li>FLOAT4ARRAY<br />
 OID of the <code>float4array</code> type.</li>
-<li>FLOAT8ARRAY<br>
+<li>FLOAT8ARRAY<br />
 OID of the <code>float8array</code> type.</li>
-<li>POLYGONARRAY<br>
+<li>POLYGONARRAY<br />
 OID of the <code>polygonarray</code> type.</li>
-<li>ACLITEM<br>
+<li>ACLITEM<br />
 OID of the <code>aclitem</code> type.</li>
-<li>ACLITEMARRAY<br>
+<li>ACLITEMARRAY<br />
 OID of the <code>aclitemarray</code> type.</li>
-<li>MACADDRARRAY<br>
+<li>MACADDRARRAY<br />
 OID of the <code>macaddrarray</code> type.</li>
-<li>INETARRAY<br>
+<li>INETARRAY<br />
 OID of the <code>inetarray</code> type.</li>
-<li>CIDRARRAY<br>
+<li>CIDRARRAY<br />
 OID of the <code>cidrarray</code> type.</li>
-<li>CSTRINGARRAY<br>
+<li>CSTRINGARRAY<br />
 OID of the <code>cstringarray</code> type.</li>
-<li>BPCHAR<br>
+<li>BPCHAR<br />
 OID of the <code>bpchar</code> type.</li>
-<li>VARCHAR<br>
+<li>VARCHAR<br />
 OID of the <code>varchar</code> type.</li>
-<li>DATE<br>
+<li>DATE<br />
 OID of the <code>date</code> type.</li>
-<li>TIME<br>
+<li>TIME<br />
 OID of the <code>time</code> type.</li>
-<li>TIMESTAMP<br>
+<li>TIMESTAMP<br />
 OID of the <code>timestamp</code> type.</li>
-<li>TIMESTAMPARRAY<br>
+<li>TIMESTAMPARRAY<br />
 OID of the <code>timestamparray</code> type.</li>
-<li>DATEARRAY<br>
+<li>DATEARRAY<br />
 OID of the <code>datearray</code> type.</li>
-<li>TIMEARRAY<br>
+<li>TIMEARRAY<br />
 OID of the <code>timearray</code> type.</li>
-<li>TIMESTAMPTZ<br>
+<li>TIMESTAMPTZ<br />
 OID of the <code>timestamptz</code> type.</li>
-<li>TIMESTAMPTZARRAY<br>
+<li>TIMESTAMPTZARRAY<br />
 OID of the <code>timestamptzarray</code> type.</li>
-<li>INTERVAL<br>
+<li>INTERVAL<br />
 OID of the <code>interval</code> type.</li>
-<li>INTERVALARRAY<br>
+<li>INTERVALARRAY<br />
 OID of the <code>intervalarray</code> type.</li>
-<li>NUMERICARRAY<br>
+<li>NUMERICARRAY<br />
 OID of the <code>numericarray</code> type.</li>
-<li>TIMETZ<br>
+<li>TIMETZ<br />
 OID of the <code>timetz</code> type.</li>
-<li>TIMETZARRAY<br>
+<li>TIMETZARRAY<br />
 OID of the <code>timetzarray</code> type.</li>
-<li>BIT<br>
+<li>BIT<br />
 OID of the <code>bit</code> type.</li>
-<li>BITARRAY<br>
+<li>BITARRAY<br />
 OID of the <code>bitarray</code> type.</li>
-<li>VARBIT<br>
+<li>VARBIT<br />
 OID of the <code>varbit</code> type.</li>
-<li>VARBITARRAY<br>
+<li>VARBITARRAY<br />
 OID of the <code>varbitarray</code> type.</li>
-<li>NUMERIC<br>
+<li>NUMERIC<br />
 OID of the <code>numeric</code> type.</li>
-<li>REFCURSOR<br>
+<li>REFCURSOR<br />
 OID of the <code>refcursor</code> type.</li>
-<li>REFCURSORARRAY<br>
+<li>REFCURSORARRAY<br />
 OID of the <code>refcursorarray</code> type.</li>
-<li>REGPROCEDURE<br>
+<li>REGPROCEDURE<br />
 OID of the <code>regprocedure</code> type.</li>
-<li>REGOPER<br>
+<li>REGOPER<br />
 OID of the <code>regoper</code> type.</li>
-<li>REGOPERATOR<br>
+<li>REGOPERATOR<br />
 OID of the <code>regoperator</code> type.</li>
-<li>REGCLASS<br>
+<li>REGCLASS<br />
 OID of the <code>regclass</code> type.</li>
-<li>REGTYPE<br>
+<li>REGTYPE<br />
 OID of the <code>regtype</code> type.</li>
-<li>REGPROCEDUREARRAY<br>
+<li>REGPROCEDUREARRAY<br />
 OID of the <code>regprocedurearray</code> type.</li>
-<li>REGOPERARRAY<br>
+<li>REGOPERARRAY<br />
 OID of the <code>regoperarray</code> type.</li>
-<li>REGOPERATORARRAY<br>
+<li>REGOPERATORARRAY<br />
 OID of the <code>regoperatorarray</code> type.</li>
-<li>REGCLASSARRAY<br>
+<li>REGCLASSARRAY<br />
 OID of the <code>regclassarray</code> type.</li>
-<li>REGTYPEARRAY<br>
+<li>REGTYPEARRAY<br />
 OID of the <code>regtypearray</code> type.</li>
-<li>UUID<br>
+<li>UUID<br />
 OID of the <code>uuid</code> type.</li>
-<li>UUIDARRAY<br>
+<li>UUIDARRAY<br />
 OID of the <code>uuidarray</code> type.</li>
-<li>TSVECTOR<br>
+<li>TSVECTOR<br />
 OID of the <code>tsvector</code> type.</li>
-<li>GTSVECTOR<br>
+<li>GTSVECTOR<br />
 OID of the <code>gtsvector</code> type.</li>
-<li>TSQUERY<br>
+<li>TSQUERY<br />
 OID of the <code>tsquery</code> type.</li>
-<li>REGCONFIG<br>
+<li>REGCONFIG<br />
 OID of the <code>regconfig</code> type.</li>
-<li>REGDICTIONARY<br>
+<li>REGDICTIONARY<br />
 OID of the <code>regdictionary</code> type.</li>
-<li>TSVECTORARRAY<br>
+<li>TSVECTORARRAY<br />
 OID of the <code>tsvectorarray</code> type.</li>
-<li>GTSVECTORARRAY<br>
+<li>GTSVECTORARRAY<br />
 OID of the <code>gtsvectorarray</code> type.</li>
-<li>TSQUERYARRAY<br>
+<li>TSQUERYARRAY<br />
 OID of the <code>tsqueryarray</code> type.</li>
-<li>REGCONFIGARRAY<br>
+<li>REGCONFIGARRAY<br />
 OID of the <code>regconfigarray</code> type.</li>
-<li>REGDICTIONARYARRAY<br>
+<li>REGDICTIONARYARRAY<br />
 OID of the <code>regdictionaryarray</code> type.</li>
-<li>TXID_SNAPSHOT<br>
+<li>TXID_SNAPSHOT<br />
 OID of the <code>txid_snapshot</code> type.</li>
-<li>TXID_SNAPSHOTARRAY<br>
+<li>TXID_SNAPSHOTARRAY<br />
 OID of the <code>txid_snapshotarray</code> type.</li>
-<li>INT4RANGE<br>
+<li>INT4RANGE<br />
 OID of the <code>int4range</code> type.</li>
-<li>INT4RANGEARRAY<br>
+<li>INT4RANGEARRAY<br />
 OID of the <code>int4rangearray</code> type.</li>
-<li>NUMRANGE<br>
+<li>NUMRANGE<br />
 OID of the <code>numrange</code> type.</li>
-<li>NUMRANGEARRAY<br>
+<li>NUMRANGEARRAY<br />
 OID of the <code>numrangearray</code> type.</li>
-<li>TSRANGE<br>
+<li>TSRANGE<br />
 OID of the <code>tsrange</code> type.</li>
-<li>TSRANGEARRAY<br>
+<li>TSRANGEARRAY<br />
 OID of the <code>tsrangearray</code> type.</li>
-<li>TSTZRANGE<br>
+<li>TSTZRANGE<br />
 OID of the <code>tstzrange</code> type.</li>
-<li>TSTZRANGEARRAY<br>
+<li>TSTZRANGEARRAY<br />
 OID of the <code>tstzrangearray</code> type.</li>
-<li>DATERANGE<br>
+<li>DATERANGE<br />
 OID of the <code>daterange</code> type.</li>
-<li>DATERANGEARRAY<br>
+<li>DATERANGEARRAY<br />
 OID of the <code>daterangearray</code> type.</li>
-<li>INT8RANGE<br>
+<li>INT8RANGE<br />
 OID of the <code>int8range</code> type.</li>
-<li>INT8RANGEARRAY<br>
+<li>INT8RANGEARRAY<br />
 OID of the <code>int8rangearray</code> type.</li>
-<li>RECORD<br>
+<li>RECORD<br />
 OID of the <code>record</code> type.</li>
-<li>CSTRING<br>
+<li>CSTRING<br />
 OID of the <code>cstring</code> type.</li>
-<li>ANY<br>
+<li>ANY<br />
 OID of the <code>any</code> type.</li>
-<li>ANYARRAY<br>
+<li>ANYARRAY<br />
 OID of the <code>anyarray</code> type.</li>
-<li>VOID<br>
+<li>VOID<br />
 OID of the <code>void</code> type.</li>
-<li>TRIGGER<br>
+<li>TRIGGER<br />
 OID of the <code>trigger</code> type.</li>
-<li>EVENT_TRIGGER<br>
+<li>EVENT_TRIGGER<br />
 OID of the <code>event_trigger</code> type.</li>
-<li>LANGUAGE_HANDLER<br>
+<li>LANGUAGE_HANDLER<br />
 OID of the <code>language_handler</code> type.</li>
-<li>INTERNAL<br>
+<li>INTERNAL<br />
 OID of the <code>internal</code> type.</li>
-<li>OPAQUE<br>
+<li>OPAQUE<br />
 OID of the <code>opaque</code> type.</li>
-<li>ANYELEMENT<br>
+<li>ANYELEMENT<br />
 OID of the <code>anyelement</code> type.</li>
-<li>ANYNONARRAY<br>
+<li>ANYNONARRAY<br />
 OID of the <code>anynonarray</code> type.</li>
-<li>ANYENUM<br>
+<li>ANYENUM<br />
 OID of the <code>anyenum</code> type.</li>
-<li>FDW_HANDLER<br>
+<li>FDW_HANDLER<br />
 OID of the <code>fdw_handler</code> type.</li>
-<li>ANYRANGE<br>
+<li>ANYRANGE<br />
 OID of the <code>anyrange</code> type.</li>
 </ul>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>public (readonly) pq\Connection $connection<br>
+<li>public (readonly) pq\Connection $connection<br />
 The connection which was used to obtain type information.</li>
 </ul>
 

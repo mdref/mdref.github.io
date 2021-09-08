@@ -88,29 +88,21 @@
 	</ul>
 </div>
 					
-<h1 id="void.pq\Transaction::savepoint()">void pq\Transaction::savepoint()</h1>
-
+<h1>void pq\Transaction::savepoint()</h1>
 <p>Create a <code>SAVEPOINT</code> within this transaction.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-    pq\Transaction tracks an internal counter as savepoint identifier.</p>
+<p><em><strong>NOTE:</strong></em><br />
+pq\Transaction tracks an internal counter as savepoint identifier.</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 <li>pq\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 $connection = new pq\Connection;

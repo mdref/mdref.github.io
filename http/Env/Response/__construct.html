@@ -96,37 +96,28 @@
 	</ul>
 </div>
 					
-<h1 id="void.http\Env\Response::__construct()">void http\Env\Response::__construct()</h1>
-
+<h1>void http\Env\Response::__construct()</h1>
 <p>Create a new env response message instance.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\UnexpectedValueException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $res = new http\Env\Response;
-$res-&gt;setContentType("text/plain");
-$res-&gt;getBody()-&gt;append("Hello world!\n");
+$res-&gt;setContentType(&quot;text/plain&quot;);
+$res-&gt;getBody()-&gt;append(&quot;Hello world!\n&quot;);
 $res-&gt;send(STDOUT);
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Content-Type: text/plain
-ETag: "b2a9e441"
+ETag: &quot;b2a9e441&quot;
 
 Hello world!
 </code></pre>

@@ -94,43 +94,34 @@
 	</ul>
 </div>
 					
-<h1 id="void.http\Message\Body::__construct([resource.$stream.=.NULL])">void http\Message\Body::__construct([resource $stream = NULL])</h1>
-
+<h1>void http\Message\Body::__construct([resource $stream = NULL])</h1>
 <p>Create a new message body, optionally referencing $stream.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional resource $stream = NULL<br>
+<li>Optional resource $stream = NULL<br />
 A stream to be used as message body.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\UnexpectedValueException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 ob_end_clean();
 
-$body = new http\Message\Body(fopen(__FILE__, "r"));
+$body = new http\Message\Body(fopen(__FILE__, &quot;r&quot;));
 $resp = new http\Env\Response;
-$resp-&gt;setContentType("text/plain");
+$resp-&gt;setContentType(&quot;text/plain&quot;);
 $resp-&gt;setBody($body);
 $resp-&gt;send();
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>Accept-Ranges: bytes
 X-Powered-By: PHP/5.5.5
 Content-Type: text/plain
-ETag: "138042e-527b5a0a-1b2"
+ETag: &quot;138042e-527b5a0a-1b2&quot;
 Last-Modified: Thu, 07 Nov 2013 09:14:50 GMT
 
 # void http\Message\Body::__construct([resource $stream = NULL])

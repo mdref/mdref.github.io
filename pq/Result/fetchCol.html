@@ -78,48 +78,39 @@
 	</ul>
 </div>
 					
-<h1 id="bool.pq\Result::fetchCol(mixed.&amp;$ref[,.mixed.$col.=.0])">bool pq\Result::fetchCol(mixed &amp;$ref[, mixed $col = 0])</h1>
-
+<h1>bool pq\Result::fetchCol(mixed &amp;$ref[, mixed $col = 0])</h1>
 <p>Iteratively fetch a single column.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>mixed $ref<br>
+<li>mixed $ref<br />
 The variable where the column value will be stored in.</li>
-<li>Optional mixed $col = 0<br>
+<li>Optional mixed $col = 0<br />
 The column name or index.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>bool, success.</li>
 <li>NULL, when iteration ends.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 <li>pq\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 try {
-    $connection = new pq\Connection;
-
-    $result = $connection-&gt;exec("SELECT email FROM accounts WHERE email LIKE '_@%'");
-
-    while ($result-&gt;fetchCol($email))  {
-        echo "Mail: {$email}\n";
-    }
+	$connection = new pq\Connection;
+	
+	$result = $connection-&gt;exec(&quot;SELECT email FROM accounts WHERE email LIKE '_@%'&quot;);
+	
+	while ($result-&gt;fetchCol($email))  {
+		echo &quot;Mail: {$email}\n&quot;;
+	}
 } catch (\pq\Exception $e) {
-    echo $e-&gt;getMessage(), "\n";
+	echo $e-&gt;getMessage(), &quot;\n&quot;;
 }
 
 ?&gt;

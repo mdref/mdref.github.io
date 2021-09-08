@@ -126,34 +126,27 @@
 	</ul>
 </div>
 					
-<h1 id="void.pq\Connection::__construct([string.$dsn.=.&quot;&quot;[,.int.$flags.=.0]])">void pq\Connection::__construct([string $dsn = ""[, int $flags = 0]])</h1>
-
+<h1>void pq\Connection::__construct([string $dsn = &quot;&quot;[, int $flags = 0]])</h1>
 <p>Create a new PostgreSQL connection.
-See also [General Usage](pq/Connection/: General Usage).</p>
-
-<h2 id="Params:">Params:</h2>
-
+See also <a href="pq/Connection/:%20General%20Usage">General Usage</a>.</p>
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional string $dsn = ""<br>
-A <strong><em>connection string</em></strong> as described <a href="http://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING">in the PostgreSQL documentation</a>.</li>
-<li>Optional int $flags = 0<br>
+<li>Optional string $dsn = &quot;&quot;<br />
+A <em><strong>connection string</strong></em> as described <a href="http://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING">in the PostgreSQL documentation</a>.</li>
+<li>Optional int $flags = 0<br />
 See <a href="pq/Connection#Connection.Flags:">connection flag constants</a>.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 <li>pq\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
-$connection = new pq\Connection("dbname=test user=test password=test",
-    pq\Connection::ASYNC | pq\Connection::PERSISTENT);
+$connection = new pq\Connection(&quot;dbname=test user=test password=test&quot;,
+	pq\Connection::ASYNC | pq\Connection::PERSISTENT);
 
 ?&gt;
 </code></pre>

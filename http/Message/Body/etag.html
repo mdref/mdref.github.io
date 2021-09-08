@@ -94,43 +94,34 @@
 	</ul>
 </div>
 					
-<h1 id="string.http\Message\Body::etag()">string http\Message\Body::etag()</h1>
-
+<h1>string http\Message\Body::etag()</h1>
 <p>Retrieve the ETag of the body.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>string, an Apache style ETag of inode, mtime and size in hex concatenated by hyphens if the message body stream is stat-able.</li>
 <li>string, a content hash (which algorithm is determined by INI http.etag.mode) if the stream is not stat-able.</li>
 <li>false, if http.etag.mode is not a known hash algorithm.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $temp = (new http\Message\Body)-&gt;etag();
-$file = (new http\Message\Body(fopen(__FILE__,"r")))-&gt;etag();
+$file = (new http\Message\Body(fopen(__FILE__,&quot;r&quot;)))-&gt;etag();
 
-ini_set("http.etag.mode", "bogus");
+ini_set(&quot;http.etag.mode&quot;, &quot;bogus&quot;);
 $fail = (new http\Message\Body)-&gt;etag();
 
-var_dump(compact("temp", "file", "fail"));
+var_dump(compact(&quot;temp&quot;, &quot;file&quot;, &quot;fail&quot;));
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>array(3) {
-  ["temp"]=&gt;
-  string(8) "00000000"
-  ["file"]=&gt;
-  string(20) "138043f-527b91d5-28c"
-  ["fail"]=&gt;
+  [&quot;temp&quot;]=&gt;
+  string(8) &quot;00000000&quot;
+  [&quot;file&quot;]=&gt;
+  string(20) &quot;138043f-527b91d5-28c&quot;
+  [&quot;fail&quot;]=&gt;
   bool(false)
 }
 </code></pre>

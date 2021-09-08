@@ -126,33 +126,26 @@
 	</ul>
 </div>
 					
-<h1 id="void.pq\Connection::notifyAsync(string.$channel,.string.$message)">void pq\Connection::notifyAsync(string $channel, string $message)</h1>
-
-<p>[Asynchronously](pq/Connection/: Asynchronous Usage) start notifying all listeners on $channel with $message.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h1>void pq\Connection::notifyAsync(string $channel, string $message)</h1>
+<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> start notifying all listeners on $channel with $message.</p>
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $channel<br>
+<li>string $channel<br />
 The channel to notify.</li>
-<li>string $message<br>
+<li>string $message<br />
 The message to send.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 <li>pq\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 $conn = new pq\Connection;
-$conn-&gt;notifyAsync("queue", "Hello World!");
+$conn-&gt;notifyAsync(&quot;queue&quot;, &quot;Hello World!&quot;);
 
 ?&gt;
 </code></pre>

@@ -78,63 +78,54 @@
 	</ul>
 </div>
 					
-<h1 id="array.pq\Result::fetchAllCols([int.$col.=.0])">array pq\Result::fetchAllCols([int $col = 0])</h1>
-
+<h1>array pq\Result::fetchAllCols([int $col = 0])</h1>
 <p>Fetch all rows of a single column.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional int $col = 0<br>
+<li>Optional int $col = 0<br />
 The column name or index to fetch.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>array, list of column values.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 <li>pq\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 /* Of the following result set:
 
-                id | name
-                ---|------
-                 1 | ann
-                 2 | barb 
-                 3 | john 
-                 4 | mike 
-
+				id | name
+				---|------
+				 1 | ann
+				 2 | barb 
+				 3 | john 
+				 4 | mike 
+				
 */
 
-$result-&gt;fetchAllCols(0);   /*  this call would fetch:
-                                array(4) {
-                                    int(1),
-                                    int(2),
-                                    int(3),
-                                    int(4)
-                                }
-                            */
-
-$result-&gt;fetchAllCols("name");  /*  this call would fetch:
-                                    array(4) {
-                                        string(3) "ann",
-                                        string(4) "barb",
-                                        string(4) "john",
-                                        string(4) "mike"
-                                    }
-                                */
+$result-&gt;fetchAllCols(0);	/* 	this call would fetch:
+								array(4) {
+									int(1),
+									int(2),
+									int(3),
+									int(4)
+								}
+							*/
+							
+$result-&gt;fetchAllCols(&quot;name&quot;);	/* 	this call would fetch:
+									array(4) {
+										string(3) &quot;ann&quot;,
+										string(4) &quot;barb&quot;,
+										string(4) &quot;john&quot;,
+										string(4) &quot;mike&quot;
+									}
+								*/
 </code></pre>
 
 

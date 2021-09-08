@@ -70,46 +70,37 @@
 	</ul>
 </div>
 					
-<h1 id="mixed.http\Client\Response::getCookies([int.$flags.=.0[,.array.$allowed_extras.=.NULL]])">mixed http\Client\Response::getCookies([int $flags = 0[, array $allowed_extras = NULL]])</h1>
-
+<h1>mixed http\Client\Response::getCookies([int $flags = 0[, array $allowed_extras = NULL]])</h1>
 <p>Extract response cookies.
-Parses any "Set-Cookie" response headers into an http\Cookie list. See http\Cookie::__construct().</p>
-
-<h2 id="Params:">Params:</h2>
-
+Parses any &quot;Set-Cookie&quot; response headers into an http\Cookie list. See http\Cookie::__construct().</p>
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional int $flags = 0<br>
+<li>Optional int $flags = 0<br />
 Cookie parser flags.</li>
-<li>Optional array $allowed_extras = NULL<br>
+<li>Optional array $allowed_extras = NULL<br />
 List of keys treated as extras.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>array, list of http\Cookie instances.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $response = (new http\Client)
-    -&gt;enqueue(new http\Client\Request("GET", "http://php.net/"))
+    -&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;http://php.net/&quot;))
     -&gt;send()
     -&gt;getResponse();
 
 foreach ($response-&gt;getCookies() as $cookie) {
     /* @var $cookie http\Cookie */
     foreach ($cookie-&gt;getCookies() as $name =&gt; $value) {
-        printf("Got a cookie named '%s' with value '%s'\n\tdomain=%s\n\t  path=%s\n", 
+        printf(&quot;Got a cookie named '%s' with value '%s'\n\tdomain=%s\n\t  path=%s\n&quot;, 
             $name, $value, $cookie-&gt;getDomain(), $cookie-&gt;getPath());
     }
 }
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>Got a cookie named 'COUNTRY' with value 'USA,72.52.91.14'
     domain=.php.net
       path=/

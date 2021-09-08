@@ -76,31 +76,24 @@
 	</ul>
 </div>
 					
-<h1 id="void.pq\Statement::deallocate()">void pq\Statement::deallocate()</h1>
-
+<h1>void pq\Statement::deallocate()</h1>
 <p>Free the server resources used by the prepared statement, so it can no longer be executed.
 This is done implicitly when the object is destroyed.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 <li>pq\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>    &lt;?php
 
     $connection = new pq\Connection;
     $types = new pq\Types($connection);
-    $statement = $connection-&gt;prepare("st1",
-            "SELECT \$1, \$2", [pq\Types::XML, pq\Types::JSON]);
+    $statement = $connection-&gt;prepare(&quot;st1&quot;,
+            &quot;SELECT \$1, \$2&quot;, [pq\Types::XML, pq\Types::JSON]);
 
     // some code which executes the statement
 

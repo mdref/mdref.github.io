@@ -88,33 +88,24 @@
 	</ul>
 </div>
 					
-<h1 id="string.http\Client\Request::getQuery()">string http\Client\Request::getQuery()</h1>
-
+<h1>string http\Client\Request::getQuery()</h1>
 <p>Retrieve the currently set querystring.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>string, the currently set querystring.</li>
 <li>NULL, if no querystring is set.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 var_dump((new http\Client\Request)-&gt;getQuery());
-var_dump((new http\Client\Request("GET", "http://localhost/?foo"))-&gt;getQuery());
+var_dump((new http\Client\Request(&quot;GET&quot;, &quot;http://localhost/?foo&quot;))-&gt;getQuery());
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>NULL
-string(3) "foo"
+string(3) &quot;foo&quot;
 </code></pre>
 
 

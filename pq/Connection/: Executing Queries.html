@@ -126,66 +126,47 @@
 	</ul>
 </div>
 					
-<h1 id="Executing.queries">Executing queries</h1>
-
+<h1>Executing queries</h1>
 <p>ext/pq provides three means to execute queries against the PostgreSQL server:</p>
-
 <ul>
-<li>pq\Connection::exec()<br>
+<li>pq\Connection::exec()<br />
 Simple plain execution of a query.</li>
-<li>pq\Connection::execParams()<br>
+<li>pq\Connection::execParams()<br />
 Automatic prepare &amp; execute of an unnamed statement.</li>
-<li>pq\Connection::prepare() and pq\Statement::exec()<br>
+<li>pq\Connection::prepare() and pq\Statement::exec()<br />
 Explicit prepare &amp; execute of an named statement.</li>
 </ul>
-
-<h2 id="Simple.plain.execution.of.a.query">Simple plain execution of a query</h2>
-
-<p>pq\Connection::exec() accepts a single argument, a <strong><em>query string</em></strong>, containing a single or multiple SQL queries, separated by semi-colon.</p>
-
+<h2>Simple plain execution of a query<a id="Simple.plain.execution.of.a.query" href="#Simple.plain.execution.of.a.query" class="permalink" aria-hidden="true" title="">#</a></h2>
+<p>pq\Connection::exec() accepts a single argument, a <em><strong>query string</strong></em>, containing a single or multiple SQL queries, separated by semi-colon.</p>
 <pre><code>&lt;?php
-$result = $c-&gt;exec("SELECT 1*s,2*s,3*s FROM generate_series(1,3) s");
+$result = $c-&gt;exec(&quot;SELECT 1*s,2*s,3*s FROM generate_series(1,3) s&quot;);
 ?&gt;
 </code></pre>
-
-<p>An object of class pq\Result is returned on success. See [Fetching results](pq/Result/: Fetching Results) for details.</p>
-
+<p>An object of class pq\Result is returned on success. See <a href="pq/Result/:%20Fetching%20Results">Fetching results</a> for details.</p>
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  Only the last result will be returned, if the query string contains more than one SQL query.</p>
+<p><em><strong>NOTE:</strong></em><br />
+Only the last result will be returned, if the query string contains more than one SQL query.</p>
 </blockquote>
-
-<h2 id="Automatic.prepare.&amp;.execute.of.an.unnamed.statement">Automatic prepare &amp; execute of an unnamed statement</h2>
-
-<p>pq\Connection::execParams() accepts a <strong><em>query string</em></strong> with a single SQL query as first argument, which will be prepared as an unnamed statement.</p>
-
-<p>The second argument is an <strong><em>array of parameters</em></strong> to execute the prepared statement with.</p>
-
-<p>If the third argument is present, an <strong><em>array with pg_type OIDs</em></strong>, those types will be used for the parameters. See [Using types](pq/Types/: Overview) for details.</p>
-
+<h2>Automatic prepare &amp; execute of an unnamed statement<a id="Automatic.prepare...execute.of.an.unnamed.statement" href="#Automatic.prepare...execute.of.an.unnamed.statement" class="permalink" aria-hidden="true" title="">#</a></h2>
+<p>pq\Connection::execParams() accepts a <em><strong>query string</strong></em> with a single SQL query as first argument, which will be prepared as an unnamed statement.</p>
+<p>The second argument is an <em><strong>array of parameters</strong></em> to execute the prepared statement with.</p>
+<p>If the third argument is present, an <em><strong>array with pg_type OIDs</strong></em>, those types will be used for the parameters. See <a href="pq/Types/:%20Overview">Using types</a> for details.</p>
 <pre><code>&lt;?php
-$result = $c-&gt;execParams("SELECT int($1) * s, int($2) * s, int($3) * s FROM generate_series(1,3) s", array(1,2,3));
+$result = $c-&gt;execParams(&quot;SELECT int($1) * s, int($2) * s, int($3) * s FROM generate_series(1,3) s&quot;, array(1,2,3));
 ?&gt;
 </code></pre>
-
-<p>An object of class pq\Result is returned on success. See [Fetching results](pq/Result/: Fetching Results) for details.</p>
-
-<h2 id="Explicit.prepare.&amp;.execute.of.a.named.statement">Explicit prepare &amp; execute of a named statement</h2>
-
-<p>pq\Connection::prepare() requires the <strong><em>statement name</em></strong> as string as first argument. This name is used later to refer to this prepared statement. See <a href="pq/Statement">Prepared statements</a> for details.</p>
-
-<p>The second argument is a <strong><em>query string</em></strong> containing a single SQL query, which will be prepared on the server.</p>
-
-<p>If the third argument is present, an <strong><em>array with pg_type OIDs</em></strong>, those types will be used for the parameters. See [Using types](pq/Types/: Overview) for details.</p>
-
+<p>An object of class pq\Result is returned on success. See <a href="pq/Result/:%20Fetching%20Results">Fetching results</a> for details.</p>
+<h2>Explicit prepare &amp; execute of a named statement<a id="Explicit.prepare...execute.of.a.named.statement" href="#Explicit.prepare...execute.of.a.named.statement" class="permalink" aria-hidden="true" title="">#</a></h2>
+<p>pq\Connection::prepare() requires the <em><strong>statement name</strong></em> as string as first argument. This name is used later to refer to this prepared statement. See <a href="pq/Statement">Prepared statements</a> for details.</p>
+<p>The second argument is a <em><strong>query string</strong></em> containing a single SQL query, which will be prepared on the server.</p>
+<p>If the third argument is present, an <em><strong>array with pg_type OIDs</strong></em>, those types will be used for the parameters. See <a href="pq/Types/:%20Overview">Using types</a> for details.</p>
 <pre><code>&lt;?php
 
-$statement = $c-&gt;prepare("my_stm", "SELECT \$1::int*s,\$2::int*s,\$3::int*s FROM generate_series(1,3) s");
+$statement = $c-&gt;prepare(&quot;my_stm&quot;, &quot;SELECT \$1::int*s,\$2::int*s,\$3::int*s FROM generate_series(1,3) s&quot;);
 $result = $statement-&gt;exec(array(1,2,3));
 
 ?&gt;
 </code></pre>
-
 <p>An object of class pq\Statement will be returned on success. See <a href="pq/Statement">Prepared statements</a> for details.</p>
 
 

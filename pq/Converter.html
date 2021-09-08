@@ -91,76 +91,73 @@
 	</ul>
 </div>
 					
-<h1 id="interface.pq\Converter">interface pq\Converter</h1>
-
+<h1>interface pq\Converter</h1>
 <p>Interface for type conversions.</p>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 /**
  * Naive geometric point
  */
 class Point {
-    public $x;
-    public $y;
-    function __construct($x, $y) {
-        $this-&gt;x = $x;
-        $this-&gt;y = $y;
-    }
+	public $x;
+	public $y;
+	function __construct($x, $y) {
+		$this-&gt;x = $x;
+		$this-&gt;y = $y;
+	}
 }
 
 /**
  * A simple Box
  */
 class Box {
-    public $p1;
-    public $p2;
-    function __construct(Point $p1, Point $p2) {
-        $this-&gt;p1 = $p1;
-        $this-&gt;p2 = $p2;
-    }
+	public $p1;
+	public $p2;
+	function __construct(Point $p1, Point $p2) {
+		$this-&gt;p1 = $p1;
+		$this-&gt;p2 = $p2;
+	}
 }
 
 /**
  * Our converter handles only objects of type box
  */
 class BoxConverter implements pq\Converter {
-    private $oid;
-    function __construct(pq\Types $types) {
-        $this-&gt;oid = $types["box"]-&gt;oid;
-    }
-
-    /**
-     * @return array
-     * @see pq\Converter::convertTypes()
-     */
-    function convertTypes() {
-        return [$this-&gt;oid];
-    }
-
-    /**
-     * @return string
-     * @param $box Box
-     * @see pq\Converter::convertToString()
-     */
-    function convertToString($box, $type) {
-        return sprintf("(%F,%F),(%F,%F)", 
-            $box-&gt;p1-&gt;x, $box-&gt;p1-&gt;y,
-            $box-&gt;p2-&gt;x, $box-&gt;p2-&gt;y
-        );
-    }
-
-    /**
-     * @return Box
-     * @param string $data
-     * @see pq\Converter::convertFromString()
-     */
-    function convertFromString($data, $type) {
-        list($p1x, $p1y, $p2x, $p2y) = sscanf($data, "(%f,%f),(%f,%f)");
-        return new Box(new Point($p1x, $p1y), new Point($p2x, $p2y));
-    }
+	private $oid;
+	function __construct(pq\Types $types) {
+		$this-&gt;oid = $types[&quot;box&quot;]-&gt;oid;
+	}
+	
+	/**
+	 * @return array
+	 * @see pq\Converter::convertTypes()
+	 */
+	function convertTypes() {
+		return [$this-&gt;oid];
+	}
+	
+	/**
+	 * @return string
+	 * @param $box Box
+	 * @see pq\Converter::convertToString()
+	 */
+	function convertToString($box, $type) {
+		return sprintf(&quot;(%F,%F),(%F,%F)&quot;, 
+			$box-&gt;p1-&gt;x, $box-&gt;p1-&gt;y,
+			$box-&gt;p2-&gt;x, $box-&gt;p2-&gt;y
+		);
+	}
+	
+	/**
+	 * @return Box
+	 * @param string $data
+	 * @see pq\Converter::convertFromString()
+	 */
+	function convertFromString($data, $type) {
+		list($p1x, $p1y, $p2x, $p2y) = sscanf($data, &quot;(%f,%f),(%f,%f)&quot;);
+		return new Box(new Point($p1x, $p1y), new Point($p2x, $p2y));
+	}
 }
 
 $conn  = new pq\Connection;
@@ -169,30 +166,28 @@ $conv  = new BoxConverter($types);
 $inbox = new Box(new Point(1.1, 2.2), new Point(3.3, 4.4));
 
 $conn-&gt;setConverter($conv);
-$result = $conn-&gt;execParams("SELECT \$1", [$inbox], [$types["box"]-&gt;oid]);
+$result = $conn-&gt;execParams(&quot;SELECT \$1&quot;, [$inbox], [$types[&quot;box&quot;]-&gt;oid]);
 $result-&gt;fetchCol($outbox);
 
 var_dump($outbox);
 
 ?&gt; 
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>object(Box)#163 (2) {
-  ["p1"]=&gt;
+  [&quot;p1&quot;]=&gt;
   object(Point)#164 (2) {
-    ["x"]=&gt;
-    float(3.3)
-    ["y"]=&gt;
-    float(4.4)
+	[&quot;x&quot;]=&gt;
+	float(3.3)
+	[&quot;y&quot;]=&gt;
+	float(4.4)
   }
-  ["p2"]=&gt;
+  [&quot;p2&quot;]=&gt;
   object(Point)#165 (2) {
-    ["x"]=&gt;
-    float(1.1)
-    ["y"]=&gt;
-    float(2.2)
+	[&quot;x&quot;]=&gt;
+	float(1.1)
+	[&quot;y&quot;]=&gt;
+	float(2.2)
   }
 }
 </code></pre>

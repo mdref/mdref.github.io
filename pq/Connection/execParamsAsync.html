@@ -126,30 +126,24 @@
 	</ul>
 </div>
 					
-<h1 id="pq\Result.pq\Connection::execParamsAsync(string.$query,.array.$params[,.array.$types.=.NULL,.[callable.$cb.=.NULL]])">pq\Result pq\Connection::execParamsAsync(string $query, array $params[, array $types = NULL, [callable $cb = NULL]])</h1>
-
-<p>[Asynchronously](pq/Connection/: Asynchronous Usage) [execute an SQL query](pq/Connection: Executing Queries) with properly escaped parameters substituted.</p>
-
+<h1>pq\Result pq\Connection::execParamsAsync(string $query, array $params[, array $types = NULL, [callable $cb = NULL]])</h1>
+<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> <a href="pq/Connection:%20Executing%20Queries">execute an SQL query</a> with properly escaped parameters substituted.</p>
 <blockquote>
-  <p><strong><em>NOTE</em></strong>:<br>
-    If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.</p>
+<p><em><strong>NOTE</strong></em>:<br />
+If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $query<br>
+<li>string $query<br />
 The query to execute.</li>
-<li>array $params<br>
+<li>array $params<br />
 The parameter list to substitute.</li>
-<li>Optional array $types = NULL<br>
+<li>Optional array $types = NULL<br />
 Corresponding list of type OIDs for the parameters.</li>
-<li>Optional callable $cb as function(\pq\Result $res) : void<br>
+<li>Optional callable $cb as function(\pq\Result $res) : void<br />
 Result handler callback.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\RuntimeException</li>

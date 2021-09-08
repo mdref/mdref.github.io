@@ -95,57 +95,44 @@
 	</ul>
 </div>
 					
-<h1 id="class.http\Encoding\Stream\Deflate.extends.http\Encoding\Stream">class http\Encoding\Stream\Deflate extends http\Encoding\Stream</h1>
-
+<h1>class http\Encoding\Stream\Deflate extends http\Encoding\Stream</h1>
 <p>A deflate stream supporting deflate, zlib and gzip encodings.</p>
-
-<h2 id="Constants:">Constants:</h2>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>TYPE_GZIP<br>
+<li>TYPE_GZIP<br />
 Gzip encoding. RFC1952</li>
-<li>TYPE_ZLIB<br>
+<li>TYPE_ZLIB<br />
 Zlib encoding. RFC1950</li>
-<li>TYPE_RAW<br>
+<li>TYPE_RAW<br />
 Deflate encoding. RFC1951</li>
-<li>LEVEL_DEF<br>
+<li>LEVEL_DEF<br />
 Default compression level.</li>
-<li>LEVEL_MIN<br>
+<li>LEVEL_MIN<br />
 Least compression level.</li>
-<li>LEVEL_MAX<br>
+<li>LEVEL_MAX<br />
 Greatest compression level.</li>
-<li>STRATEGY_DEF<br>
+<li>STRATEGY_DEF<br />
 Default compression strategy.</li>
-<li>STRATEGY_FILT<br>
+<li>STRATEGY_FILT<br />
 Filtered compression strategy.</li>
-<li>STRATEGY_HUFF<br>
+<li>STRATEGY_HUFF<br />
 Huffman strategy only.</li>
-<li>STRATEGY_RLE<br>
+<li>STRATEGY_RLE<br />
 Run-length encoding strategy.</li>
-<li>STRATEGY_FIXED<br>
+<li>STRATEGY_FIXED<br />
 Encoding with fixed Huffman codes only.</li>
 </ul>
-
 <blockquote>
-  <p><strong>A note on the compression strategy:</strong></p>
-  
-  <p>The strategy parameter is used to tune the compression algorithm.</p>
-  
-  <p>Use the value DEFAULT_STRATEGY for normal data, FILTERED for data produced by a filter (or predictor), HUFFMAN_ONLY to force Huffman encoding only (no string match), or RLE to limit match distances to one (run-length encoding).</p>
-  
-  <p>Filtered data consists mostly of small values with a somewhat random distribution. In this case, the compression algorithm is tuned to compress them better. The effect of FILTERED is to force more Huffman coding and less string matching; it is somewhat intermediate between DEFAULT_STRATEGY and HUFFMAN_ONLY.</p>
-  
-  <p>RLE is designed to be almost as fast as HUFFMAN_ONLY, but give better compression for PNG image data.</p>
-  
-  <p>FIXED prevents the use of dynamic Huffman codes, allowing for a simpler decoder for special applications.</p>
-  
-  <p>The strategy parameter only affects the compression ratio but not the correctness of the compressed output even if it is not set appropriately.</p>
-  
-  <p><em>Source: <a href="http://www.zlib.net/manual.html">zlib Manual</a></em></p>
+<p><strong>A note on the compression strategy:</strong></p>
+<p>The strategy parameter is used to tune the compression algorithm.</p>
+<p>Use the value DEFAULT_STRATEGY for normal data, FILTERED for data produced by a filter (or predictor), HUFFMAN_ONLY to force Huffman encoding only (no string match), or RLE to limit match distances to one (run-length encoding).</p>
+<p>Filtered data consists mostly of small values with a somewhat random distribution. In this case, the compression algorithm is tuned to compress them better. The effect of FILTERED is to force more Huffman coding and less string matching; it is somewhat intermediate between DEFAULT_STRATEGY and HUFFMAN_ONLY.</p>
+<p>RLE is designed to be almost as fast as HUFFMAN_ONLY, but give better compression for PNG image data.</p>
+<p>FIXED prevents the use of dynamic Huffman codes, allowing for a simpler decoder for special applications.</p>
+<p>The strategy parameter only affects the compression ratio but not the correctness of the compressed output even if it is not set appropriately.</p>
+<p><em>Source: <a href="http://www.zlib.net/manual.html">zlib Manual</a></em></p>
 </blockquote>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
 
 

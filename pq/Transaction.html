@@ -156,36 +156,30 @@
 	</ul>
 </div>
 					
-<h1 id="class.pq\Transaction">class pq\Transaction</h1>
-
+<h1>class pq\Transaction</h1>
 <p>A database transaction.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-    Transactional properties like pq\Transaction::$isolation, pq\Transaction::$readonly and pq\Transaction::$deferrable can be changed after the transaction begun and the first query has been executed. Doing this will lead to appropriate <code>SET TRANSACTION</code> queries.</p>
+<p><em><strong>NOTE:</strong></em><br />
+Transactional properties like pq\Transaction::$isolation, pq\Transaction::$readonly and pq\Transaction::$deferrable can be changed after the transaction begun and the first query has been executed. Doing this will lead to appropriate <code>SET TRANSACTION</code> queries.</p>
 </blockquote>
-
-<h2 id="Constants:">Constants:</h2>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>READ_COMMITTED<br>
+<li>READ_COMMITTED<br />
 Transaction isolation level where only rows committed before the transaction began can be seen.</li>
-<li>REPEATABLE_READ<br>
+<li>REPEATABLE_READ<br />
 Transaction isolation level where only rows committed before the first query was executed in this transaction.</li>
-<li>SERIALIZABLE<br>
+<li>SERIALIZABLE<br />
 Transaction isolation level that guarantees serializable repeatability which might lead to serialization_failure on high concurrency.</li>
 </ul>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>public (readonly) pq\Connection $connection<br>
+<li>public (readonly) pq\Connection $connection<br />
 The connection the transaction was started on.</li>
-<li>public int $isolation = pq\Transaction::READ_COMMITTED<br>
+<li>public int $isolation = pq\Transaction::READ_COMMITTED<br />
 The transaction isolation level.</li>
-<li>public bool $readonly = FALSE<br>
+<li>public bool $readonly = FALSE<br />
 Whether this transaction performs read only queries.</li>
-<li>public bool $deferrable = FALSE<br>
+<li>public bool $deferrable = FALSE<br />
 Whether the transaction is deferrable. See pq\Connection::startTransaction().</li>
 </ul>
 
@@ -210,7 +204,7 @@ Whether the transaction is deferrable. See pq\Connection::startTransaction().</l
 	
 	<li>
 		<h3><a href="pq/Transaction/commitAsync">Transaction::commitAsync</a></h3>
-		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) commit the transaction or release the previous savepoint.</p>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> commit the transaction or release the previous savepoint.</p>
 
 		<p>void pq\Transaction::commitAsync()</p>
 	</li>
@@ -238,7 +232,7 @@ Whether the transaction is deferrable. See pq\Connection::startTransaction().</l
 	
 	<li>
 		<h3><a href="pq/Transaction/exportSnapshotAsync">Transaction::exportSnapshotAsync</a></h3>
-		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) export a snapshot for transaction synchronization.</p>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> export a snapshot for transaction synchronization.</p>
 
 		<p>void pq\Transaction::exportSnapshotAsync()</p>
 	</li>
@@ -259,7 +253,7 @@ Whether the transaction is deferrable. See pq\Connection::startTransaction().</l
 	
 	<li>
 		<h3><a href="pq/Transaction/importSnapshotAsync">Transaction::importSnapshotAsync</a></h3>
-		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) import a snapshot from another transaction to synchronize with.</p>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> import a snapshot from another transaction to synchronize with.</p>
 
 		<p>void pq\Transaction::importSnapshotAsync(string $snapshot_id)</p>
 	</li>
@@ -280,7 +274,7 @@ Whether the transaction is deferrable. See pq\Connection::startTransaction().</l
 	
 	<li>
 		<h3><a href="pq/Transaction/rollbackAsync">Transaction::rollbackAsync</a></h3>
-		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) rollback the transaction or to the previous savepoint within this transaction.</p>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> rollback the transaction or to the previous savepoint within this transaction.</p>
 
 		<p>void pq\Transaction::rollbackAsync()</p>
 	</li>
@@ -294,7 +288,7 @@ Whether the transaction is deferrable. See pq\Connection::startTransaction().</l
 	
 	<li>
 		<h3><a href="pq/Transaction/savepointAsync">Transaction::savepointAsync</a></h3>
-		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) create a <code>SAVEPOINT</code> within this transaction.</p>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> create a <code>SAVEPOINT</code> within this transaction.</p>
 
 		<p>void pq\Transaction::savepointAsync()</p>
 	</li>

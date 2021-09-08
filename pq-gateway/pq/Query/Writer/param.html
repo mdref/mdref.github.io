@@ -84,42 +84,33 @@
 	</ul>
 </div>
 					
-<h1 id="string.pq\Query\Writer::param(mixed.$param[,.int.$type.=.NULL])">string pq\Query\Writer::param(mixed $param[, int $type = NULL])</h1>
-
+<h1>string pq\Query\Writer::param(mixed $param[, int $type = NULL])</h1>
 <p>Remember the parameter with any associated type and return $N to be written to the query string.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>mixed $param<br>
+<li>mixed $param<br />
 Query parameter value.</li>
-<li>Optional int $type = NULL<br>
+<li>Optional int $type = NULL<br />
 The type OID of the parameter.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>string, '$N', to be used with pq\Query\Writer::write(), where N is the number of this parameter.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Query;
 
 $writer = new Query\Writer;
-$writer-&gt;write("SELECT", $writer-&gt;param(1));
+$writer-&gt;write(&quot;SELECT&quot;, $writer-&gt;param(1));
 
 var_dump((string) $writer, $writer-&gt;getParams());
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
-<pre><code>string(9) "SELECT $1"
+<pre><code>string(9) &quot;SELECT $1&quot;
 array(1) {
   [0]=&gt;
   int(1)

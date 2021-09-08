@@ -86,44 +86,38 @@
 	</ul>
 </div>
 					
-<h1 id="class.pq\DateTime.extends.DateTime.implements.JsonSerializable">class pq\DateTime extends DateTime implements JsonSerializable</h1>
-
+<h1>class pq\DateTime extends DateTime implements JsonSerializable</h1>
 <p>A simple DateTime wrapper with predefined formats which supports stringification and JSON.</p>
-
-<h2 id="Formats:">Formats:</h2>
-
+<h2>Formats:<a id="Formats:" href="#Formats:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <table>
 <thead>
 <tr>
-  <th>Type</th>
-  <th>Format</th>
+<th>Type</th>
+<th>Format</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>pq\Types::DATE</td>
-  <td>"Y-m-d"</td>
+<td>pq\Types::DATE</td>
+<td>&quot;Y-m-d&quot;</td>
 </tr>
 <tr>
-  <td>pq\Types::TIMESTAMP</td>
-  <td>"Y-m-d H:i:s.u"</td>
+<td>pq\Types::TIMESTAMP</td>
+<td>&quot;Y-m-d H:i:s.u&quot;</td>
 </tr>
 <tr>
-  <td>pq\Types::TIMESTAMPTZ</td>
-  <td>"Y-m-d H:i:s.uO"</td>
+<td>pq\Types::TIMESTAMPTZ</td>
+<td>&quot;Y-m-d H:i:s.uO&quot;</td>
 </tr>
 </tbody>
 </table>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-    Date/time values will only be converted to pq\DateTime and from DateTime if the pq\Result::CONV_DATETIME bit is set in pq\Result::$autoConvert.</p>
+<p><em><strong>NOTE:</strong></em><br />
+Date/time values will only be converted to pq\DateTime and from DateTime if the pq\Result::CONV_DATETIME bit is set in pq\Result::$autoConvert.</p>
 </blockquote>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>public string $format = "Y-m-d H:i:s.uO"<br>
+<li>public string $format = &quot;Y-m-d H:i:s.uO&quot;<br />
 The default format of any date/time type automatically converted by pq\Result (depends on the actual type of the column).</li>
 </ul>
 

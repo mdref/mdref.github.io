@@ -130,145 +130,136 @@
 	</ul>
 </div>
 					
-<h1 id="pq\Gateway\Table\Relations.pq\Gateway\Table::getRelations()">pq\Gateway\Table\Relations pq\Gateway\Table::getRelations()</h1>
-
+<h1>pq\Gateway\Table\Relations pq\Gateway\Table::getRelations()</h1>
 <p>Get the relations (by foreign key) of this table.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Gateway\Table\Relations, the table's foreign keys.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Gateway\Table;
 
 $conn = new pq\Connection;
-$conn-&gt;exec("
-    -- drop table if exists account cascade;
-    -- create table account (
-    --  id uuid default uuid_generate_v4() primary key,
-    --  password char(60),
-    --  name varchar(68)
-    -- );
+$conn-&gt;exec(&quot;
+	-- drop table if exists account cascade;
+	-- create table account (
+	-- 	id uuid default uuid_generate_v4() primary key,
+	-- 	password char(60),
+	-- 	name varchar(68)
+	-- );
 
-    -- drop table if exists account_email cascade;
-    -- create table account_email (
-    --  account_id uuid not null references account(id) on delete cascade,
-    --  email varchar(255) not null unique,
-    --  primary key (account_id, email)
-    -- );
+	-- drop table if exists account_email cascade;
+	-- create table account_email (
+	-- 	account_id uuid not null references account(id) on delete cascade,
+	-- 	email varchar(255) not null unique,
+	-- 	primary key (account_id, email)
+	-- );
+	
+	drop table if exists reftable cascade;
+	create table reftable (
+		id serial primary key,
+		my_account uuid references account(id),
+		account_id uuid references account(id),
+		second_account_id uuid references account(id),
+		email varchar(255) not null references account_email(email)
+	);
+&quot;);
 
-    drop table if exists reftable cascade;
-    create table reftable (
-        id serial primary key,
-        my_account uuid references account(id),
-        account_id uuid references account(id),
-        second_account_id uuid references account(id),
-        email varchar(255) not null references account_email(email)
-    );
-");
-
-$fgn_table = new Table("reftable");
+$fgn_table = new Table(&quot;reftable&quot;);
 var_dump($fgn_table-&gt;getRelations());
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>object(pq\Gateway\Table\Relations)#7 (1) {
-  ["references":protected]=&gt;
+  [&quot;references&quot;:protected]=&gt;
   array(2) {
-    ["account"]=&gt;
-    array(3) {
-      ["my_account"]=&gt;
-      object(pq\Gateway\Table\Reference)#14 (5) {
-        ["name"]=&gt;
-        string(10) "my_account"
-        ["foreignTable"]=&gt;
-        string(8) "reftable"
-        ["foreignColumns"]=&gt;
-        array(1) {
-          [0]=&gt;
-          string(10) "my_account"
-        }
-        ["referencedTable"]=&gt;
-        string(7) "account"
-        ["referencedColumns"]=&gt;
-        array(1) {
-          [0]=&gt;
-          string(2) "id"
-        }
-      }
-      ["account"]=&gt;
-      object(pq\Gateway\Table\Reference)#15 (5) {
-        ["name"]=&gt;
-        string(7) "account"
-        ["foreignTable"]=&gt;
-        string(8) "reftable"
-        ["foreignColumns"]=&gt;
-        array(1) {
-          [0]=&gt;
-          string(10) "account_id"
-        }
-        ["referencedTable"]=&gt;
-        string(7) "account"
-        ["referencedColumns"]=&gt;
-        array(1) {
-          [0]=&gt;
-          string(2) "id"
-        }
-      }
-      ["second_account"]=&gt;
-      object(pq\Gateway\Table\Reference)#16 (5) {
-        ["name"]=&gt;
-        string(14) "second_account"
-        ["foreignTable"]=&gt;
-        string(8) "reftable"
-        ["foreignColumns"]=&gt;
-        array(1) {
-          [0]=&gt;
-          string(17) "second_account_id"
-        }
-        ["referencedTable"]=&gt;
-        string(7) "account"
-        ["referencedColumns"]=&gt;
-        array(1) {
-          [0]=&gt;
-          string(2) "id"
-        }
-      }
-    }
-    ["account_email"]=&gt;
-    array(1) {
-      ["email"]=&gt;
-      object(pq\Gateway\Table\Reference)#17 (5) {
-        ["name"]=&gt;
-        string(5) "email"
-        ["foreignTable"]=&gt;
-        string(8) "reftable"
-        ["foreignColumns"]=&gt;
-        array(1) {
-          [0]=&gt;
-          string(5) "email"
-        }
-        ["referencedTable"]=&gt;
-        string(13) "account_email"
-        ["referencedColumns"]=&gt;
-        array(1) {
-          [0]=&gt;
-          string(5) "email"
-        }
-      }
-    }
+	[&quot;account&quot;]=&gt;
+	array(3) {
+	  [&quot;my_account&quot;]=&gt;
+	  object(pq\Gateway\Table\Reference)#14 (5) {
+		[&quot;name&quot;]=&gt;
+		string(10) &quot;my_account&quot;
+		[&quot;foreignTable&quot;]=&gt;
+		string(8) &quot;reftable&quot;
+		[&quot;foreignColumns&quot;]=&gt;
+		array(1) {
+		  [0]=&gt;
+		  string(10) &quot;my_account&quot;
+		}
+		[&quot;referencedTable&quot;]=&gt;
+		string(7) &quot;account&quot;
+		[&quot;referencedColumns&quot;]=&gt;
+		array(1) {
+		  [0]=&gt;
+		  string(2) &quot;id&quot;
+		}
+	  }
+	  [&quot;account&quot;]=&gt;
+	  object(pq\Gateway\Table\Reference)#15 (5) {
+		[&quot;name&quot;]=&gt;
+		string(7) &quot;account&quot;
+		[&quot;foreignTable&quot;]=&gt;
+		string(8) &quot;reftable&quot;
+		[&quot;foreignColumns&quot;]=&gt;
+		array(1) {
+		  [0]=&gt;
+		  string(10) &quot;account_id&quot;
+		}
+		[&quot;referencedTable&quot;]=&gt;
+		string(7) &quot;account&quot;
+		[&quot;referencedColumns&quot;]=&gt;
+		array(1) {
+		  [0]=&gt;
+		  string(2) &quot;id&quot;
+		}
+	  }
+	  [&quot;second_account&quot;]=&gt;
+	  object(pq\Gateway\Table\Reference)#16 (5) {
+		[&quot;name&quot;]=&gt;
+		string(14) &quot;second_account&quot;
+		[&quot;foreignTable&quot;]=&gt;
+		string(8) &quot;reftable&quot;
+		[&quot;foreignColumns&quot;]=&gt;
+		array(1) {
+		  [0]=&gt;
+		  string(17) &quot;second_account_id&quot;
+		}
+		[&quot;referencedTable&quot;]=&gt;
+		string(7) &quot;account&quot;
+		[&quot;referencedColumns&quot;]=&gt;
+		array(1) {
+		  [0]=&gt;
+		  string(2) &quot;id&quot;
+		}
+	  }
+	}
+	[&quot;account_email&quot;]=&gt;
+	array(1) {
+	  [&quot;email&quot;]=&gt;
+	  object(pq\Gateway\Table\Reference)#17 (5) {
+		[&quot;name&quot;]=&gt;
+		string(5) &quot;email&quot;
+		[&quot;foreignTable&quot;]=&gt;
+		string(8) &quot;reftable&quot;
+		[&quot;foreignColumns&quot;]=&gt;
+		array(1) {
+		  [0]=&gt;
+		  string(5) &quot;email&quot;
+		}
+		[&quot;referencedTable&quot;]=&gt;
+		string(13) &quot;account_email&quot;
+		[&quot;referencedColumns&quot;]=&gt;
+		array(1) {
+		  [0]=&gt;
+		  string(5) &quot;email&quot;
+		}
+	  }
+	}
   }
 }
 </code></pre>

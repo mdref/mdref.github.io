@@ -144,52 +144,39 @@
 	</ul>
 </div>
 					
-<h1 id="http\Message.http\Message::setHttpVersion(string.$http_version)">http\Message http\Message::setHttpVersion(string $http_version)</h1>
-
+<h1>http\Message http\Message::setHttpVersion(string $http_version)</h1>
 <p>Set the HTTP protocol version of the message.
 See http\Message::getHttpVersion().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $http_version<br>
-The protocol version, e.g. "1.1", optionally prefixed by "HTTP/".</li>
+<li>string $http_version<br />
+The protocol version, e.g. &quot;1.1&quot;, optionally prefixed by &quot;HTTP/&quot;.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Message, self.</li>
 </ul>
-
-<h2 id="Notices:">Notices:</h2>
-
+<h2>Notices:<a id="Notices:" href="#Notices:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>If a non-standard version separator is encounted.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\BadHeaderException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $message = new http\Message;
 var_dump($message-&gt;getHttpVersion());
-$message-&gt;setHttpVersion("HTTP/1_0");
+$message-&gt;setHttpVersion(&quot;HTTP/1_0&quot;);
 var_dump($message-&gt;getHttpVersion());
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
-<pre><code>string(3) "1.1"
+<pre><code>string(3) &quot;1.1&quot;
 Notice: Non-standard version separator '_' in HTTP protocol version 'HTTP/1_0'
-string(3) "1.0"
+string(3) &quot;1.0&quot;
 </code></pre>
 
 

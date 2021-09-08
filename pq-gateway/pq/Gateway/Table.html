@@ -228,39 +228,62 @@
 	</ul>
 </div>
 					
-<h1 id="class.pq\Gateway\Table.implements.SplSubject">class pq\Gateway\Table implements SplSubject</h1>
-
+<h1>class pq\Gateway\Table implements SplSubject</h1>
 <p>The table gateway.</p>
-
-<h2 id="Propertries:">Propertries:</h2>
-
+<h2>Propertries:<a id="Propertries:" href="#Propertries:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>public static pq\Connection $defaultConnection<br>
-A default connection to use.</li>
-<li>public static callable $defaultResolver as function($table_name)<br>
-A callback whiuch resolves table names to classes.</li>
-<li><p>public static pq\Gateway\Table\CacheInterface $defaultMetadataCache<br>
-A default cache implementation. See pq\Gateway\Table\StaticCache.</p></li>
-<li><p>protected pq\Connection $conn<br>
-The PostgreSQL connection.</p></li>
-<li>protected string $name<br>
-The table name.</li>
-<li>protected mixed $rowset = "pq&#92;Gateway&#92;Rowset"<br>
-The rowset prototype.</li>
-<li>protected pq\Query\WriterInterface $query<br>
-A query writer.</li>
-<li>protected pq\Query\ExecutorInterface $exec<br>
-A query executor.</li>
-<li>protected pq\Gateway\Table\Identity $identity<br>
-The table identity implementation.</li>
-<li>protected pq\Gateway\Table\Attributes $attributes<br>
-The table attributes implementation.</li>
-<li>protected pq\Gateway\Table\Relations $relations<br>
-The table relations implementation.</li>
-<li>protected pq\Gateway\Table\CacheInterface $metadataCache<br>
-The metadata cache to use for this table.</li>
-<li>protected SplObjectStorage $observers<br>
-Table observers.</li>
+<li>
+<p>public static pq\Connection $defaultConnection<br />
+A default connection to use.</p>
+</li>
+<li>
+<p>public static callable $defaultResolver as function($table_name)<br />
+A callback whiuch resolves table names to classes.</p>
+</li>
+<li>
+<p>public static pq\Gateway\Table\CacheInterface $defaultMetadataCache<br />
+A default cache implementation. See pq\Gateway\Table\StaticCache.</p>
+</li>
+<li>
+<p>protected pq\Connection $conn<br />
+The PostgreSQL connection.</p>
+</li>
+<li>
+<p>protected string $name<br />
+The table name.</p>
+</li>
+<li>
+<p>protected mixed $rowset = &quot;pq\Gateway\Rowset&quot;<br />
+The rowset prototype.</p>
+</li>
+<li>
+<p>protected pq\Query\WriterInterface $query<br />
+A query writer.</p>
+</li>
+<li>
+<p>protected pq\Query\ExecutorInterface $exec<br />
+A query executor.</p>
+</li>
+<li>
+<p>protected pq\Gateway\Table\Identity $identity<br />
+The table identity implementation.</p>
+</li>
+<li>
+<p>protected pq\Gateway\Table\Attributes $attributes<br />
+The table attributes implementation.</p>
+</li>
+<li>
+<p>protected pq\Gateway\Table\Relations $relations<br />
+The table relations implementation.</p>
+</li>
+<li>
+<p>protected pq\Gateway\Table\CacheInterface $metadataCache<br />
+The metadata cache to use for this table.</p>
+</li>
+<li>
+<p>protected SplObjectStorage $observers<br />
+Table observers.</p>
+</li>
 </ul>
 
 

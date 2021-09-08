@@ -68,46 +68,39 @@
 	</ul>
 </div>
 					
-<h1 id="http\Url.Changelog">http\Url Changelog</h1>
-
-<ol>
+<h1>http\Url Changelog</h1>
+<ol start="0">
 <li>v2.2.0
-
 <ul>
 <li>Added parser constants:
-
 <ul>
 <li>http\Url::PARSE_MBUTF8</li>
 <li>http\Url::PARSE_MBLOC (on systems with wide character support)</li>
 <li>http\Url::PARSE_TOIDN (with libidn support)</li>
 <li>http\Url::PARSE_TOPCT</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>v2.6.0, v3.1.0
-
 <ul>
 <li>Added parser constants:
-
 <ul>
 <li>http\Url::IGNORE_ERRORS</li>
 <li>http\Url::SILENT_ERRORS</li>
 <li>http\Url::STDFLAGS</li>
 <li>http\Url::PARSE_TOIDN_2003</li>
 <li>http\Url::PARSE_TOIDN_2008</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
-
-<h2 id="Backwards.compatibility.notes">Backwards compatibility notes</h2>
-
-<h3 id="New.parser.in.v2.2.0">New parser in v2.2.0</h3>
-
+<h2>Backwards compatibility notes<a id="Backwards.compatibility.notes" href="#Backwards.compatibility.notes" class="permalink" aria-hidden="true" title="">#</a></h2>
+<h3>New parser in v2.2.0<a id="New.parser.in.v2.2.0" href="#New.parser.in.v2.2.0" class="permalink" aria-hidden="true" title="">#</a></h3>
 <p>PHP's <a href="http://php.net/parse_url">parse_url()</a> is avoided since v2.2.0.</p>
-
 <p>Creating an empty url by <code>new http\Url(NULL, NULL, 0)</code> will not result in <code>http://localhost/</code> anymore but in an empty URL instead.</p>
-
-<h3 id="No.more.default.parts.from.the.environment.in.v3.0.0">No more default parts from the environment in v3.0.0</h3>
-
+<h3>No more default parts from the environment in v3.0.0<a id="No.more.default.parts.from.the.environment.in.v3.0.0" href="#No.more.default.parts.from.the.environment.in.v3.0.0" class="permalink" aria-hidden="true" title="">#</a></h3>
 <p>The default value of the $flags parameter of http\Url::__construct() was changed from http\Url::FROM_ENV to 0 and http\Env\Url was introduced instead.</p>
 
 

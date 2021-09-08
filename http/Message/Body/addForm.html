@@ -94,125 +94,112 @@
 	</ul>
 </div>
 					
-<h1 id="http\Message\Body.http\Message\Body::addForm([array.$fields.=.NULL[,.array.$files.=.NULL]])">http\Message\Body http\Message\Body::addForm([array $fields = NULL[, array $files = NULL]])</h1>
-
+<h1>http\Message\Body http\Message\Body::addForm([array $fields = NULL[, array $files = NULL]])</h1>
 <p>Add form fields and files to the message body.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  Currently, http\Message\Body::addForm() creates "multipart/form-data" bodies.</p>
+<p><em><strong>NOTE:</strong></em><br />
+Currently, http\Message\Body::addForm() creates &quot;multipart/form-data&quot; bodies.</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li><p>array $fields = NULL<br>
-List of form fields to add.</p></li>
-<li><p>array $files = NULL<br>
-List of form files to add.</p></li>
+<li>
+<p>array $fields = NULL<br />
+List of form fields to add.</p>
+</li>
+<li>
+<p>array $files = NULL<br />
+List of form files to add.</p>
+</li>
 </ul>
-
 <p>$fields must look like:</p>
-
 <pre><code>[
-  "field_name" =&gt; "value",
-  "multi_field" =&gt; [
-    "value1",
-    "value2"
+  &quot;field_name&quot; =&gt; &quot;value&quot;,
+  &quot;multi_field&quot; =&gt; [
+    &quot;value1&quot;,
+    &quot;value2&quot;
   ]
 ]
 </code></pre>
-
 <p>$files must look like:</p>
-
 <pre><code>[
   [  
-    "name" =&gt; "field_name",  
-    "type" =&gt; "content/type",  
-    "file" =&gt; "/path/to/file.ext"
+    &quot;name&quot; =&gt; &quot;field_name&quot;,  
+    &quot;type&quot; =&gt; &quot;content/type&quot;,  
+    &quot;file&quot; =&gt; &quot;/path/to/file.ext&quot;
   ], [
-    "name" =&gt; "field_name2",
-    "type" =&gt; "text/plain",
-    "file" =&gt; "file.ext",
-    "data" =&gt; "string"
+    &quot;name&quot; =&gt; &quot;field_name2&quot;,
+    &quot;type&quot; =&gt; &quot;text/plain&quot;,
+    &quot;file&quot; =&gt; &quot;file.ext&quot;,
+    &quot;data&quot; =&gt; &quot;string&quot;
   ], [
-    "name" =&gt; "field_name3",
-    "type" =&gt; "image/jpeg",
-    "file" =&gt; "file.ext",
-    "data" =&gt; fopen("/home/mike/Pictures/mike.jpg","r")
+    &quot;name&quot; =&gt; &quot;field_name3&quot;,
+    &quot;type&quot; =&gt; &quot;image/jpeg&quot;,
+    &quot;file&quot; =&gt; &quot;file.ext&quot;,
+    &quot;data&quot; =&gt; fopen(&quot;/home/mike/Pictures/mike.jpg&quot;,&quot;r&quot;)
 ]
 </code></pre>
-
-<p>As you can see, a file structure must contain a "file" entry, which holds a file path, and an optional "data" entry, which may either contain a resource to read from or the actual data as string.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<p>As you can see, a file structure must contain a &quot;file&quot; entry, which holds a file path, and an optional &quot;data&quot; entry, which may either contain a resource to read from or the actual data as string.</p>
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Message\Body, self.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\RuntimeException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $body = new http\Message\Body;
 $body-&gt;addForm([
-  "field_name" =&gt; "value",
-  "multi_field" =&gt; [
-    "value1",
-    "value2"
+  &quot;field_name&quot; =&gt; &quot;value&quot;,
+  &quot;multi_field&quot; =&gt; [
+    &quot;value1&quot;,
+    &quot;value2&quot;
   ]
 ], [
   [  
-    "name" =&gt; "field_name",  
-    "type" =&gt; "application/octet-stream",  
-    "file" =&gt; "/run/gpm.pid"
+    &quot;name&quot; =&gt; &quot;field_name&quot;,  
+    &quot;type&quot; =&gt; &quot;application/octet-stream&quot;,  
+    &quot;file&quot; =&gt; &quot;/run/gpm.pid&quot;
   ], [
-    "name" =&gt; "field_name2",
-    "type" =&gt; "text/plain",
-    "file" =&gt; "signature.txt",
-    "data" =&gt; "--  \nMike\n"
+    &quot;name&quot; =&gt; &quot;field_name2&quot;,
+    &quot;type&quot; =&gt; &quot;text/plain&quot;,
+    &quot;file&quot; =&gt; &quot;signature.txt&quot;,
+    &quot;data&quot; =&gt; &quot;--  \nMike\n&quot;
   ], [
-    "name" =&gt; "field_name3",
-    "type" =&gt; "image/jpeg",
-    "file" =&gt; "picture.jpg",
-    "data" =&gt; fopen("/home/mike/Pictures/mike.jpg","r")
+    &quot;name&quot; =&gt; &quot;field_name3&quot;,
+    &quot;type&quot; =&gt; &quot;image/jpeg&quot;,
+    &quot;file&quot; =&gt; &quot;picture.jpg&quot;,
+    &quot;data&quot; =&gt; fopen(&quot;/home/mike/Pictures/mike.jpg&quot;,&quot;r&quot;)
   ]
 ]);
 
 echo $body;
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>--32260b4b.3fea9114
-Content-Disposition: form-data; name="field_name"
+Content-Disposition: form-data; name=&quot;field_name&quot;
 
 value
 --32260b4b.3fea9114
-Content-Disposition: form-data; name="multi_field[0]"
+Content-Disposition: form-data; name=&quot;multi_field[0]&quot;
 
 value1
 --32260b4b.3fea9114
-Content-Disposition: form-data; name="multi_field[1]"
+Content-Disposition: form-data; name=&quot;multi_field[1]&quot;
 
 value2
 --32260b4b.3fea9114
-Content-Disposition: form-data; name="field_name"; filename="gpm.pid"
+Content-Disposition: form-data; name=&quot;field_name&quot;; filename=&quot;gpm.pid&quot;
 Content-Transfer-Encoding: binary
 Content-Type: application/octet-stream
 
 316
 
 --32260b4b.3fea9114
-Content-Disposition: form-data; name="field_name2"; filename="signature.txt"
+Content-Disposition: form-data; name=&quot;field_name2&quot;; filename=&quot;signature.txt&quot;
 Content-Transfer-Encoding: binary
 Content-Type: text/plain
 
@@ -220,7 +207,7 @@ Content-Type: text/plain
 Mike
 
 --32260b4b.3fea9114
-Content-Disposition: form-data; name="field_name3"; filename="picture.jpg"
+Content-Disposition: form-data; name=&quot;field_name3&quot;; filename=&quot;picture.jpg&quot;
 Content-Transfer-Encoding: binary
 Content-Type: image/jpeg
 

@@ -144,57 +144,48 @@
 	</ul>
 </div>
 					
-<h1 id="http\Message.http\Message::addHeaders(array.$headers[,.bool.$append.=.false])">http\Message http\Message::addHeaders(array $headers[, bool $append = false])</h1>
-
+<h1>http\Message http\Message::addHeaders(array $headers[, bool $append = false])</h1>
 <p>Add headers, optionally appending values, if header keys already exist.
 See http\Message::addHeader() and http\Message::setHeaders().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>array $headers<br>
+<li>array $headers<br />
 The HTTP headers to add.</li>
-<li>Optional bool $append = false<br>
+<li>Optional bool $append = false<br />
 Whether to append values for existing headers.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Message, self.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $msg = new http\Message;
 
-$msg-&gt;addHeaders(["Cache-Control" =&gt; "public"]);
+$msg-&gt;addHeaders([&quot;Cache-Control&quot; =&gt; &quot;public&quot;]);
 var_dump($msg-&gt;getHeaders());
 
-$msg-&gt;addHeaders(["Cache-Control" =&gt; "private"]);
+$msg-&gt;addHeaders([&quot;Cache-Control&quot; =&gt; &quot;private&quot;]);
 var_dump($msg-&gt;getHeaders());
 
-$msg-&gt;addHeaders(["Cache-Control" =&gt; "must-revalidate"], true);
+$msg-&gt;addHeaders([&quot;Cache-Control&quot; =&gt; &quot;must-revalidate&quot;], true);
 var_dump($msg-&gt;getHeaders());
 
 echo $msg;
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>array(1) {
-  ["Cache-Control"]=&gt;
-  string(6) "public"
+  [&quot;Cache-Control&quot;]=&gt;
+  string(6) &quot;public&quot;
 }
 array(1) {
-  ["Cache-Control"]=&gt;
-  string(7) "private"
+  [&quot;Cache-Control&quot;]=&gt;
+  string(7) &quot;private&quot;
 }
 array(1) {
-  ["Cache-Control"]=&gt;
-  string(24) "private, must-revalidate"
+  [&quot;Cache-Control&quot;]=&gt;
+  string(24) &quot;private, must-revalidate&quot;
 }
 Cache-Control: private, must-revalidate
 </code></pre>

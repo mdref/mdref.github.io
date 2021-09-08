@@ -86,13 +86,10 @@
 	</ul>
 </div>
 					
-<h1 id="class.pq\Query\AsyncExecutor.extends.pq\Query\Executor">class pq\Query\AsyncExecutor extends pq\Query\Executor</h1>
-
+<h1>class pq\Query\AsyncExecutor extends pq\Query\Executor</h1>
 <p>An asynchronous query executor implementation.
 See pq\Query\Executor for inherited methods and properties.</p>
-
-<h2 id="Example.with.[React/Promise](https://github.com/reactphp/promise)">Example with <a href="https://github.com/reactphp/promise">React/Promise</a></h2>
-
+<h2>Example with <a href="https://github.com/reactphp/promise">React/Promise</a><a id="Example.with.React.Promise" href="#Example.with.React.Promise" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Connection, pq\Result;
@@ -105,21 +102,21 @@ $exec = new AsyncExecutor($conn);
 $exec-&gt;setCallbacks(
 # init context
 function() {
-    return new Deferred;
+	return new Deferred;
 },
 # done
 function(Deferred $context, $result) {
-    $context-&gt;resolve($result);
+	$context-&gt;resolve($result);
 },
 # then
 function(Deferred $context, callable $cb) {
-    return $context-&gt;promise()-&gt;then($cb);
+	return $context-&gt;promise()-&gt;then($cb);
 });
 
 # a contrived query
-$query = new Writer("SELECT \$1::int, \$2::int", [1, 2]);
+$query = new Writer(&quot;SELECT \$1::int, \$2::int&quot;, [1, 2]);
 $exec-&gt;execute($query, function(Result $result) {
-    var_dump($result-&gt;fetchAll());
+	var_dump($result-&gt;fetchAll());
 });
 
 # this call blocks; see pq\Connection::getResult() etc.
@@ -127,9 +124,7 @@ $conn-&gt;getResult();
 
 ?&gt;
 </code></pre>
-
-<h2 id="Example.with.[Amphp/Amp](https://github.com/amphp/amp)">Example with <a href="https://github.com/amphp/amp">Amphp/Amp</a></h2>
-
+<h2>Example with <a href="https://github.com/amphp/amp">Amphp/Amp</a><a id="Example.with.Amphp.Amp" href="#Example.with.Amphp.Amp" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Connection, pq\Result;
@@ -142,23 +137,23 @@ $exec = new AsyncExecutor($conn);
 $exec-&gt;setCallbacks(
 # init context
 function() {
-    return new Deferred;
+	return new Deferred;
 },
 # done
 function(Deferred $context, $result) {
-    $context-&gt;succeed($result);
+	$context-&gt;succeed($result);
 },
 # then
 function(Deferred $context, callable $cb) {
-    return $context-&gt;promise()-&gt;when(function($error, $result) use ($cb) {
-        $cb($result);
-    });
+	return $context-&gt;promise()-&gt;when(function($error, $result) use ($cb) {
+		$cb($result);
+	});
 });
 
 # a contrived query
-$query = new Writer("SELECT \$1::int, \$2::int", [1, 2]);
+$query = new Writer(&quot;SELECT \$1::int, \$2::int&quot;, [1, 2]);
 $exec-&gt;execute($query, function(Result $result) {
-    var_dump($result-&gt;fetchAll());
+	var_dump($result-&gt;fetchAll());
 });
 
 # this call blocks; see pq\Connection::getResult() etc.

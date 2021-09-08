@@ -144,33 +144,25 @@
 	</ul>
 </div>
 					
-<h1 id="http\Message.http\Message::setResponseCode(int.$response_code[,.bool.$strict.=.true])">http\Message http\Message::setResponseCode(int $response_code[, bool $strict = true])</h1>
-
+<h1>http\Message http\Message::setResponseCode(int $response_code[, bool $strict = true])</h1>
 <p>Set the response status code.
 See http\Message::getResponseCode() and http\Message::setResponseStatus().</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  This method also resets the response status phrase to the default for that code.</p>
+<p><em><strong>NOTE:</strong></em><br />
+This method also resets the response status phrase to the default for that code.</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>int $response_code<br>
+<li>int $response_code<br />
 The response code.</li>
-<li>Optional bool $strict = true<br>
+<li>Optional bool $strict = true<br />
 Whether to check that the response code is between 100 and 599 inclusive.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Message, self.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\BadMethodCallException</li>

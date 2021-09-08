@@ -122,51 +122,46 @@
 	</ul>
 </div>
 					
-<h1 id="class.http\Params.implements.ArrayAccess">class http\Params implements ArrayAccess</h1>
-
+<h1>class http\Params implements ArrayAccess</h1>
 <p>Parse, interpret and compose HTTP (header) parameters.</p>
-
-<h2 id="Constants:">Constants:</h2>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>DEF_PARAM_SEP<br>
-The default parameter separator (",").</li>
-<li>DEF_ARG_SEP<br>
-The default argument separator (";").</li>
-<li>DEF_VAL_SEP<br>
-The default value separator ("=").</li>
-<li>COOKIE_PARAM_SEP<br>
+<li>DEF_PARAM_SEP<br />
+The default parameter separator (&quot;,&quot;).</li>
+<li>DEF_ARG_SEP<br />
+The default argument separator (&quot;;&quot;).</li>
+<li>DEF_VAL_SEP<br />
+The default value separator (&quot;=&quot;).</li>
+<li>COOKIE_PARAM_SEP<br />
 Empty param separator to parse cookies.</li>
-<li>PARSE_RAW<br>
+<li>PARSE_RAW<br />
 Do not interpret the parsed parameters.</li>
-<li>PARSE_DEFAULT<br>
+<li>PARSE_DEFAULT<br />
 Interpret input as default formatted parameters.</li>
-<li>PARSE_ESCAPED<br>
+<li>PARSE_ESCAPED<br />
 Parse backslash escaped (quoted) strings.</li>
-<li>PARSE_URLENCODED<br>
+<li>PARSE_URLENCODED<br />
 Urldecode single units of parameters, arguments and values.</li>
-<li>PARSE_DIMENSION<br>
+<li>PARSE_DIMENSION<br />
 Parse sub dimensions indicated by square brackets.</li>
-<li>PARSE_QUERY<br>
+<li>PARSE_QUERY<br />
 Parse URL querystring (same as http\Params::PARSE_URLENCODED|http\Params::PARSE_DIMENSION).</li>
-<li>PARSE_RFC5987<br>
+<li>PARSE_RFC5987<br />
 Parse <a href="http://tools.ietf.org/html/rfc5987">RFC5987</a> style encoded character set and language information embedded in HTTP header params.</li>
-<li>PARSE_RFC5988<br>
+<li>PARSE_RFC5988<br />
 Parse <a href="http://tools.ietf.org/html/rfc5988">RFC5988</a> (Web Linking) tags of Link headers.</li>
 </ul>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>public array $params = NULL<br>
+<li>public array $params = NULL<br />
 The (parsed) parameters.</li>
-<li>public array $param_sep = http\Params::DEF_PARAM_SEP<br>
+<li>public array $param_sep = http\Params::DEF_PARAM_SEP<br />
 The parameter separator(s).</li>
-<li>public array $arg_sep = http\Params::DEF_ARG_SEP<br>
+<li>public array $arg_sep = http\Params::DEF_ARG_SEP<br />
 The argument separator(s).</li>
-<li>public array $val_sep = http\Params::DEF_VAL_SEP<br>
+<li>public array $val_sep = http\Params::DEF_VAL_SEP<br />
 The value separator(s).</li>
-<li>public int $flags = http\Params::PARSE_DEFAULT<br>
+<li>public int $flags = http\Params::PARSE_DEFAULT<br />
 The modus operandi of the parser. See http\Params::PARSE_* constants.</li>
 </ul>
 

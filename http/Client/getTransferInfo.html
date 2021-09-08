@@ -130,115 +130,105 @@
 	</ul>
 </div>
 					
-<h1 id="object.http\Client::getTransferInfo(http\Client\Request.$request)">object http\Client::getTransferInfo(http\Client\Request $request)</h1>
-
+<h1>object http\Client::getTransferInfo(http\Client\Request $request)</h1>
 <p>Get transfer related information for a running or finished request.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>http\Client\Request $request<br>
+<li>http\Client\Request $request<br />
 The request to probe for transfer info.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>object, stdClass instance holding transfer related information.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\UnexpectedValueException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>The transfer info might look as follows:</p>
-
 <pre><code>object(stdClass)#6 (37) {
-  ["effective_url"]=&gt;
-  string(16) "https://php.net/"
-  ["response_code"]=&gt;
+  [&quot;effective_url&quot;]=&gt;
+  string(16) &quot;https://php.net/&quot;
+  [&quot;response_code&quot;]=&gt;
   int(302)
-  ["total_time"]=&gt;
+  [&quot;total_time&quot;]=&gt;
   float(1.011938)
-  ["namelookup_time"]=&gt;
+  [&quot;namelookup_time&quot;]=&gt;
   float(0.203125)
-  ["connect_time"]=&gt;
+  [&quot;connect_time&quot;]=&gt;
   float(0.387202)
-  ["pretransfer_time"]=&gt;
+  [&quot;pretransfer_time&quot;]=&gt;
   float(0.794423)
-  ["size_upload"]=&gt;
+  [&quot;size_upload&quot;]=&gt;
   float(0)
-  ["size_download"]=&gt;
+  [&quot;size_download&quot;]=&gt;
   float(272)
-  ["speed_download"]=&gt;
+  [&quot;speed_download&quot;]=&gt;
   float(268)
-  ["speed_upload"]=&gt;
+  [&quot;speed_upload&quot;]=&gt;
   float(0)
-  ["header_size"]=&gt;
+  [&quot;header_size&quot;]=&gt;
   int(197)
-  ["request_size"]=&gt;
+  [&quot;request_size&quot;]=&gt;
   int(91)
-  ["ssl_verifyresult"]=&gt;
+  [&quot;ssl_verifyresult&quot;]=&gt;
   int(0)
-  ["filetime"]=&gt;
+  [&quot;filetime&quot;]=&gt;
   int(-1)
-  ["content_length_download"]=&gt;
+  [&quot;content_length_download&quot;]=&gt;
   float(272)
-  ["content_length_upload"]=&gt;
+  [&quot;content_length_upload&quot;]=&gt;
   float(0)
-  ["starttransfer_time"]=&gt;
+  [&quot;starttransfer_time&quot;]=&gt;
   float(1.011835)
-  ["content_type"]=&gt;
-  string(29) "text/html; charset=iso-8859-1"
-  ["redirect_time"]=&gt;
+  [&quot;content_type&quot;]=&gt;
+  string(29) &quot;text/html; charset=iso-8859-1&quot;
+  [&quot;redirect_time&quot;]=&gt;
   float(0)
-  ["redirect_count"]=&gt;
+  [&quot;redirect_count&quot;]=&gt;
   int(0)
-  ["connect_code"]=&gt;
+  [&quot;connect_code&quot;]=&gt;
   int(0)
-  ["httpauth_avail"]=&gt;
+  [&quot;httpauth_avail&quot;]=&gt;
   int(0)
-  ["proxyauth_avail"]=&gt;
+  [&quot;proxyauth_avail&quot;]=&gt;
   int(0)
-  ["os_errno"]=&gt;
+  [&quot;os_errno&quot;]=&gt;
   int(0)
-  ["num_connects"]=&gt;
+  [&quot;num_connects&quot;]=&gt;
   int(1)
-  ["ssl_engines"]=&gt;
+  [&quot;ssl_engines&quot;]=&gt;
   array(3) {
     [0]=&gt;
-    string(4) "rsax"
+    string(4) &quot;rsax&quot;
     [1]=&gt;
-    string(6) "rdrand"
+    string(6) &quot;rdrand&quot;
     [2]=&gt;
-    string(7) "dynamic"
+    string(7) &quot;dynamic&quot;
   }
-  ["redirect_url"]=&gt;
-  string(15) "http://php.net/"
-  ["primary_ip"]=&gt;
-  string(11) "72.52.91.14"
-  ["appconnect_time"]=&gt;
+  [&quot;redirect_url&quot;]=&gt;
+  string(15) &quot;http://php.net/&quot;
+  [&quot;primary_ip&quot;]=&gt;
+  string(11) &quot;72.52.91.14&quot;
+  [&quot;appconnect_time&quot;]=&gt;
   float(0.794327)
-  ["condition_unmet"]=&gt;
+  [&quot;condition_unmet&quot;]=&gt;
   int(0)
-  ["primary_port"]=&gt;
+  [&quot;primary_port&quot;]=&gt;
   int(443)
-  ["local_ip"]=&gt;
-  string(13) "192.168.1.120"
-  ["local_port"]=&gt;
+  [&quot;local_ip&quot;]=&gt;
+  string(13) &quot;192.168.1.120&quot;
+  [&quot;local_port&quot;]=&gt;
   int(51507)
-  ["certinfo"]=&gt;
+  [&quot;certinfo&quot;]=&gt;
   array(0) {
   }
-  ["curlcode"]=&gt;
+  [&quot;curlcode&quot;]=&gt;
   int(0)
-  ["error"]=&gt;
-  string(0) ""
+  [&quot;error&quot;]=&gt;
+  string(0) &quot;&quot;
 }
 </code></pre>
 

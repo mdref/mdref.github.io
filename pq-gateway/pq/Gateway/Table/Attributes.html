@@ -159,37 +159,28 @@
 	</ul>
 </div>
 					
-<h1 id="class.pq\Gateway\Table\Attributes.implements.IteratorAggregate">class pq\Gateway\Table\Attributes implements IteratorAggregate</h1>
-
+<h1>class pq\Gateway\Table\Attributes implements IteratorAggregate</h1>
 <p>The table attributes (columns) of a table.</p>
-
-<h2 id="Query:">Query:</h2>
-
+<h2>Query:<a id="Query:" href="#Query:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>The following query is executed by the current executor of the table to retrieve the table attributes:</p>
-
 <pre><code>select 
-     attnum         as index
-    ,attname        as name
-    ,atttypid       as type
-    ,atthasdef      as hasdefault
-    ,not attnotnull as nullable
+	 attnum         as index
+	,attname        as name
+	,atttypid       as type
+	,atthasdef      as hasdefault
+	,not attnotnull as nullable
 from
-     pg_attribute 
+	 pg_attribute 
 where attrelid = \$1::regclass 
 and   attnum   &gt; 0
 </code></pre>
-
-<h2 id="Cache:">Cache:</h2>
-
+<h2>Cache:<a id="Cache:" href="#Cache:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>The result of this query is cached in the metadata cache under the following key, where $table is converted to a string by pq\Gateway\Table::__toString():</p>
-
-<pre><code>"$table:attributes"
+<pre><code>&quot;$table:attributes&quot;
 </code></pre>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>protected array $columns<br>
+<li>protected array $columns<br />
 The table attributes.</li>
 </ul>
 

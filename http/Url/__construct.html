@@ -68,43 +68,34 @@
 	</ul>
 </div>
 					
-<h1 id="void.http\Url::__construct([mixed.$old_url.=.NULL[,.mixed.$new_url.=.NULL[,.int.$flags.=.0]]])">void http\Url::__construct([mixed $old_url = NULL[, mixed $new_url = NULL[, int $flags = 0]]])</h1>
-
+<h1>void http\Url::__construct([mixed $old_url = NULL[, mixed $new_url = NULL[, int $flags = 0]]])</h1>
 <p>Create an instance of an http\Url.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  Prior to v3.0.0, the default for the $flags parameter was http\Url::FROM_ENV.</p>
+<p><em><strong>NOTE:</strong></em><br />
+Prior to v3.0.0, the default for the $flags parameter was http\Url::FROM_ENV.</p>
 </blockquote>
-
 <p>See also http\Env\Url.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional mixed $old_url = NULL<br>
+<li>Optional mixed $old_url = NULL<br />
 Initial URL parts. Either an array, object, http\Url instance or string to parse.</li>
-<li>Optional mixed $new_url = NULL<br>
+<li>Optional mixed $new_url = NULL<br />
 Overriding URL parts. Either an array, object, http\Url instance or string to parse.</li>
-<li>Optional int $flags = 0<br>
+<li>Optional int $flags = 0<br />
 The modus operandi of constructing the url. See http\Url constants.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\BadUrlException</li>
 </ul>
-
-<h2 id="Changelog:">Changelog:</h2>
-
-<ol>
+<h2>Changelog:<a id="Changelog:" href="#Changelog:" class="permalink" aria-hidden="true" title="">#</a></h2>
+<ol start="0">
 <li>v3.0.0
-
 <ul>
 <li>Changed the default of the $flags parameter from http\Url::FROM_ENV to 0.</li>
-</ul></li>
+</ul>
+</li>
 </ol>
 
 

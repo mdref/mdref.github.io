@@ -130,49 +130,42 @@
 	</ul>
 </div>
 					
-<h1 id="mixed.pq\Gateway\Table::find([array.$where.=.NULL[,.string.$order.=.NULL[,.int.$limit.=.0[,.int.$offset.=.0[,.string.$lock.=.NULL]]]]])">mixed pq\Gateway\Table::find([array $where = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0[, string $lock = NULL]]]]])</h1>
-
+<h1>mixed pq\Gateway\Table::find([array $where = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0[, string $lock = NULL]]]]])</h1>
 <p>Find rows in the table.
 See pq\Gateway\Table::execute() and pq\Gateway\Table::onResult().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional array $where = NULL<br>
+<li>Optional array $where = NULL<br />
 Lookup criteria.</li>
-<li>Optional string $order = NULL<br>
+<li>Optional string $order = NULL<br />
 Sorting clauses.</li>
-<li>Optional int $limit = 0<br>
+<li>Optional int $limit = 0<br />
 A row count limit.</li>
-<li>Optional int $offset = 0<br>
+<li>Optional int $offset = 0<br />
 A row count offset.</li>
-<li>Optional string $lock = NULL<br>
+<li>Optional string $lock = NULL<br />
 A FOR lock clause (SHARE/UPDATE/KEY SHARE/NO KEY UPDATE).</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
 Else:</li>
 <li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
 <li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
 <li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Gateway\Table;
 
-$table = new Table("account_email");
+$table = new Table(&quot;account_email&quot;);
 $transaction = $table-&gt;getConnection()-&gt;startTransaction();
 
-$rowset = $table-&gt;find(["email=" =&gt; "mike@php.net"], null, 0, 0, "UPDATE");
+$rowset = $table-&gt;find([&quot;email=&quot; =&gt; &quot;mike@php.net&quot;], null, 0, 0, &quot;UPDATE&quot;);
 
 $rowset-&gt;apply(function(pq\Gateway\Row $row) {
-    $row-&gt;email = "mike@PHP.net";
+	$row-&gt;email = &quot;mike@PHP.net&quot;;
 });
 
 $rowset-&gt;update(false);

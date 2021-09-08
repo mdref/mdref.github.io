@@ -130,46 +130,39 @@
 	</ul>
 </div>
 					
-<h1 id="mixed.pq\Gateway\Table::of(pq\Gateway\Row.$foreign[,.string.$ref.=.NULL[,.string.$order.=.NULL[,.int.$limit.=.0[,.int.$offset.=.0]]]])">mixed pq\Gateway\Table::of(pq\Gateway\Row $foreign[, string $ref = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0]]]])</h1>
-
+<h1>mixed pq\Gateway\Table::of(pq\Gateway\Row $foreign[, string $ref = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0]]]])</h1>
 <p>Find rows in table by foreign key.
 See pq\Gateway\Table::find(), pq\Gateway\Table::by() and pq\Gateway\Row::allOf().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>pq\Gateway\Row $row<br>
+<li>pq\Gateway\Row $row<br />
 A row of a table referencing this table through a foreign key.</li>
-<li>Optional string $ref = NULL<br>
+<li>Optional string $ref = NULL<br />
 The identifying name of the relation.</li>
-<li>Optional string $order = NULL<br>
+<li>Optional string $order = NULL<br />
 Sorting clause.</li>
-<li>Optional int $limit = 0<br>
+<li>Optional int $limit = 0<br />
 Row count limit.</li>
-<li>Optional int $offset = 0<br>
+<li>Optional int $offset = 0<br />
 Row count offset.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
 Else:</li>
 <li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
 <li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
 <li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Gateway\Table;
 
-$accounts = new Table("account");
-$account = $accounts-&gt;find(["id=" =&gt; 1])-&gt;current();
+$accounts = new Table(&quot;account&quot;);
+$account = $accounts-&gt;find([&quot;id=&quot; =&gt; 1])-&gt;current();
 
-$account_emails = new Table("account_emails");
+$account_emails = new Table(&quot;account_emails&quot;);
 $emails = $account_emails-&gt;of($account);
 
 ?&gt;

@@ -209,124 +209,92 @@
 	</ul>
 </div>
 					
-<h1 id="pecl/http">pecl/http</h1>
-
-<h2 id="About:">About:</h2>
-
+<h1>pecl/http</h1>
+<h2>About:<a id="About:" href="#About:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>Extended HTTP support. Again.</p>
-
 <ul>
 <li>Introduces the http namespace.</li>
 <li>PHP stream based message bodies.</li>
 <li>Encapsulated env request/response.</li>
 <li>Modular client support.</li>
 </ul>
-
-<h2 id="Installation:">Installation:</h2>
-
+<h2>Installation:<a id="Installation:" href="#Installation:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>This extension is hosted at <a href="http://pecl.php.net">PECL</a> and can be installed with <a href="http://pear.php.net">PEAR</a>'s pecl command:</p>
-
 <pre><code># pecl install pecl_http
 </code></pre>
-
-<h2 id="Dependencies:">Dependencies:</h2>
-
+<h2>Dependencies:<a id="Dependencies:" href="#Dependencies:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>pecl/http depends on a number of system libraries and PHP extensions for special features.</p>
-
-<h4 id="Required.system.libraries:">Required system libraries:</h4>
-
+<h4>Required system libraries:<a id="Required.system.libraries:" href="#Required.system.libraries:" class="permalink" aria-hidden="true" title="">#</a></h4>
 <p>The following system libraries are required to build this extension:</p>
-
 <dl>
 <dt>zlib</dt>
-<dd>Provides gzip/zlib/deflate encoding.<br>
-Configure: <code>--with-http-zlib-dir</code><br>
-Minimum version: 1.2.0.4<br>
+<dd>Provides gzip/zlib/deflate encoding.<br />
+Configure: <code>--with-http-zlib-dir</code><br />
+Minimum version: 1.2.0.4<br />
 Install on Debian: <code>apt-get install zlib1g-dev</code></dd>
 </dl>
-
-<h4 id="Optional.system.libraries:">Optional system libraries:</h4>
-
+<h4>Optional system libraries:<a id="Optional.system.libraries:" href="#Optional.system.libraries:" class="permalink" aria-hidden="true" title="">#</a></h4>
 <p>The following system libraries are optional and provide additional features:</p>
-
 <dl>
 <dt>libcurl</dt>
-<dd>Provides HTTP request functionality.<br>
-Configure: <code>--with-http-libcurl-dir</code><br>
-Minimum version: 7.18.2<br>
+<dd>Provides HTTP request functionality.<br />
+Configure: <code>--with-http-libcurl-dir</code><br />
+Minimum version: 7.18.2<br />
 Install on Debian: <code>apt-get install libcurl4-openssl-dev</code></dd>
-
 <dt>libbrotli</dt>
-<dd>Provides brotli encoding.<br>
-Configure: <code>--with-http-libbrotli-dir</code><br>
-Minimum version: 1.0<br>
+<dd>Provides brotli encoding.<br />
+Configure: <code>--with-http-libbrotli-dir</code><br />
+Minimum version: 1.0<br />
 Install on Debian: <code>apt-get install libbrotli-dev</code></dd>
-
 <dt>libevent</dt>
-<dd>Internal event loop support for the HTTP client.<br>
-Configure: <code>--with-http-libevent-dir</code><br>
-Minimum version: none<br>
+<dd>Internal event loop support for the HTTP client.<br />
+Configure: <code>--with-http-libevent-dir</code><br />
+Minimum version: none<br />
 Install on Debian: <code>apt-get install libevent-dev</code></dd>
-
 <dt>libicu</dt>
-<dd>Provides IDNA2003 and/or IDNA2008 support in URLs.<br>
-Configure: <code>--with-http-libicu-dir</code><br>
-Minimum version: none<br>
+<dd>Provides IDNA2003 and/or IDNA2008 support in URLs.<br />
+Configure: <code>--with-http-libicu-dir</code><br />
+Minimum version: none<br />
 Install on Debian: <code>apt-get install libicu-dev</code></dd>
-
 <dt>libidn</dt>
-<dd>Provides IDNA2003 support in URLs.<br>
-Configure: <code>--with-http-libidn-dir</code><br>
-Minimum version: none<br>
+<dd>Provides IDNA2003 support in URLs.<br />
+Configure: <code>--with-http-libidn-dir</code><br />
+Minimum version: none<br />
 Install on Debian: <code>apt-get install libidn11-dev</code></dd>
-
 <dt>libidn2</dt>
-<dd>Provides IDNA2008 support in URLs.<br>
-Configure: <code>--with-http-libidn2-dir</code><br>
-Minimum version: none<br>
+<dd>Provides IDNA2008 support in URLs.<br />
+Configure: <code>--with-http-libidn2-dir</code><br />
+Minimum version: none<br />
 Install on Debian: <code>apt-get install libidn2-0-dev</code></dd>
-
 <dt>libidnkit</dt>
-<dd>Provides IDNA2003 support in URLs. Conflicts with libidnkit2.<br>
-Configure: <code>--with-http-libidnkit-dir</code><br>
-Minimum version: none<br>
+<dd>Provides IDNA2003 support in URLs. Conflicts with libidnkit2.<br />
+Configure: <code>--with-http-libidnkit-dir</code><br />
+Minimum version: none<br />
 Install on Debian: N/A</dd>
-
 <dt>libidnkit2</dt>
-<dd>Provides IDNA2008 support in URLs. Conflicts with libidnkit.<br>
-Configure: <code>--with-http-libidnkit2-dir</code><br>
-Minimum version: none<br>
+<dd>Provides IDNA2008 support in URLs. Conflicts with libidnkit.<br />
+Configure: <code>--with-http-libidnkit2-dir</code><br />
+Minimum version: none<br />
 Install on Debian: N/A</dd>
 </dl>
-
-<h5 id="A.note.on.IDNA.libraries:">A note on IDNA libraries:</h5>
-
+<h5>A note on IDNA libraries:<a id="A.note.on.IDNA.libraries:" href="#A.note.on.IDNA.libraries:" class="permalink" aria-hidden="true" title="">#</a></h5>
 <p>If configured with multiple IDNA libraries' support, there's a run-time precedence of ICU over GNU libidn, which in turn has precendence over idnkit. If neither IDNA2008, nor IDNA2003 is explicitly requested, IDNA2008 has precendence.</p>
-
-<h5 id="A.note.on.the.CURL.library:">A note on the CURL library:</h5>
-
+<h5>A note on the CURL library:<a id="A.note.on.the.CURL.library:" href="#A.note.on.the.CURL.library:" class="permalink" aria-hidden="true" title="">#</a></h5>
 <p>There are usually different styles of SSL support for libcurl available, so you can choose between 'openssl' and f.e. 'nss' or 'gnutls' when installing libcurl.</p>
-
-<h3 id="PHP.extensions:">PHP extensions:</h3>
-
+<h3>PHP extensions:<a id="PHP.extensions:" href="#PHP.extensions:" class="permalink" aria-hidden="true" title="">#</a></h3>
 <p>This extension unconditionally depends on the pre-loaded presence of the following PHP extensions:</p>
-
 <ul>
 <li>raphf</li>
 <li>propro (only until &lt; 4.0.0, resp. PHP 8)</li>
 <li>spl</li>
 </ul>
-
 <p>If configured <code>--with-http-shared-deps</code> (default) it depends on the pre-loaded presence of the following extensions, as long as they were available at build time:</p>
-
 <ul>
 <li>hash</li>
 <li>iconv</li>
 <li>json (only until &lt; 2.4.0)</li>
 </ul>
-
 <p>Please ensure that all extension on which pecl/http depends, are loaded before it, e.g in your <code>php.ini</code>:</p>
-
 <pre><code>; obligatory deps
 extension = raphf.so
 extension = propro.so (PHP &lt; 8.0, ext-http &lt; 3.0 only)
@@ -339,60 +307,53 @@ extension = json.so
 ; finally load pecl/http
 extension = http.so
 </code></pre>
-
-<h2 id="INI.Directives:">INI Directives:</h2>
-
+<h2>INI Directives:<a id="INI.Directives:" href="#INI.Directives:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>http.etag.mode = "crc32b"<br>
+<li>http.etag.mode = &quot;crc32b&quot;<br />
 Default hash method for dynamic response payloads to generate an ETag.</li>
 </ul>
-
-<h2 id="Stream.Filters:">Stream Filters:</h2>
-
+<h2>Stream Filters:<a id="Stream.Filters:" href="#Stream.Filters:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>The http extension registers the <code>http.*</code> namespace for its stream filters. Provided stream filters are:</p>
-
 <ul>
-<li>http.chunked_decode<br>
+<li>http.chunked_decode<br />
 Decode a stream encoded with chunked transfer encoding.</li>
-<li>http.chunked_encode<br>
+<li>http.chunked_encode<br />
 Encode a stream with chunked transfer encoding.</li>
-<li>http.inflate<br>
+<li>http.inflate<br />
 Decode a stream encoded with deflate/zlib/gzip encoding.</li>
-<li>http.deflate<br>
+<li>http.deflate<br />
 Encode a stream with deflate/zlib/gzip encoding.</li>
 </ul>
-
-<h2 id="Changelog:">Changelog:</h2>
-
-<ol>
+<h2>Changelog:<a id="Changelog:" href="#Changelog:" class="permalink" aria-hidden="true" title="">#</a></h2>
+<ol start="0">
 <li>v2.0.4
-
 <ul>
 <li>Dropped the pecl/event conflict.</li>
-</ul></li>
+</ul>
+</li>
 <li>v2.4.0
-
 <ul>
 <li>Dropped the ext/json dependency.</li>
-</ul></li>
+</ul>
+</li>
 <li>v2.4.2
-
 <ul>
 <li>Added libidn2 and libicu as fallback for IDNA support.</li>
-</ul></li>
+</ul>
+</li>
 <li>v2.6.0, v3.1.0
-
 <ul>
 <li>Added idnkit-1 IDNA2003 support.</li>
 <li>Added idnkit-2 IDNA2008 support.</li>
 <li>Added ICU IDNA2008 support.</li>
 <li>Added explicit configuration options for each IDNA library.</li>
-</ul></li>
+</ul>
+</li>
 <li>v3.2.0
-
 <ul>
 <li>Added brotli encoding support.</li>
-</ul></li>
+</ul>
+</li>
 </ol>
 
 	<h2 id="Editor.Stub:">Editor Stub:</h2>
@@ -404,7 +365,7 @@ Encode a stream with deflate/zlib/gzip encoding.</li>
 														<a href="http.stub.php">http.stub.php</a><br>
 														<small>
 								Last modified:
-								2021-03-09 07:05:20 UTC							</small>
+								2021-09-08 06:58:26 UTC							</small>
 						</li>
 					</ul>
 				</div>
@@ -431,7 +392,6 @@ Encode a stream with deflate/zlib/gzip encoding.</li>
 	<li>
 		<h3><a href="http/Encoding">Encoding</a></h3>
 		
-
 		<p>namespace http\Encoding</p>
 	</li>
 	

@@ -78,48 +78,36 @@
 	</ul>
 </div>
 					
-<h1 id="array.pq\Result::desc()">array pq\Result::desc()</h1>
-
+<h1>array pq\Result::desc()</h1>
 <p>Describe a prepared statement.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-    This will only return meaningful information for a result of pq\Statement::desc().</p>
+<p><em><strong>NOTE:</strong></em><br />
+This will only return meaningful information for a result of pq\Statement::desc().</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>array, list of parameter type OIDs for the prepared statement.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 $connection = new pq\Connection;
 $types = new pq\Types($connection);
-$statement = $connection-&gt;prepare("test1", "SELECT NOW() - \$1");
+$statement = $connection-&gt;prepare(&quot;test1&quot;, &quot;SELECT NOW() - \$1&quot;);
 $description = $statement-&gt;desc();
 
-printf("%s\n", $types[$description[0]]-&gt;typname);
+printf(&quot;%s\n&quot;, $types[$description[0]]-&gt;typname);
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>timestamptz
 </code></pre>
 

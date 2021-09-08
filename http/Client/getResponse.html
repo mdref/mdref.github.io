@@ -130,53 +130,41 @@
 	</ul>
 </div>
 					
-<h1 id="http\Client\Response.http\Client::getResponse([http\Client\Request.$request.=.NULL])">http\Client\Response http\Client::getResponse([http\Client\Request $request = NULL])</h1>
-
+<h1>http\Client\Response http\Client::getResponse([http\Client\Request $request = NULL])</h1>
 <p>Retrieve the corresponding response of an already finished request, or the last received response if $request is not set.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  If $request is NULL, then the response is removed from the internal storage (stack-like operation).</p>
+<p><em><strong>NOTE:</strong></em><br />
+If $request is NULL, then the response is removed from the internal storage (stack-like operation).</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional http\Client\Request $request<br>
+<li>Optional http\Client\Request $request<br />
 The request to fetch the stored response for.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Client\Response, the stored response for the request, or the last that was received.</li>
 <li>NULL, if no more response was available to pop, when no $request was given.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\UnexpectedValueException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $client = new http\Client;
-$client-&gt;enqueue(new http\Client\Request("GET", "http://php.net"));
-$client-&gt;enqueue(new http\Client\Request("GET", "http://pecl.php.net"));
-$client-&gt;enqueue(new http\Client\Request("GET", "http://pear.php.net"));
+$client-&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;http://php.net&quot;));
+$client-&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;http://pecl.php.net&quot;));
+$client-&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;http://pear.php.net&quot;));
 $client-&gt;send();
 
 while ($res = $client-&gt;getResponse()) {
-    printf("%s returned %d\n", $res-&gt;getTransferInfo("effective_url"),
+    printf(&quot;%s returned %d\n&quot;, $res-&gt;getTransferInfo(&quot;effective_url&quot;),
         $res-&gt;getResponseCode());
 }
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>http://php.net/ returned 200
 http://pecl.php.net/ returned 200
 http://pear.php.net/ returned 200

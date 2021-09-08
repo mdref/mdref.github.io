@@ -126,88 +126,79 @@
 	</ul>
 </div>
 					
-<h1 id="void.pq\Connection::setConverter(pq\Converter.$converter)">void pq\Connection::setConverter(pq\Converter $converter)</h1>
-
+<h1>void pq\Connection::setConverter(pq\Converter $converter)</h1>
 <p>Set a data type converter.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>pq\Converter $converter<br>
+<li>pq\Converter $converter<br />
 An instance implementing pq\Converter.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 class HStoreConverter implements pq\Converter
 {
-    private $oids;
-
-    function __construct(pq\Types $types) {
-        $this-&gt;oids = [$types["hstore"]-&gt;oid];
-    }
-
-    function convertTypes() {
-        return $this-&gt;oids;
-    }
-
-    function convertFromString($string) {
-        return eval("return [$string];");
-    }
-
-    function convertToString($data) {
-        $string = "";
-        foreach ($data as $k =&gt; $v) {
-            if (isset($v)) {
-                $string .= sprintf("\"%s\"=&gt;\"%s\",", addslashes($k), addslashes($v));
-            } else {
-                $string .= sprintf("\"%s\"=&gt;NULL,", addslashes($k));
-            }
-        }
-        return $string;
-    }
+	private $oids;
+	
+	function __construct(pq\Types $types) {
+		$this-&gt;oids = [$types[&quot;hstore&quot;]-&gt;oid];
+	}
+	
+	function convertTypes() {
+		return $this-&gt;oids;
+	}
+	
+	function convertFromString($string) {
+		return eval(&quot;return [$string];&quot;);
+	}
+	
+	function convertToString($data) {
+		$string = &quot;&quot;;
+		foreach ($data as $k =&gt; $v) {
+			if (isset($v)) {
+				$string .= sprintf(&quot;\&quot;%s\&quot;=&gt;\&quot;%s\&quot;,&quot;, addslashes($k), addslashes($v));
+			} else {
+				$string .= sprintf(&quot;\&quot;%s\&quot;=&gt;NULL,&quot;, addslashes($k));
+			}
+		}
+		return $string;
+	}
 }
 $connection = new pq\Connection;
 $types = new pq\Types($connection);
 
 $connection-&gt;setConverter(new HStoreConverter($types));
 
-$result = $connection-&gt;execParams("SELECT \$1", [
-    [
-        "k1" =&gt; "v1",
-        "k2" =&gt; "v2",
-        "k3" =&gt; null
-    ]
+$result = $connection-&gt;execParams(&quot;SELECT \$1&quot;, [
+	[
+		&quot;k1&quot; =&gt; &quot;v1&quot;,
+		&quot;k2&quot; =&gt; &quot;v2&quot;,
+		&quot;k3&quot; =&gt; null
+	]
 ], [
-    $types["hstore"]-&gt;oid
+	$types[&quot;hstore&quot;]-&gt;oid
 ]);
 
 var_dump(current($result-&gt;fetchAll()));
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>  array(1) {
-    [0]=&gt;
-    array(3) {
-      ["k1"]=&gt;
-      string(2) "v1"
-      ["k2"]=&gt;
-      string(2) "v2"
-      ["k3"]=&gt;
-      NULL
-    }
+	[0]=&gt;
+	array(3) {
+	  [&quot;k1&quot;]=&gt;
+	  string(2) &quot;v1&quot;
+	  [&quot;k2&quot;]=&gt;
+	  string(2) &quot;v2&quot;
+	  [&quot;k3&quot;]=&gt;
+	  NULL
+	}
   }
 </code></pre>
 

@@ -121,36 +121,30 @@
 	</ul>
 </div>
 					
-<h1 id="class.pq\Cursor">class pq\Cursor</h1>
-
+<h1>class pq\Cursor</h1>
 <p>Declare a cursor.</p>
-
-<h2 id="Constants:">Constants:</h2>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>BINARY<br>
+<li>BINARY<br />
 Causes the cursor to return data in binary rather than in text format. You probably do not want to use that.</li>
-<li>INSENSITIVE<br>
+<li>INSENSITIVE<br />
 The data returned by the cursor should be unaffected by updates to the tables underlying the cursor that take place after the cursor was opened.</li>
-<li>WITH_HOLD<br>
+<li>WITH_HOLD<br />
 The cursor should stay usable after the transaction that created it was successfully committed.</li>
-<li>SCROLL<br>
+<li>SCROLL<br />
 Force that rows can be retrieved in any order from the cursor.</li>
-<li>NO_SCROLL<br>
+<li>NO_SCROLL<br />
 Force that rows are only retrievable in sequiential order.</li>
 </ul>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-    See the <a href="http://www.postgresql.org/docs/current/static/sql-declare.html#SQL-DECLARE-NOTES">notes in the official PostgreSQL documentation</a> for more information.</p>
+<p><em><strong>NOTE:</strong></em><br />
+See the <a href="http://www.postgresql.org/docs/current/static/sql-declare.html#SQL-DECLARE-NOTES">notes in the official PostgreSQL documentation</a> for more information.</p>
 </blockquote>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>public (readonly) pq\Connection $connection<br>
+<li>public (readonly) pq\Connection $connection<br />
 The connection the cursor was declared on.</li>
-<li>public (readonly) string $name<br>
+<li>public (readonly) string $name<br />
 The identifying name of the cursor.</li>
 </ul>
 
@@ -175,7 +169,7 @@ The identifying name of the cursor.</li>
 	
 	<li>
 		<h3><a href="pq/Cursor/closeAsync">Cursor::closeAsync</a></h3>
-		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) close an open cursor.</p>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> close an open cursor.</p>
 
 		<p>void pq\Cursor::closeAsync()</p>
 	</li>
@@ -189,7 +183,7 @@ The identifying name of the cursor.</li>
 	
 	<li>
 		<h3><a href="pq/Cursor/fetchAsync">Cursor::fetchAsync</a></h3>
-		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) fetch rows from the cursor.</p>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> fetch rows from the cursor.</p>
 
 		<p>void pq\Cursor::fetchAsync([string $spec = &quot;1&quot;[, callable $callback = NULL]])</p>
 	</li>
@@ -203,7 +197,7 @@ The identifying name of the cursor.</li>
 	
 	<li>
 		<h3><a href="pq/Cursor/moveAsync">Cursor::moveAsync</a></h3>
-		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) move the cursor.</p>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> move the cursor.</p>
 
 		<p>void pq\Cursor::moveAsync([string $spec = &quot;1&quot;])</p>
 	</li>
@@ -217,7 +211,7 @@ The identifying name of the cursor.</li>
 	
 	<li>
 		<h3><a href="pq/Cursor/openAsync">Cursor::openAsync</a></h3>
-		<p>[Asynchronously](pq/Connection/: Asynchronous Usage) reopen a cursor.</p>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> reopen a cursor.</p>
 
 		<p>void pq\Cursor::openAsync()</p>
 	</li>

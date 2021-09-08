@@ -126,38 +126,30 @@
 	</ul>
 </div>
 					
-<h1 id="pq\Transaction.pq\Connection::startTransactionAsync([int.$isolation.=.pq\Transaction::READ_COMMITTED[,.bool.$readonly.=.FALSE[,.bool.$deferrable.=.FALSE]]])">pq\Transaction pq\Connection::startTransactionAsync([int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]])</h1>
-
-<p>[Asynchronously](pq/Connection/: Asynchronous Usage) begin a transaction.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h1>pq\Transaction pq\Connection::startTransactionAsync([int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]])</h1>
+<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> begin a transaction.</p>
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>Optional int $isolation = pq\Transaction::READ_COMMITTED<br>
-Any pq\Transaction isolation level constant<br>
+<li>Optional int $isolation = pq\Transaction::READ_COMMITTED<br />
+Any pq\Transaction isolation level constant<br />
 (defaults to pq\Connection::$defaultTransactionIsolation).</li>
-<li>Optional bool $readonly = FALSE<br>
-Whether the transaction executes only reads<br>
+<li>Optional bool $readonly = FALSE<br />
+Whether the transaction executes only reads<br />
 (defaults to pq\Connection::$defaultTransactionReadonly).</li>
-<li>Optional bool $deferrable = FALSE<br>
-Whether the transaction is deferrable<br>
+<li>Optional bool $deferrable = FALSE<br />
+Whether the transaction is deferrable<br />
 (defaults to pq\Connection::$defaultTransactionDeferrable).</li>
 </ul>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-    A transaction can only be deferrable if it also is readonly and serializable.<br>
-    See the official <a href="http://www.postgresql.org/docs/current/static/sql-set-transaction.html">PostgreSQL documentation</a> for further information.</p>
+<p><em><strong>NOTE:</strong></em><br />
+A transaction can only be deferrable if it also is readonly and serializable.<br />
+See the official <a href="http://www.postgresql.org/docs/current/static/sql-set-transaction.html">PostgreSQL documentation</a> for further information.</p>
 </blockquote>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Transaction, an asynchronously begun transaction instance.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>

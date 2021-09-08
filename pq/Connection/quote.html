@@ -126,32 +126,24 @@
 	</ul>
 </div>
 					
-<h1 id="string.pq\Connection::quote(string.$payload)">string pq\Connection::quote(string $payload)</h1>
-
+<h1>string pq\Connection::quote(string $payload)</h1>
 <p>Quote a string for safe use in a query.
 The result is truncated at any zero byte and wrapped in single quotes.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-    Beware of matching character encodings.</p>
+<p><em><strong>NOTE:</strong></em><br />
+Beware of matching character encodings.</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $payload<br>
+<li>string $payload<br />
 The payload to quote for use in a query.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>string, a single-quote wrapped string safe for literal use in a query.</li>
 <li>FALSE, if quoting fails.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\BadMethodCallException</li>
 </ul>

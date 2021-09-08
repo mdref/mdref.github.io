@@ -144,34 +144,27 @@
 	</ul>
 </div>
 					
-<h1 id="void.http\Message::rewind()">void http\Message::rewind()</h1>
-
+<h1>void http\Message::rewind()</h1>
 <p>Implements Iterator.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
-$types = ["message", "request", "response"];
-$message = new http\Message("GET / HTTP/1.1\n".
-    "HTTP/1.1 200\n".
-    "GET / HTTP/1.0\n".
-    "HTTP/1.0 426"
+$types = [&quot;message&quot;, &quot;request&quot;, &quot;response&quot;];
+$message = new http\Message(&quot;GET / HTTP/1.1\n&quot;.
+    &quot;HTTP/1.1 200\n&quot;.
+    &quot;GET / HTTP/1.0\n&quot;.
+    &quot;HTTP/1.0 426&quot;
 );
 foreach ($message as $key =&gt; $msg) {
-    printf("Key %d is a %8s: %s\n",
+    printf(&quot;Key %d is a %8s: %s\n&quot;,
         $key, $types[$msg-&gt;getType()],
         $msg-&gt;getInfo()
     );
 }
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>Key 2 is a response: HTTP/1.0 426
 Key 8 is a  request: GET / HTTP/1.0
 Key 6 is a response: HTTP/1.1 200

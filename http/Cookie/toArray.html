@@ -108,49 +108,40 @@
 	</ul>
 </div>
 					
-<h1 id="array.http\Cookie::toArray()">array http\Cookie::toArray()</h1>
-
+<h1>array http\Cookie::toArray()</h1>
 <p>Get the cookie list as array.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>array, the cookie list as array.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
-$cookie = new http\Cookie("country=us; secure");
+$cookie = new http\Cookie(&quot;country=us; secure&quot;);
 var_dump($cookie-&gt;toArray());
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>array(7) {
-  ["cookies"]=&gt;
+  [&quot;cookies&quot;]=&gt;
   array(1) {
-    ["country"]=&gt;
-    string(2) "us"
+    [&quot;country&quot;]=&gt;
+    string(2) &quot;us&quot;
   }
-  ["extras"]=&gt;
+  [&quot;extras&quot;]=&gt;
   array(0) {
   }
-  ["flags"]=&gt;
+  [&quot;flags&quot;]=&gt;
   int(16)
-  ["expires"]=&gt;
+  [&quot;expires&quot;]=&gt;
   int(-1)
-  ["max-age"]=&gt;
+  [&quot;max-age&quot;]=&gt;
   int(-1)
-  ["path"]=&gt;
-  string(0) ""
-  ["domain"]=&gt;
-  string(0) ""
+  [&quot;path&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;domain&quot;]=&gt;
+  string(0) &quot;&quot;
 }
 </code></pre>
 

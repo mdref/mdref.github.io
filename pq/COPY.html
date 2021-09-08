@@ -96,29 +96,24 @@
 	</ul>
 </div>
 					
-<h1 id="class.pq\COPY">class pq\COPY</h1>
-
+<h1>class pq\COPY</h1>
 <p>Fast import/export using COPY.</p>
-
-<h2 id="Constants:">Constants:</h2>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>FROM_STDIN<br>
+<li>FROM_STDIN<br />
 Start a COPY operation from STDIN to the PostgreSQL server.</li>
-<li>TO_STDOUT<br>
+<li>TO_STDOUT<br />
 Start a COPY operation from the server to STDOUT.</li>
 </ul>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>public (readonly) pq\Connection $connection<br>
+<li>public (readonly) pq\Connection $connection<br />
 The connection to the PostgreSQL server.</li>
-<li>public (readonly) string $expression<br>
+<li>public (readonly) string $expression<br />
 The expression of the COPY statement used to start the operation.</li>
-<li>public (readonly) int $direction<br>
+<li>public (readonly) int $direction<br />
 The drection of the COPY operation (pq\COPY::FROM_STDIN or pq\COPY::TO_STDOUT).</li>
-<li>public (readonly) string $options<br>
+<li>public (readonly) string $options<br />
 Any additional options used to start the COPY operation.</li>
 </ul>
 

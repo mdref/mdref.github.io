@@ -76,57 +76,48 @@
 	</ul>
 </div>
 					
-<h1 id="void.pq\Statement::__construct(pq\Connection.$conn,.string.$name,.string.$query[,.array.$types.=.NULL[,.bool.$async.=.FALSE]])">void pq\Statement::__construct(pq\Connection $conn, string $name, string $query[, array $types = NULL[, bool $async = FALSE]])</h1>
-
+<h1>void pq\Statement::__construct(pq\Connection $conn, string $name, string $query[, array $types = NULL[, bool $async = FALSE]])</h1>
 <p>Prepare a new statement.
 See pq\Connection::prepare().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>pq\Connection $conn<br>
+<li>pq\Connection $conn<br />
 The connection to prepare the statement on.</li>
-<li>string $name<br>
+<li>string $name<br />
 The name identifying this statement.</li>
-<li>string $query<br>
+<li>string $query<br />
 The actual query to prepare.</li>
-<li>Optional array $types = NULL<br>
+<li>Optional array $types = NULL<br />
 A list of corresponding query parameter type OIDs.</li>
-<li>Optional bool $async = FALSE<br>
-Whether to prepare the statement [asynchronously](pq/Connection/: Asynchronous Usage).</li>
+<li>Optional bool $async = FALSE<br />
+Whether to prepare the statement <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronously</a>.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 <li>pq\Exception\RuntimeException</li>
 <li>pq\Exception\DomainException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 $connection = new pq\Connection;
 $statement = new pq\Statement(
-    $connection,
-    "my_statement",
-    "SELECT \$1",
-    [pq\Types::INT4]
+	$connection,
+	&quot;my_statement&quot;,
+	&quot;SELECT \$1&quot;,
+	[pq\Types::INT4]
 );
 
 $result = $statement-&gt;exec([123]);
 $result-&gt;fetchCol($col);
 
-echo "Got: $col\n";
+echo &quot;Got: $col\n&quot;;
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>Got: 123
 </code></pre>
 

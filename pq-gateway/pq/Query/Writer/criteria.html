@@ -84,55 +84,44 @@
 	</ul>
 </div>
 					
-<h1 id="pq\Query\Writer.pq\Query\Writer::criteria(array.$criteria)">pq\Query\Writer pq\Query\Writer::criteria(array $criteria)</h1>
-
+<h1>pq\Query\Writer pq\Query\Writer::criteria(array $criteria)</h1>
 <p>Write nested AND/OR criteria to the query string.</p>
-
 <p>The criteria can either be a simple accociative array, where the keys build the left hand operand plus the operator and the values make up the right hand operand and will be passed to pq\Query\Writer::param(). All concatenated together by AND clauses.</p>
-
 <p>Using multiple arrays, the above logic will be applied to each array and then concatenated by OR clauses.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>array $criteria<br>
+<li>array $criteria<br />
 Nested AND/OR criteria.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Query\Writer, self.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Query;
 
 $q = new Query\Writer;
-$q-&gt;write("select * from account where")
+$q-&gt;write(&quot;select * from account where&quot;)
   -&gt;criteria([
-    ["id &gt;" =&gt; 1, "id &lt;" =&gt; 5],
-    ["name =" =&gt; "mike"]
+    [&quot;id &gt;&quot; =&gt; 1, &quot;id &lt;&quot; =&gt; 5],
+    [&quot;name =&quot; =&gt; &quot;mike&quot;]
   ]);
 
 var_dump((string) $q, $q-&gt;getParams());
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
-<pre><code>string(84) "select * from account where ( ( ( id &gt; $1 ) AND ( id &lt; $2 ) ) OR ( ( name = $3 ) ) )"
+<pre><code>string(84) &quot;select * from account where ( ( ( id &gt; $1 ) AND ( id &lt; $2 ) ) OR ( ( name = $3 ) ) )&quot;
 array(3) {
   [0]=&gt;
   int(1)
   [1]=&gt;
   int(5)
   [2]=&gt;
-  string(4) "mike"
+  string(4) &quot;mike&quot;
 }
 </code></pre>
 

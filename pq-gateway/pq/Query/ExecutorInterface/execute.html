@@ -76,28 +76,22 @@
 	</ul>
 </div>
 					
-<h1 id="mixed.pq\Query\ExecutorInterface.pq\Query\ExecutorInterface::execute(\pq\Query\WriterInterface.$query,.callable.$callback);">mixed pq\Query\ExecutorInterface pq\Query\ExecutorInterface::execute(\pq\Query\WriterInterface $query, callable $callback);</h1>
-
+<h1>mixed pq\Query\ExecutorInterface pq\Query\ExecutorInterface::execute(\pq\Query\WriterInterface $query, callable $callback);</h1>
 <p>Execute the query and process the result with the callback.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-    This method should notify the observers twice.<br>
-    Once before the query gets executed and can be retrieved by pq\Query\ExecutorInterface::getQuery().<br>
-    And once after executing the query and the result can be retrieved by pq\Query\ExecutorInterface::getResult().</p>
+<p><em><strong>NOTE:</strong></em><br />
+This method should notify the observers twice.<br />
+Once before the query gets executed and can be retrieved by pq\Query\ExecutorInterface::getQuery().<br />
+And once after executing the query and the result can be retrieved by pq\Query\ExecutorInterface::getResult().</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>pq\Query\WriterInterface $query<br>
+<li>pq\Query\WriterInterface $query<br />
 The query to execute.</li>
-<li>callable $callback<br>
+<li>callable $callback<br />
 The result processing callback as function(pq\Result $result)</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>mixed, the return value of the callback.</li>
 </ul>

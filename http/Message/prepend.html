@@ -144,32 +144,24 @@
 	</ul>
 </div>
 					
-<h1 id="http\Message.http\Message::prepend(http\Message.$message[,.bool.$top.=.true])">http\Message http\Message::prepend(http\Message $message[, bool $top = true])</h1>
-
+<h1>http\Message http\Message::prepend(http\Message $message[, bool $top = true])</h1>
 <p>Prepend message(s) $message to this message, or the top most message of this message chain.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  The message chains must not overlap.</p>
+<p><em><strong>NOTE:</strong></em><br />
+The message chains must not overlap.</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>http\Message $message<br>
+<li>http\Message $message<br />
 The message (chain) to prepend as parent messages.</li>
-<li>Optional bool $top = true<br>
+<li>Optional bool $top = true<br />
 Whether to prepend to the top-most parent message.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Message, self.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\UnexpectedValueException</li>

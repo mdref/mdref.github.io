@@ -130,43 +130,36 @@
 	</ul>
 </div>
 					
-<h1 id="mixed.pq\Gateway\Table::update(array.$where,.array.$data[,.string.$returning.=.&quot;*&quot;])">mixed pq\Gateway\Table::update(array $where, array $data[, string $returning = "*"])</h1>
-
+<h1>mixed pq\Gateway\Table::update(array $where, array $data[, string $returning = &quot;*&quot;])</h1>
 <p>Update rows in the table.
 See pq\Query\Expr for using SQL constructs as parameters or arguments.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>array $where<br>
+<li>array $where<br />
 Criteria for the update.</li>
-<li>array $data<br>
+<li>array $data<br />
 Updated row data.</li>
-<li>Optional string $returniung = "*"<br>
+<li>Optional string $returniung = &quot;*&quot;<br />
 What the UPDATE should return.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
 Else:</li>
 <li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
 <li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
 <li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 use pq\Gateway\Table;
 use pq\Query\Expr;
 
-$table = new Table("data");
-$table-&gt;update(["id=" =&gt; 1], [
-    "foo" =&gt; "bar", 
-    "ts" =&gt; new Expr("NOW()"
+$table = new Table(&quot;data&quot;);
+$table-&gt;update([&quot;id=&quot; =&gt; 1], [
+	&quot;foo&quot; =&gt; &quot;bar&quot;, 
+	&quot;ts&quot; =&gt; new Expr(&quot;NOW()&quot;
 ]);
 
 ?&gt;

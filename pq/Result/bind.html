@@ -78,53 +78,44 @@
 	</ul>
 </div>
 					
-<h1 id="bool.pq\Result::bind(mixed.$col,.mixed.&amp;$var)">bool pq\Result::bind(mixed $col, mixed &amp;$var)</h1>
-
+<h1>bool pq\Result::bind(mixed $col, mixed &amp;$var)</h1>
 <p>Bind a variable to a result column.
 See pq\Result::fetchBound().</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>mixed $col<br>
+<li>mixed $col<br />
 The column name or index to bind to.</li>
-<li>mixed $var<br>
+<li>mixed $var<br />
 The variable reference.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>bool, success.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\BadMethodCallException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 try {
-    $connection = new pq\Connection;
-
-    $result = $connection-&gt;exec("SELECT id, name, email FROM accounts WHERE email LIKE '_@%'");
-
-    $result-&gt;bind("id", $id);
-    $result-&gt;bind("name", $name);
-    $result-&gt;bind("email", $email);
-
-    while ($result-&gt;fetchBound()) {
-        echo "ID:   {$id}\n";
-        echo "Name: {$name}\n";
-        echo "Mail: {$email}\n\n";
-    }
+	$connection = new pq\Connection;
+	
+	$result = $connection-&gt;exec(&quot;SELECT id, name, email FROM accounts WHERE email LIKE '_@%'&quot;);
+	
+	$result-&gt;bind(&quot;id&quot;, $id);
+	$result-&gt;bind(&quot;name&quot;, $name);
+	$result-&gt;bind(&quot;email&quot;, $email);
+	
+	while ($result-&gt;fetchBound()) {
+		echo &quot;ID:   {$id}\n&quot;;
+		echo &quot;Name: {$name}\n&quot;;
+		echo &quot;Mail: {$email}\n\n&quot;;
+	}
 } catch (\pq\Exception $e) {
-    echo $e-&gt;getMessage(), "\n";
+	echo $e-&gt;getMessage(), &quot;\n&quot;;
 }
 
 ?&gt;

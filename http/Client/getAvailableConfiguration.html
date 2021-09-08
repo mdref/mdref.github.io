@@ -130,60 +130,48 @@
 	</ul>
 </div>
 					
-<h1 id="array.http\Client::getAvailableConfiguration()">array http\Client::getAvailableConfiguration()</h1>
-
+<h1>array http\Client::getAvailableConfiguration()</h1>
 <p>Get a list of available configuration options and their default values.</p>
-
 <p>See f.e. the <a href="http/Client/Curl#Configuration:">configuration options for the Curl driver</a>.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>array, list of key/value pairs of available configuration options and their default values.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
-$client = new http\Client("curl");
+$client = new http\Client(&quot;curl&quot;);
 var_dump($client-&gt;getAvailableConfiguration());
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>array(10) {
-  ["maxconnects"]=&gt;
+  [&quot;maxconnects&quot;]=&gt;
   int(-1)
-  ["max_host_connections"]=&gt;
+  [&quot;max_host_connections&quot;]=&gt;
   int(0)
-  ["max_pipeline_length"]=&gt;
+  [&quot;max_pipeline_length&quot;]=&gt;
   int(5)
-  ["max_total_connections"]=&gt;
+  [&quot;max_total_connections&quot;]=&gt;
   int(0)
-  ["pipelining"]=&gt;
+  [&quot;pipelining&quot;]=&gt;
   bool(false)
-  ["chunk_length_penalty_size"]=&gt;
+  [&quot;chunk_length_penalty_size&quot;]=&gt;
   int(0)
-  ["content_length_penalty_size"]=&gt;
+  [&quot;content_length_penalty_size&quot;]=&gt;
   int(0)
-  ["pipelining_server_bl"]=&gt;
+  [&quot;pipelining_server_bl&quot;]=&gt;
   NULL
-  ["pipelining_site_bl"]=&gt;
+  [&quot;pipelining_site_bl&quot;]=&gt;
   NULL
-  ["use_eventloop"]=&gt;
+  [&quot;use_eventloop&quot;]=&gt;
   bool(false)
 }
 </code></pre>

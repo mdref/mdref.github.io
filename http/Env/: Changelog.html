@@ -90,22 +90,18 @@
 	</ul>
 </div>
 					
-<h1 id="http\Env.Changelog">http\Env Changelog</h1>
-
-<ol>
+<h1>http\Env Changelog</h1>
+<ol start="0">
 <li>v2.4.0
-
 <ul>
-<li>Split off pecl/<a href="apfd">apfd</a> and pecl/<a href="json_post">json_post</a></li>
-</ul></li>
+<li>Split off pecl/<a href="apfd">apfd</a> and pecl/<a href="json_post">json_post</a>
+</li>
+</ul>
+</li>
 </ol>
-
-<h2 id="Backwards.compatibility.notes">Backwards compatibility notes</h2>
-
-<h3 id="Request.startup.prior.v2.4.0">Request startup prior v2.4.0</h3>
-
+<h2>Backwards compatibility notes<a id="Backwards.compatibility.notes" href="#Backwards.compatibility.notes" class="permalink" aria-hidden="true" title="">#</a></h2>
+<h3>Request startup prior v2.4.0<a id="Request.startup.prior.v2.4.0" href="#Request.startup.prior.v2.4.0" class="permalink" aria-hidden="true" title="">#</a></h3>
 <p>In versions lower than 2.4.0, the http\Env module extends PHP's builtin POST data parser to be run also if the request method is not POST. Additionally it will handle application/json payloads if ext/json is available. Successfully parsed JSON will be put right into the $_POST array.</p>
-
 <p>This functionality has been separated into two distict extensions, pecl/<a href="apfd">apfd</a> and pecl/<a href="json_post">json_post</a>.</p>
 
 

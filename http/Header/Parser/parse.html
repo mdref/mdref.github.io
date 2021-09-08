@@ -72,62 +72,51 @@
 	</ul>
 </div>
 					
-<h1 id="int.http\Header\Parser::parse(string.$data,.int.$flags,.array.&amp;$message.=.NULL)">int http\Header\Parser::parse(string $data, int $flags, array &amp;$message = NULL)</h1>
-
+<h1>int http\Header\Parser::parse(string $data, int $flags, array &amp;$message = NULL)</h1>
 <p>Parse a string.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $data<br>
+<li>string $data<br />
 The (part of the) header to parse.</li>
-<li>int $flags<br>
+<li>int $flags<br />
 Any combination of <a href="http/Header/Parser#Parser.flags:">parser flags</a>.</li>
-<li>array &amp;$header = NULL 
+<li>array &amp;$header = NULL
 Successfully parsed headers.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>int, http\Header\Parser::STATE_* constant.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 $headers = [
-    "One: ","header\n",
-    "Two: header\n\tlines\n",
-    "Three",": header\n lines\n here\n",
-    "More: than one header\n",
-    "More: ", "than: ", "you: ", "expect\n",
-    "\n",
+	&quot;One: &quot;,&quot;header\n&quot;,
+	&quot;Two: header\n\tlines\n&quot;,
+	&quot;Three&quot;,&quot;: header\n lines\n here\n&quot;,
+	&quot;More: than one header\n&quot;,
+	&quot;More: &quot;, &quot;than: &quot;, &quot;you: &quot;, &quot;expect\n&quot;,
+	&quot;\n&quot;,
 ];
 
-$states = [-1=&gt;"FAILURE",0=&gt;"START","KEY","VALUE","VALUE_EX","HEADER_DONE","DONE"];
+$states = [-1=&gt;&quot;FAILURE&quot;,0=&gt;&quot;START&quot;,&quot;KEY&quot;,&quot;VALUE&quot;,&quot;VALUE_EX&quot;,&quot;HEADER_DONE&quot;,&quot;DONE&quot;];
 $parser = new http\Header\Parser;
 do {
-    $state = $parser-&gt;parse($part = array_shift($headers), 
-        $headers ? 0 : http\Header\Parser::CLEANUP, 
-        $result);
-    printf("%2\$-32s | %1\$s\n", $states[$state], addcslashes($part, "\r\n\t\0"));
+	$state = $parser-&gt;parse($part = array_shift($headers), 
+		$headers ? 0 : http\Header\Parser::CLEANUP, 
+		$result);
+	printf(&quot;%2\$-32s | %1\$s\n&quot;, $states[$state], addcslashes($part, &quot;\r\n\t\0&quot;));
 } while ($headers &amp;&amp; $state !== http\Header\Parser::STATE_FAILURE);
 
 var_dump($result);
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>Test
 One:                             | VALUE
 header\n                         | VALUE_EX
@@ -141,18 +130,18 @@ you:                             | VALUE
 expect\n                         | VALUE_EX
 \n                               | DONE
 array(4) {
-  ["One"]=&gt;
-  string(6) "header"
-  ["Two"]=&gt;
-  string(12) "header lines"
-  ["Three"]=&gt;
-  string(17) "header lines here"
-  ["More"]=&gt;
+  [&quot;One&quot;]=&gt;
+  string(6) &quot;header&quot;
+  [&quot;Two&quot;]=&gt;
+  string(12) &quot;header lines&quot;
+  [&quot;Three&quot;]=&gt;
+  string(17) &quot;header lines here&quot;
+  [&quot;More&quot;]=&gt;
   array(2) {
-    [0]=&gt;
-    string(15) "than one header"
-    [1]=&gt;
-    string(17) "than: you: expect"
+	[0]=&gt;
+	string(15) &quot;than one header&quot;
+	[1]=&gt;
+	string(17) &quot;than: you: expect&quot;
   }
 }
 </code></pre>

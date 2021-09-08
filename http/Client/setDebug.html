@@ -130,68 +130,55 @@
 	</ul>
 </div>
 					
-<h1 id="http\Client.http\Client::setDebug(callable.$callback)">http\Client http\Client::setDebug(callable $callback)</h1>
-
+<h1>http\Client http\Client::setDebug(callable $callback)</h1>
 <p>Set client debugging callback.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  This method has been added in v2.6.0, resp. v3.1.0.</p>
+<p><em><strong>NOTE:</strong></em><br />
+This method has been added in v2.6.0, resp. v3.1.0.</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>callable $callback as function(http\Client $c, http\Client\Request $r, int $type, string $data)<br>
+<li>callable $callback as function(http\Client $c, http\Client\Request $r, int $type, string $data)<br />
 The debug callback. For $type see http\Client::DEBUG_* constants.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Client, self.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 (new http\Client)-&gt;setDebug(function($c, $r, $type, $data) {
-    if ($type === http\Client::DEBUG_INFO) {
-        printf("INFO: %s\n", $data);
-    } else {
-        repeat:
-        if ($type &amp; http\Client::DEBUG_OUT) {
-            $sep = "&gt;";
-        } elseif ($type &amp; http\Client::DEBUG_IN) {
-            $sep = "&lt;";
-        }
-        if ($type &amp; http\Client::DEBUG_SSL) {
-            printf("%s &lt;%d bytes of SSL data&gt;\n", $sep, strlen($data));
-        } else {
-            printf("%s %s\n", $sep, str_replace("\n", "\n$sep ", rtrim($data, "\n")));
-        }
-    }
-})-&gt;enqueue(new http\Client\Request("GET", "http://example.com"))-&gt;send();
+	if ($type === http\Client::DEBUG_INFO) {
+		printf(&quot;INFO: %s\n&quot;, $data);
+	} else {
+		repeat:
+		if ($type &amp; http\Client::DEBUG_OUT) {
+			$sep = &quot;&gt;&quot;;
+		} elseif ($type &amp; http\Client::DEBUG_IN) {
+			$sep = &quot;&lt;&quot;;
+		}
+		if ($type &amp; http\Client::DEBUG_SSL) {
+			printf(&quot;%s &lt;%d bytes of SSL data&gt;\n&quot;, $sep, strlen($data));
+		} else {
+			printf(&quot;%s %s\n&quot;, $sep, str_replace(&quot;\n&quot;, &quot;\n$sep &quot;, rtrim($data, &quot;\n&quot;)));
+		}
+	}
+})-&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;http://example.com&quot;))-&gt;send();
 
 ?&gt;
 </code></pre>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  Except for http\Client::DEBUG_INFO, which always occurs separately, the debug
-  callback's $type argument contains a bitmask of (http\Client::DEBUG_IN or http\Client::DEBUG_OUT)
-  and (http\Client::DEBUG_HEADER or http\Client::DEBUG_BODY or http\Client::DEBUG_SSL).</p>
+<p><em><strong>NOTE:</strong></em><br />
+Except for http\Client::DEBUG_INFO, which always occurs separately, the debug
+callback's $type argument contains a bitmask of (http\Client::DEBUG_IN or http\Client::DEBUG_OUT)
+and (http\Client::DEBUG_HEADER or http\Client::DEBUG_BODY or http\Client::DEBUG_SSL).</p>
 </blockquote>
-
-<h3 id="Yields:">Yields:</h3>
-
+<h3>Yields:<a id="Yields:" href="#Yields:" class="permalink" aria-hidden="true" title="">#</a></h3>
 <pre><code>INFO:   Trying 93.184.216.34...
 
 INFO: Connected to example.com (93.184.216.34) port 80 (#0)
@@ -205,7 +192,7 @@ INFO: Connected to example.com (93.184.216.34) port 80 (#0)
 &lt; Cache-Control: max-age=604800
 &lt; Content-Type: text/html
 &lt; Date: Thu, 18 Aug 2016 17:55:10 GMT
-&lt; Etag: "359670651+gzip+ident"
+&lt; Etag: &quot;359670651+gzip+ident&quot;
 &lt; Expires: Thu, 25 Aug 2016 17:55:10 GMT
 &lt; Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
 &lt; Server: ECS (iad/182A)
@@ -219,15 +206,15 @@ INFO: Connected to example.com (93.184.216.34) port 80 (#0)
 &lt; &lt;head&gt;
 &lt;     &lt;title&gt;Example Domain&lt;/title&gt;
 &lt;
-&lt;     &lt;meta charset="utf-8" /&gt;
-&lt;     &lt;meta http-equiv="Content-type" content="text/html; charset=utf-8" /&gt;
-&lt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
-&lt;     &lt;style type="text/css"&gt;
+&lt;     &lt;meta charset=&quot;utf-8&quot; /&gt;
+&lt;     &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+&lt;     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+&lt;     &lt;style type=&quot;text/css&quot;&gt;
 &lt;     body {
 &lt;         background-color: #f0f0f2;
 &lt;         margin: 0;
 &lt;         padding: 0;
-&lt;         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+&lt;         font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
 &lt;
 &lt;     }
 &lt;     div {
@@ -260,7 +247,7 @@ INFO: Connected to example.com (93.184.216.34) port 80 (#0)
 &lt;     &lt;h1&gt;Example Domain&lt;/h1&gt;
 &lt;     &lt;p&gt;This domain is established to be used for illustrative examples in documents. You may use this
 &lt;     domain in examples without prior coordination or asking for permission.&lt;/p&gt;
-&lt;     &lt;p&gt;&lt;a href="http://www.iana.org/domains/example"&gt;More information...&lt;/a&gt;&lt;/p&gt;
+&lt;     &lt;p&gt;&lt;a href=&quot;http://www.iana.org/domains/example&quot;&gt;More information...&lt;/a&gt;&lt;/p&gt;
 &lt; &lt;/div&gt;
 &lt; &lt;/body&gt;
 &lt; &lt;/html&gt;

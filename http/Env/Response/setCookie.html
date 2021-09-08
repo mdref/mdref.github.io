@@ -96,57 +96,44 @@
 	</ul>
 </div>
 					
-<h1 id="http\Env\Response.http\Env\Response::setCookie(mixed.$cookie)">http\Env\Response http\Env\Response::setCookie(mixed $cookie)</h1>
-
+<h1>http\Env\Response http\Env\Response::setCookie(mixed $cookie)</h1>
 <p>Add cookies to the response to send.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>mixed $cookie<br>
+<li>mixed $cookie<br />
 The cookie to send.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Env\Response, self.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 <li>http\Exception\UnexpectedValueException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 $r = new http\Env\Response;
-$r-&gt;setCookie("visit=true; path=/");
+$r-&gt;setCookie(&quot;visit=true; path=/&quot;);
 $r-&gt;send(STDOUT);
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>HTTP/1.1 200 OK
 Set-Cookie: visit=true; path=/; 
-ETag: ""
+ETag: &quot;&quot;
 </code></pre>
-
-<h3 id="Another.example:">Another example:</h3>
-
+<h3>Another example:<a id="Another.example:" href="#Another.example:" class="permalink" aria-hidden="true" title="">#</a></h3>
 <pre><code>&lt;?php
 
 $c = new http\Cookie;
-$c-&gt;addCookie("foo", "bar");
+$c-&gt;addCookie(&quot;foo&quot;, &quot;bar&quot;);
 $c-&gt;setMaxAge(360);
-$c-&gt;setDomain(".example.org");
-$c-&gt;setPath("/");
+$c-&gt;setDomain(&quot;.example.org&quot;);
+$c-&gt;setPath(&quot;/&quot;);
 $c-&gt;setFlags(http\Cookie::SECURE | http\Cookie::HTTPONLY);
 
 $r = new http\Env\Response;
@@ -155,12 +142,10 @@ $r-&gt;send(STDOUT);
 
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>HTTP/1.1 200 OK
 Set-Cookie: foo=bar; domain=.example.org; path=/; max-age=360; secure; httpOnly; 
-ETag: ""
+ETag: &quot;&quot;
 </code></pre>
 
 

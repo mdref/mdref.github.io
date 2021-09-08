@@ -169,49 +169,43 @@
 	</ul>
 </div>
 					
-<h1 id="class.http\Env\Response.extends.http\Message">class http\Env\Response extends http\Message</h1>
-
+<h1>class http\Env\Response extends http\Message</h1>
 <p>The http\Env\Response class' instances represent the server's current HTTP response.</p>
-
 <p>See http\Message for inherited members.</p>
-
-<h2 id="Constants:">Constants:</h2>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>CONTENT_ENCODING_NONE<br>
+<li>CONTENT_ENCODING_NONE<br />
 Do not use content encoding.</li>
-<li>CONTENT_ENCODING_GZIP<br>
-Support "Accept-Encoding" requests with gzip and deflate encoding.</li>
-<li>CACHE_NO<br>
+<li>CONTENT_ENCODING_GZIP<br />
+Support &quot;Accept-Encoding&quot; requests with gzip and deflate encoding.</li>
+<li>CACHE_NO<br />
 No caching info available.</li>
-<li>CACHE_HIT<br>
+<li>CACHE_HIT<br />
 The cache was hit.</li>
-<li>CACHE_MISS<br>
+<li>CACHE_MISS<br />
 The cache was missed.</li>
 </ul>
-
-<h2 id="Properties:">Properties:</h2>
-
+<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>protected http\Env\Request $request = NULL<br>
+<li>protected http\Env\Request $request = NULL<br />
 A request instance which overrides the environments default request.</li>
-<li>protected string $contentType = NULL<br>
+<li>protected string $contentType = NULL<br />
 The response's MIME content type.</li>
-<li>protected string $contentDisposition = NULL<br>
+<li>protected string $contentDisposition = NULL<br />
 The response's MIME content disposition.</li>
-<li>protected int $contentEncoding = NULL<br>
+<li>protected int $contentEncoding = NULL<br />
 See http\Env\Response::CONTENT_ENCODING_* constants.</li>
-<li>protected string $cacheControl = NULL<br>
+<li>protected string $cacheControl = NULL<br />
 How the client should treat this response in regards to caching.</li>
-<li>protected string $etag = NULL<br>
+<li>protected string $etag = NULL<br />
 A custom ETag.</li>
-<li>protected int $lastModified = NULL<br>
-A "Last-Modified" time stamp.</li>
-<li>protected int $throttleDelay = NULL<br>
+<li>protected int $lastModified = NULL<br />
+A &quot;Last-Modified&quot; time stamp.</li>
+<li>protected int $throttleDelay = NULL<br />
 Any throttling delay.</li>
-<li>protected int $throttleChunk = NULL<br>
+<li>protected int $throttleChunk = NULL<br />
 The chunk to send every $throttleDelay seconds.</li>
-<li>protected array $cookies = NULL<br>
+<li>protected array $cookies = NULL<br />
 The response's cookies.</li>
 </ul>
 
@@ -271,7 +265,7 @@ The response's cookies.</li>
 	
 	<li>
 		<h3><a href="http/Env/Response/setContentEncoding">Response::setContentEncoding</a></h3>
-		<p>Enable support for "Accept-Encoding" requests with deflate or gzip.</p>
+		<p>Enable support for &quot;Accept-Encoding&quot; requests with deflate or gzip.</p>
 
 		<p>http\Env\Response http\Env\Response::setContentEncoding(int $content_encoding)</p>
 	</li>

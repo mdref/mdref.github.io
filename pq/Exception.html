@@ -96,41 +96,36 @@
 	</ul>
 </div>
 					
-<h1 id="interface.pq\Exception">interface pq\Exception</h1>
-
+<h1>interface pq\Exception</h1>
 <p>A base interface for all pq\Exception classes.</p>
-
-<h2 id="Constants:">Constants:</h2>
-
+<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>INVALID_ARGUMENT<br>
+<li>INVALID_ARGUMENT<br />
 An invalid argument was passed to a method (pq\Exception\InvalidArgumentException).</li>
-<li>RUNTIME<br>
+<li>RUNTIME<br />
 A runtime exception occurred (pq\Exception\RuntimeException).</li>
-<li>CONNECTION_FAILED<br>
+<li>CONNECTION_FAILED<br />
 The connection failed (pq\Exception\RuntimeException).</li>
-<li>IO<br>
+<li>IO<br />
 An input/output exception occurred (pq\Exception\RuntimeException).</li>
-<li>ESCAPE<br>
+<li>ESCAPE<br />
 Escaping an argument or identifier failed internally (pq\Exception\RuntimeException).</li>
-<li>UNINITIALIZED<br>
+<li>UNINITIALIZED<br />
 An object's constructor was not called (pq\Exception\BadMethodCallException).</li>
-<li>BAD_METHODCALL<br>
+<li>BAD_METHODCALL<br />
 Calling this method was not expected (yet) (pq\Exception\BadMethodCallException).</li>
-<li>SQL<br>
+<li>SQL<br />
 SQL syntax error (pq\Exception\DomainException).</li>
-<li>DOMAIN<br>
+<li>DOMAIN<br />
 Implementation domain error (pq\Exception\DomainException).</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 
 try {
-    $connection = new pq\Connection;
+	$connection = new pq\Connection;
 } catch (pq\Exception $e) {
-    printf("%s (%d)\n", $e-&gt;getMessage(), $e-&gt;getCode());
+	printf(&quot;%s (%d)\n&quot;, $e-&gt;getMessage(), $e-&gt;getCode());
 }
 
 ?&gt;

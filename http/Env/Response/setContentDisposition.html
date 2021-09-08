@@ -96,47 +96,36 @@
 	</ul>
 </div>
 					
-<h1 id="http\Env\Response.http\Env\Response::setContentDisposition(array.$disposition_params)">http\Env\Response http\Env\Response::setContentDisposition(array $disposition_params)</h1>
-
+<h1>http\Env\Response http\Env\Response::setContentDisposition(array $disposition_params)</h1>
 <p>Set the reponse's content disposition parameters.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>array $disposition_params<br>
+<li>array $disposition_params<br />
 MIME content disposition as http\Params array.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Env\Response, self.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>http\Exception\InvalidArgumentException</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
-<pre><code>&lt;?php ob_end_Clean();chdir(__DIR__."/../../..");
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
+<pre><code>&lt;?php ob_end_Clean();chdir(__DIR__.&quot;/../../..&quot;);
 $res = new http\Env\Response;
-$res-&gt;setBody(new http\Message\Body(fopen("http.zip", "r")));
-$res-&gt;setContentType("application/zip");
-$res-&gt;setContentDisposition(["attachment" =&gt; ["filename" =&gt; "download.zip"]]);
+$res-&gt;setBody(new http\Message\Body(fopen(&quot;http.zip&quot;, &quot;r&quot;)));
+$res-&gt;setContentType(&quot;application/zip&quot;);
+$res-&gt;setContentDisposition([&quot;attachment&quot; =&gt; [&quot;filename&quot; =&gt; &quot;download.zip&quot;]]);
 $res-&gt;send();
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>Accept-Ranges: bytes
 X-Powered-By: PHP/5.5.5
 Content-Type: application/zip
 Content-Disposition: attachment;filename=download.zip
-ETag: "12009be-527d3e84-a0"
+ETag: &quot;12009be-527d3e84-a0&quot;
 Last-Modified: Fri, 08 Nov 2013 19:41:56 GMT
 
 PK...

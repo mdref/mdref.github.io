@@ -96,47 +96,38 @@
 	</ul>
 </div>
 					
-<h1 id="bool.http\Response::__invoke(string.$data[,.int.$ob_flags.=.0])">bool http\Response::__invoke(string $data[, int $ob_flags = 0])</h1>
-
+<h1>bool http\Response::__invoke(string $data[, int $ob_flags = 0])</h1>
 <p>Output buffer handler.
 Appends output data to the body.</p>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
-<li>string $data<br>
+<li>string $data<br />
 The data output.</li>
-<li>Optional int $ob_flags = 0<br>
+<li>Optional int $ob_flags = 0<br />
 Output buffering flags passed from the output buffering control layer.</li>
 </ul>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>bool, success.</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $res = new http\Env\Response;
-$res-&gt;setContentType("text/plain");
+$res-&gt;setContentType(&quot;text/plain&quot;);
 
 ob_start($res);
 // yeah, well
 // not the greatest application logic...
-echo "Hello world!\n";
+echo &quot;Hello world!\n&quot;;
 
 $res-&gt;send();
 ?&gt;
 </code></pre>
-
 <p>Yields:</p>
-
 <pre><code>Accept-Ranges: bytes
 X-Powered-By: PHP/5.5.5
 Content-Type: text/plain
-ETag: "b2a9e441"
+ETag: &quot;b2a9e441&quot;
 
 Hello world!
 </code></pre>

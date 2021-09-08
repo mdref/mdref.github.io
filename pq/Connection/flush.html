@@ -126,71 +126,58 @@
 	</ul>
 </div>
 					
-<h1 id="bool.pq\Connection::flush()">bool pq\Connection::flush()</h1>
-
+<h1>bool pq\Connection::flush()</h1>
 <p>Flush pending writes on the connection.
 Call after sending any command or data on a nonblocking connection.</p>
-
 <p>If it returns FALSE, wait for the socket to become read or write-ready.
 If it becomes write-ready, call pq\Connection::flush() again.
 If it becomes read-ready, call pq\Connection::poll(), then call pq\Connection::flush() again.
 Repeat until pq\Connection::flush() returns TRUE.</p>
-
 <blockquote>
-  <p><strong><em>NOTE:</em></strong><br>
-  This method was added in v1.1.0, resp. v2.1.0.</p>
+<p><em><strong>NOTE:</strong></em><br />
+This method was added in v1.1.0, resp. v2.1.0.</p>
 </blockquote>
-
-<h2 id="Params:">Params:</h2>
-
+<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>None.</p>
-
-<h2 id="Returns:">Returns:</h2>
-
+<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>bool, whether everything has been flushed.</li>
 </ul>
-
-<h2 id="Throws:">Throws:</h2>
-
+<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <ul>
 <li>pq\Exception\InvalidArgumentException</li>
 <li>pq\Exception\RuntimeException when no asynchronous operation is active, or flushing failed</li>
 </ul>
-
-<h2 id="Example:">Example:</h2>
-
+<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <pre><code>&lt;?php
 $c = new pq\Connection();
 $c-&gt;nonblocking = true;
 
-$c-&gt;execAsync("SELECT '".str_repeat("a", 6e7)."'", function($r) {
-    $r-&gt;fetchCol($s);
-    var_dump(strlen($s));
+$c-&gt;execAsync(&quot;SELECT '&quot;.str_repeat(&quot;a&quot;, 6e7).&quot;'&quot;, function($r) {
+	$r-&gt;fetchCol($s);
+	var_dump(strlen($s));
 });
 
 $flushed = $c-&gt;flush();
 do {
-    while (!$flushed || $c-&gt;busy) {
-        $r = $c-&gt;busy ? [$c-&gt;socket] : null;
-        $w = !$flushed ?[$c-&gt;socket] : null;
+	while (!$flushed || $c-&gt;busy) {
+		$r = $c-&gt;busy ? [$c-&gt;socket] : null;
+		$w = !$flushed ?[$c-&gt;socket] : null;
 
-        if (stream_select($r, $w, $e, null)) {
-            if ($r) {
-                printf("P%d", $c-&gt;poll());
-            }
-            if ($w) {
-                printf("F%d", $flushed = $c-&gt;flush());
-            }
-        }
-    }
-    echo "\n";
+		if (stream_select($r, $w, $e, null)) {
+			if ($r) {
+				printf(&quot;P%d&quot;, $c-&gt;poll());
+			}
+			if ($w) {
+				printf(&quot;F%d&quot;, $flushed = $c-&gt;flush());
+			}
+		}
+	}
+	echo &quot;\n&quot;;
 } while ($c-&gt;getResult());
 ?&gt;
 </code></pre>
-
-<h3 id="Yields:">Yields:</h3>
-
+<h3>Yields:<a id="Yields:" href="#Yields:" class="permalink" aria-hidden="true" title="">#</a></h3>
 <pre><code>F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0
 ... (omitted)
 F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F1P3P3P3P3P3P3P3P3
