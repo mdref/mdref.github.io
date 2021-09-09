@@ -4,8 +4,8 @@
  * 
  * ### Highlights:
  * 
- * * Nearly 100% support for [asynchronous usage](pq/Connection/: Asynchronous Usage).
- * * Extended [type support by pg_type](pq/Types/: Overview).
+ * * Nearly 100% support for [asynchronous usage](pq/Connection/:%20Asynchronous%20Usage).
+ * * Extended [type support by pg_type](pq/Types/:%20Overview).
  * * Fetching simple [multi-dimensional array maps](pq/Result/map).
  * * Working [Gateway implementation](https://bitbucket.org/m6w6/pq-gateway).
  */
@@ -109,7 +109,7 @@ class Cancel  {
 	 */
 	public $connection;
 	/**
-	 * Create a new cancellation request for an [asynchronous](pq/Connection/: Asynchronous Usage) query.
+	 * Create a new cancellation request for an [asynchronous](pq/Connection/:%20Asynchronous%20Usage) query.
 	 * 
 	 * @param \pq\Connection $conn The connection to request cancellation on.
 	 * @throws \pq\Exception\InvalidArgumentException
@@ -129,7 +129,7 @@ class Cancel  {
 /**
  * The connection to the PostgreSQL server.
  * 
- * See the [General Usage](pq/Connection/: General Usage) page for an introduction on how to use this class.
+ * See the [General Usage](pq/Connection/:%20General%20Usage) page for an introduction on how to use this class.
  */
 class Connection  {
 	/**
@@ -137,7 +137,7 @@ class Connection  {
 	 */
 	const PERSISTENT = 2;
 	/**
-	 * If the connection is not already open, perform the connection attempt [asynchronously](pq/Connection/: Asynchronous Usage).
+	 * If the connection is not already open, perform the connection attempt [asynchronously](pq/Connection/:%20Asynchronous%20Usage).
 	 */
 	const ASYNC = 1;
 	/**
@@ -245,7 +245,7 @@ class Connection  {
 	 */
 	public $socket;
 	/**
-	 * Whether the connection is busy with [asynchronous operations](pq/Connection/: Asynchronous Usage).
+	 * Whether the connection is busy with [asynchronous operations](pq/Connection/:%20Asynchronous%20Usage).
 	 * 
 	 * @public
 	 * @readonly
@@ -276,7 +276,7 @@ class Connection  {
 	 */
 	public $encoding = NULL;
 	/**
-	 * Whether to fetch [asynchronous](pq/Connection/: Asynchronous Usage) results in unbuffered mode, i.e. each row generates a distinct pq\Result.
+	 * Whether to fetch [asynchronous](pq/Connection/:%20Asynchronous%20Usage) results in unbuffered mode, i.e. each row generates a distinct pq\Result.
 	 * 
 	 * @public
 	 * @var bool
@@ -378,7 +378,7 @@ class Connection  {
 	public $defaultTransactionDeferrable = FALSE;
 	/**
 	 * Create a new PostgreSQL connection.
-	 * See also [General Usage](pq/Connection/: General Usage).
+	 * See also [General Usage](pq/Connection/:%20General%20Usage).
 	 * 
 	 * @param string $dsn A ***connection string*** as described [in the PostgreSQL documentation](http://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING).
 	 * @param int $flags See [connection flag constants](pq/Connection#Connection.Flags:).
@@ -400,7 +400,7 @@ class Connection  {
 	 */
 	function declare(string $name, int $flags, string $query) {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) declare a cursor for a query.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) declare a cursor for a query.
 	 * 
 	 * > ***NOTE***:
 	 *   If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.
@@ -427,7 +427,7 @@ class Connection  {
 	 */
 	function escapeBytea(string $binary) {}
 	/**
-	 * [Execute one or multiple SQL queries](pq/Connection/: Executing Queries) on the connection.
+	 * [Execute one or multiple SQL queries](pq/Connection/:%20Executing%20Queries) on the connection.
 	 * 
 	 * > ***NOTE:***
 	 * > Only the last result will be returned, if the query string contains more than one SQL query.
@@ -441,7 +441,7 @@ class Connection  {
 	 */
 	function exec(string $query) {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) [execute an SQL query](pq/Connection: Executing Queries) on the connection.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) [execute an SQL query](pq/Connection:%20Executing%20Queries) on the connection.
 	 * 
 	 * > ***NOTE***:
 	 *   If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.
@@ -455,7 +455,7 @@ class Connection  {
 	 */
 	function execAsync(string $query, callable $callback = NULL) {}
 	/**
-	 * [Execute an SQL query](pq/Connection: Executing Queries) with properly escaped parameters substituted.
+	 * [Execute an SQL query](pq/Connection:%20Executing%20Queries) with properly escaped parameters substituted.
 	 * 
 	 * @param string $query The query to execute.
 	 * @param array $params The parameter list to substitute.
@@ -467,7 +467,7 @@ class Connection  {
 	 */
 	function execParams(string $query, array $params, array $types = NULL) {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) [execute an SQL query](pq/Connection: Executing Queries) with properly escaped parameters substituted.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) [execute an SQL query](pq/Connection:%20Executing%20Queries) with properly escaped parameters substituted.
 	 * 
 	 * > ***NOTE***:
 	 *   If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.
@@ -500,7 +500,7 @@ class Connection  {
 	 */
 	function flush() {}
 	/**
-	 * Fetch the result of an [asynchronous](pq/Connection/: Asynchronous Usage) query.
+	 * Fetch the result of an [asynchronous](pq/Connection/:%20Asynchronous%20Usage) query.
 	 * 
 	 * If the query hasn't finished yet, the call will block until the result is available.
 	 * 
@@ -523,7 +523,7 @@ class Connection  {
 	 */
 	function listen(string $channel, callable $listener) {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) start listening on $channel for notifcations.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) start listening on $channel for notifcations.
 	 * See pq\Connection::listen().
 	 * 
 	 * @param string $channel The channel to listen on.
@@ -545,7 +545,7 @@ class Connection  {
 	 */
 	function notify(string $channel, string $message) {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) start notifying all listeners on $channel with $message.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) start notifying all listeners on $channel with $message.
 	 * 
 	 * @param string $channel The channel to notify.
 	 * @param string $message The message to send.
@@ -575,7 +575,7 @@ class Connection  {
 	 */
 	function on(string $event, callable $callback) {}
 	/**
-	 * Poll an [asynchronously](pq/Connection/: Asynchronous Usage) operating connection.
+	 * Poll an [asynchronously](pq/Connection/:%20Asynchronous%20Usage) operating connection.
 	 * See pq\Connection::resetAsync() for an usage example.
 	 * 
 	 * @throws \pq\Exception\InvalidArgumentException
@@ -597,7 +597,7 @@ class Connection  {
 	 */
 	function prepare(string $name, string $query, array $types = NULL) {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) prepare a named statement for later execution with pq\Statement::exec().
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) prepare a named statement for later execution with pq\Statement::exec().
 	 * 
 	 * > ***NOTE***:
 	 *   If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.
@@ -645,7 +645,7 @@ class Connection  {
 	 */
 	function reset() {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) reset a possibly broken connection to a working state.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) reset a possibly broken connection to a working state.
 	 * 
 	 * @throws \pq\Exception\InvalidArgumentException
 	 * @throws \pq\Exception\BadMethodCallException
@@ -680,7 +680,7 @@ class Connection  {
 	 */
 	function startTransaction(int $isolation = \pq\Transaction::READ_COMMITTED, bool $readonly = FALSE, bool $deferrable = FALSE) {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) begin a transaction.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) begin a transaction.
 	 * 
 	 * @param int $isolation Any pq\Transaction isolation level constant
 	 *   (defaults to pq\Connection::$defaultTransactionIsolation).
@@ -730,7 +730,7 @@ class Connection  {
 	 */
 	function unlisten(string $channel) {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) stop listening for notifications on channel $channel.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) stop listening for notifications on channel $channel.
 	 * See pq\Connection::unlisten() and pq\Connection::listenAsync().
 	 * 
 	 * @param string $channel The name of a channel which is currently listened on.
@@ -826,7 +826,7 @@ class Cursor  {
 	 * @param string $name The name of the cursor.
 	 * @param int $flags See pq\Cursor constants.
 	 * @param string $query The query for which the cursor should be opened.
-	 * @param bool $async Whether to declare the cursor [asynchronously](pq/Connection/: Asynchronous Usage).
+	 * @param bool $async Whether to declare the cursor [asynchronously](pq/Connection/:%20Asynchronous%20Usage).
 	 * @throws \pq\Exception\InvalidArgumentException
 	 * @throws \pq\Exception\BadMethodCallException
 	 * @throws \pq\Exception\RuntimeException
@@ -842,7 +842,7 @@ class Cursor  {
 	 */
 	function close() {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) close an open cursor.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) close an open cursor.
 	 * See pq\Cursor::close().
 	 * 
 	 * @throws \pq\Exception\InvalidArgumentException
@@ -866,7 +866,7 @@ class Cursor  {
 	 */
 	function fetch(string $spec = "1") {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) fetch rows from the cursor.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) fetch rows from the cursor.
 	 * See pq\Cursor::fetch().
 	 * 
 	 * @param string $spec What to fetch.
@@ -893,7 +893,7 @@ class Cursor  {
 	 */
 	function move(string $spec = "1") {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) move the cursor.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) move the cursor.
 	 * See pq\Cursor::move().
 	 * 
 	 * @param string $spec What to fetch.
@@ -917,7 +917,7 @@ class Cursor  {
 	 */
 	function open() {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) reopen a cursor.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) reopen a cursor.
 	 * See pq\Cursor::open().
 	 * 
 	 * @throws \pq\Exception\InvalidArgumentException
@@ -1003,6 +1003,14 @@ class LOB  {
 	 * 0, representing an invalid OID.
 	 */
 	const INVALID_OID = 0;
+	/**
+	 * Read-only mode.
+	 */
+	const R = 262144;
+	/**
+	 * Write-only mode.
+	 */
+	const W = 131072;
 	/**
 	 * Read/write mode.
 	 */
@@ -1094,7 +1102,7 @@ class LOB  {
 /**
  * A query result.
  * 
- * See [Fetching Results](pq/Result/: Fetching Results) for a general overview.
+ * See [Fetching Results](pq/Result/:%20Fetching%20Results) for a general overview.
  */
 class Result implements \Traversable, \Countable {
 	/**
@@ -1394,7 +1402,7 @@ class Statement  {
 	 * @param string $name The name identifying this statement.
 	 * @param string $query The actual query to prepare.
 	 * @param array $types A list of corresponding query parameter type OIDs.
-	 * @param bool $async Whether to prepare the statement [asynchronously](pq/Connection/: Asynchronous Usage).
+	 * @param bool $async Whether to prepare the statement [asynchronously](pq/Connection/:%20Asynchronous%20Usage).
 	 * @throws \pq\Exception\InvalidArgumentException
 	 * @throws \pq\Exception\BadMethodCallException
 	 * @throws \pq\Exception\RuntimeException
@@ -1420,7 +1428,7 @@ class Statement  {
 	 */
 	function deallocate() {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) free the server resources used by the
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) free the server resources used by the
 	 * prepared statement, so it can no longer be executed.
 	 * 
 	 * @throws \pq\Exception\InvalidArgumentException
@@ -1439,7 +1447,7 @@ class Statement  {
 	 */
 	function desc() {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) describe the parameters of the prepared statement.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) describe the parameters of the prepared statement.
 	 * 
 	 * @param callable $callback as function(array $oids)
 	 *   A callback to receive list of type OIDs of the substitution parameters.
@@ -1460,7 +1468,7 @@ class Statement  {
 	 */
 	function exec(array $params = NULL) {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) execute the prepared statement.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) execute the prepared statement.
 	 * 
 	 * @param array $params Any parameters to substitute in the prepared statement (defaults to any bou
 	 *   nd variables).
@@ -1480,7 +1488,7 @@ class Statement  {
 	 */
 	function prepare() {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) re-prepare a statement that has been
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) re-prepare a statement that has been
 	 * deallocated. This is a no-op on already open statements.
 	 * 
 	 * @throws \pq\Exception\InvalidArgumentException
@@ -1542,7 +1550,7 @@ class Transaction  {
 	 * See pq\Connection::startTransaction().
 	 * 
 	 * @param \pq\Connection $conn The connection to start the transaction on.
-	 * @param bool $async Whether to start the transaction [asynchronously](pq/Connection/: Asynchronous Usage).
+	 * @param bool $async Whether to start the transaction [asynchronously](pq/Connection/:%20Asynchronous%20Usage).
 	 * @param int $isolation The transaction isolation level (defaults to pq\Connection::$defaultTransactionIsolation).
 	 * @param bool $readonly Whether the transaction is readonly (defaults to pq\Connection::$defaultTransactionReadonly).
 	 * @param bool $deferrable Whether the transaction is deferrable (defaults to pq\Connection::$defaultTransactionDeferrable).
@@ -1562,7 +1570,7 @@ class Transaction  {
 	 */
 	function commit() {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) commit the transaction or release the previous savepoint.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) commit the transaction or release the previous savepoint.
 	 * See pq\Transaction::commit() and pq\Transaction::savepoint().
 	 * 
 	 * @throws \pq\Exception\InvalidArgumentException
@@ -1604,7 +1612,7 @@ class Transaction  {
 	 */
 	function exportSnapshot() {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) export a snapshot for transaction synchronization.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) export a snapshot for transaction synchronization.
 	 * See pq\Transaction::exportSnapshot().
 	 * 
 	 * @throws \pq\Exception\InvalidArgumentException
@@ -1638,7 +1646,7 @@ class Transaction  {
 	 */
 	function importSnapshot(string $snapshot_id) {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) import a snapshot from another transaction to synchronize with.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) import a snapshot from another transaction to synchronize with.
 	 * See pq\Transaction::importSnapshot().
 	 * 
 	 * > ***NOTE:***
@@ -1673,7 +1681,7 @@ class Transaction  {
 	 */
 	function rollback() {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) rollback the transaction or to the previous savepoint within this transaction.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) rollback the transaction or to the previous savepoint within this transaction.
 	 * See pq\Transaction::rollback() and pq\Transaction::savepoint().
 	 * 
 	 * @throws \pq\Exception\InvalidArgumentException
@@ -1693,7 +1701,7 @@ class Transaction  {
 	 */
 	function savepoint() {}
 	/**
-	 * [Asynchronously](pq/Connection/: Asynchronous Usage) create a `SAVEPOINT` within this transaction.
+	 * [Asynchronously](pq/Connection/:%20Asynchronous%20Usage) create a `SAVEPOINT` within this transaction.
 	 * See pq\Transaction::savepoint().
 	 * 
 	 * @throws \pq\Exception\InvalidArgumentException
@@ -1715,7 +1723,7 @@ class Transaction  {
 }
 /**
  * Accessor to the PostgreSQL `pg_type` relation.
- * See [here for an overview](pq/Types/: Overview).
+ * See [here for an overview](pq/Types/:%20Overview).
  */
 class Types implements \ArrayAccess {
 	/**

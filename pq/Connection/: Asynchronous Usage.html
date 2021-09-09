@@ -21,7 +21,7 @@
 <div class="sidebar">
 	
 	<div class="edit">
-		<a href="https://github.com/m6w6/mdref-pq/edit/master/pq/Connection/: Asynchronous Usage.md">Edit</a>
+		<a href="https://github.com/mdref/mdref-pq/edit/master/pq/Connection/: Asynchronous Usage.md">Edit</a>
 	</div>
 	
 	
@@ -159,33 +159,33 @@ $r = $e = null;
 
 if (stream_select($r, $w, $e, null)) {
 
-    // loop until the connection is established
-    while (true) {
+	// loop until the connection is established
+	while (true) {
   
-        switch ($c-&gt;poll()) {
+		switch ($c-&gt;poll()) {
 	
-            case pq\Connection::POLLING_READING:
-	        // we should wait for the stream to be read-ready
-	        $r = array($c-&gt;socket);
-	        stream_select($r, $w, $e, NULL);
-	        break;
+			case pq\Connection::POLLING_READING:
+				// we should wait for the stream to be read-ready
+				$r = array($c-&gt;socket);
+				stream_select($r, $w, $e, NULL);
+				break;
 
-            case pq\Connection::POLLING_WRITING:
-                // we should wait for the stream to be write-ready
-                $w = array($c-&gt;socket);
-                $r = $e = null;
-                stream_select($r, $w, $e, null);
-                break;
+			case pq\Connection::POLLING_WRITING:
+				// we should wait for the stream to be write-ready
+				$w = array($c-&gt;socket);
+				$r = $e = null;
+				stream_select($r, $w, $e, null);
+				break;
 
-            case pq\Connection::POLLING_FAILED:
-                printf(&quot;Connection failed: %s\n&quot;, $c-&gt;errorMessage);
-                break 2;
+			case pq\Connection::POLLING_FAILED:
+				printf(&quot;Connection failed: %s\n&quot;, $c-&gt;errorMessage);
+				break 2;
 
-            case pq\Connection::POLLING_OK:
-                printf(&quot;Connection completed\n&quot;);
-                break 2;
-        }
-    }	
+			case pq\Connection::POLLING_OK:
+				printf(&quot;Connection completed\n&quot;);
+				break 2;
+		}
+	}	
 }
 
 ?&gt;
