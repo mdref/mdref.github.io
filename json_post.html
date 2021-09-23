@@ -51,7 +51,7 @@
 <p>JSON POST handler.</p>
 <p>Parse JSON request bodies into <code>$_POST</code>.</p>
 <h2>What it does:<a id="What.it.does:" href="#What.it.does:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>This tiny extension provides a PHP content type handler for <code>text/json</code> to PHP's form data parser.</p>
+<p>This tiny extension provides a PHP content type handler for JSON to PHP's form data parser.</p>
 <p>If the <code>Content-Type</code> of an incoming request is <code>application/json</code> or <code>text/json</code>, the JSON contents of the request body will by parsed into <code>$_POST</code>.</p>
 <h2>Installation:<a id="Installation:" href="#Installation:" class="permalink" aria-hidden="true" title="">#</a></h2>
 <p>This extension is hosted at <a href="http://pecl.php.net">PECL</a> and can be installed with <a href="http://pear.php.net">PEAR</a>'s pecl command:</p>
@@ -62,15 +62,37 @@
 <li>ext/json</li>
 </ul>
 <h2>INI Directives:<a id="INI.Directives:" href="#INI.Directives:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>json_post.flags = 1; json_decode() flags
+<dl>
+<dt>json_post.flags = 1</dt>
+<dd>json_decode() flags
 <ul>
 <li>JSON_OBJECT_AS_ARRAY = 1</li>
 <li>JSON_BIGINT_AS_STRING = 2</li>
 <li>JSON_OBJECT_AS_ARRAY|JSON_BIGINT_AS_STRING = 3</li>
+<li>JSON_INVALID_UTF8_IGNORE = 1048576 ; (PHP &gt;= 7.2)</li>
+<li>JSON_INVALID_UTF8_SUBSTITUTE = 2097152 ; (PHP &gt;= 7.2)</li>
+<li>JSON_THROW_ON_ERROR is ignored</li>
+</ul></dd>
+<dt>json_post.onerror.response = 0</dt>
+<dd>Send a custom HTTP response status on failure, e.g.:<br />
+; send <code>HTTP/1.1 400 Bad Request</code> on error<br />
+json_post.onerror.response = 400</dd>
+<dt>json_post.onerror.warning = Off</dt>
+<dd>Raise <code>E_WARNING</code> on failure decoding JSON when enabled.</dd>
+<dt>json_post.onerror.exit = Off</dt>
+<dd>Exit PHP without running the script on decoding failure when enabled.</dd>
+</dl>
+<h2>Changelog:<a id="Changelog:" href="#Changelog:" class="permalink" aria-hidden="true" title="">#</a></h2>
+<ol start="0">
+<li>v1.1.0
+<ul>
+<li>Ignore JSON_THROW_ON_ERROR in <code>json_post.flags</code>.</li>
+<li>Add <code>json_post.onerror.response</code> INI setting.</li>
+<li>Add <code>json_post.onerror.warning</code> INI setting.</li>
+<li>Add <code>json_post.onerror.exit</code> INI setting.</li>
 </ul>
 </li>
-</ul>
+</ol>
 
 
 
