@@ -1503,7 +1503,7 @@ class QueryString implements \Serializable, \ArrayAccess, \IteratorAggregate {
 	/**
 	 * Cast requested value to bool.
 	 */
-	const TYPE_BOOL = 17;
+	const TYPE_BOOL = 18;
 	/**
 	 * Cast requested value to int.
 	 */
@@ -2284,82 +2284,6 @@ class Response extends \http\Message {
 	 */
 	function getTransferInfo(string $name = NULL) {}
 }
-namespace http\Client\Curl;
-/**
- * Interface to an user event loop implementation for http\Client::configure()'s $use_eventloop option.
- * 
- * > ***NOTE:***
- * > This interface was added in v2.6.0, resp. v3.1.0.
- */
-interface User  {
-	/**
-	 * No action.
-	 */
-	const POLL_NONE = 0;
-	/**
-	 * Poll for read readiness.
-	 */
-	const POLL_IN = 1;
-	/**
-	 * Poll for write readiness.
-	 */
-	const POLL_OUT = 2;
-	/**
-	 * Poll for read/write readiness.
-	 */
-	const POLL_INOUT = 3;
-	/**
-	 * Stop polling for activity on this descriptor.
-	 */
-	const POLL_REMOVE = 4;
-	/**
-	 * Initialize the event loop.
-	 * 
-	 * @param callable $run as function(http\Client $c, resource $s = null, int $action = http\Client\Curl\User::POLL_NONE) : int
-	 *   Internal callback returning the number of unfinished requests pending.
-	 * 
-	 * 
-	 * > ***NOTE***:
-	 * > The callback should be run when a timeout occurs or a watched socket needs action.
-	 */
-	function init(callable $run);
-	/**
-	 * Run the loop as long as it does not block.
-	 * 
-	 * > ***NOTE:***
-	 * > This method is called by http\Client::once(), so it does not need to have an actual implementation if http\Client::once() is never called.
-	 */
-	function once();
-	/**
-	 * Run the loop.
-	 * 
-	 * > ***NOTE:***
-	 * > This method is called by http\Client::send(), so it does not need to have an actual implementation if http\Client::send() is never called.
-	 */
-	function send();
-	/**
-	 * Register (or deregister) a socket watcher.
-	 * 
-	 * @param resource $socket The socket descriptor to watch.
-	 * @param int $poll http\Client\Curl\User::POLL_* constant.
-	 */
-	function socket($socket, int $poll);
-	/**
-	 * Register a timeout watcher.
-	 * 
-	 * @param int $timeout_ms Desired maximum timeout in milliseconds.
-	 */
-	function timer(int $timeout_ms);
-	/**
-	 * Wait/poll/select (block the loop) until events fire.
-	 * 
-	 * > ***NOTE:***
-	 * > This method is called by http\Client::wait(), so it does not need to have an actual implementation if http\Client::wait() is never called.
-	 * 
-	 * @param int $timeout_ms Block for at most this milliseconds.
-	 */
-	function wait(int $timeout_ms = null);
-}
 /**
  * CURL feature constants.
  * 
@@ -2439,6 +2363,82 @@ const TLSAUTH_SRP = 16384;
  * Whether libcurl supports connections to unix sockets. Available if libcurl is v7.40.0 or more recent.
  */
 const UNIX_SOCKETS = 524288;
+namespace http\Client\Curl;
+/**
+ * Interface to an user event loop implementation for http\Client::configure()'s $use_eventloop option.
+ * 
+ * > ***NOTE:***
+ * > This interface was added in v2.6.0, resp. v3.1.0.
+ */
+interface User  {
+	/**
+	 * No action.
+	 */
+	const POLL_NONE = 0;
+	/**
+	 * Poll for read readiness.
+	 */
+	const POLL_IN = 1;
+	/**
+	 * Poll for write readiness.
+	 */
+	const POLL_OUT = 2;
+	/**
+	 * Poll for read/write readiness.
+	 */
+	const POLL_INOUT = 3;
+	/**
+	 * Stop polling for activity on this descriptor.
+	 */
+	const POLL_REMOVE = 4;
+	/**
+	 * Initialize the event loop.
+	 * 
+	 * @param callable $run as function(http\Client $c, resource $s = null, int $action = http\Client\Curl\User::POLL_NONE) : int
+	 *   Internal callback returning the number of unfinished requests pending.
+	 * 
+	 * 
+	 * > ***NOTE***:
+	 * > The callback should be run when a timeout occurs or a watched socket needs action.
+	 */
+	function init(callable $run);
+	/**
+	 * Run the loop as long as it does not block.
+	 * 
+	 * > ***NOTE:***
+	 * > This method is called by http\Client::once(), so it does not need to have an actual implementation if http\Client::once() is never called.
+	 */
+	function once();
+	/**
+	 * Run the loop.
+	 * 
+	 * > ***NOTE:***
+	 * > This method is called by http\Client::send(), so it does not need to have an actual implementation if http\Client::send() is never called.
+	 */
+	function send();
+	/**
+	 * Register (or deregister) a socket watcher.
+	 * 
+	 * @param resource $socket The socket descriptor to watch.
+	 * @param int $poll http\Client\Curl\User::POLL_* constant.
+	 */
+	function socket($socket, int $poll);
+	/**
+	 * Register a timeout watcher.
+	 * 
+	 * @param int $timeout_ms Desired maximum timeout in milliseconds.
+	 */
+	function timer(int $timeout_ms);
+	/**
+	 * Wait/poll/select (block the loop) until events fire.
+	 * 
+	 * > ***NOTE:***
+	 * > This method is called by http\Client::wait(), so it does not need to have an actual implementation if http\Client::wait() is never called.
+	 * 
+	 * @param int $timeout_ms Block for at most this milliseconds.
+	 */
+	function wait(int $timeout_ms = null);
+}
 /**
  * CURL version constants.
  */
