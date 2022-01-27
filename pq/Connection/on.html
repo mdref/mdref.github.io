@@ -125,43 +125,30 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>int pq\Connection::on(string $event, callable $callback)</h1>
-<p>Listen for an event.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $event<br />
-Any pq\Connection::EVENT_*.</li>
-<li>callable $callback as function(pq\Connection $c[, pq\Result $r)<br />
-The callback to invoke on event.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>int, number of previously attached event listeners.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$connection = new pq\Connection;
-$connection-&gt;on(pq\Connection::EVENT_RESULT, function($c, $r) {
-	printf(&quot;Got result with %d rows\n&quot;, $r-&gt;numRows);
-});
-$connection-&gt;exec(&quot;SELECT * FROM generate_series(1,3)&quot;);
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>Got result with 3 rows
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/on#">#</a><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq/Connection/on">pq\Connection::on</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$event</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>)</h1><p>Listen for an event.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Connection/on#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$event">$event<a class="permalink" href="pq/Connection/on#%24event">#</a></span><br>
+Any <a href="pq/Connection#EVENT_*">pq\Connection::EVENT_*</a>.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var" id="$callback">$callback<a class="permalink" href="pq/Connection/on#%24callback">#</a></span> as function(<a href="pq/Connection">pq\Connection</a> <span class="var" id="$c">$c<a class="permalink" href="pq/Connection/on#%24c">#</a></span>[, <a href="pq/Result">pq\Result</a> <span class="var" id="$r">$r<a class="permalink" href="pq/Connection/on#%24r">#</a></span>)<br>
+The <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> to invoke on event.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/Connection/on#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.integer">int</a></code>, number of previously attached event listeners.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Connection/on#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Connection/on#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">on</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">EVENT_RESULT</span><span style="color: inherit" class="keyword">, function(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Got result with %d rows\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">numRows</span><span style="color: inherit" class="keyword">);<br>});<br></span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT * FROM generate_series(1,3)"</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+Got result with 3 rows<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

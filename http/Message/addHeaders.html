@@ -143,56 +143,26 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Message http\Message::addHeaders(array $headers[, bool $append = false])</h1>
-<p>Add headers, optionally appending values, if header keys already exist.
-See http\Message::addHeader() and http\Message::setHeaders().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array $headers<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/addHeaders#">#</a><a href="http/Message">http\Message</a> <a href="http/Message/addHeaders">http\Message::addHeaders</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$headers</span>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$append</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>])</h1><p>Add headers, optionally appending values, if header keys already exist.
+See <a href="http/Message/addHeader">http\Message::addHeader</a>() and <a href="http/Message/setHeaders">http\Message::setHeaders</a>().</p><h2 id="Params:">Params:<a class="permalink" href="http/Message/addHeaders#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$headers">$headers<a class="permalink" href="http/Message/addHeaders#%24headers">#</a></span><br>
 The HTTP headers to add.</li>
-<li>Optional bool $append = false<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$append">$append<a class="permalink" href="http/Message/addHeaders#%24append">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code><br>
 Whether to append values for existing headers.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Message, self.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$msg = new http\Message;
-
-$msg-&gt;addHeaders([&quot;Cache-Control&quot; =&gt; &quot;public&quot;]);
-var_dump($msg-&gt;getHeaders());
-
-$msg-&gt;addHeaders([&quot;Cache-Control&quot; =&gt; &quot;private&quot;]);
-var_dump($msg-&gt;getHeaders());
-
-$msg-&gt;addHeaders([&quot;Cache-Control&quot; =&gt; &quot;must-revalidate&quot;], true);
-var_dump($msg-&gt;getHeaders());
-
-echo $msg;
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>array(1) {
-  [&quot;Cache-Control&quot;]=&gt;
-  string(6) &quot;public&quot;
-}
-array(1) {
-  [&quot;Cache-Control&quot;]=&gt;
-  string(7) &quot;private&quot;
-}
-array(1) {
-  [&quot;Cache-Control&quot;]=&gt;
-  string(24) &quot;private, must-revalidate&quot;
-}
-Cache-Control: private, must-revalidate
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Message/addHeaders#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Message">http\Message</a>, <em>self</em>.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Message/addHeaders#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$msg </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Message</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">addHeaders</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"Cache-Control" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"public"</span><span style="color: inherit" class="keyword">]);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getHeaders</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">addHeaders</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"Cache-Control" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"private"</span><span style="color: inherit" class="keyword">]);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getHeaders</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">addHeaders</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"Cache-Control" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"must-revalidate"</span><span style="color: inherit" class="keyword">], </span><span style="color: inherit" class="default">true</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getHeaders</span><span style="color: inherit" class="keyword">());<br><br>echo </span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+array(1) {<br>  ["Cache-Control"]=&gt;<br>  string(6) "public"<br>}<br>array(1) {<br>  ["Cache-Control"]=&gt;<br>  string(7) "private"<br>}<br>array(1) {<br>  ["Cache-Control"]=&gt;<br>  string(24) "private, must-revalidate"<br>}<br>Cache-Control: private, must-revalidate<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

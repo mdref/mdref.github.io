@@ -153,69 +153,58 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Gateway\Table\Identity implements Countable, ITeratorAggregate</h1>
-<p>The primary key of a table.</p>
-<h2>Query:<a id="Query:" href="#Query:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The following query is executed by the current executor of the table to retrieve the primary key columns:</p>
-<pre><code>select
- a.attname as column
-from  pg_class     c
- join pg_index     i  on c.oid    = i.indrelid
- join pg_attribute a  on c.oid    = a.attrelid
-where 
-	 c.relname = \$1
- and a.attnum  = any(i.indkey)
- and i.indisprimary
-order by 
- a.attnum
-</code></pre>
-<h2>Cache:<a id="Cache:" href="#Cache:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The result of this query is cached in the metadata cache under the following key, where $table is converted to a string by pq\Gateway\Table::__toString():</p>
-<pre><code>&quot;$table:identity&quot;
-</code></pre>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected array $columns<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/Identity#">#</a><em>class</em> <a href="pq-gateway/pq/Gateway/Table/Identity">pq\Gateway\Table\Identity</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>, ITeratorAggregate</h1><p>The primary key of a table.</p><h2 id="Query:">Query:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Identity#Query:">#</a>
+</h2><p>The following query is executed by the current executor of the table to retrieve the primary key columns:</p><pre><code><span style="color: inherit" class="html">
+select<br> a.attname as column<br>from  pg_class     c<br> join pg_index     i  on c.oid    = i.indrelid<br> join pg_attribute a  on c.oid    = a.attrelid<br>where <br>     c.relname = \$1<br> and a.attnum  = any(i.indkey)<br> and i.indisprimary<br>order by <br> a.attnum<br></span>
+</code></pre><h2 id="Cache:">Cache:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Identity#Cache:">#</a>
+</h2><p>The result of this query is cached in the metadata cache under the following key, where <span class="var">$table</span> is converted to a <code><a href="https://php.net/manual/en/language.types.string">string</a></code> by <a href="pq-gateway/pq/Gateway/Table/__toString">pq\Gateway\Table::__toString</a>():</p><pre><code><span style="color: inherit" class="html">
+"$table:identity"<br></span>
+</code></pre><h2 id="Properties:">Properties:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Identity#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$columns">$columns<a class="permalink" href="pq-gateway/pq/Gateway/Table/Identity#%24columns">#</a></span><br>
 The columns making up the primary key of the table.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Identity#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Identity/__construct">Identity::__construct</a></h3>
+		<h3 id="Identity::__construct">
+<a href="pq-gateway/pq/Gateway/Table/Identity/__construct">Identity::__construct</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Identity#Identity::__construct">#</a>
+</h3>
 		<p>Lookup the primary key of a table.</p>
 
-		<p>void pq\Gateway\Table\Identity::__construct(pq\Gateway\Table $table)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Table/Identity/__construct">pq\Gateway\Table\Identity::__construct</a>(<a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <span class="var">$table</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Identity/count">Identity::count</a></h3>
-		<p>Implements Countable.</p>
+		<h3 id="Identity::count">
+<a href="pq-gateway/pq/Gateway/Table/Identity/count">Identity::count</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Identity#Identity::count">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>.</p>
 
-		<p>int pq\Gateway\Table\Identity::count()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq-gateway/pq/Gateway/Table/Identity/count">pq\Gateway\Table\Identity::count</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Identity/getColumns">Identity::getColumns</a></h3>
+		<h3 id="Identity::getColumns">
+<a href="pq-gateway/pq/Gateway/Table/Identity/getColumns">Identity::getColumns</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Identity#Identity::getColumns">#</a>
+</h3>
 		<p>Retrieve the columns of the table identity.</p>
 
-		<p>array pq\Gateway\Table\Identity::getColumns()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Gateway/Table/Identity/getColumns">pq\Gateway\Table\Identity::getColumns</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Identity/getIterator">Identity::getIterator</a></h3>
-		<p>Implements IteratorAggregate.</p>
+		<h3 id="Identity::getIterator">
+<a href="pq-gateway/pq/Gateway/Table/Identity/getIterator">Identity::getIterator</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Identity#Identity::getIterator">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code>.</p>
 
-		<p>ArrayIterator pq\Gateway\Table\Identity::getIterator()</p>
+		<p><code><a href="https://php.net/manual/en/class.arrayiterator">ArrayIterator</a></code> <a href="pq-gateway/pq/Gateway/Table/Identity/getIterator">pq\Gateway\Table\Identity::getIterator</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

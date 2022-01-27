@@ -93,46 +93,22 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void http\Message\Body::__construct([resource $stream = NULL])</h1>
-<p>Create a new message body, optionally referencing $stream.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional resource $stream = NULL<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/Body/__construct#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Message/Body/__construct">http\Message\Body::__construct</a>([<code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var">$stream</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>Create a new message body, optionally referencing <span class="var">$stream</span>.</p><h2 id="Params:">Params:<a class="permalink" href="http/Message/Body/__construct#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var" id="$stream">$stream<a class="permalink" href="http/Message/Body/__construct#%24stream">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 A stream to be used as message body.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\UnexpectedValueException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-ob_end_clean();
-
-$body = new http\Message\Body(fopen(__FILE__, &quot;r&quot;));
-$resp = new http\Env\Response;
-$resp-&gt;setContentType(&quot;text/plain&quot;);
-$resp-&gt;setBody($body);
-$resp-&gt;send();
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>Accept-Ranges: bytes
-X-Powered-By: PHP/5.5.5
-Content-Type: text/plain
-ETag: &quot;138042e-527b5a0a-1b2&quot;
-Last-Modified: Thu, 07 Nov 2013 09:14:50 GMT
-
-# void http\Message\Body::__construct([resource $stream = NULL])
-
-Create a new message body, optionally referencing $stream.
-...
-</code></pre>
-
-
-
-		
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Message/Body/__construct#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/UnexpectedValueException">http\Exception\UnexpectedValueException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Message/Body/__construct#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>ob_end_clean</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">$body </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Message\Body</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">fopen</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">__FILE__</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"r"</span><span style="color: inherit" class="keyword">));<br></span><span style="color: inherit" class="default">$resp </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Env\Response</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$resp</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setContentType</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"text/plain"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$resp</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setBody</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$body</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$resp</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">();<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+Accept-Ranges: bytes<br>X-Powered-By: PHP/5.5.5<br>Content-Type: text/plain<br>ETag: "138042e-527b5a0a-1b2"<br>Last-Modified: Thu, 07 Nov 2013 09:14:50 GMT<br><br># void http\Message\Body::__construct([resource $stream = NULL])<br><br>Create a new message body, optionally referencing $stream.<br>...<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

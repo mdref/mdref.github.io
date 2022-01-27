@@ -89,121 +89,15 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Client\Curl\User Examples</h1>
-<h2>Example using the <a href="http://pecl.php.net/ev">pecl/ev</a> loop:<a id="Example.using.the.pecl.ev.loop:" href="#Example.using.the.pecl.ev.loop:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-class UserHandler implements http\Client\Curl\User
-{
-	private $client;
-	private $run;
-	private $ios = [];
-	private $timeout;
-
-
-	function __construct(http\Client $client) {
-		$this-&gt;client = $client;
-	}
-
-	function init(callable $run) {
-		$this-&gt;run = $run;
-	}
-
-	function timer(int $timeout_ms) {
-		echo &quot;T&quot;;
-		if (isset($this-&gt;timeout)) {
-			$this-&gt;timeout-&gt;set($timeout_ms/1000, 0);
-			$this-&gt;timeout-&gt;start();
-		} else {
-			$this-&gt;timeout = new EvTimer($timeout_ms/1000, 0, function() {
-				if (!call_user_func($this-&gt;run, $this-&gt;client)) {
-					if ($this-&gt;timeout) {
-						$this-&gt;timeout-&gt;stop();
-						$this-&gt;timeout = null;
-					}
-				}
-			});
-		}
-	}
-
-	function socket($socket, int $action) {
-		echo &quot;S&quot;;
-
-		switch ($action) {
-		case self::POLL_NONE:
-			break;
-		case self::POLL_REMOVE:
-			if (isset($this-&gt;ios[(int) $socket])) {
-				echo &quot;U&quot;;
-				$this-&gt;ios[(int) $socket]-&gt;stop();
-				unset($this-&gt;ios[(int) $socket]);
-			}
-			break;
-
-		default:
-			$ev = 0;
-			if ($action &amp; self::POLL_IN) {
-				$ev |= Ev::READ;
-			}
-			if ($action &amp; self::POLL_OUT) {
-				$ev |= Ev::WRITE;
-			}
-			if (isset($this-&gt;ios[(int) $socket])) {
-				$this-&gt;ios[(int) $socket]-&gt;set($socket, $ev);
-			} else {
-				$this-&gt;ios[(int) $socket] = new EvIo($socket, $ev, function($watcher, $events) use($socket) {
-					$action = 0;
-					if ($events &amp; Ev::READ) {
-						$action |= self::POLL_IN;
-					}
-					if ($events &amp; Ev::WRITE) {
-						$action |= self::POLL_OUT;
-					}
-					if (!call_user_func($this-&gt;run, $this-&gt;client, $socket, $action)) {
-						if ($this-&gt;timeout) {
-							$this-&gt;timeout-&gt;stop();
-							$this-&gt;timeout = null;
-						}
-					}
-				});
-			}
-			break;
-		}
-	}
-
-	function once() {
-		throw new BadMethodCallException(&quot;this example uses Ev::run()&quot;);
-	}
-
-	function wait(int $timeout_ms = null) {
-		throw new BadMethodCallException(&quot;this example uses Ev::run()&quot;);
-	}
-
-	function send() {
-		throw new BadMethodCallException(&quot;this example uses Ev::run()&quot;);
-	}
-}
-
-$client = new http\Client;
-$client-&gt;configure([
-		&quot;use_eventloop&quot; =&gt; new UserHandler($client)
-]);
-$client-&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;http://example.com/&quot;), function($r) {
-	var_dump($r-&gt;getResponseCode());
-});
-
-Ev::run();
-
-?&gt;
-</code></pre>
-<h3>Yields:<a id="Yields:" href="#Yields:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<pre><code>TTTTTTTTSTSTSUint(200)
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/Curl/User/:%20Examples#">#</a><a href="http/Client/Curl/User">http\Client\Curl\User</a> Examples</h1><h2 id="Example.using.the.pecl.ev.loop:">Example using the <a href="http://pecl.php.net/ev">pecl/ev</a> loop:<a class="permalink" href="http/Client/Curl/User/:%20Examples#Example.using.the.pecl.ev.loop:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">class </span><span style="color: inherit" class="default">UserHandler </span><span style="color: inherit" class="keyword">implements </span><span style="color: inherit" class="default">http\Client\Curl\User<br></span><span style="color: inherit" class="keyword">{<br>    private </span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">;<br>    private </span><span style="color: inherit" class="default">$run</span><span style="color: inherit" class="keyword">;<br>    private </span><span style="color: inherit" class="default">$ios </span><span style="color: inherit" class="keyword">= [];<br>    private </span><span style="color: inherit" class="default">$timeout</span><span style="color: inherit" class="keyword">;<br><br><br>    function </span><span style="color: inherit" class="default">__construct</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">http\Client $client</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">client </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">;<br>    }<br><br>    function </span><span style="color: inherit" class="default">init</span><span style="color: inherit" class="keyword">(callable </span><span style="color: inherit" class="default">$run</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">run </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$run</span><span style="color: inherit" class="keyword">;<br>    }<br><br>    function </span><span style="color: inherit" class="default">timer</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">int $timeout_ms</span><span style="color: inherit" class="keyword">) {<br>        echo </span><span style="color: inherit" class="string">"T"</span><span style="color: inherit" class="keyword">;<br>        if (isset(</span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">timeout</span><span style="color: inherit" class="keyword">)) {<br>            </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">timeout</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">set</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$timeout_ms</span><span style="color: inherit" class="keyword">/</span><span style="color: inherit" class="default">1000</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">);<br>            </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">timeout</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">start</span><span style="color: inherit" class="keyword">();<br>        } else {<br>            </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">timeout </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">EvTimer</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$timeout_ms</span><span style="color: inherit" class="keyword">/</span><span style="color: inherit" class="default">1000</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">, function() {<br>                if (!</span><span style="color: inherit" class="default">call_user_func</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">run</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">client</span><span style="color: inherit" class="keyword">)) {<br>                    if (</span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">timeout</span><span style="color: inherit" class="keyword">) {<br>                        </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">timeout</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">stop</span><span style="color: inherit" class="keyword">();<br>                        </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">timeout </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">;<br>                    }<br>                }<br>            });<br>        }<br>    }<br><br>    function </span><span style="color: inherit" class="default">socket</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">int $action</span><span style="color: inherit" class="keyword">) {<br>        echo </span><span style="color: inherit" class="string">"S"</span><span style="color: inherit" class="keyword">;<br><br>        switch (</span><span style="color: inherit" class="default">$action</span><span style="color: inherit" class="keyword">) {<br>        case </span><span style="color: inherit" class="default">self</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLL_NONE</span><span style="color: inherit" class="keyword">:<br>            break;<br>        case </span><span style="color: inherit" class="default">self</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLL_REMOVE</span><span style="color: inherit" class="keyword">:<br>            if (isset(</span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">ios</span><span style="color: inherit" class="keyword">[(int) </span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">])) {<br>                echo </span><span style="color: inherit" class="string">"U"</span><span style="color: inherit" class="keyword">;<br>                </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">ios</span><span style="color: inherit" class="keyword">[(int) </span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">]-&gt;</span><span style="color: inherit" class="default">stop</span><span style="color: inherit" class="keyword">();<br>                unset(</span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">ios</span><span style="color: inherit" class="keyword">[(int) </span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">]);<br>            }<br>            break;<br><br>        default:<br>            </span><span style="color: inherit" class="default">$ev </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">;<br>            if (</span><span style="color: inherit" class="default">$action </span><span style="color: inherit" class="keyword">&amp; </span><span style="color: inherit" class="default">self</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLL_IN</span><span style="color: inherit" class="keyword">) {<br>                </span><span style="color: inherit" class="default">$ev </span><span style="color: inherit" class="keyword">|= </span><span style="color: inherit" class="default">Ev</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">READ</span><span style="color: inherit" class="keyword">;<br>            }<br>            if (</span><span style="color: inherit" class="default">$action </span><span style="color: inherit" class="keyword">&amp; </span><span style="color: inherit" class="default">self</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLL_OUT</span><span style="color: inherit" class="keyword">) {<br>                </span><span style="color: inherit" class="default">$ev </span><span style="color: inherit" class="keyword">|= </span><span style="color: inherit" class="default">Ev</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">WRITE</span><span style="color: inherit" class="keyword">;<br>            }<br>            if (isset(</span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">ios</span><span style="color: inherit" class="keyword">[(int) </span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">])) {<br>                </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">ios</span><span style="color: inherit" class="keyword">[(int) </span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">]-&gt;</span><span style="color: inherit" class="default">set</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$ev</span><span style="color: inherit" class="keyword">);<br>            } else {<br>                </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">ios</span><span style="color: inherit" class="keyword">[(int) </span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">] = new </span><span style="color: inherit" class="default">EvIo</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$ev</span><span style="color: inherit" class="keyword">, function(</span><span style="color: inherit" class="default">$watcher</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$events</span><span style="color: inherit" class="keyword">) use(</span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">) {<br>                    </span><span style="color: inherit" class="default">$action </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">;<br>                    if (</span><span style="color: inherit" class="default">$events </span><span style="color: inherit" class="keyword">&amp; </span><span style="color: inherit" class="default">Ev</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">READ</span><span style="color: inherit" class="keyword">) {<br>                        </span><span style="color: inherit" class="default">$action </span><span style="color: inherit" class="keyword">|= </span><span style="color: inherit" class="default">self</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLL_IN</span><span style="color: inherit" class="keyword">;<br>                    }<br>                    if (</span><span style="color: inherit" class="default">$events </span><span style="color: inherit" class="keyword">&amp; </span><span style="color: inherit" class="default">Ev</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">WRITE</span><span style="color: inherit" class="keyword">) {<br>                        </span><span style="color: inherit" class="default">$action </span><span style="color: inherit" class="keyword">|= </span><span style="color: inherit" class="default">self</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLL_OUT</span><span style="color: inherit" class="keyword">;<br>                    }<br>                    if (!</span><span style="color: inherit" class="default">call_user_func</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">run</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">client</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$socket</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$action</span><span style="color: inherit" class="keyword">)) {<br>                        if (</span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">timeout</span><span style="color: inherit" class="keyword">) {<br>                            </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">timeout</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">stop</span><span style="color: inherit" class="keyword">();<br>                            </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">timeout </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">;<br>                        }<br>                    }<br>                });<br>            }<br>            break;<br>        }<br>    }<br><br>    function </span><span style="color: inherit" class="default">once</span><span style="color: inherit" class="keyword">() {<br>        throw new </span><span style="color: inherit" class="default">BadMethodCallException</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"this example uses Ev::run()"</span><span style="color: inherit" class="keyword">);<br>    }<br><br>    function </span><span style="color: inherit" class="default">wait</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">int $timeout_ms </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">) {<br>        throw new </span><span style="color: inherit" class="default">BadMethodCallException</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"this example uses Ev::run()"</span><span style="color: inherit" class="keyword">);<br>    }<br><br>    function </span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">() {<br>        throw new </span><span style="color: inherit" class="default">BadMethodCallException</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"this example uses Ev::run()"</span><span style="color: inherit" class="keyword">);<br>    }<br>}<br><br></span><span style="color: inherit" class="default">$client </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">configure</span><span style="color: inherit" class="keyword">([<br>        </span><span style="color: inherit" class="string">"use_eventloop" </span><span style="color: inherit" class="keyword">=&gt; new </span><span style="color: inherit" class="default">UserHandler</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">)<br>]);<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"GET"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"http://example.com/"</span><span style="color: inherit" class="keyword">), function(</span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResponseCode</span><span style="color: inherit" class="keyword">());<br>});<br><br></span><span style="color: inherit" class="default">Ev</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">run</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h3 id="Yields:">Yields:<a class="permalink" href="http/Client/Curl/User/:%20Examples#Yields:">#</a>
+</h3><pre><code><span style="color: inherit" class="html">
+TTTTTTTTSTSTSUint(200)<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

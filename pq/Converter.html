@@ -90,137 +90,44 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>interface pq\Converter</h1>
-<p>Interface for type conversions.</p>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-/**
- * Naive geometric point
- */
-class Point {
-	public $x;
-	public $y;
-	function __construct($x, $y) {
-		$this-&gt;x = $x;
-		$this-&gt;y = $y;
-	}
-}
-
-/**
- * A simple Box
- */
-class Box {
-	public $p1;
-	public $p2;
-	function __construct(Point $p1, Point $p2) {
-		$this-&gt;p1 = $p1;
-		$this-&gt;p2 = $p2;
-	}
-}
-
-/**
- * Our converter handles only objects of type box
- */
-class BoxConverter implements pq\Converter {
-	private $oid;
-	function __construct(pq\Types $types) {
-		$this-&gt;oid = $types[&quot;box&quot;]-&gt;oid;
-	}
-	
-	/**
-	 * @return array
-	 * @see pq\Converter::convertTypes()
-	 */
-	function convertTypes() {
-		return [$this-&gt;oid];
-	}
-	
-	/**
-	 * @return string
-	 * @param $box Box
-	 * @see pq\Converter::convertToString()
-	 */
-	function convertToString($box, $type) {
-		return sprintf(&quot;(%F,%F),(%F,%F)&quot;, 
-			$box-&gt;p1-&gt;x, $box-&gt;p1-&gt;y,
-			$box-&gt;p2-&gt;x, $box-&gt;p2-&gt;y
-		);
-	}
-	
-	/**
-	 * @return Box
-	 * @param string $data
-	 * @see pq\Converter::convertFromString()
-	 */
-	function convertFromString($data, $type) {
-		list($p1x, $p1y, $p2x, $p2y) = sscanf($data, &quot;(%f,%f),(%f,%f)&quot;);
-		return new Box(new Point($p1x, $p1y), new Point($p2x, $p2y));
-	}
-}
-
-$conn  = new pq\Connection;
-$types = new pq\Types($conn);
-$conv  = new BoxConverter($types);
-$inbox = new Box(new Point(1.1, 2.2), new Point(3.3, 4.4));
-
-$conn-&gt;setConverter($conv);
-$result = $conn-&gt;execParams(&quot;SELECT \$1&quot;, [$inbox], [$types[&quot;box&quot;]-&gt;oid]);
-$result-&gt;fetchCol($outbox);
-
-var_dump($outbox);
-
-?&gt; 
-</code></pre>
-<p>Yields:</p>
-<pre><code>object(Box)#163 (2) {
-  [&quot;p1&quot;]=&gt;
-  object(Point)#164 (2) {
-	[&quot;x&quot;]=&gt;
-	float(3.3)
-	[&quot;y&quot;]=&gt;
-	float(4.4)
-  }
-  [&quot;p2&quot;]=&gt;
-  object(Point)#165 (2) {
-	[&quot;x&quot;]=&gt;
-	float(1.1)
-	[&quot;y&quot;]=&gt;
-	float(2.2)
-  }
-}
-</code></pre>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Converter#">#</a><em>interface</em> <a href="pq/Converter">pq\Converter</a>
+</h1><p>Interface for type conversions.</p><h2 id="Example:">Example:<a class="permalink" href="pq/Converter#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="comment">/**<br> * Naive geometric point<br> */<br></span><span style="color: inherit" class="keyword">class </span><span style="color: inherit" class="default">Point </span><span style="color: inherit" class="keyword">{<br>    public </span><span style="color: inherit" class="default">$x</span><span style="color: inherit" class="keyword">;<br>    public </span><span style="color: inherit" class="default">$y</span><span style="color: inherit" class="keyword">;<br>    function </span><span style="color: inherit" class="default">__construct</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$x</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$y</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">x </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$x</span><span style="color: inherit" class="keyword">;<br>        </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">y </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$y</span><span style="color: inherit" class="keyword">;<br>    }<br>}<br><br></span><span style="color: inherit" class="comment">/**<br> * A simple Box<br> */<br></span><span style="color: inherit" class="keyword">class </span><span style="color: inherit" class="default">Box </span><span style="color: inherit" class="keyword">{<br>    public </span><span style="color: inherit" class="default">$p1</span><span style="color: inherit" class="keyword">;<br>    public </span><span style="color: inherit" class="default">$p2</span><span style="color: inherit" class="keyword">;<br>    function </span><span style="color: inherit" class="default">__construct</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">Point $p1</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">Point $p2</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">p1 </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$p1</span><span style="color: inherit" class="keyword">;<br>        </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">p2 </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$p2</span><span style="color: inherit" class="keyword">;<br>    }<br>}<br><br></span><span style="color: inherit" class="comment">/**<br> * Our converter handles only objects of type box<br> */<br></span><span style="color: inherit" class="keyword">class </span><span style="color: inherit" class="default">BoxConverter </span><span style="color: inherit" class="keyword">implements </span><span style="color: inherit" class="default">pq\Converter </span><span style="color: inherit" class="keyword">{<br>    private </span><span style="color: inherit" class="default">$oid</span><span style="color: inherit" class="keyword">;<br>    function </span><span style="color: inherit" class="default">__construct</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">pq\Types $types</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">oid </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$types</span><span style="color: inherit" class="keyword">[</span><span style="color: inherit" class="string">"box"</span><span style="color: inherit" class="keyword">]-&gt;</span><span style="color: inherit" class="default">oid</span><span style="color: inherit" class="keyword">;<br>    }<br>    <br>    </span><span style="color: inherit" class="comment">/**<br>     * @return array<br>     * @see pq\Converter::convertTypes()<br>     */<br>    </span><span style="color: inherit" class="keyword">function </span><span style="color: inherit" class="default">convertTypes</span><span style="color: inherit" class="keyword">() {<br>        return [</span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">oid</span><span style="color: inherit" class="keyword">];<br>    }<br>    <br>    </span><span style="color: inherit" class="comment">/**<br>     * @return string<br>     * @param $box Box<br>     * @see pq\Converter::convertToString()<br>     */<br>    </span><span style="color: inherit" class="keyword">function </span><span style="color: inherit" class="default">convertToString</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$box</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$type</span><span style="color: inherit" class="keyword">) {<br>        return </span><span style="color: inherit" class="default">sprintf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"(%F,%F),(%F,%F)"</span><span style="color: inherit" class="keyword">, <br>            </span><span style="color: inherit" class="default">$box</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">p1</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">x</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$box</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">p1</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">y</span><span style="color: inherit" class="keyword">,<br>            </span><span style="color: inherit" class="default">$box</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">p2</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">x</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$box</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">p2</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">y<br>        </span><span style="color: inherit" class="keyword">);<br>    }<br>    <br>    </span><span style="color: inherit" class="comment">/**<br>     * @return Box<br>     * @param string $data<br>     * @see pq\Converter::convertFromString()<br>     */<br>    </span><span style="color: inherit" class="keyword">function </span><span style="color: inherit" class="default">convertFromString</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$data</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$type</span><span style="color: inherit" class="keyword">) {<br>        list(</span><span style="color: inherit" class="default">$p1x</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$p1y</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$p2x</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$p2y</span><span style="color: inherit" class="keyword">) = </span><span style="color: inherit" class="default">sscanf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$data</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"(%f,%f),(%f,%f)"</span><span style="color: inherit" class="keyword">);<br>        return new </span><span style="color: inherit" class="default">Box</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">Point</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$p1x</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$p1y</span><span style="color: inherit" class="keyword">), new </span><span style="color: inherit" class="default">Point</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$p2x</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$p2y</span><span style="color: inherit" class="keyword">));<br>    }<br>}<br><br></span><span style="color: inherit" class="default">$conn  </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$types </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Types</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$conv  </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">BoxConverter</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$types</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$inbox </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Box</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">Point</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">1.1</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">2.2</span><span style="color: inherit" class="keyword">), new </span><span style="color: inherit" class="default">Point</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">3.3</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">4.4</span><span style="color: inherit" class="keyword">));<br><br></span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setConverter</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$conv</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">execParams</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT \$1"</span><span style="color: inherit" class="keyword">, [</span><span style="color: inherit" class="default">$inbox</span><span style="color: inherit" class="keyword">], [</span><span style="color: inherit" class="default">$types</span><span style="color: inherit" class="keyword">[</span><span style="color: inherit" class="string">"box"</span><span style="color: inherit" class="keyword">]-&gt;</span><span style="color: inherit" class="default">oid</span><span style="color: inherit" class="keyword">]);<br></span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchCol</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$outbox</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$outbox</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;</span> <br></span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+object(Box)#163 (2) {<br>  ["p1"]=&gt;<br>  object(Point)#164 (2) {<br>    ["x"]=&gt;<br>    float(3.3)<br>    ["y"]=&gt;<br>    float(4.4)<br>  }<br>  ["p2"]=&gt;<br>  object(Point)#165 (2) {<br>    ["x"]=&gt;<br>    float(1.1)<br>    ["y"]=&gt;<br>    float(2.2)<br>  }<br>}<br></span>
+</code></pre><h2 id="Functions:">Functions:<a class="permalink" href="pq/Converter#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/Converter/convertFromString">Converter::convertFromString</a></h3>
-		<p>Convert a string received from the PostgreSQL server back to a PHP type.</p>
+		<h3 id="Converter::convertFromString">
+<a href="pq/Converter/convertFromString">Converter::convertFromString</a><a class="permalink" href="pq/Converter#Converter::convertFromString">#</a>
+</h3>
+		<p>Convert a <code><a href="https://php.net/manual/en/language.types.string">string</a></code> received from the PostgreSQL server back to a PHP type.</p>
 
-		<p>mixed pq\Converter::convertFromString(string $data, int $type)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq/Converter/convertFromString">pq\Converter::convertFromString</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$type</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Converter/convertToString">Converter::convertToString</a></h3>
-		<p>Convert a value to a string for use in a query.</p>
+		<h3 id="Converter::convertToString">
+<a href="pq/Converter/convertToString">Converter::convertToString</a><a class="permalink" href="pq/Converter#Converter::convertToString">#</a>
+</h3>
+		<p>Convert a value to a <code><a href="https://php.net/manual/en/language.types.string">string</a></code> for use in a query.</p>
 
-		<p>string pq\Converter::convertToString(mixed $value, int $type)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/Converter/convertToString">pq\Converter::convertToString</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$value</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$type</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Converter/convertTypes">Converter::convertTypes</a></h3>
+		<h3 id="Converter::convertTypes">
+<a href="pq/Converter/convertTypes">Converter::convertTypes</a><a class="permalink" href="pq/Converter#Converter::convertTypes">#</a>
+</h3>
 		<p>Announce which types the implementing converter can handle.</p>
 
-		<p>array pq\Converter::convertTypes()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq/Converter/convertTypes">pq\Converter::convertTypes</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

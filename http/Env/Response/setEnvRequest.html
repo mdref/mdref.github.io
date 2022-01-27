@@ -95,34 +95,24 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Env\Response http\Env\Response::setEnvRequest(http\Message $env_request)</h1>
-<p>Override the environment's request.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Message $env_request<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Env/Response/setEnvRequest#">#</a><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setEnvRequest">http\Env\Response::setEnvRequest</a>(<a href="http/Message">http\Message</a> <span class="var">$env_request</span>)</h1><p>Override the environment's request.</p><h2 id="Params:">Params:<a class="permalink" href="http/Env/Response/setEnvRequest#Params:">#</a>
+</h2><ul>
+<li>
+<a href="http/Message">http\Message</a> <span class="var" id="$env_request">$env_request<a class="permalink" href="http/Env/Response/setEnvRequest#%24env_request">#</a></span><br>
 The overriding request message.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Env\Response, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$req = new http\Env\Request;
-$req-&gt;setRequestUrl(&quot;/ha/I/changed/it&quot;);
-$res = new http\Env\Response;
-$res-&gt;setEnvRequest($req);
-?&gt;
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Env/Response/setEnvRequest#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Env/Response">http\Env\Response</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Env/Response/setEnvRequest#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Env/Response/setEnvRequest#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$req </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Env\Request</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$req</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setRequestUrl</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"/ha/I/changed/it"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$res </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Env\Response</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setEnvRequest</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$req</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

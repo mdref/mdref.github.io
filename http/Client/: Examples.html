@@ -129,100 +129,29 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Client Examples</h1>
-<h2>Sending a simple GET request:<a id="Sending.a.simple.GET.request:" href="#Sending.a.simple.GET.request:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$request = new http\Client\Request(&quot;GET&quot;,
-    &quot;http://localhost&quot;,
-    [&quot;User-Agent&quot;=&gt;&quot;My Client/0.1&quot;]
-);
-$request-&gt;setOptions([&quot;timeout&quot;=&gt;1]);
-
-$client = new http\Client;
-$client-&gt;enqueue($request)-&gt;send();
-
-// pop the last retrieved response
-$response = $client-&gt;getResponse();
-printf(&quot;%s returned '%s' (%d)\n&quot;,
-    $response-&gt;getTransferInfo(&quot;effective_url&quot;),
-    $response-&gt;getInfo(),
-    $response-&gt;getResponseCode()
-);
-?&gt;
-</code></pre>
-<h3>Yields:<a id="Yields:" href="#Yields:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<pre><code>http://localhost/ returned 'HTTP/1.1 200 OK' (200)
-</code></pre>
-<h2>Submitting a standard form:<a id="Submitting.a.standard.form:" href="#Submitting.a.standard.form:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$request = new http\Client\Request(&quot;POST&quot;,
-    &quot;http://localhost/post.php&quot;,
-    [&quot;Content-Type&quot; =&gt; &quot;application/x-www-form-urlencoded&quot;]
-);
-$request-&gt;getBody()-&gt;append(new http\QueryString([
-    &quot;user&quot; =&gt; &quot;mike&quot;,
-    &quot;name&quot; =&gt; &quot;Michael Wallner&quot;
-]));
-
-$client = new http\Client;
-$client-&gt;setOptions([&quot;ssl&quot; =&gt; [
-	&quot;version&quot; =&gt; http\Client\Curl\SSL_VERSION_TLSv1
-]]);
-$client-&gt;enqueue($request)-&gt;send();
-
-// ask for the response for this specific request
-$response = $client-&gt;getResponse($request);
-printf(&quot;-&gt; %s\n&quot;, $response-&gt;getInfo());
-
-?&gt;
-</code></pre>
-<h3>Yields:<a id="Yields:-1" href="#Yields:-1" class="permalink" aria-hidden="true" title="">#</a></h3>
-<pre><code>-&gt; HTTP/1.1 200 OK
-</code></pre>
-<h2>Submitting a multipart form:<a id="Submitting.a.multipart.form:" href="#Submitting.a.multipart.form:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$request = new http\Client\Request(&quot;POST&quot;,
-    &quot;http://localhost/post.php&quot;
-);
-
-// http\Message\Body::addForm() will automatically add
-// Content-Type: multipart/form-data to the request headers
-$request-&gt;getBody()-&gt;addForm([
-    &quot;user&quot; =&gt; &quot;mike&quot;,
-    &quot;name&quot; =&gt; &quot;Michael Wallner&quot;
-], [
-    [
-        &quot;name&quot; =&gt; &quot;image&quot;,
-        &quot;type&quot; =&gt; &quot;image/jpeg&quot;,
-        &quot;file&quot; =&gt; &quot;image.jpg&quot;
-    ]
-]);
-
-$client = new http\Client;
-$client-&gt;setOptions([&quot;ssl&quot; =&gt; [
-    &quot;version&quot; =&gt; http\Client\Curl\SSL_VERSION_TLSv1
-]]);
-$client-&gt;enqueue($request)-&gt;send();
-
-// ask for the response for this specific request
-$response = $client-&gt;getResponse($request);
-printf(&quot;-&gt; %.2F kB\n @ %.2F Mbit&quot;,
-    .001 * $response-&gt;getTransferInfo(&quot;size_upload&quot;),
-    .0000008 * $response-&gt;getTransferInfo(&quot;speed_upload&quot;)
-);
-?&gt;
-</code></pre>
-<h3>Yields:<a id="Yields:-2" href="#Yields:-2" class="permalink" aria-hidden="true" title="">#</a></h3>
-<pre><code>-&gt; 15.98 kB @ 6.77 Mbit
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/:%20Examples#">#</a><a href="http/Client">http\Client</a> Examples</h1><h2 id="Sending.a.simple.GET.request:">Sending a simple GET request:<a class="permalink" href="http/Client/:%20Examples#Sending.a.simple.GET.request:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$request </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"GET"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"http://localhost"</span><span style="color: inherit" class="keyword">,<br>    [</span><span style="color: inherit" class="string">"User-Agent"</span><span style="color: inherit" class="keyword">=&gt;</span><span style="color: inherit" class="string">"My Client/0.1"</span><span style="color: inherit" class="keyword">]<br>);<br></span><span style="color: inherit" class="default">$request</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setOptions</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"timeout"</span><span style="color: inherit" class="keyword">=&gt;</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">]);<br><br></span><span style="color: inherit" class="default">$client </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$request</span><span style="color: inherit" class="keyword">)-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="comment">// pop the last retrieved response<br></span><span style="color: inherit" class="default">$response </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResponse</span><span style="color: inherit" class="keyword">();<br></span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%s returned '%s' (%d)\n"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="default">$response</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getTransferInfo</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"effective_url"</span><span style="color: inherit" class="keyword">),<br>    </span><span style="color: inherit" class="default">$response</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getInfo</span><span style="color: inherit" class="keyword">(),<br>    </span><span style="color: inherit" class="default">$response</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResponseCode</span><span style="color: inherit" class="keyword">()<br>);<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h3 id="Yields:">Yields:<a class="permalink" href="http/Client/:%20Examples#Yields:">#</a>
+</h3><pre><code><span style="color: inherit" class="html">
+http://localhost/ returned 'HTTP/1.1 200 OK' (200)<br></span>
+</code></pre><h2 id="Submitting.a.standard.form:">Submitting a standard form:<a class="permalink" href="http/Client/:%20Examples#Submitting.a.standard.form:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$request </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"POST"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"http://localhost/post.php"</span><span style="color: inherit" class="keyword">,<br>    [</span><span style="color: inherit" class="string">"Content-Type" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"application/x-www-form-urlencoded"</span><span style="color: inherit" class="keyword">]<br>);<br></span><span style="color: inherit" class="default">$request</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getBody</span><span style="color: inherit" class="keyword">()-&gt;</span><span style="color: inherit" class="default">append</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\QueryString</span><span style="color: inherit" class="keyword">([<br>    </span><span style="color: inherit" class="string">"user" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"mike"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"name" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"Michael Wallner"<br></span><span style="color: inherit" class="keyword">]));<br><br></span><span style="color: inherit" class="default">$client </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setOptions</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"ssl" </span><span style="color: inherit" class="keyword">=&gt; [<br>    </span><span style="color: inherit" class="string">"version" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">http\Client\Curl\SSL_VERSION_TLSv1<br></span><span style="color: inherit" class="keyword">]]);<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$request</span><span style="color: inherit" class="keyword">)-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="comment">// ask for the response for this specific request<br></span><span style="color: inherit" class="default">$response </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResponse</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$request</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"-&gt; %s\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$response</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getInfo</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h3 id="Yields:">Yields:<a class="permalink" href="http/Client/:%20Examples#Yields:">#</a>
+</h3><pre><code><span style="color: inherit" class="html">
+-&gt; HTTP/1.1 200 OK<br></span>
+</code></pre><h2 id="Submitting.a.multipart.form:">Submitting a multipart form:<a class="permalink" href="http/Client/:%20Examples#Submitting.a.multipart.form:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$request </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"POST"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"http://localhost/post.php"<br></span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="comment">// http\Message\Body::addForm() will automatically add<br>// Content-Type: multipart/form-data to the request headers<br></span><span style="color: inherit" class="default">$request</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getBody</span><span style="color: inherit" class="keyword">()-&gt;</span><span style="color: inherit" class="default">addForm</span><span style="color: inherit" class="keyword">([<br>    </span><span style="color: inherit" class="string">"user" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"mike"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"name" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"Michael Wallner"<br></span><span style="color: inherit" class="keyword">], [<br>    [<br>        </span><span style="color: inherit" class="string">"name" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"image"</span><span style="color: inherit" class="keyword">,<br>        </span><span style="color: inherit" class="string">"type" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"image/jpeg"</span><span style="color: inherit" class="keyword">,<br>        </span><span style="color: inherit" class="string">"file" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"image.jpg"<br>    </span><span style="color: inherit" class="keyword">]<br>]);<br><br></span><span style="color: inherit" class="default">$client </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setOptions</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"ssl" </span><span style="color: inherit" class="keyword">=&gt; [<br>    </span><span style="color: inherit" class="string">"version" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">http\Client\Curl\SSL_VERSION_TLSv1<br></span><span style="color: inherit" class="keyword">]]);<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$request</span><span style="color: inherit" class="keyword">)-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="comment">// ask for the response for this specific request<br></span><span style="color: inherit" class="default">$response </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResponse</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$request</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"-&gt; %.2F kB\n @ %.2F Mbit"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="default">.001 </span><span style="color: inherit" class="keyword">* </span><span style="color: inherit" class="default">$response</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getTransferInfo</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"size_upload"</span><span style="color: inherit" class="keyword">),<br>    </span><span style="color: inherit" class="default">.0000008 </span><span style="color: inherit" class="keyword">* </span><span style="color: inherit" class="default">$response</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getTransferInfo</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"speed_upload"</span><span style="color: inherit" class="keyword">)<br>);<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h3 id="Yields:">Yields:<a class="permalink" href="http/Client/:%20Examples#Yields:">#</a>
+</h3><pre><code><span style="color: inherit" class="html">
+-&gt; 15.98 kB @ 6.77 Mbit<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

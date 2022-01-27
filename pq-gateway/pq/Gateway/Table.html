@@ -227,302 +227,357 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Gateway\Table implements SplSubject</h1>
-<p>The table gateway.</p>
-<h2>Propertries:<a id="Propertries:" href="#Propertries:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table#">#</a><em>class</em> <a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>
+</h1><p>The table gateway.</p><h2 id="Propertries:">Propertries:<a class="permalink" href="pq-gateway/pq/Gateway/Table#Propertries:">#</a>
+</h2><ul>
 <li>
-<p>public static pq\Connection $defaultConnection<br />
+<p><em>public</em> <em>static</em> <a href="pq/Connection">pq\Connection</a> <span class="var">$defaultConnection</span><br>
 A default connection to use.</p>
 </li>
 <li>
-<p>public static callable $defaultResolver as function($table_name)<br />
-A callback whiuch resolves table names to classes.</p>
+<p><em>public</em> <em>static</em> <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$defaultResolver</span> as function(<span class="var">$table_name</span>)<br>
+A <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> whiuch resolves table names to classes.</p>
 </li>
 <li>
-<p>public static pq\Gateway\Table\CacheInterface $defaultMetadataCache<br />
-A default cache implementation. See pq\Gateway\Table\StaticCache.</p>
+<p><em>public</em> <em>static</em> <a href="pq-gateway/pq/Gateway/Table#CacheInterface">pq\Gateway\Table\CacheInterface</a> <span class="var">$defaultMetadataCache</span><br>
+A default cache implementation. See <a href="pq-gateway/pq/Gateway/Table#StaticCache">pq\Gateway\Table\StaticCache</a>.</p>
 </li>
 <li>
-<p>protected pq\Connection $conn<br />
+<p><em>protected</em> <a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span><br>
 The PostgreSQL connection.</p>
 </li>
 <li>
-<p>protected string $name<br />
+<p><em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span><br>
 The table name.</p>
 </li>
 <li>
-<p>protected mixed $rowset = &quot;pq\Gateway\Rowset&quot;<br />
+<p><em>protected</em> <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$rowset</span> = "<a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a>"<br>
 The rowset prototype.</p>
 </li>
 <li>
-<p>protected pq\Query\WriterInterface $query<br />
+<p><em>protected</em> <a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a> <span class="var">$query</span><br>
 A query writer.</p>
 </li>
 <li>
-<p>protected pq\Query\ExecutorInterface $exec<br />
+<p><em>protected</em> <a href="pq-gateway/pq/Query/ExecutorInterface">pq\Query\ExecutorInterface</a> <span class="var">$exec</span><br>
 A query executor.</p>
 </li>
 <li>
-<p>protected pq\Gateway\Table\Identity $identity<br />
+<p><em>protected</em> <a href="pq-gateway/pq/Gateway/Table/Identity">pq\Gateway\Table\Identity</a> <span class="var">$identity</span><br>
 The table identity implementation.</p>
 </li>
 <li>
-<p>protected pq\Gateway\Table\Attributes $attributes<br />
+<p><em>protected</em> <a href="pq-gateway/pq/Gateway/Table/Attributes">pq\Gateway\Table\Attributes</a> <span class="var">$attributes</span><br>
 The table attributes implementation.</p>
 </li>
 <li>
-<p>protected pq\Gateway\Table\Relations $relations<br />
+<p><em>protected</em> <a href="pq-gateway/pq/Gateway/Table/Relations">pq\Gateway\Table\Relations</a> <span class="var">$relations</span><br>
 The table relations implementation.</p>
 </li>
 <li>
-<p>protected pq\Gateway\Table\CacheInterface $metadataCache<br />
+<p><em>protected</em> <a href="pq-gateway/pq/Gateway/Table#CacheInterface">pq\Gateway\Table\CacheInterface</a> <span class="var">$metadataCache</span><br>
 The metadata cache to use for this table.</p>
 </li>
 <li>
-<p>protected SplObjectStorage $observers<br />
+<p><em>protected</em> <code><a href="https://php.net/manual/en/class.splobjectstorage">SplObjectStorage</a></code> <span class="var">$observers</span><br>
 Table observers.</p>
 </li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Gateway/Table#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/__construct">Table::__construct</a></h3>
+		<h3 id="Table::__construct">
+<a href="pq-gateway/pq/Gateway/Table/__construct">Table::__construct</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::__construct">#</a>
+</h3>
 		<p>Create a new table gateway.</p>
 
-		<p>void pq\Gateway\Table::__construct([string $name = NULL[, pq\Connection $conn = NULL]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Table/__construct">pq\Gateway\Table::__construct</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/__toString">Table::__toString</a></h3>
+		<h3 id="Table::__toString">
+<a href="pq-gateway/pq/Gateway/Table/__toString">Table::__toString</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::__toString">#</a>
+</h3>
 		<p>Format an identifying postgresql:// URL.</p>
 
-		<p>string pq\Gateway\Table::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq-gateway/pq/Gateway/Table/__toString">pq\Gateway\Table::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/attach">Table::attach</a></h3>
-		<p>Implements SplSubject.</p>
+		<h3 id="Table::attach">
+<a href="pq-gateway/pq/Gateway/Table/attach">Table::attach</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::attach">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>.</p>
 
-		<p>pq\Gateway\Table pq\Gateway\Table::attach(SplObserver $observer)</p>
+		<p><a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <a href="pq-gateway/pq/Gateway/Table/attach">pq\Gateway\Table::attach</a>(<code><a href="https://php.net/manual/en/class.splobserver">SplObserver</a></code> <span class="var">$observer</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/by">Table::by</a></h3>
+		<h3 id="Table::by">
+<a href="pq-gateway/pq/Gateway/Table/by">Table::by</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::by">#</a>
+</h3>
 		<p>Find the row inthis table referenced by another table's row by foreign key.</p>
 
-		<p>mixed pq\Gateway\Table::by(pq\Gateway\Row $me[, string $ref = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/by">pq\Gateway\Table::by</a>(<a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var">$me</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$ref</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/create">Table::create</a></h3>
+		<h3 id="Table::create">
+<a href="pq-gateway/pq/Gateway/Table/create">Table::create</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::create">#</a>
+</h3>
 		<p>Create a row in the table.</p>
 
-		<p>mixed pq\Gateway\Table::create([array $data = NULL[, string $returning = &quot;*&quot;]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/create">pq\Gateway\Table::create</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$data</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$returning</span> = "*"]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/delete">Table::delete</a></h3>
+		<h3 id="Table::delete">
+<a href="pq-gateway/pq/Gateway/Table/delete">Table::delete</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::delete">#</a>
+</h3>
 		<p>Delete rows from the table.</p>
 
-		<p>mixed pq\Gateway\Table::delete(array $where,[, $returning = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/delete">pq\Gateway\Table::delete</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$where</span>,[, <span class="var">$returning</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/detach">Table::detach</a></h3>
-		<p>Implemnts SplSubject.</p>
+		<h3 id="Table::detach">
+<a href="pq-gateway/pq/Gateway/Table/detach">Table::detach</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::detach">#</a>
+</h3>
+		<p>Implemnts <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>.</p>
 
-		<p>pq\Gateway\Table pq\Gateway\Table::detach(SplObserver $observer)</p>
+		<p><a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <a href="pq-gateway/pq/Gateway/Table/detach">pq\Gateway\Table::detach</a>(<code><a href="https://php.net/manual/en/class.splobserver">SplObserver</a></code> <span class="var">$observer</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/execute">Table::execute</a></h3>
+		<h3 id="Table::execute">
+<a href="pq-gateway/pq/Gateway/Table/execute">Table::execute</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::execute">#</a>
+</h3>
 		<p>Execute the query on behalf of this table.</p>
 
-		<p>protected mixed pq\Gateway\Table::execute(pq\Query\Writer $query)</p>
+		<p><em>protected</em> <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/execute">pq\Gateway\Table::execute</a>(<a href="pq-gateway/pq/Query/Writer">pq\Query\Writer</a> <span class="var">$query</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/find">Table::find</a></h3>
+		<h3 id="Table::find">
+<a href="pq-gateway/pq/Gateway/Table/find">Table::find</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::find">#</a>
+</h3>
 		<p>Find rows in the table.</p>
 
-		<p>mixed pq\Gateway\Table::find([array $where = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0[, string $lock = NULL]]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/find">pq\Gateway\Table::find</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$where</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$order</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$limit</span> = 0[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$offset</span> = 0[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$lock</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]]]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/getAttributes">Table::getAttributes</a></h3>
+		<h3 id="Table::getAttributes">
+<a href="pq-gateway/pq/Gateway/Table/getAttributes">Table::getAttributes</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::getAttributes">#</a>
+</h3>
 		<p>Retrieve the attributes (columns) of this table.</p>
 
-		<p>pq\Gateway\Table\Attributes pq\Gateway\Table::getAttributes()</p>
+		<p><a href="pq-gateway/pq/Gateway/Table/Attributes">pq\Gateway\Table\Attributes</a> <a href="pq-gateway/pq/Gateway/Table/getAttributes">pq\Gateway\Table::getAttributes</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/getConnection">Table::getConnection</a></h3>
+		<h3 id="Table::getConnection">
+<a href="pq-gateway/pq/Gateway/Table/getConnection">Table::getConnection</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::getConnection">#</a>
+</h3>
 		<p>Retrieve the connection currently in use by the table gateway.</p>
 
-		<p>pq\Connection pq\Gateway\Table::getConnection()</p>
+		<p><a href="pq/Connection">pq\Connection</a> <a href="pq-gateway/pq/Gateway/Table/getConnection">pq\Gateway\Table::getConnection</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/getIdentity">Table::getIdentity</a></h3>
+		<h3 id="Table::getIdentity">
+<a href="pq-gateway/pq/Gateway/Table/getIdentity">Table::getIdentity</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::getIdentity">#</a>
+</h3>
 		<p>Retrieve the table identity (primary key).</p>
 
-		<p>pq\Gateway\Table\Identity pq\Gateway\Table::getIdentity()</p>
+		<p><a href="pq-gateway/pq/Gateway/Table/Identity">pq\Gateway\Table\Identity</a> <a href="pq-gateway/pq/Gateway/Table/getIdentity">pq\Gateway\Table::getIdentity</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/getMetadataCache">Table::getMetadataCache</a></h3>
+		<h3 id="Table::getMetadataCache">
+<a href="pq-gateway/pq/Gateway/Table/getMetadataCache">Table::getMetadataCache</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::getMetadataCache">#</a>
+</h3>
 		<p>Retrieve the metadata cache used by this table.</p>
 
-		<p>pq\Gateway\Table\CacheInterface pq\Gateway\Table::getMetadataCache()</p>
+		<p><a href="pq-gateway/pq/Gateway/Table#CacheInterface">pq\Gateway\Table\CacheInterface</a> <a href="pq-gateway/pq/Gateway/Table/getMetadataCache">pq\Gateway\Table::getMetadataCache</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/getName">Table::getName</a></h3>
+		<h3 id="Table::getName">
+<a href="pq-gateway/pq/Gateway/Table/getName">Table::getName</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::getName">#</a>
+</h3>
 		<p>Retrieve the table name.</p>
 
-		<p>string pq\Gateway\Table::getName()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq-gateway/pq/Gateway/Table/getName">pq\Gateway\Table::getName</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/getQueryExecutor">Table::getQueryExecutor</a></h3>
+		<h3 id="Table::getQueryExecutor">
+<a href="pq-gateway/pq/Gateway/Table/getQueryExecutor">Table::getQueryExecutor</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::getQueryExecutor">#</a>
+</h3>
 		<p>Retrieve the query executor used by this table.</p>
 
-		<p>pq\Query\ExecutorInterface pq\Gateway\Table::getQueryExecutor()</p>
+		<p><a href="pq-gateway/pq/Query/ExecutorInterface">pq\Query\ExecutorInterface</a> <a href="pq-gateway/pq/Gateway/Table/getQueryExecutor">pq\Gateway\Table::getQueryExecutor</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/getQueryWriter">Table::getQueryWriter</a></h3>
+		<h3 id="Table::getQueryWriter">
+<a href="pq-gateway/pq/Gateway/Table/getQueryWriter">Table::getQueryWriter</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::getQueryWriter">#</a>
+</h3>
 		<p>Retrieve the query writer of this table.</p>
 
-		<p>pq\Query\WriterInterface pq\Gateway\Table::getQueryWriter()</p>
+		<p><a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a> <a href="pq-gateway/pq/Gateway/Table/getQueryWriter">pq\Gateway\Table::getQueryWriter</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/getRelation">Table::getRelation</a></h3>
+		<h3 id="Table::getRelation">
+<a href="pq-gateway/pq/Gateway/Table/getRelation">Table::getRelation</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::getRelation">#</a>
+</h3>
 		<p>Retrieve the foreign key of the table to another table.</p>
 
-		<p>pq\Gateway\Table\Reference pq\Gateway\Table::getRelation(string $table[, string $ref = NULL])</p>
+		<p><a href="pq-gateway/pq/Gateway/Table#Reference">pq\Gateway\Table\Reference</a> <a href="pq-gateway/pq/Gateway/Table/getRelation">pq\Gateway\Table::getRelation</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$table</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$ref</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/getRelations">Table::getRelations</a></h3>
+		<h3 id="Table::getRelations">
+<a href="pq-gateway/pq/Gateway/Table/getRelations">Table::getRelations</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::getRelations">#</a>
+</h3>
 		<p>Get the relations (by foreign key) of this table.</p>
 
-		<p>pq\Gateway\Table\Relations pq\Gateway\Table::getRelations()</p>
+		<p><a href="pq-gateway/pq/Gateway/Table/Relations">pq\Gateway\Table\Relations</a> <a href="pq-gateway/pq/Gateway/Table/getRelations">pq\Gateway\Table::getRelations</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/getRowsetPrototype">Table::getRowsetPrototype</a></h3>
+		<h3 id="Table::getRowsetPrototype">
+<a href="pq-gateway/pq/Gateway/Table/getRowsetPrototype">Table::getRowsetPrototype</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::getRowsetPrototype">#</a>
+</h3>
 		<p>Retrieve the rowset prototype of this table.</p>
 
-		<p>mixed pq\Gateway\Table::getRowsetPrototype()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/getRowsetPrototype">pq\Gateway\Table::getRowsetPrototype</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/notify">Table::notify</a></h3>
-		<p>Implements SplSubject.</p>
+		<h3 id="Table::notify">
+<a href="pq-gateway/pq/Gateway/Table/notify">Table::notify</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::notify">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>.</p>
 
-		<p>void pq\Gateway\Table::notify([pq\Gateway\Row $row = NULL[, string $event = NULL[, array &amp;$criteria = NULL]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Table/notify">pq\Gateway\Table::notify</a>([<a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var">$row</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$event</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> &amp;<span class="var">$criteria</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/of">Table::of</a></h3>
+		<h3 id="Table::of">
+<a href="pq-gateway/pq/Gateway/Table/of">Table::of</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::of">#</a>
+</h3>
 		<p>Find rows in table by foreign key.</p>
 
-		<p>mixed pq\Gateway\Table::of(pq\Gateway\Row $foreign[, string $ref = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/of">pq\Gateway\Table::of</a>(<a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var">$foreign</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$ref</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$order</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$limit</span> = 0[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$offset</span> = 0]]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/onResult">Table::onResult</a></h3>
-		<p>Executor result callback.</p>
+		<h3 id="Table::onResult">
+<a href="pq-gateway/pq/Gateway/Table/onResult">Table::onResult</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::onResult">#</a>
+</h3>
+		<p>Executor result <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>.</p>
 
-		<p>mixed pq\Gateway\Table::onResult([pq\Result $result = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/onResult">pq\Gateway\Table::onResult</a>([<a href="pq/Result">pq\Result</a> <span class="var">$result</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/resolve">Table::resolve</a></h3>
+		<h3 id="Table::resolve">
+<a href="pq-gateway/pq/Gateway/Table/resolve">Table::resolve</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::resolve">#</a>
+</h3>
 		<p>Resolve a table name.</p>
 
-		<p>static pq\Table pq\Table::resolve(mixed $table)</p>
+		<p><em>static</em> <a href="pq#Table">pq\Table</a> pq\Table::resolve(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$table</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/setMetadataCache">Table::setMetadataCache</a></h3>
+		<h3 id="Table::setMetadataCache">
+<a href="pq-gateway/pq/Gateway/Table/setMetadataCache">Table::setMetadataCache</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::setMetadataCache">#</a>
+</h3>
 		<p>Set the metadata cache implementation.</p>
 
-		<p>pq\Gateway\Table pq\Gateway\Table::setMetadataCache(pq\Gateway\Table\CacheInterface $cache)</p>
+		<p><a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <a href="pq-gateway/pq/Gateway/Table/setMetadataCache">pq\Gateway\Table::setMetadataCache</a>(<a href="pq-gateway/pq/Gateway/Table#CacheInterface">pq\Gateway\Table\CacheInterface</a> <span class="var">$cache</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/setQueryExecutor">Table::setQueryExecutor</a></h3>
+		<h3 id="Table::setQueryExecutor">
+<a href="pq-gateway/pq/Gateway/Table/setQueryExecutor">Table::setQueryExecutor</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::setQueryExecutor">#</a>
+</h3>
 		<p>Set the query executor implementation.</p>
 
-		<p>pq\Gateway\Table pq\Gateway\Table::setQueryExecutor(pq\Query\ExecutorInterface $exec)</p>
+		<p><a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <a href="pq-gateway/pq/Gateway/Table/setQueryExecutor">pq\Gateway\Table::setQueryExecutor</a>(<a href="pq-gateway/pq/Query/ExecutorInterface">pq\Query\ExecutorInterface</a> <span class="var">$exec</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/setQueryWriter">Table::setQueryWriter</a></h3>
+		<h3 id="Table::setQueryWriter">
+<a href="pq-gateway/pq/Gateway/Table/setQueryWriter">Table::setQueryWriter</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::setQueryWriter">#</a>
+</h3>
 		<p>Set the internal query writer.</p>
 
-		<p>pq\Gateway\Table pq\Gateway\Table::setQueryWriter(pq\Query\WriterInterface $query)</p>
+		<p><a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <a href="pq-gateway/pq/Gateway/Table/setQueryWriter">pq\Gateway\Table::setQueryWriter</a>(<a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a> <span class="var">$query</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/setRowsetPrototype">Table::setRowsetPrototype</a></h3>
+		<h3 id="Table::setRowsetPrototype">
+<a href="pq-gateway/pq/Gateway/Table/setRowsetPrototype">Table::setRowsetPrototype</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::setRowsetPrototype">#</a>
+</h3>
 		<p>Set the prototype of the return value of rowset generating methods.</p>
 
-		<p>pq\Gateway\Table pq\Gateway\Table::setRowsetPrototype(mixed $rowset)</p>
+		<p><a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <a href="pq-gateway/pq/Gateway/Table/setRowsetPrototype">pq\Gateway\Table::setRowsetPrototype</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$rowset</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/update">Table::update</a></h3>
+		<h3 id="Table::update">
+<a href="pq-gateway/pq/Gateway/Table/update">Table::update</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::update">#</a>
+</h3>
 		<p>Update rows in the table.</p>
 
-		<p>mixed pq\Gateway\Table::update(array $where, array $data[, string $returning = &quot;*&quot;])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/update">pq\Gateway\Table::update</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$where</span>, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$data</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$returning</span> = "*"])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/with">Table::with</a></h3>
+		<h3 id="Table::with">
+<a href="pq-gateway/pq/Gateway/Table/with">Table::with</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Table::with">#</a>
+</h3>
 		<p>Find rows dependent on other rows by foreign keys.</p>
 
-		<p>mixed pq\Gateway\Table::with(array $relations[, array $where = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/with">pq\Gateway\Table::with</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$relations</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$where</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$order</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$limit</span> = 0[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$offset</span> = 0]]]])</p>
 	</li>
 	
-</ul>
-
-
-<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
-<ul>
+</ul><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="pq-gateway/pq/Gateway/Table#Namespaces.Interfaces.and.Classes:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Attributes">Attributes</a></h3>
+		<h3 id="Attributes">
+<a href="pq-gateway/pq/Gateway/Table/Attributes">Attributes</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Attributes">#</a>
+</h3>
 		<p>The table attributes (columns) of a table.</p>
 
-		<p>class pq\Gateway\Table\Attributes implements IteratorAggregate</p>
+		<p><em>class</em> <a href="pq-gateway/pq/Gateway/Table/Attributes">pq\Gateway\Table\Attributes</a> <em>implements</em> <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code></p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Identity">Identity</a></h3>
+		<h3 id="Identity">
+<a href="pq-gateway/pq/Gateway/Table/Identity">Identity</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Identity">#</a>
+</h3>
 		<p>The primary key of a table.</p>
 
-		<p>class pq\Gateway\Table\Identity implements Countable, ITeratorAggregate</p>
+		<p><em>class</em> <a href="pq-gateway/pq/Gateway/Table/Identity">pq\Gateway\Table\Identity</a> <em>implements</em> <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>, ITeratorAggregate</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Relations">Relations</a></h3>
+		<h3 id="Relations">
+<a href="pq-gateway/pq/Gateway/Table/Relations">Relations</a><a class="permalink" href="pq-gateway/pq/Gateway/Table#Relations">#</a>
+</h3>
 		<p>Retrieve any relations referenced by the table through foreign keys.</p>
 
-		<p>class pq\Gateway\Table\Relations implements Countable, IteratorAggregate</p>
+		<p><em>class</em> <a href="pq-gateway/pq/Gateway/Table/Relations">pq\Gateway\Table\Relations</a> <em>implements</em> <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>, <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code></p>
 	</li>
 	
-</ul>
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

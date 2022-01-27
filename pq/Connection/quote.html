@@ -125,32 +125,26 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>string pq\Connection::quote(string $payload)</h1>
-<p>Quote a string for safe use in a query.
-The result is truncated at any zero byte and wrapped in single quotes.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/quote#">#</a><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/Connection/quote">pq\Connection::quote</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$payload</span>)</h1><p>Quote a <code><a href="https://php.net/manual/en/language.types.string">string</a></code> for safe use in a query.
+The result is truncated at any zero byte and wrapped in single quotes.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
 Beware of matching character encodings.</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $payload<br />
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="pq/Connection/quote#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$payload">$payload<a class="permalink" href="pq/Connection/quote#%24payload">#</a></span><br>
 The payload to quote for use in a query.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string, a single-quote wrapped string safe for literal use in a query.</li>
-<li>FALSE, if quoting fails.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\BadMethodCallException</li>
-</ul>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/Connection/quote#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code>, a single-quote wrapped <code><a href="https://php.net/manual/en/language.types.string">string</a></code> safe for literal use in a query.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>, if quoting fails.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Connection/quote#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -111,102 +111,116 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>abstract class http\Encoding\Stream</h1>
-<p>Base class for encoding stream implementations.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>FLUSH_NONE<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Encoding/Stream#">#</a><em>abstract</em> <em>class</em> <a href="http/Encoding/Stream">http\Encoding\Stream</a>
+</h1><p>Base <em>class</em> for encoding stream implementations.</p><h2 id="Constants:">Constants:<a class="permalink" href="http/Encoding/Stream#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="FLUSH_NONE">FLUSH_NONE<a class="permalink" href="http/Encoding/Stream#FLUSH_NONE">#</a></span><br>
 Do no intermittent flushes.</li>
-<li>FLUSH_SYNC<br />
+<li>
+<span class="constant" id="FLUSH_SYNC">FLUSH_SYNC<a class="permalink" href="http/Encoding/Stream#FLUSH_SYNC">#</a></span><br>
 Flush at appropriate transfer points.</li>
-<li>FLUSH_FULL<br />
-Flush at each IO operation.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+<li>
+<span class="constant" id="FLUSH_FULL">FLUSH_FULL<a class="permalink" href="http/Encoding/Stream#FLUSH_FULL">#</a></span><br>
+Flush at each <span class="constant">IO</span> operation.</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Encoding/Stream#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Encoding/Stream/__construct">Stream::__construct</a></h3>
+		<h3 id="Stream::__construct">
+<a href="http/Encoding/Stream/__construct">Stream::__construct</a><a class="permalink" href="http/Encoding/Stream#Stream::__construct">#</a>
+</h3>
 		<p>Base constructor for encoding stream implementations.</p>
 
-		<p>void http\Encoding\Stream::__construct([int $flags = 0])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Encoding/Stream/__construct">http\Encoding\Stream::__construct</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span> = 0])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Encoding/Stream/done">Stream::done</a></h3>
+		<h3 id="Stream::done">
+<a href="http/Encoding/Stream/done">Stream::done</a><a class="permalink" href="http/Encoding/Stream#Stream::done">#</a>
+</h3>
 		<p>Check whether the encoding stream is already done.</p>
 
-		<p>bool http\Encoding\Stream::done()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/Encoding/Stream/done">http\Encoding\Stream::done</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Encoding/Stream/finish">Stream::finish</a></h3>
+		<h3 id="Stream::finish">
+<a href="http/Encoding/Stream/finish">Stream::finish</a><a class="permalink" href="http/Encoding/Stream#Stream::finish">#</a>
+</h3>
 		<p>Finish and reset the encoding stream.</p>
 
-		<p>string http\Encoding\Stream::finish()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Encoding/Stream/finish">http\Encoding\Stream::finish</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Encoding/Stream/flush">Stream::flush</a></h3>
+		<h3 id="Stream::flush">
+<a href="http/Encoding/Stream/flush">Stream::flush</a><a class="permalink" href="http/Encoding/Stream#Stream::flush">#</a>
+</h3>
 		<p>Flush the encoding stream.</p>
 
-		<p>string http\Encoding\Stream::flush()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Encoding/Stream/flush">http\Encoding\Stream::flush</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Encoding/Stream/update">Stream::update</a></h3>
+		<h3 id="Stream::update">
+<a href="http/Encoding/Stream/update">Stream::update</a><a class="permalink" href="http/Encoding/Stream#Stream::update">#</a>
+</h3>
 		<p>Update the encoding stream with more input.</p>
 
-		<p>string http\Encoding\Stream::update(string $data)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Encoding/Stream/update">http\Encoding\Stream::update</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>)</p>
 	</li>
 	
-</ul>
-
-
-<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
-<ul>
+</ul><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="http/Encoding/Stream#Namespaces.Interfaces.and.Classes:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Encoding/Stream/Debrotli">Debrotli</a></h3>
+		<h3 id="Debrotli">
+<a href="http/Encoding/Stream/Debrotli">Debrotli</a><a class="permalink" href="http/Encoding/Stream#Debrotli">#</a>
+</h3>
 		<p>A <a href="https://brotli.org">brotli</a> decoding stream.</p>
 
-		<p>class http\Encoding\Stream\Debrotli extends http\Encoding\Stream</p>
+		<p><em>class</em> <a href="http/Encoding/Stream/Debrotli">http\Encoding\Stream\Debrotli</a> <em>extends</em> <a href="http/Encoding/Stream">http\Encoding\Stream</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Encoding/Stream/Dechunk">Dechunk</a></h3>
+		<h3 id="Dechunk">
+<a href="http/Encoding/Stream/Dechunk">Dechunk</a><a class="permalink" href="http/Encoding/Stream#Dechunk">#</a>
+</h3>
 		<p>A stream decoding data encoded with chunked transfer encoding.</p>
 
-		<p>class http\Encoding\Stream\Dechunk extends http\Encoding\Stream</p>
+		<p><em>class</em> <a href="http/Encoding/Stream/Dechunk">http\Encoding\Stream\Dechunk</a> <em>extends</em> <a href="http/Encoding/Stream">http\Encoding\Stream</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Encoding/Stream/Deflate">Deflate</a></h3>
+		<h3 id="Deflate">
+<a href="http/Encoding/Stream/Deflate">Deflate</a><a class="permalink" href="http/Encoding/Stream#Deflate">#</a>
+</h3>
 		<p>A deflate stream supporting deflate, zlib and gzip encodings.</p>
 
-		<p>class http\Encoding\Stream\Deflate extends http\Encoding\Stream</p>
+		<p><em>class</em> <a href="http/Encoding/Stream/Deflate">http\Encoding\Stream\Deflate</a> <em>extends</em> <a href="http/Encoding/Stream">http\Encoding\Stream</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Encoding/Stream/Enbrotli">Enbrotli</a></h3>
+		<h3 id="Enbrotli">
+<a href="http/Encoding/Stream/Enbrotli">Enbrotli</a><a class="permalink" href="http/Encoding/Stream#Enbrotli">#</a>
+</h3>
 		<p>A <a href="https://brotli.org">brotli</a> encoding stream.</p>
 
-		<p>class http\Encoding\Stream\Enbrotli extends http\Encoding\Stream</p>
+		<p><em>class</em> <a href="http/Encoding/Stream/Enbrotli">http\Encoding\Stream\Enbrotli</a> <em>extends</em> <a href="http/Encoding/Stream">http\Encoding\Stream</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Encoding/Stream/Inflate">Inflate</a></h3>
+		<h3 id="Inflate">
+<a href="http/Encoding/Stream/Inflate">Inflate</a><a class="permalink" href="http/Encoding/Stream#Inflate">#</a>
+</h3>
 		<p>A inflate stream supporting deflate, zlib and gzip encodings.</p>
 
-		<p>class http\Encoding\Stream\Inflate extends http\Encoding\Stream</p>
+		<p><em>class</em> <a href="http/Encoding/Stream/Inflate">http\Encoding\Stream\Inflate</a> <em>extends</em> <a href="http/Encoding/Stream">http\Encoding\Stream</a></p>
 	</li>
 	
-</ul>
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

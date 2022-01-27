@@ -93,131 +93,39 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Message\Body http\Message\Body::addForm([array $fields = NULL[, array $files = NULL]])</h1>
-<p>Add form fields and files to the message body.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-Currently, http\Message\Body::addForm() creates &quot;multipart/form-data&quot; bodies.</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/Body/addForm#">#</a><a href="http/Message/Body">http\Message\Body</a> <a href="http/Message/Body/addForm">http\Message\Body::addForm</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$fields</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$files</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</h1><p>Add form fields and files to the message body.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+Currently, <a href="http/Message/Body/addForm">http\Message\Body::addForm</a>() creates "multipart/form-data" bodies.</p>
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="http/Message/Body/addForm#Params:">#</a>
+</h2><ul>
 <li>
-<p>array $fields = NULL<br />
+<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$fields</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 List of form fields to add.</p>
 </li>
 <li>
-<p>array $files = NULL<br />
+<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$files</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 List of form files to add.</p>
 </li>
-</ul>
-<p>$fields must look like:</p>
-<pre><code>[
-  &quot;field_name&quot; =&gt; &quot;value&quot;,
-  &quot;multi_field&quot; =&gt; [
-    &quot;value1&quot;,
-    &quot;value2&quot;
-  ]
-]
-</code></pre>
-<p>$files must look like:</p>
-<pre><code>[
-  [  
-    &quot;name&quot; =&gt; &quot;field_name&quot;,  
-    &quot;type&quot; =&gt; &quot;content/type&quot;,  
-    &quot;file&quot; =&gt; &quot;/path/to/file.ext&quot;
-  ], [
-    &quot;name&quot; =&gt; &quot;field_name2&quot;,
-    &quot;type&quot; =&gt; &quot;text/plain&quot;,
-    &quot;file&quot; =&gt; &quot;file.ext&quot;,
-    &quot;data&quot; =&gt; &quot;string&quot;
-  ], [
-    &quot;name&quot; =&gt; &quot;field_name3&quot;,
-    &quot;type&quot; =&gt; &quot;image/jpeg&quot;,
-    &quot;file&quot; =&gt; &quot;file.ext&quot;,
-    &quot;data&quot; =&gt; fopen(&quot;/home/mike/Pictures/mike.jpg&quot;,&quot;r&quot;)
-]
-</code></pre>
-<p>As you can see, a file structure must contain a &quot;file&quot; entry, which holds a file path, and an optional &quot;data&quot; entry, which may either contain a resource to read from or the actual data as string.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Message\Body, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$body = new http\Message\Body;
-$body-&gt;addForm([
-  &quot;field_name&quot; =&gt; &quot;value&quot;,
-  &quot;multi_field&quot; =&gt; [
-    &quot;value1&quot;,
-    &quot;value2&quot;
-  ]
-], [
-  [  
-    &quot;name&quot; =&gt; &quot;field_name&quot;,  
-    &quot;type&quot; =&gt; &quot;application/octet-stream&quot;,  
-    &quot;file&quot; =&gt; &quot;/run/gpm.pid&quot;
-  ], [
-    &quot;name&quot; =&gt; &quot;field_name2&quot;,
-    &quot;type&quot; =&gt; &quot;text/plain&quot;,
-    &quot;file&quot; =&gt; &quot;signature.txt&quot;,
-    &quot;data&quot; =&gt; &quot;--  \nMike\n&quot;
-  ], [
-    &quot;name&quot; =&gt; &quot;field_name3&quot;,
-    &quot;type&quot; =&gt; &quot;image/jpeg&quot;,
-    &quot;file&quot; =&gt; &quot;picture.jpg&quot;,
-    &quot;data&quot; =&gt; fopen(&quot;/home/mike/Pictures/mike.jpg&quot;,&quot;r&quot;)
-  ]
-]);
-
-echo $body;
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>--32260b4b.3fea9114
-Content-Disposition: form-data; name=&quot;field_name&quot;
-
-value
---32260b4b.3fea9114
-Content-Disposition: form-data; name=&quot;multi_field[0]&quot;
-
-value1
---32260b4b.3fea9114
-Content-Disposition: form-data; name=&quot;multi_field[1]&quot;
-
-value2
---32260b4b.3fea9114
-Content-Disposition: form-data; name=&quot;field_name&quot;; filename=&quot;gpm.pid&quot;
-Content-Transfer-Encoding: binary
-Content-Type: application/octet-stream
-
-316
-
---32260b4b.3fea9114
-Content-Disposition: form-data; name=&quot;field_name2&quot;; filename=&quot;signature.txt&quot;
-Content-Transfer-Encoding: binary
-Content-Type: text/plain
-
---  
-Mike
-
---32260b4b.3fea9114
-Content-Disposition: form-data; name=&quot;field_name3&quot;; filename=&quot;picture.jpg&quot;
-Content-Transfer-Encoding: binary
-Content-Type: image/jpeg
-
-...JPEG...
---32260b4b.3fea9114--
-</code></pre>
-
-
-
-		
+</ul><p><span class="var">$fields</span> must look like:</p><pre><code><span style="color: inherit" class="html">
+[<br>  "field_name" =&gt; "value",<br>  "multi_field" =&gt; [<br>    "value1",<br>    "value2"<br>  ]<br>]<br></span>
+</code></pre><p><span class="var">$files</span> must look like:</p><pre><code><span style="color: inherit" class="html">
+[<br>  [  <br>    "name" =&gt; "field_name",  <br>    "type" =&gt; "content/type",  <br>    "file" =&gt; "/path/to/file.ext"<br>  ], [<br>    "name" =&gt; "field_name2",<br>    "type" =&gt; "text/plain",<br>    "file" =&gt; "file.ext",<br>    "data" =&gt; "string"<br>  ], [<br>    "name" =&gt; "field_name3",<br>    "type" =&gt; "image/jpeg",<br>    "file" =&gt; "file.ext",<br>    "data" =&gt; fopen("/home/mike/Pictures/mike.jpg","r")<br>]<br></span>
+</code></pre><p>As you can see, a file structure must contain a "file" entry, which holds a file path, and an optional "data" entry, which may either contain a <code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> to read from or the actual data as <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p><h2 id="Returns:">Returns:<a class="permalink" href="http/Message/Body/addForm#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Message/Body">http\Message\Body</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Message/Body/addForm#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/RuntimeException">http\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Message/Body/addForm#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$body </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Message\Body</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$body</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">addForm</span><span style="color: inherit" class="keyword">([<br>  </span><span style="color: inherit" class="string">"field_name" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"value"</span><span style="color: inherit" class="keyword">,<br>  </span><span style="color: inherit" class="string">"multi_field" </span><span style="color: inherit" class="keyword">=&gt; [<br>    </span><span style="color: inherit" class="string">"value1"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"value2"<br>  </span><span style="color: inherit" class="keyword">]<br>], [<br>  [  <br>    </span><span style="color: inherit" class="string">"name" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"field_name"</span><span style="color: inherit" class="keyword">,  <br>    </span><span style="color: inherit" class="string">"type" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"application/octet-stream"</span><span style="color: inherit" class="keyword">,  <br>    </span><span style="color: inherit" class="string">"file" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"/run/gpm.pid"<br>  </span><span style="color: inherit" class="keyword">], [<br>    </span><span style="color: inherit" class="string">"name" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"field_name2"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"type" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"text/plain"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"file" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"signature.txt"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"data" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"--  \nMike\n"<br>  </span><span style="color: inherit" class="keyword">], [<br>    </span><span style="color: inherit" class="string">"name" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"field_name3"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"type" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"image/jpeg"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"file" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"picture.jpg"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"data" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">fopen</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"/home/mike/Pictures/mike.jpg"</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="string">"r"</span><span style="color: inherit" class="keyword">)<br>  ]<br>]);<br><br>echo </span><span style="color: inherit" class="default">$body</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+--32260b4b.3fea9114<br>Content-Disposition: form-data; name="field_name"<br><br>value<br>--32260b4b.3fea9114<br>Content-Disposition: form-data; name="multi_field[0]"<br><br>value1<br>--32260b4b.3fea9114<br>Content-Disposition: form-data; name="multi_field[1]"<br><br>value2<br>--32260b4b.3fea9114<br>Content-Disposition: form-data; name="field_name"; filename="gpm.pid"<br>Content-Transfer-Encoding: binary<br>Content-Type: application/octet-stream<br><br>316<br><br>--32260b4b.3fea9114<br>Content-Disposition: form-data; name="field_name2"; filename="signature.txt"<br>Content-Transfer-Encoding: binary<br>Content-Type: text/plain<br><br>--  <br>Mike<br><br>--32260b4b.3fea9114<br>Content-Disposition: form-data; name="field_name3"; filename="picture.jpg"<br>Content-Transfer-Encoding: binary<br>Content-Type: image/jpeg<br><br>...JPEG...<br>--32260b4b.3fea9114--<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

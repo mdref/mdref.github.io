@@ -89,62 +89,32 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>static string http\Env::negotiateContentType(array $supported[, array &amp;$result])</h1>
-<p>Negotiate the client's preferred MIME content type.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-The first element of $supported content types serves as a default if no content-type matches.</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array $supported<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Env/negotiateContentType#">#</a><em>static</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Env/negotiateContentType">http\Env::negotiateContentType</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$supported</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> &amp;<span class="var">$result</span>])</h1><p>Negotiate the client's preferred MIME content type.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+The first element of <span class="var">$supported</span> content types serves as a default if no content-type matches.</p>
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="http/Env/negotiateContentType#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$supported">$supported<a class="permalink" href="http/Env/negotiateContentType#%24supported">#</a></span><br>
 List of supported MIME content types.</li>
-<li>Optional array &amp;$result<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.array">array</a></code> &amp;<span class="var" id="$result">$result<a class="permalink" href="http/Env/negotiateContentType#%24result">#</a></span><br>
 Out parameter recording negotiation results.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>NULL, if negotiation fails.</li>
-<li>string, the negotiated content type.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>A client indicates his accepted MIME content types by sending an Accept
-header. The static http\Env class provides a facility to negotiate the
-client's preferred content type:</p>
-<pre><code>&lt;?php
-$_SERVER[&quot;HTTP_ACCEPT&quot;] = implode(&quot;,&quot;, array(
-    &quot;text/html&quot;,
-    &quot;text/plain&quot;,
-    &quot;text/*;q=0.9&quot;,
-    &quot;*/*;q=0.1&quot;,
-    &quot;application/xml;q=0&quot;
-));
-$supported = array(
-    &quot;text/html&quot;, 
-    &quot;text/plain&quot;,
-    &quot;application/json&quot;, 
-    &quot;application/xml&quot;
-);
-$preferred = http\Env::negotiateContentType($supported, $ranking);
-var_dump($preferred, $ranking);
-?&gt;
-</code></pre>
-<p>Running this script should give the following output:</p>
-<pre><code>string(9) &quot;text/html&quot;
-array(3) {
-    'text/html' =&gt;
-    float(0.99)
-    'text/plain' =&gt;
-    float(0.98)
-    'application/json' =&gt;
-    float(0.1)
-}
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Env/negotiateContentType#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>, if negotiation fails.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code>, the negotiated content type.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Env/negotiateContentType#Example:">#</a>
+</h2><p>A client indicates his accepted MIME content types by sending an Accept
+header. The <em>static</em> <a href="http/Env">http\Env</a> <em>class</em> provides a facility to negotiate the
+client's preferred content type:</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$_SERVER</span><span style="color: inherit" class="keyword">[</span><span style="color: inherit" class="string">"HTTP_ACCEPT"</span><span style="color: inherit" class="keyword">] = </span><span style="color: inherit" class="default">implode</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">","</span><span style="color: inherit" class="keyword">, array(<br>    </span><span style="color: inherit" class="string">"text/html"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"text/plain"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"text/*;q=0.9"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"*/*;q=0.1"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"application/xml;q=0"<br></span><span style="color: inherit" class="keyword">));<br></span><span style="color: inherit" class="default">$supported </span><span style="color: inherit" class="keyword">= array(<br>    </span><span style="color: inherit" class="string">"text/html"</span><span style="color: inherit" class="keyword">, <br>    </span><span style="color: inherit" class="string">"text/plain"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"application/json"</span><span style="color: inherit" class="keyword">, <br>    </span><span style="color: inherit" class="string">"application/xml"<br></span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$preferred </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">http\Env</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">negotiateContentType</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$supported</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$ranking</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$preferred</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$ranking</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Running this script should give the following output:</p><pre><code><span style="color: inherit" class="html">
+string(9) "text/html"<br>array(3) {<br>    'text/html' =&gt;<br>    float(0.99)<br>    'text/plain' =&gt;<br>    float(0.98)<br>    'application/json' =&gt;<br>    float(0.1)<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

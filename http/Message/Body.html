@@ -217,124 +217,143 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Message\Body implements Serializable</h1>
-<p>The message body, represented as a PHP (temporary) stream.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-Currently, http\Message\Body::addForm() creates multipart/form-data bodies.</p>
-</blockquote>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/Body#">#</a><em>class</em> <a href="http/Message/Body">http\Message\Body</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>
+</h1><p>The message body, represented as a PHP (temporary) stream.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+Currently, <a href="http/Message/Body/addForm">http\Message\Body::addForm</a>() creates multipart/form-data bodies.</p>
+</blockquote><h2 id="Constants:">Constants:<a class="permalink" href="http/Message/Body#Constants:">#</a>
+</h2><p>None.</p><h2 id="Properties:">Properties:<a class="permalink" href="http/Message/Body#Properties:">#</a>
+</h2><p>None.</p><h2 id="Functions:">Functions:<a class="permalink" href="http/Message/Body#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Message/Body/__construct">Body::__construct</a></h3>
-		<p>Create a new message body, optionally referencing $stream.</p>
+		<h3 id="Body::__construct">
+<a href="http/Message/Body/__construct">Body::__construct</a><a class="permalink" href="http/Message/Body#Body::__construct">#</a>
+</h3>
+		<p>Create a new message body, optionally referencing <span class="var">$stream</span>.</p>
 
-		<p>void http\Message\Body::__construct([resource $stream = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Message/Body/__construct">http\Message\Body::__construct</a>([<code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var">$stream</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/__toString">Body::__toString</a></h3>
+		<h3 id="Body::__toString">
+<a href="http/Message/Body/__toString">Body::__toString</a><a class="permalink" href="http/Message/Body#Body::__toString">#</a>
+</h3>
 		<p>String cast handler.</p>
 
-		<p>string http\Message\Body::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/Body/__toString">http\Message\Body::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/addForm">Body::addForm</a></h3>
+		<h3 id="Body::addForm">
+<a href="http/Message/Body/addForm">Body::addForm</a><a class="permalink" href="http/Message/Body#Body::addForm">#</a>
+</h3>
 		<p>Add form fields and files to the message body.</p>
 
-		<p>http\Message\Body http\Message\Body::addForm([array $fields = NULL[, array $files = NULL]])</p>
+		<p><a href="http/Message/Body">http\Message\Body</a> <a href="http/Message/Body/addForm">http\Message\Body::addForm</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$fields</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$files</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/addPart">Body::addPart</a></h3>
+		<h3 id="Body::addPart">
+<a href="http/Message/Body/addPart">Body::addPart</a><a class="permalink" href="http/Message/Body#Body::addPart">#</a>
+</h3>
 		<p>Add a part to a multipart body.</p>
 
-		<p>http\Message\Body http\Message\Body::addPart(http\Message $part)</p>
+		<p><a href="http/Message/Body">http\Message\Body</a> <a href="http/Message/Body/addPart">http\Message\Body::addPart</a>(<a href="http/Message">http\Message</a> <span class="var">$part</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/append">Body::append</a></h3>
+		<h3 id="Body::append">
+<a href="http/Message/Body/append">Body::append</a><a class="permalink" href="http/Message/Body#Body::append">#</a>
+</h3>
 		<p>Append plain bytes to the message body.</p>
 
-		<p>http\Message\Body http\Message\Body::append(string $data)</p>
+		<p><a href="http/Message/Body">http\Message\Body</a> <a href="http/Message/Body/append">http\Message\Body::append</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/etag">Body::etag</a></h3>
+		<h3 id="Body::etag">
+<a href="http/Message/Body/etag">Body::etag</a><a class="permalink" href="http/Message/Body#Body::etag">#</a>
+</h3>
 		<p>Retrieve the ETag of the body.</p>
 
-		<p>string http\Message\Body::etag()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/Body/etag">http\Message\Body::etag</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/getBoundary">Body::getBoundary</a></h3>
+		<h3 id="Body::getBoundary">
+<a href="http/Message/Body/getBoundary">Body::getBoundary</a><a class="permalink" href="http/Message/Body#Body::getBoundary">#</a>
+</h3>
 		<p>Retrieve any boundary of the message body.</p>
 
-		<p>string http\Message\Body::getBoundary()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/Body/getBoundary">http\Message\Body::getBoundary</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/getResource">Body::getResource</a></h3>
-		<p>Retrieve the underlying stream resource.</p>
+		<h3 id="Body::getResource">
+<a href="http/Message/Body/getResource">Body::getResource</a><a class="permalink" href="http/Message/Body#Body::getResource">#</a>
+</h3>
+		<p>Retrieve the underlying stream <code><a href="https://php.net/manual/en/language.types.resource">resource</a></code>.</p>
 
-		<p>resource http\Message\Body::getResource()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <a href="http/Message/Body/getResource">http\Message\Body::getResource</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/serialize">Body::serialize</a></h3>
-		<p>Implements Serializable.</p>
+		<h3 id="Body::serialize">
+<a href="http/Message/Body/serialize">Body::serialize</a><a class="permalink" href="http/Message/Body#Body::serialize">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>.</p>
 
-		<p>string http\Message\Body::serialize()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/Body/serialize">http\Message\Body::serialize</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/stat">Body::stat</a></h3>
+		<h3 id="Body::stat">
+<a href="http/Message/Body/stat">Body::stat</a><a class="permalink" href="http/Message/Body#Body::stat">#</a>
+</h3>
 		<p>Stat size, atime, mtime and/or ctime.</p>
 
-		<p>mixed http\Message\Body::stat([string $field = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="http/Message/Body/stat">http\Message\Body::stat</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$field</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/toCallback">Body::toCallback</a></h3>
-		<p>Stream the message body through a callback.</p>
+		<h3 id="Body::toCallback">
+<a href="http/Message/Body/toCallback">Body::toCallback</a><a class="permalink" href="http/Message/Body#Body::toCallback">#</a>
+</h3>
+		<p>Stream the message body through a <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>.</p>
 
-		<p>http\Message\Body http\Message\Body::toCallback(callable $callback[, int $offset = 0[, int $maxlen = 0]])</p>
+		<p><a href="http/Message/Body">http\Message\Body</a> <a href="http/Message/Body/toCallback">http\Message\Body::toCallback</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$offset</span> = 0[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$maxlen</span> = 0]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/toStream">Body::toStream</a></h3>
-		<p>Stream the message body into another stream $stream, starting from $offset, streaming $maxlen at most.</p>
+		<h3 id="Body::toStream">
+<a href="http/Message/Body/toStream">Body::toStream</a><a class="permalink" href="http/Message/Body#Body::toStream">#</a>
+</h3>
+		<p>Stream the message body into another stream <span class="var">$stream</span>, starting from <span class="var">$offset</span>, streaming <span class="var">$maxlen</span> at most.</p>
 
-		<p>http\Message\Body http\Message\Body::toStream(resource $stream[, int $offset = 0[, int $maxlen = 0]])</p>
+		<p><a href="http/Message/Body">http\Message\Body</a> <a href="http/Message/Body/toStream">http\Message\Body::toStream</a>(<code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var">$stream</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$offset</span> = 0[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$maxlen</span> = 0]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/toString">Body::toString</a></h3>
-		<p>Retrieve the message body serialized to a string.</p>
+		<h3 id="Body::toString">
+<a href="http/Message/Body/toString">Body::toString</a><a class="permalink" href="http/Message/Body#Body::toString">#</a>
+</h3>
+		<p>Retrieve the message body serialized to a <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>string http\Message\Body::toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/Body/toString">http\Message\Body::toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Body/unserialize">Body::unserialize</a></h3>
-		<p>Implements Serializable.</p>
+		<h3 id="Body::unserialize">
+<a href="http/Message/Body/unserialize">Body::unserialize</a><a class="permalink" href="http/Message/Body#Body::unserialize">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>.</p>
 
-		<p>void http\Message\Body::unserialize(string $serialized)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Message/Body/unserialize">http\Message\Body::unserialize</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$serialized</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

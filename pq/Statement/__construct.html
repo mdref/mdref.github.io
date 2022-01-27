@@ -75,55 +75,36 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void pq\Statement::__construct(pq\Connection $conn, string $name, string $query[, array $types = NULL[, bool $async = FALSE]])</h1>
-<p>Prepare a new statement.
-See pq\Connection::prepare().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Connection $conn<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Statement/__construct#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Statement/__construct">pq\Statement::__construct</a>(<a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$types</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$async</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>]])</h1><p>Prepare a new statement.
+See <a href="pq/Connection/prepare">pq\Connection::prepare</a>().</p><h2 id="Params:">Params:<a class="permalink" href="pq/Statement/__construct#Params:">#</a>
+</h2><ul>
+<li>
+<a href="pq/Connection">pq\Connection</a> <span class="var" id="$conn">$conn<a class="permalink" href="pq/Statement/__construct#%24conn">#</a></span><br>
 The connection to prepare the statement on.</li>
-<li>string $name<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$name">$name<a class="permalink" href="pq/Statement/__construct#%24name">#</a></span><br>
 The name identifying this statement.</li>
-<li>string $query<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$query">$query<a class="permalink" href="pq/Statement/__construct#%24query">#</a></span><br>
 The actual query to prepare.</li>
-<li>Optional array $types = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$types">$types<a class="permalink" href="pq/Statement/__construct#%24types">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 A list of corresponding query parameter type OIDs.</li>
-<li>Optional bool $async = FALSE<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$async">$async<a class="permalink" href="pq/Statement/__construct#%24async">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
 Whether to prepare the statement <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronously</a>.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-<li>pq\Exception\DomainException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$connection = new pq\Connection;
-$statement = new pq\Statement(
-	$connection,
-	&quot;my_statement&quot;,
-	&quot;SELECT \$1&quot;,
-	[pq\Types::INT4]
-);
-
-$result = $statement-&gt;exec([123]);
-$result-&gt;fetchCol($col);
-
-echo &quot;Got: $col\n&quot;;
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>Got: 123
-</code></pre>
-
-
-
-		
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Statement/__construct#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+<li><a href="pq/Exception/DomainException">pq\Exception\DomainException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Statement/__construct#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$statement </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Statement</span><span style="color: inherit" class="keyword">(<br>    </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"my_statement"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"SELECT \$1"</span><span style="color: inherit" class="keyword">,<br>    [</span><span style="color: inherit" class="default">pq\Types</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">INT4</span><span style="color: inherit" class="keyword">]<br>);<br><br></span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$statement</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="default">123</span><span style="color: inherit" class="keyword">]);<br></span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchCol</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$col</span><span style="color: inherit" class="keyword">);<br><br>echo </span><span style="color: inherit" class="string">"Got: </span><span style="color: inherit" class="default">$col</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+Got: 123<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

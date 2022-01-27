@@ -125,103 +125,31 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Connection: Asynchronous Usage</h1>
-<p>Whenever you start an asynchronous operation, you will have to probe pq\Connection::poll() to determine the current status of the operation.</p>
-<p>You can then use the <em><strong>public readonly</strong></em> property pq\Connection::$socket with <code>stream_select()</code> to wait for read/write-readiness.</p>
-<blockquote>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/:%20Asynchronous%20Usage#">#</a><a href="pq/Connection">pq\Connection:</a> Asynchronous Usage</h1><p>Whenever you start an asynchronous operation, you will have to probe <a href="pq/Connection/poll">pq\Connection::poll</a>() to determine the current status of the operation.</p><p>You can then use the <em><strong>public readonly</strong></em> property <a href="pq/Connection#%24socket">pq\Connection::$socket</a> with <code>stream_select()</code> to wait for read/write-readiness.</p><blockquote>
 <p><em><strong>NOTE:</strong></em>
 You cannot use the connection for anything else while an asynchronous operation is active.</p>
-</blockquote>
-<h2>Connect or reset asynchronously:<a id="Connect.or.reset.asynchronously:" href="#Connect.or.reset.asynchronously:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>First, you can establish or reset a connection asynchronously.</p>
-<h3>Start asynchronous connect:<a id="Start.asynchronous.connect:" href="#Start.asynchronous.connect:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<pre><code>&lt;?php
-
-$c = new pq\Connection(null, pq\Connection::ASYNC);
-
-?&gt;
-</code></pre>
-<h3>Start asynchronous reset:<a id="Start.asynchronous.reset:" href="#Start.asynchronous.reset:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<pre><code>&lt;?php
-
-$c-&gt;resetAsync();
-
-?&gt;
-</code></pre>
-<h3>Complete asynchronous operation:<a id="Complete.asynchronous.operation:" href="#Complete.asynchronous.operation:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<p>Keep in mind that you have to test for write-readiness once <em>before</em> starting the polling loop on connect/reset.</p>
-<pre><code>&lt;?php
-
-// wait until the stream becomes writable
-$w = array($c-&gt;socket);
-$r = $e = null;
-
-if (stream_select($r, $w, $e, null)) {
-
-	// loop until the connection is established
-	while (true) {
-  
-		switch ($c-&gt;poll()) {
-	
-			case pq\Connection::POLLING_READING:
-				// we should wait for the stream to be read-ready
-				$r = array($c-&gt;socket);
-				stream_select($r, $w, $e, NULL);
-				break;
-
-			case pq\Connection::POLLING_WRITING:
-				// we should wait for the stream to be write-ready
-				$w = array($c-&gt;socket);
-				$r = $e = null;
-				stream_select($r, $w, $e, null);
-				break;
-
-			case pq\Connection::POLLING_FAILED:
-				printf(&quot;Connection failed: %s\n&quot;, $c-&gt;errorMessage);
-				break 2;
-
-			case pq\Connection::POLLING_OK:
-				printf(&quot;Connection completed\n&quot;);
-				break 2;
-		}
-	}	
-}
-
-?&gt;
-</code></pre>
-<p>If you use an appropriate timeout in the <code>stream_select()</code> call and do something else at the end of the while loop, you probably got the idea...</p>
-<h2>Execute queries asynchronously:<a id="Execute.queries.asynchronously:" href="#Execute.queries.asynchronously:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$c = new pq\Connection;
-$c-&gt;execAsync(&quot;SELECT 1+2+3; SELECT 2,3,4&quot;, function ($res) {
-  var_dump($res);
-});
-
-?&gt;
-</code></pre>
-<p>The body of the while loop looks slightly different, when executing queries asynchronously, because you only have to wait for read-readiness.</p>
-<p>You can use the <em><strong>public readonly</strong></em> property pq\Connection::$busy to test if a call to pq\Connection::getResult() would block, and if so wait for read-readiness and then call pq\Connection::poll().</p>
-<pre><code>&lt;?php
-
-do {
-  while ($c-&gt;busy) {
-	$r = array($c-&gt;socket);
-	$w = $e = null;
-	if (stream_select($r, $w, $e, null)) {
-	  $c-&gt;poll();
-	}
-  }
-} while ($c-&gt;getResult());
-
-?&gt;
-</code></pre>
-<p>If pq\Connection::getResult() returns NULL, there's nothing more in the pipeline.</p>
-
-
-
-		
+</blockquote><h2 id="Connect.or.reset.asynchronously:">Connect or reset asynchronously:<a class="permalink" href="pq/Connection/:%20Asynchronous%20Usage#Connect.or.reset.asynchronously:">#</a>
+</h2><p>First, you can establish or reset a connection asynchronously.</p><h3 id="Start.asynchronous.connect:">Start asynchronous connect:<a class="permalink" href="pq/Connection/:%20Asynchronous%20Usage#Start.asynchronous.connect:">#</a>
+</h3><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$c </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">ASYNC</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h3 id="Start.asynchronous.reset:">Start asynchronous reset:<a class="permalink" href="pq/Connection/:%20Asynchronous%20Usage#Start.asynchronous.reset:">#</a>
+</h3><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">resetAsync</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h3 id="Complete.asynchronous.operation:">Complete asynchronous operation:<a class="permalink" href="pq/Connection/:%20Asynchronous%20Usage#Complete.asynchronous.operation:">#</a>
+</h3><p>Keep in mind that you have to test for write-readiness once <em>before</em> starting the polling loop on connect/reset.</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="comment">// wait until the stream becomes writable<br></span><span style="color: inherit" class="default">$w </span><span style="color: inherit" class="keyword">= array(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">socket</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$e </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">;<br><br>if (</span><span style="color: inherit" class="default">stream_select</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$w</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">)) {<br><br>    </span><span style="color: inherit" class="comment">// loop until the connection is established<br>    </span><span style="color: inherit" class="keyword">while (</span><span style="color: inherit" class="default">true</span><span style="color: inherit" class="keyword">) {<br>  <br>        switch (</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">poll</span><span style="color: inherit" class="keyword">()) {<br>    <br>            case </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLLING_READING</span><span style="color: inherit" class="keyword">:<br>                </span><span style="color: inherit" class="comment">// we should wait for the stream to be read-ready<br>                </span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= array(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">socket</span><span style="color: inherit" class="keyword">);<br>                </span><span style="color: inherit" class="default">stream_select</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$w</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">NULL</span><span style="color: inherit" class="keyword">);<br>                break;<br><br>            case </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLLING_WRITING</span><span style="color: inherit" class="keyword">:<br>                </span><span style="color: inherit" class="comment">// we should wait for the stream to be write-ready<br>                </span><span style="color: inherit" class="default">$w </span><span style="color: inherit" class="keyword">= array(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">socket</span><span style="color: inherit" class="keyword">);<br>                </span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$e </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">;<br>                </span><span style="color: inherit" class="default">stream_select</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$w</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">);<br>                break;<br><br>            case </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLLING_FAILED</span><span style="color: inherit" class="keyword">:<br>                </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Connection failed: %s\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">errorMessage</span><span style="color: inherit" class="keyword">);<br>                break </span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">;<br><br>            case </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLLING_OK</span><span style="color: inherit" class="keyword">:<br>                </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Connection completed\n"</span><span style="color: inherit" class="keyword">);<br>                break </span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">;<br>        }<br>    }    <br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>If you use an appropriate timeout in the <code>stream_select()</code> call and do something else at the end of the while loop, you probably got the idea...</p><h2 id="Execute.queries.asynchronously:">Execute queries asynchronously:<a class="permalink" href="pq/Connection/:%20Asynchronous%20Usage#Execute.queries.asynchronously:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$c </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">execAsync</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT 1+2+3; SELECT 2,3,4"</span><span style="color: inherit" class="keyword">, function (</span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">) {<br>  </span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">);<br>});<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>The body of the while loop looks slightly different, when executing queries asynchronously, because you only have to wait for read-readiness.</p><p>You can use the <em><strong>public readonly</strong></em> property <a href="pq/Connection#%24busy">pq\Connection::$busy</a> to test if a call to <a href="pq/Connection/getResult">pq\Connection::getResult</a>() would block, and if so wait for read-readiness and then call <a href="pq/Connection/poll">pq\Connection::poll</a>().</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">do {<br>  while (</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">busy</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= array(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">socket</span><span style="color: inherit" class="keyword">);<br>    </span><span style="color: inherit" class="default">$w </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$e </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">;<br>    if (</span><span style="color: inherit" class="default">stream_select</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$w</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">)) {<br>      </span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">poll</span><span style="color: inherit" class="keyword">();<br>    }<br>  }<br>} while (</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResult</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>If <a href="pq/Connection/getResult">pq\Connection::getResult</a>() returns <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>, there's nothing more in the pipeline.</p>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

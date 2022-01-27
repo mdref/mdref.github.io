@@ -89,33 +89,29 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>static string http\Env::negotiate(string $params, array $supported[, string $prim_typ_sep[, array &amp;$result]])</h1>
-<p>Generic negotiator. For specific client negotiation see http\Env::negotiateContentType() and related methods.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-The first element of $supported serves as a default if no operand matches.</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $params<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Env/negotiate#">#</a><em>static</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Env/negotiate">http\Env::negotiate</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$params</span>, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$supported</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$prim_typ_sep</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> &amp;<span class="var">$result</span>]])</h1><p>Generic negotiator. For specific client negotiation see <a href="http/Env/negotiateContentType">http\Env::negotiateContentType</a>() and related methods.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+The first element of <span class="var">$supported</span> serves as a default if no operand matches.</p>
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="http/Env/negotiate#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$params">$params<a class="permalink" href="http/Env/negotiate#%24params">#</a></span><br>
 HTTP header parameter's value to negotiate.</li>
-<li>array $supported<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$supported">$supported<a class="permalink" href="http/Env/negotiate#%24supported">#</a></span><br>
 List of supported negotiation operands.</li>
-<li>Optional string $prim_typ_sep<br />
-A &quot;primary type separator&quot;, i.e. that would be a hyphen for content language negotiation (en-US, de-DE, etc.).</li>
-<li>Optional array &amp;$result<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$prim_typ_sep">$prim_typ_sep<a class="permalink" href="http/Env/negotiate#%24prim_typ_sep">#</a></span><br>
+A "primary type separator", i.e. that would be a hyphen for content language negotiation (en-US, de-DE, etc.).</li>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.array">array</a></code> &amp;<span class="var" id="$result">$result<a class="permalink" href="http/Env/negotiate#%24result">#</a></span><br>
 Out parameter recording negotiation results.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>NULL, if negotiation fails.</li>
-<li>string, the closest match negotiated, or the default (first entry of $supported).</li>
-</ul>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Env/negotiate#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>, if negotiation fails.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code>, the closest match negotiated, or the default (first entry of <span class="var">$supported</span>).</li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

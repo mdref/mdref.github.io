@@ -95,62 +95,33 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Env\Response http\Env\Response::setCookie(mixed $cookie)</h1>
-<p>Add cookies to the response to send.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>mixed $cookie<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Env/Response/setCookie#">#</a><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setCookie">http\Env\Response::setCookie</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$cookie</span>)</h1><p>Add cookies to the response to send.</p><h2 id="Params:">Params:<a class="permalink" href="http/Env/Response/setCookie#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$cookie">$cookie<a class="permalink" href="http/Env/Response/setCookie#%24cookie">#</a></span><br>
 The cookie to send.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Env\Response, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\UnexpectedValueException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$r = new http\Env\Response;
-$r-&gt;setCookie(&quot;visit=true; path=/&quot;);
-$r-&gt;send(STDOUT);
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>HTTP/1.1 200 OK
-Set-Cookie: visit=true; path=/; 
-ETag: &quot;&quot;
-</code></pre>
-<h3>Another example:<a id="Another.example:" href="#Another.example:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<pre><code>&lt;?php
-
-$c = new http\Cookie;
-$c-&gt;addCookie(&quot;foo&quot;, &quot;bar&quot;);
-$c-&gt;setMaxAge(360);
-$c-&gt;setDomain(&quot;.example.org&quot;);
-$c-&gt;setPath(&quot;/&quot;);
-$c-&gt;setFlags(http\Cookie::SECURE | http\Cookie::HTTPONLY);
-
-$r = new http\Env\Response;
-$r-&gt;setCookie($c);
-$r-&gt;send(STDOUT);
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>HTTP/1.1 200 OK
-Set-Cookie: foo=bar; domain=.example.org; path=/; max-age=360; secure; httpOnly; 
-ETag: &quot;&quot;
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Env/Response/setCookie#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Env/Response">http\Env\Response</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Env/Response/setCookie#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/UnexpectedValueException">http\Exception\UnexpectedValueException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Env/Response/setCookie#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$r </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Env\Response</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setCookie</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"visit=true; path=/"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">STDOUT</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+HTTP/1.1 200 OK<br>Set-Cookie: visit=true; path=/; <br>ETag: ""<br></span>
+</code></pre><h3 id="Another.example:">Another example:<a class="permalink" href="http/Env/Response/setCookie#Another.example:">#</a>
+</h3><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$c </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Cookie</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">addCookie</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"foo"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"bar"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setMaxAge</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">360</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setDomain</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">".example.org"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setPath</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"/"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setFlags</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">http\Cookie</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">SECURE </span><span style="color: inherit" class="keyword">| </span><span style="color: inherit" class="default">http\Cookie</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">HTTPONLY</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Env\Response</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setCookie</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">STDOUT</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+HTTP/1.1 200 OK<br>Set-Cookie: foo=bar; domain=.example.org; path=/; max-age=360; secure; httpOnly; <br>ETag: ""<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

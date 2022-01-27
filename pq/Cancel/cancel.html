@@ -59,54 +59,20 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void pq\Cancel::cancel()</h1>
-<p>Perform the cancellation request.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$conn = new pq\Connection;
-$cancel = new pq\Cancel($conn);
-
-$conn-&gt;execAsync(&quot;SELECT pg_sleep(1)&quot;);
-$cancel-&gt;cancel();
-
-var_dump($conn-&gt;getResult());
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>object(pq\Result)#4 (8) {
-  [&quot;status&quot;]=&gt;
-  int(7)
-  [&quot;statusMessage&quot;]=&gt;
-  string(11) &quot;FATAL_ERROR&quot;
-  [&quot;errorMessage&quot;]=&gt;
-  string(47) &quot;ERROR:  canceling statement due to user request&quot;
-  [&quot;numRows&quot;]=&gt;
-  int(0)
-  [&quot;numCols&quot;]=&gt;
-  int(0)
-  [&quot;affectedRows&quot;]=&gt;
-  int(0)
-  [&quot;fetchType&quot;]=&gt;
-  int(0)
-  [&quot;autoConvert&quot;]=&gt;
-  int(65535)
-}
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Cancel/cancel#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Cancel/cancel">pq\Cancel::cancel</a>()</h1><p>Perform the cancellation request.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Cancel/cancel#Params:">#</a>
+</h2><p>None.</p><h2 id="Throws:">Throws:<a class="permalink" href="pq/Cancel/cancel#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Cancel/cancel#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$conn </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$cancel </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Cancel</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">execAsync</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT pg_sleep(1)"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$cancel</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">cancel</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResult</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+object(pq\Result)#4 (8) {<br>  ["status"]=&gt;<br>  int(7)<br>  ["statusMessage"]=&gt;<br>  string(11) "FATAL_ERROR"<br>  ["errorMessage"]=&gt;<br>  string(47) "ERROR:  canceling statement due to user request"<br>  ["numRows"]=&gt;<br>  int(0)<br>  ["numCols"]=&gt;<br>  int(0)<br>  ["affectedRows"]=&gt;<br>  int(0)<br>  ["fetchType"]=&gt;<br>  int(0)<br>  ["autoConvert"]=&gt;<br>  int(65535)<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

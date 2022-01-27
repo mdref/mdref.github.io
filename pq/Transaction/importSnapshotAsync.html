@@ -87,29 +87,22 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void pq\Transaction::importSnapshotAsync(string $snapshot_id)</h1>
-<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> import a snapshot from another transaction to synchronize with.
-See pq\Transaction::importSnapshot().</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-The transaction must have an isolation level of at least pq\Transaction::REPEATABLE_READ.</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $snapshot_id<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Transaction/importSnapshotAsync#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/importSnapshotAsync">pq\Transaction::importSnapshotAsync</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$snapshot_id</span>)</h1><p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> import a snapshot from another transaction to synchronize with.
+See <a href="pq/Transaction/importSnapshot">pq\Transaction::importSnapshot</a>().</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+The transaction must have an isolation level of at least <a href="pq/Transaction#REPEATABLE_READ">pq\Transaction::REPEATABLE_READ</a>.</p>
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="pq/Transaction/importSnapshotAsync#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$snapshot_id">$snapshot_id<a class="permalink" href="pq/Transaction/importSnapshotAsync#%24snapshot_id">#</a></span><br>
 The snapshot identifier obtained by exporting a snapshot from a transaction.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-
-
-
-		
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Transaction/importSnapshotAsync#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

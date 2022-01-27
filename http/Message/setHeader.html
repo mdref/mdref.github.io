@@ -143,38 +143,31 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Message http\Message::setHeader(string $header[, mixed $value = NULL])</h1>
-<p>Set a single header.
-See http\Message::getHeader() and http\Message::addHeader().</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/setHeader#">#</a><a href="http/Message">http\Message</a> <a href="http/Message/setHeader">http\Message::setHeader</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$header</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$value</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>Set a single header.
+See <a href="http/Message/getHeader">http\Message::getHeader</a>() and <a href="http/Message/addHeader">http\Message::addHeader</a>().</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
 Prior to v2.5.6/v3.1.0 headers with the same name were merged into a single
 header with values concatenated by comma.</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $header<br />
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="http/Message/setHeader#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$header">$header<a class="permalink" href="http/Message/setHeader#%24header">#</a></span><br>
 The header's name.</li>
-<li>Optional mixed $value = NULL<br />
-The header's value. Removes the header if NULL.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Message, self.</li>
-</ul>
-<h2>Changelog:<a id="Changelog:" href="#Changelog:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ol start="0">
+<li>Optional <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$value">$value<a class="permalink" href="http/Message/setHeader#%24value">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The header's value. Removes the header if <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Message/setHeader#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Message">http\Message</a>, <em>self</em>.</li>
+</ul><h2 id="Changelog:">Changelog:<a class="permalink" href="http/Message/setHeader#Changelog:">#</a>
+</h2><ol start="0">
 <li>v2.5.6, v3.1.0
 <ul>
 <li>Multiple headers with the same name are kept separate instead of merged together.</li>
 </ul>
 </li>
-</ol>
-
-
-
-		
+</ol>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

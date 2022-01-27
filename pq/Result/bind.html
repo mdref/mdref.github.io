@@ -77,53 +77,29 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>bool pq\Result::bind(mixed $col, mixed &amp;$var)</h1>
-<p>Bind a variable to a result column.
-See pq\Result::fetchBound().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>mixed $col<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Result/bind#">#</a><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq/Result/bind">pq\Result::bind</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$col</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> &amp;<span class="var">$var</span>)</h1><p>Bind a variable to a result column.
+See <a href="pq/Result/fetchBound">pq\Result::fetchBound</a>().</p><h2 id="Params:">Params:<a class="permalink" href="pq/Result/bind#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$col">$col<a class="permalink" href="pq/Result/bind#%24col">#</a></span><br>
 The column name or index to bind to.</li>
-<li>mixed $var<br />
-The variable reference.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>bool, success.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-try {
-	$connection = new pq\Connection;
-	
-	$result = $connection-&gt;exec(&quot;SELECT id, name, email FROM accounts WHERE email LIKE '_@%'&quot;);
-	
-	$result-&gt;bind(&quot;id&quot;, $id);
-	$result-&gt;bind(&quot;name&quot;, $name);
-	$result-&gt;bind(&quot;email&quot;, $email);
-	
-	while ($result-&gt;fetchBound()) {
-		echo &quot;ID:   {$id}\n&quot;;
-		echo &quot;Name: {$name}\n&quot;;
-		echo &quot;Mail: {$email}\n\n&quot;;
-	}
-} catch (\pq\Exception $e) {
-	echo $e-&gt;getMessage(), &quot;\n&quot;;
-}
-
-?&gt;
-</code></pre>
-
-
-
-		
+<li>
+<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$var">$var<a class="permalink" href="pq/Result/bind#%24var">#</a></span><br>
+The variable <code><a href="https://php.net/manual/en/language.references">reference</a></code>.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/Result/bind#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code>, success.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Result/bind#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Result/bind#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>    <br>    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT id, name, email FROM accounts WHERE email LIKE '_@%'"</span><span style="color: inherit" class="keyword">);<br>    <br>    </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">bind</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"id"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$id</span><span style="color: inherit" class="keyword">);<br>    </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">bind</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"name"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$name</span><span style="color: inherit" class="keyword">);<br>    </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">bind</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"email"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">);<br>    <br>    while (</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchBound</span><span style="color: inherit" class="keyword">()) {<br>        echo </span><span style="color: inherit" class="string">"ID:   </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$id</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Name: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$name</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Mail: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n\n"</span><span style="color: inherit" class="keyword">;<br>    }<br>} catch (</span><span style="color: inherit" class="default">\pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    echo </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

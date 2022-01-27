@@ -123,67 +123,72 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Env\Request extends http\Message</h1>
-<p>The http\Env\Request class' instances represent the server's current HTTP request.</p>
-<p>See http\Message for inherited members.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected http\QueryString $query = NULL<br />
-The request's query parameters. ($_GET)</li>
-<li>protected http\QueryString $form = NULL<br />
-The request's form parameters. ($_POST)</li>
-<li>protected array $files = NULL<br />
-The request's form uploads. ($_FILES)</li>
-<li>protected array $cookie = NULL<br />
-The request's cookies. ($_COOKIE)</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Env/Request#">#</a><em>class</em> <a href="http/Env/Request">http\Env\Request</a> <br>&nbsp;<em>extends</em> <a href="http/Message">http\Message</a>
+</h1><p>The <a href="http/Env/Request">http\Env\Request</a> <em>class</em>' instances represent the server's current HTTP request.</p><p>See <a href="http/Message">http\Message</a> for inherited members.</p><h2 id="Constants:">Constants:<a class="permalink" href="http/Env/Request#Constants:">#</a>
+</h2><p>None.</p><h2 id="Properties:">Properties:<a class="permalink" href="http/Env/Request#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <a href="http/QueryString">http\QueryString</a> <span class="var" id="$query">$query<a class="permalink" href="http/Env/Request#%24query">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The request's query parameters. (<span class="var" id="$_GET">$_GET<a class="permalink" href="http/Env/Request#%24_GET">#</a></span>)</li>
+<li>
+<em>protected</em> <a href="http/QueryString">http\QueryString</a> <span class="var" id="$form">$form<a class="permalink" href="http/Env/Request#%24form">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The request's form parameters. (<span class="var" id="$_POST">$_POST<a class="permalink" href="http/Env/Request#%24_POST">#</a></span>)</li>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$files">$files<a class="permalink" href="http/Env/Request#%24files">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The request's form uploads. (<span class="var" id="$_FILES">$_FILES<a class="permalink" href="http/Env/Request#%24_FILES">#</a></span>)</li>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$cookie">$cookie<a class="permalink" href="http/Env/Request#%24cookie">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The request's cookies. (<span class="var" id="$_COOKIE">$_COOKIE<a class="permalink" href="http/Env/Request#%24_COOKIE">#</a></span>)</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Env/Request#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Env/Request/__construct">Request::__construct</a></h3>
+		<h3 id="Request::__construct">
+<a href="http/Env/Request/__construct">Request::__construct</a><a class="permalink" href="http/Env/Request#Request::__construct">#</a>
+</h3>
 		<p>Create an instance of the server's current HTTP request.</p>
 
-		<p>void http\Env\Request::__construct()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Env/Request/__construct">http\Env\Request::__construct</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Request/getCookie">Request::getCookie</a></h3>
-		<p>Retrieve an URL query value ($_GET).</p>
+		<h3 id="Request::getCookie">
+<a href="http/Env/Request/getCookie">Request::getCookie</a><a class="permalink" href="http/Env/Request#Request::getCookie">#</a>
+</h3>
+		<p>Retrieve an URL query value (<span class="var">$_GET</span>).</p>
 
-		<p>mixed http\Env\Request::getCookie([string $name = NULL[, mixed $type = NULL[, mixed $defval = NULL[, bool $delete = false]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="http/Env/Request/getCookie">http\Env\Request::getCookie</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$type</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$defval</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$delete</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>]]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Request/getFiles">Request::getFiles</a></h3>
-		<p>Retrieve the uploaded files list ($_FILES).</p>
+		<h3 id="Request::getFiles">
+<a href="http/Env/Request/getFiles">Request::getFiles</a><a class="permalink" href="http/Env/Request#Request::getFiles">#</a>
+</h3>
+		<p>Retrieve the uploaded files list (<span class="var">$_FILES</span>).</p>
 
-		<p>array http\Env\Request::getFiles()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Env/Request/getFiles">http\Env\Request::getFiles</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Request/getForm">Request::getForm</a></h3>
-		<p>Retrieve a form value ($_POST).</p>
+		<h3 id="Request::getForm">
+<a href="http/Env/Request/getForm">Request::getForm</a><a class="permalink" href="http/Env/Request#Request::getForm">#</a>
+</h3>
+		<p>Retrieve a form value (<span class="var">$_POST</span>).</p>
 
-		<p>mixed http\Env\Request::getForm([string $name = NULL[, mixed $type = NULL[, mixed $defval = NULL[, bool $delete = false]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="http/Env/Request/getForm">http\Env\Request::getForm</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$type</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$defval</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$delete</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>]]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Request/getQuery">Request::getQuery</a></h3>
-		<p>Retrieve an URL query value ($_GET).</p>
+		<h3 id="Request::getQuery">
+<a href="http/Env/Request/getQuery">Request::getQuery</a><a class="permalink" href="http/Env/Request#Request::getQuery">#</a>
+</h3>
+		<p>Retrieve an URL query value (<span class="var">$_GET</span>).</p>
 
-		<p>mixed http\Env\Request::getQuery([string $name = NULL[, mixed $type = NULL[, mixed $defval = NULL[, bool $delete = false]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="http/Env/Request/getQuery">http\Env\Request::getQuery</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$type</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$defval</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$delete</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>]]]])</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

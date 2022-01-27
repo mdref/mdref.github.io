@@ -129,30 +129,23 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Client http\Client::requeue(http\Client\Request $request[, callable $cb])</h1>
-<p>Requeue an http\Client\Request.</p>
-<p>The difference simply is, that this method, in contrast to http\Client::enqueue(), does not throw an http\Exception when the request to queue is already enqueued and dequeues it automatically prior enqueueing it again.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Client\Request $request<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/requeue#">#</a><a href="http/Client">http\Client</a> <a href="http/Client/requeue">http\Client::requeue</a>(<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span>[, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$cb</span>])</h1><p>Requeue an <a href="http/Client/Request">http\Client\Request</a>.</p><p>The difference simply is, that this method, in contrast to <a href="http/Client/enqueue">http\Client::enqueue</a>(), does not throw an <a href="http/Exception">http\Exception</a> when the request to queue is already enqueued and dequeues it automatically prior enqueueing it again.</p><h2 id="Params:">Params:<a class="permalink" href="http/Client/requeue#Params:">#</a>
+</h2><ul>
+<li>
+<a href="http/Client/Request">http\Client\Request</a> <span class="var" id="$request">$request<a class="permalink" href="http/Client/requeue#%24request">#</a></span><br>
 The request to queue.</li>
-<li>Optional callable $cb as function(\http\Response $response) : ?bool<br />
-A callback to automatically call when the request has finished.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Client, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\RuntimeException</li>
-</ul>
-
-
-
-		
+<li>Optional <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var" id="$cb">$cb<a class="permalink" href="http/Client/requeue#%24cb">#</a></span> as function(<a href="http#Response">\http\Response</a> <span class="var" id="$response">$response<a class="permalink" href="http/Client/requeue#%24response">#</a></span>) : ?<code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code><br>
+A <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> to automatically call when the request has finished.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/requeue#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Client">http\Client</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Client/requeue#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/RuntimeException">http\Exception\RuntimeException</a></li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

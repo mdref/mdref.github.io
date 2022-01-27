@@ -129,50 +129,37 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Client http\Client::enqueue(http\Client\Request $request[, callable $cb])</h1>
-<p>Add another http\Client\Request to the request queue.
-If the optional callback $cb returns true, the request will be automatically dequeued.</p>
-<blockquote>
-<p><em><strong>Note:</strong></em><br />
-The http\Client\Response object resulting from the request is always stored
-internally to be retrieved at a later time, <strong>even</strong> when $cb is used.</p>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/enqueue#">#</a><a href="http/Client">http\Client</a> <a href="http/Client/enqueue">http\Client::enqueue</a>(<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span>[, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$cb</span>])</h1><p>Add another <a href="http/Client/Request">http\Client\Request</a> to the request queue.
+If the optional <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> <span class="var">$cb</span> returns <code><a href="https://php.net/manual/en/language.types.boolean">true</a></code>, the request will be automatically dequeued.</p><blockquote>
+<p><em><strong>Note:</strong></em><br>
+The <a href="http/Client/Response">http\Client\Response</a> object resulting from the request is always stored
+internally to be retrieved at a later time, <strong>even</strong> when <span class="var">$cb</span> is used.</p>
 <p>If you are about to send a lot of requests and do <strong>not</strong> need the response
-after executing the callback, you can use http\Client::getResponse() within
-the callback to keep the memory usage level as low as possible.</p>
-</blockquote>
-<p>See http\Client::dequeue() and http\Client::send().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Client\Request $request<br />
+after executing the <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>, you can use <a href="http/Client/getResponse">http\Client::getResponse</a>() within
+the <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> to keep the memory usage level as low as possible.</p>
+</blockquote><p>See <a href="http/Client/dequeue">http\Client::dequeue</a>() and <a href="http/Client/send">http\Client::send</a>().</p><h2 id="Params:">Params:<a class="permalink" href="http/Client/enqueue#Params:">#</a>
+</h2><ul>
+<li>
+<a href="http/Client/Request">http\Client\Request</a> <span class="var" id="$request">$request<a class="permalink" href="http/Client/enqueue#%24request">#</a></span><br>
 The request to enqueue.</li>
-<li>Optional callable $cb as function(\http\Response $response) : ?bool<br />
-A callback to automatically call when the request has finished.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Client, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\BadMethodCallException</li>
-<li>http\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>(new http\Client)-&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;http://php.net&quot;), 
-    function(http\Client\Response $res) {
-        printf(&quot;%s returned %d\n&quot;, $res-&gt;getTransferInfo(&quot;effective_url&quot;), $res-&gt;getResponseCode());
-        return true; // dequeue
-})-&gt;send();
-</code></pre>
-<p>Yields:</p>
-<pre><code>http://php.net/ returned 200
-</code></pre>
-
-
-
-		
+<li>Optional <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var" id="$cb">$cb<a class="permalink" href="http/Client/enqueue#%24cb">#</a></span> as function(<a href="http#Response">\http\Response</a> <span class="var" id="$response">$response<a class="permalink" href="http/Client/enqueue#%24response">#</a></span>) : ?<code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code><br>
+A <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> to automatically call when the request has finished.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/enqueue#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Client">http\Client</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Client/enqueue#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/BadMethodCallException">http\Exception\BadMethodCallException</a></li>
+<li><a href="http/Exception/RuntimeException">http\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/enqueue#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+(new http\Client)-&gt;enqueue(new http\Client\Request("GET", "http://php.net"), <br>    function(http\Client\Response $res) {<br>        printf("%s returned %d\n", $res-&gt;getTransferInfo("effective_url"), $res-&gt;getResponseCode());<br>        return true; // dequeue<br>})-&gt;send();<br></span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+http://php.net/ returned 200<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -99,38 +99,20 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void http\QueryString::__construct([mixed $params = NULL])</h1>
-<p>Create an independent querystring instance.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional mixed $params = NULL<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/QueryString/__construct#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/QueryString/__construct">http\QueryString::__construct</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$params</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>Create an independent querystring instance.</p><h2 id="Params:">Params:<a class="permalink" href="http/QueryString/__construct#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$params">$params<a class="permalink" href="http/QueryString/__construct#%24params">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The query parameters to use or parse.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\BadQueryStringException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>$qs = new http\QueryString(&quot;foo=bar&amp;a[]=1&amp;a[]=2&quot;);
-print_r($qs-&gt;toArray());
-</code></pre>
-<p>Would yield:</p>
-<pre><code>Array
-(
-    [foo] =&gt; bar
-    [a] =&gt; Array
-        (
-            [0] =&gt; 1
-            [1] =&gt; 2
-        )
-
-)
-</code></pre>
-
-
-
-		
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/QueryString/__construct#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/BadQueryStringException">http\Exception\BadQueryStringException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/QueryString/__construct#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+$qs = new http\QueryString("foo=bar&amp;a[]=1&amp;a[]=2");<br>print_r($qs-&gt;toArray());<br></span>
+</code></pre><p>Would yield:</p><pre><code><span style="color: inherit" class="html">
+Array<br>(<br>    [foo] =&gt; bar<br>    [a] =&gt; Array<br>        (<br>            [0] =&gt; 1<br>            [1] =&gt; 2<br>        )<br><br>)<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

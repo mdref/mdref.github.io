@@ -129,88 +129,25 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Message http\Client::getHistory()</h1>
-<p>Simply returns the http\Message chain representing the request/response history.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-The history is only recorded while http\Client::$recordHistory is true.</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Message, the request/response message chain representing the client's history.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$client = new http\Client;
-$client-&gt;enqueue(new http\Client\Request(&quot;HEAD&quot;, &quot;http://php.net&quot;));
-$client-&gt;enqueue(new http\Client\Request(&quot;HEAD&quot;, &quot;http://pecl.php.net&quot;));
-$client-&gt;enqueue(new http\Client\Request(&quot;HEAD&quot;, &quot;http://pear.php.net&quot;));
-$client-&gt;recordHistory = true;
-$client-&gt;send();
-
-echo $client-&gt;getHistory()-&gt;toString(true);
-</code></pre>
-<p>Yields:</p>
-<pre><code>HEAD / HTTP/1.1
-User-Agent: PECL::HTTP/2.0.0dev (PHP/5.5.5)
-Host: pear.php.net
-Accept: */*
-Content-Length: 0
-
-HTTP/1.1 200 OK
-Date: Mon, 04 Nov 2013 15:41:48 GMT
-Server: ...
-X-Powered-By: PHP/5.3.6
-Connection: close
-Content-Type: text/html; charset=UTF-8
-Content-Length: 0
-
-HEAD / HTTP/1.1
-User-Agent: PECL::HTTP/2.0.0dev (PHP/5.5.5)
-Host: pecl.php.net
-Accept: */*
-Content-Length: 0
-
-HTTP/1.1 200 OK
-Date: Mon, 04 Nov 2013 14:34:02 GMT
-Server: ...
-X-Powered-By: PHP/5.2.17
-Set-Cookie: ...
-Expires: Thu, 19 Nov 1981 08:52:00 GMT
-Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-Pragma: no-cache
-Connection: close
-Content-Type: text/html; charset=ISO-8859-1
-Content-Length: 0
-
-HEAD / HTTP/1.1
-User-Agent: PECL::HTTP/2.0.0dev (PHP/5.5.5)
-Host: php.net
-Accept: */*
-Content-Length: 0
-
-HTTP/1.1 200 OK
-Server: ...
-Date: Mon, 04 Nov 2013 14:34:08 GMT
-Content-Type: text/html;charset=utf-8
-Connection: keep-alive
-X-Powered-By: PHP/5.5.4-1
-Content-Language: en
-Set-Cookie: ...
-Last-Modified: Mon, 04 Nov 2013 21:00:36 GMT
-Content-Length: 0
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/getHistory#">#</a><a href="http/Message">http\Message</a> <a href="http/Client/getHistory">http\Client::getHistory</a>()</h1><p>Simply returns the <a href="http/Message">http\Message</a> chain representing the request/response history.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+The history is only recorded while <a href="http/Client#%24recordHistory">http\Client::$recordHistory</a> is <code><a href="https://php.net/manual/en/language.types.boolean">true</a></code>.</p>
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="http/Client/getHistory#Params:">#</a>
+</h2><p>None.</p><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/getHistory#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Message">http\Message</a>, the request/response message chain representing the client's history.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Client/getHistory#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/getHistory#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$client </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"HEAD"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"http://php.net"</span><span style="color: inherit" class="keyword">));<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"HEAD"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"http://pecl.php.net"</span><span style="color: inherit" class="keyword">));<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"HEAD"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"http://pear.php.net"</span><span style="color: inherit" class="keyword">));<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">recordHistory </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">true</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">();<br><br>echo </span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getHistory</span><span style="color: inherit" class="keyword">()-&gt;</span><span style="color: inherit" class="default">toString</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">true</span><span style="color: inherit" class="keyword">);<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+HEAD / HTTP/1.1<br>User-Agent: PECL::HTTP/2.0.0dev (PHP/5.5.5)<br>Host: pear.php.net<br>Accept: */*<br>Content-Length: 0<br><br>HTTP/1.1 200 OK<br>Date: Mon, 04 Nov 2013 15:41:48 GMT<br>Server: ...<br>X-Powered-By: PHP/5.3.6<br>Connection: close<br>Content-Type: text/html; charset=UTF-8<br>Content-Length: 0<br><br>HEAD / HTTP/1.1<br>User-Agent: PECL::HTTP/2.0.0dev (PHP/5.5.5)<br>Host: pecl.php.net<br>Accept: */*<br>Content-Length: 0<br><br>HTTP/1.1 200 OK<br>Date: Mon, 04 Nov 2013 14:34:02 GMT<br>Server: ...<br>X-Powered-By: PHP/5.2.17<br>Set-Cookie: ...<br>Expires: Thu, 19 Nov 1981 08:52:00 GMT<br>Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0<br>Pragma: no-cache<br>Connection: close<br>Content-Type: text/html; charset=ISO-8859-1<br>Content-Length: 0<br><br>HEAD / HTTP/1.1<br>User-Agent: PECL::HTTP/2.0.0dev (PHP/5.5.5)<br>Host: php.net<br>Accept: */*<br>Content-Length: 0<br><br>HTTP/1.1 200 OK<br>Server: ...<br>Date: Mon, 04 Nov 2013 14:34:08 GMT<br>Content-Type: text/html;charset=utf-8<br>Connection: keep-alive<br>X-Powered-By: PHP/5.5.4-1<br>Content-Language: en<br>Set-Cookie: ...<br>Last-Modified: Mon, 04 Nov 2013 21:00:36 GMT<br>Content-Length: 0<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

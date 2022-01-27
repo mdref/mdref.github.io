@@ -130,155 +130,192 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Result implements Traversable, Countable</h1>
-<p>A query result.</p>
-<p>See <a href="pq/Result/:%20Fetching%20Results">Fetching Results</a> for a general overview.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<h3>Status values:<a id="Status.values:" href="#Status.values:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>EMPTY_QUERY<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Result#">#</a><em>class</em> <a href="pq/Result">pq\Result</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.traversable">Traversable</a></code>, <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>
+</h1><p>A query result.</p><p>See <a href="pq/Result/:%20Fetching%20Results">Fetching Results</a> for a general overview.</p><h2 id="Constants:">Constants:<a class="permalink" href="pq/Result#Constants:">#</a>
+</h2><h3 id="Status.values:">Status values:<a class="permalink" href="pq/Result#Status.values:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="EMPTY_QUERY">EMPTY_QUERY<a class="permalink" href="pq/Result#EMPTY_QUERY">#</a></span><br>
 The query sent to the server was empty.</li>
-<li>COMMAND_OK<br />
+<li>
+<span class="constant" id="COMMAND_OK">COMMAND_OK<a class="permalink" href="pq/Result#COMMAND_OK">#</a></span><br>
 The query did not generate a result set and completed successfully.</li>
-<li>TUPLES_OK<br />
+<li>
+<span class="constant" id="TUPLES_OK">TUPLES_OK<a class="permalink" href="pq/Result#TUPLES_OK">#</a></span><br>
 The query successfully generated a result set.</li>
-<li>SINGLE_TUPLE<br />
-The result contains a single row of the result set when using pq\Connection::$unbuffered.</li>
-<li>COPY_OUT<br />
-COPY data can be received from the server.</li>
-<li>COPY_IN<br />
-COPY data can be sent to the server.</li>
-<li>COPY_BOTH<br />
-COPY in/out data transfer in progress.</li>
-<li>BAD_RESPONSE<br />
+<li>
+<span class="constant" id="SINGLE_TUPLE">SINGLE_TUPLE<a class="permalink" href="pq/Result#SINGLE_TUPLE">#</a></span><br>
+The result contains a single row of the result set when using <a href="pq/Connection#%24unbuffered">pq\Connection::$unbuffered</a>.</li>
+<li>
+<span class="constant" id="COPY_OUT">COPY_OUT<a class="permalink" href="pq/Result#COPY_OUT">#</a></span><br>
+<span class="constant">COPY</span> data can be received from the server.</li>
+<li>
+<span class="constant" id="COPY_IN">COPY_IN<a class="permalink" href="pq/Result#COPY_IN">#</a></span><br>
+<span class="constant">COPY</span> data can be sent to the server.</li>
+<li>
+<span class="constant" id="COPY_BOTH">COPY_BOTH<a class="permalink" href="pq/Result#COPY_BOTH">#</a></span><br>
+<span class="constant">COPY</span> in/out data transfer in progress.</li>
+<li>
+<span class="constant" id="BAD_RESPONSE">BAD_RESPONSE<a class="permalink" href="pq/Result#BAD_RESPONSE">#</a></span><br>
 The server sent a bad response.</li>
-<li>NONFATAL_ERROR<br />
+<li>
+<span class="constant" id="NONFATAL_ERROR">NONFATAL_ERROR<a class="permalink" href="pq/Result#NONFATAL_ERROR">#</a></span><br>
 A nonfatal error (notice or warning) occurred.</li>
-<li>FATAL_ERROR<br />
+<li>
+<span class="constant" id="FATAL_ERROR">FATAL_ERROR<a class="permalink" href="pq/Result#FATAL_ERROR">#</a></span><br>
 A fatal error occurred.</li>
-</ul>
-<h3>Fetch types:<a id="Fetch.types:" href="#Fetch.types:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>FETCH_ARRAY<br />
+</ul><h3 id="Fetch.types:">Fetch types:<a class="permalink" href="pq/Result#Fetch.types:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="FETCH_ARRAY">FETCH_ARRAY<a class="permalink" href="pq/Result#FETCH_ARRAY">#</a></span><br>
 Fetch rows numerically indexed, where the index start with 0.</li>
-<li>FETCH_ASSOC<br />
+<li>
+<span class="constant" id="FETCH_ASSOC">FETCH_ASSOC<a class="permalink" href="pq/Result#FETCH_ASSOC">#</a></span><br>
 Fetch rows associatively indexed by column name.</li>
-<li>FETCH_OBJECT<br />
-Fetch rows as stdClass instance, where the column names are the property names.</li>
-</ul>
-<h3>Conversion bits:<a id="Conversion.bits:" href="#Conversion.bits:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>CONV_BOOL<br />
-Automatically convert 'f' and 't' to FALSE and TRUE and vice versa.</li>
-<li>CONV_INT<br />
-Automatically convert integral strings to either int if it fits into maximum integer size or else to float and vice versa.</li>
-<li>CONV_FLOAT<br />
+<li>
+<span class="constant" id="FETCH_OBJECT">FETCH_OBJECT<a class="permalink" href="pq/Result#FETCH_OBJECT">#</a></span><br>
+Fetch rows as <code><a href="https://php.net/manual/en/class.stdclass">stdClass</a></code> instance, where the column names are the property names.</li>
+</ul><h3 id="Conversion.bits:">Conversion bits:<a class="permalink" href="pq/Result#Conversion.bits:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="CONV_BOOL">CONV_BOOL<a class="permalink" href="pq/Result#CONV_BOOL">#</a></span><br>
+Automatically convert 'f' and 't' to <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code> and <code><a href="https://php.net/manual/en/language.types.boolean">TRUE</a></code> and vice versa.</li>
+<li>
+<span class="constant" id="CONV_INT">CONV_INT<a class="permalink" href="pq/Result#CONV_INT">#</a></span><br>
+Automatically convert integral strings to either <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> if it fits into maximum <code><a href="https://php.net/manual/en/language.types.integer">integer</a></code> size or else to <code><a href="https://php.net/manual/en/language.types.float">float</a></code> and vice versa.</li>
+<li>
+<span class="constant" id="CONV_FLOAT">CONV_FLOAT<a class="permalink" href="pq/Result#CONV_FLOAT">#</a></span><br>
 Automatically convert floating point numbers.</li>
-<li>CONV_SCALAR<br />
+<li>
+<span class="constant" id="CONV_SCALAR">CONV_SCALAR<a class="permalink" href="pq/Result#CONV_SCALAR">#</a></span><br>
 Do all scalar conversions listed above.</li>
-<li>CONV_ARRAY<br />
+<li>
+<span class="constant" id="CONV_ARRAY">CONV_ARRAY<a class="permalink" href="pq/Result#CONV_ARRAY">#</a></span><br>
 Automatically convert arrays.</li>
-<li>CONV_DATETIME<br />
-Automatically convert date strings to pq\DateTime and vice versa.</li>
-<li>CONV_JSON<br />
-Automatically convert JSON.</li>
-<li>CONV_ALL<br />
+<li>
+<span class="constant" id="CONV_DATETIME">CONV_DATETIME<a class="permalink" href="pq/Result#CONV_DATETIME">#</a></span><br>
+Automatically convert date strings to <a href="pq/DateTime">pq\DateTime</a> and vice versa.</li>
+<li>
+<span class="constant" id="CONV_JSON">CONV_JSON<a class="permalink" href="pq/Result#CONV_JSON">#</a></span><br>
+Automatically convert <span class="constant">JSON</span>.</li>
+<li>
+<span class="constant" id="CONV_ALL">CONV_ALL<a class="permalink" href="pq/Result#CONV_ALL">#</a></span><br>
 Do all of the above.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public (readonly) int $status<br />
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="pq/Result#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$status">$status<a class="permalink" href="pq/Result#%24status">#</a></span><br>
 A <a href="pq/Result#Status.values:">status constant</a>.</li>
-<li>public (readonly) string $statusMessage<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$statusMessage">$statusMessage<a class="permalink" href="pq/Result#%24statusMessage">#</a></span><br>
 The accompanying status message.</li>
-<li>public (readonly) string $errorMessage<br />
-Any error message if $status indicates an error.</li>
-<li>public (readonly) int $numRows<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$errorMessage">$errorMessage<a class="permalink" href="pq/Result#%24errorMessage">#</a></span><br>
+Any error message if <span class="var">$status</span> indicates an error.</li>
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$numRows">$numRows<a class="permalink" href="pq/Result#%24numRows">#</a></span><br>
 The number of rows in the result set.</li>
-<li>public (readonly) int $numCols<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$numCols">$numCols<a class="permalink" href="pq/Result#%24numCols">#</a></span><br>
 The number of fields in a single tuple of the result set.</li>
-<li>public (readonly) int $affectedRows<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$affectedRows">$affectedRows<a class="permalink" href="pq/Result#%24affectedRows">#</a></span><br>
 The number of rows affected by a statement.</li>
-<li>public (readonly) array $diag<br />
-Error details. See <a href="https://www.postgresql.org/docs/current/static/libpq-exec.html#LIBPQ-PQRESULTERRORFIELD">PQresultErrorField</a> docs.</li>
-<li>public int $fetchType = pq\Result::FETCH_ARRAY<br />
-The <a href="pq/Result#Fetch.types:">type of return value</a> the fetch methods should return when no fetch type argument was given. Defaults to pq\Connection::$defaultFetchType.</li>
-<li>public int $autoConvert = pq\Result::CONV_ALL<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$diag">$diag<a class="permalink" href="pq/Result#%24diag">#</a></span><br>
+<code><a href="https://php.net/manual/en/class.error">Error</a></code> details. See <a href="https://www.postgresql.org/docs/current/static/libpq-exec.html#LIBPQ-PQRESULTERRORFIELD">PQresultErrorField</a> docs.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$fetchType">$fetchType<a class="permalink" href="pq/Result#%24fetchType">#</a></span> = <a href="pq/Result#FETCH_ARRAY">pq\Result::FETCH_ARRAY</a><br>
+The <a href="pq/Result#Fetch.types:">type of return value</a> the fetch methods should return when no fetch type argument was given. Defaults to <a href="pq/Connection#%24defaultFetchType">pq\Connection::$defaultFetchType</a>.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$autoConvert">$autoConvert<a class="permalink" href="pq/Result#%24autoConvert">#</a></span> = <a href="pq/Result#CONV_ALL">pq\Result::CONV_ALL</a><br>
 What <a href="pq/Result#Conversion.bits:">type of conversions</a> to perform automatically.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq/Result#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/Result/bind">Result::bind</a></h3>
+		<h3 id="Result::bind">
+<a href="pq/Result/bind">Result::bind</a><a class="permalink" href="pq/Result#Result::bind">#</a>
+</h3>
 		<p>Bind a variable to a result column.</p>
 
-		<p>bool pq\Result::bind(mixed $col, mixed &amp;$var)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq/Result/bind">pq\Result::bind</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$col</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> &amp;<span class="var">$var</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Result/count">Result::count</a></h3>
+		<h3 id="Result::count">
+<a href="pq/Result/count">Result::count</a><a class="permalink" href="pq/Result#Result::count">#</a>
+</h3>
 		<p>Count number of rows in this result set.</p>
 
-		<p>int pq\Result::count()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq/Result/count">pq\Result::count</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Result/desc">Result::desc</a></h3>
+		<h3 id="Result::desc">
+<a href="pq/Result/desc">Result::desc</a><a class="permalink" href="pq/Result#Result::desc">#</a>
+</h3>
 		<p>Describe a prepared statement.</p>
 
-		<p>array pq\Result::desc()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq/Result/desc">pq\Result::desc</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Result/fetchAll">Result::fetchAll</a></h3>
+		<h3 id="Result::fetchAll">
+<a href="pq/Result/fetchAll">Result::fetchAll</a><a class="permalink" href="pq/Result#Result::fetchAll">#</a>
+</h3>
 		<p>Fetch all rows at once.</p>
 
-		<p>array pq\Result::fetchAll([int $fetch_type = pq\Result::$fetchType])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq/Result/fetchAll">pq\Result::fetchAll</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$fetch_type</span> = <a href="pq/Result#%24fetchType">pq\Result::$fetchType</a>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Result/fetchAllCols">Result::fetchAllCols</a></h3>
+		<h3 id="Result::fetchAllCols">
+<a href="pq/Result/fetchAllCols">Result::fetchAllCols</a><a class="permalink" href="pq/Result#Result::fetchAllCols">#</a>
+</h3>
 		<p>Fetch all rows of a single column.</p>
 
-		<p>array pq\Result::fetchAllCols([int $col = 0])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq/Result/fetchAllCols">pq\Result::fetchAllCols</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$col</span> = 0])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Result/fetchBound">Result::fetchBound</a></h3>
+		<h3 id="Result::fetchBound">
+<a href="pq/Result/fetchBound">Result::fetchBound</a><a class="permalink" href="pq/Result#Result::fetchBound">#</a>
+</h3>
 		<p>Iteratively fetch a row into bound variables.</p>
 
-		<p>array pq\Result::fetchBound()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq/Result/fetchBound">pq\Result::fetchBound</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Result/fetchCol">Result::fetchCol</a></h3>
+		<h3 id="Result::fetchCol">
+<a href="pq/Result/fetchCol">Result::fetchCol</a><a class="permalink" href="pq/Result#Result::fetchCol">#</a>
+</h3>
 		<p>Iteratively fetch a single column.</p>
 
-		<p>bool pq\Result::fetchCol(mixed &amp;$ref[, mixed $col = 0])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq/Result/fetchCol">pq\Result::fetchCol</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> &amp;<span class="var">$ref</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$col</span> = 0])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Result/fetchRow">Result::fetchRow</a></h3>
+		<h3 id="Result::fetchRow">
+<a href="pq/Result/fetchRow">Result::fetchRow</a><a class="permalink" href="pq/Result#Result::fetchRow">#</a>
+</h3>
 		<p>Iteratively fetch a row.</p>
 
-		<p>mixed pq\Result::fetchRow([int $fetch_type = pq\Result::$fetchType])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq/Result/fetchRow">pq\Result::fetchRow</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$fetch_type</span> = <a href="pq/Result#%24fetchType">pq\Result::$fetchType</a>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Result/map">Result::map</a></h3>
+		<h3 id="Result::map">
+<a href="pq/Result/map">Result::map</a><a class="permalink" href="pq/Result#Result::map">#</a>
+</h3>
 		<p>Fetch the complete result set as a simple map, a <em>multi dimensional array</em>, each dimension indexed by a column.</p>
 
-		<p>array pq\Result::map([mixed $keys = 0[, mixed $vals = NULL[, int $fetch_type = pq\Result::$fetchType]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq/Result/map">pq\Result::map</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$keys</span> = 0[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$vals</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$fetch_type</span> = <a href="pq/Result#%24fetchType">pq\Result::$fetchType</a>]]])</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -69,46 +69,25 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>mixed http\Client\Response::getCookies([int $flags = 0[, array $allowed_extras = NULL]])</h1>
-<p>Extract response cookies.
-Parses any &quot;Set-Cookie&quot; response headers into an http\Cookie list. See http\Cookie::__construct().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional int $flags = 0<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/Response/getCookies#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="http/Client/Response/getCookies">http\Client\Response::getCookies</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span> = 0[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$allowed_extras</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</h1><p>Extract response cookies.
+Parses any "Set-Cookie" response headers into an <a href="http/Cookie">http\Cookie</a> list. See <a href="http/Cookie/__construct">http\Cookie::__construct</a>().</p><h2 id="Params:">Params:<a class="permalink" href="http/Client/Response/getCookies#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$flags">$flags<a class="permalink" href="http/Client/Response/getCookies#%24flags">#</a></span> = 0<br>
 Cookie parser flags.</li>
-<li>Optional array $allowed_extras = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$allowed_extras">$allowed_extras<a class="permalink" href="http/Client/Response/getCookies#%24allowed_extras">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 List of keys treated as extras.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array, list of http\Cookie instances.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$response = (new http\Client)
-    -&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;http://php.net/&quot;))
-    -&gt;send()
-    -&gt;getResponse();
-
-foreach ($response-&gt;getCookies() as $cookie) {
-    /* @var $cookie http\Cookie */
-    foreach ($cookie-&gt;getCookies() as $name =&gt; $value) {
-        printf(&quot;Got a cookie named '%s' with value '%s'\n\tdomain=%s\n\t  path=%s\n&quot;, 
-            $name, $value, $cookie-&gt;getDomain(), $cookie-&gt;getPath());
-    }
-}
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>Got a cookie named 'COUNTRY' with value 'USA,72.52.91.14'
-    domain=.php.net
-      path=/
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/Response/getCookies#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code>, list of <a href="http/Cookie">http\Cookie</a> instances.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/Response/getCookies#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$response </span><span style="color: inherit" class="keyword">= (new </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">)<br>    -&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"GET"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"http://php.net/"</span><span style="color: inherit" class="keyword">))<br>    -&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">()<br>    -&gt;</span><span style="color: inherit" class="default">getResponse</span><span style="color: inherit" class="keyword">();<br><br>foreach (</span><span style="color: inherit" class="default">$response</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getCookies</span><span style="color: inherit" class="keyword">() as </span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="comment">/* @var $cookie http\Cookie */<br>    </span><span style="color: inherit" class="keyword">foreach (</span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getCookies</span><span style="color: inherit" class="keyword">() as </span><span style="color: inherit" class="default">$name </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$value</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Got a cookie named '%s' with value '%s'\n\tdomain=%s\n\t  path=%s\n"</span><span style="color: inherit" class="keyword">, <br>            </span><span style="color: inherit" class="default">$name</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$value</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getDomain</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getPath</span><span style="color: inherit" class="keyword">());<br>    }<br>}<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+Got a cookie named 'COUNTRY' with value 'USA,72.52.91.14'<br>    domain=.php.net<br>      path=/<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

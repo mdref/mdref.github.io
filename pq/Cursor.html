@@ -120,105 +120,121 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Cursor</h1>
-<p>Declare a cursor.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>BINARY<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Cursor#">#</a><em>class</em> <a href="pq/Cursor">pq\Cursor</a>
+</h1><p>Declare a cursor.</p><h2 id="Constants:">Constants:<a class="permalink" href="pq/Cursor#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="BINARY">BINARY<a class="permalink" href="pq/Cursor#BINARY">#</a></span><br>
 Causes the cursor to return data in binary rather than in text format. You probably do not want to use that.</li>
-<li>INSENSITIVE<br />
+<li>
+<span class="constant" id="INSENSITIVE">INSENSITIVE<a class="permalink" href="pq/Cursor#INSENSITIVE">#</a></span><br>
 The data returned by the cursor should be unaffected by updates to the tables underlying the cursor that take place after the cursor was opened.</li>
-<li>WITH_HOLD<br />
+<li>
+<span class="constant" id="WITH_HOLD">WITH_HOLD<a class="permalink" href="pq/Cursor#WITH_HOLD">#</a></span><br>
 The cursor should stay usable after the transaction that created it was successfully committed.</li>
-<li>SCROLL<br />
+<li>
+<span class="constant" id="SCROLL">SCROLL<a class="permalink" href="pq/Cursor#SCROLL">#</a></span><br>
 Force that rows can be retrieved in any order from the cursor.</li>
-<li>NO_SCROLL<br />
+<li>
+<span class="constant" id="NO_SCROLL">NO_SCROLL<a class="permalink" href="pq/Cursor#NO_SCROLL">#</a></span><br>
 Force that rows are only retrievable in sequiential order.</li>
-</ul>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
+</ul><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
 See the <a href="http://www.postgresql.org/docs/current/static/sql-declare.html#SQL-DECLARE-NOTES">notes in the official PostgreSQL documentation</a> for more information.</p>
-</blockquote>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public (readonly) pq\Connection $connection<br />
+</blockquote><h2 id="Properties:">Properties:<a class="permalink" href="pq/Cursor#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> (readonly) <a href="pq/Connection">pq\Connection</a> <span class="var" id="$connection">$connection<a class="permalink" href="pq/Cursor#%24connection">#</a></span><br>
 The connection the cursor was declared on.</li>
-<li>public (readonly) string $name<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$name">$name<a class="permalink" href="pq/Cursor#%24name">#</a></span><br>
 The identifying name of the cursor.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq/Cursor#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/Cursor/__construct">Cursor::__construct</a></h3>
+		<h3 id="Cursor::__construct">
+<a href="pq/Cursor/__construct">Cursor::__construct</a><a class="permalink" href="pq/Cursor#Cursor::__construct">#</a>
+</h3>
 		<p>Declare a cursor.</p>
 
-		<p>void pq\Cursor::__construct(pq\Connection $conn, string $name, int $flags, string $query[, bool $async = FALSE])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Cursor/__construct">pq\Cursor::__construct</a>(<a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$async</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Cursor/close">Cursor::close</a></h3>
+		<h3 id="Cursor::close">
+<a href="pq/Cursor/close">Cursor::close</a><a class="permalink" href="pq/Cursor#Cursor::close">#</a>
+</h3>
 		<p>Close an open cursor.</p>
 
-		<p>void pq\Cursor::close()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Cursor/close">pq\Cursor::close</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Cursor/closeAsync">Cursor::closeAsync</a></h3>
+		<h3 id="Cursor::closeAsync">
+<a href="pq/Cursor/closeAsync">Cursor::closeAsync</a><a class="permalink" href="pq/Cursor#Cursor::closeAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> close an open cursor.</p>
 
-		<p>void pq\Cursor::closeAsync()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Cursor/closeAsync">pq\Cursor::closeAsync</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Cursor/fetch">Cursor::fetch</a></h3>
+		<h3 id="Cursor::fetch">
+<a href="pq/Cursor/fetch">Cursor::fetch</a><a class="permalink" href="pq/Cursor#Cursor::fetch">#</a>
+</h3>
 		<p>Fetch rows from the cursor.</p>
 
-		<p>pq\Result pq\Cursor::fetch([string $spec = &quot;1&quot;])</p>
+		<p><a href="pq/Result">pq\Result</a> <a href="pq/Cursor/fetch">pq\Cursor::fetch</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$spec</span> = "1"])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Cursor/fetchAsync">Cursor::fetchAsync</a></h3>
+		<h3 id="Cursor::fetchAsync">
+<a href="pq/Cursor/fetchAsync">Cursor::fetchAsync</a><a class="permalink" href="pq/Cursor#Cursor::fetchAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> fetch rows from the cursor.</p>
 
-		<p>void pq\Cursor::fetchAsync([string $spec = &quot;1&quot;[, callable $callback = NULL]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Cursor/fetchAsync">pq\Cursor::fetchAsync</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$spec</span> = "1"[, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Cursor/move">Cursor::move</a></h3>
+		<h3 id="Cursor::move">
+<a href="pq/Cursor/move">Cursor::move</a><a class="permalink" href="pq/Cursor#Cursor::move">#</a>
+</h3>
 		<p>Move the cursor.</p>
 
-		<p>pq\Result pq\Cursor::move([string $spec = &quot;1&quot;])</p>
+		<p><a href="pq/Result">pq\Result</a> <a href="pq/Cursor/move">pq\Cursor::move</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$spec</span> = "1"])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Cursor/moveAsync">Cursor::moveAsync</a></h3>
+		<h3 id="Cursor::moveAsync">
+<a href="pq/Cursor/moveAsync">Cursor::moveAsync</a><a class="permalink" href="pq/Cursor#Cursor::moveAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> move the cursor.</p>
 
-		<p>void pq\Cursor::moveAsync([string $spec = &quot;1&quot;])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Cursor/moveAsync">pq\Cursor::moveAsync</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$spec</span> = "1"])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Cursor/open">Cursor::open</a></h3>
+		<h3 id="Cursor::open">
+<a href="pq/Cursor/open">Cursor::open</a><a class="permalink" href="pq/Cursor#Cursor::open">#</a>
+</h3>
 		<p>Reopen a cursor.</p>
 
-		<p>void pq\Cursor::open()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Cursor/open">pq\Cursor::open</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Cursor/openAsync">Cursor::openAsync</a></h3>
+		<h3 id="Cursor::openAsync">
+<a href="pq/Cursor/openAsync">Cursor::openAsync</a><a class="permalink" href="pq/Cursor#Cursor::openAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> reopen a cursor.</p>
 
-		<p>void pq\Cursor::openAsync()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Cursor/openAsync">pq\Cursor::openAsync</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

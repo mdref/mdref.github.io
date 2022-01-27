@@ -67,39 +67,26 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>int pq\LOB::write(string $data)</h1>
-<p>Write data to the <em>large object</em>.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $data<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/LOB/write#">#</a><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq/LOB/write">pq\LOB::write</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>)</h1><p>Write data to the <em>large object</em>.</p><h2 id="Params:">Params:<a class="permalink" href="pq/LOB/write#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$data">$data<a class="permalink" href="pq/LOB/write#%24data">#</a></span><br>
 The data that should be written to the current position.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>int, the number of bytes written.</li>
-</ul>
-<h2>Throw:<a id="Throw:" href="#Throw:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$connection = new pq\Connection;
-$transaction = $connection-&gt;startTransaction();
-
-$transaction-&gt;createLOB()-&gt;write(&quot;Hello World!&quot;);
-$transaction-&gt;rollback();
-
-?&gt;
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/LOB/write#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.integer">int</a></code>, the number of bytes written.</li>
+</ul><h2 id="Throw:">Throw:<a class="permalink" href="pq/LOB/write#Throw:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/LOB/write#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$transaction </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">startTransaction</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">$transaction</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">createLOB</span><span style="color: inherit" class="keyword">()-&gt;</span><span style="color: inherit" class="default">write</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Hello World!"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$transaction</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">rollback</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -110,68 +110,76 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>interface pq\Query\WriterInterface</h1>
-<p>API for assembling unnamed statements with safe parameter substitution.
-See pq\Gateway\Table::setQueryWriter().</p>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Query/WriterInterface#">#</a><em>interface</em> <a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a>
+</h1><p>API for assembling unnamed statements with safe parameter substitution.
+See <a href="pq-gateway/pq/Gateway/Table/setQueryWriter">pq\Gateway\Table::setQueryWriter</a>().</p><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Query/WriterInterface#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/WriterInterface/__toString">WriterInterface::__toString</a></h3>
+		<h3 id="WriterInterface::__toString">
+<a href="pq-gateway/pq/Query/WriterInterface/__toString">WriterInterface::__toString</a><a class="permalink" href="pq-gateway/pq/Query/WriterInterface#WriterInterface::__toString">#</a>
+</h3>
 		<p>Retrieve the assembled query.</p>
 
-		<p>string pq\Query\WriterInterface::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq-gateway/pq/Query/WriterInterface/__toString">pq\Query\WriterInterface::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/WriterInterface/criteria">WriterInterface::criteria</a></h3>
-		<p>Write nested AND/OR criteria to the query string.</p>
+		<h3 id="WriterInterface::criteria">
+<a href="pq-gateway/pq/Query/WriterInterface/criteria">WriterInterface::criteria</a><a class="permalink" href="pq-gateway/pq/Query/WriterInterface#WriterInterface::criteria">#</a>
+</h3>
+		<p>Write nested AND/OR criteria to the query <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>pq\Query\WriterInterface pq\Query\WriterInterface::criteria(array $criteria)</p>
+		<p><a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a> <a href="pq-gateway/pq/Query/WriterInterface/criteria">pq\Query\WriterInterface::criteria</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$criteria</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/WriterInterface/getParams">WriterInterface::getParams</a></h3>
+		<h3 id="WriterInterface::getParams">
+<a href="pq-gateway/pq/Query/WriterInterface/getParams">WriterInterface::getParams</a><a class="permalink" href="pq-gateway/pq/Query/WriterInterface#WriterInterface::getParams">#</a>
+</h3>
 		<p>Retrieve the query parameters.</p>
 
-		<p>array pq\Query\WriterInterface::getParams()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Query/WriterInterface/getParams">pq\Query\WriterInterface::getParams</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/WriterInterface/getTypes">WriterInterface::getTypes</a></h3>
+		<h3 id="WriterInterface::getTypes">
+<a href="pq-gateway/pq/Query/WriterInterface/getTypes">WriterInterface::getTypes</a><a class="permalink" href="pq-gateway/pq/Query/WriterInterface#WriterInterface::getTypes">#</a>
+</h3>
 		<p>Get the query parameters' types.</p>
 
-		<p>array pq\Query\WriterInterface::getTypes()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Query/WriterInterface/getTypes">pq\Query\WriterInterface::getTypes</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/WriterInterface/param">WriterInterface::param</a></h3>
-		<p>Remember the parameter with any associated type and return $N to be written to the query string.</p>
+		<h3 id="WriterInterface::param">
+<a href="pq-gateway/pq/Query/WriterInterface/param">WriterInterface::param</a><a class="permalink" href="pq-gateway/pq/Query/WriterInterface#WriterInterface::param">#</a>
+</h3>
+		<p>Remember the parameter with any associated type and return <span class="var">$N</span> to be written to the query <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>string pq\Query\WriterInterface::param(mixed $param[, int $type = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq-gateway/pq/Query/WriterInterface/param">pq\Query\WriterInterface::param</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$param</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$type</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/WriterInterface/reset">WriterInterface::reset</a></h3>
+		<h3 id="WriterInterface::reset">
+<a href="pq-gateway/pq/Query/WriterInterface/reset">WriterInterface::reset</a><a class="permalink" href="pq-gateway/pq/Query/WriterInterface#WriterInterface::reset">#</a>
+</h3>
 		<p>Reset the query writer to initial state.</p>
 
-		<p>pq\Query\WriterInterface pq\Query\WriterInterface::reset()</p>
+		<p><a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a> <a href="pq-gateway/pq/Query/WriterInterface/reset">pq\Query\WriterInterface::reset</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/WriterInterface/write">WriterInterface::write</a></h3>
-		<p>Write a part of the query string.</p>
+		<h3 id="WriterInterface::write">
+<a href="pq-gateway/pq/Query/WriterInterface/write">WriterInterface::write</a><a class="permalink" href="pq-gateway/pq/Query/WriterInterface#WriterInterface::write">#</a>
+</h3>
+		<p>Write a part of the query <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>pq\Query\WriterInterface pq\Query\WriterInterface::write()</p>
+		<p><a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a> <a href="pq-gateway/pq/Query/WriterInterface/write">pq\Query\WriterInterface::write</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

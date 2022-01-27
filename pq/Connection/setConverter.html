@@ -125,86 +125,23 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void pq\Connection::setConverter(pq\Converter $converter)</h1>
-<p>Set a data type converter.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Converter $converter<br />
-An instance implementing pq\Converter.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-class HStoreConverter implements pq\Converter
-{
-	private $oids;
-	
-	function __construct(pq\Types $types) {
-		$this-&gt;oids = [$types[&quot;hstore&quot;]-&gt;oid];
-	}
-	
-	function convertTypes() {
-		return $this-&gt;oids;
-	}
-	
-	function convertFromString($string) {
-		return eval(&quot;return [$string];&quot;);
-	}
-	
-	function convertToString($data) {
-		$string = &quot;&quot;;
-		foreach ($data as $k =&gt; $v) {
-			if (isset($v)) {
-				$string .= sprintf(&quot;\&quot;%s\&quot;=&gt;\&quot;%s\&quot;,&quot;, addslashes($k), addslashes($v));
-			} else {
-				$string .= sprintf(&quot;\&quot;%s\&quot;=&gt;NULL,&quot;, addslashes($k));
-			}
-		}
-		return $string;
-	}
-}
-$connection = new pq\Connection;
-$types = new pq\Types($connection);
-
-$connection-&gt;setConverter(new HStoreConverter($types));
-
-$result = $connection-&gt;execParams(&quot;SELECT \$1&quot;, [
-	[
-		&quot;k1&quot; =&gt; &quot;v1&quot;,
-		&quot;k2&quot; =&gt; &quot;v2&quot;,
-		&quot;k3&quot; =&gt; null
-	]
-], [
-	$types[&quot;hstore&quot;]-&gt;oid
-]);
-
-var_dump(current($result-&gt;fetchAll()));
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>  array(1) {
-	[0]=&gt;
-	array(3) {
-	  [&quot;k1&quot;]=&gt;
-	  string(2) &quot;v1&quot;
-	  [&quot;k2&quot;]=&gt;
-	  string(2) &quot;v2&quot;
-	  [&quot;k3&quot;]=&gt;
-	  NULL
-	}
-  }
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/setConverter#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/setConverter">pq\Connection::setConverter</a>(<a href="pq/Converter">pq\Converter</a> <span class="var">$converter</span>)</h1><p>Set a data type converter.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Connection/setConverter#Params:">#</a>
+</h2><ul>
+<li>
+<a href="pq/Converter">pq\Converter</a> <span class="var" id="$converter">$converter<a class="permalink" href="pq/Connection/setConverter#%24converter">#</a></span><br>
+An instance implementing <a href="pq/Converter">pq\Converter</a>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Connection/setConverter#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Connection/setConverter#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">class </span><span style="color: inherit" class="default">HStoreConverter </span><span style="color: inherit" class="keyword">implements </span><span style="color: inherit" class="default">pq\Converter<br></span><span style="color: inherit" class="keyword">{<br>    private </span><span style="color: inherit" class="default">$oids</span><span style="color: inherit" class="keyword">;<br>    <br>    function </span><span style="color: inherit" class="default">__construct</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">pq\Types $types</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">oids </span><span style="color: inherit" class="keyword">= [</span><span style="color: inherit" class="default">$types</span><span style="color: inherit" class="keyword">[</span><span style="color: inherit" class="string">"hstore"</span><span style="color: inherit" class="keyword">]-&gt;</span><span style="color: inherit" class="default">oid</span><span style="color: inherit" class="keyword">];<br>    }<br>    <br>    function </span><span style="color: inherit" class="default">convertTypes</span><span style="color: inherit" class="keyword">() {<br>        return </span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">oids</span><span style="color: inherit" class="keyword">;<br>    }<br>    <br>    function </span><span style="color: inherit" class="default">convertFromString</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$string</span><span style="color: inherit" class="keyword">) {<br>        return eval(</span><span style="color: inherit" class="string">"return [</span><span style="color: inherit" class="default">$string</span><span style="color: inherit" class="string">];"</span><span style="color: inherit" class="keyword">);<br>    }<br>    <br>    function </span><span style="color: inherit" class="default">convertToString</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$data</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">$string </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="string">""</span><span style="color: inherit" class="keyword">;<br>        foreach (</span><span style="color: inherit" class="default">$data </span><span style="color: inherit" class="keyword">as </span><span style="color: inherit" class="default">$k </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$v</span><span style="color: inherit" class="keyword">) {<br>            if (isset(</span><span style="color: inherit" class="default">$v</span><span style="color: inherit" class="keyword">)) {<br>                </span><span style="color: inherit" class="default">$string </span><span style="color: inherit" class="keyword">.= </span><span style="color: inherit" class="default">sprintf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"\"%s\"=&gt;\"%s\","</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">addslashes</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$k</span><span style="color: inherit" class="keyword">), </span><span style="color: inherit" class="default">addslashes</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$v</span><span style="color: inherit" class="keyword">));<br>            } else {<br>                </span><span style="color: inherit" class="default">$string </span><span style="color: inherit" class="keyword">.= </span><span style="color: inherit" class="default">sprintf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"\"%s\"=&gt;NULL,"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">addslashes</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$k</span><span style="color: inherit" class="keyword">));<br>            }<br>        }<br>        return </span><span style="color: inherit" class="default">$string</span><span style="color: inherit" class="keyword">;<br>    }<br>}<br></span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$types </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Types</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setConverter</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">HStoreConverter</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$types</span><span style="color: inherit" class="keyword">));<br><br></span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">execParams</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT \$1"</span><span style="color: inherit" class="keyword">, [<br>    [<br>        </span><span style="color: inherit" class="string">"k1" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"v1"</span><span style="color: inherit" class="keyword">,<br>        </span><span style="color: inherit" class="string">"k2" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"v2"</span><span style="color: inherit" class="keyword">,<br>        </span><span style="color: inherit" class="string">"k3" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">null<br>    </span><span style="color: inherit" class="keyword">]<br>], [<br>    </span><span style="color: inherit" class="default">$types</span><span style="color: inherit" class="keyword">[</span><span style="color: inherit" class="string">"hstore"</span><span style="color: inherit" class="keyword">]-&gt;</span><span style="color: inherit" class="default">oid<br></span><span style="color: inherit" class="keyword">]);<br><br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">current</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchAll</span><span style="color: inherit" class="keyword">()));<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+  array(1) {<br>    [0]=&gt;<br>    array(3) {<br>      ["k1"]=&gt;<br>      string(2) "v1"<br>      ["k2"]=&gt;<br>      string(2) "v2"<br>      ["k3"]=&gt;<br>      NULL<br>    }<br>  }<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

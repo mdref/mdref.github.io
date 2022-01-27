@@ -129,28 +129,22 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void http\Client::__construct([string $driver = NULL[, string $persistent_handle_id = NULL]])</h1>
-<p>Create a new HTTP client.</p>
-<p>Currently only &quot;curl&quot; is supported as a $driver, and used by default.
-Persisted resources identified by $persistent_handle_id will be re-used if available.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $driver = NULL<br />
-The HTTP client driver to employ. Currently only the default driver, &quot;curl&quot;, is supported.</li>
-<li>string $persistent_handle_id = NULL<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/__construct#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Client/__construct">http\Client::__construct</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$driver</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$persistent_handle_id</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</h1><p>Create a new HTTP client.</p><p>Currently only "curl" is supported as a <span class="var">$driver</span>, and used by default.
+Persisted resources identified by <span class="var">$persistent_handle_id</span> will be re-used if available.</p><h2 id="Params:">Params:<a class="permalink" href="http/Client/__construct#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$driver">$driver<a class="permalink" href="http/Client/__construct#%24driver">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The HTTP client driver to employ. Currently only the default driver, "curl", is supported.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$persistent_handle_id">$persistent_handle_id<a class="permalink" href="http/Client/__construct#%24persistent_handle_id">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 If supplied, created curl handles will be persisted with this identifier for later reuse.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\UnexpectedValueException</li>
-<li>http\Exception\RuntimeException</li>
-</ul>
-
-
-
-		
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Client/__construct#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/UnexpectedValueException">http\Exception\UnexpectedValueException</a></li>
+<li><a href="http/Exception/RuntimeException">http\Exception\RuntimeException</a></li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

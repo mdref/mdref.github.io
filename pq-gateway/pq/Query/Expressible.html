@@ -105,68 +105,75 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Query\Expressible implements pq\Query\ExpressibleInterface</h1>
-<p>An implementation to express column data changes.
-See pq\Query\Expressible::mod() for an example.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected string $name<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Query/Expressible#">#</a><em>class</em> <a href="pq-gateway/pq/Query/Expressible">pq\Query\Expressible</a> <br>&nbsp;<em>implements</em> <a href="pq-gateway/pq/Query/ExpressibleInterface">pq\Query\ExpressibleInterface</a>
+</h1><p>An implementation to express column data changes.
+See <a href="pq-gateway/pq/Query/Expressible/mod">pq\Query\Expressible::mod</a>() for an example.</p><h2 id="Properties:">Properties:<a class="permalink" href="pq-gateway/pq/Query/Expressible#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$name">$name<a class="permalink" href="pq-gateway/pq/Query/Expressible#%24name">#</a></span><br>
 The name.</li>
-<li>protected mixed $data<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$data">$data<a class="permalink" href="pq-gateway/pq/Query/Expressible#%24data">#</a></span><br>
 The data.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Query/Expressible#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Expressible/__construct">Expressible::__construct</a></h3>
+		<h3 id="Expressible::__construct">
+<a href="pq-gateway/pq/Query/Expressible/__construct">Expressible::__construct</a><a class="permalink" href="pq-gateway/pq/Query/Expressible#Expressible::__construct">#</a>
+</h3>
 		<p>Create a new column data change expression.</p>
 
-		<p>void pq\Query\Expressible::__construct(string $name, mixed $data)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Query/Expressible/__construct">pq\Query\Expressible::__construct</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$data</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Expressible/__toString">Expressible::__toString</a></h3>
-		<p>Retrieve the contained value as string.</p>
+		<h3 id="Expressible::__toString">
+<a href="pq-gateway/pq/Query/Expressible/__toString">Expressible::__toString</a><a class="permalink" href="pq-gateway/pq/Query/Expressible#Expressible::__toString">#</a>
+</h3>
+		<p>Retrieve the contained value as <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>string pq\Query\Expressible::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq-gateway/pq/Query/Expressible/__toString">pq\Query\Expressible::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Expressible/get">Expressible::get</a></h3>
+		<h3 id="Expressible::get">
+<a href="pq-gateway/pq/Query/Expressible/get">Expressible::get</a><a class="permalink" href="pq-gateway/pq/Query/Expressible#Expressible::get">#</a>
+</h3>
 		<p>Retrieve the contained value.</p>
 
-		<p>mixed pq\Query\Expressible::get()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Query/Expressible/get">pq\Query\Expressible::get</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Expressible/isExpr">Expressible::isExpr</a></h3>
-		<p>Check whether the implementor already contains a expression, i.e. pq\Query\Expr.</p>
+		<h3 id="Expressible::isExpr">
+<a href="pq-gateway/pq/Query/Expressible/isExpr">Expressible::isExpr</a><a class="permalink" href="pq-gateway/pq/Query/Expressible#Expressible::isExpr">#</a>
+</h3>
+		<p>Check whether the implementor already contains a expression, i.e. <a href="pq-gateway/pq/Query/Expr">pq\Query\Expr</a>.</p>
 
-		<p>bool pq\Query\Expressible::isExpr()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq-gateway/pq/Query/Expressible/isExpr">pq\Query\Expressible::isExpr</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Expressible/mod">Expressible::mod</a></h3>
-		<p>Modify the contained data, turning it into an expression, i.e. pq\Query\Expr.</p>
+		<h3 id="Expressible::mod">
+<a href="pq-gateway/pq/Query/Expressible/mod">Expressible::mod</a><a class="permalink" href="pq-gateway/pq/Query/Expressible#Expressible::mod">#</a>
+</h3>
+		<p>Modify the contained data, turning it into an expression, i.e. <a href="pq-gateway/pq/Query/Expr">pq\Query\Expr</a>.</p>
 
-		<p>pq\Query\Expressible pq\Query\Expressible::mod(mixed $data[, string $op = NULL])</p>
+		<p><a href="pq-gateway/pq/Query/Expressible">pq\Query\Expressible</a> <a href="pq-gateway/pq/Query/Expressible/mod">pq\Query\Expressible::mod</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$data</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$op</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Expressible/set">Expressible::set</a></h3>
+		<h3 id="Expressible::set">
+<a href="pq-gateway/pq/Query/Expressible/set">Expressible::set</a><a class="permalink" href="pq-gateway/pq/Query/Expressible#Expressible::set">#</a>
+</h3>
 		<p>Set the contained data.</p>
 
-		<p>pq\Query\Expressible pq\Query\Expressible::set(mixed $data)</p>
+		<p><a href="pq-gateway/pq/Query/Expressible">pq\Query\Expressible</a> <a href="pq-gateway/pq/Query/Expressible/set">pq\Query\Expressible::set</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$data</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

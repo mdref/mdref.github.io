@@ -51,42 +51,17 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>object raphf\stat_persistent_handles()</h1>
-<p>Retrieve statistics about current process'/thread's persistent handles.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>object, stdClass instance</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>var_dump(raphf\stat_persistent_handles());
-</code></pre>
-<p>Yields:</p>
-<pre><code>object(stdClass)#6 (3) {
-    [&quot;http\Client\Curl&quot;]=&gt;
-    array(0) {
-    }
-    [&quot;http\Client\Curl\Request&quot;]=&gt;
-    array(1) {
-    [&quot;php.net:80&quot;]=&gt;
-    array(2) {
-      [&quot;used&quot;]=&gt;
-      int(2)
-      [&quot;free&quot;]=&gt;
-      int(1)
-    }
-    }
-    [&quot;pq\Connection&quot;]=&gt;
-    array(0) {
-    }
-}
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="raphf/stat_persistent_handles#">#</a>object <a href="raphf/stat_persistent_handles">raphf\stat_persistent_handles</a>()</h1><p>Retrieve statistics about current process'/thread's persistent handles.</p><h2 id="Params:">Params:<a class="permalink" href="raphf/stat_persistent_handles#Params:">#</a>
+</h2><p>None.</p><h2 id="Returns:">Returns:<a class="permalink" href="raphf/stat_persistent_handles#Returns:">#</a>
+</h2><ul>
+<li>object, <code><a href="https://php.net/manual/en/class.stdclass">stdClass</a></code> instance</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="raphf/stat_persistent_handles#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+var_dump(raphf\stat_persistent_handles());<br></span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+object(stdClass)#6 (3) {<br>    ["http\Client\Curl"]=&gt;<br>    array(0) {<br>    }<br>    ["http\Client\Curl\Request"]=&gt;<br>    array(1) {<br>    ["php.net:80"]=&gt;<br>    array(2) {<br>      ["used"]=&gt;<br>      int(2)<br>      ["free"]=&gt;<br>      int(1)<br>    }<br>    }<br>    ["pq\Connection"]=&gt;<br>    array(0) {<br>    }<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

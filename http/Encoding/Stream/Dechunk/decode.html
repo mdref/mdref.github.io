@@ -77,36 +77,32 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>static string http\Encoding\Stream\Dechunk::decode(string $data[, int &amp;$decoded_len = 0])</h1>
-<p>Decode chunked encoded data.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $data<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Encoding/Stream/Dechunk/decode#">#</a><em>static</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Encoding/Stream/Dechunk/decode">http\Encoding\Stream\Dechunk::decode</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> &amp;<span class="var">$decoded_len</span> = 0])</h1><p>Decode chunked encoded data.</p><h2 id="Params:">Params:<a class="permalink" href="http/Encoding/Stream/Dechunk/decode#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$data">$data<a class="permalink" href="http/Encoding/Stream/Dechunk/decode#%24data">#</a></span><br>
 The data to decode.</li>
-<li>Optional int &amp;$decoded_len = 0<br />
-Out parameter with the length of $data that's been decoded.
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> &amp;<span class="var" id="$decoded_len">$decoded_len<a class="permalink" href="http/Encoding/Stream/Dechunk/decode#%24decoded_len">#</a></span> = 0<br>
+Out parameter with the length of <span class="var">$data</span> that's been decoded.
 Should be <code>strlen($data)</code> if not truncated.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string, the decoded data.</li>
-<li>string, the unencoded data.</li>
-<li>string, the truncated decoded data.</li>
-<li>false, if $data cannot be decoded.</li>
-</ul>
-<h2>Notices:<a id="Notices:" href="#Notices:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>If $data does not seem to be chunked encoded.</li>
-</ul>
-<h2>Warnings:<a id="Warnings:" href="#Warnings:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>If $data cannot be decoded or is truncated.</li>
-</ul>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Encoding/Stream/Dechunk/decode#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code>, the decoded data.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code>, the unencoded data.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code>, the truncated decoded data.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>, if <span class="var">$data</span> cannot be decoded.</li>
+</ul><h2 id="Notices:">Notices:<a class="permalink" href="http/Encoding/Stream/Dechunk/decode#Notices:">#</a>
+</h2><ul>
+<li>If <span class="var">$data</span> does not seem to be chunked encoded.</li>
+</ul><h2 id="Warnings:">Warnings:<a class="permalink" href="http/Encoding/Stream/Dechunk/decode#Warnings:">#</a>
+</h2><ul>
+<li>If <span class="var">$data</span> cannot be decoded or is truncated.</li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

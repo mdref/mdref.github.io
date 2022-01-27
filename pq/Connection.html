@@ -250,345 +250,434 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Connection</h1>
-<p>The connection to the PostgreSQL server.</p>
-<p>See the <a href="pq/Connection/:%20General%20Usage">General Usage</a> page for an introduction on how to use this class.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<h3>Connection Flags:<a id="Connection.Flags:" href="#Connection.Flags:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>PERSISTENT<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection#">#</a><em>class</em> <a href="pq/Connection">pq\Connection</a>
+</h1><p>The connection to the PostgreSQL server.</p><p>See the <a href="pq/Connection/:%20General%20Usage">General Usage</a> page for an introduction on how to use this <em>class</em>.</p><h2 id="Constants:">Constants:<a class="permalink" href="pq/Connection#Constants:">#</a>
+</h2><h3 id="Connection.Flags:">Connection Flags:<a class="permalink" href="pq/Connection#Connection.Flags:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="PERSISTENT">PERSISTENT<a class="permalink" href="pq/Connection#PERSISTENT">#</a></span><br>
 (Re-)open a persistent connection.</li>
-<li>ASYNC<br />
+<li>
+<span class="constant" id="ASYNC">ASYNC<a class="permalink" href="pq/Connection#ASYNC">#</a></span><br>
 If the connection is not already open, perform the connection attempt <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronously</a>.</li>
-</ul>
-<h3>Connection Status:<a id="Connection.Status:" href="#Connection.Status:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>OK<br />
+</ul><h3 id="Connection.Status:">Connection Status:<a class="permalink" href="pq/Connection#Connection.Status:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="OK">OK<a class="permalink" href="pq/Connection#OK">#</a></span><br>
 Everything well; if a connection has been newly and synchronously created, the connection will always have this status right after creation.</li>
-<li>BAD<br />
-Broken connection; consider pq\Connection::reset() or recreation.</li>
-<li>STARTED<br />
+<li>
+<span class="constant" id="BAD">BAD<a class="permalink" href="pq/Connection#BAD">#</a></span><br>
+Broken connection; consider <a href="pq/Connection/reset">pq\Connection::reset</a>() or recreation.</li>
+<li>
+<span class="constant" id="STARTED">STARTED<a class="permalink" href="pq/Connection#STARTED">#</a></span><br>
 Waiting for connection to be made.</li>
-<li>MADE<br />
+<li>
+<span class="constant" id="MADE">MADE<a class="permalink" href="pq/Connection#MADE">#</a></span><br>
 Connection okay; waiting to send.</li>
-<li>AWAITING_RESPONSE<br />
+<li>
+<span class="constant" id="AWAITING_RESPONSE">AWAITING_RESPONSE<a class="permalink" href="pq/Connection#AWAITING_RESPONSE">#</a></span><br>
 Waiting for a response from the server.</li>
-<li>AUTH_OK<br />
+<li>
+<span class="constant" id="AUTH_OK">AUTH_OK<a class="permalink" href="pq/Connection#AUTH_OK">#</a></span><br>
 Received authentication; waiting for backend start-up to finish.</li>
-<li>SSL_STARTUP<br />
-Negotiating SSL encryption.</li>
-<li>SETENV<br />
+<li>
+<span class="constant" id="SSL_STARTUP">SSL_STARTUP<a class="permalink" href="pq/Connection#SSL_STARTUP">#</a></span><br>
+Negotiating <span class="constant">SSL</span> encryption.</li>
+<li>
+<span class="constant" id="SETENV">SETENV<a class="permalink" href="pq/Connection#SETENV">#</a></span><br>
 Negotiating environment-driven parameter settings.</li>
-</ul>
-<h3>Transaction Status:<a id="Transaction.Status:" href="#Transaction.Status:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>TRANS_IDLE<br />
+</ul><h3 id="Transaction.Status:">Transaction Status:<a class="permalink" href="pq/Connection#Transaction.Status:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="TRANS_IDLE">TRANS_IDLE<a class="permalink" href="pq/Connection#TRANS_IDLE">#</a></span><br>
 No active transaction.</li>
-<li>TRANS_ACTIVE<br />
+<li>
+<span class="constant" id="TRANS_ACTIVE">TRANS_ACTIVE<a class="permalink" href="pq/Connection#TRANS_ACTIVE">#</a></span><br>
 A transaction command is in progress.</li>
-<li>TRANS_INTRANS<br />
+<li>
+<span class="constant" id="TRANS_INTRANS">TRANS_INTRANS<a class="permalink" href="pq/Connection#TRANS_INTRANS">#</a></span><br>
 Idling in a valid transaction block.</li>
-<li>TRANS_INERROR<br />
+<li>
+<span class="constant" id="TRANS_INERROR">TRANS_INERROR<a class="permalink" href="pq/Connection#TRANS_INERROR">#</a></span><br>
 Idling in a failed transaction block.</li>
-<li>TRANS_UNKNOWN<br />
+<li>
+<span class="constant" id="TRANS_UNKNOWN">TRANS_UNKNOWN<a class="permalink" href="pq/Connection#TRANS_UNKNOWN">#</a></span><br>
 Bad connection.</li>
-</ul>
-<h3>Polling Status:<a id="Polling.Status:" href="#Polling.Status:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>POLLING_FAILED<br />
+</ul><h3 id="Polling.Status:">Polling Status:<a class="permalink" href="pq/Connection#Polling.Status:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="POLLING_FAILED">POLLING_FAILED<a class="permalink" href="pq/Connection#POLLING_FAILED">#</a></span><br>
 The connection procedure has failed.</li>
-<li>POLLING_READING<br />
+<li>
+<span class="constant" id="POLLING_READING">POLLING_READING<a class="permalink" href="pq/Connection#POLLING_READING">#</a></span><br>
 Select for read-readiness.</li>
-<li>POLLING_WRITING<br />
+<li>
+<span class="constant" id="POLLING_WRITING">POLLING_WRITING<a class="permalink" href="pq/Connection#POLLING_WRITING">#</a></span><br>
 Select for write-readiness.</li>
-<li>POLLING_OK<br />
+<li>
+<span class="constant" id="POLLING_OK">POLLING_OK<a class="permalink" href="pq/Connection#POLLING_OK">#</a></span><br>
 The connection has been successfully made.</li>
-</ul>
-<h3>Event Listener Types:<a id="Event.Listener.Types:" href="#Event.Listener.Types:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>EVENT_NOTICE<br />
+</ul><h3 id="Event.Listener.Types:">Event Listener Types:<a class="permalink" href="pq/Connection#Event.Listener.Types:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="EVENT_NOTICE">EVENT_NOTICE<a class="permalink" href="pq/Connection#EVENT_NOTICE">#</a></span><br>
 Register the event handler for notices.</li>
-<li>EVENT_RESULT<br />
+<li>
+<span class="constant" id="EVENT_RESULT">EVENT_RESULT<a class="permalink" href="pq/Connection#EVENT_RESULT">#</a></span><br>
 Register the event handler for any created results.</li>
-<li>EVENT_RESET<br />
+<li>
+<span class="constant" id="EVENT_RESET">EVENT_RESET<a class="permalink" href="pq/Connection#EVENT_RESET">#</a></span><br>
 Register the event handler for connection resets.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public (readonly) int $status<br />
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="pq/Connection#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$status">$status<a class="permalink" href="pq/Connection#%24status">#</a></span><br>
 A <a href="pq/Connection#Connection.Status:">connection status constant</a> value.</li>
-<li>public (readonly) int $transactionStatus<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$transactionStatus">$transactionStatus<a class="permalink" href="pq/Connection#%24transactionStatus">#</a></span><br>
 A <a href="pq/Connection#Transaction.Status:">transaction status constant</a> value.</li>
-<li>public (readonly) resource $socket<br />
-The server socket resource.</li>
-<li>public (readonly) bool $busy<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var" id="$socket">$socket<a class="permalink" href="pq/Connection#%24socket">#</a></span><br>
+The server socket <code><a href="https://php.net/manual/en/language.types.resource">resource</a></code>.</li>
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$busy">$busy<a class="permalink" href="pq/Connection#%24busy">#</a></span><br>
 Whether the connection is busy with <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronous operations</a>.</li>
-<li>public (readonly) string $errorMessage<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$errorMessage">$errorMessage<a class="permalink" href="pq/Connection#%24errorMessage">#</a></span><br>
 Any error message on failure.</li>
-<li>public (readonly) array $eventHandlers<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$eventHandlers">$eventHandlers<a class="permalink" href="pq/Connection#%24eventHandlers">#</a></span><br>
 List of registered event handlers.</li>
-<li>public string $encoding = NULL<br />
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$encoding">$encoding<a class="permalink" href="pq/Connection#%24encoding">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Connection character set.</li>
-<li>public bool $unbuffered = FALSE<br />
-Whether to fetch <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronous</a> results in unbuffered mode, i.e. each row generates a distinct pq\Result.</li>
-<li>public bool $nonblocking = FALSE<br />
-Whether to set the underlying socket nonblocking, useful for asynchronous handling of writes. See also pq\Connection::flush().</li>
-</ul>
-<h3>Connection Information:<a id="Connection.Information:" href="#Connection.Information:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>public (readonly) string $db<br />
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$unbuffered">$unbuffered<a class="permalink" href="pq/Connection#%24unbuffered">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
+Whether to fetch <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronous</a> results in unbuffered mode, i.e. each row generates a distinct <a href="pq/Result">pq\Result</a>.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$nonblocking">$nonblocking<a class="permalink" href="pq/Connection#%24nonblocking">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
+Whether to set the underlying socket nonblocking, useful for asynchronous handling of writes. See also <a href="pq/Connection/flush">pq\Connection::flush</a>().</li>
+</ul><h3 id="Connection.Information:">Connection Information:<a class="permalink" href="pq/Connection#Connection.Information:">#</a>
+</h3><ul>
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$db">$db<a class="permalink" href="pq/Connection#%24db">#</a></span><br>
 The database name of the connection.</li>
-<li>public (readonly) string $user<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$user">$user<a class="permalink" href="pq/Connection#%24user">#</a></span><br>
 The user name of the connection.</li>
-<li>public (readonly) string $pass<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$pass">$pass<a class="permalink" href="pq/Connection#%24pass">#</a></span><br>
 The password of the connection.</li>
-<li>public (readonly) string $host<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$host">$host<a class="permalink" href="pq/Connection#%24host">#</a></span><br>
 The server host name of the connection.</li>
-<li>public (readonly) string $port<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$port">$port<a class="permalink" href="pq/Connection#%24port">#</a></span><br>
 The port of the connection.</li>
-<li>public (readonly) string $options<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$options">$options<a class="permalink" href="pq/Connection#%24options">#</a></span><br>
 The command-line options passed in the connection request.</li>
-</ul>
-<h3>Inheritable Defaults:<a id="Inheritable.Defaults:" href="#Inheritable.Defaults:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>public int $defaultFetchType = pq\Result::FETCH_ARRAY<br />
-Default fetch type for future pq\Result instances.</li>
-<li>public int $defaultAutoConvert = pq\Result::CONV_ALL<br />
-Default conversion bitmask for future pq\Result instances.</li>
-<li>public int $defaultTransactionIsolation = pq\Transaction::READ_COMMITTED<br />
-Default transaction isolation level for future pq\Transaction instances.</li>
-<li>public bool $defaultTransactionReadonly = FALSE<br />
-Default transaction readonlyness for future pq\Transaction instances.</li>
-<li>public bool $defaultTransactionDeferrable = FALSE<br />
-Default transaction deferrability for future pq\Transaction instances.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h3 id="Inheritable.Defaults:">Inheritable Defaults:<a class="permalink" href="pq/Connection#Inheritable.Defaults:">#</a>
+</h3><ul>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$defaultFetchType">$defaultFetchType<a class="permalink" href="pq/Connection#%24defaultFetchType">#</a></span> = <a href="pq/Result#FETCH_ARRAY">pq\Result::FETCH_ARRAY</a><br>
+Default fetch type for future <a href="pq/Result">pq\Result</a> instances.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$defaultAutoConvert">$defaultAutoConvert<a class="permalink" href="pq/Connection#%24defaultAutoConvert">#</a></span> = <a href="pq/Result#CONV_ALL">pq\Result::CONV_ALL</a><br>
+Default conversion bitmask for future <a href="pq/Result">pq\Result</a> instances.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$defaultTransactionIsolation">$defaultTransactionIsolation<a class="permalink" href="pq/Connection#%24defaultTransactionIsolation">#</a></span> = <a href="pq/Transaction#READ_COMMITTED">pq\Transaction::READ_COMMITTED</a><br>
+Default transaction isolation level for future <a href="pq/Transaction">pq\Transaction</a> instances.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$defaultTransactionReadonly">$defaultTransactionReadonly<a class="permalink" href="pq/Connection#%24defaultTransactionReadonly">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
+Default transaction readonlyness for future <a href="pq/Transaction">pq\Transaction</a> instances.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$defaultTransactionDeferrable">$defaultTransactionDeferrable<a class="permalink" href="pq/Connection#%24defaultTransactionDeferrable">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
+Default transaction deferrability for future <a href="pq/Transaction">pq\Transaction</a> instances.</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq/Connection#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/Connection/__construct">Connection::__construct</a></h3>
+		<h3 id="Connection::__construct">
+<a href="pq/Connection/__construct">Connection::__construct</a><a class="permalink" href="pq/Connection#Connection::__construct">#</a>
+</h3>
 		<p>Create a new PostgreSQL connection.</p>
 
-		<p>void pq\Connection::__construct([string $dsn = &quot;&quot;[, int $flags = 0]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/__construct">pq\Connection::__construct</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$dsn</span> = ""[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span> = 0]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/declare">Connection::declare</a></h3>
+		<h3 id="Connection::declare">
+<a href="pq/Connection/declare">Connection::declare</a><a class="permalink" href="pq/Connection#Connection::declare">#</a>
+</h3>
 		<p>Declare a cursor for a query.</p>
 
-		<p>pq\Cursor pq\Connection::declare(string $name, int $flags, string $query)</p>
+		<p><a href="pq/Cursor">pq\Cursor</a> <a href="pq/Connection/declare">pq\Connection::declare</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/declareAsync">Connection::declareAsync</a></h3>
+		<h3 id="Connection::declareAsync">
+<a href="pq/Connection/declareAsync">Connection::declareAsync</a><a class="permalink" href="pq/Connection#Connection::declareAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> declare a cursor for a query.</p>
 
-		<p>pq\Cursor pq\Connection::declareAsync(string $name, int $flags, string $query)</p>
+		<p><a href="pq/Cursor">pq\Cursor</a> <a href="pq/Connection/declareAsync">pq\Connection::declareAsync</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/escapeBytea">Connection::escapeBytea</a></h3>
+		<h3 id="Connection::escapeBytea">
+<a href="pq/Connection/escapeBytea">Connection::escapeBytea</a><a class="permalink" href="pq/Connection#Connection::escapeBytea">#</a>
+</h3>
 		<p>Escape binary data for use within a query with the type bytea.</p>
 
-		<p>string pq\Connection::escapeBytea(string $binary)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/Connection/escapeBytea">pq\Connection::escapeBytea</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$binary</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/exec">Connection::exec</a></h3>
+		<h3 id="Connection::exec">
+<a href="pq/Connection/exec">Connection::exec</a><a class="permalink" href="pq/Connection#Connection::exec">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Executing%20Queries">Execute one or multiple SQL queries</a> on the connection.</p>
 
-		<p>pq\Result pq\Connection::exec(string $query)</p>
+		<p><a href="pq/Result">pq\Result</a> <a href="pq/Connection/exec">pq\Connection::exec</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/execAsync">Connection::execAsync</a></h3>
+		<h3 id="Connection::execAsync">
+<a href="pq/Connection/execAsync">Connection::execAsync</a><a class="permalink" href="pq/Connection#Connection::execAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> <a href="pq/Connection:%20Executing%20Queries">execute an SQL query</a> on the connection.</p>
 
-		<p>void pq\Connection::exec(string $query[, callable $callback])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/exec">pq\Connection::exec</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>[, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/execParams">Connection::execParams</a></h3>
+		<h3 id="Connection::execParams">
+<a href="pq/Connection/execParams">Connection::execParams</a><a class="permalink" href="pq/Connection#Connection::execParams">#</a>
+</h3>
 		<p><a href="pq/Connection:%20Executing%20Queries">Execute an SQL query</a> with properly escaped parameters substituted.</p>
 
-		<p>pq\Result pq\Connection::execParams(string $query, array $params[, array $types = NULL])</p>
+		<p><a href="pq/Result">pq\Result</a> <a href="pq/Connection/execParams">pq\Connection::execParams</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$params</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$types</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/execParamsAsync">Connection::execParamsAsync</a></h3>
+		<h3 id="Connection::execParamsAsync">
+<a href="pq/Connection/execParamsAsync">Connection::execParamsAsync</a><a class="permalink" href="pq/Connection#Connection::execParamsAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> <a href="pq/Connection:%20Executing%20Queries">execute an SQL query</a> with properly escaped parameters substituted.</p>
 
-		<p>pq\Result pq\Connection::execParamsAsync(string $query, array $params[, array $types = NULL, [callable $cb = NULL]])</p>
+		<p><a href="pq/Result">pq\Result</a> <a href="pq/Connection/execParamsAsync">pq\Connection::execParamsAsync</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$params</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$types</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>, [<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$cb</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/flush">Connection::flush</a></h3>
+		<h3 id="Connection::flush">
+<a href="pq/Connection/flush">Connection::flush</a><a class="permalink" href="pq/Connection#Connection::flush">#</a>
+</h3>
 		<p>Flush pending writes on the connection.</p>
 
-		<p>bool pq\Connection::flush()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq/Connection/flush">pq\Connection::flush</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/getResult">Connection::getResult</a></h3>
+		<h3 id="Connection::getResult">
+<a href="pq/Connection/getResult">Connection::getResult</a><a class="permalink" href="pq/Connection#Connection::getResult">#</a>
+</h3>
 		<p>Fetch the result of an <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronous</a> query.</p>
 
-		<p>pq\Result pq\Connection::getResult()</p>
+		<p><a href="pq/Result">pq\Result</a> <a href="pq/Connection/getResult">pq\Connection::getResult</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/listen">Connection::listen</a></h3>
-		<p>Listen on $channel for notifications.</p>
+		<h3 id="Connection::listen">
+<a href="pq/Connection/listen">Connection::listen</a><a class="permalink" href="pq/Connection#Connection::listen">#</a>
+</h3>
+		<p>Listen on <span class="var">$channel</span> for notifications.</p>
 
-		<p>void pq\Connection::listen(string $channel, callable $listener)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/listen">pq\Connection::listen</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$channel</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$listener</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/listenAsync">Connection::listenAsync</a></h3>
-		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> start listening on $channel for notifcations.</p>
+		<h3 id="Connection::listenAsync">
+<a href="pq/Connection/listenAsync">Connection::listenAsync</a><a class="permalink" href="pq/Connection#Connection::listenAsync">#</a>
+</h3>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> start listening on <span class="var">$channel</span> for notifcations.</p>
 
-		<p>void pq\Connection::listenAsync(string $channel, callable $listener)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/listenAsync">pq\Connection::listenAsync</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$channel</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$listener</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/notify">Connection::notify</a></h3>
-		<p>Notify all listeners on $channel with $message.</p>
+		<h3 id="Connection::notify">
+<a href="pq/Connection/notify">Connection::notify</a><a class="permalink" href="pq/Connection#Connection::notify">#</a>
+</h3>
+		<p>Notify all listeners on <span class="var">$channel</span> with <span class="var">$message</span>.</p>
 
-		<p>void pq\Connection::notify(string $channel, string $message)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/notify">pq\Connection::notify</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$channel</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$message</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/notifyAsync">Connection::notifyAsync</a></h3>
-		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> start notifying all listeners on $channel with $message.</p>
+		<h3 id="Connection::notifyAsync">
+<a href="pq/Connection/notifyAsync">Connection::notifyAsync</a><a class="permalink" href="pq/Connection#Connection::notifyAsync">#</a>
+</h3>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> start notifying all listeners on <span class="var">$channel</span> with <span class="var">$message</span>.</p>
 
-		<p>void pq\Connection::notifyAsync(string $channel, string $message)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/notifyAsync">pq\Connection::notifyAsync</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$channel</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$message</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/off">Connection::off</a></h3>
+		<h3 id="Connection::off">
+<a href="pq/Connection/off">Connection::off</a><a class="permalink" href="pq/Connection#Connection::off">#</a>
+</h3>
 		<p>Stops listening for an event type.</p>
 
-		<p>bool pq\Connection::off(string $event)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq/Connection/off">pq\Connection::off</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$event</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/on">Connection::on</a></h3>
+		<h3 id="Connection::on">
+<a href="pq/Connection/on">Connection::on</a><a class="permalink" href="pq/Connection#Connection::on">#</a>
+</h3>
 		<p>Listen for an event.</p>
 
-		<p>int pq\Connection::on(string $event, callable $callback)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq/Connection/on">pq\Connection::on</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$event</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/poll">Connection::poll</a></h3>
+		<h3 id="Connection::poll">
+<a href="pq/Connection/poll">Connection::poll</a><a class="permalink" href="pq/Connection#Connection::poll">#</a>
+</h3>
 		<p>Poll an <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronously</a> operating connection.</p>
 
-		<p>int pq\Connection::poll()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq/Connection/poll">pq\Connection::poll</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/prepare">Connection::prepare</a></h3>
-		<p>Prepare a named statement for later execution with pq\Statement::execute().</p>
+		<h3 id="Connection::prepare">
+<a href="pq/Connection/prepare">Connection::prepare</a><a class="permalink" href="pq/Connection#Connection::prepare">#</a>
+</h3>
+		<p>Prepare a named statement for later execution with <a href="pq/Statement#execute">pq\Statement::execute</a>().</p>
 
-		<p>pq\Statement pq\Connection::prepare(string $name, string $query[, array $types = NULL])</p>
+		<p><a href="pq/Statement">pq\Statement</a> <a href="pq/Connection/prepare">pq\Connection::prepare</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$types</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/prepareAsync">Connection::prepareAsync</a></h3>
-		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> prepare a named statement for later execution with pq\Statement::exec().</p>
+		<h3 id="Connection::prepareAsync">
+<a href="pq/Connection/prepareAsync">Connection::prepareAsync</a><a class="permalink" href="pq/Connection#Connection::prepareAsync">#</a>
+</h3>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> prepare a named statement for later execution with <a href="pq/Statement/exec">pq\Statement::exec</a>().</p>
 
-		<p>pq\Statement pq\Connection::prepareAsync(string $name, string $query[, array $types = NULL])</p>
+		<p><a href="pq/Statement">pq\Statement</a> <a href="pq/Connection/prepareAsync">pq\Connection::prepareAsync</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$types</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/quote">Connection::quote</a></h3>
-		<p>Quote a string for safe use in a query.</p>
+		<h3 id="Connection::quote">
+<a href="pq/Connection/quote">Connection::quote</a><a class="permalink" href="pq/Connection#Connection::quote">#</a>
+</h3>
+		<p>Quote a <code><a href="https://php.net/manual/en/language.types.string">string</a></code> for safe use in a query.</p>
 
-		<p>string pq\Connection::quote(string $payload)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/Connection/quote">pq\Connection::quote</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$payload</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/quoteName">Connection::quoteName</a></h3>
+		<h3 id="Connection::quoteName">
+<a href="pq/Connection/quoteName">Connection::quoteName</a><a class="permalink" href="pq/Connection#Connection::quoteName">#</a>
+</h3>
 		<p>Quote an identifier for safe usage as name.</p>
 
-		<p>string pq\Connection::quoteName(string $name)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/Connection/quoteName">pq\Connection::quoteName</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/reset">Connection::reset</a></h3>
+		<h3 id="Connection::reset">
+<a href="pq/Connection/reset">Connection::reset</a><a class="permalink" href="pq/Connection#Connection::reset">#</a>
+</h3>
 		<p>Attempt to reset a possibly broken connection to a working state.</p>
 
-		<p>void pq\Connection::reset()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/reset">pq\Connection::reset</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/resetAsync">Connection::resetAsync</a></h3>
+		<h3 id="Connection::resetAsync">
+<a href="pq/Connection/resetAsync">Connection::resetAsync</a><a class="permalink" href="pq/Connection#Connection::resetAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> reset a possibly broken connection to a working state.</p>
 
-		<p>void pq\Connection::resetAsync()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/resetAsync">pq\Connection::resetAsync</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/setConverter">Connection::setConverter</a></h3>
+		<h3 id="Connection::setConverter">
+<a href="pq/Connection/setConverter">Connection::setConverter</a><a class="permalink" href="pq/Connection#Connection::setConverter">#</a>
+</h3>
 		<p>Set a data type converter.</p>
 
-		<p>void pq\Connection::setConverter(pq\Converter $converter)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/setConverter">pq\Connection::setConverter</a>(<a href="pq/Converter">pq\Converter</a> <span class="var">$converter</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/startTransaction">Connection::startTransaction</a></h3>
+		<h3 id="Connection::startTransaction">
+<a href="pq/Connection/startTransaction">Connection::startTransaction</a><a class="permalink" href="pq/Connection#Connection::startTransaction">#</a>
+</h3>
 		<p>Begin a transaction.</p>
 
-		<p>pq\Transaction pq\Connection::startTransaction([int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]])</p>
+		<p><a href="pq/Transaction">pq\Transaction</a> <a href="pq/Connection/startTransaction">pq\Connection::startTransaction</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$isolation</span> = <a href="pq/Transaction#READ_COMMITTED">pq\Transaction::READ_COMMITTED</a>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$readonly</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$deferrable</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/startTransactionAsync">Connection::startTransactionAsync</a></h3>
+		<h3 id="Connection::startTransactionAsync">
+<a href="pq/Connection/startTransactionAsync">Connection::startTransactionAsync</a><a class="permalink" href="pq/Connection#Connection::startTransactionAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> begin a transaction.</p>
 
-		<p>pq\Transaction pq\Connection::startTransactionAsync([int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]])</p>
+		<p><a href="pq/Transaction">pq\Transaction</a> <a href="pq/Connection/startTransactionAsync">pq\Connection::startTransactionAsync</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$isolation</span> = <a href="pq/Transaction#READ_COMMITTED">pq\Transaction::READ_COMMITTED</a>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$readonly</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$deferrable</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/trace">Connection::trace</a></h3>
+		<h3 id="Connection::trace">
+<a href="pq/Connection/trace">Connection::trace</a><a class="permalink" href="pq/Connection#Connection::trace">#</a>
+</h3>
 		<p>Trace protocol communication with the server.</p>
 
-		<p>bool pq\Connection::trace([resource $stream])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq/Connection/trace">pq\Connection::trace</a>([<code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var">$stream</span>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/unescapeBytea">Connection::unescapeBytea</a></h3>
+		<h3 id="Connection::unescapeBytea">
+<a href="pq/Connection/unescapeBytea">Connection::unescapeBytea</a><a class="permalink" href="pq/Connection#Connection::unescapeBytea">#</a>
+</h3>
 		<p>Unescape bytea data retrieved from the server.</p>
 
-		<p>string pq\Connection::unescapeBytea(string $bytea)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/Connection/unescapeBytea">pq\Connection::unescapeBytea</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$bytea</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/unlisten">Connection::unlisten</a></h3>
-		<p>Stop listening for notifications on channel $channel.</p>
+		<h3 id="Connection::unlisten">
+<a href="pq/Connection/unlisten">Connection::unlisten</a><a class="permalink" href="pq/Connection#Connection::unlisten">#</a>
+</h3>
+		<p>Stop listening for notifications on channel <span class="var">$channel</span>.</p>
 
-		<p>void pq\Connection::unlisten(string $channel)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/unlisten">pq\Connection::unlisten</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$channel</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/unlistenAsync">Connection::unlistenAsync</a></h3>
-		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> stop listening for notifications on channel $channel.</p>
+		<h3 id="Connection::unlistenAsync">
+<a href="pq/Connection/unlistenAsync">Connection::unlistenAsync</a><a class="permalink" href="pq/Connection#Connection::unlistenAsync">#</a>
+</h3>
+		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> stop listening for notifications on channel <span class="var">$channel</span>.</p>
 
-		<p>void pq\Connection::unlistenAsync(string $channel)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/unlistenAsync">pq\Connection::unlistenAsync</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$channel</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Connection/unsetConverter">Connection::unsetConverter</a></h3>
+		<h3 id="Connection::unsetConverter">
+<a href="pq/Connection/unsetConverter">Connection::unsetConverter</a><a class="permalink" href="pq/Connection#Connection::unsetConverter">#</a>
+</h3>
 		<p>Stop applying a data type converter.</p>
 
-		<p>void pq\Connection::unsetConverter(pq\Converter $converter)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/unsetConverter">pq\Connection::unsetConverter</a>(<a href="pq/Converter">pq\Converter</a> <span class="var">$converter</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -129,63 +129,32 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>mixed pq\Gateway\Table::by(pq\Gateway\Row $me[, string $ref = NULL])</h1>
-<p>Find the row inthis table referenced by another table's row by foreign key.
-See pq\Gateway\Table::find(), pq\Gateway\Table::of() and pq\Gateway\Row::ofWhich().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Gateway\Row $me<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/by#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/by">pq\Gateway\Table::by</a>(<a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var">$me</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$ref</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>Find the row inthis table referenced by another table's row by foreign key.
+See <a href="pq-gateway/pq/Gateway/Table/find">pq\Gateway\Table::find</a>(), <a href="pq-gateway/pq/Gateway/Table/of">pq\Gateway\Table::of</a>() and <a href="pq-gateway/pq/Gateway/Row/ofWhich">pq\Gateway\Row::ofWhich</a>().</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Gateway/Table/by#Params:">#</a>
+</h2><ul>
+<li>
+<a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var" id="$me">$me<a class="permalink" href="pq-gateway/pq/Gateway/Table/by#%24me">#</a></span><br>
 A row of another table referenced by this table through a foreign key.</li>
-<li>Optional string $ref = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$ref">$ref<a class="permalink" href="pq-gateway/pq/Gateway/Table/by#%24ref">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The identifying name of the relation.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Gateway/Table/by#Returns:">#</a>
+</h2><ul>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using <a href="pq-gateway/pq/Query/AsyncExecutor">pq\Query\AsyncExecutor</a>, the asynchronous executor.<br>
 Else:</li>
-<li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
-<li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
-<li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Gateway\Table;
-
-$accounts = new Table(&quot;account&quot;);
-$account_emails = new Table(&quot;account_email&quot;);
-$email = $account_emails-&gt;find([&quot;email=&quot; =&gt; &quot;mike@php.net&quot;])-&gt;current();
-
-$account1 = $accounts-&gt;by($email)-&gt;current();
-$account2 = $email-&gt;ofWhich(&quot;account&quot;)-&gt;current();
-
-var_dump($account1-&gt;getData(), $account2-&gt;getData());
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>array(3) {
-  [&quot;id&quot;]=&gt;
-  string(36) &quot;f9710801-c900-4774-848c-22c85deecd83&quot;
-  [&quot;password&quot;]=&gt;
-  NULL
-  [&quot;name&quot;]=&gt;
-  string(4) &quot;mike&quot;
-}
-array(3) {
-  [&quot;id&quot;]=&gt;
-  string(36) &quot;f9710801-c900-4774-848c-22c85deecd83&quot;
-  [&quot;password&quot;]=&gt;
-  NULL
-  [&quot;name&quot;]=&gt;
-  string(4) &quot;mike&quot;
-}
-</code></pre>
-
-
-
-		
+<li>
+<a href="pq/Result">pq\Result</a>, if <a href="pq/Result#%24status">pq\Result::$status</a> != <a href="pq/Result#TUPLES_OK">pq\Result::TUPLES_OK</a>.</li>
+<li>
+<a href="pq/Result">pq\Result</a>, if the rowset prototype <a href="pq-gateway/pq/Gateway/Table#%24rowset">pq\Gateway\Table::$rowset</a> is empty.</li>
+<li>
+<a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a>, an instance of the rowset prototype.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Gateway/Table/by#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$accounts </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$account_emails </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account_email"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$email </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$account_emails</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">find</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"email=" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"mike@php.net"</span><span style="color: inherit" class="keyword">])-&gt;</span><span style="color: inherit" class="default">current</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">$account1 </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$accounts</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">by</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">)-&gt;</span><span style="color: inherit" class="default">current</span><span style="color: inherit" class="keyword">();<br></span><span style="color: inherit" class="default">$account2 </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">ofWhich</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">)-&gt;</span><span style="color: inherit" class="default">current</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$account1</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getData</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="default">$account2</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getData</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+array(3) {<br>  ["id"]=&gt;<br>  string(36) "f9710801-c900-4774-848c-22c85deecd83"<br>  ["password"]=&gt;<br>  NULL<br>  ["name"]=&gt;<br>  string(4) "mike"<br>}<br>array(3) {<br>  ["id"]=&gt;<br>  string(36) "f9710801-c900-4774-848c-22c85deecd83"<br>  ["password"]=&gt;<br>  NULL<br>  ["name"]=&gt;<br>  string(4) "mike"<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

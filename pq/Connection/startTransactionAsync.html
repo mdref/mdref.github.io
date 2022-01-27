@@ -125,40 +125,32 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Transaction pq\Connection::startTransactionAsync([int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]])</h1>
-<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> begin a transaction.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional int $isolation = pq\Transaction::READ_COMMITTED<br />
-Any pq\Transaction isolation level constant<br />
-(defaults to pq\Connection::$defaultTransactionIsolation).</li>
-<li>Optional bool $readonly = FALSE<br />
-Whether the transaction executes only reads<br />
-(defaults to pq\Connection::$defaultTransactionReadonly).</li>
-<li>Optional bool $deferrable = FALSE<br />
-Whether the transaction is deferrable<br />
-(defaults to pq\Connection::$defaultTransactionDeferrable).</li>
-</ul>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-A transaction can only be deferrable if it also is readonly and serializable.<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/startTransactionAsync#">#</a><a href="pq/Transaction">pq\Transaction</a> <a href="pq/Connection/startTransactionAsync">pq\Connection::startTransactionAsync</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$isolation</span> = <a href="pq/Transaction#READ_COMMITTED">pq\Transaction::READ_COMMITTED</a>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$readonly</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$deferrable</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>]]])</h1><p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> begin a transaction.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Connection/startTransactionAsync#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$isolation">$isolation<a class="permalink" href="pq/Connection/startTransactionAsync#%24isolation">#</a></span> = <a href="pq/Transaction#READ_COMMITTED">pq\Transaction::READ_COMMITTED</a><br>
+Any <a href="pq/Transaction">pq\Transaction</a> isolation level constant<br>
+(defaults to <a href="pq/Connection#%24defaultTransactionIsolation">pq\Connection::$defaultTransactionIsolation</a>).</li>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$readonly">$readonly<a class="permalink" href="pq/Connection/startTransactionAsync#%24readonly">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
+Whether the transaction executes only reads<br>
+(defaults to <a href="pq/Connection#%24defaultTransactionReadonly">pq\Connection::$defaultTransactionReadonly</a>).</li>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$deferrable">$deferrable<a class="permalink" href="pq/Connection/startTransactionAsync#%24deferrable">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
+Whether the transaction is deferrable<br>
+(defaults to <a href="pq/Connection#%24defaultTransactionDeferrable">pq\Connection::$defaultTransactionDeferrable</a>).</li>
+</ul><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+A transaction can only be deferrable if it also is readonly and serializable.<br>
 See the official <a href="http://www.postgresql.org/docs/current/static/sql-set-transaction.html">PostgreSQL documentation</a> for further information.</p>
-</blockquote>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Transaction, an asynchronously begun transaction instance.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-
-
-
-		
+</blockquote><h2 id="Returns:">Returns:<a class="permalink" href="pq/Connection/startTransactionAsync#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="pq/Transaction">pq\Transaction</a>, an asynchronously begun transaction instance.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Connection/startTransactionAsync#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

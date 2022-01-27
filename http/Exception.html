@@ -116,102 +116,98 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>interface http\Exception</h1>
-<p>The http extension's Exception interface.</p>
-<p>Use it to catch any Exception thrown by pecl/http.</p>
-<p>The individual exception classes extend their equally named native PHP extensions, if such exist, and implement this empty interface. For example the http\Exception\BadMethodCallException extends SPL's BadMethodCallException.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$req = new http\Env\Request;
-
-try {
-    $messages = $req-&gt;splitMultipartBody();
-} catch (http\Exception\BadMethodCallException $e) {
-    // doh, no multipart message
-} catch (http\Exception\BadMessageException $e) {
-    // failure while parsing
-} catch (http\Exception $e) {
-    // here we used the interface to catch any http\Exception
-} catch (Exception $e) {
-    // catch any other exception (unlikely, though)
-}
-?&gt;
-</code></pre>
-
-
-
-
-<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
-<ul>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Exception#">#</a><em>interface</em> <a href="http/Exception">http\Exception</a>
+</h1><p>The http extension's <code><a href="https://php.net/manual/en/class.exception">Exception</a></code> <em>interface</em>.</p><p>Use it to catch any <code><a href="https://php.net/manual/en/class.exception">Exception</a></code> thrown by pecl/http.</p><p>The individual exception classes extend their equally named native PHP extensions, if such exist, and implement this empty <em>interface</em>. For example the <a href="http/Exception/BadMethodCallException">http\Exception\BadMethodCallException</a> <em>extends</em> SPL's <code><a href="https://php.net/manual/en/class.badmethodcallexception">BadMethodCallException</a></code>.</p><h2 id="Properties:">Properties:<a class="permalink" href="http/Exception#Properties:">#</a>
+</h2><p>None.</p><h2 id="Example:">Example:<a class="permalink" href="http/Exception#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$req </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Env\Request</span><span style="color: inherit" class="keyword">;<br><br>try {<br>    </span><span style="color: inherit" class="default">$messages </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$req</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">splitMultipartBody</span><span style="color: inherit" class="keyword">();<br>} catch (</span><span style="color: inherit" class="default">http\Exception\BadMethodCallException $e</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="comment">// doh, no multipart message<br></span><span style="color: inherit" class="keyword">} catch (</span><span style="color: inherit" class="default">http\Exception\BadMessageException $e</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="comment">// failure while parsing<br></span><span style="color: inherit" class="keyword">} catch (</span><span style="color: inherit" class="default">http\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="comment">// here we used the interface to catch any http\Exception<br></span><span style="color: inherit" class="keyword">} catch (</span><span style="color: inherit" class="default">Exception $e</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="comment">// catch any other exception (unlikely, though)<br></span><span style="color: inherit" class="keyword">}<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="http/Exception#Namespaces.Interfaces.and.Classes:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Exception/BadConversionException">BadConversionException</a></h3>
+		<h3 id="BadConversionException">
+<a href="http/Exception/BadConversionException">BadConversionException</a><a class="permalink" href="http/Exception#BadConversionException">#</a>
+</h3>
 		<p>A bad conversion (e.g. character conversion) was encountered.</p>
 
-		<p>class http\Exception\BadConversionException extends DomainException implements http\Exception</p>
+		<p><em>class</em> <a href="http/Exception/BadConversionException">http\Exception\BadConversionException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.domainexception">DomainException</a></code> <em>implements</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Exception/BadHeaderException">BadHeaderException</a></h3>
+		<h3 id="BadHeaderException">
+<a href="http/Exception/BadHeaderException">BadHeaderException</a><a class="permalink" href="http/Exception#BadHeaderException">#</a>
+</h3>
 		<p>A bad HTTP header was encountered.</p>
 
-		<p>class http\Exception\BadHeaderException extends DomainException implements http\Exception</p>
+		<p><em>class</em> <a href="http/Exception/BadHeaderException">http\Exception\BadHeaderException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.domainexception">DomainException</a></code> <em>implements</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Exception/BadMessageException">BadMessageException</a></h3>
+		<h3 id="BadMessageException">
+<a href="http/Exception/BadMessageException">BadMessageException</a><a class="permalink" href="http/Exception#BadMessageException">#</a>
+</h3>
 		<p>A bad HTTP message was encountered.</p>
 
-		<p>class http\Exception\BadMessageException extends DomainException implements http\Exception</p>
+		<p><em>class</em> <a href="http/Exception/BadMessageException">http\Exception\BadMessageException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.domainexception">DomainException</a></code> <em>implements</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Exception/BadMethodCallException">BadMethodCallException</a></h3>
+		<h3 id="BadMethodCallException">
+<a href="http/Exception/BadMethodCallException">BadMethodCallException</a><a class="permalink" href="http/Exception#BadMethodCallException">#</a>
+</h3>
 		<p>A method was called on an object, which was in an invalid or unexpected state.</p>
 
-		<p>class http\Exception\BadMethodCallException extends BadMethodCallException implements http\Exception</p>
+		<p><em>class</em> <a href="http/Exception/BadMethodCallException">http\Exception\BadMethodCallException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.badmethodcallexception">BadMethodCallException</a></code> <em>implements</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Exception/BadQueryStringException">BadQueryStringException</a></h3>
+		<h3 id="BadQueryStringException">
+<a href="http/Exception/BadQueryStringException">BadQueryStringException</a><a class="permalink" href="http/Exception#BadQueryStringException">#</a>
+</h3>
 		<p>A bad querystring was encountered.</p>
 
-		<p>class http\Exception\BadQueryStringException extends DomainException implements http\Exception</p>
+		<p><em>class</em> <a href="http/Exception/BadQueryStringException">http\Exception\BadQueryStringException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.domainexception">DomainException</a></code> <em>implements</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Exception/BadUrlException">BadUrlException</a></h3>
+		<h3 id="BadUrlException">
+<a href="http/Exception/BadUrlException">BadUrlException</a><a class="permalink" href="http/Exception#BadUrlException">#</a>
+</h3>
 		<p>A bad HTTP URL was encountered.</p>
 
-		<p>class http\Exception\BadUrlException extends DomainException implements http\Exception</p>
+		<p><em>class</em> <a href="http/Exception/BadUrlException">http\Exception\BadUrlException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.domainexception">DomainException</a></code> <em>implements</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Exception/InvalidArgumentException">InvalidArgumentException</a></h3>
+		<h3 id="InvalidArgumentException">
+<a href="http/Exception/InvalidArgumentException">InvalidArgumentException</a><a class="permalink" href="http/Exception#InvalidArgumentException">#</a>
+</h3>
 		<p>One or more invalid arguments were passed to a method.</p>
 
-		<p>class http\Exception\InvalidArgumentException extends InvalidArgumentException implements http\Exception</p>
+		<p><em>class</em> <a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.invalidargumentexception">InvalidArgumentException</a></code> <em>implements</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Exception/RuntimeException">RuntimeException</a></h3>
+		<h3 id="RuntimeException">
+<a href="http/Exception/RuntimeException">RuntimeException</a><a class="permalink" href="http/Exception#RuntimeException">#</a>
+</h3>
 		<p>A generic runtime exception.</p>
 
-		<p>class http\Exception\RuntimeException extends RuntimeException implements http\Exception</p>
+		<p><em>class</em> <a href="http/Exception/RuntimeException">http\Exception\RuntimeException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.runtimeexception">RuntimeException</a></code> <em>implements</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Exception/UnexpectedValueException">UnexpectedValueException</a></h3>
+		<h3 id="UnexpectedValueException">
+<a href="http/Exception/UnexpectedValueException">UnexpectedValueException</a><a class="permalink" href="http/Exception#UnexpectedValueException">#</a>
+</h3>
 		<p>An unexpected value was encountered.</p>
 
-		<p>class http\Exception\UnexpectedValueException extends UnexpectedValueException implements http\Exception</p>
+		<p><em>class</em> <a href="http/Exception/UnexpectedValueException">http\Exception\UnexpectedValueException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.unexpectedvalueexception">UnexpectedValueException</a></code> <em>implements</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
-</ul>
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

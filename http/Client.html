@@ -269,294 +269,364 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Client implements SplSubject, Countable</h1>
-<p>The HTTP client. See http\Client\Curl's <a href="http/Client/Curl#Options:">options</a> which is the only driver currently supported.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>DEBUG_INFO<br />
-Debug callback's $data contains human readable text.</li>
-<li>DEBUG_IN<br />
-Debug callback's $data contains data received.</li>
-<li>DEBUG_OUT<br />
-Debug callback's $data contains data sent.</li>
-<li>DEBUG_HEADER<br />
-Debug callback's $data contains headers.</li>
-<li>DEBUG_BODY<br />
-Debug callback's $data contains a body part.</li>
-<li>DEBUG_SSL<br />
-Debug callback's $data contains SSL data.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>private SplObjectStorage $observers = NULL<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client#">#</a><em>class</em> <a href="http/Client">http\Client</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>, <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>
+</h1><p>The HTTP client. See <a href="http/Client/Curl">http\Client\Curl</a>'s <a href="http/Client/Curl#Options:">options</a> which is the only driver currently supported.</p><h2 id="Constants:">Constants:<a class="permalink" href="http/Client#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="DEBUG_INFO">DEBUG_INFO<a class="permalink" href="http/Client#DEBUG_INFO">#</a></span><br>
+Debug <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>'s <span class="var" id="$data">$data<a class="permalink" href="http/Client#%24data">#</a></span> contains human readable text.</li>
+<li>
+<span class="constant" id="DEBUG_IN">DEBUG_IN<a class="permalink" href="http/Client#DEBUG_IN">#</a></span><br>
+Debug <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>'s <span class="var">$data</span> contains data received.</li>
+<li>
+<span class="constant" id="DEBUG_OUT">DEBUG_OUT<a class="permalink" href="http/Client#DEBUG_OUT">#</a></span><br>
+Debug <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>'s <span class="var">$data</span> contains data sent.</li>
+<li>
+<span class="constant" id="DEBUG_HEADER">DEBUG_HEADER<a class="permalink" href="http/Client#DEBUG_HEADER">#</a></span><br>
+Debug <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>'s <span class="var">$data</span> contains headers.</li>
+<li>
+<span class="constant" id="DEBUG_BODY">DEBUG_BODY<a class="permalink" href="http/Client#DEBUG_BODY">#</a></span><br>
+Debug <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>'s <span class="var">$data</span> contains a body part.</li>
+<li>
+<span class="constant" id="DEBUG_SSL">DEBUG_SSL<a class="permalink" href="http/Client#DEBUG_SSL">#</a></span><br>
+Debug <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>'s <span class="var">$data</span> contains <span class="constant">SSL</span> data.</li>
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="http/Client#Properties:">#</a>
+</h2><ul>
+<li>
+<em>private</em> <code><a href="https://php.net/manual/en/class.splobjectstorage">SplObjectStorage</a></code> <span class="var" id="$observers">$observers<a class="permalink" href="http/Client#%24observers">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Attached observers.</li>
-<li>protected array $options = NULL<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$options">$options<a class="permalink" href="http/Client#%24options">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Set options.</li>
-<li>protected http\Message $history = NULL<br />
+<li>
+<em>protected</em> <a href="http/Message">http\Message</a> <span class="var" id="$history">$history<a class="permalink" href="http/Client#%24history">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Request/response history.</li>
-<li>public bool $recordHistory = false<br />
-Whether to record history in http\Client::$history.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$recordHistory">$recordHistory<a class="permalink" href="http/Client#%24recordHistory">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code><br>
+Whether to record history in <a href="http/Client#%24history">http\Client::$history</a>.</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Client#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Client/__construct">Client::__construct</a></h3>
+		<h3 id="Client::__construct">
+<a href="http/Client/__construct">Client::__construct</a><a class="permalink" href="http/Client#Client::__construct">#</a>
+</h3>
 		<p>Create a new HTTP client.</p>
 
-		<p>void http\Client::__construct([string $driver = NULL[, string $persistent_handle_id = NULL]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Client/__construct">http\Client::__construct</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$driver</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$persistent_handle_id</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/addCookies">Client::addCookies</a></h3>
+		<h3 id="Client::addCookies">
+<a href="http/Client/addCookies">Client::addCookies</a><a class="permalink" href="http/Client#Client::addCookies">#</a>
+</h3>
 		<p>Add custom cookies.</p>
 
-		<p>http\Client http\Client::addCookies([array $cookies = NULL])</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/addCookies">http\Client::addCookies</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$cookies</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/addSslOptions">Client::addSslOptions</a></h3>
+		<h3 id="Client::addSslOptions">
+<a href="http/Client/addSslOptions">Client::addSslOptions</a><a class="permalink" href="http/Client#Client::addSslOptions">#</a>
+</h3>
 		<p>Add specific SSL options.</p>
 
-		<p>http\Client http\Client::addSslOptions([array $ssl_options = NULL])</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/addSslOptions">http\Client::addSslOptions</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$ssl_options</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/attach">Client::attach</a></h3>
-		<p>Implements SplSubject. Attach another observer.</p>
+		<h3 id="Client::attach">
+<a href="http/Client/attach">Client::attach</a><a class="permalink" href="http/Client#Client::attach">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>. Attach another observer.</p>
 
-		<p>http\Client http\Client::attach(SplObserver $observer)</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/attach">http\Client::attach</a>(<code><a href="https://php.net/manual/en/class.splobserver">SplObserver</a></code> <span class="var">$observer</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/configure">Client::configure</a></h3>
+		<h3 id="Client::configure">
+<a href="http/Client/configure">Client::configure</a><a class="permalink" href="http/Client#Client::configure">#</a>
+</h3>
 		<p>Configure the client's low level options.</p>
 
-		<p>http\Client http\Client::configure(array $configuration)</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/configure">http\Client::configure</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$configuration</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/count">Client::count</a></h3>
-		<p>Implements Countable. Retrieve the number of enqueued requests.</p>
+		<h3 id="Client::count">
+<a href="http/Client/count">Client::count</a><a class="permalink" href="http/Client#Client::count">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>. Retrieve the number of enqueued requests.</p>
 
-		<p>int http\Client::count()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Client/count">http\Client::count</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/dequeue">Client::dequeue</a></h3>
-		<p>Dequeue the http\Client\Request $request.</p>
+		<h3 id="Client::dequeue">
+<a href="http/Client/dequeue">Client::dequeue</a><a class="permalink" href="http/Client#Client::dequeue">#</a>
+</h3>
+		<p>Dequeue the <a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span>.</p>
 
-		<p>http\Client http\Client::dequeue(http\Client\Request $request)</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/dequeue">http\Client::dequeue</a>(<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/detach">Client::detach</a></h3>
-		<p>Implements SplSubject. Detach $observer, which has been previously attached.</p>
+		<h3 id="Client::detach">
+<a href="http/Client/detach">Client::detach</a><a class="permalink" href="http/Client#Client::detach">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>. Detach <span class="var">$observer</span>, which has been previously attached.</p>
 
-		<p>http\Client http\Client::detach(SplObserver $observer)</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/detach">http\Client::detach</a>(<code><a href="https://php.net/manual/en/class.splobserver">SplObserver</a></code> <span class="var">$observer</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/enableEvents">Client::enableEvents</a></h3>
+		<h3 id="Client::enableEvents">
+<a href="http/Client/enableEvents">Client::enableEvents</a><a class="permalink" href="http/Client#Client::enableEvents">#</a>
+</h3>
 		<p>Enable usage of an event library like libevent, which might improve performance with big socket sets.</p>
 
-		<p>http\Client http\Client::enableEvents([bool $enable = true])</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/enableEvents">http\Client::enableEvents</a>([<code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$enable</span> = <code><a href="https://php.net/manual/en/language.types.boolean">true</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/enablePipelining">Client::enablePipelining</a></h3>
+		<h3 id="Client::enablePipelining">
+<a href="http/Client/enablePipelining">Client::enablePipelining</a><a class="permalink" href="http/Client#Client::enablePipelining">#</a>
+</h3>
 		<p>Enable sending pipelined requests to the same host if the driver supports it.</p>
 
-		<p>http\Client http\Client::enablePipelining([bool $enable = true])</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/enablePipelining">http\Client::enablePipelining</a>([<code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$enable</span> = <code><a href="https://php.net/manual/en/language.types.boolean">true</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/enqueue">Client::enqueue</a></h3>
-		<p>Add another http\Client\Request to the request queue.</p>
+		<h3 id="Client::enqueue">
+<a href="http/Client/enqueue">Client::enqueue</a><a class="permalink" href="http/Client#Client::enqueue">#</a>
+</h3>
+		<p>Add another <a href="http/Client/Request">http\Client\Request</a> to the request queue.</p>
 
-		<p>http\Client http\Client::enqueue(http\Client\Request $request[, callable $cb])</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/enqueue">http\Client::enqueue</a>(<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span>[, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$cb</span>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getAvailableConfiguration">Client::getAvailableConfiguration</a></h3>
+		<h3 id="Client::getAvailableConfiguration">
+<a href="http/Client/getAvailableConfiguration">Client::getAvailableConfiguration</a><a class="permalink" href="http/Client#Client::getAvailableConfiguration">#</a>
+</h3>
 		<p>Get a list of available configuration options and their default values.</p>
 
-		<p>array http\Client::getAvailableConfiguration()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Client/getAvailableConfiguration">http\Client::getAvailableConfiguration</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getAvailableDrivers">Client::getAvailableDrivers</a></h3>
+		<h3 id="Client::getAvailableDrivers">
+<a href="http/Client/getAvailableDrivers">Client::getAvailableDrivers</a><a class="permalink" href="http/Client#Client::getAvailableDrivers">#</a>
+</h3>
 		<p>List available drivers.</p>
 
-		<p>static array http\Client::getAvailableDrivers()</p>
+		<p><em>static</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Client/getAvailableDrivers">http\Client::getAvailableDrivers</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getAvailableOptions">Client::getAvailableOptions</a></h3>
+		<h3 id="Client::getAvailableOptions">
+<a href="http/Client/getAvailableOptions">Client::getAvailableOptions</a><a class="permalink" href="http/Client#Client::getAvailableOptions">#</a>
+</h3>
 		<p>Retrieve a list of available request options and their default values.</p>
 
-		<p>array http\Client::getAvailableOptions()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Client/getAvailableOptions">http\Client::getAvailableOptions</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getCookies">Client::getCookies</a></h3>
+		<h3 id="Client::getCookies">
+<a href="http/Client/getCookies">Client::getCookies</a><a class="permalink" href="http/Client#Client::getCookies">#</a>
+</h3>
 		<p>Get priorly set custom cookies.</p>
 
-		<p>array http\Client::getCookies()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Client/getCookies">http\Client::getCookies</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getHistory">Client::getHistory</a></h3>
-		<p>Simply returns the http\Message chain representing the request/response history.</p>
+		<h3 id="Client::getHistory">
+<a href="http/Client/getHistory">Client::getHistory</a><a class="permalink" href="http/Client#Client::getHistory">#</a>
+</h3>
+		<p>Simply returns the <a href="http/Message">http\Message</a> chain representing the request/response history.</p>
 
-		<p>http\Message http\Client::getHistory()</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Client/getHistory">http\Client::getHistory</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getObservers">Client::getObservers</a></h3>
-		<p>Returns the SplObjectStorage holding attached observers.</p>
+		<h3 id="Client::getObservers">
+<a href="http/Client/getObservers">Client::getObservers</a><a class="permalink" href="http/Client#Client::getObservers">#</a>
+</h3>
+		<p>Returns the <code><a href="https://php.net/manual/en/class.splobjectstorage">SplObjectStorage</a></code> holding attached observers.</p>
 
-		<p>SplObjectStorage http\Client::getObservers()</p>
+		<p><code><a href="https://php.net/manual/en/class.splobjectstorage">SplObjectStorage</a></code> <a href="http/Client/getObservers">http\Client::getObservers</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getOptions">Client::getOptions</a></h3>
+		<h3 id="Client::getOptions">
+<a href="http/Client/getOptions">Client::getOptions</a><a class="permalink" href="http/Client#Client::getOptions">#</a>
+</h3>
 		<p>Get priorly set options.</p>
 
-		<p>array http\Client::getOptions()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Client/getOptions">http\Client::getOptions</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getProgressInfo">Client::getProgressInfo</a></h3>
-		<p>Retrieve the progress information for $request.</p>
+		<h3 id="Client::getProgressInfo">
+<a href="http/Client/getProgressInfo">Client::getProgressInfo</a><a class="permalink" href="http/Client#Client::getProgressInfo">#</a>
+</h3>
+		<p>Retrieve the progress information for <span class="var">$request</span>.</p>
 
-		<p>object http\Client::getProgressInfo(http\Client\Request $request)</p>
+		<p>object <a href="http/Client/getProgressInfo">http\Client::getProgressInfo</a>(<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getResponse">Client::getResponse</a></h3>
-		<p>Retrieve the corresponding response of an already finished request, or the last received response if $request is not set.</p>
+		<h3 id="Client::getResponse">
+<a href="http/Client/getResponse">Client::getResponse</a><a class="permalink" href="http/Client#Client::getResponse">#</a>
+</h3>
+		<p>Retrieve the corresponding response of an already finished request, or the last received response if <span class="var">$request</span> is not set.</p>
 
-		<p>http\Client\Response http\Client::getResponse([http\Client\Request $request = NULL])</p>
+		<p><a href="http/Client/Response">http\Client\Response</a> <a href="http/Client/getResponse">http\Client::getResponse</a>([<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getSslOptions">Client::getSslOptions</a></h3>
+		<h3 id="Client::getSslOptions">
+<a href="http/Client/getSslOptions">Client::getSslOptions</a><a class="permalink" href="http/Client#Client::getSslOptions">#</a>
+</h3>
 		<p>Retrieve priorly set SSL options.</p>
 
-		<p>array http\Client::getSslOptions()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Client/getSslOptions">http\Client::getSslOptions</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/getTransferInfo">Client::getTransferInfo</a></h3>
+		<h3 id="Client::getTransferInfo">
+<a href="http/Client/getTransferInfo">Client::getTransferInfo</a><a class="permalink" href="http/Client#Client::getTransferInfo">#</a>
+</h3>
 		<p>Get transfer related information for a running or finished request.</p>
 
-		<p>object http\Client::getTransferInfo(http\Client\Request $request)</p>
+		<p>object <a href="http/Client/getTransferInfo">http\Client::getTransferInfo</a>(<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/notify">Client::notify</a></h3>
-		<p>Implements SplSubject. Notify attached observers about progress with $request.</p>
+		<h3 id="Client::notify">
+<a href="http/Client/notify">Client::notify</a><a class="permalink" href="http/Client#Client::notify">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>. Notify attached observers about progress with <span class="var">$request</span>.</p>
 
-		<p>http\Client http\Client::notify([http\Client\Request $request = NULL[, object $progress = NULL]])</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/notify">http\Client::notify</a>([<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, object <span class="var">$progress</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/once">Client::once</a></h3>
+		<h3 id="Client::once">
+<a href="http/Client/once">Client::once</a><a class="permalink" href="http/Client#Client::once">#</a>
+</h3>
 		<p>Perform outstanding transfer actions.</p>
 
-		<p>bool http\Client::once()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/Client/once">http\Client::once</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/requeue">Client::requeue</a></h3>
-		<p>Requeue an http\Client\Request.</p>
+		<h3 id="Client::requeue">
+<a href="http/Client/requeue">Client::requeue</a><a class="permalink" href="http/Client#Client::requeue">#</a>
+</h3>
+		<p>Requeue an <a href="http/Client/Request">http\Client\Request</a>.</p>
 
-		<p>http\Client http\Client::requeue(http\Client\Request $request[, callable $cb])</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/requeue">http\Client::requeue</a>(<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span>[, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$cb</span>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/reset">Client::reset</a></h3>
+		<h3 id="Client::reset">
+<a href="http/Client/reset">Client::reset</a><a class="permalink" href="http/Client#Client::reset">#</a>
+</h3>
 		<p>Reset the client to the initial state.</p>
 
-		<p>http\Client http\Client::reset()</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/reset">http\Client::reset</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/send">Client::send</a></h3>
+		<h3 id="Client::send">
+<a href="http/Client/send">Client::send</a><a class="permalink" href="http/Client#Client::send">#</a>
+</h3>
 		<p>Send all enqueued requests.</p>
 
-		<p>http\Client http\Client::send()</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/send">http\Client::send</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/setCookies">Client::setCookies</a></h3>
+		<h3 id="Client::setCookies">
+<a href="http/Client/setCookies">Client::setCookies</a><a class="permalink" href="http/Client#Client::setCookies">#</a>
+</h3>
 		<p>Set custom cookies.</p>
 
-		<p>http\Client http\Client::setCookies([array $cookies = NULL])</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/setCookies">http\Client::setCookies</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$cookies</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/setDebug">Client::setDebug</a></h3>
-		<p>Set client debugging callback.</p>
+		<h3 id="Client::setDebug">
+<a href="http/Client/setDebug">Client::setDebug</a><a class="permalink" href="http/Client#Client::setDebug">#</a>
+</h3>
+		<p>Set client debugging <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>.</p>
 
-		<p>http\Client http\Client::setDebug(callable $callback)</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/setDebug">http\Client::setDebug</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/setOptions">Client::setOptions</a></h3>
+		<h3 id="Client::setOptions">
+<a href="http/Client/setOptions">Client::setOptions</a><a class="permalink" href="http/Client#Client::setOptions">#</a>
+</h3>
 		<p>Set client options.</p>
 
-		<p>http\Client http\Client::setOptions([array $options = NULL])</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/setOptions">http\Client::setOptions</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$options</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/setSslOptions">Client::setSslOptions</a></h3>
+		<h3 id="Client::setSslOptions">
+<a href="http/Client/setSslOptions">Client::setSslOptions</a><a class="permalink" href="http/Client#Client::setSslOptions">#</a>
+</h3>
 		<p>Specifically set SSL options.</p>
 
-		<p>http\Client http\Client::setSslOptions([array $ssl_options = NULL])</p>
+		<p><a href="http/Client">http\Client</a> <a href="http/Client/setSslOptions">http\Client::setSslOptions</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$ssl_options</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/wait">Client::wait</a></h3>
-		<p>Wait for $timeout seconds for transfers to provide data.</p>
+		<h3 id="Client::wait">
+<a href="http/Client/wait">Client::wait</a><a class="permalink" href="http/Client#Client::wait">#</a>
+</h3>
+		<p>Wait for <span class="var">$timeout</span> seconds for transfers to provide data.</p>
 
-		<p>bool http\Client::wait([float $timeout = 0])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/Client/wait">http\Client::wait</a>([<code><a href="https://php.net/manual/en/language.types.float">float</a></code> <span class="var">$timeout</span> = 0])</p>
 	</li>
 	
-</ul>
-
-
-<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
-<ul>
+</ul><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="http/Client#Namespaces.Interfaces.and.Classes:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Client/Curl">Curl</a></h3>
-		<p>The http\Client\Curl namespace holds option value constants specific to the curl driver of the http\Client.</p>
+		<h3 id="Curl">
+<a href="http/Client/Curl">Curl</a><a class="permalink" href="http/Client#Curl">#</a>
+</h3>
+		<p>The <a href="http/Client/Curl">http\Client\Curl</a> <em>namespace</em> holds option value constants specific to the curl driver of the <a href="http/Client">http\Client</a>.</p>
 
-		<p>namespace http\Client\Curl</p>
-	</li>
-	
-	<li>
-		<h3><a href="http/Client/Request">Request</a></h3>
-		<p>The http\Client\Request class provides an HTTP message implementation tailored to represent a request message to be sent by the client.</p>
-
-		<p>class http\Client\Request extends http\Message</p>
+		<p><em>namespace</em> <a href="http/Client/Curl">http\Client\Curl</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Response">Response</a></h3>
-		<p>The http\Client\Response class represents an HTTP message the client returns as answer from a server to an http\Client\Request.</p>
+		<h3 id="Request">
+<a href="http/Client/Request">Request</a><a class="permalink" href="http/Client#Request">#</a>
+</h3>
+		<p>The <a href="http/Client/Request">http\Client\Request</a> <em>class</em> provides an HTTP message implementation tailored to represent a request message to be sent by the client.</p>
 
-		<p>class http\Client\Response extends http\Message</p>
+		<p><em>class</em> <a href="http/Client/Request">http\Client\Request</a> <em>extends</em> <a href="http/Message">http\Message</a></p>
 	</li>
 	
-</ul>
-		
+	<li>
+		<h3 id="Response">
+<a href="http/Client/Response">Response</a><a class="permalink" href="http/Client#Response">#</a>
+</h3>
+		<p>The <a href="http/Client/Response">http\Client\Response</a> <em>class</em> represents an HTTP message the client returns as answer from a server to an <a href="http/Client/Request">http\Client\Request</a>.</p>
+
+		<p><em>class</em> <a href="http/Client/Response">http\Client\Response</a> <em>extends</em> <a href="http/Message">http\Message</a></p>
+	</li>
+	
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

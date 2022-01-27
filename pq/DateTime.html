@@ -85,11 +85,10 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\DateTime extends DateTime implements JsonSerializable</h1>
-<p>A simple DateTime wrapper with predefined formats which supports stringification and JSON.</p>
-<h2>Formats:<a id="Formats:" href="#Formats:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<table>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/DateTime#">#</a><em>class</em> <a href="pq/DateTime">pq\DateTime</a> <br>&nbsp;<em>extends</em> <code><a href="https://php.net/manual/en/class.datetime">DateTime</a></code> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.jsonserializable">JsonSerializable</a></code>
+</h1><p>A simple <code><a href="https://php.net/manual/en/class.datetime">DateTime</a></code> wrapper with predefined formats which supports stringification and JSON.</p><h2 id="Formats:">Formats:<a class="permalink" href="pq/DateTime#Formats:">#</a>
+</h2><table>
 <thead>
 <tr>
 <th>Type</th>
@@ -98,51 +97,48 @@
 </thead>
 <tbody>
 <tr>
-<td>pq\Types::DATE</td>
-<td>&quot;Y-m-d&quot;</td>
+<td><a href="pq/Types#DATE">pq\Types::DATE</a></td>
+<td>"Y-m-d"</td>
 </tr>
 <tr>
-<td>pq\Types::TIMESTAMP</td>
-<td>&quot;Y-m-d H:i:s.u&quot;</td>
+<td><a href="pq/Types#TIMESTAMP">pq\Types::TIMESTAMP</a></td>
+<td>"Y-m-d H:i:s.u"</td>
 </tr>
 <tr>
-<td>pq\Types::TIMESTAMPTZ</td>
-<td>&quot;Y-m-d H:i:s.uO&quot;</td>
+<td><a href="pq/Types#TIMESTAMPTZ">pq\Types::TIMESTAMPTZ</a></td>
+<td>"Y-m-d H:i:s.uO"</td>
 </tr>
 </tbody>
-</table>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-Date/time values will only be converted to pq\DateTime and from DateTime if the pq\Result::CONV_DATETIME bit is set in pq\Result::$autoConvert.</p>
-</blockquote>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public string $format = &quot;Y-m-d H:i:s.uO&quot;<br />
-The default format of any date/time type automatically converted by pq\Result (depends on the actual type of the column).</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</table><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+Date/time values will only be converted to <a href="pq/DateTime">pq\DateTime</a> and from <code><a href="https://php.net/manual/en/class.datetime">DateTime</a></code> if the <a href="pq/Result#CONV_DATETIME">pq\Result::CONV_DATETIME</a> bit is set in <a href="pq/Result#%24autoConvert">pq\Result::$autoConvert</a>.</p>
+</blockquote><h2 id="Properties:">Properties:<a class="permalink" href="pq/DateTime#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$format">$format<a class="permalink" href="pq/DateTime#%24format">#</a></span> = "Y-m-d H:i:s.uO"<br>
+The default format of any date/time type automatically converted by <a href="pq/Result">pq\Result</a> (depends on the actual type of the column).</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq/DateTime#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/DateTime/__toString">DateTime::__toString</a></h3>
-		<p>Stringify the DateTime instance according to pq\DateTime::$format.</p>
+		<h3 id="DateTime::__toString">
+<a href="pq/DateTime/__toString">DateTime::__toString</a><a class="permalink" href="pq/DateTime#DateTime::__toString">#</a>
+</h3>
+		<p>Stringify the <code><a href="https://php.net/manual/en/class.datetime">DateTime</a></code> instance according to <a href="pq/DateTime#%24format">pq\DateTime::$format</a>.</p>
 
-		<p>string pq\DateTime::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/DateTime/__toString">pq\DateTime::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/DateTime/jsonSerialize">DateTime::jsonSerialize</a></h3>
+		<h3 id="DateTime::jsonSerialize">
+<a href="pq/DateTime/jsonSerialize">DateTime::jsonSerialize</a><a class="permalink" href="pq/DateTime#DateTime::jsonSerialize">#</a>
+</h3>
 		<p>Serialize to JSON.</p>
 
-		<p>string pq\DateTime::jsonSerialize()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/DateTime/jsonSerialize">pq\DateTime::jsonSerialize</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

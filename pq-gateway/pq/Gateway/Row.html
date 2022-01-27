@@ -182,188 +182,230 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Gateway\Row implements JsonSerializable</h1>
-<p>The row gateway.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected pq\Gateway\Table $table<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Row#">#</a><em>class</em> <a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.jsonserializable">JsonSerializable</a></code>
+</h1><p>The row gateway.</p><h2 id="Properties:">Properties:<a class="permalink" href="pq-gateway/pq/Gateway/Row#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <span class="var" id="$table">$table<a class="permalink" href="pq-gateway/pq/Gateway/Row#%24table">#</a></span><br>
 The originating table.</li>
-<li>protected array $data<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$data">$data<a class="permalink" href="pq-gateway/pq/Gateway/Row#%24data">#</a></span><br>
 The row's data.</li>
-<li>protected array $cell<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$cell">$cell<a class="permalink" href="pq-gateway/pq/Gateway/Row#%24cell">#</a></span><br>
 The list of cells abstracting access to the row's data.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Gateway/Row#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/__construct">Row::__construct</a></h3>
+		<h3 id="Row::__construct">
+<a href="pq-gateway/pq/Gateway/Row/__construct">Row::__construct</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::__construct">#</a>
+</h3>
 		<p>Create a new row gateway.</p>
 
-		<p>void pq\Gateway\Row::__construct(pq\Gateway\Table $table[, array $data = NULL[, bool $prime = FALSE]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Row/__construct">pq\Gateway\Row::__construct</a>(<a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <span class="var">$table</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$data</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$prime</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/__get">Row::__get</a></h3>
+		<h3 id="Row::__get">
+<a href="pq-gateway/pq/Gateway/Row/__get">Row::__get</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::__get">#</a>
+</h3>
 		<p>Cell read accessor through properties.</p>
 
-		<p>pq\Gateway\Cell pq\Gateway\Row::__get(string $p)</p>
+		<p><a href="pq-gateway/pq/Gateway/Cell">pq\Gateway\Cell</a> <a href="pq-gateway/pq/Gateway/Row/__get">pq\Gateway\Row::__get</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$p</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/__invoke">Row::__invoke</a></h3>
+		<h3 id="Row::__invoke">
+<a href="pq-gateway/pq/Gateway/Row/__invoke">Row::__invoke</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::__invoke">#</a>
+</h3>
 		<p>Copy constructor.</p>
 
-		<p>pq\Gateway\Row pq\Gateway\Row::__invoke(array $data)</p>
+		<p><a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <a href="pq-gateway/pq/Gateway/Row/__invoke">pq\Gateway\Row::__invoke</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$data</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/__isset">Row::__isset</a></h3>
+		<h3 id="Row::__isset">
+<a href="pq-gateway/pq/Gateway/Row/__isset">Row::__isset</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::__isset">#</a>
+</h3>
 		<p>Check whether the column isset.</p>
 
-		<p>bool pq\Gateway\Row::__isset(string $p)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq-gateway/pq/Gateway/Row/__isset">pq\Gateway\Row::__isset</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$p</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/__set">Row::__set</a></h3>
+		<h3 id="Row::__set">
+<a href="pq-gateway/pq/Gateway/Row/__set">Row::__set</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::__set">#</a>
+</h3>
 		<p>Cell write accessor through properties.</p>
 
-		<p>void pq\Gateway\Row::__set(string $p)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Row/__set">pq\Gateway\Row::__set</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$p</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/__unset">Row::__unset</a></h3>
+		<h3 id="Row::__unset">
+<a href="pq-gateway/pq/Gateway/Row/__unset">Row::__unset</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::__unset">#</a>
+</h3>
 		<p>Unset the columnd within the row.</p>
 
-		<p>void pq\Gateway\Row::__unset(string $p)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Row/__unset">pq\Gateway\Row::__unset</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$p</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/allOf">Row::allOf</a></h3>
+		<h3 id="Row::allOf">
+<a href="pq-gateway/pq/Gateway/Row/allOf">Row::allOf</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::allOf">#</a>
+</h3>
 		<p>Find the child rows by foreign key.</p>
 
-		<p>mixed pq\Gateway\Row::allOf(mixed $foreign[, string $ref = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Row/allOf">pq\Gateway\Row::allOf</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$foreign</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$ref</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$order</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$limit</span> = 0[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$offset</span> = 0]]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/cell">Row::cell</a></h3>
+		<h3 id="Row::cell">
+<a href="pq-gateway/pq/Gateway/Row/cell">Row::cell</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::cell">#</a>
+</h3>
 		<p>Create or retrieve an already primed cell.</p>
 
-		<p>protected pq\Gateway\Cell pq\Gateway\Row::cell(string $col)</p>
+		<p><em>protected</em> <a href="pq-gateway/pq/Gateway/Cell">pq\Gateway\Cell</a> <a href="pq-gateway/pq/Gateway/Row/cell">pq\Gateway\Row::cell</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$col</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/changes">Row::changes</a></h3>
+		<h3 id="Row::changes">
+<a href="pq-gateway/pq/Gateway/Row/changes">Row::changes</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::changes">#</a>
+</h3>
 		<p>Export modified data.</p>
 
-		<p>protected pq\Gateway\Row::changes()</p>
+		<p><em>protected</em> <a href="pq-gateway/pq/Gateway/Row/changes">pq\Gateway\Row::changes</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/create">Row::create</a></h3>
+		<h3 id="Row::create">
+<a href="pq-gateway/pq/Gateway/Row/create">Row::create</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::create">#</a>
+</h3>
 		<p>Create this row in the database.</p>
 
-		<p>pq\Gateway\Row pq\Gateway\Row::create()</p>
+		<p><a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <a href="pq-gateway/pq/Gateway/Row/create">pq\Gateway\Row::create</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/criteria">Row::criteria</a></h3>
+		<h3 id="Row::criteria">
+<a href="pq-gateway/pq/Gateway/Row/criteria">Row::criteria</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::criteria">#</a>
+</h3>
 		<p>Convert the row's identity to to where criteria.</p>
 
-		<p>protected array pq\Gateway\Row::criteria()</p>
+		<p><em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Gateway/Row/criteria">pq\Gateway\Row::criteria</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/delete">Row::delete</a></h3>
+		<h3 id="Row::delete">
+<a href="pq-gateway/pq/Gateway/Row/delete">Row::delete</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::delete">#</a>
+</h3>
 		<p>Delete this row in the database.</p>
 
-		<p>pq\Query\Row pq\Query\Row::delete()</p>
+		<p><a href="pq-gateway/pq/Query#Row">pq\Query\Row</a> pq\Query\Row::delete()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/export">Row::export</a></h3>
+		<h3 id="Row::export">
+<a href="pq-gateway/pq/Gateway/Row/export">Row::export</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::export">#</a>
+</h3>
 		<p>Export the current state.</p>
 
-		<p>array pq\Gateway\Row::export()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Gateway/Row/export">pq\Gateway\Row::export</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/exportPublic">Row::exportPublic</a></h3>
+		<h3 id="Row::exportPublic">
+<a href="pq-gateway/pq/Gateway/Row/exportPublic">Row::exportPublic</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::exportPublic">#</a>
+</h3>
 		<p>Export current state with security sensitive data removed.</p>
 
-		<p>array pq\Gateway\Row::exportPublic()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Gateway/Row/exportPublic">pq\Gateway\Row::exportPublic</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/getData">Row::getData</a></h3>
+		<h3 id="Row::getData">
+<a href="pq-gateway/pq/Gateway/Row/getData">Row::getData</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::getData">#</a>
+</h3>
 		<p>Retrieve the original row data.</p>
 
-		<p>array pq\Gateway\Row::getData()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Gateway/Row/getData">pq\Gateway\Row::getData</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/getIdentity">Row::getIdentity</a></h3>
+		<h3 id="Row::getIdentity">
+<a href="pq-gateway/pq/Gateway/Row/getIdentity">Row::getIdentity</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::getIdentity">#</a>
+</h3>
 		<p>Retrieve a list of columns and their values (the primary key, if it exists, else all columns) to identify the row in the table.</p>
 
-		<p>array pq\Gateway\Row::getIdentity()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Gateway/Row/getIdentity">pq\Gateway\Row::getIdentity</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/getTable">Row::getTable</a></h3>
+		<h3 id="Row::getTable">
+<a href="pq-gateway/pq/Gateway/Row/getTable">Row::getTable</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::getTable">#</a>
+</h3>
 		<p>Retrieve the table from which this row originates.</p>
 
-		<p>pq\Gateway\Table pq\Gateway\Row::getTable()</p>
+		<p><a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <a href="pq-gateway/pq/Gateway/Row/getTable">pq\Gateway\Row::getTable</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/isDirty">Row::isDirty</a></h3>
+		<h3 id="Row::isDirty">
+<a href="pq-gateway/pq/Gateway/Row/isDirty">Row::isDirty</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::isDirty">#</a>
+</h3>
 		<p>Whether the row has been modified.</p>
 
-		<p>bool pq\Gateway\Row::isDirty()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq-gateway/pq/Gateway/Row/isDirty">pq\Gateway\Row::isDirty</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/jsonSerialize">Row::jsonSerialize</a></h3>
-		<p>Implements JsonSerializable.</p>
+		<h3 id="Row::jsonSerialize">
+<a href="pq-gateway/pq/Gateway/Row/jsonSerialize">Row::jsonSerialize</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::jsonSerialize">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.jsonserializable">JsonSerializable</a></code>.</p>
 
-		<p>array pq\Gateway\Row::jsonSerialize()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Gateway/Row/jsonSerialize">pq\Gateway\Row::jsonSerialize</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/ofWhich">Row::ofWhich</a></h3>
-		<p>Find the parent row by foreign key.</p>
+		<h3 id="Row::ofWhich">
+<a href="pq-gateway/pq/Gateway/Row/ofWhich">Row::ofWhich</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::ofWhich">#</a>
+</h3>
+		<p>Find the <em>parent</em> row by foreign key.</p>
 
-		<p>mixed pq\Gateway\Row::ofWhich(mixed $foreign[, string $ref = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Row/ofWhich">pq\Gateway\Row::ofWhich</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$foreign</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$ref</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/prime">Row::prime</a></h3>
+		<h3 id="Row::prime">
+<a href="pq-gateway/pq/Gateway/Row/prime">Row::prime</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::prime">#</a>
+</h3>
 		<p>Prime the cells with dirty data.</p>
 
-		<p>protected pq\Gateway\Row pq\Gateway\Row::prime()</p>
+		<p><em>protected</em> <a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <a href="pq-gateway/pq/Gateway/Row/prime">pq\Gateway\Row::prime</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/refresh">Row::refresh</a></h3>
+		<h3 id="Row::refresh">
+<a href="pq-gateway/pq/Gateway/Row/refresh">Row::refresh</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::refresh">#</a>
+</h3>
 		<p>Refresh the columns data from the table.</p>
 
-		<p>pq\Gateway\Row pq\Gateway\Row::refresh()</p>
+		<p><a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <a href="pq-gateway/pq/Gateway/Row/refresh">pq\Gateway\Row::refresh</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Row/update">Row::update</a></h3>
+		<h3 id="Row::update">
+<a href="pq-gateway/pq/Gateway/Row/update">Row::update</a><a class="permalink" href="pq-gateway/pq/Gateway/Row#Row::update">#</a>
+</h3>
 		<p>Update this row in the database.</p>
 
-		<p>pq\Gateway\Row pq\Gateway\Row::update()</p>
+		<p><a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <a href="pq-gateway/pq/Gateway/Row/update">pq\Gateway\Row::update</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -158,75 +158,68 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Gateway\Table\Attributes implements IteratorAggregate</h1>
-<p>The table attributes (columns) of a table.</p>
-<h2>Query:<a id="Query:" href="#Query:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The following query is executed by the current executor of the table to retrieve the table attributes:</p>
-<pre><code>select 
-	 attnum         as index
-	,attname        as name
-	,atttypid       as type
-	,atthasdef      as hasdefault
-	,not attnotnull as nullable
-from
-	 pg_attribute 
-where attrelid = \$1::regclass 
-and   attnum   &gt; 0
-</code></pre>
-<h2>Cache:<a id="Cache:" href="#Cache:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The result of this query is cached in the metadata cache under the following key, where $table is converted to a string by pq\Gateway\Table::__toString():</p>
-<pre><code>&quot;$table:attributes&quot;
-</code></pre>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected array $columns<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#">#</a><em>class</em> <a href="pq-gateway/pq/Gateway/Table/Attributes">pq\Gateway\Table\Attributes</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code>
+</h1><p>The table attributes (columns) of a table.</p><h2 id="Query:">Query:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#Query:">#</a>
+</h2><p>The following query is executed by the current executor of the table to retrieve the table attributes:</p><pre><code><span style="color: inherit" class="html">
+select <br>     attnum         as index<br>    ,attname        as name<br>    ,atttypid       as type<br>    ,atthasdef      as hasdefault<br>    ,not attnotnull as nullable<br>from<br>     pg_attribute <br>where attrelid = \$1::regclass <br>and   attnum   &gt; 0<br></span>
+</code></pre><h2 id="Cache:">Cache:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#Cache:">#</a>
+</h2><p>The result of this query is cached in the metadata cache under the following key, where <span class="var">$table</span> is converted to a <code><a href="https://php.net/manual/en/language.types.string">string</a></code> by <a href="pq-gateway/pq/Gateway/Table/__toString">pq\Gateway\Table::__toString</a>():</p><pre><code><span style="color: inherit" class="html">
+"$table:attributes"<br></span>
+</code></pre><h2 id="Properties:">Properties:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$columns">$columns<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#%24columns">#</a></span><br>
 The table attributes.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Attributes/__construct">Attributes::__construct</a></h3>
+		<h3 id="Attributes::__construct">
+<a href="pq-gateway/pq/Gateway/Table/Attributes/__construct">Attributes::__construct</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#Attributes::__construct">#</a>
+</h3>
 		<p>Retrieve the table attributes (columns).</p>
 
-		<p>void pq\Gateway\Table\Attributes::__construct(pq\Gateway\Table $table)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Table/Attributes/__construct">pq\Gateway\Table\Attributes::__construct</a>(<a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <span class="var">$table</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Attributes/count">Attributes::count</a></h3>
+		<h3 id="Attributes::count">
+<a href="pq-gateway/pq/Gateway/Table/Attributes/count">Attributes::count</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#Attributes::count">#</a>
+</h3>
 		<p>Implements countable.</p>
 
-		<p>int pq\Gateway\Table\Attributes::count()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq-gateway/pq/Gateway/Table/Attributes/count">pq\Gateway\Table\Attributes::count</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Attributes/getColumn">Attributes::getColumn</a></h3>
+		<h3 id="Attributes::getColumn">
+<a href="pq-gateway/pq/Gateway/Table/Attributes/getColumn">Attributes::getColumn</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#Attributes::getColumn">#</a>
+</h3>
 		<p>Get a specific column.</p>
 
-		<p>stdClass pq\Gateway\Table\Attributes::getColumn(mixed $col)</p>
+		<p><code><a href="https://php.net/manual/en/class.stdclass">stdClass</a></code> <a href="pq-gateway/pq/Gateway/Table/Attributes/getColumn">pq\Gateway\Table\Attributes::getColumn</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$col</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Attributes/getColumns">Attributes::getColumns</a></h3>
+		<h3 id="Attributes::getColumns">
+<a href="pq-gateway/pq/Gateway/Table/Attributes/getColumns">Attributes::getColumns</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#Attributes::getColumns">#</a>
+</h3>
 		<p>Retrieve all columns of the table.</p>
 
-		<p>array pq\Gateway\Table\Attributes::getColumns()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Gateway/Table/Attributes/getColumns">pq\Gateway\Table\Attributes::getColumns</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Attributes/getIterator">Attributes::getIterator</a></h3>
-		<p>Implements IteratorAggregate.</p>
+		<h3 id="Attributes::getIterator">
+<a href="pq-gateway/pq/Gateway/Table/Attributes/getIterator">Attributes::getIterator</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#Attributes::getIterator">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code>.</p>
 
-		<p>ArrayIterator pq\Gateway\Table\Attributes::getIterator()</p>
+		<p><code><a href="https://php.net/manual/en/class.arrayiterator">ArrayIterator</a></code> <a href="pq-gateway/pq/Gateway/Table/Attributes/getIterator">pq\Gateway\Table\Attributes::getIterator</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

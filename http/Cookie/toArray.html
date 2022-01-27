@@ -107,47 +107,19 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>array http\Cookie::toArray()</h1>
-<p>Get the cookie list as array.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array, the cookie list as array.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$cookie = new http\Cookie(&quot;country=us; secure&quot;);
-var_dump($cookie-&gt;toArray());
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>array(7) {
-  [&quot;cookies&quot;]=&gt;
-  array(1) {
-    [&quot;country&quot;]=&gt;
-    string(2) &quot;us&quot;
-  }
-  [&quot;extras&quot;]=&gt;
-  array(0) {
-  }
-  [&quot;flags&quot;]=&gt;
-  int(16)
-  [&quot;expires&quot;]=&gt;
-  int(-1)
-  [&quot;max-age&quot;]=&gt;
-  int(-1)
-  [&quot;path&quot;]=&gt;
-  string(0) &quot;&quot;
-  [&quot;domain&quot;]=&gt;
-  string(0) &quot;&quot;
-}
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Cookie/toArray#">#</a><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Cookie/toArray">http\Cookie::toArray</a>()</h1><p>Get the cookie list as <code><a href="https://php.net/manual/en/language.types.array">array</a></code>.</p><h2 id="Params:">Params:<a class="permalink" href="http/Cookie/toArray#Params:">#</a>
+</h2><p>None.</p><h2 id="Returns:">Returns:<a class="permalink" href="http/Cookie/toArray#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code>, the cookie list as <code><a href="https://php.net/manual/en/language.types.array">array</a></code>.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Cookie/toArray#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$cookie </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Cookie</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"country=us; secure"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">toArray</span><span style="color: inherit" class="keyword">());<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+array(7) {<br>  ["cookies"]=&gt;<br>  array(1) {<br>    ["country"]=&gt;<br>    string(2) "us"<br>  }<br>  ["extras"]=&gt;<br>  array(0) {<br>  }<br>  ["flags"]=&gt;<br>  int(16)<br>  ["expires"]=&gt;<br>  int(-1)<br>  ["max-age"]=&gt;<br>  int(-1)<br>  ["path"]=&gt;<br>  string(0) ""<br>  ["domain"]=&gt;<br>  string(0) ""<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

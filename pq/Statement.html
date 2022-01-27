@@ -125,100 +125,117 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Statement</h1>
-<p>A named prepared statement.
-See pq\Connection::prepare().</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public (readonly) pq\Connection $connection<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Statement#">#</a><em>class</em> <a href="pq/Statement">pq\Statement</a>
+</h1><p>A named prepared statement.
+See <a href="pq/Connection/prepare">pq\Connection::prepare</a>().</p><h2 id="Properties:">Properties:<a class="permalink" href="pq/Statement#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> (readonly) <a href="pq/Connection">pq\Connection</a> <span class="var" id="$connection">$connection<a class="permalink" href="pq/Statement#%24connection">#</a></span><br>
 The connection to the server.</li>
-<li>public (readonly) string $name<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$name">$name<a class="permalink" href="pq/Statement#%24name">#</a></span><br>
 The identifiying name of the prepared statement.</li>
-<li>public (readonly) string $query
-The query string used to prepare the statement.</li>
-<li>public (readonly) array $types
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$query">$query<a class="permalink" href="pq/Statement#%24query">#</a></span>
+The query <code><a href="https://php.net/manual/en/language.types.string">string</a></code> used to prepare the statement.</li>
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$types">$types<a class="permalink" href="pq/Statement#%24types">#</a></span>
 List of corresponding query parameter type OIDs for the prepared statement.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq/Statement#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/Statement/__construct">Statement::__construct</a></h3>
+		<h3 id="Statement::__construct">
+<a href="pq/Statement/__construct">Statement::__construct</a><a class="permalink" href="pq/Statement#Statement::__construct">#</a>
+</h3>
 		<p>Prepare a new statement.</p>
 
-		<p>void pq\Statement::__construct(pq\Connection $conn, string $name, string $query[, array $types = NULL[, bool $async = FALSE]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Statement/__construct">pq\Statement::__construct</a>(<a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$types</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$async</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Statement/bind">Statement::bind</a></h3>
+		<h3 id="Statement::bind">
+<a href="pq/Statement/bind">Statement::bind</a><a class="permalink" href="pq/Statement#Statement::bind">#</a>
+</h3>
 		<p>Bind a variable to an input parameter.</p>
 
-		<p>void pq\Statement::bind(int $param_no, mixed &amp;$param_ref)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Statement/bind">pq\Statement::bind</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$param_no</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> &amp;<span class="var">$param_ref</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Statement/deallocate">Statement::deallocate</a></h3>
+		<h3 id="Statement::deallocate">
+<a href="pq/Statement/deallocate">Statement::deallocate</a><a class="permalink" href="pq/Statement#Statement::deallocate">#</a>
+</h3>
 		<p>Free the server resources used by the prepared statement, so it can no longer be executed.</p>
 
-		<p>void pq\Statement::deallocate()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Statement/deallocate">pq\Statement::deallocate</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Statement/deallocateAsync">Statement::deallocateAsync</a></h3>
+		<h3 id="Statement::deallocateAsync">
+<a href="pq/Statement/deallocateAsync">Statement::deallocateAsync</a><a class="permalink" href="pq/Statement#Statement::deallocateAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> free the server resources used by the</p>
 
-		<p>void pq\Statement::deallocateAsync()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Statement/deallocateAsync">pq\Statement::deallocateAsync</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Statement/desc">Statement::desc</a></h3>
+		<h3 id="Statement::desc">
+<a href="pq/Statement/desc">Statement::desc</a><a class="permalink" href="pq/Statement#Statement::desc">#</a>
+</h3>
 		<p>Describe the parameters of the prepared statement.</p>
 
-		<p>array pq\Statement::desc()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq/Statement/desc">pq\Statement::desc</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Statement/descAsync">Statement::descAsync</a></h3>
+		<h3 id="Statement::descAsync">
+<a href="pq/Statement/descAsync">Statement::descAsync</a><a class="permalink" href="pq/Statement#Statement::descAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> describe the parameters of the prepared statement.</p>
 
-		<p>void pq\Statement::descAsync(callable $callback)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Statement/descAsync">pq\Statement::descAsync</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Statement/exec">Statement::exec</a></h3>
+		<h3 id="Statement::exec">
+<a href="pq/Statement/exec">Statement::exec</a><a class="permalink" href="pq/Statement#Statement::exec">#</a>
+</h3>
 		<p>Execute the prepared statement.</p>
 
-		<p>pq\Result pq\Statement::exec([array $params = NULL])</p>
+		<p><a href="pq/Result">pq\Result</a> <a href="pq/Statement/exec">pq\Statement::exec</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$params</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Statement/execAsync">Statement::execAsync</a></h3>
+		<h3 id="Statement::execAsync">
+<a href="pq/Statement/execAsync">Statement::execAsync</a><a class="permalink" href="pq/Statement#Statement::execAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> execute the prepared statement.</p>
 
-		<p>void pq\Statement::execAsync([array $params = NULL, [callable $cb = NULL]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Statement/execAsync">pq\Statement::execAsync</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$params</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>, [<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$cb</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Statement/prepare">Statement::prepare</a></h3>
+		<h3 id="Statement::prepare">
+<a href="pq/Statement/prepare">Statement::prepare</a><a class="permalink" href="pq/Statement#Statement::prepare">#</a>
+</h3>
 		<p>Re-prepare a statement that has been deallocated. This is a no-op on already open statements.</p>
 
-		<p>void pq\Statement::prepare()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Statement/prepare">pq\Statement::prepare</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Statement/prepareAsync">Statement::prepareAsync</a></h3>
+		<h3 id="Statement::prepareAsync">
+<a href="pq/Statement/prepareAsync">Statement::prepareAsync</a><a class="permalink" href="pq/Statement#Statement::prepareAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> re-prepare a statement that has been</p>
 
-		<p>void pq\Statement::prepareAsync()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Statement/prepareAsync">pq\Statement::prepareAsync</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

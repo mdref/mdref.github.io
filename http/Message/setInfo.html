@@ -143,36 +143,27 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Message http\Message::setInfo(string $http_info)</h1>
-<p>Set the complete message info, i.e. type and response resp. request information, at once.
-See http\Message::getInfo().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $http_info<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/setInfo#">#</a><a href="http/Message">http\Message</a> <a href="http/Message/setInfo">http\Message::setInfo</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$http_info</span>)</h1><p>Set the complete message info, i.e. type and response resp. request information, at once.
+See <a href="http/Message/getInfo">http\Message::getInfo</a>().</p><h2 id="Params:">Params:<a class="permalink" href="http/Message/setInfo#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$http_info">$http_info<a class="permalink" href="http/Message/setInfo#%24http_info">#</a></span><br>
 The message info (first line of an HTTP message).</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Message, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\BadHeaderException</li>
-</ul>
-<h2>Format of the message info:<a id="Format.of.the.message.info:" href="#Format.of.the.message.info:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The message info looks similar to the following line for a response, see also http\Message::setResponseCode() and http\Message::setResponseStatus():</p>
-<pre><code>HTTP/1.1 200 Ok
-</code></pre>
-<p>The message info looks similar to the following line for a request, see also http\Message::setRequestMethod() and http\Message::setRequestUrl():</p>
-<pre><code>GET / HTTP/1.1
-</code></pre>
-<p>See http\Message::setHttpVersion().</p>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Message/setInfo#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Message">http\Message</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Message/setInfo#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/BadHeaderException">http\Exception\BadHeaderException</a></li>
+</ul><h2 id="Format.of.the.message.info:">Format of the message info:<a class="permalink" href="http/Message/setInfo#Format.of.the.message.info:">#</a>
+</h2><p>The message info looks similar to the following line for a response, see also <a href="http/Message/setResponseCode">http\Message::setResponseCode</a>() and <a href="http/Message/setResponseStatus">http\Message::setResponseStatus</a>():</p><pre><code><span style="color: inherit" class="html">
+HTTP/1.1 200 Ok<br></span>
+</code></pre><p>The message info looks similar to the following line for a request, see also <a href="http/Message/setRequestMethod">http\Message::setRequestMethod</a>() and <a href="http/Message/setRequestUrl">http\Message::setRequestUrl</a>():</p><pre><code><span style="color: inherit" class="html">
+GET / HTTP/1.1<br></span>
+</code></pre><p>See <a href="http/Message/setHttpVersion">http\Message::setHttpVersion</a>().</p>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

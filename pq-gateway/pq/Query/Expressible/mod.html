@@ -77,84 +77,25 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Query\Expressible pq\Query\Expressible::mod(mixed $data[, string $op = NULL])</h1>
-<p>Modify the contained data, turning it into an expression, i.e. pq\Query\Expr.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>mixed $data<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Query/Expressible/mod#">#</a><a href="pq-gateway/pq/Query/Expressible">pq\Query\Expressible</a> <a href="pq-gateway/pq/Query/Expressible/mod">pq\Query\Expressible::mod</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$data</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$op</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>Modify the contained data, turning it into an expression, i.e. <a href="pq-gateway/pq/Query/Expr">pq\Query\Expr</a>.</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Query/Expressible/mod#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$data">$data<a class="permalink" href="pq-gateway/pq/Query/Expressible/mod#%24data">#</a></span><br>
 Modifying data.</li>
-<li>Optional string $op = NULL<br />
-The intended operator (defaults to &quot;+&quot; for numeric values and &quot;||&quot; for strings).</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Query\Expressible, self.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$column = new pq\Query\Expressible(&quot;example&quot;, 5);
-var_dump($column-&gt;isExpr(), (string) $column, $column-&gt;get());
-
-echo &quot;\n&quot;;
-
-$column-&gt;mod(1); // append &quot;+ 1&quot;
-var_dump($column-&gt;isExpr(), (string) $column, $column-&gt;get());
-
-echo &quot;\n&quot;;
-
-$column-&gt;set(&quot;'Hello'&quot;);
-var_dump($column-&gt;isExpr(), (string) $column, $column-&gt;get());
-
-echo &quot;\n&quot;;
-
-$column-&gt;mod(&quot;' World!'&quot;);
-var_dump($column-&gt;isExpr(), (string) $column, $column-&gt;get());
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>bool(false)
-string(1) &quot;5&quot;
-int(5)
-
-bool(true)
-string(11) &quot;example + 1&quot;
-object(pq\Query\Expr)#3 (2) {
-  [&quot;expression&quot;:protected]=&gt;
-  string(7) &quot;example&quot;
-  [&quot;next&quot;:protected]=&gt;
-  object(pq\Query\Expr)#4 (2) {
-	[&quot;expression&quot;:protected]=&gt;
-	string(3) &quot;+ 1&quot;
-	[&quot;next&quot;:protected]=&gt;
-	NULL
-  }
-}
-
-bool(false)
-string(7) &quot;'Hello'&quot;
-string(7) &quot;'Hello'&quot;
-
-bool(true)
-string(20) &quot;example || ' World!'&quot;
-object(pq\Query\Expr)#3 (2) {
-  [&quot;expression&quot;:protected]=&gt;
-  string(7) &quot;example&quot;
-  [&quot;next&quot;:protected]=&gt;
-  object(pq\Query\Expr)#4 (2) {
-	[&quot;expression&quot;:protected]=&gt;
-	string(12) &quot;|| ' World!'&quot;
-	[&quot;next&quot;:protected]=&gt;
-	NULL
-  }
-}
-</code></pre>
-
-
-
-		
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$op">$op<a class="permalink" href="pq-gateway/pq/Query/Expressible/mod#%24op">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The intended operator (defaults to "+" for numeric values and "||" for strings).</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Query/Expressible/mod#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="pq-gateway/pq/Query/Expressible">pq\Query\Expressible</a>, <em>self</em>.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Query/Expressible/mod#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$column </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Query\Expressible</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"example"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">5</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">isExpr</span><span style="color: inherit" class="keyword">(), (string) </span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">get</span><span style="color: inherit" class="keyword">());<br><br>echo </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">mod</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">); </span><span style="color: inherit" class="comment">// append "+ 1"<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">isExpr</span><span style="color: inherit" class="keyword">(), (string) </span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">get</span><span style="color: inherit" class="keyword">());<br><br>echo </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">set</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"'Hello'"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">isExpr</span><span style="color: inherit" class="keyword">(), (string) </span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">get</span><span style="color: inherit" class="keyword">());<br><br>echo </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">mod</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"' World!'"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">isExpr</span><span style="color: inherit" class="keyword">(), (string) </span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$column</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">get</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+bool(false)<br>string(1) "5"<br>int(5)<br><br>bool(true)<br>string(11) "example + 1"<br>object(pq\Query\Expr)#3 (2) {<br>  ["expression":protected]=&gt;<br>  string(7) "example"<br>  ["next":protected]=&gt;<br>  object(pq\Query\Expr)#4 (2) {<br>    ["expression":protected]=&gt;<br>    string(3) "+ 1"<br>    ["next":protected]=&gt;<br>    NULL<br>  }<br>}<br><br>bool(false)<br>string(7) "'Hello'"<br>string(7) "'Hello'"<br><br>bool(true)<br>string(20) "example || ' World!'"<br>object(pq\Query\Expr)#3 (2) {<br>  ["expression":protected]=&gt;<br>  string(7) "example"<br>  ["next":protected]=&gt;<br>  object(pq\Query\Expr)#4 (2) {<br>    ["expression":protected]=&gt;<br>    string(12) "|| ' World!'"<br>    ["next":protected]=&gt;<br>    NULL<br>  }<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

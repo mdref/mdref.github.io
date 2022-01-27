@@ -107,37 +107,21 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Gateway\Rowset pq\Gateway\Rowset::filter(callable $cb)</h1>
-<p>Filter the rows a copy of the rowset should contain.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>callable $cb<br />
-A filter callback which should return bool as function(pq\Gateway\Row $row)</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Gateway\Rowset, clone.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Gateway\Table;
-
-$table = new Table(&quot;account&quot;);
-$table-&gt;find()
-	-&gt;apply(function($row) {
-		// ...
-	})-&gt;filter(function ($row) {
-		return $row-&gt;isDirty();
-	})-&gt;update();
-
-?&gt;
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Rowset/filter#">#</a><a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/filter">pq\Gateway\Rowset::filter</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$cb</span>)</h1><p>Filter the rows a copy of the rowset should contain.</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Gateway/Rowset/filter#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var" id="$cb">$cb<a class="permalink" href="pq-gateway/pq/Gateway/Rowset/filter#%24cb">#</a></span><br>
+A filter <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> which should return <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> as function(<a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var" id="$row">$row<a class="permalink" href="pq-gateway/pq/Gateway/Rowset/filter#%24row">#</a></span>)</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Gateway/Rowset/filter#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a>, clone.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Gateway/Rowset/filter#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$table </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$table</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">find</span><span style="color: inherit" class="keyword">()<br>    -&gt;</span><span style="color: inherit" class="default">apply</span><span style="color: inherit" class="keyword">(function(</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="comment">// ...<br>    </span><span style="color: inherit" class="keyword">})-&gt;</span><span style="color: inherit" class="default">filter</span><span style="color: inherit" class="keyword">(function (</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">) {<br>        return </span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">isDirty</span><span style="color: inherit" class="keyword">();<br>    })-&gt;</span><span style="color: inherit" class="default">update</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

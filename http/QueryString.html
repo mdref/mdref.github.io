@@ -181,194 +181,238 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\QueryString implements Serializable, ArrayAccess, IteratorAggregate</h1>
-<p>The http\QueryString class provides versatile facilities to retrieve, use and manipulate query strings and form data.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>TYPE_BOOL<br />
-Cast requested value to bool.</li>
-<li>TYPE_INT<br />
-Cast requested value to int.</li>
-<li>TYPE_FLOAT<br />
-Cast requested value to float.</li>
-<li>TYPE_STRING<br />
-Cast requested value to string.</li>
-<li>TYPE_ARRAY<br />
-Cast requested value to an array.</li>
-<li>TYPE_OBJECT<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/QueryString#">#</a><em>class</em> <a href="http/QueryString">http\QueryString</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>, <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>, <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code>
+</h1><p>The <a href="http/QueryString">http\QueryString</a> <em>class</em> provides versatile facilities to retrieve, use and manipulate query strings and form data.</p><h2 id="Constants:">Constants:<a class="permalink" href="http/QueryString#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="TYPE_BOOL">TYPE_BOOL<a class="permalink" href="http/QueryString#TYPE_BOOL">#</a></span><br>
+Cast requested value to <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code>.</li>
+<li>
+<span class="constant" id="TYPE_INT">TYPE_INT<a class="permalink" href="http/QueryString#TYPE_INT">#</a></span><br>
+Cast requested value to <code><a href="https://php.net/manual/en/language.types.integer">int</a></code>.</li>
+<li>
+<span class="constant" id="TYPE_FLOAT">TYPE_FLOAT<a class="permalink" href="http/QueryString#TYPE_FLOAT">#</a></span><br>
+Cast requested value to <code><a href="https://php.net/manual/en/language.types.float">float</a></code>.</li>
+<li>
+<span class="constant" id="TYPE_STRING">TYPE_STRING<a class="permalink" href="http/QueryString#TYPE_STRING">#</a></span><br>
+Cast requested value to <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</li>
+<li>
+<span class="constant" id="TYPE_ARRAY">TYPE_ARRAY<a class="permalink" href="http/QueryString#TYPE_ARRAY">#</a></span><br>
+Cast requested value to an <code><a href="https://php.net/manual/en/language.types.array">array</a></code>.</li>
+<li>
+<span class="constant" id="TYPE_OBJECT">TYPE_OBJECT<a class="permalink" href="http/QueryString#TYPE_OBJECT">#</a></span><br>
 Cast requested value to an object.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>private http\QueryString $instance = NULL<br />
-The global instance. See http\QueryString::getGlobalInstance().</li>
-<li>private array $queryArray = NULL<br />
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="http/QueryString#Properties:">#</a>
+</h2><ul>
+<li>
+<em>private</em> <a href="http/QueryString">http\QueryString</a> <span class="var" id="$instance">$instance<a class="permalink" href="http/QueryString#%24instance">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The global instance. See <a href="http/QueryString/getGlobalInstance">http\QueryString::getGlobalInstance</a>().</li>
+<li>
+<em>private</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$queryArray">$queryArray<a class="permalink" href="http/QueryString#%24queryArray">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The data.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/QueryString#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/QueryString/__construct">QueryString::__construct</a></h3>
+		<h3 id="QueryString::__construct">
+<a href="http/QueryString/__construct">QueryString::__construct</a><a class="permalink" href="http/QueryString#QueryString::__construct">#</a>
+</h3>
 		<p>Create an independent querystring instance.</p>
 
-		<p>void http\QueryString::__construct([mixed $params = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/QueryString/__construct">http\QueryString::__construct</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$params</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/__toString">QueryString::__toString</a></h3>
-		<p>Get the string representation of the querystring (x-www-form-urlencoded).</p>
+		<h3 id="QueryString::__toString">
+<a href="http/QueryString/__toString">QueryString::__toString</a><a class="permalink" href="http/QueryString#QueryString::__toString">#</a>
+</h3>
+		<p>Get the <code><a href="https://php.net/manual/en/language.types.string">string</a></code> representation of the querystring (x-www-form-urlencoded).</p>
 
-		<p>string http\QueryString::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/QueryString/__toString">http\QueryString::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/get">QueryString::get</a></h3>
+		<h3 id="QueryString::get">
+<a href="http/QueryString/get">QueryString::get</a><a class="permalink" href="http/QueryString#QueryString::get">#</a>
+</h3>
 		<p>Retrieve an querystring value.</p>
 
-		<p>mixed http\QueryString::get([string $name = NULL[, mixed $type = NULL[, mixed $defval = NULL[, bool $delete = false]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="http/QueryString/get">http\QueryString::get</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$type</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$defval</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$delete</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>]]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/getArray">QueryString::getArray</a></h3>
-		<p>Retrieve an array value with at offset $name.</p>
+		<h3 id="QueryString::getArray">
+<a href="http/QueryString/getArray">QueryString::getArray</a><a class="permalink" href="http/QueryString#QueryString::getArray">#</a>
+</h3>
+		<p>Retrieve an <code><a href="https://php.net/manual/en/language.types.array">array</a></code> value with at offset <span class="var">$name</span>.</p>
 
-		<p>array http\QueryString::getArray(string $name[, mixed $defval = NULL[, bool $delete = false]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/QueryString/getArray">http\QueryString::getArray</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$defval</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$delete</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/getBool">QueryString::getBool</a></h3>
-		<p>Retrieve a boolean value at offset $name.</p>
+		<h3 id="QueryString::getBool">
+<a href="http/QueryString/getBool">QueryString::getBool</a><a class="permalink" href="http/QueryString#QueryString::getBool">#</a>
+</h3>
+		<p>Retrieve a <code><a href="https://php.net/manual/en/language.types.boolean">boolean</a></code> value at offset <span class="var">$name</span>.</p>
 
-		<p>bool http\QueryString::getBool(string $name[, mixed $defval = NULL[, bool $delete = false)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/QueryString/getBool">http\QueryString::getBool</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$defval</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$delete</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/getFloat">QueryString::getFloat</a></h3>
-		<p>Retrieve a float value at offset $name.</p>
+		<h3 id="QueryString::getFloat">
+<a href="http/QueryString/getFloat">QueryString::getFloat</a><a class="permalink" href="http/QueryString#QueryString::getFloat">#</a>
+</h3>
+		<p>Retrieve a <code><a href="https://php.net/manual/en/language.types.float">float</a></code> value at offset <span class="var">$name</span>.</p>
 
-		<p>float http\QueryString::getFloat(string $name[, mixed $defval = NULL[, bool $delete = false)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.float">float</a></code> <a href="http/QueryString/getFloat">http\QueryString::getFloat</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$defval</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$delete</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/getGlobalInstance">QueryString::getGlobalInstance</a></h3>
-		<p>Retrieve the global querystring instance referencing $_GET.</p>
+		<h3 id="QueryString::getGlobalInstance">
+<a href="http/QueryString/getGlobalInstance">QueryString::getGlobalInstance</a><a class="permalink" href="http/QueryString#QueryString::getGlobalInstance">#</a>
+</h3>
+		<p>Retrieve the global querystring instance referencing <span class="var">$_GET</span>.</p>
 
-		<p>static http\QueryString http\QueryString::getGlobalInstance()</p>
+		<p><em>static</em> <a href="http/QueryString">http\QueryString</a> <a href="http/QueryString/getGlobalInstance">http\QueryString::getGlobalInstance</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/getInt">QueryString::getInt</a></h3>
-		<p>Retrieve a int value at offset $name.</p>
+		<h3 id="QueryString::getInt">
+<a href="http/QueryString/getInt">QueryString::getInt</a><a class="permalink" href="http/QueryString#QueryString::getInt">#</a>
+</h3>
+		<p>Retrieve a <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> value at offset <span class="var">$name</span>.</p>
 
-		<p>int http\QueryString::getInt(string $name[, mixed $defval = NULL[, bool $delete = false)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/QueryString/getInt">http\QueryString::getInt</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$defval</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$delete</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/getIterator">QueryString::getIterator</a></h3>
-		<p>Implements IteratorAggregate.</p>
+		<h3 id="QueryString::getIterator">
+<a href="http/QueryString/getIterator">QueryString::getIterator</a><a class="permalink" href="http/QueryString#QueryString::getIterator">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code>.</p>
 
-		<p>Iterator http\QueryString::getIterator()</p>
+		<p><code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code> <a href="http/QueryString/getIterator">http\QueryString::getIterator</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/getObject">QueryString::getObject</a></h3>
-		<p>Retrieve a object value with at offset $name.</p>
+		<h3 id="QueryString::getObject">
+<a href="http/QueryString/getObject">QueryString::getObject</a><a class="permalink" href="http/QueryString#QueryString::getObject">#</a>
+</h3>
+		<p>Retrieve a object value with at offset <span class="var">$name</span>.</p>
 
-		<p>object http\QueryString::getObject(string $name[, mixed $defval = NULL[, bool $delete = false)</p>
+		<p>object <a href="http/QueryString/getObject">http\QueryString::getObject</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$defval</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$delete</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/getString">QueryString::getString</a></h3>
-		<p>Retrieve a string value with at offset $name.</p>
+		<h3 id="QueryString::getString">
+<a href="http/QueryString/getString">QueryString::getString</a><a class="permalink" href="http/QueryString#QueryString::getString">#</a>
+</h3>
+		<p>Retrieve a <code><a href="https://php.net/manual/en/language.types.string">string</a></code> value with at offset <span class="var">$name</span>.</p>
 
-		<p>string http\QueryString::getString(string $name[, mixed $defval = NULL[, bool $delete = false)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/QueryString/getString">http\QueryString::getString</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$defval</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$delete</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/mod">QueryString::mod</a></h3>
-		<p>Set additional $params to a clone of this instance.</p>
+		<h3 id="QueryString::mod">
+<a href="http/QueryString/mod">QueryString::mod</a><a class="permalink" href="http/QueryString#QueryString::mod">#</a>
+</h3>
+		<p>Set additional <span class="var">$params</span> to a clone of this instance.</p>
 
-		<p>http\QueryString http\QueryString::mod(mixed $params = NULL)</p>
+		<p><a href="http/QueryString">http\QueryString</a> <a href="http/QueryString/mod">http\QueryString::mod</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$params</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/offsetExists">QueryString::offsetExists</a></h3>
-		<p>Implements ArrayAccess.</p>
+		<h3 id="QueryString::offsetExists">
+<a href="http/QueryString/offsetExists">QueryString::offsetExists</a><a class="permalink" href="http/QueryString#QueryString::offsetExists">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>.</p>
 
-		<p>bool http\QueryString::offsetExists(string $name)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/QueryString/offsetExists">http\QueryString::offsetExists</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/offsetGet">QueryString::offsetGet</a></h3>
-		<p>Implements ArrayAccess.</p>
+		<h3 id="QueryString::offsetGet">
+<a href="http/QueryString/offsetGet">QueryString::offsetGet</a><a class="permalink" href="http/QueryString#QueryString::offsetGet">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>.</p>
 
-		<p>mixed http\QueryString::offsetGet(string $name)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="http/QueryString/offsetGet">http\QueryString::offsetGet</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/offsetSet">QueryString::offsetSet</a></h3>
-		<p>Implements ArrayAccess.</p>
+		<h3 id="QueryString::offsetSet">
+<a href="http/QueryString/offsetSet">QueryString::offsetSet</a><a class="permalink" href="http/QueryString#QueryString::offsetSet">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>.</p>
 
-		<p>void http\QueryString::offsetSet(string $name, mixed $data)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/QueryString/offsetSet">http\QueryString::offsetSet</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$data</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/offsetUnset">QueryString::offsetUnset</a></h3>
-		<p>Implements ArrayAccess.</p>
+		<h3 id="QueryString::offsetUnset">
+<a href="http/QueryString/offsetUnset">QueryString::offsetUnset</a><a class="permalink" href="http/QueryString#QueryString::offsetUnset">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>.</p>
 
-		<p>void http\QueryString::offsetUnset(string $name)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/QueryString/offsetUnset">http\QueryString::offsetUnset</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/serialize">QueryString::serialize</a></h3>
-		<p>Implements Serializable.</p>
+		<h3 id="QueryString::serialize">
+<a href="http/QueryString/serialize">QueryString::serialize</a><a class="permalink" href="http/QueryString#QueryString::serialize">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>.</p>
 
-		<p>string http\QueryString::serialize()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/QueryString/serialize">http\QueryString::serialize</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/set">QueryString::set</a></h3>
+		<h3 id="QueryString::set">
+<a href="http/QueryString/set">QueryString::set</a><a class="permalink" href="http/QueryString#QueryString::set">#</a>
+</h3>
 		<p>Set additional querystring entries.</p>
 
-		<p>http\QueryString http\QueryString::set(mixed $params)</p>
+		<p><a href="http/QueryString">http\QueryString</a> <a href="http/QueryString/set">http\QueryString::set</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$params</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/toArray">QueryString::toArray</a></h3>
-		<p>Simply returns http\QueryString::$queryArray.</p>
+		<h3 id="QueryString::toArray">
+<a href="http/QueryString/toArray">QueryString::toArray</a><a class="permalink" href="http/QueryString#QueryString::toArray">#</a>
+</h3>
+		<p>Simply returns <a href="http/QueryString#%24queryArray">http\QueryString::$queryArray</a>.</p>
 
-		<p>array http\QueryString::toArray()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/QueryString/toArray">http\QueryString::toArray</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/toString">QueryString::toString</a></h3>
-		<p>Get the string representation of the querystring (x-www-form-urlencoded).</p>
+		<h3 id="QueryString::toString">
+<a href="http/QueryString/toString">QueryString::toString</a><a class="permalink" href="http/QueryString#QueryString::toString">#</a>
+</h3>
+		<p>Get the <code><a href="https://php.net/manual/en/language.types.string">string</a></code> representation of the querystring (x-www-form-urlencoded).</p>
 
-		<p>string http\QueryString::toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/QueryString/toString">http\QueryString::toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/unserialize">QueryString::unserialize</a></h3>
-		<p>Implements Serializable.</p>
+		<h3 id="QueryString::unserialize">
+<a href="http/QueryString/unserialize">QueryString::unserialize</a><a class="permalink" href="http/QueryString#QueryString::unserialize">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>.</p>
 
-		<p>void http\QueryString::unserialize(string $serialized)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/QueryString/unserialize">http\QueryString::unserialize</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$serialized</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString/xlate">QueryString::xlate</a></h3>
+		<h3 id="QueryString::xlate">
+<a href="http/QueryString/xlate">QueryString::xlate</a><a class="permalink" href="http/QueryString#QueryString::xlate">#</a>
+</h3>
 		<p>Translate character encodings of the querystring with ext/iconv.</p>
 
-		<p>http\QueryString http\QueryString::xlate($from_enc, $to_enc)</p>
+		<p><a href="http/QueryString">http\QueryString</a> <a href="http/QueryString/xlate">http\QueryString::xlate</a>(<span class="var">$from_enc</span>, <span class="var">$to_enc</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -143,45 +143,31 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Message http\Message::setHttpVersion(string $http_version)</h1>
-<p>Set the HTTP protocol version of the message.
-See http\Message::getHttpVersion().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $http_version<br />
-The protocol version, e.g. &quot;1.1&quot;, optionally prefixed by &quot;HTTP/&quot;.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Message, self.</li>
-</ul>
-<h2>Notices:<a id="Notices:" href="#Notices:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/setHttpVersion#">#</a><a href="http/Message">http\Message</a> <a href="http/Message/setHttpVersion">http\Message::setHttpVersion</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$http_version</span>)</h1><p>Set the HTTP protocol version of the message.
+See <a href="http/Message/getHttpVersion">http\Message::getHttpVersion</a>().</p><h2 id="Params:">Params:<a class="permalink" href="http/Message/setHttpVersion#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$http_version">$http_version<a class="permalink" href="http/Message/setHttpVersion#%24http_version">#</a></span><br>
+The protocol version, e.g. "1.1", optionally prefixed by "HTTP/".</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Message/setHttpVersion#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Message">http\Message</a>, <em>self</em>.</li>
+</ul><h2 id="Notices:">Notices:<a class="permalink" href="http/Message/setHttpVersion#Notices:">#</a>
+</h2><ul>
 <li>If a non-standard version separator is encounted.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\BadHeaderException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$message = new http\Message;
-var_dump($message-&gt;getHttpVersion());
-$message-&gt;setHttpVersion(&quot;HTTP/1_0&quot;);
-var_dump($message-&gt;getHttpVersion());
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>string(3) &quot;1.1&quot;
-Notice: Non-standard version separator '_' in HTTP protocol version 'HTTP/1_0'
-string(3) &quot;1.0&quot;
-</code></pre>
-
-
-
-		
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Message/setHttpVersion#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/BadHeaderException">http\Exception\BadHeaderException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Message/setHttpVersion#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$message </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Message</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$message</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getHttpVersion</span><span style="color: inherit" class="keyword">());<br></span><span style="color: inherit" class="default">$message</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setHttpVersion</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"HTTP/1_0"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$message</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getHttpVersion</span><span style="color: inherit" class="keyword">());<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+string(3) "1.1"<br>Notice: Non-standard version separator '_' in HTTP protocol version 'HTTP/1_0'<br>string(3) "1.0"<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

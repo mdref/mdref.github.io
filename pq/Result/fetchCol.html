@@ -77,48 +77,30 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>bool pq\Result::fetchCol(mixed &amp;$ref[, mixed $col = 0])</h1>
-<p>Iteratively fetch a single column.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>mixed $ref<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Result/fetchCol#">#</a><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq/Result/fetchCol">pq\Result::fetchCol</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> &amp;<span class="var">$ref</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$col</span> = 0])</h1><p>Iteratively fetch a single column.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Result/fetchCol#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$ref">$ref<a class="permalink" href="pq/Result/fetchCol#%24ref">#</a></span><br>
 The variable where the column value will be stored in.</li>
-<li>Optional mixed $col = 0<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$col">$col<a class="permalink" href="pq/Result/fetchCol#%24col">#</a></span> = 0<br>
 The column name or index.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>bool, success.</li>
-<li>NULL, when iteration ends.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-try {
-	$connection = new pq\Connection;
-	
-	$result = $connection-&gt;exec(&quot;SELECT email FROM accounts WHERE email LIKE '_@%'&quot;);
-	
-	while ($result-&gt;fetchCol($email))  {
-		echo &quot;Mail: {$email}\n&quot;;
-	}
-} catch (\pq\Exception $e) {
-	echo $e-&gt;getMessage(), &quot;\n&quot;;
-}
-
-?&gt;
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/Result/fetchCol#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code>, success.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>, when iteration ends.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Result/fetchCol#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Result/fetchCol#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>    <br>    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT email FROM accounts WHERE email LIKE '_@%'"</span><span style="color: inherit" class="keyword">);<br>    <br>    while (</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchCol</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">))  {<br>        echo </span><span style="color: inherit" class="string">"Mail: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>    }<br>} catch (</span><span style="color: inherit" class="default">\pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    echo </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

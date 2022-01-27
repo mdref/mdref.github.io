@@ -95,64 +95,70 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\COPY</h1>
-<p>Fast import/export using COPY.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>FROM_STDIN<br />
-Start a COPY operation from STDIN to the PostgreSQL server.</li>
-<li>TO_STDOUT<br />
-Start a COPY operation from the server to STDOUT.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public (readonly) pq\Connection $connection<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/COPY#">#</a><em>class</em> <a href="pq/COPY">pq\COPY</a>
+</h1><p>Fast import/export using COPY.</p><h2 id="Constants:">Constants:<a class="permalink" href="pq/COPY#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="FROM_STDIN">FROM_STDIN<a class="permalink" href="pq/COPY#FROM_STDIN">#</a></span><br>
+Start a <span class="constant">COPY</span> operation from <span class="constant">STDIN</span> to the PostgreSQL server.</li>
+<li>
+<span class="constant" id="TO_STDOUT">TO_STDOUT<a class="permalink" href="pq/COPY#TO_STDOUT">#</a></span><br>
+Start a <span class="constant">COPY</span> operation from the server to <span class="constant">STDOUT</span>.</li>
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="pq/COPY#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> (readonly) <a href="pq/Connection">pq\Connection</a> <span class="var" id="$connection">$connection<a class="permalink" href="pq/COPY#%24connection">#</a></span><br>
 The connection to the PostgreSQL server.</li>
-<li>public (readonly) string $expression<br />
-The expression of the COPY statement used to start the operation.</li>
-<li>public (readonly) int $direction<br />
-The drection of the COPY operation (pq\COPY::FROM_STDIN or pq\COPY::TO_STDOUT).</li>
-<li>public (readonly) string $options<br />
-Any additional options used to start the COPY operation.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$expression">$expression<a class="permalink" href="pq/COPY#%24expression">#</a></span><br>
+The expression of the <span class="constant">COPY</span> statement used to start the operation.</li>
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$direction">$direction<a class="permalink" href="pq/COPY#%24direction">#</a></span><br>
+The drection of the <span class="constant">COPY</span> operation (<a href="pq/COPY#FROM_STDIN">pq\COPY::FROM_STDIN</a> or <a href="pq/COPY#TO_STDOUT">pq\COPY::TO_STDOUT</a>).</li>
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$options">$options<a class="permalink" href="pq/COPY#%24options">#</a></span><br>
+Any additional options used to start the <span class="constant">COPY</span> operation.</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq/COPY#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/COPY/__construct">COPY::__construct</a></h3>
+		<h3 id="COPY::__construct">
+<a href="pq/COPY/__construct">COPY::__construct</a><a class="permalink" href="pq/COPY#COPY::__construct">#</a>
+</h3>
 		<p>Start a COPY operation.</p>
 
-		<p>void pq\COPY::__construct(pq\Connection $conn, string $expression, int $direction[, string $options = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/COPY/__construct">pq\COPY::__construct</a>(<a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$expression</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$direction</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$options</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/COPY/end">COPY::end</a></h3>
-		<p>End the COPY operation to the server during pq\Result::COPY_IN state.</p>
+		<h3 id="COPY::end">
+<a href="pq/COPY/end">COPY::end</a><a class="permalink" href="pq/COPY#COPY::end">#</a>
+</h3>
+		<p>End the COPY operation to the server during <a href="pq/Result#COPY_IN">pq\Result::COPY_IN</a> state.</p>
 
-		<p>void pq\COPY::end([string $error = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/COPY/end">pq\COPY::end</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$error</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/COPY/get">COPY::get</a></h3>
-		<p>Receive data from the server during pq\Result::COPY_OUT state.</p>
+		<h3 id="COPY::get">
+<a href="pq/COPY/get">COPY::get</a><a class="permalink" href="pq/COPY#COPY::get">#</a>
+</h3>
+		<p>Receive data from the server during <a href="pq/Result#COPY_OUT">pq\Result::COPY_OUT</a> state.</p>
 
-		<p>bool pq\COPY::get(string &amp;$data)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq/COPY/get">pq\COPY::get</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> &amp;<span class="var">$data</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/COPY/put">COPY::put</a></h3>
-		<p>Send data to the server during pq\Result::COPY_IN state.</p>
+		<h3 id="COPY::put">
+<a href="pq/COPY/put">COPY::put</a><a class="permalink" href="pq/COPY#COPY::put">#</a>
+</h3>
+		<p>Send data to the server during <a href="pq/Result#COPY_IN">pq\Result::COPY_IN</a> state.</p>
 
-		<p>void pq\COPY::put(string $data)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/COPY/put">pq\COPY::put</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

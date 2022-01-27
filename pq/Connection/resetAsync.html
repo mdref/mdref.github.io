@@ -125,62 +125,18 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void pq\Connection::resetAsync()</h1>
-<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> reset a possibly broken connection to a working state.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$c-&gt;resetAsync();
-
-// wait until the stream becomes writable
-$w = array($c-&gt;socket);
-$r = $e = null;
-
-if (stream_select($r, $w, $e, null)) {
-
-  // loop until the connection is established
-  while (true) {
-  
-	switch ($c-&gt;poll()) {
-	
-	case pq\Connection::POLLING_READING:
-	  // we should wait for the stream to be read-ready
-	  $r = array($c-&gt;socket);
-	  stream_select($r, $w, $e, NULL);
-	  break;
-
-	case pq\Connection::POLLING_WRITING:
-	  // we should wait for the stream to be write-ready
-	  $w = array($c-&gt;socket);
-	  $r = $e = null;
-	  stream_select($r, $w, $e, null);
-	  break;
-
-	case pq\Connection::POLLING_FAILED:
-	  printf(&quot;Connection failed: %s\n&quot;, $c-&gt;errorMessage);
-	  break 2;
-
-	case pq\Connection::POLLING_OK:
-	  printf(&quot;Connection completed\n&quot;);
-	  break 2;
-	}
-}
-
-?&gt;
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/resetAsync#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/resetAsync">pq\Connection::resetAsync</a>()</h1><p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> reset a possibly broken connection to a working state.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Connection/resetAsync#Params:">#</a>
+</h2><p>None.</p><h2 id="Throws:">Throws:<a class="permalink" href="pq/Connection/resetAsync#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Connection/resetAsync#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">resetAsync</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="comment">// wait until the stream becomes writable<br></span><span style="color: inherit" class="default">$w </span><span style="color: inherit" class="keyword">= array(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">socket</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$e </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">;<br><br>if (</span><span style="color: inherit" class="default">stream_select</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$w</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">)) {<br><br>  </span><span style="color: inherit" class="comment">// loop until the connection is established<br>  </span><span style="color: inherit" class="keyword">while (</span><span style="color: inherit" class="default">true</span><span style="color: inherit" class="keyword">) {<br>  <br>    switch (</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">poll</span><span style="color: inherit" class="keyword">()) {<br>    <br>    case </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLLING_READING</span><span style="color: inherit" class="keyword">:<br>      </span><span style="color: inherit" class="comment">// we should wait for the stream to be read-ready<br>      </span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= array(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">socket</span><span style="color: inherit" class="keyword">);<br>      </span><span style="color: inherit" class="default">stream_select</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$w</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">NULL</span><span style="color: inherit" class="keyword">);<br>      break;<br><br>    case </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLLING_WRITING</span><span style="color: inherit" class="keyword">:<br>      </span><span style="color: inherit" class="comment">// we should wait for the stream to be write-ready<br>      </span><span style="color: inherit" class="default">$w </span><span style="color: inherit" class="keyword">= array(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">socket</span><span style="color: inherit" class="keyword">);<br>      </span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$e </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">;<br>      </span><span style="color: inherit" class="default">stream_select</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$w</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">);<br>      break;<br><br>    case </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLLING_FAILED</span><span style="color: inherit" class="keyword">:<br>      </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Connection failed: %s\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">errorMessage</span><span style="color: inherit" class="keyword">);<br>      break </span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">;<br><br>    case </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">POLLING_OK</span><span style="color: inherit" class="keyword">:<br>      </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Connection completed\n"</span><span style="color: inherit" class="keyword">);<br>      break </span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">;<br>    }<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

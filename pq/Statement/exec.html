@@ -75,38 +75,26 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Result pq\Statement::exec([array $params = NULL])</h1>
-<p>Execute the prepared statement.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional array $params = NULL<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Statement/exec#">#</a><a href="pq/Result">pq\Result</a> <a href="pq/Statement/exec">pq\Statement::exec</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$params</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>Execute the prepared statement.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Statement/exec#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$params">$params<a class="permalink" href="pq/Statement/exec#%24params">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Any parameters to substitute in the prepared statement (defaults to any bou
 nd variables).</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Result, the result of the execution of the prepared statement.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$connection = new pq\Connection;
-$statement = $connection-&gt;prepare(&quot;st1&quot;, &quot;SELECT int4(\$1)&quot;);
-$result = $statement-&gt;exec([123]);
-
-?&gt;
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/Statement/exec#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="pq/Result">pq\Result</a>, the result of the execution of the prepared statement.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Statement/exec#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Statement/exec#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$statement </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">prepare</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"st1"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"SELECT int4(\$1)"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$statement</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="default">123</span><span style="color: inherit" class="keyword">]);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

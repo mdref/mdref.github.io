@@ -63,30 +63,26 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void pq\COPY::__construct(pq\Connection $conn, string $expression, int $direction[, string $options = NULL])</h1>
-<p>Start a COPY operation.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Connection $conn<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/COPY/__construct#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/COPY/__construct">pq\COPY::__construct</a>(<a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$expression</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$direction</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$options</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>Start a COPY operation.</p><h2 id="Params:">Params:<a class="permalink" href="pq/COPY/__construct#Params:">#</a>
+</h2><ul>
+<li>
+<a href="pq/Connection">pq\Connection</a> <span class="var" id="$conn">$conn<a class="permalink" href="pq/COPY/__construct#%24conn">#</a></span><br>
 The connection to use for the COPY operation.</li>
-<li>string $expression<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$expression">$expression<a class="permalink" href="pq/COPY/__construct#%24expression">#</a></span><br>
 The expression generating the data to copy.</li>
-<li>int $direction<br />
-Data direction (pq\COPY::FROM_STDIN or pq\COPY::TO_STDOUT).</li>
-<li>Optional string $options = NULL<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$direction">$direction<a class="permalink" href="pq/COPY/__construct#%24direction">#</a></span><br>
+Data direction (<a href="pq/COPY#FROM_STDIN">pq\COPY::FROM_STDIN</a> or <a href="pq/COPY#TO_STDOUT">pq\COPY::TO_STDOUT</a>).</li>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$options">$options<a class="permalink" href="pq/COPY/__construct#%24options">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Any COPY options (see the <a href="http://www.postgresql.org/docs/current/static/sql-copy.html">official PostgreSQL documentation</a> for details.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-
-
-
-		
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/COPY/__construct#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

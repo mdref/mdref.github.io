@@ -129,144 +129,19 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Gateway\Table\Relations pq\Gateway\Table::getRelations()</h1>
-<p>Get the relations (by foreign key) of this table.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Gateway\Table\Relations, the table's foreign keys.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Gateway\Table;
-
-$conn = new pq\Connection;
-$conn-&gt;exec(&quot;
-	-- drop table if exists account cascade;
-	-- create table account (
-	-- 	id uuid default uuid_generate_v4() primary key,
-	-- 	password char(60),
-	-- 	name varchar(68)
-	-- );
-
-	-- drop table if exists account_email cascade;
-	-- create table account_email (
-	-- 	account_id uuid not null references account(id) on delete cascade,
-	-- 	email varchar(255) not null unique,
-	-- 	primary key (account_id, email)
-	-- );
-	
-	drop table if exists reftable cascade;
-	create table reftable (
-		id serial primary key,
-		my_account uuid references account(id),
-		account_id uuid references account(id),
-		second_account_id uuid references account(id),
-		email varchar(255) not null references account_email(email)
-	);
-&quot;);
-
-$fgn_table = new Table(&quot;reftable&quot;);
-var_dump($fgn_table-&gt;getRelations());
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>object(pq\Gateway\Table\Relations)#7 (1) {
-  [&quot;references&quot;:protected]=&gt;
-  array(2) {
-	[&quot;account&quot;]=&gt;
-	array(3) {
-	  [&quot;my_account&quot;]=&gt;
-	  object(pq\Gateway\Table\Reference)#14 (5) {
-		[&quot;name&quot;]=&gt;
-		string(10) &quot;my_account&quot;
-		[&quot;foreignTable&quot;]=&gt;
-		string(8) &quot;reftable&quot;
-		[&quot;foreignColumns&quot;]=&gt;
-		array(1) {
-		  [0]=&gt;
-		  string(10) &quot;my_account&quot;
-		}
-		[&quot;referencedTable&quot;]=&gt;
-		string(7) &quot;account&quot;
-		[&quot;referencedColumns&quot;]=&gt;
-		array(1) {
-		  [0]=&gt;
-		  string(2) &quot;id&quot;
-		}
-	  }
-	  [&quot;account&quot;]=&gt;
-	  object(pq\Gateway\Table\Reference)#15 (5) {
-		[&quot;name&quot;]=&gt;
-		string(7) &quot;account&quot;
-		[&quot;foreignTable&quot;]=&gt;
-		string(8) &quot;reftable&quot;
-		[&quot;foreignColumns&quot;]=&gt;
-		array(1) {
-		  [0]=&gt;
-		  string(10) &quot;account_id&quot;
-		}
-		[&quot;referencedTable&quot;]=&gt;
-		string(7) &quot;account&quot;
-		[&quot;referencedColumns&quot;]=&gt;
-		array(1) {
-		  [0]=&gt;
-		  string(2) &quot;id&quot;
-		}
-	  }
-	  [&quot;second_account&quot;]=&gt;
-	  object(pq\Gateway\Table\Reference)#16 (5) {
-		[&quot;name&quot;]=&gt;
-		string(14) &quot;second_account&quot;
-		[&quot;foreignTable&quot;]=&gt;
-		string(8) &quot;reftable&quot;
-		[&quot;foreignColumns&quot;]=&gt;
-		array(1) {
-		  [0]=&gt;
-		  string(17) &quot;second_account_id&quot;
-		}
-		[&quot;referencedTable&quot;]=&gt;
-		string(7) &quot;account&quot;
-		[&quot;referencedColumns&quot;]=&gt;
-		array(1) {
-		  [0]=&gt;
-		  string(2) &quot;id&quot;
-		}
-	  }
-	}
-	[&quot;account_email&quot;]=&gt;
-	array(1) {
-	  [&quot;email&quot;]=&gt;
-	  object(pq\Gateway\Table\Reference)#17 (5) {
-		[&quot;name&quot;]=&gt;
-		string(5) &quot;email&quot;
-		[&quot;foreignTable&quot;]=&gt;
-		string(8) &quot;reftable&quot;
-		[&quot;foreignColumns&quot;]=&gt;
-		array(1) {
-		  [0]=&gt;
-		  string(5) &quot;email&quot;
-		}
-		[&quot;referencedTable&quot;]=&gt;
-		string(13) &quot;account_email&quot;
-		[&quot;referencedColumns&quot;]=&gt;
-		array(1) {
-		  [0]=&gt;
-		  string(5) &quot;email&quot;
-		}
-	  }
-	}
-  }
-}
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/getRelations#">#</a><a href="pq-gateway/pq/Gateway/Table/Relations">pq\Gateway\Table\Relations</a> <a href="pq-gateway/pq/Gateway/Table/getRelations">pq\Gateway\Table::getRelations</a>()</h1><p>Get the relations (by foreign key) of this table.</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Gateway/Table/getRelations#Params:">#</a>
+</h2><p>None.</p><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Gateway/Table/getRelations#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="pq-gateway/pq/Gateway/Table/Relations">pq\Gateway\Table\Relations</a>, the table's foreign keys.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Gateway/Table/getRelations#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$conn </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"<br>    -- drop table if exists account cascade;<br>    -- create table account (<br>    --     id uuid default uuid_generate_v4() primary key,<br>    --     password char(60),<br>    --     name varchar(68)<br>    -- );<br><br>    -- drop table if exists account_email cascade;<br>    -- create table account_email (<br>    --     account_id uuid not null references account(id) on delete cascade,<br>    --     email varchar(255) not null unique,<br>    --     primary key (account_id, email)<br>    -- );<br>    <br>    drop table if exists reftable cascade;<br>    create table reftable (<br>        id serial primary key,<br>        my_account uuid references account(id),<br>        account_id uuid references account(id),<br>        second_account_id uuid references account(id),<br>        email varchar(255) not null references account_email(email)<br>    );<br>"</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">$fgn_table </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"reftable"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$fgn_table</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getRelations</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+object(pq\Gateway\Table\Relations)#7 (1) {<br>  ["references":protected]=&gt;<br>  array(2) {<br>    ["account"]=&gt;<br>    array(3) {<br>      ["my_account"]=&gt;<br>      object(pq\Gateway\Table\Reference)#14 (5) {<br>        ["name"]=&gt;<br>        string(10) "my_account"<br>        ["foreignTable"]=&gt;<br>        string(8) "reftable"<br>        ["foreignColumns"]=&gt;<br>        array(1) {<br>          [0]=&gt;<br>          string(10) "my_account"<br>        }<br>        ["referencedTable"]=&gt;<br>        string(7) "account"<br>        ["referencedColumns"]=&gt;<br>        array(1) {<br>          [0]=&gt;<br>          string(2) "id"<br>        }<br>      }<br>      ["account"]=&gt;<br>      object(pq\Gateway\Table\Reference)#15 (5) {<br>        ["name"]=&gt;<br>        string(7) "account"<br>        ["foreignTable"]=&gt;<br>        string(8) "reftable"<br>        ["foreignColumns"]=&gt;<br>        array(1) {<br>          [0]=&gt;<br>          string(10) "account_id"<br>        }<br>        ["referencedTable"]=&gt;<br>        string(7) "account"<br>        ["referencedColumns"]=&gt;<br>        array(1) {<br>          [0]=&gt;<br>          string(2) "id"<br>        }<br>      }<br>      ["second_account"]=&gt;<br>      object(pq\Gateway\Table\Reference)#16 (5) {<br>        ["name"]=&gt;<br>        string(14) "second_account"<br>        ["foreignTable"]=&gt;<br>        string(8) "reftable"<br>        ["foreignColumns"]=&gt;<br>        array(1) {<br>          [0]=&gt;<br>          string(17) "second_account_id"<br>        }<br>        ["referencedTable"]=&gt;<br>        string(7) "account"<br>        ["referencedColumns"]=&gt;<br>        array(1) {<br>          [0]=&gt;<br>          string(2) "id"<br>        }<br>      }<br>    }<br>    ["account_email"]=&gt;<br>    array(1) {<br>      ["email"]=&gt;<br>      object(pq\Gateway\Table\Reference)#17 (5) {<br>        ["name"]=&gt;<br>        string(5) "email"<br>        ["foreignTable"]=&gt;<br>        string(8) "reftable"<br>        ["foreignColumns"]=&gt;<br>        array(1) {<br>          [0]=&gt;<br>          string(5) "email"<br>        }<br>        ["referencedTable"]=&gt;<br>        string(13) "account_email"<br>        ["referencedColumns"]=&gt;<br>        array(1) {<br>          [0]=&gt;<br>          string(5) "email"<br>        }<br>      }<br>    }<br>  }<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

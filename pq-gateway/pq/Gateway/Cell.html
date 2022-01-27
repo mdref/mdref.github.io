@@ -107,81 +107,92 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Gateway\Cell extends pq\Query\Expressible implements ArrayAccess</h1>
-<p>The cell gateway.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected pq\Gateway\Row $row<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Cell#">#</a><em>class</em> <a href="pq-gateway/pq/Gateway/Cell">pq\Gateway\Cell</a> <br>&nbsp;<em>extends</em> <a href="pq-gateway/pq/Query/Expressible">pq\Query\Expressible</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>
+</h1><p>The cell gateway.</p><h2 id="Properties:">Properties:<a class="permalink" href="pq-gateway/pq/Gateway/Cell#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var" id="$row">$row<a class="permalink" href="pq-gateway/pq/Gateway/Cell#%24row">#</a></span><br>
 The originating row.</li>
-<li>protected bool $dirty<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$dirty">$dirty<a class="permalink" href="pq-gateway/pq/Gateway/Cell#%24dirty">#</a></span><br>
 Whether the cell has been modified.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Gateway/Cell#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Cell/__construct">Cell::__construct</a></h3>
+		<h3 id="Cell::__construct">
+<a href="pq-gateway/pq/Gateway/Cell/__construct">Cell::__construct</a><a class="permalink" href="pq-gateway/pq/Gateway/Cell#Cell::__construct">#</a>
+</h3>
 		<p>Create a new cell gateway.</p>
 
-		<p>void pq\Gateway\Cell::__construct(pq\Gateway\Row $row, string $name, mixed $data[, bool $dirty = FALSE])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Cell/__construct">pq\Gateway\Cell::__construct</a>(<a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var">$row</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$data</span>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$dirty</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Cell/isDirty">Cell::isDirty</a></h3>
+		<h3 id="Cell::isDirty">
+<a href="pq-gateway/pq/Gateway/Cell/isDirty">Cell::isDirty</a><a class="permalink" href="pq-gateway/pq/Gateway/Cell#Cell::isDirty">#</a>
+</h3>
 		<p>Whether the data has been modified.</p>
 
-		<p>bool pq\Gateway\Cell::isDirty()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq-gateway/pq/Gateway/Cell/isDirty">pq\Gateway\Cell::isDirty</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Cell/mod">Cell::mod</a></h3>
+		<h3 id="Cell::mod">
+<a href="pq-gateway/pq/Gateway/Cell/mod">Cell::mod</a><a class="permalink" href="pq-gateway/pq/Gateway/Cell#Cell::mod">#</a>
+</h3>
 		<p>Extend the column's value.</p>
 
-		<p>pq\Gateway\Cell pq\Gateway\Cell::mod(mixed $data[, string $op = NULL])</p>
+		<p><a href="pq-gateway/pq/Gateway/Cell">pq\Gateway\Cell</a> <a href="pq-gateway/pq/Gateway/Cell/mod">pq\Gateway\Cell::mod</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$data</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$op</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Cell/offsetGet">Cell::offsetGet</a></h3>
+		<h3 id="Cell::offsetGet">
+<a href="pq-gateway/pq/Gateway/Cell/offsetGet">Cell::offsetGet</a><a class="permalink" href="pq-gateway/pq/Gateway/Cell#Cell::offsetGet">#</a>
+</h3>
 		<p>Implements ArrayAcccess.</p>
 
-		<p>mixed pq\Gateway\Cell::offsetGet(int $o)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Cell/offsetGet">pq\Gateway\Cell::offsetGet</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$o</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Cell/offsetIsset">Cell::offsetIsset</a></h3>
+		<h3 id="Cell::offsetIsset">
+<a href="pq-gateway/pq/Gateway/Cell/offsetIsset">Cell::offsetIsset</a><a class="permalink" href="pq-gateway/pq/Gateway/Cell#Cell::offsetIsset">#</a>
+</h3>
 		<p>Implements ArrayAcccess.</p>
 
-		<p>mixed pq\Gateway\Cell::offsetIsset(int $o)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Cell/offsetIsset">pq\Gateway\Cell::offsetIsset</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$o</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Cell/offsetSet">Cell::offsetSet</a></h3>
+		<h3 id="Cell::offsetSet">
+<a href="pq-gateway/pq/Gateway/Cell/offsetSet">Cell::offsetSet</a><a class="permalink" href="pq-gateway/pq/Gateway/Cell#Cell::offsetSet">#</a>
+</h3>
 		<p>Implements ArrayAcccess.</p>
 
-		<p>void pq\Gateway\Cell::offsetSet(int $o, mixed $v)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Cell/offsetSet">pq\Gateway\Cell::offsetSet</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$o</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$v</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Cell/offsetUnset">Cell::offsetUnset</a></h3>
+		<h3 id="Cell::offsetUnset">
+<a href="pq-gateway/pq/Gateway/Cell/offsetUnset">Cell::offsetUnset</a><a class="permalink" href="pq-gateway/pq/Gateway/Cell#Cell::offsetUnset">#</a>
+</h3>
 		<p>Implements ArrayAcccess.</p>
 
-		<p>void pq\Gateway\Cell::offsetUnset(int $o)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Cell/offsetUnset">pq\Gateway\Cell::offsetUnset</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$o</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Cell/set">Cell::set</a></h3>
+		<h3 id="Cell::set">
+<a href="pq-gateway/pq/Gateway/Cell/set">Cell::set</a><a class="permalink" href="pq-gateway/pq/Gateway/Cell#Cell::set">#</a>
+</h3>
 		<p>Set a new value.</p>
 
-		<p>pq\Gateway\Cell pq\Gateway\Cell::set(mixed $data)</p>
+		<p><a href="pq-gateway/pq/Gateway/Cell">pq\Gateway\Cell</a> <a href="pq-gateway/pq/Gateway/Cell/set">pq\Gateway\Cell::set</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$data</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

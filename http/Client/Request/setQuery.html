@@ -87,38 +87,27 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Client\Request http\Client\Request::setQuery([mixed $query_data = NULL])</h1>
-<p>(Re)set the querystring.
-See http\Client\Request::addQuery() and http\Message::setRequestUrl().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>mixed $query_data, new querystring data.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Client\Request, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\BadQueryStringException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$q = new http\QueryString(&quot;foo=bar&amp;bar=foo&quot;);
-$r = new http\Client\Request;
-$r-&gt;setQuery($q);
-var_dump($r-&gt;getRequestUrl());
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>string(33) &quot;http://localhost/?foo=bar&amp;bar=foo&quot;
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/Request/setQuery#">#</a><a href="http/Client/Request">http\Client\Request</a> <a href="http/Client/Request/setQuery">http\Client\Request::setQuery</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$query_data</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>(Re)set the querystring.
+See <a href="http/Client/Request/addQuery">http\Client\Request::addQuery</a>() and <a href="http/Message/setRequestUrl">http\Message::setRequestUrl</a>().</p><h2 id="Params:">Params:<a class="permalink" href="http/Client/Request/setQuery#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$query_data">$query_data<a class="permalink" href="http/Client/Request/setQuery#%24query_data">#</a></span>, new querystring data.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/Request/setQuery#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Client/Request">http\Client\Request</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Client/Request/setQuery#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/BadQueryStringException">http\Exception\BadQueryStringException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/Request/setQuery#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$q </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\QueryString</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"foo=bar&amp;bar=foo"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setQuery</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$q</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getRequestUrl</span><span style="color: inherit" class="keyword">());<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+string(33) "http://localhost/?foo=bar&amp;bar=foo"<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -129,90 +129,28 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Client http\Client::notify([http\Client\Request $request = NULL[, object $progress = NULL]])</h1>
-<p>Implements SplSubject. Notify attached observers about progress with $request.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional http\Client\Request $request = NULL<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/notify#">#</a><a href="http/Client">http\Client</a> <a href="http/Client/notify">http\Client::notify</a>([<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, object <span class="var">$progress</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</h1><p>Implements <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>. Notify attached observers about progress with <span class="var">$request</span>.</p><h2 id="Params:">Params:<a class="permalink" href="http/Client/notify#Params:">#</a>
+</h2><ul>
+<li>Optional <a href="http/Client/Request">http\Client\Request</a> <span class="var" id="$request">$request<a class="permalink" href="http/Client/notify#%24request">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The request to notify about.</li>
-<li>Optional object $progress = NULL<br />
-stdClass instance holding progress information.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Client, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\UnexpectedValueException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-class Observer implements SplObserver {
-    function update(SplSubject $client, http\Client\Request $request = NULL, $progress = NULL) {
-        printf(&quot;%s %d%%\n&quot;, $progress-&gt;info,
-            $progress-&gt;dltotal ? ($progress-&gt;dlnow*100/$progress-&gt;dltotal) : 0);
-    }
-}
-
-$client = new http\Client;
-
-$client-&gt;attach(new Observer);
-$client-&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;https://php.net/images/logos/php-logo.eps&quot;));
-$client-&gt;send();
-?&gt;
-</code></pre>
-<p>May yield:</p>
-<pre><code>start 0%
-setup 0%
-setup 0%
-setup 0%
-setup 0%
-setup 0%
-resolve 0%
-connect 0%
-connected 0%
-connected 0%
-connected 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-ssl negotiation 0%
-blacklist check 0%
-receive 10%
-receive 20%
-receive 30%
-receive 40%
-receive 50%
-receive 60%
-receive 70%
-receive 80%
-receive 90%
-receive 100%
-receive 100%
-not disconnected 100%
-finished 100%
-</code></pre>
-
-
-
-		
+<li>Optional object <span class="var" id="$progress">$progress<a class="permalink" href="http/Client/notify#%24progress">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+<code><a href="https://php.net/manual/en/class.stdclass">stdClass</a></code> instance holding progress information.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/notify#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Client">http\Client</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Client/notify#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/UnexpectedValueException">http\Exception\UnexpectedValueException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/notify#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br></span><span style="color: inherit" class="keyword">class </span><span style="color: inherit" class="default">Observer </span><span style="color: inherit" class="keyword">implements </span><span style="color: inherit" class="default">SplObserver </span><span style="color: inherit" class="keyword">{<br>    function </span><span style="color: inherit" class="default">update</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">SplSubject $client</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">http\Client\Request $request </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">NULL</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$progress </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">NULL</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%s %d%%\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$progress</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">info</span><span style="color: inherit" class="keyword">,<br>            </span><span style="color: inherit" class="default">$progress</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">dltotal </span><span style="color: inherit" class="keyword">? (</span><span style="color: inherit" class="default">$progress</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">dlnow</span><span style="color: inherit" class="keyword">*</span><span style="color: inherit" class="default">100</span><span style="color: inherit" class="keyword">/</span><span style="color: inherit" class="default">$progress</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">dltotal</span><span style="color: inherit" class="keyword">) : </span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">);<br>    }<br>}<br><br></span><span style="color: inherit" class="default">$client </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">attach</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">Observer</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"GET"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"https://php.net/images/logos/php-logo.eps"</span><span style="color: inherit" class="keyword">));<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">();<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>May yield:</p><pre><code><span style="color: inherit" class="html">
+start 0%<br>setup 0%<br>setup 0%<br>setup 0%<br>setup 0%<br>setup 0%<br>resolve 0%<br>connect 0%<br>connected 0%<br>connected 0%<br>connected 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>blacklist check 0%<br>receive 10%<br>receive 20%<br>receive 30%<br>receive 40%<br>receive 50%<br>receive 60%<br>receive 70%<br>receive 80%<br>receive 90%<br>receive 100%<br>receive 100%<br>not disconnected 100%<br>finished 100%<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -121,114 +121,139 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Params implements ArrayAccess</h1>
-<p>Parse, interpret and compose HTTP (header) parameters.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>DEF_PARAM_SEP<br />
-The default parameter separator (&quot;,&quot;).</li>
-<li>DEF_ARG_SEP<br />
-The default argument separator (&quot;;&quot;).</li>
-<li>DEF_VAL_SEP<br />
-The default value separator (&quot;=&quot;).</li>
-<li>COOKIE_PARAM_SEP<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Params#">#</a><em>class</em> <a href="http/Params">http\Params</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>
+</h1><p>Parse, interpret and compose HTTP (header) parameters.</p><h2 id="Constants:">Constants:<a class="permalink" href="http/Params#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="DEF_PARAM_SEP">DEF_PARAM_SEP<a class="permalink" href="http/Params#DEF_PARAM_SEP">#</a></span><br>
+The default parameter separator (",").</li>
+<li>
+<span class="constant" id="DEF_ARG_SEP">DEF_ARG_SEP<a class="permalink" href="http/Params#DEF_ARG_SEP">#</a></span><br>
+The default argument separator (";").</li>
+<li>
+<span class="constant" id="DEF_VAL_SEP">DEF_VAL_SEP<a class="permalink" href="http/Params#DEF_VAL_SEP">#</a></span><br>
+The default value separator ("=").</li>
+<li>
+<span class="constant" id="COOKIE_PARAM_SEP">COOKIE_PARAM_SEP<a class="permalink" href="http/Params#COOKIE_PARAM_SEP">#</a></span><br>
 Empty param separator to parse cookies.</li>
-<li>PARSE_RAW<br />
+<li>
+<span class="constant" id="PARSE_RAW">PARSE_RAW<a class="permalink" href="http/Params#PARSE_RAW">#</a></span><br>
 Do not interpret the parsed parameters.</li>
-<li>PARSE_DEFAULT<br />
+<li>
+<span class="constant" id="PARSE_DEFAULT">PARSE_DEFAULT<a class="permalink" href="http/Params#PARSE_DEFAULT">#</a></span><br>
 Interpret input as default formatted parameters.</li>
-<li>PARSE_ESCAPED<br />
+<li>
+<span class="constant" id="PARSE_ESCAPED">PARSE_ESCAPED<a class="permalink" href="http/Params#PARSE_ESCAPED">#</a></span><br>
 Parse backslash escaped (quoted) strings.</li>
-<li>PARSE_URLENCODED<br />
+<li>
+<span class="constant" id="PARSE_URLENCODED">PARSE_URLENCODED<a class="permalink" href="http/Params#PARSE_URLENCODED">#</a></span><br>
 Urldecode single units of parameters, arguments and values.</li>
-<li>PARSE_DIMENSION<br />
+<li>
+<span class="constant" id="PARSE_DIMENSION">PARSE_DIMENSION<a class="permalink" href="http/Params#PARSE_DIMENSION">#</a></span><br>
 Parse sub dimensions indicated by square brackets.</li>
-<li>PARSE_QUERY<br />
-Parse URL querystring (same as http\Params::PARSE_URLENCODED|http\Params::PARSE_DIMENSION).</li>
-<li>PARSE_RFC5987<br />
-Parse <a href="http://tools.ietf.org/html/rfc5987">RFC5987</a> style encoded character set and language information embedded in HTTP header params.</li>
-<li>PARSE_RFC5988<br />
+<li>
+<span class="constant" id="PARSE_QUERY">PARSE_QUERY<a class="permalink" href="http/Params#PARSE_QUERY">#</a></span><br>
+Parse <span class="constant">URL</span> querystring (same as <a href="http/Params#PARSE_URLENCODED">http\Params::PARSE_URLENCODED</a>|<a href="http/Params#PARSE_DIMENSION">http\Params::PARSE_DIMENSION</a>).</li>
+<li>
+<span class="constant" id="PARSE_RFC5987">PARSE_RFC5987<a class="permalink" href="http/Params#PARSE_RFC5987">#</a></span><br>
+Parse <a href="http://tools.ietf.org/html/rfc5987">RFC5987</a> style encoded character set and language information embedded in <span class="constant">HTTP</span> header params.</li>
+<li>
+<span class="constant" id="PARSE_RFC5988">PARSE_RFC5988<a class="permalink" href="http/Params#PARSE_RFC5988">#</a></span><br>
 Parse <a href="http://tools.ietf.org/html/rfc5988">RFC5988</a> (Web Linking) tags of Link headers.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public array $params = NULL<br />
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="http/Params#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$params">$params<a class="permalink" href="http/Params#%24params">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The (parsed) parameters.</li>
-<li>public array $param_sep = http\Params::DEF_PARAM_SEP<br />
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$param_sep">$param_sep<a class="permalink" href="http/Params#%24param_sep">#</a></span> = <a href="http/Params#DEF_PARAM_SEP">http\Params::DEF_PARAM_SEP</a><br>
 The parameter separator(s).</li>
-<li>public array $arg_sep = http\Params::DEF_ARG_SEP<br />
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$arg_sep">$arg_sep<a class="permalink" href="http/Params#%24arg_sep">#</a></span> = <a href="http/Params#DEF_ARG_SEP">http\Params::DEF_ARG_SEP</a><br>
 The argument separator(s).</li>
-<li>public array $val_sep = http\Params::DEF_VAL_SEP<br />
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$val_sep">$val_sep<a class="permalink" href="http/Params#%24val_sep">#</a></span> = <a href="http/Params#DEF_VAL_SEP">http\Params::DEF_VAL_SEP</a><br>
 The value separator(s).</li>
-<li>public int $flags = http\Params::PARSE_DEFAULT<br />
-The modus operandi of the parser. See http\Params::PARSE_* constants.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$flags">$flags<a class="permalink" href="http/Params#%24flags">#</a></span> = <a href="http/Params#PARSE_DEFAULT">http\Params::PARSE_DEFAULT</a><br>
+The modus operandi of the parser. See <a href="http/Params#PARSE_*">http\Params::PARSE_*</a> constants.</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Params#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Params/__construct">Params::__construct</a></h3>
+		<h3 id="Params::__construct">
+<a href="http/Params/__construct">Params::__construct</a><a class="permalink" href="http/Params#Params::__construct">#</a>
+</h3>
 		<p>Instantiate a new HTTP (header) parameter set.</p>
 
-		<p>void http\Params::__construct([mixed $params = NULL[, mixed $ps = http\Params::DEF_PARAM_SEP[, mixed $as = http\Params::DEF_ARG_SEP[, mixed $vs = http\Params::DEF_VAL_SEP[, int $flags = http\Params::PARSE_DEFAULT]]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Params/__construct">http\Params::__construct</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$params</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$ps</span> = <a href="http/Params#DEF_PARAM_SEP">http\Params::DEF_PARAM_SEP</a>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$as</span> = <a href="http/Params#DEF_ARG_SEP">http\Params::DEF_ARG_SEP</a>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$vs</span> = <a href="http/Params#DEF_VAL_SEP">http\Params::DEF_VAL_SEP</a>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span> = <a href="http/Params#PARSE_DEFAULT">http\Params::PARSE_DEFAULT</a>]]]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Params/__toString">Params::__toString</a></h3>
-		<p>String cast handler. Alias of http\Params::toString().</p>
+		<h3 id="Params::__toString">
+<a href="http/Params/__toString">Params::__toString</a><a class="permalink" href="http/Params#Params::__toString">#</a>
+</h3>
+		<p>String cast handler. Alias of <a href="http/Params/toString">http\Params::toString</a>().</p>
 
-		<p>string http\Params::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Params/__toString">http\Params::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Params/offsetExists">Params::offsetExists</a></h3>
-		<p>Implements ArrayAccess.</p>
+		<h3 id="Params::offsetExists">
+<a href="http/Params/offsetExists">Params::offsetExists</a><a class="permalink" href="http/Params#Params::offsetExists">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>.</p>
 
-		<p>bool http\Params::offsetExists(string $name)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/Params/offsetExists">http\Params::offsetExists</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Params/offsetGet">Params::offsetGet</a></h3>
-		<p>Implements ArrayAccess.</p>
+		<h3 id="Params::offsetGet">
+<a href="http/Params/offsetGet">Params::offsetGet</a><a class="permalink" href="http/Params#Params::offsetGet">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>.</p>
 
-		<p>mixed http\Params::offsetGet(string $name)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="http/Params/offsetGet">http\Params::offsetGet</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Params/offsetSet">Params::offsetSet</a></h3>
-		<p>Implements ArrayAccess.</p>
+		<h3 id="Params::offsetSet">
+<a href="http/Params/offsetSet">Params::offsetSet</a><a class="permalink" href="http/Params#Params::offsetSet">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>.</p>
 
-		<p>void http\Params::offsetSet(string $name, mixed $value)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Params/offsetSet">http\Params::offsetSet</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$value</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Params/offsetUnset">Params::offsetUnset</a></h3>
-		<p>Implements ArrayAccess.</p>
+		<h3 id="Params::offsetUnset">
+<a href="http/Params/offsetUnset">Params::offsetUnset</a><a class="permalink" href="http/Params#Params::offsetUnset">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>.</p>
 
-		<p>void http\Params::offsetUnset(string $name)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Params/offsetUnset">http\Params::offsetUnset</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Params/toArray">Params::toArray</a></h3>
-		<p>Convenience method that simply returns http\Params::$params.</p>
+		<h3 id="Params::toArray">
+<a href="http/Params/toArray">Params::toArray</a><a class="permalink" href="http/Params#Params::toArray">#</a>
+</h3>
+		<p>Convenience method that simply returns <a href="http/Params#%24params">http\Params::$params</a>.</p>
 
-		<p>array http\Params::toArray()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Params/toArray">http\Params::toArray</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Params/toString">Params::toString</a></h3>
+		<h3 id="Params::toString">
+<a href="http/Params/toString">Params::toString</a><a class="permalink" href="http/Params#Params::toString">#</a>
+</h3>
 		<p>Returns a stringified version of the parameters.</p>
 
-		<p>string http\Params::toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Params/toString">http\Params::toString</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

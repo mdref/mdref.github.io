@@ -112,77 +112,86 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>interface http\Client\Curl\User</h1>
-<p>Interface to an user event loop implementation for http\Client::configure()'s $use_eventloop option.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-This interface was added in v2.6.0, resp. v3.1.0.</p>
-</blockquote>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>POLL_NONE<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/Curl/User#">#</a><em>interface</em> <a href="http/Client/Curl/User">http\Client\Curl\User</a>
+</h1><p>Interface to an user event loop implementation for <a href="http/Client/configure">http\Client::configure</a>()'s <span class="var">$use_eventloop</span> option.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+This <em>interface</em> was added in v2.6.0, resp. v3.1.0.</p>
+</blockquote><h2 id="Constants:">Constants:<a class="permalink" href="http/Client/Curl/User#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="POLL_NONE">POLL_NONE<a class="permalink" href="http/Client/Curl/User#POLL_NONE">#</a></span><br>
 No action.</li>
-<li>POLL_IN<br />
+<li>
+<span class="constant" id="POLL_IN">POLL_IN<a class="permalink" href="http/Client/Curl/User#POLL_IN">#</a></span><br>
 Poll for read readiness.</li>
-<li>POLL_OUT<br />
+<li>
+<span class="constant" id="POLL_OUT">POLL_OUT<a class="permalink" href="http/Client/Curl/User#POLL_OUT">#</a></span><br>
 Poll for write readiness.</li>
-<li>POLL_INOUT<br />
+<li>
+<span class="constant" id="POLL_INOUT">POLL_INOUT<a class="permalink" href="http/Client/Curl/User#POLL_INOUT">#</a></span><br>
 Poll for read/write readiness.</li>
-<li>POLL_REMOVE<br />
+<li>
+<span class="constant" id="POLL_REMOVE">POLL_REMOVE<a class="permalink" href="http/Client/Curl/User#POLL_REMOVE">#</a></span><br>
 Stop polling for activity on this descriptor.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Client/Curl/User#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Client/Curl/User/init">User::init</a></h3>
+		<h3 id="User::init">
+<a href="http/Client/Curl/User/init">User::init</a><a class="permalink" href="http/Client/Curl/User#User::init">#</a>
+</h3>
 		<p>Initialize the event loop.</p>
 
-		<p>void http\Client\Curl\User::init(callable $run)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Client/Curl/User/init">http\Client\Curl\User::init</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$run</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Curl/User/once">User::once</a></h3>
-		<p>Run the loop as long as it does not block.</p>
+		<h3 id="User::once">
+<a href="http/Client/Curl/User/once">User::once</a><a class="permalink" href="http/Client/Curl/User#User::once">#</a>
+</h3>
+		<p>Run the loop as <code><a href="https://php.net/manual/en/language.types.integer">long</a></code> as it does not block.</p>
 
-		<p>void http\Client\Curl\User::once()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Client/Curl/User/once">http\Client\Curl\User::once</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Curl/User/send">User::send</a></h3>
+		<h3 id="User::send">
+<a href="http/Client/Curl/User/send">User::send</a><a class="permalink" href="http/Client/Curl/User#User::send">#</a>
+</h3>
 		<p>Run the loop.</p>
 
-		<p>void http\Client\Curl\User::send()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Client/Curl/User/send">http\Client\Curl\User::send</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Curl/User/socket">User::socket</a></h3>
+		<h3 id="User::socket">
+<a href="http/Client/Curl/User/socket">User::socket</a><a class="permalink" href="http/Client/Curl/User#User::socket">#</a>
+</h3>
 		<p>Register (or deregister) a socket watcher.</p>
 
-		<p>void http\Client\Curl\User::socket(resource $socket, int $poll)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Client/Curl/User/socket">http\Client\Curl\User::socket</a>(<code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var">$socket</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$poll</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Curl/User/timer">User::timer</a></h3>
+		<h3 id="User::timer">
+<a href="http/Client/Curl/User/timer">User::timer</a><a class="permalink" href="http/Client/Curl/User#User::timer">#</a>
+</h3>
 		<p>Register a timeout watcher.</p>
 
-		<p>void http\Client\Curl\User::timer(int $timeout_ms)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Client/Curl/User/timer">http\Client\Curl\User::timer</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$timeout_ms</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Curl/User/wait">User::wait</a></h3>
+		<h3 id="User::wait">
+<a href="http/Client/Curl/User/wait">User::wait</a><a class="permalink" href="http/Client/Curl/User#User::wait">#</a>
+</h3>
 		<p>Wait/poll/select (block the loop) until events fire.</p>
 
-		<p>void http\Client\Curl\User::wait([int $timeout_ms = null])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Client/Curl/User/wait">http\Client\Curl\User::wait</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$timeout_ms</span> = <code><a href="https://php.net/manual/en/language.types.null">null</a></code>])</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

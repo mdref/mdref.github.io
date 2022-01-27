@@ -1503,7 +1503,7 @@ class QueryString implements \Serializable, \ArrayAccess, \IteratorAggregate {
 	/**
 	 * Cast requested value to bool.
 	 */
-	const TYPE_BOOL = 18;
+	const TYPE_BOOL = 17;
 	/**
 	 * Cast requested value to int.
 	 */

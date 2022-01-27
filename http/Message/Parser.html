@@ -162,84 +162,95 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Message\Parser</h1>
-<p>The parser which is underlying http\Message.</p>
-<blockquote>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/Parser#">#</a><em>class</em> <a href="http/Message/Parser">http\Message\Parser</a>
+</h1><p>The parser which is underlying <a href="http/Message">http\Message</a>.</p><blockquote>
 <p><em><strong>NOTE:</strong></em>
-This class was added in v2.2.0.</p>
-</blockquote>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<h3>Parser flags:<a id="Parser.flags:" href="#Parser.flags:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>CLEANUP<br />
+This <em>class</em> was added in v2.2.0.</p>
+</blockquote><h2 id="Constants:">Constants:<a class="permalink" href="http/Message/Parser#Constants:">#</a>
+</h2><h3 id="Parser.flags:">Parser flags:<a class="permalink" href="http/Message/Parser#Parser.flags:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="CLEANUP">CLEANUP<a class="permalink" href="http/Message/Parser#CLEANUP">#</a></span><br>
 Finish up parser at end of (incomplete) input.</li>
-<li>DUMB_BODIES<br />
+<li>
+<span class="constant" id="DUMB_BODIES">DUMB_BODIES<a class="permalink" href="http/Message/Parser#DUMB_BODIES">#</a></span><br>
 Soak up the rest of input if no entity length is deducible.</li>
-<li>EMPTY_REDIRECTS<br />
+<li>
+<span class="constant" id="EMPTY_REDIRECTS">EMPTY_REDIRECTS<a class="permalink" href="http/Message/Parser#EMPTY_REDIRECTS">#</a></span><br>
 Redirect messages do not contain any body despite of indication of such.</li>
-<li>GREEDY<br />
+<li>
+<span class="constant" id="GREEDY">GREEDY<a class="permalink" href="http/Message/Parser#GREEDY">#</a></span><br>
 Continue parsing while input is available.</li>
-</ul>
-<h3>Parser states:<a id="Parser.states:" href="#Parser.states:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>STATE_FAILURE<br />
+</ul><h3 id="Parser.states:">Parser states:<a class="permalink" href="http/Message/Parser#Parser.states:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="STATE_FAILURE">STATE_FAILURE<a class="permalink" href="http/Message/Parser#STATE_FAILURE">#</a></span><br>
 Parse failure.</li>
-<li>STATE_START<br />
-Expecting HTTP info (request/response line) or headers.</li>
-<li>STATE_HEADER<br />
+<li>
+<span class="constant" id="STATE_START">STATE_START<a class="permalink" href="http/Message/Parser#STATE_START">#</a></span><br>
+Expecting <span class="constant">HTTP</span> info (request/response line) or headers.</li>
+<li>
+<span class="constant" id="STATE_HEADER">STATE_HEADER<a class="permalink" href="http/Message/Parser#STATE_HEADER">#</a></span><br>
 Parsing headers.</li>
-<li>STATE_HEADER_DONE<br />
+<li>
+<span class="constant" id="STATE_HEADER_DONE">STATE_HEADER_DONE<a class="permalink" href="http/Message/Parser#STATE_HEADER_DONE">#</a></span><br>
 Completed parsing headers.</li>
-<li>STATE_BODY<br />
+<li>
+<span class="constant" id="STATE_BODY">STATE_BODY<a class="permalink" href="http/Message/Parser#STATE_BODY">#</a></span><br>
 Parsing the body.</li>
-<li>STATE_BODY_DUMB<br />
+<li>
+<span class="constant" id="STATE_BODY_DUMB">STATE_BODY_DUMB<a class="permalink" href="http/Message/Parser#STATE_BODY_DUMB">#</a></span><br>
 Soaking up all input as body.</li>
-<li>STATE_BODY_LENGTH<br />
+<li>
+<span class="constant" id="STATE_BODY_LENGTH">STATE_BODY_LENGTH<a class="permalink" href="http/Message/Parser#STATE_BODY_LENGTH">#</a></span><br>
 Reading body as indicated by <code>Content-Length</code> or <code>Content-Range</code>.</li>
-<li>STATE_BODY_CHUNKED<br />
+<li>
+<span class="constant" id="STATE_BODY_CHUNKED">STATE_BODY_CHUNKED<a class="permalink" href="http/Message/Parser#STATE_BODY_CHUNKED">#</a></span><br>
 Parsing <code>chunked</code> encoded body.</li>
-<li>STATE_BODY_DONE<br />
+<li>
+<span class="constant" id="STATE_BODY_DONE">STATE_BODY_DONE<a class="permalink" href="http/Message/Parser#STATE_BODY_DONE">#</a></span><br>
 Finished parsing the body.</li>
-<li>STATE_UPDATE_CL<br />
+<li>
+<span class="constant" id="STATE_UPDATE_CL">STATE_UPDATE_CL<a class="permalink" href="http/Message/Parser#STATE_UPDATE_CL">#</a></span><br>
 Updating Content-Length based on body size.</li>
-<li>STATE_DONE<br />
+<li>
+<span class="constant" id="STATE_DONE">STATE_DONE<a class="permalink" href="http/Message/Parser#STATE_DONE">#</a></span><br>
 Finished parsing the message.</li>
-</ul>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
+</ul><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
 Most of this states won't be returned to the user, because the parser immediately jumps to the next expected state.</p>
-</blockquote>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</blockquote><h2 id="Functions:">Functions:<a class="permalink" href="http/Message/Parser#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Message/Parser/getState">Parser::getState</a></h3>
+		<h3 id="Parser::getState">
+<a href="http/Message/Parser/getState">Parser::getState</a><a class="permalink" href="http/Message/Parser#Parser::getState">#</a>
+</h3>
 		<p>Retrieve the current state of the parser.</p>
 
-		<p>int http\Message\Parser::getState()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Message/Parser/getState">http\Message\Parser::getState</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Parser/parse">Parser::parse</a></h3>
-		<p>Parse a string.</p>
+		<h3 id="Parser::parse">
+<a href="http/Message/Parser/parse">Parser::parse</a><a class="permalink" href="http/Message/Parser#Parser::parse">#</a>
+</h3>
+		<p>Parse a <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>int http\Message\Parser::parse(string $data, int $flags, http\Message &amp;$message)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Message/Parser/parse">http\Message\Parser::parse</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span>, <a href="http/Message">http\Message</a> &amp;<span class="var">$message</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Parser/stream">Parser::stream</a></h3>
+		<h3 id="Parser::stream">
+<a href="http/Message/Parser/stream">Parser::stream</a><a class="permalink" href="http/Message/Parser#Parser::stream">#</a>
+</h3>
 		<p>Parse a stream.</p>
 
-		<p>int http\Message\Parser::stream(resource $stream, int $flags, http\Message &amp;$message)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Message/Parser/stream">http\Message\Parser::stream</a>(<code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var">$stream</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span>, <a href="http/Message">http\Message</a> &amp;<span class="var">$message</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

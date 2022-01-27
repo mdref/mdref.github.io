@@ -95,45 +95,26 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Env\Response http\Env\Response::setContentDisposition(array $disposition_params)</h1>
-<p>Set the reponse's content disposition parameters.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array $disposition_params<br />
-MIME content disposition as http\Params array.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Env\Response, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php ob_end_Clean();chdir(__DIR__.&quot;/../../..&quot;);
-$res = new http\Env\Response;
-$res-&gt;setBody(new http\Message\Body(fopen(&quot;http.zip&quot;, &quot;r&quot;)));
-$res-&gt;setContentType(&quot;application/zip&quot;);
-$res-&gt;setContentDisposition([&quot;attachment&quot; =&gt; [&quot;filename&quot; =&gt; &quot;download.zip&quot;]]);
-$res-&gt;send();
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>Accept-Ranges: bytes
-X-Powered-By: PHP/5.5.5
-Content-Type: application/zip
-Content-Disposition: attachment;filename=download.zip
-ETag: &quot;12009be-527d3e84-a0&quot;
-Last-Modified: Fri, 08 Nov 2013 19:41:56 GMT
-
-PK...
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Env/Response/setContentDisposition#">#</a><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setContentDisposition">http\Env\Response::setContentDisposition</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$disposition_params</span>)</h1><p>Set the reponse's content disposition parameters.</p><h2 id="Params:">Params:<a class="permalink" href="http/Env/Response/setContentDisposition#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$disposition_params">$disposition_params<a class="permalink" href="http/Env/Response/setContentDisposition#%24disposition_params">#</a></span><br>
+MIME content disposition as <a href="http/Params">http\Params</a> <code><a href="https://php.net/manual/en/language.types.array">array</a></code>.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Env/Response/setContentDisposition#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Env/Response">http\Env\Response</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Env/Response/setContentDisposition#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Env/Response/setContentDisposition#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php ob_end_Clean</span><span style="color: inherit" class="keyword">();</span><span style="color: inherit" class="default">chdir</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">__DIR__</span><span style="color: inherit" class="keyword">.</span><span style="color: inherit" class="string">"/../../.."</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$res </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Env\Response</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setBody</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Message\Body</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">fopen</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"http.zip"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"r"</span><span style="color: inherit" class="keyword">)));<br></span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setContentType</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"application/zip"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setContentDisposition</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"attachment" </span><span style="color: inherit" class="keyword">=&gt; [</span><span style="color: inherit" class="string">"filename" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"download.zip"</span><span style="color: inherit" class="keyword">]]);<br></span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">();<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+Accept-Ranges: bytes<br>X-Powered-By: PHP/5.5.5<br>Content-Type: application/zip<br>Content-Disposition: attachment;filename=download.zip<br>ETag: "12009be-527d3e84-a0"<br>Last-Modified: Fri, 08 Nov 2013 19:41:56 GMT<br><br>PK...<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

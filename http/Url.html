@@ -101,120 +101,152 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Url</h1>
-<p>The http\Url class provides versatile means to parse, construct and manipulate URLs.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>REPLACE<br />
-Replace parts of the old URL with parts of the new.</li>
-<li>JOIN_PATH<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Url#">#</a><em>class</em> <a href="http/Url">http\Url</a>
+</h1><p>The <a href="http/Url">http\Url</a> <em>class</em> provides versatile means to parse, construct and manipulate URLs.</p><h2 id="Constants:">Constants:<a class="permalink" href="http/Url#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="REPLACE">REPLACE<a class="permalink" href="http/Url#REPLACE">#</a></span><br>
+Replace parts of the old <span class="constant">URL</span> with parts of the new.</li>
+<li>
+<span class="constant" id="JOIN_PATH">JOIN_PATH<a class="permalink" href="http/Url#JOIN_PATH">#</a></span><br>
 Whether a relative path should be joined into the old path.</li>
-<li>JOIN_QUERY<br />
+<li>
+<span class="constant" id="JOIN_QUERY">JOIN_QUERY<a class="permalink" href="http/Url#JOIN_QUERY">#</a></span><br>
 Whether the querystrings should be joined.</li>
-<li>STRIP_USER<br />
-Strip the user information from the URL.</li>
-<li>STRIP_PASS<br />
-Strip the password from the URL.</li>
-<li>STRIP_AUTH<br />
-Strip user and password information from URL (same as STRIP_USER|STRIP_PASS).</li>
-<li>STRIP_PORT<br />
+<li>
+<span class="constant" id="STRIP_USER">STRIP_USER<a class="permalink" href="http/Url#STRIP_USER">#</a></span><br>
+Strip the user information from the <span class="constant">URL</span>.</li>
+<li>
+<span class="constant" id="STRIP_PASS">STRIP_PASS<a class="permalink" href="http/Url#STRIP_PASS">#</a></span><br>
+Strip the password from the <span class="constant">URL</span>.</li>
+<li>
+<span class="constant" id="STRIP_AUTH">STRIP_AUTH<a class="permalink" href="http/Url#STRIP_AUTH">#</a></span><br>
+Strip user and password information from <span class="constant">URL</span> (same as <span class="constant">STRIP_USER</span>|<span class="constant">STRIP_PASS</span>).</li>
+<li>
+<span class="constant" id="STRIP_PORT">STRIP_PORT<a class="permalink" href="http/Url#STRIP_PORT">#</a></span><br>
 Do not include the port.</li>
-<li>STRIP_PATH<br />
-Do not include the URL path.</li>
-<li>STRIP_QUERY<br />
-Do not include the URL querystring.</li>
-<li>STRIP_FRAGMENT<br />
-Strip the fragment (hash) from the URL.</li>
-<li>STRIP_ALL<br />
+<li>
+<span class="constant" id="STRIP_PATH">STRIP_PATH<a class="permalink" href="http/Url#STRIP_PATH">#</a></span><br>
+Do not include the <span class="constant">URL</span> path.</li>
+<li>
+<span class="constant" id="STRIP_QUERY">STRIP_QUERY<a class="permalink" href="http/Url#STRIP_QUERY">#</a></span><br>
+Do not include the <span class="constant">URL</span> querystring.</li>
+<li>
+<span class="constant" id="STRIP_FRAGMENT">STRIP_FRAGMENT<a class="permalink" href="http/Url#STRIP_FRAGMENT">#</a></span><br>
+Strip the fragment (hash) from the <span class="constant">URL</span>.</li>
+<li>
+<span class="constant" id="STRIP_ALL">STRIP_ALL<a class="permalink" href="http/Url#STRIP_ALL">#</a></span><br>
 Strip everything except scheme and host information.</li>
-<li>FROM_ENV<br />
-Import initial URL parts from the SAPI environment.</li>
-<li>SANITIZE_PATH<br />
-Whether to sanitize the URL path (consolidate double slashes, directory jumps etc.)</li>
-<li>PARSE_MBUTF8<br />
-Parse UTF-8 encoded multibyte sequences.</li>
-<li>PARSE_MBLOC<br />
+<li>
+<span class="constant" id="FROM_ENV">FROM_ENV<a class="permalink" href="http/Url#FROM_ENV">#</a></span><br>
+Import initial <span class="constant">URL</span> parts from the <span class="constant">SAPI</span> environment.</li>
+<li>
+<span class="constant" id="SANITIZE_PATH">SANITIZE_PATH<a class="permalink" href="http/Url#SANITIZE_PATH">#</a></span><br>
+Whether to sanitize the <span class="constant">URL</span> path (consolidate <code><a href="https://php.net/manual/en/language.types.float">double</a></code> slashes, directory jumps etc.)</li>
+<li>
+<span class="constant" id="PARSE_MBUTF8">PARSE_MBUTF8<a class="permalink" href="http/Url#PARSE_MBUTF8">#</a></span><br>
+Parse <span class="constant">UTF</span>-8 encoded multibyte sequences.</li>
+<li>
+<span class="constant" id="PARSE_MBLOC">PARSE_MBLOC<a class="permalink" href="http/Url#PARSE_MBLOC">#</a></span><br>
 Parse locale encoded multibyte sequences (on systems with wide character support).</li>
-<li>PARSE_TOIDN<br />
-Parse and convert multibyte hostnames according to IDNA (with IDNA support).</li>
-<li>PARSE_TOIDN_2003<br />
-Explicitly request IDNA2003 implementation if available (libidn, idnkit or ICU).</li>
-<li>PARSE_TOIDN_2008<br />
-Explicitly request IDNA2008 implementation if available (libidn2, idnkit2 or ICU).</li>
-<li>PARSE_TOPCT<br />
-Percent encode multibyte sequences in the userinfo, path, query and fragment parts of the URL.</li>
-<li>IGNORE_ERRORS<br />
+<li>
+<span class="constant" id="PARSE_TOIDN">PARSE_TOIDN<a class="permalink" href="http/Url#PARSE_TOIDN">#</a></span><br>
+Parse and convert multibyte hostnames according to <span class="constant">IDNA</span> (with <span class="constant">IDNA</span> support).</li>
+<li>
+<span class="constant" id="PARSE_TOIDN_2003">PARSE_TOIDN_2003<a class="permalink" href="http/Url#PARSE_TOIDN_2003">#</a></span><br>
+Explicitly request <span class="constant">IDNA2003</span> implementation if available (libidn, idnkit or <span class="constant">ICU</span>).</li>
+<li>
+<span class="constant" id="PARSE_TOIDN_2008">PARSE_TOIDN_2008<a class="permalink" href="http/Url#PARSE_TOIDN_2008">#</a></span><br>
+Explicitly request <span class="constant">IDNA2008</span> implementation if available (libidn2, idnkit2 or <span class="constant">ICU</span>).</li>
+<li>
+<span class="constant" id="PARSE_TOPCT">PARSE_TOPCT<a class="permalink" href="http/Url#PARSE_TOPCT">#</a></span><br>
+Percent encode multibyte sequences in the userinfo, path, query and fragment parts of the <span class="constant">URL</span>.</li>
+<li>
+<span class="constant" id="IGNORE_ERRORS">IGNORE_ERRORS<a class="permalink" href="http/Url#IGNORE_ERRORS">#</a></span><br>
 Continue parsing when encountering errors.</li>
-<li>SILENT_ERRORS<br />
+<li>
+<span class="constant" id="SILENT_ERRORS">SILENT_ERRORS<a class="permalink" href="http/Url#SILENT_ERRORS">#</a></span><br>
 Suppress errors/exceptions.</li>
-<li>STDFLAGS<br />
-Standard flags used by default internally for e.g. http\Message::setRequestUrl().
+<li>
+<span class="constant" id="STDFLAGS">STDFLAGS<a class="permalink" href="http/Url#STDFLAGS">#</a></span><br>
+Standard flags used by default internally for e.g. <a href="http/Message/setRequestUrl">http\Message::setRequestUrl</a>().
 Enables joining path and query, sanitizing path, multibyte/unicode, international domain names and transient percent encoding.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public string $scheme = NULL<br />
-The URL's scheme.</li>
-<li>public string $user = NULL<br />
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="http/Url#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$scheme">$scheme<a class="permalink" href="http/Url#%24scheme">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The <span class="constant">URL</span>'s scheme.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$user">$user<a class="permalink" href="http/Url#%24user">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Authenticating user.</li>
-<li>public string $pass = NULL<br />
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$pass">$pass<a class="permalink" href="http/Url#%24pass">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Authentication password.</li>
-<li>public string $host = NULL<br />
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$host">$host<a class="permalink" href="http/Url#%24host">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Hostname/domain.</li>
-<li>public string $port = NULL<br />
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$port">$port<a class="permalink" href="http/Url#%24port">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Port.</li>
-<li>public string $path = NULL<br />
-URL path.</li>
-<li>public string $query = NULL<br />
-URL querystring.</li>
-<li>public string $fragment = NULL<br />
-URL fragment (hash).</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$path">$path<a class="permalink" href="http/Url#%24path">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+<span class="constant">URL</span> path.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$query">$query<a class="permalink" href="http/Url#%24query">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+<span class="constant">URL</span> querystring.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$fragment">$fragment<a class="permalink" href="http/Url#%24fragment">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+<span class="constant">URL</span> fragment (hash).</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Url#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Url/__construct">Url::__construct</a></h3>
-		<p>Create an instance of an http\Url.</p>
+		<h3 id="Url::__construct">
+<a href="http/Url/__construct">Url::__construct</a><a class="permalink" href="http/Url#Url::__construct">#</a>
+</h3>
+		<p>Create an instance of an <a href="http/Url">http\Url</a>.</p>
 
-		<p>void http\Url::__construct([mixed $old_url = NULL[, mixed $new_url = NULL[, int $flags = 0]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Url/__construct">http\Url::__construct</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$old_url</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$new_url</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span> = 0]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Url/__toString">Url::__toString</a></h3>
-		<p>String cast handler. Alias of http\Url::toString().</p>
+		<h3 id="Url::__toString">
+<a href="http/Url/__toString">Url::__toString</a><a class="permalink" href="http/Url#Url::__toString">#</a>
+</h3>
+		<p>String cast handler. Alias of <a href="http/Url/toString">http\Url::toString</a>().</p>
 
-		<p>string http\Url::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Url/__toString">http\Url::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Url/mod">Url::mod</a></h3>
-		<p>Clone this URL and apply $parts to the cloned URL.</p>
+		<h3 id="Url::mod">
+<a href="http/Url/mod">Url::mod</a><a class="permalink" href="http/Url#Url::mod">#</a>
+</h3>
+		<p>Clone this URL and apply <span class="var">$parts</span> to the cloned URL.</p>
 
-		<p>http\Url http\Url::mod(mixed $parts[, int $flags = http\Url::JOIN_PATH|http\Url::JOIN_QUERY|http\Url::SANITIZE_PATH])</p>
+		<p><a href="http/Url">http\Url</a> <a href="http/Url/mod">http\Url::mod</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$parts</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span> = <a href="http/Url#JOIN_PATH">http\Url::JOIN_PATH</a>|<a href="http/Url#JOIN_QUERY">http\Url::JOIN_QUERY</a>|<a href="http/Url#SANITIZE_PATH">http\Url::SANITIZE_PATH</a>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Url/toArray">Url::toArray</a></h3>
-		<p>Retrieve the URL parts as array.</p>
+		<h3 id="Url::toArray">
+<a href="http/Url/toArray">Url::toArray</a><a class="permalink" href="http/Url#Url::toArray">#</a>
+</h3>
+		<p>Retrieve the URL parts as <code><a href="https://php.net/manual/en/language.types.array">array</a></code>.</p>
 
-		<p>array http\Url::toArray()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Url/toArray">http\Url::toArray</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Url/toString">Url::toString</a></h3>
-		<p>Get the string prepresentation of the URL.</p>
+		<h3 id="Url::toString">
+<a href="http/Url/toString">Url::toString</a><a class="permalink" href="http/Url#Url::toString">#</a>
+</h3>
+		<p>Get the <code><a href="https://php.net/manual/en/language.types.string">string</a></code> prepresentation of the URL.</p>
 
-		<p>string http\Url::toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Url/toString">http\Url::toString</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

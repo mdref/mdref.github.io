@@ -155,154 +155,184 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Transaction</h1>
-<p>A database transaction.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-Transactional properties like pq\Transaction::$isolation, pq\Transaction::$readonly and pq\Transaction::$deferrable can be changed after the transaction begun and the first query has been executed. Doing this will lead to appropriate <code>SET TRANSACTION</code> queries.</p>
-</blockquote>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>READ_COMMITTED<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Transaction#">#</a><em>class</em> <a href="pq/Transaction">pq\Transaction</a>
+</h1><p>A database transaction.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+Transactional properties like <a href="pq/Transaction#%24isolation">pq\Transaction::$isolation</a>, <a href="pq/Transaction#%24readonly">pq\Transaction::$readonly</a> and <a href="pq/Transaction#%24deferrable">pq\Transaction::$deferrable</a> can be changed after the transaction begun and the first query has been executed. Doing this will lead to appropriate <code>SET TRANSACTION</code> queries.</p>
+</blockquote><h2 id="Constants:">Constants:<a class="permalink" href="pq/Transaction#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="READ_COMMITTED">READ_COMMITTED<a class="permalink" href="pq/Transaction#READ_COMMITTED">#</a></span><br>
 Transaction isolation level where only rows committed before the transaction began can be seen.</li>
-<li>REPEATABLE_READ<br />
+<li>
+<span class="constant" id="REPEATABLE_READ">REPEATABLE_READ<a class="permalink" href="pq/Transaction#REPEATABLE_READ">#</a></span><br>
 Transaction isolation level where only rows committed before the first query was executed in this transaction.</li>
-<li>SERIALIZABLE<br />
+<li>
+<span class="constant" id="SERIALIZABLE">SERIALIZABLE<a class="permalink" href="pq/Transaction#SERIALIZABLE">#</a></span><br>
 Transaction isolation level that guarantees serializable repeatability which might lead to serialization_failure on high concurrency.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public (readonly) pq\Connection $connection<br />
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="pq/Transaction#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> (readonly) <a href="pq/Connection">pq\Connection</a> <span class="var" id="$connection">$connection<a class="permalink" href="pq/Transaction#%24connection">#</a></span><br>
 The connection the transaction was started on.</li>
-<li>public int $isolation = pq\Transaction::READ_COMMITTED<br />
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$isolation">$isolation<a class="permalink" href="pq/Transaction#%24isolation">#</a></span> = <a href="pq/Transaction#READ_COMMITTED">pq\Transaction::READ_COMMITTED</a><br>
 The transaction isolation level.</li>
-<li>public bool $readonly = FALSE<br />
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$readonly">$readonly<a class="permalink" href="pq/Transaction#%24readonly">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
 Whether this transaction performs read only queries.</li>
-<li>public bool $deferrable = FALSE<br />
-Whether the transaction is deferrable. See pq\Connection::startTransaction().</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$deferrable">$deferrable<a class="permalink" href="pq/Transaction#%24deferrable">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
+Whether the transaction is deferrable. See <a href="pq/Connection/startTransaction">pq\Connection::startTransaction</a>().</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq/Transaction#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/Transaction/__construct">Transaction::__construct</a></h3>
+		<h3 id="Transaction::__construct">
+<a href="pq/Transaction/__construct">Transaction::__construct</a><a class="permalink" href="pq/Transaction#Transaction::__construct">#</a>
+</h3>
 		<p>Start a transaction.</p>
 
-		<p>void pq\Transaction::__construct(pq\Connection $conn[, bool $async = FALSE[, int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/__construct">pq\Transaction::__construct</a>(<a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$async</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$isolation</span> = <a href="pq/Transaction#READ_COMMITTED">pq\Transaction::READ_COMMITTED</a>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$readonly</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$deferrable</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>]]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/commit">Transaction::commit</a></h3>
+		<h3 id="Transaction::commit">
+<a href="pq/Transaction/commit">Transaction::commit</a><a class="permalink" href="pq/Transaction#Transaction::commit">#</a>
+</h3>
 		<p>Commit the transaction or release the previous savepoint.</p>
 
-		<p>void pq\Transaction::commit()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/commit">pq\Transaction::commit</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/commitAsync">Transaction::commitAsync</a></h3>
+		<h3 id="Transaction::commitAsync">
+<a href="pq/Transaction/commitAsync">Transaction::commitAsync</a><a class="permalink" href="pq/Transaction#Transaction::commitAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> commit the transaction or release the previous savepoint.</p>
 
-		<p>void pq\Transaction::commitAsync()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/commitAsync">pq\Transaction::commitAsync</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/createLOB">Transaction::createLOB</a></h3>
+		<h3 id="Transaction::createLOB">
+<a href="pq/Transaction/createLOB">Transaction::createLOB</a><a class="permalink" href="pq/Transaction#Transaction::createLOB">#</a>
+</h3>
 		<p>Create a new <em>large object</em> and open it.</p>
 
-		<p>pq\LOB pq\Transaction::createLOB([int $mode = pq\LOB::RW])</p>
+		<p><a href="pq/LOB">pq\LOB</a> <a href="pq/Transaction/createLOB">pq\Transaction::createLOB</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$mode</span> = <a href="pq/LOB#RW">pq\LOB::RW</a>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/exportLOB">Transaction::exportLOB</a></h3>
+		<h3 id="Transaction::exportLOB">
+<a href="pq/Transaction/exportLOB">Transaction::exportLOB</a><a class="permalink" href="pq/Transaction#Transaction::exportLOB">#</a>
+</h3>
 		<p>Export a <em>large object</em> to a local file.</p>
 
-		<p>void pq\Transaction::exportLOB(int $oid, string $path)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/exportLOB">pq\Transaction::exportLOB</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$oid</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$path</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/exportSnapshot">Transaction::exportSnapshot</a></h3>
+		<h3 id="Transaction::exportSnapshot">
+<a href="pq/Transaction/exportSnapshot">Transaction::exportSnapshot</a><a class="permalink" href="pq/Transaction#Transaction::exportSnapshot">#</a>
+</h3>
 		<p>Export a snapshot for transaction synchronization.</p>
 
-		<p>string pq\Transaction::exportSnapshot()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/Transaction/exportSnapshot">pq\Transaction::exportSnapshot</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/exportSnapshotAsync">Transaction::exportSnapshotAsync</a></h3>
+		<h3 id="Transaction::exportSnapshotAsync">
+<a href="pq/Transaction/exportSnapshotAsync">Transaction::exportSnapshotAsync</a><a class="permalink" href="pq/Transaction#Transaction::exportSnapshotAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> export a snapshot for transaction synchronization.</p>
 
-		<p>void pq\Transaction::exportSnapshotAsync()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/exportSnapshotAsync">pq\Transaction::exportSnapshotAsync</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/importLOB">Transaction::importLOB</a></h3>
+		<h3 id="Transaction::importLOB">
+<a href="pq/Transaction/importLOB">Transaction::importLOB</a><a class="permalink" href="pq/Transaction#Transaction::importLOB">#</a>
+</h3>
 		<p>Import a local file into a <em>large object</em>.</p>
 
-		<p>int pq\Transaction::importLOB(string $local_path[, int $oid = pq\LOB::INVALID_OID)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq/Transaction/importLOB">pq\Transaction::importLOB</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$local_path</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$oid</span> = <a href="pq/LOB#INVALID_OID">pq\LOB::INVALID_OID</a>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/importSnapshot">Transaction::importSnapshot</a></h3>
+		<h3 id="Transaction::importSnapshot">
+<a href="pq/Transaction/importSnapshot">Transaction::importSnapshot</a><a class="permalink" href="pq/Transaction#Transaction::importSnapshot">#</a>
+</h3>
 		<p>Import a snapshot from another transaction to synchronize with.</p>
 
-		<p>void pq\Transaction::importSnapshot(string $snapshot_id)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/importSnapshot">pq\Transaction::importSnapshot</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$snapshot_id</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/importSnapshotAsync">Transaction::importSnapshotAsync</a></h3>
+		<h3 id="Transaction::importSnapshotAsync">
+<a href="pq/Transaction/importSnapshotAsync">Transaction::importSnapshotAsync</a><a class="permalink" href="pq/Transaction#Transaction::importSnapshotAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> import a snapshot from another transaction to synchronize with.</p>
 
-		<p>void pq\Transaction::importSnapshotAsync(string $snapshot_id)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/importSnapshotAsync">pq\Transaction::importSnapshotAsync</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$snapshot_id</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/openLOB">Transaction::openLOB</a></h3>
+		<h3 id="Transaction::openLOB">
+<a href="pq/Transaction/openLOB">Transaction::openLOB</a><a class="permalink" href="pq/Transaction#Transaction::openLOB">#</a>
+</h3>
 		<p>Open a <em>large object</em>.</p>
 
-		<p>pq\LOB pq\Transaction::openLOB(int $oid[, int $mode = pq\LOB::RW])</p>
+		<p><a href="pq/LOB">pq\LOB</a> <a href="pq/Transaction/openLOB">pq\Transaction::openLOB</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$oid</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$mode</span> = <a href="pq/LOB#RW">pq\LOB::RW</a>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/rollback">Transaction::rollback</a></h3>
+		<h3 id="Transaction::rollback">
+<a href="pq/Transaction/rollback">Transaction::rollback</a><a class="permalink" href="pq/Transaction#Transaction::rollback">#</a>
+</h3>
 		<p>Rollback the transaction or to the previous savepoint within this transaction.</p>
 
-		<p>void pq\Transaction::rollback()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/rollback">pq\Transaction::rollback</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/rollbackAsync">Transaction::rollbackAsync</a></h3>
+		<h3 id="Transaction::rollbackAsync">
+<a href="pq/Transaction/rollbackAsync">Transaction::rollbackAsync</a><a class="permalink" href="pq/Transaction#Transaction::rollbackAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> rollback the transaction or to the previous savepoint within this transaction.</p>
 
-		<p>void pq\Transaction::rollbackAsync()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/rollbackAsync">pq\Transaction::rollbackAsync</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/savepoint">Transaction::savepoint</a></h3>
+		<h3 id="Transaction::savepoint">
+<a href="pq/Transaction/savepoint">Transaction::savepoint</a><a class="permalink" href="pq/Transaction#Transaction::savepoint">#</a>
+</h3>
 		<p>Create a <code>SAVEPOINT</code> within this transaction.</p>
 
-		<p>void pq\Transaction::savepoint()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/savepoint">pq\Transaction::savepoint</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/savepointAsync">Transaction::savepointAsync</a></h3>
+		<h3 id="Transaction::savepointAsync">
+<a href="pq/Transaction/savepointAsync">Transaction::savepointAsync</a><a class="permalink" href="pq/Transaction#Transaction::savepointAsync">#</a>
+</h3>
 		<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> create a <code>SAVEPOINT</code> within this transaction.</p>
 
-		<p>void pq\Transaction::savepointAsync()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/savepointAsync">pq\Transaction::savepointAsync</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Transaction/unlinkLOB">Transaction::unlinkLOB</a></h3>
+		<h3 id="Transaction::unlinkLOB">
+<a href="pq/Transaction/unlinkLOB">Transaction::unlinkLOB</a><a class="permalink" href="pq/Transaction#Transaction::unlinkLOB">#</a>
+</h3>
 		<p>Unlink a <em>large object</em>.</p>
 
-		<p>void pq\Transaction::unlinkLOB(int $oid)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/unlinkLOB">pq\Transaction::unlinkLOB</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$oid</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

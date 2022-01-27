@@ -129,112 +129,23 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>object http\Client::getTransferInfo(http\Client\Request $request)</h1>
-<p>Get transfer related information for a running or finished request.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Client\Request $request<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/getTransferInfo#">#</a>object <a href="http/Client/getTransferInfo">http\Client::getTransferInfo</a>(<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span>)</h1><p>Get transfer related information for a running or finished request.</p><h2 id="Params:">Params:<a class="permalink" href="http/Client/getTransferInfo#Params:">#</a>
+</h2><ul>
+<li>
+<a href="http/Client/Request">http\Client\Request</a> <span class="var" id="$request">$request<a class="permalink" href="http/Client/getTransferInfo#%24request">#</a></span><br>
 The request to probe for transfer info.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>object, stdClass instance holding transfer related information.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\UnexpectedValueException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The transfer info might look as follows:</p>
-<pre><code>object(stdClass)#6 (37) {
-  [&quot;effective_url&quot;]=&gt;
-  string(16) &quot;https://php.net/&quot;
-  [&quot;response_code&quot;]=&gt;
-  int(302)
-  [&quot;total_time&quot;]=&gt;
-  float(1.011938)
-  [&quot;namelookup_time&quot;]=&gt;
-  float(0.203125)
-  [&quot;connect_time&quot;]=&gt;
-  float(0.387202)
-  [&quot;pretransfer_time&quot;]=&gt;
-  float(0.794423)
-  [&quot;size_upload&quot;]=&gt;
-  float(0)
-  [&quot;size_download&quot;]=&gt;
-  float(272)
-  [&quot;speed_download&quot;]=&gt;
-  float(268)
-  [&quot;speed_upload&quot;]=&gt;
-  float(0)
-  [&quot;header_size&quot;]=&gt;
-  int(197)
-  [&quot;request_size&quot;]=&gt;
-  int(91)
-  [&quot;ssl_verifyresult&quot;]=&gt;
-  int(0)
-  [&quot;filetime&quot;]=&gt;
-  int(-1)
-  [&quot;content_length_download&quot;]=&gt;
-  float(272)
-  [&quot;content_length_upload&quot;]=&gt;
-  float(0)
-  [&quot;starttransfer_time&quot;]=&gt;
-  float(1.011835)
-  [&quot;content_type&quot;]=&gt;
-  string(29) &quot;text/html; charset=iso-8859-1&quot;
-  [&quot;redirect_time&quot;]=&gt;
-  float(0)
-  [&quot;redirect_count&quot;]=&gt;
-  int(0)
-  [&quot;connect_code&quot;]=&gt;
-  int(0)
-  [&quot;httpauth_avail&quot;]=&gt;
-  int(0)
-  [&quot;proxyauth_avail&quot;]=&gt;
-  int(0)
-  [&quot;os_errno&quot;]=&gt;
-  int(0)
-  [&quot;num_connects&quot;]=&gt;
-  int(1)
-  [&quot;ssl_engines&quot;]=&gt;
-  array(3) {
-    [0]=&gt;
-    string(4) &quot;rsax&quot;
-    [1]=&gt;
-    string(6) &quot;rdrand&quot;
-    [2]=&gt;
-    string(7) &quot;dynamic&quot;
-  }
-  [&quot;redirect_url&quot;]=&gt;
-  string(15) &quot;http://php.net/&quot;
-  [&quot;primary_ip&quot;]=&gt;
-  string(11) &quot;72.52.91.14&quot;
-  [&quot;appconnect_time&quot;]=&gt;
-  float(0.794327)
-  [&quot;condition_unmet&quot;]=&gt;
-  int(0)
-  [&quot;primary_port&quot;]=&gt;
-  int(443)
-  [&quot;local_ip&quot;]=&gt;
-  string(13) &quot;192.168.1.120&quot;
-  [&quot;local_port&quot;]=&gt;
-  int(51507)
-  [&quot;certinfo&quot;]=&gt;
-  array(0) {
-  }
-  [&quot;curlcode&quot;]=&gt;
-  int(0)
-  [&quot;error&quot;]=&gt;
-  string(0) &quot;&quot;
-}
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/getTransferInfo#Returns:">#</a>
+</h2><ul>
+<li>object, <code><a href="https://php.net/manual/en/class.stdclass">stdClass</a></code> instance holding transfer related information.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Client/getTransferInfo#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/UnexpectedValueException">http\Exception\UnexpectedValueException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/getTransferInfo#Example:">#</a>
+</h2><p>The transfer info might look as follows:</p><pre><code><span style="color: inherit" class="html">
+object(stdClass)#6 (37) {<br>  ["effective_url"]=&gt;<br>  string(16) "https://php.net/"<br>  ["response_code"]=&gt;<br>  int(302)<br>  ["total_time"]=&gt;<br>  float(1.011938)<br>  ["namelookup_time"]=&gt;<br>  float(0.203125)<br>  ["connect_time"]=&gt;<br>  float(0.387202)<br>  ["pretransfer_time"]=&gt;<br>  float(0.794423)<br>  ["size_upload"]=&gt;<br>  float(0)<br>  ["size_download"]=&gt;<br>  float(272)<br>  ["speed_download"]=&gt;<br>  float(268)<br>  ["speed_upload"]=&gt;<br>  float(0)<br>  ["header_size"]=&gt;<br>  int(197)<br>  ["request_size"]=&gt;<br>  int(91)<br>  ["ssl_verifyresult"]=&gt;<br>  int(0)<br>  ["filetime"]=&gt;<br>  int(-1)<br>  ["content_length_download"]=&gt;<br>  float(272)<br>  ["content_length_upload"]=&gt;<br>  float(0)<br>  ["starttransfer_time"]=&gt;<br>  float(1.011835)<br>  ["content_type"]=&gt;<br>  string(29) "text/html; charset=iso-8859-1"<br>  ["redirect_time"]=&gt;<br>  float(0)<br>  ["redirect_count"]=&gt;<br>  int(0)<br>  ["connect_code"]=&gt;<br>  int(0)<br>  ["httpauth_avail"]=&gt;<br>  int(0)<br>  ["proxyauth_avail"]=&gt;<br>  int(0)<br>  ["os_errno"]=&gt;<br>  int(0)<br>  ["num_connects"]=&gt;<br>  int(1)<br>  ["ssl_engines"]=&gt;<br>  array(3) {<br>    [0]=&gt;<br>    string(4) "rsax"<br>    [1]=&gt;<br>    string(6) "rdrand"<br>    [2]=&gt;<br>    string(7) "dynamic"<br>  }<br>  ["redirect_url"]=&gt;<br>  string(15) "http://php.net/"<br>  ["primary_ip"]=&gt;<br>  string(11) "72.52.91.14"<br>  ["appconnect_time"]=&gt;<br>  float(0.794327)<br>  ["condition_unmet"]=&gt;<br>  int(0)<br>  ["primary_port"]=&gt;<br>  int(443)<br>  ["local_ip"]=&gt;<br>  string(13) "192.168.1.120"<br>  ["local_port"]=&gt;<br>  int(51507)<br>  ["certinfo"]=&gt;<br>  array(0) {<br>  }<br>  ["curlcode"]=&gt;<br>  int(0)<br>  ["error"]=&gt;<br>  string(0) ""<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

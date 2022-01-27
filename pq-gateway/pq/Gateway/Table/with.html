@@ -129,53 +129,36 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>mixed pq\Gateway\Table::with(array $relations[, array $where = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0]]]])</h1>
-<p>Find rows dependent on other rows by foreign keys.
-See pq\Gateway\Table::of(), pq\Gateway\Table::by() and pq\Gateway\Table::find().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array $relations<br />
-list of pq\Gateway\Table\Reference instances representing relations to join for the query; see pq\Gateway\Table::getRelations().</li>
-<li>Optional array $where = NULL<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/with#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/with">pq\Gateway\Table::with</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$relations</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$where</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$order</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$limit</span> = 0[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$offset</span> = 0]]]])</h1><p>Find rows dependent on other rows by foreign keys.
+See <a href="pq-gateway/pq/Gateway/Table/of">pq\Gateway\Table::of</a>(), <a href="pq-gateway/pq/Gateway/Table/by">pq\Gateway\Table::by</a>() and <a href="pq-gateway/pq/Gateway/Table/find">pq\Gateway\Table::find</a>().</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Gateway/Table/with#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$relations">$relations<a class="permalink" href="pq-gateway/pq/Gateway/Table/with#%24relations">#</a></span><br>
+list of <a href="pq-gateway/pq/Gateway/Table#Reference">pq\Gateway\Table\Reference</a> instances representing relations to join for the query; see <a href="pq-gateway/pq/Gateway/Table/getRelations">pq\Gateway\Table::getRelations</a>().</li>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$where">$where<a class="permalink" href="pq-gateway/pq/Gateway/Table/with#%24where">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Additional lookup criteria.</li>
-<li>Optional string $order = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$order">$order<a class="permalink" href="pq-gateway/pq/Gateway/Table/with#%24order">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Sorting clause.</li>
-<li>Optional int $limit = 0<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$limit">$limit<a class="permalink" href="pq-gateway/pq/Gateway/Table/with#%24limit">#</a></span> = 0<br>
 Row count limit.</li>
-<li>Optional int $offset = 0<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$offset">$offset<a class="permalink" href="pq-gateway/pq/Gateway/Table/with#%24offset">#</a></span> = 0<br>
 Row count offset.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Gateway/Table/with#Returns:">#</a>
+</h2><ul>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using <a href="pq-gateway/pq/Query/AsyncExecutor">pq\Query\AsyncExecutor</a>, the asynchronous executor.<br>
 Else:</li>
-<li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
-<li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
-<li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Gateway\Table;
-
-$emails = new Table(&quot;account_email&quot;);
-$accounts = new Table(&quot;account&quot;);
-$notifications = new Table(&quot;notification&quot;);
-
-$relations = [
-	$emails-&gt;getRelation(&quot;account&quot;),
-	$notifications-&gt;getRelation(&quot;account_email&quot;, &quot;email&quot;)
-];
-
-$bouncers = $accounts-&gt;with($relations, [&quot;bounces&gt;&quot; =&gt; 3]);
-
-?&gt;
-</code></pre>
-
-
-
-		
+<li>
+<a href="pq/Result">pq\Result</a>, if <a href="pq/Result#%24status">pq\Result::$status</a> != <a href="pq/Result#TUPLES_OK">pq\Result::TUPLES_OK</a>.</li>
+<li>
+<a href="pq/Result">pq\Result</a>, if the rowset prototype <a href="pq-gateway/pq/Gateway/Table#%24rowset">pq\Gateway\Table::$rowset</a> is empty.</li>
+<li>
+<a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a>, an instance of the rowset prototype.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Gateway/Table/with#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$emails </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account_email"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$accounts </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$notifications </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"notification"</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">$relations </span><span style="color: inherit" class="keyword">= [<br>    </span><span style="color: inherit" class="default">$emails</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getRelation</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">),<br>    </span><span style="color: inherit" class="default">$notifications</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getRelation</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account_email"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"email"</span><span style="color: inherit" class="keyword">)<br>];<br><br></span><span style="color: inherit" class="default">$bouncers </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$accounts</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">with</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$relations</span><span style="color: inherit" class="keyword">, [</span><span style="color: inherit" class="string">"bounces&gt;" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">3</span><span style="color: inherit" class="keyword">]);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

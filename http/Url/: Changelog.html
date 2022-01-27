@@ -67,17 +67,18 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Url Changelog</h1>
-<ol start="0">
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Url/:%20Changelog#">#</a><a href="http/Url">http\Url</a> Changelog</h1><ol start="0">
 <li>v2.2.0
 <ul>
 <li>Added parser constants:
 <ul>
-<li>http\Url::PARSE_MBUTF8</li>
-<li>http\Url::PARSE_MBLOC (on systems with wide character support)</li>
-<li>http\Url::PARSE_TOIDN (with libidn support)</li>
-<li>http\Url::PARSE_TOPCT</li>
+<li><a href="http/Url#PARSE_MBUTF8">http\Url::PARSE_MBUTF8</a></li>
+<li>
+<a href="http/Url#PARSE_MBLOC">http\Url::PARSE_MBLOC</a> (on systems with wide character support)</li>
+<li>
+<a href="http/Url#PARSE_TOIDN">http\Url::PARSE_TOIDN</a> (with libidn support)</li>
+<li><a href="http/Url#PARSE_TOPCT">http\Url::PARSE_TOPCT</a></li>
 </ul>
 </li>
 </ul>
@@ -86,26 +87,19 @@
 <ul>
 <li>Added parser constants:
 <ul>
-<li>http\Url::IGNORE_ERRORS</li>
-<li>http\Url::SILENT_ERRORS</li>
-<li>http\Url::STDFLAGS</li>
-<li>http\Url::PARSE_TOIDN_2003</li>
-<li>http\Url::PARSE_TOIDN_2008</li>
+<li><a href="http/Url#IGNORE_ERRORS">http\Url::IGNORE_ERRORS</a></li>
+<li><a href="http/Url#SILENT_ERRORS">http\Url::SILENT_ERRORS</a></li>
+<li><a href="http/Url#STDFLAGS">http\Url::STDFLAGS</a></li>
+<li><a href="http/Url#PARSE_TOIDN_2003">http\Url::PARSE_TOIDN_2003</a></li>
+<li><a href="http/Url#PARSE_TOIDN_2008">http\Url::PARSE_TOIDN_2008</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ol>
-<h2>Backwards compatibility notes<a id="Backwards.compatibility.notes" href="#Backwards.compatibility.notes" class="permalink" aria-hidden="true" title="">#</a></h2>
-<h3>New parser in v2.2.0<a id="New.parser.in.v2.2.0" href="#New.parser.in.v2.2.0" class="permalink" aria-hidden="true" title="">#</a></h3>
-<p>PHP's <a href="http://php.net/parse_url">parse_url()</a> is avoided since v2.2.0.</p>
-<p>Creating an empty url by <code>new http\Url(NULL, NULL, 0)</code> will not result in <code>http://localhost/</code> anymore but in an empty URL instead.</p>
-<h3>No more default parts from the environment in v3.0.0<a id="No.more.default.parts.from.the.environment.in.v3.0.0" href="#No.more.default.parts.from.the.environment.in.v3.0.0" class="permalink" aria-hidden="true" title="">#</a></h3>
-<p>The default value of the $flags parameter of http\Url::__construct() was changed from http\Url::FROM_ENV to 0 and http\Env\Url was introduced instead.</p>
-
-
-
-		
+</ol><h2 id="Backwards.compatibility.notes">Backwards compatibility notes<a class="permalink" href="http/Url/:%20Changelog#Backwards.compatibility.notes">#</a>
+</h2><h3 id="New.parser.in.v2.2.0">New parser in v2.2.0<a class="permalink" href="http/Url/:%20Changelog#New.parser.in.v2.2.0">#</a>
+</h3><p>PHP's <a href="http://php.net/parse_url">parse_url()</a> is avoided since v2.2.0.</p><p>Creating an empty url by <code>new http\Url(NULL, NULL, 0)</code> will not result in <code>http://localhost/</code> anymore but in an empty URL instead.</p><h3 id="No.more.default.parts.from.the.environment.in.v3.0.0">No more default parts from the environment in v3.0.0<a class="permalink" href="http/Url/:%20Changelog#No.more.default.parts.from.the.environment.in.v3.0.0">#</a>
+</h3><p>The default value of the <span class="var">$flags</span> parameter of <a href="http/Url/__construct">http\Url::__construct</a>() was changed from <a href="http/Url#FROM_ENV">http\Url::FROM_ENV</a> to 0 and <a href="http/Env/Url">http\Env\Url</a> was introduced instead.</p>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

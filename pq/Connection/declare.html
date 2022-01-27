@@ -125,65 +125,34 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Cursor pq\Connection::declare(string $name, int $flags, string $query)</h1>
-<p>Declare a cursor for a query.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $name<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/declare#">#</a><a href="pq/Cursor">pq\Cursor</a> <a href="pq/Connection/declare">pq\Connection::declare</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>)</h1><p>Declare a cursor for a query.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Connection/declare#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$name">$name<a class="permalink" href="pq/Connection/declare#%24name">#</a></span><br>
 The identifying name of the cursor.</li>
-<li>int $flags<br />
-Any combination of pq\Cursor constants.</li>
-<li>string $query<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$flags">$flags<a class="permalink" href="pq/Connection/declare#%24flags">#</a></span><br>
+Any combination of <a href="pq/Cursor">pq\Cursor</a> constants.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$query">$query<a class="permalink" href="pq/Connection/declare#%24query">#</a></span><br>
 The query for which to open a cursor.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Cursor, an open cursor instance.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\RuntimeException</li>
-<li>pq\Exception\BadMethodCallException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$connection = new pq\Connection;
-
-$cursor = $connection-&gt;declare(&quot;example&quot;, pq\Cursor::WITH_HOLD,
-	&quot;SELECT * FROM generate_series(0,29) s WHERE (s%2)=0&quot;);
-
-for (	$result = $cursor-&gt;fetch(2); 
-		$result-&gt;numRows; 
-		$cursor-&gt;move(1), $result = $cursor-&gt;fetch(2)) {
-	foreach ($result as $row) {
-		foreach ($row as $col) {
-			echo &quot;	$col&quot;;
-		}
-		echo &quot;\n&quot;;
-	}
-}
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>0
-2
-6
-8
-12
-14
-18
-20
-24
-26
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/Connection/declare#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="pq/Cursor">pq\Cursor</a>, an open cursor instance.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Connection/declare#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Connection/declare#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$cursor </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">declare</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"example"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">pq\Cursor</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">WITH_HOLD</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"SELECT * FROM generate_series(0,29) s WHERE (s%2)=0"</span><span style="color: inherit" class="keyword">);<br><br>for (    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$cursor</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetch</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">); <br>        </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">numRows</span><span style="color: inherit" class="keyword">; <br>        </span><span style="color: inherit" class="default">$cursor</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">move</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">), </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$cursor</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetch</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">)) {<br>    foreach (</span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">as </span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">) {<br>        foreach (</span><span style="color: inherit" class="default">$row </span><span style="color: inherit" class="keyword">as </span><span style="color: inherit" class="default">$col</span><span style="color: inherit" class="keyword">) {<br>            echo </span><span style="color: inherit" class="string">"    </span><span style="color: inherit" class="default">$col</span><span style="color: inherit" class="string">"</span><span style="color: inherit" class="keyword">;<br>        }<br>        echo </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>    }<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+0<br>2<br>6<br>8<br>12<br>14<br>18<br>20<br>24<br>26<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

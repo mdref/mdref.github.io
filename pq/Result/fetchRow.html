@@ -77,49 +77,49 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>mixed pq\Result::fetchRow([int $fetch_type = pq\Result::$fetchType])</h1>
-<p>Iteratively fetch a row.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional int $fetch_type<br />
-The type the return value should have, see pq\Result::FETCH_* constants, defaults to pq\Result::$fetchType.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array, numerically indexed for pq\Result::FETCH_ARRAY</li>
-<li>array, associatively indexed for pq\Result::FETCH_ASSOC</li>
-<li>object, stdClass instance for pq\Result::FETCH_OBJECT</li>
-<li>NULL, when iteration ends.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<?php
-
-	try {
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Result/fetchRow#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq/Result/fetchRow">pq\Result::fetchRow</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$fetch_type</span> = <a href="pq/Result#%24fetchType">pq\Result::$fetchType</a>])</h1><p>Iteratively fetch a row.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Result/fetchRow#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$fetch_type">$fetch_type<a class="permalink" href="pq/Result/fetchRow#%24fetch_type">#</a></span><br>
+The type the return value should have, see <a href="pq/Result#FETCH_*">pq\Result::FETCH_*</a> constants, defaults to <a href="pq/Result#%24fetchType">pq\Result::$fetchType</a>.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/Result/fetchRow#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code>, numerically indexed for <a href="pq/Result#FETCH_ARRAY">pq\Result::FETCH_ARRAY</a>
+</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code>, associatively indexed for <a href="pq/Result#FETCH_ASSOC">pq\Result::FETCH_ASSOC</a>
+</li>
+<li>object, <code><a href="https://php.net/manual/en/class.stdclass">stdClass</a></code> instance for <a href="pq/Result#FETCH_OBJECT">pq\Result::FETCH_OBJECT</a>
+</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>, when iteration ends.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Result/fetchRow#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Result/fetchRow#Example:">#</a>
+</h2><?php try {
 		$connection = new pq\Connection;
 		
-		$result = $connection->exec("SELECT id, name, email FROM accounts WHERE email LIKE '_@%'");
+		$result = $connection-><p>exec("SELECT id, name, email FROM accounts WHERE email LIKE '_@%'");
 		
-		while (list($id, $name, $email) = $result->fetchRow())  {
+		while (list(<span class="var">$id</span>, <span class="var">$name</span>, <span class="var">$email</span>) = <span class="var">$result</span>-&gt;fetchRow())  {
 			echo "ID:   {$id}\n";
 			echo "Name: {$name}\n";
 			echo "Mail: {$email}\n\n";
 		}
-	} catch (\pq\Exception $e) {
-		echo $e->getMessage(), "\n";
+	} catch (<a href="pq/Exception">\pq\Exception</a> <span class="var">$e</span>) {
+		echo <span class="var">$e</span>-&gt;getMessage(), "\n";
 	}
 
-	?>
+	?&gt;
 
 
 
-		
+
+</p>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

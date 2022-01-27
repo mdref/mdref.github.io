@@ -125,37 +125,26 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void pq\Connection::listen(string $channel, callable $listener)</h1>
-<p>Listen on $channel for notifications.
-See pq\Connection::unlisten().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $channel<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/listen#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Connection/listen">pq\Connection::listen</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$channel</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$listener</span>)</h1><p>Listen on <span class="var">$channel</span> for notifications.
+See <a href="pq/Connection/unlisten">pq\Connection::unlisten</a>().</p><h2 id="Params:">Params:<a class="permalink" href="pq/Connection/listen#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$channel">$channel<a class="permalink" href="pq/Connection/listen#%24channel">#</a></span><br>
 The channel to listen on.</li>
-<li>callable $listener as function(string $channel, string $message, int $pid)<br />
-A callback automatically called whenever a notification on $channel arrives.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$conn = new pq\Connection;
-$conn-&gt;listen(&quot;queue&quot;, function($channel, $message, $backend_pid) {
-	printf(&quot;Connection on backend %d said %s\n&quot;, $backend_pid, $message);
-});
-
-?&gt;
-</code></pre>
-
-
-
-		
+<li>
+<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var" id="$listener">$listener<a class="permalink" href="pq/Connection/listen#%24listener">#</a></span> as function(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$channel</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$message">$message<a class="permalink" href="pq/Connection/listen#%24message">#</a></span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$pid">$pid<a class="permalink" href="pq/Connection/listen#%24pid">#</a></span>)<br>
+A <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> automatically called whenever a notification on <span class="var">$channel</span> arrives.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Connection/listen#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Connection/listen#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$conn </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">listen</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"queue"</span><span style="color: inherit" class="keyword">, function(</span><span style="color: inherit" class="default">$channel</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$message</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$backend_pid</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Connection on backend %d said %s\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$backend_pid</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$message</span><span style="color: inherit" class="keyword">);<br>});<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

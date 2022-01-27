@@ -125,50 +125,36 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Transaction pq\Connection::startTransaction([int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]])</h1>
-<p>Begin a transaction.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional int $isolation = pq\Transaction::READ_COMMITTED<br />
-Any pq\Transaction isolation level constant<br />
-(defaults to pq\Connection::$defaultTransactionIsolation).</li>
-<li>Optional bool $readonly = FALSE<br />
-Whether the transaction executes only reads<br />
-(defaults to pq\Connection::$defaultTransactionReadonly).</li>
-<li>Optional bool $deferrable = FALSE<br />
-Whether the transaction is deferrable<br />
-(defaults to pq\Connection::$defaultTransactionDeferrable).</li>
-</ul>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-A transaction can only be deferrable if it also is readonly and serializable.<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/startTransaction#">#</a><a href="pq/Transaction">pq\Transaction</a> <a href="pq/Connection/startTransaction">pq\Connection::startTransaction</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$isolation</span> = <a href="pq/Transaction#READ_COMMITTED">pq\Transaction::READ_COMMITTED</a>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$readonly</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$deferrable</span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>]]])</h1><p>Begin a transaction.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Connection/startTransaction#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$isolation">$isolation<a class="permalink" href="pq/Connection/startTransaction#%24isolation">#</a></span> = <a href="pq/Transaction#READ_COMMITTED">pq\Transaction::READ_COMMITTED</a><br>
+Any <a href="pq/Transaction">pq\Transaction</a> isolation level constant<br>
+(defaults to <a href="pq/Connection#%24defaultTransactionIsolation">pq\Connection::$defaultTransactionIsolation</a>).</li>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$readonly">$readonly<a class="permalink" href="pq/Connection/startTransaction#%24readonly">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
+Whether the transaction executes only reads<br>
+(defaults to <a href="pq/Connection#%24defaultTransactionReadonly">pq\Connection::$defaultTransactionReadonly</a>).</li>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$deferrable">$deferrable<a class="permalink" href="pq/Connection/startTransaction#%24deferrable">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
+Whether the transaction is deferrable<br>
+(defaults to <a href="pq/Connection#%24defaultTransactionDeferrable">pq\Connection::$defaultTransactionDeferrable</a>).</li>
+</ul><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+A transaction can only be deferrable if it also is readonly and serializable.<br>
 See the official <a href="http://www.postgresql.org/docs/current/static/sql-set-transaction.html">PostgreSQL documentation</a> for further information.</p>
-</blockquote>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Transaction, a begun transaction instance.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$transaction = (new pq\Connection)-&gt;startTransaction(
-	pq\Transaction::SERIALIZABLE, true, true);
-$result = $transaction-&gt;connection-&gt;exec(
-	&quot;SELECT * FROM generate_series(1,3)&quot;);
-
-?&gt;
-</code></pre>
-
-
-
-		
+</blockquote><h2 id="Returns:">Returns:<a class="permalink" href="pq/Connection/startTransaction#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="pq/Transaction">pq\Transaction</a>, a begun transaction instance.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Connection/startTransaction#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Connection/startTransaction#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$transaction </span><span style="color: inherit" class="keyword">= (new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">)-&gt;</span><span style="color: inherit" class="default">startTransaction</span><span style="color: inherit" class="keyword">(<br>    </span><span style="color: inherit" class="default">pq\Transaction</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">SERIALIZABLE</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">true</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">true</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$transaction</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(<br>    </span><span style="color: inherit" class="string">"SELECT * FROM generate_series(1,3)"</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

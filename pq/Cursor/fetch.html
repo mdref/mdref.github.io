@@ -73,18 +73,14 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Result pq\Cursor::fetch([string $spec = &quot;1&quot;])</h1>
-<p>Fetch rows from the cursor.
-See pq\Cursor::move().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional string $spec = &quot;1&quot;<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Cursor/fetch#">#</a><a href="pq/Result">pq\Result</a> <a href="pq/Cursor/fetch">pq\Cursor::fetch</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$spec</span> = "1"])</h1><p>Fetch rows from the cursor.
+See <a href="pq/Cursor/move">pq\Cursor::move</a>().</p><h2 id="Params:">Params:<a class="permalink" href="pq/Cursor/fetch#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$spec">$spec<a class="permalink" href="pq/Cursor/fetch#%24spec">#</a></span> = "1"<br>
 What to fetch.</li>
-</ul>
-<h3>Fetch argument:<a id="Fetch.argument:" href="#Fetch.argument:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<p>FETCH and MOVE usually accepts arguments like the following, where <code>count</code> is the number of rows:</p>
-<ul>
+</ul><h3 id="Fetch.argument:">Fetch argument:<a class="permalink" href="pq/Cursor/fetch#Fetch.argument:">#</a>
+</h3><p>FETCH and MOVE usually accepts arguments like the following, where <code>count</code> is the number of rows:</p><ul>
 <li>NEXT</li>
 <li>PRIOR</li>
 <li>FIRST</li>
@@ -105,52 +101,22 @@ What to fetch.</li>
 <li>BACKWARD <code>count</code>
 </li>
 <li>BACKWARD ALL</li>
-</ul>
-<p>See the <a href="http://www.postgresql.org/docs/current/static/sql-fetch.html">official PostgreSQL documentation</a> for details.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Result, the fetched row(s).</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$c = new pq\Connection;
-$p = new pq\Cursor($c, &quot;mycursor&quot;, pq\Cursor::WITH_HOLD,
-	&quot;SELECT * FROM generate_series(0,29) s WHERE (s%2)=0&quot;);
-
-for ($r = $p-&gt;fetch(2); $r-&gt;numRows; $p-&gt;move(1), $r = $p-&gt;fetch(2)) {
-	foreach ($r as $row) {
-		foreach ($row as $col) {
-			echo &quot;	$col&quot;;
-		}
-		echo &quot;\n&quot;;
-	}
-}
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>0
-2
-6
-8
-12
-14
-18
-20
-24
-26
-</code></pre>
-
-
-
-		
+</ul><p>See the <a href="http://www.postgresql.org/docs/current/static/sql-fetch.html">official PostgreSQL documentation</a> for details.</p><h2 id="Returns:">Returns:<a class="permalink" href="pq/Cursor/fetch#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="pq/Result">pq\Result</a>, the fetched row(s).</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Cursor/fetch#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Cursor/fetch#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$c </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$p </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Cursor</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"mycursor"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">pq\Cursor</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">WITH_HOLD</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"SELECT * FROM generate_series(0,29) s WHERE (s%2)=0"</span><span style="color: inherit" class="keyword">);<br><br>for (</span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$p</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetch</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">); </span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">numRows</span><span style="color: inherit" class="keyword">; </span><span style="color: inherit" class="default">$p</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">move</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">), </span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$p</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetch</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">)) {<br>    foreach (</span><span style="color: inherit" class="default">$r </span><span style="color: inherit" class="keyword">as </span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">) {<br>        foreach (</span><span style="color: inherit" class="default">$row </span><span style="color: inherit" class="keyword">as </span><span style="color: inherit" class="default">$col</span><span style="color: inherit" class="keyword">) {<br>            echo </span><span style="color: inherit" class="string">"    </span><span style="color: inherit" class="default">$col</span><span style="color: inherit" class="string">"</span><span style="color: inherit" class="keyword">;<br>        }<br>        echo </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>    }<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+0<br>2<br>6<br>8<br>12<br>14<br>18<br>20<br>24<br>26<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

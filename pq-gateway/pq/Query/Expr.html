@@ -95,53 +95,56 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Query\Expr</h1>
-<p>A query expression.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected string $expression<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Query/Expr#">#</a><em>class</em> <a href="pq-gateway/pq/Query/Expr">pq\Query\Expr</a>
+</h1><p>A query expression.</p><h2 id="Properties:">Properties:<a class="permalink" href="pq-gateway/pq/Query/Expr#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$expression">$expression<a class="permalink" href="pq-gateway/pq/Query/Expr#%24expression">#</a></span><br>
 The expression.</li>
-<li>protected pq\Query\Expr $next<br />
+<li>
+<em>protected</em> <a href="pq-gateway/pq/Query/Expr">pq\Query\Expr</a> <span class="var" id="$next">$next<a class="permalink" href="pq-gateway/pq/Query/Expr#%24next">#</a></span><br>
 The next expression in a linked list.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Query/Expr#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Expr/__construct">Expr::__construct</a></h3>
+		<h3 id="Expr::__construct">
+<a href="pq-gateway/pq/Query/Expr/__construct">Expr::__construct</a><a class="permalink" href="pq-gateway/pq/Query/Expr#Expr::__construct">#</a>
+</h3>
 		<p>Create a new expression.</p>
 
-		<p>void pq\Query\Expr::__construct(string $e[, string ...$args])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Query/Expr/__construct">pq\Query\Expr::__construct</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$e</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> ...<span class="var">$args</span>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Expr/__toString">Expr::__toString</a></h3>
-		<p>Retrieve the string representation.</p>
+		<h3 id="Expr::__toString">
+<a href="pq-gateway/pq/Query/Expr/__toString">Expr::__toString</a><a class="permalink" href="pq-gateway/pq/Query/Expr#Expr::__toString">#</a>
+</h3>
+		<p>Retrieve the <code><a href="https://php.net/manual/en/language.types.string">string</a></code> representation.</p>
 
-		<p>string pq\Query\Expr::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq-gateway/pq/Query/Expr/__toString">pq\Query\Expr::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Expr/add">Expr::add</a></h3>
+		<h3 id="Expr::add">
+<a href="pq-gateway/pq/Query/Expr/add">Expr::add</a><a class="permalink" href="pq-gateway/pq/Query/Expr#Expr::add">#</a>
+</h3>
 		<p>Add an expression at the end of the linked list.</p>
 
-		<p>pq\Query\Expr pq\Query\Expr::add(pq\Query\Expr $next)</p>
+		<p><a href="pq-gateway/pq/Query/Expr">pq\Query\Expr</a> <a href="pq-gateway/pq/Query/Expr/add">pq\Query\Expr::add</a>(<a href="pq-gateway/pq/Query/Expr">pq\Query\Expr</a> <span class="var">$next</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Expr/isNull">Expr::isNull</a></h3>
-		<p>Whether the expression is the literal NULL.</p>
+		<h3 id="Expr::isNull">
+<a href="pq-gateway/pq/Query/Expr/isNull">Expr::isNull</a><a class="permalink" href="pq-gateway/pq/Query/Expr#Expr::isNull">#</a>
+</h3>
+		<p>Whether the expression is the literal <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>.</p>
 
-		<p>bool pq\Query\Expr::isNull()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq-gateway/pq/Query/Expr/isNull">pq\Query\Expr::isNull</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

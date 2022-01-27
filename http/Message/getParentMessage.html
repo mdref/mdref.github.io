@@ -143,38 +143,24 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Message http\Message::getParentMessage()</h1>
-<p>Retrieve any parent message.
-See http\Message::reverse().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Message, the parent message.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\BadMethodCallException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$message = new http\Message(
-    &quot;GET / HTTP/1.0\n&quot;.
-    &quot;HTTP/1.0 200 Ok&quot;
-);
-var_dump($message-&gt;getParentMessage()-&gt;toString());
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>string(16) &quot;GET / HTTP/1.0
-&quot;
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/getParentMessage#">#</a><a href="http/Message">http\Message</a> <a href="http/Message/getParentMessage">http\Message::getParentMessage</a>()</h1><p>Retrieve any <em>parent</em> message.
+See <a href="http/Message/reverse">http\Message::reverse</a>().</p><h2 id="Params:">Params:<a class="permalink" href="http/Message/getParentMessage#Params:">#</a>
+</h2><p>None.</p><h2 id="Returns:">Returns:<a class="permalink" href="http/Message/getParentMessage#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Message">http\Message</a>, the <em>parent</em> message.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Message/getParentMessage#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/BadMethodCallException">http\Exception\BadMethodCallException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Message/getParentMessage#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$message </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Message</span><span style="color: inherit" class="keyword">(<br>    </span><span style="color: inherit" class="string">"GET / HTTP/1.0\n"</span><span style="color: inherit" class="keyword">.<br>    </span><span style="color: inherit" class="string">"HTTP/1.0 200 Ok"<br></span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$message</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getParentMessage</span><span style="color: inherit" class="keyword">()-&gt;</span><span style="color: inherit" class="default">toString</span><span style="color: inherit" class="keyword">());<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+string(16) "GET / HTTP/1.0<br>"<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

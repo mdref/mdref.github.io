@@ -77,50 +77,18 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>array http\Env\Request::getFiles()</h1>
-<p>Retrieve the uploaded files list ($_FILES).</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array, the consolidated upload files array.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>Here's an example how the original $_FILES array and the http\Env\Request's files array compare:</p>
-<pre><code>$r = new http\Env\Request;
-$f = array();
-
-foreach ($_FILES as $name =&gt; $data) {
-	foreach ((array) $data[&quot;tmp_name&quot;] as $i =&gt; $file) {
-		$f[$name][$i] = array(
-			&quot;file&quot; =&gt; $file,
-			&quot;name&quot; =&gt; $data[&quot;name&quot;][$i],
-			&quot;size&quot; =&gt; $data[&quot;size&quot;][$i],
-			&quot;type&quot; =&gt; $data[&quot;type&quot;][$i],
-			&quot;error&quot;=&gt; $data[&quot;error&quot;][$i]
-		);
-	}
-}
-assert($f == $r-&gt;getFiles());
-</code></pre>
-<p>You can see that the second and third dimensions are swapped and <code>tmp_name</code> became <code>file</code>, e.g:</p>
-<pre><code>array(
-	&quot;upload&quot; =&gt; array(
-		array(
-			&quot;file&quot; =&gt; &quot;/tmp/phpXXXXXX&quot;,
-			&quot;name&quot; =&gt; &quot;picture.jpeg&quot;,
-			&quot;size&quot; =&gt; 12345,
-			&quot;type&quot; =&gt; &quot;image/jpeg&quot;,
-			&quot;error&quot;=&gt; 0
-		)
-	)
-);
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Env/Request/getFiles#">#</a><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Env/Request/getFiles">http\Env\Request::getFiles</a>()</h1><p>Retrieve the uploaded files list (<span class="var">$_FILES</span>).</p><h2 id="Params:">Params:<a class="permalink" href="http/Env/Request/getFiles#Params:">#</a>
+</h2><p>None.</p><h2 id="Returns:">Returns:<a class="permalink" href="http/Env/Request/getFiles#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code>, the consolidated upload files <code><a href="https://php.net/manual/en/language.types.array">array</a></code>.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Env/Request/getFiles#Example:">#</a>
+</h2><p>Here's an example how the original <span class="var">$_FILES</span> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> and the <a href="http/Env/Request">http\Env\Request</a>'s files <code><a href="https://php.net/manual/en/language.types.array">array</a></code> compare:</p><pre><code><span style="color: inherit" class="html">
+$r = new http\Env\Request;<br>$f = array();<br><br>foreach ($_FILES as $name =&gt; $data) {<br>    foreach ((array) $data["tmp_name"] as $i =&gt; $file) {<br>        $f[$name][$i] = array(<br>            "file" =&gt; $file,<br>            "name" =&gt; $data["name"][$i],<br>            "size" =&gt; $data["size"][$i],<br>            "type" =&gt; $data["type"][$i],<br>            "error"=&gt; $data["error"][$i]<br>        );<br>    }<br>}<br>assert($f == $r-&gt;getFiles());<br></span>
+</code></pre><p>You can see that the second and third dimensions are swapped and <code>tmp_name</code> became <code>file</code>, e.g:</p><pre><code><span style="color: inherit" class="html">
+array(<br>    "upload" =&gt; array(<br>        array(<br>            "file" =&gt; "/tmp/phpXXXXXX",<br>            "name" =&gt; "picture.jpeg",<br>            "size" =&gt; 12345,<br>            "type" =&gt; "image/jpeg",<br>            "error"=&gt; 0<br>        )<br>    )<br>);<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

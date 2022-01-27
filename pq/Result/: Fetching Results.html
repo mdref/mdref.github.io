@@ -77,182 +77,52 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Result: Overview</h1>
-<p>An synchronous pq\Connection::exec*() call, or calls to pq\Connection::getResult() after using <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronous queries</a> returns an instance of pq\Result on success. See <a href="pq/Connection/:%20Executing%20Queries">Query execution</a>, optionally with <a href="pq/Types/:%20Overview">types</a> and <a href="pq/Statement">Prepared Statements</a> for details about how to execute queries.</p>
-<h2>Fetch types:<a id="Fetch.types:" href="#Fetch.types:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>pq\Result supports the follwing fetch types:</p>
-<ul>
-<li>pq\Result::FETCH_ARRAY<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Result/:%20Fetching%20Results#">#</a><a href="pq/Result">pq\Result:</a> Overview</h1><p>An synchronous <a href="pq/Connection#exec*">pq\Connection::exec*</a>() call, or calls to <a href="pq/Connection/getResult">pq\Connection::getResult</a>() after using <a href="pq/Connection/:%20Asynchronous%20Usage">asynchronous queries</a> returns an instance of <a href="pq/Result">pq\Result</a> on success. See <a href="pq/Connection/:%20Executing%20Queries">Query execution</a>, optionally with <a href="pq/Types/:%20Overview">types</a> and <a href="pq/Statement">Prepared Statements</a> for details about how to execute queries.</p><h2 id="Fetch.types:">Fetch types:<a class="permalink" href="pq/Result/:%20Fetching%20Results#Fetch.types:">#</a>
+</h2><p><a href="pq/Result">pq\Result</a> supports the follwing fetch types:</p><ul>
+<li>
+<a href="pq/Result#FETCH_ARRAY">pq\Result::FETCH_ARRAY</a><br>
 Fetch the row as <em><strong>numerically indexed array</strong></em>.</li>
-<li>pq\Result::FETCH_ASSOC<br />
+<li>
+<a href="pq/Result#FETCH_ASSOC">pq\Result::FETCH_ASSOC</a><br>
 Fetch the row as <em><strong>associative array</strong></em> indexed by column name.</li>
-<li>pq\Result::FETCH_OBJECT<br />
-Fetch the row as stdClass <em><strong>object</strong></em>.</li>
-</ul>
-<p>The fetch type is inherited from pq\Connection::$defaultFetchType can be set through the <em><strong>public</strong></em> property named pq\Result::$fetchType, to be used when no fetch type is specified in the call to a fetch method.</p>
-<h2>Number of rows:<a id="Number.of.rows:" href="#Number.of.rows:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The number of rows can be obtained from the <em><strong>public readonly</strong></em> property pq\Result::$numRows, or passing the result instance, which implements the Countable interface, to the count() function.</p>
-<h2>Number of columns:<a id="Number.of.columns:" href="#Number.of.columns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The number of columns each row has, can be obtained from the <em><strong>public readonly</strong></em> property pq\Result::$numCols.</p>
-<h2>Fetching everything as an array of rows:<a id="Fetching.everything.as.an.array.of.rows:" href="#Fetching.everything.as.an.array.of.rows:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>pq\Result::fetchAll() fetches the complete result set as an array of arrays or objects, depending on the default fetch type, as explained above, or the <em><strong>fetch type</strong></em> passed as first argument to the method.</p>
-<pre><code>&lt;?php
-
-try {
-	$connection = new pq\Connection;
-	
-	$result = $connection-&gt;exec(&quot;SELECT id, name, email FROM accounts WHERE email LIKE '_@%'&quot;);
-	
-	foreach ($result-&gt;fetchAll(pq\Result::FETCH_OBJECT) as $row)  {
-		echo &quot;ID:   {$row-&gt;id}\n&quot;;
-		echo &quot;Name: {$row-&gt;name}\n&quot;;
-		echo &quot;Mail: {$row-&gt;email}\n\n&quot;;
-	}
-} catch (\pq\Exception $e) {
-	echo $e-&gt;getMessage(), &quot;\n&quot;;
-}
-
-?&gt;
-</code></pre>
-<p>pq\Result implements the virtual Traversable interface, so the above task can also be accomplished by this code:</p>
-<pre><code>&lt;?php
-
-try {
-	$connection = new pq\Connection;
-	$connection-&gt;defaultFetchType = pq\Result::FETCH_OBJECT;
-	
-	$result = $connection-&gt;exec(&quot;SELECT id, name, email FROM accounts WHERE email LIKE '_@%'&quot;);
-	
-	foreach ($result as $row)  {
-		echo &quot;ID:   {$row-&gt;id}\n&quot;;
-		echo &quot;Name: {$row-&gt;name}\n&quot;;
-		echo &quot;Mail: {$row-&gt;email}\n\n&quot;;
-	}
-} catch (\pq\Exception $e) {
-	echo $e-&gt;getMessage(), &quot;\n&quot;;
-}
-
-?&gt;
-</code></pre>
-<h2>Iteratively fetching row by row:<a id="Iteratively.fetching.row.by.row:" href="#Iteratively.fetching.row.by.row:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>pq\Result::fetchRow() will return FALSE when the end of the result set has been reached.</p>
-<pre><code>&lt;?php
-
-try {
-	$connection = new pq\Connection;
-	
-	$result = $connection-&gt;exec(&quot;SELECT id, name, email FROM accounts WHERE email LIKE '_@%'&quot;);
-	
-	while (list($id, $name, $email) = $result-&gt;fetchRow())  {
-		echo &quot;ID:   {$id}\n&quot;;
-		echo &quot;Name: {$name}\n&quot;;
-		echo &quot;Mail: {$email}\n\n&quot;;
-	}
-} catch (\pq\Exception $e) {
-	echo $e-&gt;getMessage(), &quot;\n&quot;;
-}
-
-?&gt;
-</code></pre>
-<p>As with most <code>fetch*()</code> methods, the fetch type can be passed as argument here, too.</p>
-<h2>Fetching a single column by row:<a id="Fetching.a.single.column.by.row:" href="#Fetching.a.single.column.by.row:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>Because a column value can be NULL or FALSE, pq\Result::fetchCol() stores the <em><strong>value</strong></em> into the first argument <em><strong>passed by reference</strong></em>. The demanded <em><strong>column index/name</strong></em> can be passed as second argument, where <em><strong>column indices start with 0</strong></em>, which is also the default.</p>
-<pre><code>&lt;?php
-
-try {
-	$connection = new pq\Connection;
-	
-	$result = $connection-&gt;exec(&quot;SELECT email FROM accounts WHERE email LIKE '_@%'&quot;);
-	
-	while ($result-&gt;fetchCol($email))  {
-		echo &quot;Mail: {$email}\n&quot;;
-	}
-} catch (\pq\Exception $e) {
-	echo $e-&gt;getMessage(), &quot;\n&quot;;
-}
-
-?&gt;
-</code></pre>
-<p>When the end of the result set has been reached, pq\Result::fetchCol() will return FALSE.</p>
-<blockquote>
+<li>
+<a href="pq/Result#FETCH_OBJECT">pq\Result::FETCH_OBJECT</a><br>
+Fetch the row as <code><a href="https://php.net/manual/en/class.stdclass">stdClass</a></code> <em><strong>object</strong></em>.</li>
+</ul><p>The fetch type is inherited from <a href="pq/Connection#%24defaultFetchType">pq\Connection::$defaultFetchType</a> can be set through the <em><strong>public</strong></em> property named <a href="pq/Result#%24fetchType">pq\Result::$fetchType</a>, to be used when no fetch type is specified in the call to a fetch method.</p><h2 id="Number.of.rows:">Number of rows:<a class="permalink" href="pq/Result/:%20Fetching%20Results#Number.of.rows:">#</a>
+</h2><p>The number of rows can be obtained from the <em><strong>public readonly</strong></em> property <a href="pq/Result#%24numRows">pq\Result::$numRows</a>, or passing the result instance, which <em>implements</em> the <code><a href="https://php.net/manual/en/class.countable">Countable</a></code> <em>interface</em>, to the count() function.</p><h2 id="Number.of.columns:">Number of columns:<a class="permalink" href="pq/Result/:%20Fetching%20Results#Number.of.columns:">#</a>
+</h2><p>The number of columns each row has, can be obtained from the <em><strong>public readonly</strong></em> property <a href="pq/Result#%24numCols">pq\Result::$numCols</a>.</p><h2 id="Fetching.everything.as.an.array.of.rows:">Fetching everything as an <code><a href="https://php.net/manual/en/language.types.array">array</a></code> of rows:<a class="permalink" href="pq/Result/:%20Fetching%20Results#Fetching.everything.as.an.array.of.rows:">#</a>
+</h2><p><a href="pq/Result/fetchAll">pq\Result::fetchAll</a>() fetches the complete result set as an <code><a href="https://php.net/manual/en/language.types.array">array</a></code> of arrays or objects, depending on the default fetch type, as explained above, or the <em><strong>fetch type</strong></em> passed as first argument to the method.</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>    <br>    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT id, name, email FROM accounts WHERE email LIKE '_@%'"</span><span style="color: inherit" class="keyword">);<br>    <br>    foreach (</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchAll</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">pq\Result</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">FETCH_OBJECT</span><span style="color: inherit" class="keyword">) as </span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">)  {<br>        echo </span><span style="color: inherit" class="string">"ID:   </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">id</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Name: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">name</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Mail: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">email</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n\n"</span><span style="color: inherit" class="keyword">;<br>    }<br>} catch (</span><span style="color: inherit" class="default">\pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    echo </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p><a href="pq/Result">pq\Result</a> <em>implements</em> the virtual <code><a href="https://php.net/manual/en/class.traversable">Traversable</a></code> <em>interface</em>, so the above task can also be accomplished by this code:</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>    </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">defaultFetchType </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">pq\Result</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">FETCH_OBJECT</span><span style="color: inherit" class="keyword">;<br>    <br>    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT id, name, email FROM accounts WHERE email LIKE '_@%'"</span><span style="color: inherit" class="keyword">);<br>    <br>    foreach (</span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">as </span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">)  {<br>        echo </span><span style="color: inherit" class="string">"ID:   </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">id</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Name: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">name</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Mail: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">email</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n\n"</span><span style="color: inherit" class="keyword">;<br>    }<br>} catch (</span><span style="color: inherit" class="default">\pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    echo </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h2 id="Iteratively.fetching.row.by.row:">Iteratively fetching row by row:<a class="permalink" href="pq/Result/:%20Fetching%20Results#Iteratively.fetching.row.by.row:">#</a>
+</h2><p><a href="pq/Result/fetchRow">pq\Result::fetchRow</a>() will return <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code> when the end of the result set has been reached.</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>    <br>    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT id, name, email FROM accounts WHERE email LIKE '_@%'"</span><span style="color: inherit" class="keyword">);<br>    <br>    while (list(</span><span style="color: inherit" class="default">$id</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$name</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">) = </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchRow</span><span style="color: inherit" class="keyword">())  {<br>        echo </span><span style="color: inherit" class="string">"ID:   </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$id</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Name: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$name</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Mail: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n\n"</span><span style="color: inherit" class="keyword">;<br>    }<br>} catch (</span><span style="color: inherit" class="default">\pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    echo </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>As with most <code>fetch*()</code> methods, the fetch type can be passed as argument here, too.</p><h2 id="Fetching.a.single.column.by.row:">Fetching a single column by row:<a class="permalink" href="pq/Result/:%20Fetching%20Results#Fetching.a.single.column.by.row:">#</a>
+</h2><p>Because a column value can be <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code> or <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>, <a href="pq/Result/fetchCol">pq\Result::fetchCol</a>() stores the <em><strong>value</strong></em> into the first argument <em><strong>passed by reference</strong></em>. The demanded <em><strong>column index/name</strong></em> can be passed as second argument, where <em><strong>column indices start with 0</strong></em>, which is also the default.</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>    <br>    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT email FROM accounts WHERE email LIKE '_@%'"</span><span style="color: inherit" class="keyword">);<br>    <br>    while (</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchCol</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">))  {<br>        echo </span><span style="color: inherit" class="string">"Mail: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>    }<br>} catch (</span><span style="color: inherit" class="default">\pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    echo </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>When the end of the result set has been reached, <a href="pq/Result/fetchCol">pq\Result::fetchCol</a>() will return <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code>.</p><blockquote>
 <p><em><strong>NOTE:</strong></em>
-pq\Result::fetchCol() does not accept a fetch type argument.</p>
-</blockquote>
-<h2>Fetching bound variables:<a id="Fetching.bound.variables:" href="#Fetching.bound.variables:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>It is possible to bind variables to result columns by reference by calling pq\Result::bind() for each demanded column and then retreive the results by calling pq\Result::fetchBound() iteratively.</p>
-<pre><code>&lt;?php
-
-try {
-	$connection = new pq\Connection;
-	
-	$result = $connection-&gt;exec(&quot;SELECT id, name, email FROM accounts WHERE email LIKE '_@%'&quot;);
-	
-	$result-&gt;bind(&quot;id&quot;, $id);
-	$result-&gt;bind(&quot;name&quot;, $name);
-	$result-&gt;bind(&quot;email&quot;, $email);
-	
-	while ($result-&gt;fetchBound()) {
-		echo &quot;ID:   {$id}\n&quot;;
-		echo &quot;Name: {$name}\n&quot;;
-		echo &quot;Mail: {$email}\n\n&quot;;
-	}
-} catch (\pq\Exception $e) {
-	echo $e-&gt;getMessage(), &quot;\n&quot;;
-}
-
-?&gt;
-</code></pre>
-<p>pq\Result::bind() expects the <em><strong>column index/name</strong></em> as first argument and the <em><strong>variable to bind by reference to this result column</strong></em> as second argument.</p>
-<blockquote>
+<a href="pq/Result/fetchCol">pq\Result::fetchCol</a>() does not accept a fetch type argument.</p>
+</blockquote><h2 id="Fetching.bound.variables:">Fetching bound variables:<a class="permalink" href="pq/Result/:%20Fetching%20Results#Fetching.bound.variables:">#</a>
+</h2><p>It is possible to bind variables to result columns by <code><a href="https://php.net/manual/en/language.references">reference</a></code> by calling <a href="pq/Result/bind">pq\Result::bind</a>() for each demanded column and then retreive the results by calling <a href="pq/Result/fetchBound">pq\Result::fetchBound</a>() iteratively.</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>    <br>    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT id, name, email FROM accounts WHERE email LIKE '_@%'"</span><span style="color: inherit" class="keyword">);<br>    <br>    </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">bind</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"id"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$id</span><span style="color: inherit" class="keyword">);<br>    </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">bind</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"name"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$name</span><span style="color: inherit" class="keyword">);<br>    </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">bind</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"email"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">);<br>    <br>    while (</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchBound</span><span style="color: inherit" class="keyword">()) {<br>        echo </span><span style="color: inherit" class="string">"ID:   </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$id</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Name: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$name</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Mail: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$email</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n\n"</span><span style="color: inherit" class="keyword">;<br>    }<br>} catch (</span><span style="color: inherit" class="default">\pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    echo </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p><a href="pq/Result/bind">pq\Result::bind</a>() expects the <em><strong>column index/name</strong></em> as first argument and the <em><strong>variable to bind by reference to this result column</strong></em> as second argument.</p><blockquote>
 <p><em><strong>NOTE:</strong></em>
-pq\Result::fetchBound() does not accept a fetch type argument.</p>
-</blockquote>
-<h2>Fetching simple maps:<a id="Fetching.simple.maps:" href="#Fetching.simple.maps:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>pq\Result::map() fetches the complete result set as a simple map, a <em><strong>multi dimensional array</strong></em>, each dimension indexed by a column.</p>
-<p>Consider the following example:</p>
-<pre><code>&lt;?php
-
-try {
-	$connection = new pq\Connection;
-	
-	$result = $connection-&gt;exec(&quot;SELECT a,b,c from generate_series(1,3) a, 
-												   generate_series(4,6) b, 
-												   generate_series(7,9) c&quot;);
-
-	foreach($result-&gt;map(array(0,1,2)) as $a =&gt; $aa) {
-		foreach ($aa as $b =&gt; $bb) {
-			foreach ($bb as $c =&gt; $res) {
-				printf(&quot;%s,%s,%s = %s   &quot;, $a, $b, $c, implode(&quot;,&quot;, $res));
-			}
-			printf(&quot;\n&quot;);
-		}
-		printf(&quot;\n&quot;);
-	}
-} catch (\pq\Exception $e) {
-	echo $e-&gt;getMessage(), &quot;\n&quot;;
-}
-
-?&gt;
-</code></pre>
-<p>It should produce:</p>
-<pre><code>1,4,7 = 1,4,7   1,4,8 = 1,4,8   1,4,9 = 1,4,9   
-1,5,7 = 1,5,7   1,5,8 = 1,5,8   1,5,9 = 1,5,9   
-1,6,7 = 1,6,7   1,6,8 = 1,6,8   1,6,9 = 1,6,9   
-
-2,4,7 = 2,4,7   2,4,8 = 2,4,8   2,4,9 = 2,4,9  // This should help generate maps 
-2,5,7 = 2,5,7   2,5,8 = 2,5,8   2,5,9 = 2,5,9  // of f.e. statistical data with   
-2,6,7 = 2,6,7   2,6,8 = 2,6,8   2,6,9 = 2,6,9  // some GROUP BYs etc.           
-
-3,4,7 = 3,4,7   3,4,8 = 3,4,8   3,4,9 = 3,4,9   
-3,5,7 = 3,5,7   3,5,8 = 3,5,8   3,5,9 = 3,5,9   
-3,6,7 = 3,6,7   3,6,8 = 3,6,8   3,6,9 = 3,6,9   
-</code></pre>
-<p>pq\Result::map() optionally expects an <em><strong>array containing the column indices/names used to index the map</strong></em> as first argument, and uses the first column (at index 0) by default. The second argument can optionally be an <em><strong>array of column indices/names</strong></em> which should build up the leaf entry of the map. A <em><strong>fetch type</strong></em> can also be specified as optional third argument.</p>
-
-
-
-		
+<a href="pq/Result/fetchBound">pq\Result::fetchBound</a>() does not accept a fetch type argument.</p>
+</blockquote><h2 id="Fetching.simple.maps:">Fetching simple maps:<a class="permalink" href="pq/Result/:%20Fetching%20Results#Fetching.simple.maps:">#</a>
+</h2><p><a href="pq/Result/map">pq\Result::map</a>() fetches the complete result set as a simple map, a <em><strong>multi dimensional array</strong></em>, each dimension indexed by a column.</p><p>Consider the following example:</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>    <br>    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT a,b,c from generate_series(1,3) a, <br>                                                   generate_series(4,6) b, <br>                                                   generate_series(7,9) c"</span><span style="color: inherit" class="keyword">);<br><br>    foreach(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">map</span><span style="color: inherit" class="keyword">(array(</span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">)) as </span><span style="color: inherit" class="default">$a </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$aa</span><span style="color: inherit" class="keyword">) {<br>        foreach (</span><span style="color: inherit" class="default">$aa </span><span style="color: inherit" class="keyword">as </span><span style="color: inherit" class="default">$b </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$bb</span><span style="color: inherit" class="keyword">) {<br>            foreach (</span><span style="color: inherit" class="default">$bb </span><span style="color: inherit" class="keyword">as </span><span style="color: inherit" class="default">$c </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">) {<br>                </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%s,%s,%s = %s   "</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$a</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$b</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">implode</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">","</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">));<br>            }<br>            </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">);<br>        }<br>        </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">);<br>    }<br>} catch (</span><span style="color: inherit" class="default">\pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    echo </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>It should produce:</p><pre><code><span style="color: inherit" class="html">
+1,4,7 = 1,4,7   1,4,8 = 1,4,8   1,4,9 = 1,4,9   <br>1,5,7 = 1,5,7   1,5,8 = 1,5,8   1,5,9 = 1,5,9   <br>1,6,7 = 1,6,7   1,6,8 = 1,6,8   1,6,9 = 1,6,9   <br><br>2,4,7 = 2,4,7   2,4,8 = 2,4,8   2,4,9 = 2,4,9  // This should help generate maps <br>2,5,7 = 2,5,7   2,5,8 = 2,5,8   2,5,9 = 2,5,9  // of f.e. statistical data with   <br>2,6,7 = 2,6,7   2,6,8 = 2,6,8   2,6,9 = 2,6,9  // some GROUP BYs etc.           <br><br>3,4,7 = 3,4,7   3,4,8 = 3,4,8   3,4,9 = 3,4,9   <br>3,5,7 = 3,5,7   3,5,8 = 3,5,8   3,5,9 = 3,5,9   <br>3,6,7 = 3,6,7   3,6,8 = 3,6,8   3,6,9 = 3,6,9   <br></span>
+</code></pre><p><a href="pq/Result/map">pq\Result::map</a>() optionally expects an <em><strong>array containing the column indices/names used to index the map</strong></em> as first argument, and uses the first column (at index 0) by default. The second argument can optionally be an <em><strong>array of column indices/names</strong></em> which should build up the leaf entry of the map. A <em><strong>fetch type</strong></em> can also be specified as optional third argument.</p>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

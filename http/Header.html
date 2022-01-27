@@ -121,113 +121,130 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Header implements Serializable</h1>
-<p>The http\Header class provides methods to manipulate, match, negotiate and serialize HTTP headers.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>MATCH_LOOSE<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Header#">#</a><em>class</em> <a href="http/Header">http\Header</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>
+</h1><p>The <a href="http/Header">http\Header</a> <em>class</em> provides methods to manipulate, match, negotiate and serialize HTTP headers.</p><h2 id="Constants:">Constants:<a class="permalink" href="http/Header#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="MATCH_LOOSE">MATCH_LOOSE<a class="permalink" href="http/Header#MATCH_LOOSE">#</a></span><br>
 None of the following match constraints applies.</li>
-<li>MATCH_CASE<br />
+<li>
+<span class="constant" id="MATCH_CASE">MATCH_CASE<a class="permalink" href="http/Header#MATCH_CASE">#</a></span><br>
 Perform case sensitive matching.</li>
-<li>MATCH_WORD<br />
+<li>
+<span class="constant" id="MATCH_WORD">MATCH_WORD<a class="permalink" href="http/Header#MATCH_WORD">#</a></span><br>
 Match only on word boundaries (according by CType alpha-numeric).</li>
-<li>MATCH_FULL<br />
-Match the complete string.</li>
-<li>MATCH_STRICT<br />
-Case sensitively match the full string (same as MATCH_CASE|MATCH_FULL).</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public string $name = NULL<br />
-The name of the HTTP header.</li>
-<li>public mixed $value = NULL<br />
-The value of the HTTP header.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+<li>
+<span class="constant" id="MATCH_FULL">MATCH_FULL<a class="permalink" href="http/Header#MATCH_FULL">#</a></span><br>
+Match the complete <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</li>
+<li>
+<span class="constant" id="MATCH_STRICT">MATCH_STRICT<a class="permalink" href="http/Header#MATCH_STRICT">#</a></span><br>
+Case sensitively match the full <code><a href="https://php.net/manual/en/language.types.string">string</a></code> (same as <span class="constant">MATCH_CASE</span>|<span class="constant">MATCH_FULL</span>).</li>
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="http/Header#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$name">$name<a class="permalink" href="http/Header#%24name">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The name of the <span class="constant">HTTP</span> header.</li>
+<li>
+<em>public</em> <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$value">$value<a class="permalink" href="http/Header#%24value">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The value of the <span class="constant">HTTP</span> header.</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Header#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Header/__construct">Header::__construct</a></h3>
-		<p>Create an http\Header instance for use of simple matching or negotiation. If the value of the header is an array it may be compounded to a single comma separated string.</p>
+		<h3 id="Header::__construct">
+<a href="http/Header/__construct">Header::__construct</a><a class="permalink" href="http/Header#Header::__construct">#</a>
+</h3>
+		<p>Create an <a href="http/Header">http\Header</a> instance for use of simple matching or negotiation. If the value of the header is an <code><a href="https://php.net/manual/en/language.types.array">array</a></code> it may be compounded to a single comma separated <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>void http\Header::__construct([string $name[, mixed $value]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Header/__construct">http\Header::__construct</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$value</span>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header/__toString">Header::__toString</a></h3>
-		<p>String cast handler. Alias of http\Header::serialize().</p>
+		<h3 id="Header::__toString">
+<a href="http/Header/__toString">Header::__toString</a><a class="permalink" href="http/Header#Header::__toString">#</a>
+</h3>
+		<p>String cast handler. Alias of <a href="http/Header/serialize">http\Header::serialize</a>().</p>
 
-		<p>string http\Header::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Header/__toString">http\Header::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header/getParams">Header::getParams</a></h3>
+		<h3 id="Header::getParams">
+<a href="http/Header/getParams">Header::getParams</a><a class="permalink" href="http/Header#Header::getParams">#</a>
+</h3>
 		<p>Create a parameter list out of the HTTP header value.</p>
 
-		<p>http\Params http\Header::getParams([mixed $ps = &quot;,&quot;[, mixed $as = &quot;;&quot;[, mixed $vs = &quot;=&quot;[, int $flags = http\Params::PARSE_DEFAULT]]]])</p>
+		<p><a href="http/Params">http\Params</a> <a href="http/Header/getParams">http\Header::getParams</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$ps</span> = ","[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$as</span> = ";"[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$vs</span> = "="[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span> = <a href="http/Params#PARSE_DEFAULT">http\Params::PARSE_DEFAULT</a>]]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header/match">Header::match</a></h3>
-		<p>Match the HTTP header's value against provided $value according to $flags.</p>
+		<h3 id="Header::match">
+<a href="http/Header/match">Header::match</a><a class="permalink" href="http/Header#Header::match">#</a>
+</h3>
+		<p>Match the HTTP header's value against provided <span class="var">$value</span> according to <span class="var">$flags</span>.</p>
 
-		<p>bool http\Header::match(string $value[, int $flags = http\Header::MATCH_LOOSE])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/Header/match">http\Header::match</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$value</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span> = <a href="http/Header#MATCH_LOOSE">http\Header::MATCH_LOOSE</a>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header/negotiate">Header::negotiate</a></h3>
-		<p>Negotiate the header's value against a list of supported values in $supported.</p>
+		<h3 id="Header::negotiate">
+<a href="http/Header/negotiate">Header::negotiate</a><a class="permalink" href="http/Header#Header::negotiate">#</a>
+</h3>
+		<p>Negotiate the header's value against a list of supported values in <span class="var">$supported</span>.</p>
 
-		<p>string http\Header::negotiate(array $supported[, array &amp;$result])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Header/negotiate">http\Header::negotiate</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$supported</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> &amp;<span class="var">$result</span>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header/parse">Header::parse</a></h3>
+		<h3 id="Header::parse">
+<a href="http/Header/parse">Header::parse</a><a class="permalink" href="http/Header#Header::parse">#</a>
+</h3>
 		<p>Parse HTTP headers.</p>
 
-		<p>static array http\Header::parse(string $header[, string $header_class = NULL])</p>
+		<p><em>static</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Header/parse">http\Header::parse</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$header</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$header_class</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header/serialize">Header::serialize</a></h3>
-		<p>Implements Serializable.</p>
+		<h3 id="Header::serialize">
+<a href="http/Header/serialize">Header::serialize</a><a class="permalink" href="http/Header#Header::serialize">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>.</p>
 
-		<p>string http\Header::serialize()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Header/serialize">http\Header::serialize</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header/toString">Header::toString</a></h3>
-		<p>Convenience method. Alias of http\Header::serialize().</p>
+		<h3 id="Header::toString">
+<a href="http/Header/toString">Header::toString</a><a class="permalink" href="http/Header#Header::toString">#</a>
+</h3>
+		<p>Convenience method. Alias of <a href="http/Header/serialize">http\Header::serialize</a>().</p>
 
-		<p>string http\Header::toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Header/toString">http\Header::toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header/unserialize">Header::unserialize</a></h3>
-		<p>Implements Serializable.</p>
+		<h3 id="Header::unserialize">
+<a href="http/Header/unserialize">Header::unserialize</a><a class="permalink" href="http/Header#Header::unserialize">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>.</p>
 
-		<p>void http\Header::unserialize(string $serialized)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Header/unserialize">http\Header::unserialize</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$serialized</span>)</p>
 	</li>
 	
-</ul>
-
-
-<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
-<ul>
+</ul><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="http/Header#Namespaces.Interfaces.and.Classes:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Header/Parser">Parser</a></h3>
-		<p>The parser which is underlying http\Header and http\Message.</p>
+		<h3 id="Parser">
+<a href="http/Header/Parser">Parser</a><a class="permalink" href="http/Header#Parser">#</a>
+</h3>
+		<p>The parser which is underlying <a href="http/Header">http\Header</a> and <a href="http/Message">http\Message</a>.</p>
 
-		<p>class http\Header\Parser</p>
+		<p><em>class</em> <a href="http/Header/Parser">http\Header\Parser</a></p>
 	</li>
 	
-</ul>
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -291,362 +291,451 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Message implements Countable, Serializable, Iterator</h1>
-<p>The message class builds the foundation for any request and response message.</p>
-<p>See http\Client\Request and http\Client\Response, as well as http\Env\Request and http\Env\Response.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>TYPE_NONE<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message#">#</a><em>class</em> <a href="http/Message">http\Message</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>, <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>, <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code>
+</h1><p>The message <em>class</em> builds the foundation for any request and response message.</p><p>See <a href="http/Client/Request">http\Client\Request</a> and <a href="http/Client/Response">http\Client\Response</a>, as well as <a href="http/Env/Request">http\Env\Request</a> and <a href="http/Env/Response">http\Env\Response</a>.</p><h2 id="Constants:">Constants:<a class="permalink" href="http/Message#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="TYPE_NONE">TYPE_NONE<a class="permalink" href="http/Message#TYPE_NONE">#</a></span><br>
 No specific type of message.</li>
-<li>TYPE_REQUEST<br />
+<li>
+<span class="constant" id="TYPE_REQUEST">TYPE_REQUEST<a class="permalink" href="http/Message#TYPE_REQUEST">#</a></span><br>
 A request message.</li>
-<li>TYPE_RESPONSE<br />
+<li>
+<span class="constant" id="TYPE_RESPONSE">TYPE_RESPONSE<a class="permalink" href="http/Message#TYPE_RESPONSE">#</a></span><br>
 A response message.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected int $type = http\Message::TYPE_NONE<br />
-The message type. See http\Message::TYPE_* constants.</li>
-<li>protected http\Message\Body $body = NULL<br />
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="http/Message#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$type">$type<a class="permalink" href="http/Message#%24type">#</a></span> = <a href="http/Message#TYPE_NONE">http\Message::TYPE_NONE</a><br>
+The message type. See <a href="http/Message#TYPE_*">http\Message::TYPE_*</a> constants.</li>
+<li>
+<em>protected</em> <a href="http/Message/Body">http\Message\Body</a> <span class="var" id="$body">$body<a class="permalink" href="http/Message#%24body">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The message's body.</li>
-<li>protected string $requestMethod = &quot;&quot;<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$requestMethod">$requestMethod<a class="permalink" href="http/Message#%24requestMethod">#</a></span> = ""<br>
 The request method if the message is of type request.</li>
-<li>protected string $requestUrl = &quot;&quot;<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$requestUrl">$requestUrl<a class="permalink" href="http/Message#%24requestUrl">#</a></span> = ""<br>
 The request url if the message is of type request.</li>
-<li>protected string $responseStatus = &quot;&quot;<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$responseStatus">$responseStatus<a class="permalink" href="http/Message#%24responseStatus">#</a></span> = ""<br>
 The response status phrase if the message is of type response.</li>
-<li>protected int $responseCode = 0<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$responseCode">$responseCode<a class="permalink" href="http/Message#%24responseCode">#</a></span> = 0<br>
 The response code if the message is of type response.</li>
-<li>protected string $httpVersion = NULL<br />
-A custom HTTP protocol version.</li>
-<li>protected array $headers = NULL<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$httpVersion">$httpVersion<a class="permalink" href="http/Message#%24httpVersion">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+A custom <span class="constant">HTTP</span> protocol version.</li>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$headers">$headers<a class="permalink" href="http/Message#%24headers">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Any message headers.</li>
-<li>protected http\Message $parentMessage<br />
-Any parent message.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+<li>
+<em>protected</em> <a href="http/Message">http\Message</a> <span class="var" id="$parentMessage">$parentMessage<a class="permalink" href="http/Message#%24parentMessage">#</a></span><br>
+Any <em>parent</em> message.</li>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Message#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Message/__construct">Message::__construct</a></h3>
+		<h3 id="Message::__construct">
+<a href="http/Message/__construct">Message::__construct</a><a class="permalink" href="http/Message#Message::__construct">#</a>
+</h3>
 		<p>Create a new HTTP message.</p>
 
-		<p>void http\Message::__construct([mixed $message = NULL[, bool $greedy = true])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Message/__construct">http\Message::__construct</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$message</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$greedy</span> = <code><a href="https://php.net/manual/en/language.types.boolean">true</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/__toString">Message::__toString</a></h3>
-		<p>Retrieve the message serialized to a string.</p>
+		<h3 id="Message::__toString">
+<a href="http/Message/__toString">Message::__toString</a><a class="permalink" href="http/Message#Message::__toString">#</a>
+</h3>
+		<p>Retrieve the message serialized to a <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>string http\Message::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/__toString">http\Message::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/addBody">Message::addBody</a></h3>
-		<p>Append the data of $body to the message's body.</p>
+		<h3 id="Message::addBody">
+<a href="http/Message/addBody">Message::addBody</a><a class="permalink" href="http/Message#Message::addBody">#</a>
+</h3>
+		<p>Append the data of <span class="var">$body</span> to the message's body.</p>
 
-		<p>http\Message http\Message::addBody(http\Message\Body $body)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/addBody">http\Message::addBody</a>(<a href="http/Message/Body">http\Message\Body</a> <span class="var">$body</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/addHeader">Message::addHeader</a></h3>
+		<h3 id="Message::addHeader">
+<a href="http/Message/addHeader">Message::addHeader</a><a class="permalink" href="http/Message#Message::addHeader">#</a>
+</h3>
 		<p>Add an header, appending to already existing headers.</p>
 
-		<p>http\Message http\Message::addHeader(string $name, mixed $value)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/addHeader">http\Message::addHeader</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$value</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/addHeaders">Message::addHeaders</a></h3>
+		<h3 id="Message::addHeaders">
+<a href="http/Message/addHeaders">Message::addHeaders</a><a class="permalink" href="http/Message#Message::addHeaders">#</a>
+</h3>
 		<p>Add headers, optionally appending values, if header keys already exist.</p>
 
-		<p>http\Message http\Message::addHeaders(array $headers[, bool $append = false])</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/addHeaders">http\Message::addHeaders</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$headers</span>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$append</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/count">Message::count</a></h3>
-		<p>Implements Countable.</p>
+		<h3 id="Message::count">
+<a href="http/Message/count">Message::count</a><a class="permalink" href="http/Message#Message::count">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>.</p>
 
-		<p>int http\Message::count()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Message/count">http\Message::count</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/current">Message::current</a></h3>
+		<h3 id="Message::current">
+<a href="http/Message/current">Message::current</a><a class="permalink" href="http/Message#Message::current">#</a>
+</h3>
 		<p>Implements iterator.</p>
 
-		<p>http\Message http\Message::current()</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/current">http\Message::current</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/detach">Message::detach</a></h3>
+		<h3 id="Message::detach">
+<a href="http/Message/detach">Message::detach</a><a class="permalink" href="http/Message#Message::detach">#</a>
+</h3>
 		<p>Detach a clone of this message from any message chain.</p>
 
-		<p>http\Message http\Message::detach()</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/detach">http\Message::detach</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getBody">Message::getBody</a></h3>
+		<h3 id="Message::getBody">
+<a href="http/Message/getBody">Message::getBody</a><a class="permalink" href="http/Message#Message::getBody">#</a>
+</h3>
 		<p>Retrieve the message's body.</p>
 
-		<p>http\Message\Body http\Message::getBody()</p>
+		<p><a href="http/Message/Body">http\Message\Body</a> <a href="http/Message/getBody">http\Message::getBody</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getHeader">Message::getHeader</a></h3>
-		<p>Retrieve a single header, optionally hydrated into a http\Header extending class.</p>
+		<h3 id="Message::getHeader">
+<a href="http/Message/getHeader">Message::getHeader</a><a class="permalink" href="http/Message#Message::getHeader">#</a>
+</h3>
+		<p>Retrieve a single header, optionally hydrated into a <a href="http/Header">http\Header</a> extending <em>class</em>.</p>
 
-		<p>mixed http\Message::getHeader(string $header[, string $into_class = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="http/Message/getHeader">http\Message::getHeader</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$header</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$into_class</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getHeaders">Message::getHeaders</a></h3>
+		<h3 id="Message::getHeaders">
+<a href="http/Message/getHeaders">Message::getHeaders</a><a class="permalink" href="http/Message#Message::getHeaders">#</a>
+</h3>
 		<p>Retrieve all message headers.</p>
 
-		<p>array http\Message::getHeaders()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Message/getHeaders">http\Message::getHeaders</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getHttpVersion">Message::getHttpVersion</a></h3>
+		<h3 id="Message::getHttpVersion">
+<a href="http/Message/getHttpVersion">Message::getHttpVersion</a><a class="permalink" href="http/Message#Message::getHttpVersion">#</a>
+</h3>
 		<p>Retrieve the HTTP protocol version of the message.</p>
 
-		<p>string http\Message::getHttpVersion()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/getHttpVersion">http\Message::getHttpVersion</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getInfo">Message::getInfo</a></h3>
+		<h3 id="Message::getInfo">
+<a href="http/Message/getInfo">Message::getInfo</a><a class="permalink" href="http/Message#Message::getInfo">#</a>
+</h3>
 		<p>Retrieve the first line of a request or response message.</p>
 
-		<p>string http\Message::getInfo()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/getInfo">http\Message::getInfo</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getParentMessage">Message::getParentMessage</a></h3>
-		<p>Retrieve any parent message.</p>
+		<h3 id="Message::getParentMessage">
+<a href="http/Message/getParentMessage">Message::getParentMessage</a><a class="permalink" href="http/Message#Message::getParentMessage">#</a>
+</h3>
+		<p>Retrieve any <em>parent</em> message.</p>
 
-		<p>http\Message http\Message::getParentMessage()</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/getParentMessage">http\Message::getParentMessage</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getRequestMethod">Message::getRequestMethod</a></h3>
+		<h3 id="Message::getRequestMethod">
+<a href="http/Message/getRequestMethod">Message::getRequestMethod</a><a class="permalink" href="http/Message#Message::getRequestMethod">#</a>
+</h3>
 		<p>Retrieve the request method of the message.</p>
 
-		<p>string http\Message::getRequestMethod()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/getRequestMethod">http\Message::getRequestMethod</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getRequestUrl">Message::getRequestUrl</a></h3>
+		<h3 id="Message::getRequestUrl">
+<a href="http/Message/getRequestUrl">Message::getRequestUrl</a><a class="permalink" href="http/Message#Message::getRequestUrl">#</a>
+</h3>
 		<p>Retrieve the request URL of the message.</p>
 
-		<p>string http\Message::getRequestUrl()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/getRequestUrl">http\Message::getRequestUrl</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getResponseCode">Message::getResponseCode</a></h3>
+		<h3 id="Message::getResponseCode">
+<a href="http/Message/getResponseCode">Message::getResponseCode</a><a class="permalink" href="http/Message#Message::getResponseCode">#</a>
+</h3>
 		<p>Retrieve the response code of the message.</p>
 
-		<p>int http\Message::getResponseCode()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Message/getResponseCode">http\Message::getResponseCode</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getResponseStatus">Message::getResponseStatus</a></h3>
+		<h3 id="Message::getResponseStatus">
+<a href="http/Message/getResponseStatus">Message::getResponseStatus</a><a class="permalink" href="http/Message#Message::getResponseStatus">#</a>
+</h3>
 		<p>Retrieve the response status of the message.</p>
 
-		<p>string http\Message::getResponseStatus()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/getResponseStatus">http\Message::getResponseStatus</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/getType">Message::getType</a></h3>
+		<h3 id="Message::getType">
+<a href="http/Message/getType">Message::getType</a><a class="permalink" href="http/Message#Message::getType">#</a>
+</h3>
 		<p>Retrieve the type of the message.</p>
 
-		<p>int http\Message::getType()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Message/getType">http\Message::getType</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/isMultipart">Message::isMultipart</a></h3>
+		<h3 id="Message::isMultipart">
+<a href="http/Message/isMultipart">Message::isMultipart</a><a class="permalink" href="http/Message#Message::isMultipart">#</a>
+</h3>
 		<p>Check whether this message is a multipart message based on it's content type.</p>
 
-		<p>bool http\Message::isMultipart([string &amp;$boundary = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/Message/isMultipart">http\Message::isMultipart</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> &amp;<span class="var">$boundary</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/key">Message::key</a></h3>
-		<p>Implements Iterator.</p>
+		<h3 id="Message::key">
+<a href="http/Message/key">Message::key</a><a class="permalink" href="http/Message#Message::key">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code>.</p>
 
-		<p>int http\Message::key()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Message/key">http\Message::key</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/next">Message::next</a></h3>
-		<p>Implements Iterator.</p>
+		<h3 id="Message::next">
+<a href="http/Message/next">Message::next</a><a class="permalink" href="http/Message#Message::next">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code>.</p>
 
-		<p>void http\Message::next()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Message/next">http\Message::next</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/prepend">Message::prepend</a></h3>
-		<p>Prepend message(s) $message to this message, or the top most message of this message chain.</p>
+		<h3 id="Message::prepend">
+<a href="http/Message/prepend">Message::prepend</a><a class="permalink" href="http/Message#Message::prepend">#</a>
+</h3>
+		<p>Prepend message(s) <span class="var">$message</span> to this message, or the top most message of this message chain.</p>
 
-		<p>http\Message http\Message::prepend(http\Message $message[, bool $top = true])</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/prepend">http\Message::prepend</a>(<a href="http/Message">http\Message</a> <span class="var">$message</span>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$top</span> = <code><a href="https://php.net/manual/en/language.types.boolean">true</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/reverse">Message::reverse</a></h3>
+		<h3 id="Message::reverse">
+<a href="http/Message/reverse">Message::reverse</a><a class="permalink" href="http/Message#Message::reverse">#</a>
+</h3>
 		<p>Reverse the message chain and return the former top-most message.</p>
 
-		<p>http\Message http\Messae::reverse()</p>
+		<p><a href="http/Message">http\Message</a> http\Messae::reverse()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/rewind">Message::rewind</a></h3>
-		<p>Implements Iterator.</p>
+		<h3 id="Message::rewind">
+<a href="http/Message/rewind">Message::rewind</a><a class="permalink" href="http/Message#Message::rewind">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code>.</p>
 
-		<p>void http\Message::rewind()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Message/rewind">http\Message::rewind</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/serialize">Message::serialize</a></h3>
-		<p>Implements Serializable.</p>
+		<h3 id="Message::serialize">
+<a href="http/Message/serialize">Message::serialize</a><a class="permalink" href="http/Message#Message::serialize">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>.</p>
 
-		<p>string http\Message::serialize()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/serialize">http\Message::serialize</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/setBody">Message::setBody</a></h3>
+		<h3 id="Message::setBody">
+<a href="http/Message/setBody">Message::setBody</a><a class="permalink" href="http/Message#Message::setBody">#</a>
+</h3>
 		<p>Set the message's body.</p>
 
-		<p>http\Message http\Message::setBody(http\Message\Body $body)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/setBody">http\Message::setBody</a>(<a href="http/Message/Body">http\Message\Body</a> <span class="var">$body</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/setHeader">Message::setHeader</a></h3>
+		<h3 id="Message::setHeader">
+<a href="http/Message/setHeader">Message::setHeader</a><a class="permalink" href="http/Message#Message::setHeader">#</a>
+</h3>
 		<p>Set a single header.</p>
 
-		<p>http\Message http\Message::setHeader(string $header[, mixed $value = NULL])</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/setHeader">http\Message::setHeader</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$header</span>[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$value</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/setHeaders">Message::setHeaders</a></h3>
+		<h3 id="Message::setHeaders">
+<a href="http/Message/setHeaders">Message::setHeaders</a><a class="permalink" href="http/Message#Message::setHeaders">#</a>
+</h3>
 		<p>Set the message headers.</p>
 
-		<p>http\Message http\Message::setHeaders(array $headers = NULL)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/setHeaders">http\Message::setHeaders</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$headers</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/setHttpVersion">Message::setHttpVersion</a></h3>
+		<h3 id="Message::setHttpVersion">
+<a href="http/Message/setHttpVersion">Message::setHttpVersion</a><a class="permalink" href="http/Message#Message::setHttpVersion">#</a>
+</h3>
 		<p>Set the HTTP protocol version of the message.</p>
 
-		<p>http\Message http\Message::setHttpVersion(string $http_version)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/setHttpVersion">http\Message::setHttpVersion</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$http_version</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/setInfo">Message::setInfo</a></h3>
+		<h3 id="Message::setInfo">
+<a href="http/Message/setInfo">Message::setInfo</a><a class="permalink" href="http/Message#Message::setInfo">#</a>
+</h3>
 		<p>Set the complete message info, i.e. type and response resp. request information, at once.</p>
 
-		<p>http\Message http\Message::setInfo(string $http_info)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/setInfo">http\Message::setInfo</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$http_info</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/setRequestMethod">Message::setRequestMethod</a></h3>
+		<h3 id="Message::setRequestMethod">
+<a href="http/Message/setRequestMethod">Message::setRequestMethod</a><a class="permalink" href="http/Message#Message::setRequestMethod">#</a>
+</h3>
 		<p>Set the request method of the message.</p>
 
-		<p>http\Message http\Message::setRequestMethod(string $method)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/setRequestMethod">http\Message::setRequestMethod</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$method</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/setRequestUrl">Message::setRequestUrl</a></h3>
+		<h3 id="Message::setRequestUrl">
+<a href="http/Message/setRequestUrl">Message::setRequestUrl</a><a class="permalink" href="http/Message#Message::setRequestUrl">#</a>
+</h3>
 		<p>Set the request URL of the message.</p>
 
-		<p>http\Message http\Message::setRequestUrl(string $url)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/setRequestUrl">http\Message::setRequestUrl</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$url</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/setResponseCode">Message::setResponseCode</a></h3>
+		<h3 id="Message::setResponseCode">
+<a href="http/Message/setResponseCode">Message::setResponseCode</a><a class="permalink" href="http/Message#Message::setResponseCode">#</a>
+</h3>
 		<p>Set the response status code.</p>
 
-		<p>http\Message http\Message::setResponseCode(int $response_code[, bool $strict = true])</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/setResponseCode">http\Message::setResponseCode</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$response_code</span>[, <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$strict</span> = <code><a href="https://php.net/manual/en/language.types.boolean">true</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/setResponseStatus">Message::setResponseStatus</a></h3>
+		<h3 id="Message::setResponseStatus">
+<a href="http/Message/setResponseStatus">Message::setResponseStatus</a><a class="permalink" href="http/Message#Message::setResponseStatus">#</a>
+</h3>
 		<p>Set the response status phrase.</p>
 
-		<p>http\Message http\Message::setResponseStatus(string $response_status)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/setResponseStatus">http\Message::setResponseStatus</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$response_status</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/setType">Message::setType</a></h3>
+		<h3 id="Message::setType">
+<a href="http/Message/setType">Message::setType</a><a class="permalink" href="http/Message#Message::setType">#</a>
+</h3>
 		<p>Set the message type and reset the message info.</p>
 
-		<p>http\Message http\Message::setType(int $type)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/setType">http\Message::setType</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$type</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/splitMultipartBody">Message::splitMultipartBody</a></h3>
+		<h3 id="Message::splitMultipartBody">
+<a href="http/Message/splitMultipartBody">Message::splitMultipartBody</a><a class="permalink" href="http/Message#Message::splitMultipartBody">#</a>
+</h3>
 		<p>Splits the body of a multipart message.</p>
 
-		<p>http\Message http\Message::splitMultipartBody()</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/splitMultipartBody">http\Message::splitMultipartBody</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/toCallback">Message::toCallback</a></h3>
-		<p>Stream the message through a callback.</p>
+		<h3 id="Message::toCallback">
+<a href="http/Message/toCallback">Message::toCallback</a><a class="permalink" href="http/Message#Message::toCallback">#</a>
+</h3>
+		<p>Stream the message through a <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>.</p>
 
-		<p>http\Message http\Message::toCallback(callable $callback)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/toCallback">http\Message::toCallback</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/toStream">Message::toStream</a></h3>
-		<p>Stream the message into stream $stream, starting from $offset, streaming $maxlen at most.</p>
+		<h3 id="Message::toStream">
+<a href="http/Message/toStream">Message::toStream</a><a class="permalink" href="http/Message#Message::toStream">#</a>
+</h3>
+		<p>Stream the message into stream <span class="var">$stream</span>, starting from <span class="var">$offset</span>, streaming <span class="var">$maxlen</span> at most.</p>
 
-		<p>http\Message http\Message::toStream(resource $stream)</p>
+		<p><a href="http/Message">http\Message</a> <a href="http/Message/toStream">http\Message::toStream</a>(<code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var">$stream</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/toString">Message::toString</a></h3>
-		<p>Retrieve the message serialized to a string.</p>
+		<h3 id="Message::toString">
+<a href="http/Message/toString">Message::toString</a><a class="permalink" href="http/Message#Message::toString">#</a>
+</h3>
+		<p>Retrieve the message serialized to a <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>string http\Message::toString([bool $include_parent = false])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Message/toString">http\Message::toString</a>([<code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var">$include_parent</span> = <code><a href="https://php.net/manual/en/language.types.boolean">false</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/unserialize">Message::unserialize</a></h3>
-		<p>Implements Serializable.</p>
+		<h3 id="Message::unserialize">
+<a href="http/Message/unserialize">Message::unserialize</a><a class="permalink" href="http/Message#Message::unserialize">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>.</p>
 
-		<p>void http\Message::unserualize(string $data)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Message#unserualize">http\Message::unserualize</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/valid">Message::valid</a></h3>
-		<p>Implements Iterator.</p>
+		<h3 id="Message::valid">
+<a href="http/Message/valid">Message::valid</a><a class="permalink" href="http/Message#Message::valid">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code>.</p>
 
-		<p>bool http\Message::valid()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/Message/valid">http\Message::valid</a>()</p>
 	</li>
 	
-</ul>
-
-
-<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
-<ul>
+</ul><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="http/Message#Namespaces.Interfaces.and.Classes:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Message/Body">Body</a></h3>
+		<h3 id="Body">
+<a href="http/Message/Body">Body</a><a class="permalink" href="http/Message#Body">#</a>
+</h3>
 		<p>The message body, represented as a PHP (temporary) stream.</p>
 
-		<p>class http\Message\Body implements Serializable</p>
+		<p><em>class</em> <a href="http/Message/Body">http\Message\Body</a> <em>implements</em> <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message/Parser">Parser</a></h3>
-		<p>The parser which is underlying http\Message.</p>
+		<h3 id="Parser">
+<a href="http/Message/Parser">Parser</a><a class="permalink" href="http/Message#Parser">#</a>
+</h3>
+		<p>The parser which is underlying <a href="http/Message">http\Message</a>.</p>
 
-		<p>class http\Message\Parser</p>
+		<p><em>class</em> <a href="http/Message/Parser">http\Message\Parser</a></p>
 	</li>
 	
-</ul>
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

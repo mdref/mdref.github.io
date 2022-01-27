@@ -94,70 +94,74 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Header\Parser</h1>
-<p>The parser which is underlying http\Header and http\Message.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-This class has been added in v2.3.0.</p>
-</blockquote>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<h3>Parser flags:<a id="Parser.flags:" href="#Parser.flags:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>CLEANUP<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Header/Parser#">#</a><em>class</em> <a href="http/Header/Parser">http\Header\Parser</a>
+</h1><p>The parser which is underlying <a href="http/Header">http\Header</a> and <a href="http/Message">http\Message</a>.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+This <em>class</em> has been added in v2.3.0.</p>
+</blockquote><h2 id="Constants:">Constants:<a class="permalink" href="http/Header/Parser#Constants:">#</a>
+</h2><h3 id="Parser.flags:">Parser flags:<a class="permalink" href="http/Header/Parser#Parser.flags:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="CLEANUP">CLEANUP<a class="permalink" href="http/Header/Parser#CLEANUP">#</a></span><br>
 Finish up parser at end of (incomplete) input.</li>
-</ul>
-<h3>Parser states:<a id="Parser.states:" href="#Parser.states:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<ul>
-<li>STATE_FAILURE<br />
+</ul><h3 id="Parser.states:">Parser states:<a class="permalink" href="http/Header/Parser#Parser.states:">#</a>
+</h3><ul>
+<li>
+<span class="constant" id="STATE_FAILURE">STATE_FAILURE<a class="permalink" href="http/Header/Parser#STATE_FAILURE">#</a></span><br>
 Parse failure.</li>
-<li>STATE_START<br />
-Expecting HTTP info (request/response line) or headers.</li>
-<li>STATE_KEY<br />
+<li>
+<span class="constant" id="STATE_START">STATE_START<a class="permalink" href="http/Header/Parser#STATE_START">#</a></span><br>
+Expecting <span class="constant">HTTP</span> info (request/response line) or headers.</li>
+<li>
+<span class="constant" id="STATE_KEY">STATE_KEY<a class="permalink" href="http/Header/Parser#STATE_KEY">#</a></span><br>
 Expecting a key or already parsing a key.</li>
-<li>STATE_VALUE<br />
+<li>
+<span class="constant" id="STATE_VALUE">STATE_VALUE<a class="permalink" href="http/Header/Parser#STATE_VALUE">#</a></span><br>
 Expecting a value or already parsing the value.</li>
-<li>STATE_VALUE_EX<br />
-At EOL of an header, checking whether a folded header line follows.</li>
-<li>STATE_HEADER_DONE<br />
+<li>
+<span class="constant" id="STATE_VALUE_EX">STATE_VALUE_EX<a class="permalink" href="http/Header/Parser#STATE_VALUE_EX">#</a></span><br>
+At <span class="constant">EOL</span> of an header, checking whether a folded header line follows.</li>
+<li>
+<span class="constant" id="STATE_HEADER_DONE">STATE_HEADER_DONE<a class="permalink" href="http/Header/Parser#STATE_HEADER_DONE">#</a></span><br>
 A header was completed.</li>
-<li>STATE_DONE<br />
+<li>
+<span class="constant" id="STATE_DONE">STATE_DONE<a class="permalink" href="http/Header/Parser#STATE_DONE">#</a></span><br>
 Finished parsing the headers.</li>
-</ul>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
+</ul><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
 Most of this states won't be returned to the user, because the parser immediately jumps to the next expected state.</p>
-</blockquote>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</blockquote><h2 id="Functions:">Functions:<a class="permalink" href="http/Header/Parser#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Header/Parser/getState">Parser::getState</a></h3>
+		<h3 id="Parser::getState">
+<a href="http/Header/Parser/getState">Parser::getState</a><a class="permalink" href="http/Header/Parser#Parser::getState">#</a>
+</h3>
 		<p>Retrieve the current state of the parser.</p>
 
-		<p>int http\Header\Parser::getState()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Header/Parser/getState">http\Header\Parser::getState</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header/Parser/parse">Parser::parse</a></h3>
-		<p>Parse a string.</p>
+		<h3 id="Parser::parse">
+<a href="http/Header/Parser/parse">Parser::parse</a><a class="permalink" href="http/Header/Parser#Parser::parse">#</a>
+</h3>
+		<p>Parse a <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>int http\Header\Parser::parse(string $data, int $flags, array &amp;$message = NULL)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Header/Parser/parse">http\Header\Parser::parse</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span>, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> &amp;<span class="var">$message</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header/Parser/stream">Parser::stream</a></h3>
+		<h3 id="Parser::stream">
+<a href="http/Header/Parser/stream">Parser::stream</a><a class="permalink" href="http/Header/Parser#Parser::stream">#</a>
+</h3>
 		<p>Parse a stream.</p>
 
-		<p>int http\Header\Parser::stream(resource $stream, int $flags, array &amp;$headers)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Header/Parser/stream">http\Header\Parser::stream</a>(<code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var">$stream</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span>, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> &amp;<span class="var">$headers</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

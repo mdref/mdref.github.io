@@ -95,46 +95,26 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>bool http\Response::__invoke(string $data[, int $ob_flags = 0])</h1>
-<p>Output buffer handler.
-Appends output data to the body.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $data<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Env/Response/__invoke#">#</a><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> http\Response::__invoke(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$ob_flags</span> = 0])</h1><p>Output buffer handler.
+Appends output data to the body.</p><h2 id="Params:">Params:<a class="permalink" href="http/Env/Response/__invoke#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$data">$data<a class="permalink" href="http/Env/Response/__invoke#%24data">#</a></span><br>
 The data output.</li>
-<li>Optional int $ob_flags = 0<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$ob_flags">$ob_flags<a class="permalink" href="http/Env/Response/__invoke#%24ob_flags">#</a></span> = 0<br>
 Output buffering flags passed from the output buffering control layer.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>bool, success.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$res = new http\Env\Response;
-$res-&gt;setContentType(&quot;text/plain&quot;);
-
-ob_start($res);
-// yeah, well
-// not the greatest application logic...
-echo &quot;Hello world!\n&quot;;
-
-$res-&gt;send();
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>Accept-Ranges: bytes
-X-Powered-By: PHP/5.5.5
-Content-Type: text/plain
-ETag: &quot;b2a9e441&quot;
-
-Hello world!
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Env/Response/__invoke#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code>, success.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Env/Response/__invoke#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$res </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Env\Response</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setContentType</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"text/plain"</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">ob_start</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="comment">// yeah, well<br>// not the greatest application logic...<br></span><span style="color: inherit" class="keyword">echo </span><span style="color: inherit" class="string">"Hello world!\n"</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">();<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+Accept-Ranges: bytes<br>X-Powered-By: PHP/5.5.5<br>Content-Type: text/plain<br>ETag: "b2a9e441"<br><br>Hello world!<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -120,90 +120,104 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Query\Writer implements pq\Query\WriterInterface</h1>
-<p>A query writer implementation.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected string $query<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Query/Writer#">#</a><em>class</em> <a href="pq-gateway/pq/Query/Writer">pq\Query\Writer</a> <br>&nbsp;<em>implements</em> <a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a>
+</h1><p>A query writer implementation.</p><h2 id="Properties:">Properties:<a class="permalink" href="pq-gateway/pq/Query/Writer#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$query">$query<a class="permalink" href="pq-gateway/pq/Query/Writer#%24query">#</a></span><br>
 The assembled query.</li>
-<li>protected array $params<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$params">$params<a class="permalink" href="pq-gateway/pq/Query/Writer#%24params">#</a></span><br>
 The query parameters.</li>
-<li>protected array $types<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$types">$types<a class="permalink" href="pq-gateway/pq/Query/Writer#%24types">#</a></span><br>
 The query parameters' types.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Query/Writer#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Writer/__construct">Writer::__construct</a></h3>
+		<h3 id="Writer::__construct">
+<a href="pq-gateway/pq/Query/Writer/__construct">Writer::__construct</a><a class="permalink" href="pq-gateway/pq/Query/Writer#Writer::__construct">#</a>
+</h3>
 		<p>Create a new query writer.</p>
 
-		<p>void pq\Query\Writer::__construct([string $query = &quot;&quot;[, array $params = array()[, array $types = array()]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Query/Writer/__construct">pq\Query\Writer::__construct</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span> = ""[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$params</span> = <code><a href="https://php.net/manual/en/language.types.array">array</a></code>()[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$types</span> = <code><a href="https://php.net/manual/en/language.types.array">array</a></code>()]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Writer/__toString">Writer::__toString</a></h3>
+		<h3 id="Writer::__toString">
+<a href="pq-gateway/pq/Query/Writer/__toString">Writer::__toString</a><a class="permalink" href="pq-gateway/pq/Query/Writer#Writer::__toString">#</a>
+</h3>
 		<p>Retrieve the assembled query.</p>
 
-		<p>string pq\Query\Writer::__toString()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq-gateway/pq/Query/Writer/__toString">pq\Query\Writer::__toString</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Writer/criteria">Writer::criteria</a></h3>
-		<p>Write nested AND/OR criteria to the query string.</p>
+		<h3 id="Writer::criteria">
+<a href="pq-gateway/pq/Query/Writer/criteria">Writer::criteria</a><a class="permalink" href="pq-gateway/pq/Query/Writer#Writer::criteria">#</a>
+</h3>
+		<p>Write nested AND/OR criteria to the query <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>pq\Query\Writer pq\Query\Writer::criteria(array $criteria)</p>
+		<p><a href="pq-gateway/pq/Query/Writer">pq\Query\Writer</a> <a href="pq-gateway/pq/Query/Writer/criteria">pq\Query\Writer::criteria</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$criteria</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Writer/getParams">Writer::getParams</a></h3>
+		<h3 id="Writer::getParams">
+<a href="pq-gateway/pq/Query/Writer/getParams">Writer::getParams</a><a class="permalink" href="pq-gateway/pq/Query/Writer#Writer::getParams">#</a>
+</h3>
 		<p>Retrieve the query parameters.</p>
 
-		<p>array pq\Query\Writer::getParams()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Query/Writer/getParams">pq\Query\Writer::getParams</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Writer/getTypes">Writer::getTypes</a></h3>
+		<h3 id="Writer::getTypes">
+<a href="pq-gateway/pq/Query/Writer/getTypes">Writer::getTypes</a><a class="permalink" href="pq-gateway/pq/Query/Writer#Writer::getTypes">#</a>
+</h3>
 		<p>Get the query parameters' types.</p>
 
-		<p>array pq\Query\Writer::getTypes()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Query/Writer/getTypes">pq\Query\Writer::getTypes</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Writer/param">Writer::param</a></h3>
-		<p>Remember the parameter with any associated type and return $N to be written to the query string.</p>
+		<h3 id="Writer::param">
+<a href="pq-gateway/pq/Query/Writer/param">Writer::param</a><a class="permalink" href="pq-gateway/pq/Query/Writer#Writer::param">#</a>
+</h3>
+		<p>Remember the parameter with any associated type and return <span class="var">$N</span> to be written to the query <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>string pq\Query\Writer::param(mixed $param[, int $type = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq-gateway/pq/Query/Writer/param">pq\Query\Writer::param</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$param</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$type</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Writer/reduce">Writer::reduce</a></h3>
-		<p>An array_reduce() helper for pq\Query\Writer::write().</p>
+		<h3 id="Writer::reduce">
+<a href="pq-gateway/pq/Query/Writer/reduce">Writer::reduce</a><a class="permalink" href="pq-gateway/pq/Query/Writer#Writer::reduce">#</a>
+</h3>
+		<p>An array_reduce() helper for <a href="pq-gateway/pq/Query/Writer/write">pq\Query\Writer::write</a>().</p>
 
-		<p>protected string pq\Query\Writer::reduce(string $q, mixed $v)</p>
+		<p><em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq-gateway/pq/Query/Writer/reduce">pq\Query\Writer::reduce</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$q</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$v</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Writer/reset">Writer::reset</a></h3>
+		<h3 id="Writer::reset">
+<a href="pq-gateway/pq/Query/Writer/reset">Writer::reset</a><a class="permalink" href="pq-gateway/pq/Query/Writer#Writer::reset">#</a>
+</h3>
 		<p>Reset the query writer to initial state.</p>
 
-		<p>pq\Query\Writer pq\Query\Writer::reset()</p>
+		<p><a href="pq-gateway/pq/Query/Writer">pq\Query\Writer</a> <a href="pq-gateway/pq/Query/Writer/reset">pq\Query\Writer::reset</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Writer/write">Writer::write</a></h3>
-		<p>Write a part of the query string.</p>
+		<h3 id="Writer::write">
+<a href="pq-gateway/pq/Query/Writer/write">Writer::write</a><a class="permalink" href="pq-gateway/pq/Query/Writer#Writer::write">#</a>
+</h3>
+		<p>Write a part of the query <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p>
 
-		<p>pq\Query\Writer pq\Query\Writer::write()</p>
+		<p><a href="pq-gateway/pq/Query/Writer">pq\Query\Writer</a> <a href="pq-gateway/pq/Query/Writer/write">pq\Query\Writer::write</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

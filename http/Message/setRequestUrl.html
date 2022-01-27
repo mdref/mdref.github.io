@@ -143,59 +143,36 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Message http\Message::setRequestUrl(string $url)</h1>
-<p>Set the request URL of the message.
-See http\Message::getRequestUrl() and http\Message::setRequestMethod().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $url<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/setRequestUrl#">#</a><a href="http/Message">http\Message</a> <a href="http/Message/setRequestUrl">http\Message::setRequestUrl</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$url</span>)</h1><p>Set the request URL of the message.
+See <a href="http/Message/getRequestUrl">http\Message::getRequestUrl</a>() and <a href="http/Message/setRequestMethod">http\Message::setRequestMethod</a>().</p><h2 id="Params:">Params:<a class="permalink" href="http/Message/setRequestUrl#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$url">$url<a class="permalink" href="http/Message/setRequestUrl#%24url">#</a></span><br>
 The request URL.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Message, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\BadMethodCallException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Message/setRequestUrl#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Message">http\Message</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Message/setRequestUrl#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/BadMethodCallException">http\Exception\BadMethodCallException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Message/setRequestUrl#Example:">#</a>
+</h2><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
 The request URL in a request message usually only consists of the path and the querystring.</p>
-</blockquote>
-<pre><code>&lt;?php
-$m = new http\Message;
-$m-&gt;setType(http\Message::TYPE_REQUEST);
-$m-&gt;setRequestMethod(&quot;GET&quot;);
-$m-&gt;setRequestUrl(&quot;http://foo.bar/baz?q&quot;);
-echo $m;
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>GET http://foo.bar/baz?q HTTP/1.1
-</code></pre>
-<p>Maybe you did not really expect this, so let's try this:</p>
-<pre><code>&lt;?php
-$m = new http\Message;
-$u = new http\Url(&quot;http://foo.bar/baz?q&quot;);
-$m-&gt;setType(http\Message::TYPE_REQUEST);
-$m-&gt;setRequestMethod(&quot;GET&quot;);
-$m-&gt;setRequestUrl($u-&gt;path .&quot;?&quot;. $u-&gt;query);
-$m-&gt;setHeader(&quot;Host&quot;, $u-&gt;host);
-echo $m;
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>GET /baz?q HTTP/1.1
-Host: foo.bar
-</code></pre>
-
-
-
-		
+</blockquote><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$m </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Message</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$m</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setType</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">http\Message</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">TYPE_REQUEST</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$m</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setRequestMethod</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"GET"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$m</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setRequestUrl</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"http://foo.bar/baz?q"</span><span style="color: inherit" class="keyword">);<br>echo </span><span style="color: inherit" class="default">$m</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+GET http://foo.bar/baz?q HTTP/1.1<br></span>
+</code></pre><p>Maybe you did not really expect this, so let's try this:</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$m </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Message</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$u </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Url</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"http://foo.bar/baz?q"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$m</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setType</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">http\Message</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">TYPE_REQUEST</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$m</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setRequestMethod</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"GET"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$m</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setRequestUrl</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$u</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">path </span><span style="color: inherit" class="keyword">.</span><span style="color: inherit" class="string">"?"</span><span style="color: inherit" class="keyword">. </span><span style="color: inherit" class="default">$u</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">query</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$m</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setHeader</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Host"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$u</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">host</span><span style="color: inherit" class="keyword">);<br>echo </span><span style="color: inherit" class="default">$m</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+GET /baz?q HTTP/1.1<br>Host: foo.bar<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -168,153 +168,187 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Env\Response extends http\Message</h1>
-<p>The http\Env\Response class' instances represent the server's current HTTP response.</p>
-<p>See http\Message for inherited members.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>CONTENT_ENCODING_NONE<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Env/Response#">#</a><em>class</em> <a href="http/Env/Response">http\Env\Response</a> <br>&nbsp;<em>extends</em> <a href="http/Message">http\Message</a>
+</h1><p>The <a href="http/Env/Response">http\Env\Response</a> <em>class</em>' instances represent the server's current HTTP response.</p><p>See <a href="http/Message">http\Message</a> for inherited members.</p><h2 id="Constants:">Constants:<a class="permalink" href="http/Env/Response#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="CONTENT_ENCODING_NONE">CONTENT_ENCODING_NONE<a class="permalink" href="http/Env/Response#CONTENT_ENCODING_NONE">#</a></span><br>
 Do not use content encoding.</li>
-<li>CONTENT_ENCODING_GZIP<br />
-Support &quot;Accept-Encoding&quot; requests with gzip and deflate encoding.</li>
-<li>CACHE_NO<br />
+<li>
+<span class="constant" id="CONTENT_ENCODING_GZIP">CONTENT_ENCODING_GZIP<a class="permalink" href="http/Env/Response#CONTENT_ENCODING_GZIP">#</a></span><br>
+Support "Accept-Encoding" requests with gzip and deflate encoding.</li>
+<li>
+<span class="constant" id="CACHE_NO">CACHE_NO<a class="permalink" href="http/Env/Response#CACHE_NO">#</a></span><br>
 No caching info available.</li>
-<li>CACHE_HIT<br />
+<li>
+<span class="constant" id="CACHE_HIT">CACHE_HIT<a class="permalink" href="http/Env/Response#CACHE_HIT">#</a></span><br>
 The cache was hit.</li>
-<li>CACHE_MISS<br />
+<li>
+<span class="constant" id="CACHE_MISS">CACHE_MISS<a class="permalink" href="http/Env/Response#CACHE_MISS">#</a></span><br>
 The cache was missed.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected http\Env\Request $request = NULL<br />
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="http/Env/Response#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <a href="http/Env/Request">http\Env\Request</a> <span class="var" id="$request">$request<a class="permalink" href="http/Env/Response#%24request">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 A request instance which overrides the environments default request.</li>
-<li>protected string $contentType = NULL<br />
-The response's MIME content type.</li>
-<li>protected string $contentDisposition = NULL<br />
-The response's MIME content disposition.</li>
-<li>protected int $contentEncoding = NULL<br />
-See http\Env\Response::CONTENT_ENCODING_* constants.</li>
-<li>protected string $cacheControl = NULL<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$contentType">$contentType<a class="permalink" href="http/Env/Response#%24contentType">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The response's <span class="constant">MIME</span> content type.</li>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$contentDisposition">$contentDisposition<a class="permalink" href="http/Env/Response#%24contentDisposition">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The response's <span class="constant">MIME</span> content disposition.</li>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$contentEncoding">$contentEncoding<a class="permalink" href="http/Env/Response#%24contentEncoding">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+See <a href="http/Env/Response#CONTENT_ENCODING_*">http\Env\Response::CONTENT_ENCODING_*</a> constants.</li>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$cacheControl">$cacheControl<a class="permalink" href="http/Env/Response#%24cacheControl">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 How the client should treat this response in regards to caching.</li>
-<li>protected string $etag = NULL<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$etag">$etag<a class="permalink" href="http/Env/Response#%24etag">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 A custom ETag.</li>
-<li>protected int $lastModified = NULL<br />
-A &quot;Last-Modified&quot; time stamp.</li>
-<li>protected int $throttleDelay = NULL<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$lastModified">$lastModified<a class="permalink" href="http/Env/Response#%24lastModified">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+A "Last-Modified" time stamp.</li>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$throttleDelay">$throttleDelay<a class="permalink" href="http/Env/Response#%24throttleDelay">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Any throttling delay.</li>
-<li>protected int $throttleChunk = NULL<br />
-The chunk to send every $throttleDelay seconds.</li>
-<li>protected array $cookies = NULL<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$throttleChunk">$throttleChunk<a class="permalink" href="http/Env/Response#%24throttleChunk">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The chunk to send every <span class="var">$throttleDelay</span> seconds.</li>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$cookies">$cookies<a class="permalink" href="http/Env/Response#%24cookies">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The response's cookies.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Env/Response#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Env/Response/__construct">Response::__construct</a></h3>
+		<h3 id="Response::__construct">
+<a href="http/Env/Response/__construct">Response::__construct</a><a class="permalink" href="http/Env/Response#Response::__construct">#</a>
+</h3>
 		<p>Create a new env response message instance.</p>
 
-		<p>void http\Env\Response::__construct()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Env/Response/__construct">http\Env\Response::__construct</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/__invoke">Response::__invoke</a></h3>
+		<h3 id="Response::__invoke">
+<a href="http/Env/Response/__invoke">Response::__invoke</a><a class="permalink" href="http/Env/Response#Response::__invoke">#</a>
+</h3>
 		<p>Output buffer handler.</p>
 
-		<p>bool http\Response::__invoke(string $data[, int $ob_flags = 0])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> http\Response::__invoke(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$ob_flags</span> = 0])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/isCachedByEtag">Response::isCachedByEtag</a></h3>
-		<p>Manually test the header $header_name of the environment's request for a cache hit.</p>
+		<h3 id="Response::isCachedByEtag">
+<a href="http/Env/Response/isCachedByEtag">Response::isCachedByEtag</a><a class="permalink" href="http/Env/Response#Response::isCachedByEtag">#</a>
+</h3>
+		<p>Manually test the header <span class="var">$header_name</span> of the environment's request for a cache hit.</p>
 
-		<p>int http\Env\Response::isCachedByEtag([string $header_name = &quot;If-None-Match&quot;])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Env/Response/isCachedByEtag">http\Env\Response::isCachedByEtag</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$header_name</span> = "If-None-Match"])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/isCachedByLastModified">Response::isCachedByLastModified</a></h3>
-		<p>Manually test the header $header_name of the environment's request for a cache hit.</p>
+		<h3 id="Response::isCachedByLastModified">
+<a href="http/Env/Response/isCachedByLastModified">Response::isCachedByLastModified</a><a class="permalink" href="http/Env/Response#Response::isCachedByLastModified">#</a>
+</h3>
+		<p>Manually test the header <span class="var">$header_name</span> of the environment's request for a cache hit.</p>
 
-		<p>int http\Env\Response::isCachedByLastModified([string $header_name = &quot;If-Modified-Since&quot;])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Env/Response/isCachedByLastModified">http\Env\Response::isCachedByLastModified</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$header_name</span> = "If-Modified-Since"])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/send">Response::send</a></h3>
-		<p>Send the response through the SAPI or $stream.</p>
+		<h3 id="Response::send">
+<a href="http/Env/Response/send">Response::send</a><a class="permalink" href="http/Env/Response#Response::send">#</a>
+</h3>
+		<p>Send the response through the SAPI or <span class="var">$stream</span>.</p>
 
-		<p>bool http\Env\Response::send([resource $stream = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/Env/Response/send">http\Env\Response::send</a>([<code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var">$stream</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/setCacheControl">Response::setCacheControl</a></h3>
+		<h3 id="Response::setCacheControl">
+<a href="http/Env/Response/setCacheControl">Response::setCacheControl</a><a class="permalink" href="http/Env/Response#Response::setCacheControl">#</a>
+</h3>
 		<p>Make suggestions to the client how it should cache the response.</p>
 
-		<p>http\Env\Response http\Env\Response::setCacheControl(string $cache_control)</p>
+		<p><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setCacheControl">http\Env\Response::setCacheControl</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$cache_control</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/setContentDisposition">Response::setContentDisposition</a></h3>
+		<h3 id="Response::setContentDisposition">
+<a href="http/Env/Response/setContentDisposition">Response::setContentDisposition</a><a class="permalink" href="http/Env/Response#Response::setContentDisposition">#</a>
+</h3>
 		<p>Set the reponse's content disposition parameters.</p>
 
-		<p>http\Env\Response http\Env\Response::setContentDisposition(array $disposition_params)</p>
+		<p><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setContentDisposition">http\Env\Response::setContentDisposition</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$disposition_params</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/setContentEncoding">Response::setContentEncoding</a></h3>
-		<p>Enable support for &quot;Accept-Encoding&quot; requests with deflate or gzip.</p>
+		<h3 id="Response::setContentEncoding">
+<a href="http/Env/Response/setContentEncoding">Response::setContentEncoding</a><a class="permalink" href="http/Env/Response#Response::setContentEncoding">#</a>
+</h3>
+		<p>Enable support for "Accept-Encoding" requests with deflate or gzip.</p>
 
-		<p>http\Env\Response http\Env\Response::setContentEncoding(int $content_encoding)</p>
+		<p><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setContentEncoding">http\Env\Response::setContentEncoding</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$content_encoding</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/setContentType">Response::setContentType</a></h3>
+		<h3 id="Response::setContentType">
+<a href="http/Env/Response/setContentType">Response::setContentType</a><a class="permalink" href="http/Env/Response#Response::setContentType">#</a>
+</h3>
 		<p>Set the MIME content type of the response.</p>
 
-		<p>http\Env\Response http\Env\Response::setContentType(string $content_type)</p>
+		<p><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setContentType">http\Env\Response::setContentType</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$content_type</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/setCookie">Response::setCookie</a></h3>
+		<h3 id="Response::setCookie">
+<a href="http/Env/Response/setCookie">Response::setCookie</a><a class="permalink" href="http/Env/Response#Response::setCookie">#</a>
+</h3>
 		<p>Add cookies to the response to send.</p>
 
-		<p>http\Env\Response http\Env\Response::setCookie(mixed $cookie)</p>
+		<p><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setCookie">http\Env\Response::setCookie</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$cookie</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/setEnvRequest">Response::setEnvRequest</a></h3>
+		<h3 id="Response::setEnvRequest">
+<a href="http/Env/Response/setEnvRequest">Response::setEnvRequest</a><a class="permalink" href="http/Env/Response#Response::setEnvRequest">#</a>
+</h3>
 		<p>Override the environment's request.</p>
 
-		<p>http\Env\Response http\Env\Response::setEnvRequest(http\Message $env_request)</p>
+		<p><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setEnvRequest">http\Env\Response::setEnvRequest</a>(<a href="http/Message">http\Message</a> <span class="var">$env_request</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/setEtag">Response::setEtag</a></h3>
+		<h3 id="Response::setEtag">
+<a href="http/Env/Response/setEtag">Response::setEtag</a><a class="permalink" href="http/Env/Response#Response::setEtag">#</a>
+</h3>
 		<p>Set a custom ETag.</p>
 
-		<p>http\Env\Response http\Env\Response::setEtag(string $etag)</p>
+		<p><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setEtag">http\Env\Response::setEtag</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$etag</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/setLastModified">Response::setLastModified</a></h3>
+		<h3 id="Response::setLastModified">
+<a href="http/Env/Response/setLastModified">Response::setLastModified</a><a class="permalink" href="http/Env/Response#Response::setLastModified">#</a>
+</h3>
 		<p>Set a custom last modified time stamp.</p>
 
-		<p>http\Env\Response http\Env\Response::setLastModified(int $last_modified)</p>
+		<p><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setLastModified">http\Env\Response::setLastModified</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$last_modified</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env/Response/setThrottleRate">Response::setThrottleRate</a></h3>
+		<h3 id="Response::setThrottleRate">
+<a href="http/Env/Response/setThrottleRate">Response::setThrottleRate</a><a class="permalink" href="http/Env/Response#Response::setThrottleRate">#</a>
+</h3>
 		<p>Enable throttling.</p>
 
-		<p>http\Env\Response http\Env\Response::setThrottleRate(int $chunk_size[, float $delay = 1])</p>
+		<p><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setThrottleRate">http\Env\Response::setThrottleRate</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$chunk_size</span>[, <code><a href="https://php.net/manual/en/language.types.float">float</a></code> <span class="var">$delay</span> = 1])</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

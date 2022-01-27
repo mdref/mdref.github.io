@@ -129,48 +129,20 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>bool http\Client::once()</h1>
-<p>Perform outstanding transfer actions.
-See http\Client::wait() for the completing interface.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>bool, true if there are more transfers to complete.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$client = new http\Client;
-$client-&gt;enqueue(new http\Client\Request(&quot;HEAD&quot;, &quot;http://php.net&quot;));
-$client-&gt;enqueue(new http\Client\Request(&quot;HEAD&quot;, &quot;http://pecl.php.net&quot;));
-$client-&gt;enqueue(new http\Client\Request(&quot;HEAD&quot;, &quot;http://pear.php.net&quot;));
-
-printf(&quot;Transfers ongoing&quot;);
-while ($client-&gt;once()) {
-    // do something else here while the network transfers are busy
-    printf(&quot;.&quot;);
-    // and then call http\Client::wait() to wait for new input
-    $client-&gt;wait();
-}
-printf(&quot;\n&quot;);
-
-while ($res = $client-&gt;getResponse()) {
-    printf(&quot;%s returned %d\n&quot;, $res-&gt;getTransferInfo(&quot;effective_url&quot;),
-        $res-&gt;getResponseCode());
-}
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>Transfers ongoing....................................................
-http://php.net/ returned 200
-http://pecl.php.net/ returned 200
-http://pear.php.net/ returned 200
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/once#">#</a><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="http/Client/once">http\Client::once</a>()</h1><p>Perform outstanding transfer actions.
+See <a href="http/Client/wait">http\Client::wait</a>() for the completing <em>interface</em>.</p><h2 id="Params:">Params:<a class="permalink" href="http/Client/once#Params:">#</a>
+</h2><p>None.</p><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/once#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code>, <code><a href="https://php.net/manual/en/language.types.boolean">true</a></code> if there are more transfers to complete.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/once#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$client </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"HEAD"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"http://php.net"</span><span style="color: inherit" class="keyword">));<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"HEAD"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"http://pecl.php.net"</span><span style="color: inherit" class="keyword">));<br></span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"HEAD"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"http://pear.php.net"</span><span style="color: inherit" class="keyword">));<br><br></span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Transfers ongoing"</span><span style="color: inherit" class="keyword">);<br>while (</span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">once</span><span style="color: inherit" class="keyword">()) {<br>    </span><span style="color: inherit" class="comment">// do something else here while the network transfers are busy<br>    </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"."</span><span style="color: inherit" class="keyword">);<br>    </span><span style="color: inherit" class="comment">// and then call http\Client::wait() to wait for new input<br>    </span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">wait</span><span style="color: inherit" class="keyword">();<br>}<br></span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">);<br><br>while (</span><span style="color: inherit" class="default">$res </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResponse</span><span style="color: inherit" class="keyword">()) {<br>    </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%s returned %d\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getTransferInfo</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"effective_url"</span><span style="color: inherit" class="keyword">),<br>        </span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResponseCode</span><span style="color: inherit" class="keyword">());<br>}<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+Transfers ongoing....................................................<br>http://php.net/ returned 200<br>http://pecl.php.net/ returned 200<br>http://pear.php.net/ returned 200<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

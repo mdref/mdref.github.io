@@ -129,183 +129,22 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>array http\Client::getAvailableOptions()</h1>
-<p>Retrieve a list of available request options and their default values.</p>
-<p>See f.e. the <a href="http/Client/Curl#Options:">request options for the Curl driver</a>.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array, list of key/value pairs of available request options and their default values.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$client = new http\Client(&quot;curl&quot;);
-var_dump($client-&gt;getAvailableOptions());
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>array(49) {
-  [&quot;proxyhost&quot;]=&gt;
-  NULL
-  [&quot;proxytype&quot;]=&gt;
-  int(0)
-  [&quot;proxyport&quot;]=&gt;
-  int(0)
-  [&quot;proxyauth&quot;]=&gt;
-  NULL
-  [&quot;proxyauthtype&quot;]=&gt;
-  int(-18)
-  [&quot;proxytunnel&quot;]=&gt;
-  bool(false)
-  [&quot;noproxy&quot;]=&gt;
-  NULL
-  [&quot;proxyheader&quot;]=&gt;
-  NULL
-  [&quot;unix_socket_path&quot;]=&gt;
-  NULL
-  [&quot;dns_cache_timeout&quot;]=&gt;
-  int(60)
-  [&quot;ipresolve&quot;]=&gt;
-  int(0)
-  [&quot;resolve&quot;]=&gt;
-  NULL
-  [&quot;low_speed_limit&quot;]=&gt;
-  int(0)
-  [&quot;low_speed_time&quot;]=&gt;
-  int(0)
-  [&quot;fresh_connect&quot;]=&gt;
-  bool(false)
-  [&quot;forbid_reuse&quot;]=&gt;
-  bool(false)
-  [&quot;interface&quot;]=&gt;
-  NULL
-  [&quot;portrange&quot;]=&gt;
-  NULL
-  [&quot;port&quot;]=&gt;
-  int(0)
-  [&quot;address_scope&quot;]=&gt;
-  int(0)
-  [&quot;httpauth&quot;]=&gt;
-  NULL
-  [&quot;httpauthtype&quot;]=&gt;
-  int(-18)
-  [&quot;redirect&quot;]=&gt;
-  int(0)
-  [&quot;unrestricted_auth&quot;]=&gt;
-  bool(false)
-  [&quot;postredir&quot;]=&gt;
-  int(0)
-  [&quot;retrycount&quot;]=&gt;
-  int(0)
-  [&quot;retrydelay&quot;]=&gt;
-  float(0)
-  [&quot;referer&quot;]=&gt;
-  NULL
-  [&quot;autoreferer&quot;]=&gt;
-  bool(true)
-  [&quot;useragent&quot;]=&gt;
-  string(51) &quot;PECL_HTTP/2.3.0dev PHP/5.6.6-dev libcurl/7.41.0-DEV&quot;
-  [&quot;resume&quot;]=&gt;
-  int(0)
-  [&quot;range&quot;]=&gt;
-  NULL
-  [&quot;etag&quot;]=&gt;
-  NULL
-  [&quot;compress&quot;]=&gt;
-  bool(false)
-  [&quot;lastmodified&quot;]=&gt;
-  int(0)
-  [&quot;encodecookies&quot;]=&gt;
-  bool(true)
-  [&quot;cookies&quot;]=&gt;
-  NULL
-  [&quot;cookiesession&quot;]=&gt;
-  bool(false)
-  [&quot;cookiestore&quot;]=&gt;
-  NULL
-  [&quot;maxfilesize&quot;]=&gt;
-  int(0)
-  [&quot;protocol&quot;]=&gt;
-  int(0)
-  [&quot;timeout&quot;]=&gt;
-  float(0)
-  [&quot;connecttimeout&quot;]=&gt;
-  float(3)
-  [&quot;expect_100_timeout&quot;]=&gt;
-  float(1)
-  [&quot;tcp_nodelay&quot;]=&gt;
-  bool(false)
-  [&quot;tcp_keepalive&quot;]=&gt;
-  bool(false)
-  [&quot;tcp_keepidle&quot;]=&gt;
-  int(60)
-  [&quot;tcp_keepintvl&quot;]=&gt;
-  int(60)
-  [&quot;ssl&quot;]=&gt;
-  array(24) {
-	[&quot;cert&quot;]=&gt;
-	NULL
-	[&quot;certtype&quot;]=&gt;
-	string(3) &quot;PEM&quot;
-	[&quot;key&quot;]=&gt;
-	NULL
-	[&quot;keytype&quot;]=&gt;
-	string(3) &quot;PEM&quot;
-	[&quot;keypasswd&quot;]=&gt;
-	NULL
-	[&quot;engine&quot;]=&gt;
-	NULL
-	[&quot;version&quot;]=&gt;
-	int(0)
-	[&quot;verifypeer&quot;]=&gt;
-	bool(true)
-	[&quot;verifyhost&quot;]=&gt;
-	bool(true)
-	[&quot;verifystatus&quot;]=&gt;
-	bool(false)
-	[&quot;cipher_list&quot;]=&gt;
-	NULL
-	[&quot;cainfo&quot;]=&gt;
-	string(34) &quot;/etc/ssl/certs/ca-certificates.crt&quot;
-	[&quot;capath&quot;]=&gt;
-	NULL
-	[&quot;random_file&quot;]=&gt;
-	NULL
-	[&quot;egdsocket&quot;]=&gt;
-	NULL
-	[&quot;issuercert&quot;]=&gt;
-	NULL
-	[&quot;crlfile&quot;]=&gt;
-	NULL
-	[&quot;certinfo&quot;]=&gt;
-	bool(false)
-	[&quot;enable_npn&quot;]=&gt;
-	bool(true)
-	[&quot;enable_alpn&quot;]=&gt;
-	bool(true)
-	[&quot;pinned_publickey&quot;]=&gt;
-	NULL
-	[&quot;tlsauthtype&quot;]=&gt;
-	int(0)
-	[&quot;tlsauthuser&quot;]=&gt;
-	NULL
-	[&quot;tlsauthpass&quot;]=&gt;
-	NULL
-  }
-}
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/getAvailableOptions#">#</a><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Client/getAvailableOptions">http\Client::getAvailableOptions</a>()</h1><p>Retrieve a list of available request options and their default values.</p><p>See f.e. the <a href="http/Client/Curl#Options:">request options for the Curl driver</a>.</p><h2 id="Params:">Params:<a class="permalink" href="http/Client/getAvailableOptions#Params:">#</a>
+</h2><p>None.</p><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/getAvailableOptions#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code>, list of key/value pairs of available request options and their default values.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Client/getAvailableOptions#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/getAvailableOptions#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$client </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"curl"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$client</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getAvailableOptions</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+array(49) {<br>  ["proxyhost"]=&gt;<br>  NULL<br>  ["proxytype"]=&gt;<br>  int(0)<br>  ["proxyport"]=&gt;<br>  int(0)<br>  ["proxyauth"]=&gt;<br>  NULL<br>  ["proxyauthtype"]=&gt;<br>  int(-18)<br>  ["proxytunnel"]=&gt;<br>  bool(false)<br>  ["noproxy"]=&gt;<br>  NULL<br>  ["proxyheader"]=&gt;<br>  NULL<br>  ["unix_socket_path"]=&gt;<br>  NULL<br>  ["dns_cache_timeout"]=&gt;<br>  int(60)<br>  ["ipresolve"]=&gt;<br>  int(0)<br>  ["resolve"]=&gt;<br>  NULL<br>  ["low_speed_limit"]=&gt;<br>  int(0)<br>  ["low_speed_time"]=&gt;<br>  int(0)<br>  ["fresh_connect"]=&gt;<br>  bool(false)<br>  ["forbid_reuse"]=&gt;<br>  bool(false)<br>  ["interface"]=&gt;<br>  NULL<br>  ["portrange"]=&gt;<br>  NULL<br>  ["port"]=&gt;<br>  int(0)<br>  ["address_scope"]=&gt;<br>  int(0)<br>  ["httpauth"]=&gt;<br>  NULL<br>  ["httpauthtype"]=&gt;<br>  int(-18)<br>  ["redirect"]=&gt;<br>  int(0)<br>  ["unrestricted_auth"]=&gt;<br>  bool(false)<br>  ["postredir"]=&gt;<br>  int(0)<br>  ["retrycount"]=&gt;<br>  int(0)<br>  ["retrydelay"]=&gt;<br>  float(0)<br>  ["referer"]=&gt;<br>  NULL<br>  ["autoreferer"]=&gt;<br>  bool(true)<br>  ["useragent"]=&gt;<br>  string(51) "PECL_HTTP/2.3.0dev PHP/5.6.6-dev libcurl/7.41.0-DEV"<br>  ["resume"]=&gt;<br>  int(0)<br>  ["range"]=&gt;<br>  NULL<br>  ["etag"]=&gt;<br>  NULL<br>  ["compress"]=&gt;<br>  bool(false)<br>  ["lastmodified"]=&gt;<br>  int(0)<br>  ["encodecookies"]=&gt;<br>  bool(true)<br>  ["cookies"]=&gt;<br>  NULL<br>  ["cookiesession"]=&gt;<br>  bool(false)<br>  ["cookiestore"]=&gt;<br>  NULL<br>  ["maxfilesize"]=&gt;<br>  int(0)<br>  ["protocol"]=&gt;<br>  int(0)<br>  ["timeout"]=&gt;<br>  float(0)<br>  ["connecttimeout"]=&gt;<br>  float(3)<br>  ["expect_100_timeout"]=&gt;<br>  float(1)<br>  ["tcp_nodelay"]=&gt;<br>  bool(false)<br>  ["tcp_keepalive"]=&gt;<br>  bool(false)<br>  ["tcp_keepidle"]=&gt;<br>  int(60)<br>  ["tcp_keepintvl"]=&gt;<br>  int(60)<br>  ["ssl"]=&gt;<br>  array(24) {<br>    ["cert"]=&gt;<br>    NULL<br>    ["certtype"]=&gt;<br>    string(3) "PEM"<br>    ["key"]=&gt;<br>    NULL<br>    ["keytype"]=&gt;<br>    string(3) "PEM"<br>    ["keypasswd"]=&gt;<br>    NULL<br>    ["engine"]=&gt;<br>    NULL<br>    ["version"]=&gt;<br>    int(0)<br>    ["verifypeer"]=&gt;<br>    bool(true)<br>    ["verifyhost"]=&gt;<br>    bool(true)<br>    ["verifystatus"]=&gt;<br>    bool(false)<br>    ["cipher_list"]=&gt;<br>    NULL<br>    ["cainfo"]=&gt;<br>    string(34) "/etc/ssl/certs/ca-certificates.crt"<br>    ["capath"]=&gt;<br>    NULL<br>    ["random_file"]=&gt;<br>    NULL<br>    ["egdsocket"]=&gt;<br>    NULL<br>    ["issuercert"]=&gt;<br>    NULL<br>    ["crlfile"]=&gt;<br>    NULL<br>    ["certinfo"]=&gt;<br>    bool(false)<br>    ["enable_npn"]=&gt;<br>    bool(true)<br>    ["enable_alpn"]=&gt;<br>    bool(true)<br>    ["pinned_publickey"]=&gt;<br>    NULL<br>    ["tlsauthtype"]=&gt;<br>    int(0)<br>    ["tlsauthuser"]=&gt;<br>    NULL<br>    ["tlsauthpass"]=&gt;<br>    NULL<br>  }<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

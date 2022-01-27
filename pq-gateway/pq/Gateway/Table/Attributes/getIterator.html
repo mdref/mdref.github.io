@@ -85,44 +85,16 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>ArrayIterator pq\Gateway\Table\Attributes::getIterator()</h1>
-<p>Implements IteratorAggregate.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>ArrayIterator, columnd list (indexed by column number <strong>and</strong> name).</p>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Gateway\Table;
-
-class ColNameIterator extends FilterIterator {
-	public function __construct(Table\Attributes $attrs) {
-		parent::__construct($attrs-&gt;getIterator());
-	}
-	public function accept() {
-		return !is_numeric($this-&gt;key());
-	}
-}
-
-$table = new pq\Gateway\Table(&quot;account&quot;);
-$attrs = $table-&gt;getAttributes();
-foreach (new ColNameIterator($attrs) as $col =&gt; $att) {
-	printf(&quot;%10s: %s\n&quot;, $col, http_build_query($att, null, &quot;, &quot;));
-}
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>		id: index=1, name=id, type=2950, hasdefault=1, nullable=0
-  password: index=2, name=password, type=1042, hasdefault=0, nullable=1
-	  name: index=3, name=name, type=1043, hasdefault=0, nullable=1
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes/getIterator#">#</a><code><a href="https://php.net/manual/en/class.arrayiterator">ArrayIterator</a></code> <a href="pq-gateway/pq/Gateway/Table/Attributes/getIterator">pq\Gateway\Table\Attributes::getIterator</a>()</h1><p>Implements <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code>.</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes/getIterator#Params:">#</a>
+</h2><p>None.</p><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes/getIterator#Returns:">#</a>
+</h2><p><code><a href="https://php.net/manual/en/class.arrayiterator">ArrayIterator</a></code>, columnd list (indexed by column number <strong>and</strong> name).</p><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes/getIterator#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">;<br><br>class </span><span style="color: inherit" class="default">ColNameIterator </span><span style="color: inherit" class="keyword">extends </span><span style="color: inherit" class="default">FilterIterator </span><span style="color: inherit" class="keyword">{<br>    public function </span><span style="color: inherit" class="default">__construct</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">Table\Attributes $attrs</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">parent</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">__construct</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$attrs</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getIterator</span><span style="color: inherit" class="keyword">());<br>    }<br>    public function </span><span style="color: inherit" class="default">accept</span><span style="color: inherit" class="keyword">() {<br>        return !</span><span style="color: inherit" class="default">is_numeric</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$this</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">key</span><span style="color: inherit" class="keyword">());<br>    }<br>}<br><br></span><span style="color: inherit" class="default">$table </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$attrs </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$table</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getAttributes</span><span style="color: inherit" class="keyword">();<br>foreach (new </span><span style="color: inherit" class="default">ColNameIterator</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$attrs</span><span style="color: inherit" class="keyword">) as </span><span style="color: inherit" class="default">$col </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$att</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%10s: %s\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$col</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">http_build_query</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$att</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">", "</span><span style="color: inherit" class="keyword">));<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+        id: index=1, name=id, type=2950, hasdefault=1, nullable=0<br>  password: index=2, name=password, type=1042, hasdefault=0, nullable=1<br>      name: index=3, name=name, type=1043, hasdefault=0, nullable=1<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

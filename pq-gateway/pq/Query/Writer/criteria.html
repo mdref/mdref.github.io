@@ -83,51 +83,23 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Query\Writer pq\Query\Writer::criteria(array $criteria)</h1>
-<p>Write nested AND/OR criteria to the query string.</p>
-<p>The criteria can either be a simple accociative array, where the keys build the left hand operand plus the operator and the values make up the right hand operand and will be passed to pq\Query\Writer::param(). All concatenated together by AND clauses.</p>
-<p>Using multiple arrays, the above logic will be applied to each array and then concatenated by OR clauses.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array $criteria<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Query/Writer/criteria#">#</a><a href="pq-gateway/pq/Query/Writer">pq\Query\Writer</a> <a href="pq-gateway/pq/Query/Writer/criteria">pq\Query\Writer::criteria</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$criteria</span>)</h1><p>Write nested AND/OR criteria to the query <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p><p>The criteria can either be a simple accociative <code><a href="https://php.net/manual/en/language.types.array">array</a></code>, where the keys build the left hand operand plus the operator and the values make up the right hand operand and will be passed to <a href="pq-gateway/pq/Query/Writer/param">pq\Query\Writer::param</a>(). All concatenated together by AND clauses.</p><p>Using multiple arrays, the above logic will be applied to each <code><a href="https://php.net/manual/en/language.types.array">array</a></code> and then concatenated by OR clauses.</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Query/Writer/criteria#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$criteria">$criteria<a class="permalink" href="pq-gateway/pq/Query/Writer/criteria#%24criteria">#</a></span><br>
 Nested AND/OR criteria.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Query\Writer, self.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Query;
-
-$q = new Query\Writer;
-$q-&gt;write(&quot;select * from account where&quot;)
-  -&gt;criteria([
-    [&quot;id &gt;&quot; =&gt; 1, &quot;id &lt;&quot; =&gt; 5],
-    [&quot;name =&quot; =&gt; &quot;mike&quot;]
-  ]);
-
-var_dump((string) $q, $q-&gt;getParams());
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>string(84) &quot;select * from account where ( ( ( id &gt; $1 ) AND ( id &lt; $2 ) ) OR ( ( name = $3 ) ) )&quot;
-array(3) {
-  [0]=&gt;
-  int(1)
-  [1]=&gt;
-  int(5)
-  [2]=&gt;
-  string(4) &quot;mike&quot;
-}
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Query/Writer/criteria#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="pq-gateway/pq/Query/Writer">pq\Query\Writer</a>, <em>self</em>.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Query/Writer/criteria#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Query</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$q </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Query\Writer</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$q</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">write</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"select * from account where"</span><span style="color: inherit" class="keyword">)<br>  -&gt;</span><span style="color: inherit" class="default">criteria</span><span style="color: inherit" class="keyword">([<br>    [</span><span style="color: inherit" class="string">"id &gt;" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"id &lt;" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">5</span><span style="color: inherit" class="keyword">],<br>    [</span><span style="color: inherit" class="string">"name =" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"mike"</span><span style="color: inherit" class="keyword">]<br>  ]);<br><br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">((string) </span><span style="color: inherit" class="default">$q</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$q</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getParams</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+string(84) "select * from account where ( ( ( id &gt; $1 ) AND ( id &lt; $2 ) ) OR ( ( name = $3 ) ) )"<br>array(3) {<br>  [0]=&gt;<br>  int(1)<br>  [1]=&gt;<br>  int(5)<br>  [2]=&gt;<br>  string(4) "mike"<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

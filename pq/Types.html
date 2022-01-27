@@ -90,381 +90,484 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Types implements ArrayAccess</h1>
-<p>Accessor to the PostgreSQL <code>pg_type</code> relation.
-See <a href="pq/Types/:%20Overview">here for an overview</a>.</p>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$connection = new pq\Connection;
-$types = new pq\Types($connection);
-foreach ($types[&quot;int2vector&quot;] as $key=&gt;$val) {
-	printf(&quot;%-20s = %s\n&quot;, $key, is_bool($val) ? ($val?'t':'f') : $val);
-}
-
-?&gt;
-</code></pre>
-<p>Yields for a PostgreSQL v9.3 server:</p>
-<pre><code>oid                  = 22
-typname              = int2vector
-typnamespace         = 11
-typowner             = 10
-typlen               = -1
-typbyval             = f
-typtype              = b
-typcategory          = A
-typispreferred       = f
-typisdefined         = t
-typdelim             = ,
-typrelid             = 0
-typelem              = 21
-typarray             = 1006
-typinput             = int2vectorin
-typoutput            = int2vectorout
-typreceive           = int2vectorrecv
-typsend              = int2vectorsend
-typmodin             = -
-typmodout            = -
-typanalyze           = -
-typalign             = i
-typstorage           = p
-typnotnull           = f
-typbasetype          = 0
-typtypmod            = -1
-typndims             = 0
-typcollation         = 0
-typdefaultbin        = 
-typdefault           = 
-typacl               = 
-</code></pre>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Types#">#</a><em>class</em> <a href="pq/Types">pq\Types</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>
+</h1><p>Accessor to the PostgreSQL <code>pg_type</code> relation.
+See <a href="pq/Types/:%20Overview">here for an overview</a>.</p><h2 id="Example:">Example:<a class="permalink" href="pq/Types#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$types </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Types</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">);<br>foreach (</span><span style="color: inherit" class="default">$types</span><span style="color: inherit" class="keyword">[</span><span style="color: inherit" class="string">"int2vector"</span><span style="color: inherit" class="keyword">] as </span><span style="color: inherit" class="default">$key</span><span style="color: inherit" class="keyword">=&gt;</span><span style="color: inherit" class="default">$val</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%-20s = %s\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$key</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">is_bool</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$val</span><span style="color: inherit" class="keyword">) ? (</span><span style="color: inherit" class="default">$val</span><span style="color: inherit" class="keyword">?</span><span style="color: inherit" class="string">'t'</span><span style="color: inherit" class="keyword">:</span><span style="color: inherit" class="string">'f'</span><span style="color: inherit" class="keyword">) : </span><span style="color: inherit" class="default">$val</span><span style="color: inherit" class="keyword">);<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields for a PostgreSQL v9.3 server:</p><pre><code><span style="color: inherit" class="html">
+oid                  = 22<br>typname              = int2vector<br>typnamespace         = 11<br>typowner             = 10<br>typlen               = -1<br>typbyval             = f<br>typtype              = b<br>typcategory          = A<br>typispreferred       = f<br>typisdefined         = t<br>typdelim             = ,<br>typrelid             = 0<br>typelem              = 21<br>typarray             = 1006<br>typinput             = int2vectorin<br>typoutput            = int2vectorout<br>typreceive           = int2vectorrecv<br>typsend              = int2vectorsend<br>typmodin             = -<br>typmodout            = -<br>typanalyze           = -<br>typalign             = i<br>typstorage           = p<br>typnotnull           = f<br>typbasetype          = 0<br>typtypmod            = -1<br>typndims             = 0<br>typcollation         = 0<br>typdefaultbin        = <br>typdefault           = <br>typacl               = <br></span>
+</code></pre><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
 The following OID constants are obtained from the postgres server headers at build time and differ
 between major versions. Dynamic type information, f.e. from extensions or the actual version of
-the postgres connected to, can be accessed through the ArrayAccess interface of pq\Types.</p>
-</blockquote>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>BOOL<br />
-OID of the <code>bool</code> type.</li>
-<li>BYTEA<br />
-OID of the <code>bytea</code> type.</li>
-<li>CHAR<br />
-OID of the <code>char</code> type.</li>
-<li>NAME<br />
-OID of the <code>name</code> type.</li>
-<li>INT8<br />
-OID of the <code>int8</code> type.</li>
-<li>INT2<br />
-OID of the <code>int2</code> type.</li>
-<li>INT2VECTOR<br />
-OID of the <code>int2vector</code> type.</li>
-<li>INT4<br />
-OID of the <code>int4</code> type.</li>
-<li>REGPROC<br />
-OID of the <code>regproc</code> type.</li>
-<li>TEXT<br />
-OID of the <code>text</code> type.</li>
-<li>OID<br />
-OID of the <code>oid</code> type.</li>
-<li>TID<br />
-OID of the <code>tid</code> type.</li>
-<li>XID<br />
-OID of the <code>xid</code> type.</li>
-<li>CID<br />
-OID of the <code>cid</code> type.</li>
-<li>OIDVECTOR<br />
-OID of the <code>oidvector</code> type.</li>
-<li>PG_TYPE<br />
-OID of the <code>pg_type</code> type.</li>
-<li>PG_ATTRIBUTE<br />
-OID of the <code>pg_attribute</code> type.</li>
-<li>PG_PROC<br />
-OID of the <code>pg_proc</code> type.</li>
-<li>PG_CLASS<br />
-OID of the <code>pg_class</code> type.</li>
-<li>JSON<br />
-OID of the <code>json</code> type.</li>
-<li>XML<br />
-OID of the <code>xml</code> type.</li>
-<li>XMLARRAY<br />
-OID of the <code>xmlarray</code> type.</li>
-<li>JSONARRAY<br />
-OID of the <code>jsonarray</code> type.</li>
-<li>PG_NODE_TREE<br />
-OID of the <code>pg_node_tree</code> type.</li>
-<li>SMGR<br />
-OID of the <code>smgr</code> type.</li>
-<li>POINT<br />
-OID of the <code>point</code> type.</li>
-<li>LSEG<br />
-OID of the <code>lseg</code> type.</li>
-<li>PATH<br />
-OID of the <code>path</code> type.</li>
-<li>BOX<br />
-OID of the <code>box</code> type.</li>
-<li>POLYGON<br />
-OID of the <code>polygon</code> type.</li>
-<li>LINE<br />
-OID of the <code>line</code> type.</li>
-<li>LINEARRAY<br />
-OID of the <code>linearray</code> type.</li>
-<li>FLOAT4<br />
-OID of the <code>float4</code> type.</li>
-<li>FLOAT8<br />
-OID of the <code>float8</code> type.</li>
-<li>UNKNOWN<br />
-OID of the <code>unknown</code> type.</li>
-<li>CIRCLE<br />
-OID of the <code>circle</code> type.</li>
-<li>CIRCLEARRAY<br />
-OID of the <code>circlearray</code> type.</li>
-<li>MONEY<br />
-OID of the <code>money</code> type.</li>
-<li>MONEYARRAY<br />
-OID of the <code>moneyarray</code> type.</li>
-<li>MACADDR<br />
-OID of the <code>macaddr</code> type.</li>
-<li>INET<br />
-OID of the <code>inet</code> type.</li>
-<li>CIDR<br />
-OID of the <code>cidr</code> type.</li>
-<li>BOOLARRAY<br />
-OID of the <code>boolarray</code> type.</li>
-<li>BYTEAARRAY<br />
-OID of the <code>byteaarray</code> type.</li>
-<li>CHARARRAY<br />
-OID of the <code>chararray</code> type.</li>
-<li>NAMEARRAY<br />
-OID of the <code>namearray</code> type.</li>
-<li>INT2ARRAY<br />
-OID of the <code>int2array</code> type.</li>
-<li>INT2VECTORARRAY<br />
-OID of the <code>int2vectorarray</code> type.</li>
-<li>INT4ARRAY<br />
-OID of the <code>int4array</code> type.</li>
-<li>REGPROCARRAY<br />
-OID of the <code>regprocarray</code> type.</li>
-<li>TEXTARRAY<br />
-OID of the <code>textarray</code> type.</li>
-<li>OIDARRAY<br />
-OID of the <code>oidarray</code> type.</li>
-<li>TIDARRAY<br />
-OID of the <code>tidarray</code> type.</li>
-<li>XIDARRAY<br />
-OID of the <code>xidarray</code> type.</li>
-<li>CIDARRAY<br />
-OID of the <code>cidarray</code> type.</li>
-<li>OIDVECTORARRAY<br />
-OID of the <code>oidvectorarray</code> type.</li>
-<li>BPCHARARRAY<br />
-OID of the <code>bpchararray</code> type.</li>
-<li>VARCHARARRAY<br />
-OID of the <code>varchararray</code> type.</li>
-<li>INT8ARRAY<br />
-OID of the <code>int8array</code> type.</li>
-<li>POINTARRAY<br />
-OID of the <code>pointarray</code> type.</li>
-<li>LSEGARRAY<br />
-OID of the <code>lsegarray</code> type.</li>
-<li>PATHARRAY<br />
-OID of the <code>patharray</code> type.</li>
-<li>BOXARRAY<br />
-OID of the <code>boxarray</code> type.</li>
-<li>FLOAT4ARRAY<br />
-OID of the <code>float4array</code> type.</li>
-<li>FLOAT8ARRAY<br />
-OID of the <code>float8array</code> type.</li>
-<li>POLYGONARRAY<br />
-OID of the <code>polygonarray</code> type.</li>
-<li>ACLITEM<br />
-OID of the <code>aclitem</code> type.</li>
-<li>ACLITEMARRAY<br />
-OID of the <code>aclitemarray</code> type.</li>
-<li>MACADDRARRAY<br />
-OID of the <code>macaddrarray</code> type.</li>
-<li>INETARRAY<br />
-OID of the <code>inetarray</code> type.</li>
-<li>CIDRARRAY<br />
-OID of the <code>cidrarray</code> type.</li>
-<li>CSTRINGARRAY<br />
-OID of the <code>cstringarray</code> type.</li>
-<li>BPCHAR<br />
-OID of the <code>bpchar</code> type.</li>
-<li>VARCHAR<br />
-OID of the <code>varchar</code> type.</li>
-<li>DATE<br />
-OID of the <code>date</code> type.</li>
-<li>TIME<br />
-OID of the <code>time</code> type.</li>
-<li>TIMESTAMP<br />
-OID of the <code>timestamp</code> type.</li>
-<li>TIMESTAMPARRAY<br />
-OID of the <code>timestamparray</code> type.</li>
-<li>DATEARRAY<br />
-OID of the <code>datearray</code> type.</li>
-<li>TIMEARRAY<br />
-OID of the <code>timearray</code> type.</li>
-<li>TIMESTAMPTZ<br />
-OID of the <code>timestamptz</code> type.</li>
-<li>TIMESTAMPTZARRAY<br />
-OID of the <code>timestamptzarray</code> type.</li>
-<li>INTERVAL<br />
-OID of the <code>interval</code> type.</li>
-<li>INTERVALARRAY<br />
-OID of the <code>intervalarray</code> type.</li>
-<li>NUMERICARRAY<br />
-OID of the <code>numericarray</code> type.</li>
-<li>TIMETZ<br />
-OID of the <code>timetz</code> type.</li>
-<li>TIMETZARRAY<br />
-OID of the <code>timetzarray</code> type.</li>
-<li>BIT<br />
-OID of the <code>bit</code> type.</li>
-<li>BITARRAY<br />
-OID of the <code>bitarray</code> type.</li>
-<li>VARBIT<br />
-OID of the <code>varbit</code> type.</li>
-<li>VARBITARRAY<br />
-OID of the <code>varbitarray</code> type.</li>
-<li>NUMERIC<br />
-OID of the <code>numeric</code> type.</li>
-<li>REFCURSOR<br />
-OID of the <code>refcursor</code> type.</li>
-<li>REFCURSORARRAY<br />
-OID of the <code>refcursorarray</code> type.</li>
-<li>REGPROCEDURE<br />
-OID of the <code>regprocedure</code> type.</li>
-<li>REGOPER<br />
-OID of the <code>regoper</code> type.</li>
-<li>REGOPERATOR<br />
-OID of the <code>regoperator</code> type.</li>
-<li>REGCLASS<br />
-OID of the <code>regclass</code> type.</li>
-<li>REGTYPE<br />
-OID of the <code>regtype</code> type.</li>
-<li>REGPROCEDUREARRAY<br />
-OID of the <code>regprocedurearray</code> type.</li>
-<li>REGOPERARRAY<br />
-OID of the <code>regoperarray</code> type.</li>
-<li>REGOPERATORARRAY<br />
-OID of the <code>regoperatorarray</code> type.</li>
-<li>REGCLASSARRAY<br />
-OID of the <code>regclassarray</code> type.</li>
-<li>REGTYPEARRAY<br />
-OID of the <code>regtypearray</code> type.</li>
-<li>UUID<br />
-OID of the <code>uuid</code> type.</li>
-<li>UUIDARRAY<br />
-OID of the <code>uuidarray</code> type.</li>
-<li>TSVECTOR<br />
-OID of the <code>tsvector</code> type.</li>
-<li>GTSVECTOR<br />
-OID of the <code>gtsvector</code> type.</li>
-<li>TSQUERY<br />
-OID of the <code>tsquery</code> type.</li>
-<li>REGCONFIG<br />
-OID of the <code>regconfig</code> type.</li>
-<li>REGDICTIONARY<br />
-OID of the <code>regdictionary</code> type.</li>
-<li>TSVECTORARRAY<br />
-OID of the <code>tsvectorarray</code> type.</li>
-<li>GTSVECTORARRAY<br />
-OID of the <code>gtsvectorarray</code> type.</li>
-<li>TSQUERYARRAY<br />
-OID of the <code>tsqueryarray</code> type.</li>
-<li>REGCONFIGARRAY<br />
-OID of the <code>regconfigarray</code> type.</li>
-<li>REGDICTIONARYARRAY<br />
-OID of the <code>regdictionaryarray</code> type.</li>
-<li>TXID_SNAPSHOT<br />
-OID of the <code>txid_snapshot</code> type.</li>
-<li>TXID_SNAPSHOTARRAY<br />
-OID of the <code>txid_snapshotarray</code> type.</li>
-<li>INT4RANGE<br />
-OID of the <code>int4range</code> type.</li>
-<li>INT4RANGEARRAY<br />
-OID of the <code>int4rangearray</code> type.</li>
-<li>NUMRANGE<br />
-OID of the <code>numrange</code> type.</li>
-<li>NUMRANGEARRAY<br />
-OID of the <code>numrangearray</code> type.</li>
-<li>TSRANGE<br />
-OID of the <code>tsrange</code> type.</li>
-<li>TSRANGEARRAY<br />
-OID of the <code>tsrangearray</code> type.</li>
-<li>TSTZRANGE<br />
-OID of the <code>tstzrange</code> type.</li>
-<li>TSTZRANGEARRAY<br />
-OID of the <code>tstzrangearray</code> type.</li>
-<li>DATERANGE<br />
-OID of the <code>daterange</code> type.</li>
-<li>DATERANGEARRAY<br />
-OID of the <code>daterangearray</code> type.</li>
-<li>INT8RANGE<br />
-OID of the <code>int8range</code> type.</li>
-<li>INT8RANGEARRAY<br />
-OID of the <code>int8rangearray</code> type.</li>
-<li>RECORD<br />
-OID of the <code>record</code> type.</li>
-<li>CSTRING<br />
-OID of the <code>cstring</code> type.</li>
-<li>ANY<br />
-OID of the <code>any</code> type.</li>
-<li>ANYARRAY<br />
-OID of the <code>anyarray</code> type.</li>
-<li>VOID<br />
-OID of the <code>void</code> type.</li>
-<li>TRIGGER<br />
-OID of the <code>trigger</code> type.</li>
-<li>EVENT_TRIGGER<br />
-OID of the <code>event_trigger</code> type.</li>
-<li>LANGUAGE_HANDLER<br />
-OID of the <code>language_handler</code> type.</li>
-<li>INTERNAL<br />
-OID of the <code>internal</code> type.</li>
-<li>OPAQUE<br />
-OID of the <code>opaque</code> type.</li>
-<li>ANYELEMENT<br />
-OID of the <code>anyelement</code> type.</li>
-<li>ANYNONARRAY<br />
-OID of the <code>anynonarray</code> type.</li>
-<li>ANYENUM<br />
-OID of the <code>anyenum</code> type.</li>
-<li>FDW_HANDLER<br />
-OID of the <code>fdw_handler</code> type.</li>
-<li>ANYRANGE<br />
-OID of the <code>anyrange</code> type.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public (readonly) pq\Connection $connection<br />
+the postgres connected to, can be accessed through the <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code> <em>interface</em> of <a href="pq/Types">pq\Types</a>.</p>
+</blockquote><h2 id="Constants:">Constants:<a class="permalink" href="pq/Types#Constants:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.boolean">BOOL</a></code><br>
+<span class="constant">OID</span> of the <code>bool</code> type.</li>
+<li>
+<span class="constant" id="BYTEA">BYTEA<a class="permalink" href="pq/Types#BYTEA">#</a></span><br>
+<span class="constant">OID</span> of the <code>bytea</code> type.</li>
+<li>
+<span class="constant" id="CHAR">CHAR<a class="permalink" href="pq/Types#CHAR">#</a></span><br>
+<span class="constant">OID</span> of the <code>char</code> type.</li>
+<li>
+<span class="constant" id="NAME">NAME<a class="permalink" href="pq/Types#NAME">#</a></span><br>
+<span class="constant">OID</span> of the <code>name</code> type.</li>
+<li>
+<span class="constant" id="INT8">INT8<a class="permalink" href="pq/Types#INT8">#</a></span><br>
+<span class="constant">OID</span> of the <code>int8</code> type.</li>
+<li>
+<span class="constant" id="INT2">INT2<a class="permalink" href="pq/Types#INT2">#</a></span><br>
+<span class="constant">OID</span> of the <code>int2</code> type.</li>
+<li>
+<span class="constant" id="INT2VECTOR">INT2VECTOR<a class="permalink" href="pq/Types#INT2VECTOR">#</a></span><br>
+<span class="constant">OID</span> of the <code>int2vector</code> type.</li>
+<li>
+<span class="constant" id="INT4">INT4<a class="permalink" href="pq/Types#INT4">#</a></span><br>
+<span class="constant">OID</span> of the <code>int4</code> type.</li>
+<li>
+<span class="constant" id="REGPROC">REGPROC<a class="permalink" href="pq/Types#REGPROC">#</a></span><br>
+<span class="constant">OID</span> of the <code>regproc</code> type.</li>
+<li>
+<span class="constant" id="TEXT">TEXT<a class="permalink" href="pq/Types#TEXT">#</a></span><br>
+<span class="constant">OID</span> of the <code>text</code> type.</li>
+<li>
+<span class="constant" id="OID">OID<a class="permalink" href="pq/Types#OID">#</a></span><br>
+<span class="constant">OID</span> of the <code>oid</code> type.</li>
+<li>
+<span class="constant" id="TID">TID<a class="permalink" href="pq/Types#TID">#</a></span><br>
+<span class="constant">OID</span> of the <code>tid</code> type.</li>
+<li>
+<span class="constant" id="XID">XID<a class="permalink" href="pq/Types#XID">#</a></span><br>
+<span class="constant">OID</span> of the <code>xid</code> type.</li>
+<li>
+<span class="constant" id="CID">CID<a class="permalink" href="pq/Types#CID">#</a></span><br>
+<span class="constant">OID</span> of the <code>cid</code> type.</li>
+<li>
+<span class="constant" id="OIDVECTOR">OIDVECTOR<a class="permalink" href="pq/Types#OIDVECTOR">#</a></span><br>
+<span class="constant">OID</span> of the <code>oidvector</code> type.</li>
+<li>
+<span class="constant" id="PG_TYPE">PG_TYPE<a class="permalink" href="pq/Types#PG_TYPE">#</a></span><br>
+<span class="constant">OID</span> of the <code>pg_type</code> type.</li>
+<li>
+<span class="constant" id="PG_ATTRIBUTE">PG_ATTRIBUTE<a class="permalink" href="pq/Types#PG_ATTRIBUTE">#</a></span><br>
+<span class="constant">OID</span> of the <code>pg_attribute</code> type.</li>
+<li>
+<span class="constant" id="PG_PROC">PG_PROC<a class="permalink" href="pq/Types#PG_PROC">#</a></span><br>
+<span class="constant">OID</span> of the <code>pg_proc</code> type.</li>
+<li>
+<span class="constant" id="PG_CLASS">PG_CLASS<a class="permalink" href="pq/Types#PG_CLASS">#</a></span><br>
+<span class="constant">OID</span> of the <code>pg_class</code> type.</li>
+<li>
+<span class="constant" id="JSON">JSON<a class="permalink" href="pq/Types#JSON">#</a></span><br>
+<span class="constant">OID</span> of the <code>json</code> type.</li>
+<li>
+<span class="constant" id="XML">XML<a class="permalink" href="pq/Types#XML">#</a></span><br>
+<span class="constant">OID</span> of the <code>xml</code> type.</li>
+<li>
+<span class="constant" id="XMLARRAY">XMLARRAY<a class="permalink" href="pq/Types#XMLARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>xmlarray</code> type.</li>
+<li>
+<span class="constant" id="JSONARRAY">JSONARRAY<a class="permalink" href="pq/Types#JSONARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>jsonarray</code> type.</li>
+<li>
+<span class="constant" id="PG_NODE_TREE">PG_NODE_TREE<a class="permalink" href="pq/Types#PG_NODE_TREE">#</a></span><br>
+<span class="constant">OID</span> of the <code>pg_node_tree</code> type.</li>
+<li>
+<span class="constant" id="SMGR">SMGR<a class="permalink" href="pq/Types#SMGR">#</a></span><br>
+<span class="constant">OID</span> of the <code>smgr</code> type.</li>
+<li>
+<span class="constant" id="POINT">POINT<a class="permalink" href="pq/Types#POINT">#</a></span><br>
+<span class="constant">OID</span> of the <code>point</code> type.</li>
+<li>
+<span class="constant" id="LSEG">LSEG<a class="permalink" href="pq/Types#LSEG">#</a></span><br>
+<span class="constant">OID</span> of the <code>lseg</code> type.</li>
+<li>
+<span class="constant" id="PATH">PATH<a class="permalink" href="pq/Types#PATH">#</a></span><br>
+<span class="constant">OID</span> of the <code>path</code> type.</li>
+<li>
+<span class="constant" id="BOX">BOX<a class="permalink" href="pq/Types#BOX">#</a></span><br>
+<span class="constant">OID</span> of the <code>box</code> type.</li>
+<li>
+<span class="constant" id="POLYGON">POLYGON<a class="permalink" href="pq/Types#POLYGON">#</a></span><br>
+<span class="constant">OID</span> of the <code>polygon</code> type.</li>
+<li>
+<span class="constant" id="LINE">LINE<a class="permalink" href="pq/Types#LINE">#</a></span><br>
+<span class="constant">OID</span> of the <code>line</code> type.</li>
+<li>
+<span class="constant" id="LINEARRAY">LINEARRAY<a class="permalink" href="pq/Types#LINEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>linearray</code> type.</li>
+<li>
+<span class="constant" id="FLOAT4">FLOAT4<a class="permalink" href="pq/Types#FLOAT4">#</a></span><br>
+<span class="constant">OID</span> of the <code>float4</code> type.</li>
+<li>
+<span class="constant" id="FLOAT8">FLOAT8<a class="permalink" href="pq/Types#FLOAT8">#</a></span><br>
+<span class="constant">OID</span> of the <code>float8</code> type.</li>
+<li>
+<span class="constant" id="UNKNOWN">UNKNOWN<a class="permalink" href="pq/Types#UNKNOWN">#</a></span><br>
+<span class="constant">OID</span> of the <code>unknown</code> type.</li>
+<li>
+<span class="constant" id="CIRCLE">CIRCLE<a class="permalink" href="pq/Types#CIRCLE">#</a></span><br>
+<span class="constant">OID</span> of the <code>circle</code> type.</li>
+<li>
+<span class="constant" id="CIRCLEARRAY">CIRCLEARRAY<a class="permalink" href="pq/Types#CIRCLEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>circlearray</code> type.</li>
+<li>
+<span class="constant" id="MONEY">MONEY<a class="permalink" href="pq/Types#MONEY">#</a></span><br>
+<span class="constant">OID</span> of the <code>money</code> type.</li>
+<li>
+<span class="constant" id="MONEYARRAY">MONEYARRAY<a class="permalink" href="pq/Types#MONEYARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>moneyarray</code> type.</li>
+<li>
+<span class="constant" id="MACADDR">MACADDR<a class="permalink" href="pq/Types#MACADDR">#</a></span><br>
+<span class="constant">OID</span> of the <code>macaddr</code> type.</li>
+<li>
+<span class="constant" id="INET">INET<a class="permalink" href="pq/Types#INET">#</a></span><br>
+<span class="constant">OID</span> of the <code>inet</code> type.</li>
+<li>
+<span class="constant" id="CIDR">CIDR<a class="permalink" href="pq/Types#CIDR">#</a></span><br>
+<span class="constant">OID</span> of the <code>cidr</code> type.</li>
+<li>
+<span class="constant" id="BOOLARRAY">BOOLARRAY<a class="permalink" href="pq/Types#BOOLARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>boolarray</code> type.</li>
+<li>
+<span class="constant" id="BYTEAARRAY">BYTEAARRAY<a class="permalink" href="pq/Types#BYTEAARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>byteaarray</code> type.</li>
+<li>
+<span class="constant" id="CHARARRAY">CHARARRAY<a class="permalink" href="pq/Types#CHARARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>chararray</code> type.</li>
+<li>
+<span class="constant" id="NAMEARRAY">NAMEARRAY<a class="permalink" href="pq/Types#NAMEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>namearray</code> type.</li>
+<li>
+<span class="constant" id="INT2ARRAY">INT2ARRAY<a class="permalink" href="pq/Types#INT2ARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>int2array</code> type.</li>
+<li>
+<span class="constant" id="INT2VECTORARRAY">INT2VECTORARRAY<a class="permalink" href="pq/Types#INT2VECTORARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>int2vectorarray</code> type.</li>
+<li>
+<span class="constant" id="INT4ARRAY">INT4ARRAY<a class="permalink" href="pq/Types#INT4ARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>int4array</code> type.</li>
+<li>
+<span class="constant" id="REGPROCARRAY">REGPROCARRAY<a class="permalink" href="pq/Types#REGPROCARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>regprocarray</code> type.</li>
+<li>
+<span class="constant" id="TEXTARRAY">TEXTARRAY<a class="permalink" href="pq/Types#TEXTARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>textarray</code> type.</li>
+<li>
+<span class="constant" id="OIDARRAY">OIDARRAY<a class="permalink" href="pq/Types#OIDARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>oidarray</code> type.</li>
+<li>
+<span class="constant" id="TIDARRAY">TIDARRAY<a class="permalink" href="pq/Types#TIDARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>tidarray</code> type.</li>
+<li>
+<span class="constant" id="XIDARRAY">XIDARRAY<a class="permalink" href="pq/Types#XIDARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>xidarray</code> type.</li>
+<li>
+<span class="constant" id="CIDARRAY">CIDARRAY<a class="permalink" href="pq/Types#CIDARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>cidarray</code> type.</li>
+<li>
+<span class="constant" id="OIDVECTORARRAY">OIDVECTORARRAY<a class="permalink" href="pq/Types#OIDVECTORARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>oidvectorarray</code> type.</li>
+<li>
+<span class="constant" id="BPCHARARRAY">BPCHARARRAY<a class="permalink" href="pq/Types#BPCHARARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>bpchararray</code> type.</li>
+<li>
+<span class="constant" id="VARCHARARRAY">VARCHARARRAY<a class="permalink" href="pq/Types#VARCHARARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>varchararray</code> type.</li>
+<li>
+<span class="constant" id="INT8ARRAY">INT8ARRAY<a class="permalink" href="pq/Types#INT8ARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>int8array</code> type.</li>
+<li>
+<span class="constant" id="POINTARRAY">POINTARRAY<a class="permalink" href="pq/Types#POINTARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>pointarray</code> type.</li>
+<li>
+<span class="constant" id="LSEGARRAY">LSEGARRAY<a class="permalink" href="pq/Types#LSEGARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>lsegarray</code> type.</li>
+<li>
+<span class="constant" id="PATHARRAY">PATHARRAY<a class="permalink" href="pq/Types#PATHARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>patharray</code> type.</li>
+<li>
+<span class="constant" id="BOXARRAY">BOXARRAY<a class="permalink" href="pq/Types#BOXARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>boxarray</code> type.</li>
+<li>
+<span class="constant" id="FLOAT4ARRAY">FLOAT4ARRAY<a class="permalink" href="pq/Types#FLOAT4ARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>float4array</code> type.</li>
+<li>
+<span class="constant" id="FLOAT8ARRAY">FLOAT8ARRAY<a class="permalink" href="pq/Types#FLOAT8ARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>float8array</code> type.</li>
+<li>
+<span class="constant" id="POLYGONARRAY">POLYGONARRAY<a class="permalink" href="pq/Types#POLYGONARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>polygonarray</code> type.</li>
+<li>
+<span class="constant" id="ACLITEM">ACLITEM<a class="permalink" href="pq/Types#ACLITEM">#</a></span><br>
+<span class="constant">OID</span> of the <code>aclitem</code> type.</li>
+<li>
+<span class="constant" id="ACLITEMARRAY">ACLITEMARRAY<a class="permalink" href="pq/Types#ACLITEMARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>aclitemarray</code> type.</li>
+<li>
+<span class="constant" id="MACADDRARRAY">MACADDRARRAY<a class="permalink" href="pq/Types#MACADDRARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>macaddrarray</code> type.</li>
+<li>
+<span class="constant" id="INETARRAY">INETARRAY<a class="permalink" href="pq/Types#INETARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>inetarray</code> type.</li>
+<li>
+<span class="constant" id="CIDRARRAY">CIDRARRAY<a class="permalink" href="pq/Types#CIDRARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>cidrarray</code> type.</li>
+<li>
+<span class="constant" id="CSTRINGARRAY">CSTRINGARRAY<a class="permalink" href="pq/Types#CSTRINGARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>cstringarray</code> type.</li>
+<li>
+<span class="constant" id="BPCHAR">BPCHAR<a class="permalink" href="pq/Types#BPCHAR">#</a></span><br>
+<span class="constant">OID</span> of the <code>bpchar</code> type.</li>
+<li>
+<span class="constant" id="VARCHAR">VARCHAR<a class="permalink" href="pq/Types#VARCHAR">#</a></span><br>
+<span class="constant">OID</span> of the <code>varchar</code> type.</li>
+<li>
+<span class="constant" id="DATE">DATE<a class="permalink" href="pq/Types#DATE">#</a></span><br>
+<span class="constant">OID</span> of the <code>date</code> type.</li>
+<li>
+<span class="constant" id="TIME">TIME<a class="permalink" href="pq/Types#TIME">#</a></span><br>
+<span class="constant">OID</span> of the <code>time</code> type.</li>
+<li>
+<span class="constant" id="TIMESTAMP">TIMESTAMP<a class="permalink" href="pq/Types#TIMESTAMP">#</a></span><br>
+<span class="constant">OID</span> of the <code>timestamp</code> type.</li>
+<li>
+<span class="constant" id="TIMESTAMPARRAY">TIMESTAMPARRAY<a class="permalink" href="pq/Types#TIMESTAMPARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>timestamparray</code> type.</li>
+<li>
+<span class="constant" id="DATEARRAY">DATEARRAY<a class="permalink" href="pq/Types#DATEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>datearray</code> type.</li>
+<li>
+<span class="constant" id="TIMEARRAY">TIMEARRAY<a class="permalink" href="pq/Types#TIMEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>timearray</code> type.</li>
+<li>
+<span class="constant" id="TIMESTAMPTZ">TIMESTAMPTZ<a class="permalink" href="pq/Types#TIMESTAMPTZ">#</a></span><br>
+<span class="constant">OID</span> of the <code>timestamptz</code> type.</li>
+<li>
+<span class="constant" id="TIMESTAMPTZARRAY">TIMESTAMPTZARRAY<a class="permalink" href="pq/Types#TIMESTAMPTZARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>timestamptzarray</code> type.</li>
+<li>
+<span class="constant" id="INTERVAL">INTERVAL<a class="permalink" href="pq/Types#INTERVAL">#</a></span><br>
+<span class="constant">OID</span> of the <code>interval</code> type.</li>
+<li>
+<span class="constant" id="INTERVALARRAY">INTERVALARRAY<a class="permalink" href="pq/Types#INTERVALARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>intervalarray</code> type.</li>
+<li>
+<span class="constant" id="NUMERICARRAY">NUMERICARRAY<a class="permalink" href="pq/Types#NUMERICARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>numericarray</code> type.</li>
+<li>
+<span class="constant" id="TIMETZ">TIMETZ<a class="permalink" href="pq/Types#TIMETZ">#</a></span><br>
+<span class="constant">OID</span> of the <code>timetz</code> type.</li>
+<li>
+<span class="constant" id="TIMETZARRAY">TIMETZARRAY<a class="permalink" href="pq/Types#TIMETZARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>timetzarray</code> type.</li>
+<li>
+<span class="constant" id="BIT">BIT<a class="permalink" href="pq/Types#BIT">#</a></span><br>
+<span class="constant">OID</span> of the <code>bit</code> type.</li>
+<li>
+<span class="constant" id="BITARRAY">BITARRAY<a class="permalink" href="pq/Types#BITARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>bitarray</code> type.</li>
+<li>
+<span class="constant" id="VARBIT">VARBIT<a class="permalink" href="pq/Types#VARBIT">#</a></span><br>
+<span class="constant">OID</span> of the <code>varbit</code> type.</li>
+<li>
+<span class="constant" id="VARBITARRAY">VARBITARRAY<a class="permalink" href="pq/Types#VARBITARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>varbitarray</code> type.</li>
+<li>
+<span class="constant" id="NUMERIC">NUMERIC<a class="permalink" href="pq/Types#NUMERIC">#</a></span><br>
+<span class="constant">OID</span> of the <code>numeric</code> type.</li>
+<li>
+<span class="constant" id="REFCURSOR">REFCURSOR<a class="permalink" href="pq/Types#REFCURSOR">#</a></span><br>
+<span class="constant">OID</span> of the <code>refcursor</code> type.</li>
+<li>
+<span class="constant" id="REFCURSORARRAY">REFCURSORARRAY<a class="permalink" href="pq/Types#REFCURSORARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>refcursorarray</code> type.</li>
+<li>
+<span class="constant" id="REGPROCEDURE">REGPROCEDURE<a class="permalink" href="pq/Types#REGPROCEDURE">#</a></span><br>
+<span class="constant">OID</span> of the <code>regprocedure</code> type.</li>
+<li>
+<span class="constant" id="REGOPER">REGOPER<a class="permalink" href="pq/Types#REGOPER">#</a></span><br>
+<span class="constant">OID</span> of the <code>regoper</code> type.</li>
+<li>
+<span class="constant" id="REGOPERATOR">REGOPERATOR<a class="permalink" href="pq/Types#REGOPERATOR">#</a></span><br>
+<span class="constant">OID</span> of the <code>regoperator</code> type.</li>
+<li>
+<span class="constant" id="REGCLASS">REGCLASS<a class="permalink" href="pq/Types#REGCLASS">#</a></span><br>
+<span class="constant">OID</span> of the <code>regclass</code> type.</li>
+<li>
+<span class="constant" id="REGTYPE">REGTYPE<a class="permalink" href="pq/Types#REGTYPE">#</a></span><br>
+<span class="constant">OID</span> of the <code>regtype</code> type.</li>
+<li>
+<span class="constant" id="REGPROCEDUREARRAY">REGPROCEDUREARRAY<a class="permalink" href="pq/Types#REGPROCEDUREARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>regprocedurearray</code> type.</li>
+<li>
+<span class="constant" id="REGOPERARRAY">REGOPERARRAY<a class="permalink" href="pq/Types#REGOPERARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>regoperarray</code> type.</li>
+<li>
+<span class="constant" id="REGOPERATORARRAY">REGOPERATORARRAY<a class="permalink" href="pq/Types#REGOPERATORARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>regoperatorarray</code> type.</li>
+<li>
+<span class="constant" id="REGCLASSARRAY">REGCLASSARRAY<a class="permalink" href="pq/Types#REGCLASSARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>regclassarray</code> type.</li>
+<li>
+<span class="constant" id="REGTYPEARRAY">REGTYPEARRAY<a class="permalink" href="pq/Types#REGTYPEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>regtypearray</code> type.</li>
+<li>
+<span class="constant" id="UUID">UUID<a class="permalink" href="pq/Types#UUID">#</a></span><br>
+<span class="constant">OID</span> of the <code>uuid</code> type.</li>
+<li>
+<span class="constant" id="UUIDARRAY">UUIDARRAY<a class="permalink" href="pq/Types#UUIDARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>uuidarray</code> type.</li>
+<li>
+<span class="constant" id="TSVECTOR">TSVECTOR<a class="permalink" href="pq/Types#TSVECTOR">#</a></span><br>
+<span class="constant">OID</span> of the <code>tsvector</code> type.</li>
+<li>
+<span class="constant" id="GTSVECTOR">GTSVECTOR<a class="permalink" href="pq/Types#GTSVECTOR">#</a></span><br>
+<span class="constant">OID</span> of the <code>gtsvector</code> type.</li>
+<li>
+<span class="constant" id="TSQUERY">TSQUERY<a class="permalink" href="pq/Types#TSQUERY">#</a></span><br>
+<span class="constant">OID</span> of the <code>tsquery</code> type.</li>
+<li>
+<span class="constant" id="REGCONFIG">REGCONFIG<a class="permalink" href="pq/Types#REGCONFIG">#</a></span><br>
+<span class="constant">OID</span> of the <code>regconfig</code> type.</li>
+<li>
+<span class="constant" id="REGDICTIONARY">REGDICTIONARY<a class="permalink" href="pq/Types#REGDICTIONARY">#</a></span><br>
+<span class="constant">OID</span> of the <code>regdictionary</code> type.</li>
+<li>
+<span class="constant" id="TSVECTORARRAY">TSVECTORARRAY<a class="permalink" href="pq/Types#TSVECTORARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>tsvectorarray</code> type.</li>
+<li>
+<span class="constant" id="GTSVECTORARRAY">GTSVECTORARRAY<a class="permalink" href="pq/Types#GTSVECTORARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>gtsvectorarray</code> type.</li>
+<li>
+<span class="constant" id="TSQUERYARRAY">TSQUERYARRAY<a class="permalink" href="pq/Types#TSQUERYARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>tsqueryarray</code> type.</li>
+<li>
+<span class="constant" id="REGCONFIGARRAY">REGCONFIGARRAY<a class="permalink" href="pq/Types#REGCONFIGARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>regconfigarray</code> type.</li>
+<li>
+<span class="constant" id="REGDICTIONARYARRAY">REGDICTIONARYARRAY<a class="permalink" href="pq/Types#REGDICTIONARYARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>regdictionaryarray</code> type.</li>
+<li>
+<span class="constant" id="TXID_SNAPSHOT">TXID_SNAPSHOT<a class="permalink" href="pq/Types#TXID_SNAPSHOT">#</a></span><br>
+<span class="constant">OID</span> of the <code>txid_snapshot</code> type.</li>
+<li>
+<span class="constant" id="TXID_SNAPSHOTARRAY">TXID_SNAPSHOTARRAY<a class="permalink" href="pq/Types#TXID_SNAPSHOTARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>txid_snapshotarray</code> type.</li>
+<li>
+<span class="constant" id="INT4RANGE">INT4RANGE<a class="permalink" href="pq/Types#INT4RANGE">#</a></span><br>
+<span class="constant">OID</span> of the <code>int4range</code> type.</li>
+<li>
+<span class="constant" id="INT4RANGEARRAY">INT4RANGEARRAY<a class="permalink" href="pq/Types#INT4RANGEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>int4rangearray</code> type.</li>
+<li>
+<span class="constant" id="NUMRANGE">NUMRANGE<a class="permalink" href="pq/Types#NUMRANGE">#</a></span><br>
+<span class="constant">OID</span> of the <code>numrange</code> type.</li>
+<li>
+<span class="constant" id="NUMRANGEARRAY">NUMRANGEARRAY<a class="permalink" href="pq/Types#NUMRANGEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>numrangearray</code> type.</li>
+<li>
+<span class="constant" id="TSRANGE">TSRANGE<a class="permalink" href="pq/Types#TSRANGE">#</a></span><br>
+<span class="constant">OID</span> of the <code>tsrange</code> type.</li>
+<li>
+<span class="constant" id="TSRANGEARRAY">TSRANGEARRAY<a class="permalink" href="pq/Types#TSRANGEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>tsrangearray</code> type.</li>
+<li>
+<span class="constant" id="TSTZRANGE">TSTZRANGE<a class="permalink" href="pq/Types#TSTZRANGE">#</a></span><br>
+<span class="constant">OID</span> of the <code>tstzrange</code> type.</li>
+<li>
+<span class="constant" id="TSTZRANGEARRAY">TSTZRANGEARRAY<a class="permalink" href="pq/Types#TSTZRANGEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>tstzrangearray</code> type.</li>
+<li>
+<span class="constant" id="DATERANGE">DATERANGE<a class="permalink" href="pq/Types#DATERANGE">#</a></span><br>
+<span class="constant">OID</span> of the <code>daterange</code> type.</li>
+<li>
+<span class="constant" id="DATERANGEARRAY">DATERANGEARRAY<a class="permalink" href="pq/Types#DATERANGEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>daterangearray</code> type.</li>
+<li>
+<span class="constant" id="INT8RANGE">INT8RANGE<a class="permalink" href="pq/Types#INT8RANGE">#</a></span><br>
+<span class="constant">OID</span> of the <code>int8range</code> type.</li>
+<li>
+<span class="constant" id="INT8RANGEARRAY">INT8RANGEARRAY<a class="permalink" href="pq/Types#INT8RANGEARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>int8rangearray</code> type.</li>
+<li>
+<span class="constant" id="RECORD">RECORD<a class="permalink" href="pq/Types#RECORD">#</a></span><br>
+<span class="constant">OID</span> of the <code>record</code> type.</li>
+<li>
+<span class="constant" id="CSTRING">CSTRING<a class="permalink" href="pq/Types#CSTRING">#</a></span><br>
+<span class="constant">OID</span> of the <code>cstring</code> type.</li>
+<li>
+<span class="constant" id="ANY">ANY<a class="permalink" href="pq/Types#ANY">#</a></span><br>
+<span class="constant">OID</span> of the <code>any</code> type.</li>
+<li>
+<span class="constant" id="ANYARRAY">ANYARRAY<a class="permalink" href="pq/Types#ANYARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>anyarray</code> type.</li>
+<li>
+<span class="constant" id="VOID">VOID<a class="permalink" href="pq/Types#VOID">#</a></span><br>
+<span class="constant">OID</span> of the <code>void</code> type.</li>
+<li>
+<span class="constant" id="TRIGGER">TRIGGER<a class="permalink" href="pq/Types#TRIGGER">#</a></span><br>
+<span class="constant">OID</span> of the <code>trigger</code> type.</li>
+<li>
+<span class="constant" id="EVENT_TRIGGER">EVENT_TRIGGER<a class="permalink" href="pq/Types#EVENT_TRIGGER">#</a></span><br>
+<span class="constant">OID</span> of the <code>event_trigger</code> type.</li>
+<li>
+<span class="constant" id="LANGUAGE_HANDLER">LANGUAGE_HANDLER<a class="permalink" href="pq/Types#LANGUAGE_HANDLER">#</a></span><br>
+<span class="constant">OID</span> of the <code>language_handler</code> type.</li>
+<li>
+<span class="constant" id="INTERNAL">INTERNAL<a class="permalink" href="pq/Types#INTERNAL">#</a></span><br>
+<span class="constant">OID</span> of the <code>internal</code> type.</li>
+<li>
+<span class="constant" id="OPAQUE">OPAQUE<a class="permalink" href="pq/Types#OPAQUE">#</a></span><br>
+<span class="constant">OID</span> of the <code>opaque</code> type.</li>
+<li>
+<span class="constant" id="ANYELEMENT">ANYELEMENT<a class="permalink" href="pq/Types#ANYELEMENT">#</a></span><br>
+<span class="constant">OID</span> of the <code>anyelement</code> type.</li>
+<li>
+<span class="constant" id="ANYNONARRAY">ANYNONARRAY<a class="permalink" href="pq/Types#ANYNONARRAY">#</a></span><br>
+<span class="constant">OID</span> of the <code>anynonarray</code> type.</li>
+<li>
+<span class="constant" id="ANYENUM">ANYENUM<a class="permalink" href="pq/Types#ANYENUM">#</a></span><br>
+<span class="constant">OID</span> of the <code>anyenum</code> type.</li>
+<li>
+<span class="constant" id="FDW_HANDLER">FDW_HANDLER<a class="permalink" href="pq/Types#FDW_HANDLER">#</a></span><br>
+<span class="constant">OID</span> of the <code>fdw_handler</code> type.</li>
+<li>
+<span class="constant" id="ANYRANGE">ANYRANGE<a class="permalink" href="pq/Types#ANYRANGE">#</a></span><br>
+<span class="constant">OID</span> of the <code>anyrange</code> type.</li>
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="pq/Types#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> (readonly) <a href="pq/Connection">pq\Connection</a> <span class="var" id="$connection">$connection<a class="permalink" href="pq/Types#%24connection">#</a></span><br>
 The connection which was used to obtain type information.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq/Types#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/Types/__construct">Types::__construct</a></h3>
+		<h3 id="Types::__construct">
+<a href="pq/Types/__construct">Types::__construct</a><a class="permalink" href="pq/Types#Types::__construct">#</a>
+</h3>
 		<p>Create a new instance populated with information obtained from the <code>pg_type</code> relation.</p>
 
-		<p>void pq\Types::__construct(pq\Connection $conn[, array $namespaces = NULL)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Types/__construct">pq\Types::__construct</a>(<a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$namespaces</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Types/refresh">Types::refresh</a></h3>
+		<h3 id="Types::refresh">
+<a href="pq/Types/refresh">Types::refresh</a><a class="permalink" href="pq/Types#Types::refresh">#</a>
+</h3>
 		<p>Refresh type information from <code>pg_type</code>.</p>
 
-		<p>void pq\Types::refresh([array $namespaces = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Types/refresh">pq\Types::refresh</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$namespaces</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

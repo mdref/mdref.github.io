@@ -85,105 +85,39 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Query\AsyncExecutor extends pq\Query\Executor</h1>
-<p>An asynchronous query executor implementation.
-See pq\Query\Executor for inherited methods and properties.</p>
-<h2>Example with <a href="https://github.com/reactphp/promise">React/Promise</a><a id="Example.with.React.Promise" href="#Example.with.React.Promise" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Connection, pq\Result;
-use pq\Query\AsyncExecutor, pq\Query\Writer;
-
-use React\Promise\Deferred;
-
-$conn = new Connection;
-$exec = new AsyncExecutor($conn);
-$exec-&gt;setCallbacks(
-# init context
-function() {
-	return new Deferred;
-},
-# done
-function(Deferred $context, $result) {
-	$context-&gt;resolve($result);
-},
-# then
-function(Deferred $context, callable $cb) {
-	return $context-&gt;promise()-&gt;then($cb);
-});
-
-# a contrived query
-$query = new Writer(&quot;SELECT \$1::int, \$2::int&quot;, [1, 2]);
-$exec-&gt;execute($query, function(Result $result) {
-	var_dump($result-&gt;fetchAll());
-});
-
-# this call blocks; see pq\Connection::getResult() etc.
-$conn-&gt;getResult();
-
-?&gt;
-</code></pre>
-<h2>Example with <a href="https://github.com/amphp/amp">Amphp/Amp</a><a id="Example.with.Amphp.Amp" href="#Example.with.Amphp.Amp" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Connection, pq\Result;
-use pq\Query\AsyncExecutor, pq\Query\Writer;
-
-use Amphp\Deferred;
-
-$conn = new Connection;
-$exec = new AsyncExecutor($conn);
-$exec-&gt;setCallbacks(
-# init context
-function() {
-	return new Deferred;
-},
-# done
-function(Deferred $context, $result) {
-	$context-&gt;succeed($result);
-},
-# then
-function(Deferred $context, callable $cb) {
-	return $context-&gt;promise()-&gt;when(function($error, $result) use ($cb) {
-		$cb($result);
-	});
-});
-
-# a contrived query
-$query = new Writer(&quot;SELECT \$1::int, \$2::int&quot;, [1, 2]);
-$exec-&gt;execute($query, function(Result $result) {
-	var_dump($result-&gt;fetchAll());
-});
-
-# this call blocks; see pq\Connection::getResult() etc.
-$conn-&gt;getResult();
-
-?&gt;
-</code></pre>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Query/AsyncExecutor#">#</a><em>class</em> <a href="pq-gateway/pq/Query/AsyncExecutor">pq\Query\AsyncExecutor</a> <br>&nbsp;<em>extends</em> <a href="pq-gateway/pq/Query/Executor">pq\Query\Executor</a>
+</h1><p>An asynchronous query executor implementation.
+See <a href="pq-gateway/pq/Query/Executor">pq\Query\Executor</a> for inherited methods and properties.</p><h2 id="Example.with.React.Promise">Example with <a href="https://github.com/reactphp/promise">React/Promise</a><a class="permalink" href="pq-gateway/pq/Query/AsyncExecutor#Example.with.React.Promise">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">pq\Result</span><span style="color: inherit" class="keyword">;<br>use </span><span style="color: inherit" class="default">pq\Query\AsyncExecutor</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">pq\Query\Writer</span><span style="color: inherit" class="keyword">;<br><br>use </span><span style="color: inherit" class="default">React\Promise\Deferred</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$conn </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$exec </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">AsyncExecutor</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$exec</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setCallbacks</span><span style="color: inherit" class="keyword">(<br></span><span style="color: inherit" class="comment"># init context<br></span><span style="color: inherit" class="keyword">function() {<br>    return new </span><span style="color: inherit" class="default">Deferred</span><span style="color: inherit" class="keyword">;<br>},<br></span><span style="color: inherit" class="comment"># done<br></span><span style="color: inherit" class="keyword">function(</span><span style="color: inherit" class="default">Deferred $context</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">$context</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">resolve</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">);<br>},<br></span><span style="color: inherit" class="comment"># then<br></span><span style="color: inherit" class="keyword">function(</span><span style="color: inherit" class="default">Deferred $context</span><span style="color: inherit" class="keyword">, callable </span><span style="color: inherit" class="default">$cb</span><span style="color: inherit" class="keyword">) {<br>    return </span><span style="color: inherit" class="default">$context</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">promise</span><span style="color: inherit" class="keyword">()-&gt;</span><span style="color: inherit" class="default">then</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$cb</span><span style="color: inherit" class="keyword">);<br>});<br><br></span><span style="color: inherit" class="comment"># a contrived query<br></span><span style="color: inherit" class="default">$query </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Writer</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT \$1::int, \$2::int"</span><span style="color: inherit" class="keyword">, [</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">]);<br></span><span style="color: inherit" class="default">$exec</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">execute</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$query</span><span style="color: inherit" class="keyword">, function(</span><span style="color: inherit" class="default">Result $result</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchAll</span><span style="color: inherit" class="keyword">());<br>});<br><br></span><span style="color: inherit" class="comment"># this call blocks; see pq\Connection::getResult() etc.<br></span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResult</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h2 id="Example.with.Amphp.Amp">Example with <a href="https://github.com/amphp/amp">Amphp/Amp</a><a class="permalink" href="pq-gateway/pq/Query/AsyncExecutor#Example.with.Amphp.Amp">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">pq\Result</span><span style="color: inherit" class="keyword">;<br>use </span><span style="color: inherit" class="default">pq\Query\AsyncExecutor</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">pq\Query\Writer</span><span style="color: inherit" class="keyword">;<br><br>use </span><span style="color: inherit" class="default">Amphp\Deferred</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$conn </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$exec </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">AsyncExecutor</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$exec</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setCallbacks</span><span style="color: inherit" class="keyword">(<br></span><span style="color: inherit" class="comment"># init context<br></span><span style="color: inherit" class="keyword">function() {<br>    return new </span><span style="color: inherit" class="default">Deferred</span><span style="color: inherit" class="keyword">;<br>},<br></span><span style="color: inherit" class="comment"># done<br></span><span style="color: inherit" class="keyword">function(</span><span style="color: inherit" class="default">Deferred $context</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">$context</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">succeed</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">);<br>},<br></span><span style="color: inherit" class="comment"># then<br></span><span style="color: inherit" class="keyword">function(</span><span style="color: inherit" class="default">Deferred $context</span><span style="color: inherit" class="keyword">, callable </span><span style="color: inherit" class="default">$cb</span><span style="color: inherit" class="keyword">) {<br>    return </span><span style="color: inherit" class="default">$context</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">promise</span><span style="color: inherit" class="keyword">()-&gt;</span><span style="color: inherit" class="default">when</span><span style="color: inherit" class="keyword">(function(</span><span style="color: inherit" class="default">$error</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">) use (</span><span style="color: inherit" class="default">$cb</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">$cb</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">);<br>    });<br>});<br><br></span><span style="color: inherit" class="comment"># a contrived query<br></span><span style="color: inherit" class="default">$query </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Writer</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT \$1::int, \$2::int"</span><span style="color: inherit" class="keyword">, [</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">]);<br></span><span style="color: inherit" class="default">$exec</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">execute</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$query</span><span style="color: inherit" class="keyword">, function(</span><span style="color: inherit" class="default">Result $result</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchAll</span><span style="color: inherit" class="keyword">());<br>});<br><br></span><span style="color: inherit" class="comment"># this call blocks; see pq\Connection::getResult() etc.<br></span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResult</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Query/AsyncExecutor#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/AsyncExecutor/execute">AsyncExecutor::execute</a></h3>
-		<p>Execute the query asynchronously and let the callback process the result on resolve.</p>
+		<h3 id="AsyncExecutor::execute">
+<a href="pq-gateway/pq/Query/AsyncExecutor/execute">AsyncExecutor::execute</a><a class="permalink" href="pq-gateway/pq/Query/AsyncExecutor#AsyncExecutor::execute">#</a>
+</h3>
+		<p>Execute the query asynchronously and let the <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> process the result on resolve.</p>
 
-		<p>Promise pq\Query\AsyncExecutor::execute(pq\Query\WriterInterface $query, callable $callback)</p>
+		<p>Promise <a href="pq-gateway/pq/Query/AsyncExecutor/execute">pq\Query\AsyncExecutor::execute</a>(<a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a> <span class="var">$query</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/AsyncExecutor/setCallbacks">AsyncExecutor::setCallbacks</a></h3>
+		<h3 id="AsyncExecutor::setCallbacks">
+<a href="pq-gateway/pq/Query/AsyncExecutor/setCallbacks">AsyncExecutor::setCallbacks</a><a class="permalink" href="pq-gateway/pq/Query/AsyncExecutor#AsyncExecutor::setCallbacks">#</a>
+</h3>
 		<p>Set the callbacks the asynchronous executor should use to resolve the result.</p>
 
-		<p>void pq\Query\AsyncExecutor::setCallbacks(callable $init, callable $done, callable $then)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Query/AsyncExecutor/setCallbacks">pq\Query\AsyncExecutor::setCallbacks</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$init</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$done</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$then</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

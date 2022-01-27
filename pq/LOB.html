@@ -105,86 +105,94 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\LOB</h1>
-<p>A <em>large object</em>.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/LOB#">#</a><em>class</em> <a href="pq/LOB">pq\LOB</a>
+</h1><p>A <em>large object</em>.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
 Working with <em>large objects</em> requires an active transaction.</p>
-</blockquote>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>INVALID_OID<br />
-0, representing an invalid OID.</li>
+</blockquote><h2 id="Constants:">Constants:<a class="permalink" href="pq/LOB#Constants:">#</a>
+</h2><ul>
 <li>
-<span class="constant">R</span><br />
+<span class="constant" id="INVALID_OID">INVALID_OID<a class="permalink" href="pq/LOB#INVALID_OID">#</a></span><br>
+0, representing an invalid <span class="constant">OID</span>.</li>
+<li>
+<span class="constant" id="R">R<a class="permalink" href="pq/LOB#R">#</a></span><br>
 Read-only mode.</li>
 <li>
-<span class="constant">W</span><br />
+<span class="constant" id="W">W<a class="permalink" href="pq/LOB#W">#</a></span><br>
 Write-only mode.</li>
-<li>RW<br />
+<li>
+<span class="constant" id="RW">RW<a class="permalink" href="pq/LOB#RW">#</a></span><br>
 Read/write mode.</li>
-</ul>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>public (readonly) pq\Transaction $transaction<br />
+</ul><h2 id="Properties:">Properties:<a class="permalink" href="pq/LOB#Properties:">#</a>
+</h2><ul>
+<li>
+<em>public</em> (readonly) <a href="pq/Transaction">pq\Transaction</a> <span class="var" id="$transaction">$transaction<a class="permalink" href="pq/LOB#%24transaction">#</a></span><br>
 The transaction wrapping the operations on the <em>large object</em>.</li>
-<li>public (readonly) int $oid<br />
-The OID of the <em>large object</em>.</li>
-<li>public (readonly) resource $stream<br />
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$oid">$oid<a class="permalink" href="pq/LOB#%24oid">#</a></span><br>
+The <span class="constant">OID</span> of the <em>large object</em>.</li>
+<li>
+<em>public</em> (readonly) <code><a href="https://php.net/manual/en/language.types.resource">resource</a></code> <span class="var" id="$stream">$stream<a class="permalink" href="pq/LOB#%24stream">#</a></span><br>
 The stream connected to the <em>large object</em>.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq/LOB#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/LOB/__construct">LOB::__construct</a></h3>
+		<h3 id="LOB::__construct">
+<a href="pq/LOB/__construct">LOB::__construct</a><a class="permalink" href="pq/LOB#LOB::__construct">#</a>
+</h3>
 		<p>Open or create a <em>large object</em>.</p>
 
-		<p>void pq\LOB::__construct(pq\Transaction $txn[, int $oid = pq\LOB::INVALID_OID[, int $mode = pq\LOB::RW]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/LOB/__construct">pq\LOB::__construct</a>(<a href="pq/Transaction">pq\Transaction</a> <span class="var">$txn</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$oid</span> = <a href="pq/LOB#INVALID_OID">pq\LOB::INVALID_OID</a>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$mode</span> = <a href="pq/LOB#RW">pq\LOB::RW</a>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/LOB/read">LOB::read</a></h3>
-		<p>Read a string of data from the current position of the <em>large object</em>.</p>
+		<h3 id="LOB::read">
+<a href="pq/LOB/read">LOB::read</a><a class="permalink" href="pq/LOB#LOB::read">#</a>
+</h3>
+		<p>Read a <code><a href="https://php.net/manual/en/language.types.string">string</a></code> of data from the current position of the <em>large object</em>.</p>
 
-		<p>string pq\LOB::read([int $length = 0x1000[, int &amp;$read = NULL]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/LOB/read">pq\LOB::read</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$length</span> = 0x1000[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> &amp;<span class="var">$read</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/LOB/seek">LOB::seek</a></h3>
+		<h3 id="LOB::seek">
+<a href="pq/LOB/seek">LOB::seek</a><a class="permalink" href="pq/LOB#LOB::seek">#</a>
+</h3>
 		<p>Seek to a position within the <em>large object</em>.</p>
 
-		<p>int pq\LOB::seek(int $offset[, int $whence = SEEK_SET])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq/LOB/seek">pq\LOB::seek</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$offset</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$whence</span> = SEEK_SET])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/LOB/tell">LOB::tell</a></h3>
+		<h3 id="LOB::tell">
+<a href="pq/LOB/tell">LOB::tell</a><a class="permalink" href="pq/LOB#LOB::tell">#</a>
+</h3>
 		<p>Retrieve the current position within the <em>large object</em>.</p>
 
-		<p>int pq\LOB::tell()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq/LOB/tell">pq\LOB::tell</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/LOB/truncate">LOB::truncate</a></h3>
+		<h3 id="LOB::truncate">
+<a href="pq/LOB/truncate">LOB::truncate</a><a class="permalink" href="pq/LOB#LOB::truncate">#</a>
+</h3>
 		<p>Truncate the <em>large object</em>.</p>
 
-		<p>void pq\LOB::truncate([int $length = 0])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/LOB/truncate">pq\LOB::truncate</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$length</span> = 0])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/LOB/write">LOB::write</a></h3>
+		<h3 id="LOB::write">
+<a href="pq/LOB/write">LOB::write</a><a class="permalink" href="pq/LOB#LOB::write">#</a>
+</h3>
 		<p>Write data to the <em>large object</em>.</p>
 
-		<p>int pq\LOB::write(string $data)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq/LOB/write">pq\LOB::write</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

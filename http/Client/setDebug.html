@@ -129,134 +129,35 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Client http\Client::setDebug(callable $callback)</h1>
-<p>Set client debugging callback.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/setDebug#">#</a><a href="http/Client">http\Client</a> <a href="http/Client/setDebug">http\Client::setDebug</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>)</h1><p>Set client debugging <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
 This method has been added in v2.6.0, resp. v3.1.0.</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>callable $callback as function(http\Client $c, http\Client\Request $r, int $type, string $data)<br />
-The debug callback. For $type see http\Client::DEBUG_* constants.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Client, self.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-(new http\Client)-&gt;setDebug(function($c, $r, $type, $data) {
-	if ($type === http\Client::DEBUG_INFO) {
-		printf(&quot;INFO: %s\n&quot;, $data);
-	} else {
-		repeat:
-		if ($type &amp; http\Client::DEBUG_OUT) {
-			$sep = &quot;&gt;&quot;;
-		} elseif ($type &amp; http\Client::DEBUG_IN) {
-			$sep = &quot;&lt;&quot;;
-		}
-		if ($type &amp; http\Client::DEBUG_SSL) {
-			printf(&quot;%s &lt;%d bytes of SSL data&gt;\n&quot;, $sep, strlen($data));
-		} else {
-			printf(&quot;%s %s\n&quot;, $sep, str_replace(&quot;\n&quot;, &quot;\n$sep &quot;, rtrim($data, &quot;\n&quot;)));
-		}
-	}
-})-&gt;enqueue(new http\Client\Request(&quot;GET&quot;, &quot;http://example.com&quot;))-&gt;send();
-
-?&gt;
-</code></pre>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-Except for http\Client::DEBUG_INFO, which always occurs separately, the debug
-callback's $type argument contains a bitmask of (http\Client::DEBUG_IN or http\Client::DEBUG_OUT)
-and (http\Client::DEBUG_HEADER or http\Client::DEBUG_BODY or http\Client::DEBUG_SSL).</p>
-</blockquote>
-<h3>Yields:<a id="Yields:" href="#Yields:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<pre><code>INFO:   Trying 93.184.216.34...
-
-INFO: Connected to example.com (93.184.216.34) port 80 (#0)
-
-&gt; GET / HTTP/1.1
-&gt; Host: example.com
-&gt; User-Agent: PECL_HTTP/2.6.0dev PHP/5.6.19RC1 libcurl/7.50.0-DEV
-&gt; Accept: */*
-&gt;
-&lt; HTTP/1.1 200 OK
-&lt; Cache-Control: max-age=604800
-&lt; Content-Type: text/html
-&lt; Date: Thu, 18 Aug 2016 17:55:10 GMT
-&lt; Etag: &quot;359670651+gzip+ident&quot;
-&lt; Expires: Thu, 25 Aug 2016 17:55:10 GMT
-&lt; Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
-&lt; Server: ECS (iad/182A)
-&lt; Vary: Accept-Encoding
-&lt; X-Cache: HIT
-&lt; x-ec-custom-error: 1
-&lt; Content-Length: 1270
-&lt;
-&lt; &lt;!doctype html&gt;
-&lt; &lt;html&gt;
-&lt; &lt;head&gt;
-&lt;     &lt;title&gt;Example Domain&lt;/title&gt;
-&lt;
-&lt;     &lt;meta charset=&quot;utf-8&quot; /&gt;
-&lt;     &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
-&lt;     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
-&lt;     &lt;style type=&quot;text/css&quot;&gt;
-&lt;     body {
-&lt;         background-color: #f0f0f2;
-&lt;         margin: 0;
-&lt;         padding: 0;
-&lt;         font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
-&lt;
-&lt;     }
-&lt;     div {
-&lt;         width: 600px;
-&lt;         margin: 5em auto;
-&lt;         padding: 50px;
-&lt;         background-color: #fff;
-&lt;         border-radius: 1em;
-&lt;     }
-&lt;     a:link, a:visited {
-&lt;         color: #38488f;
-&lt;         text-decoration: none;
-&lt;     }
-&lt;     @media (max-width: 700px) {
-&lt;         body {
-&lt;             background-color: #fff;
-&lt;         }
-&lt;         div {
-&lt;             width: auto;
-&lt;             margin: 0 auto;
-&lt;             border-radius: 0;
-&lt;             padding: 1em;
-&lt;         }
-&lt;     }
-&lt;     &lt;/style&gt;
-&lt; &lt;/head&gt;
-&lt;
-&lt; &lt;body&gt;
-&lt; &lt;div&gt;
-&lt;     &lt;h1&gt;Example Domain&lt;/h1&gt;
-&lt;     &lt;p&gt;This domain is established to be used for illustrative examples in documents. You may use this
-&lt;     domain in examples without prior coordination or asking for permission.&lt;/p&gt;
-&lt;     &lt;p&gt;&lt;a href=&quot;http://www.iana.org/domains/example&quot;&gt;More information...&lt;/a&gt;&lt;/p&gt;
-&lt; &lt;/div&gt;
-&lt; &lt;/body&gt;
-&lt; &lt;/html&gt;
-INFO: Connection #0 to host example.com left intact
-</code></pre>
-
-
-
-		
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="http/Client/setDebug#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var" id="$callback">$callback<a class="permalink" href="http/Client/setDebug#%24callback">#</a></span> as function(<a href="http/Client">http\Client</a> <span class="var" id="$c">$c<a class="permalink" href="http/Client/setDebug#%24c">#</a></span>, <a href="http/Client/Request">http\Client\Request</a> <span class="var" id="$r">$r<a class="permalink" href="http/Client/setDebug#%24r">#</a></span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$type">$type<a class="permalink" href="http/Client/setDebug#%24type">#</a></span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$data">$data<a class="permalink" href="http/Client/setDebug#%24data">#</a></span>)<br>
+The debug <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>. For <span class="var">$type</span> see <a href="http/Client#DEBUG_*">http\Client::DEBUG_*</a> constants.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/setDebug#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Client">http\Client</a>, <em>self</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Client/setDebug#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/setDebug#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">)-&gt;</span><span style="color: inherit" class="default">setDebug</span><span style="color: inherit" class="keyword">(function(</span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$r</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$type</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$data</span><span style="color: inherit" class="keyword">) {<br>    if (</span><span style="color: inherit" class="default">$type </span><span style="color: inherit" class="keyword">=== </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">DEBUG_INFO</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"INFO: %s\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$data</span><span style="color: inherit" class="keyword">);<br>    } else {<br>        </span><span style="color: inherit" class="default">repeat</span><span style="color: inherit" class="keyword">:<br>        if (</span><span style="color: inherit" class="default">$type </span><span style="color: inherit" class="keyword">&amp; </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">DEBUG_OUT</span><span style="color: inherit" class="keyword">) {<br>            </span><span style="color: inherit" class="default">$sep </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="string">"&gt;"</span><span style="color: inherit" class="keyword">;<br>        } elseif (</span><span style="color: inherit" class="default">$type </span><span style="color: inherit" class="keyword">&amp; </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">DEBUG_IN</span><span style="color: inherit" class="keyword">) {<br>            </span><span style="color: inherit" class="default">$sep </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="string">"&lt;"</span><span style="color: inherit" class="keyword">;<br>        }<br>        if (</span><span style="color: inherit" class="default">$type </span><span style="color: inherit" class="keyword">&amp; </span><span style="color: inherit" class="default">http\Client</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">DEBUG_SSL</span><span style="color: inherit" class="keyword">) {<br>            </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%s &lt;%d bytes of SSL data&gt;\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$sep</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">strlen</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$data</span><span style="color: inherit" class="keyword">));<br>        } else {<br>            </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%s %s\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$sep</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">str_replace</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"\n</span><span style="color: inherit" class="default">$sep</span><span style="color: inherit" class="string"> "</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">rtrim</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$data</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">)));<br>        }<br>    }<br>})-&gt;</span><span style="color: inherit" class="default">enqueue</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">http\Client\Request</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"GET"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"http://example.com"</span><span style="color: inherit" class="keyword">))-&gt;</span><span style="color: inherit" class="default">send</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+Except for <a href="http/Client#DEBUG_INFO">http\Client::DEBUG_INFO</a>, which always occurs separately, the debug
+<code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>'s <span class="var">$type</span> argument contains a bitmask of (<a href="http/Client#DEBUG_IN">http\Client::DEBUG_IN</a> or <a href="http/Client#DEBUG_OUT">http\Client::DEBUG_OUT</a>)
+and (<a href="http/Client#DEBUG_HEADER">http\Client::DEBUG_HEADER</a> or <a href="http/Client#DEBUG_BODY">http\Client::DEBUG_BODY</a> or <a href="http/Client#DEBUG_SSL">http\Client::DEBUG_SSL</a>).</p>
+</blockquote><h3 id="Yields:">Yields:<a class="permalink" href="http/Client/setDebug#Yields:">#</a>
+</h3><pre><code><span style="color: inherit" class="html">
+INFO:   Trying 93.184.216.34...<br><br>INFO: Connected to example.com (93.184.216.34) port 80 (#0)<br><br>&gt; GET / HTTP/1.1<br>&gt; Host: example.com<br>&gt; User-Agent: PECL_HTTP/2.6.0dev PHP/5.6.19RC1 libcurl/7.50.0-DEV<br>&gt; Accept: */*<br>&gt;<br>&lt; HTTP/1.1 200 OK<br>&lt; Cache-Control: max-age=604800<br>&lt; Content-Type: text/html<br>&lt; Date: Thu, 18 Aug 2016 17:55:10 GMT<br>&lt; Etag: "359670651+gzip+ident"<br>&lt; Expires: Thu, 25 Aug 2016 17:55:10 GMT<br>&lt; Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT<br>&lt; Server: ECS (iad/182A)<br>&lt; Vary: Accept-Encoding<br>&lt; X-Cache: HIT<br>&lt; x-ec-custom-error: 1<br>&lt; Content-Length: 1270<br>&lt;<br>&lt; &lt;!doctype html&gt;<br>&lt; &lt;html&gt;<br>&lt; &lt;head&gt;<br>&lt;     &lt;title&gt;Example Domain&lt;/title&gt;<br>&lt;<br>&lt;     &lt;meta charset="utf-8" /&gt;<br>&lt;     &lt;meta http-equiv="Content-type" content="text/html; charset=utf-8" /&gt;<br>&lt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;<br>&lt;     &lt;style type="text/css"&gt;<br>&lt;     body {<br>&lt;         background-color: #f0f0f2;<br>&lt;         margin: 0;<br>&lt;         padding: 0;<br>&lt;         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;<br>&lt;<br>&lt;     }<br>&lt;     div {<br>&lt;         width: 600px;<br>&lt;         margin: 5em auto;<br>&lt;         padding: 50px;<br>&lt;         background-color: #fff;<br>&lt;         border-radius: 1em;<br>&lt;     }<br>&lt;     a:link, a:visited {<br>&lt;         color: #38488f;<br>&lt;         text-decoration: none;<br>&lt;     }<br>&lt;     @media (max-width: 700px) {<br>&lt;         body {<br>&lt;             background-color: #fff;<br>&lt;         }<br>&lt;         div {<br>&lt;             width: auto;<br>&lt;             margin: 0 auto;<br>&lt;             border-radius: 0;<br>&lt;             padding: 1em;<br>&lt;         }<br>&lt;     }<br>&lt;     &lt;/style&gt;<br>&lt; &lt;/head&gt;<br>&lt;<br>&lt; &lt;body&gt;<br>&lt; &lt;div&gt;<br>&lt;     &lt;h1&gt;Example Domain&lt;/h1&gt;<br>&lt;     &lt;p&gt;This domain is established to be used for illustrative examples in documents. You may use this<br>&lt;     domain in examples without prior coordination or asking for permission.&lt;/p&gt;<br>&lt;     &lt;p&gt;&lt;a href="http://www.iana.org/domains/example"&gt;More information...&lt;/a&gt;&lt;/p&gt;<br>&lt; &lt;/div&gt;<br>&lt; &lt;/body&gt;<br>&lt; &lt;/html&gt;<br>INFO: Connection #0 to host example.com left intact<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

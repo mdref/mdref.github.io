@@ -129,28 +129,25 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>mixed pq\Gateway\Table::delete(array $where,[, $returning = NULL])</h1>
-<p>Delete rows from the table.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array $where<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/delete#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/delete">pq\Gateway\Table::delete</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$where</span>,[, <span class="var">$returning</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>Delete rows from the table.</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Gateway/Table/delete#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$where">$where<a class="permalink" href="pq-gateway/pq/Gateway/Table/delete#%24where">#</a></span><br>
 Removal criteria.</li>
-<li>Optional string $returning = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$returning">$returning<a class="permalink" href="pq-gateway/pq/Gateway/Table/delete#%24returning">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 What the DELETE should return.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Gateway/Table/delete#Returns:">#</a>
+</h2><ul>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using <a href="pq-gateway/pq/Query/AsyncExecutor">pq\Query\AsyncExecutor</a>, the asynchronous executor.<br>
 Else:</li>
-<li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
-<li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
-<li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
-</ul>
-
-
-
-		
+<li>
+<a href="pq/Result">pq\Result</a>, if <a href="pq/Result#%24status">pq\Result::$status</a> != <a href="pq/Result#TUPLES_OK">pq\Result::TUPLES_OK</a>.</li>
+<li>
+<a href="pq/Result">pq\Result</a>, if the rowset prototype <a href="pq-gateway/pq/Gateway/Table#%24rowset">pq\Gateway\Table::$rowset</a> is empty.</li>
+<li>
+<a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a>, an instance of the rowset prototype.</li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

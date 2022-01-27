@@ -67,42 +67,27 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>string pq\LOB::read([int $length = 0x1000[, int &amp;$read = NULL]])</h1>
-<p>Read a string of data from the current position of the <em>large object</em>.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional int $length = 0x1000<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/LOB/read#">#</a><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq/LOB/read">pq\LOB::read</a>([<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$length</span> = 0x1000[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> &amp;<span class="var">$read</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</h1><p>Read a <code><a href="https://php.net/manual/en/language.types.string">string</a></code> of data from the current position of the <em>large object</em>.</p><h2 id="Params:">Params:<a class="permalink" href="pq/LOB/read#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$length">$length<a class="permalink" href="pq/LOB/read#%24length">#</a></span> = 0x1000<br>
 The amount of bytes to read from the <em>large object</em>.</li>
-<li>Optional int &amp;$read = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> &amp;<span class="var" id="$read">$read<a class="permalink" href="pq/LOB/read#%24read">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The amount of bytes actually read from the <em>large object</em>.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string, the data read.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$connection = new pq\Connection;
-$transaction = new pq\Transaction($connection);
-
-$data = $tansaction-&gt;openLOB(123)-&gt;read(100, $read);
-
-printf(&quot;Read %d bytes: '%s'\n&quot;, $read, $data);
-
-?&gt;
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/LOB/read#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code>, the data read.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/LOB/read#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/LOB/read#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$transaction </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Transaction</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">$data </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$tansaction</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">openLOB</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">123</span><span style="color: inherit" class="keyword">)-&gt;</span><span style="color: inherit" class="default">read</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">100</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$read</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Read %d bytes: '%s'\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$read</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$data</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

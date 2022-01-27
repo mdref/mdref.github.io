@@ -129,48 +129,36 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>mixed pq\Gateway\Table::of(pq\Gateway\Row $foreign[, string $ref = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0]]]])</h1>
-<p>Find rows in table by foreign key.
-See pq\Gateway\Table::find(), pq\Gateway\Table::by() and pq\Gateway\Row::allOf().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Gateway\Row $row<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/of#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/of">pq\Gateway\Table::of</a>(<a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var">$foreign</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$ref</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$order</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$limit</span> = 0[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$offset</span> = 0]]]])</h1><p>Find rows in table by foreign key.
+See <a href="pq-gateway/pq/Gateway/Table/find">pq\Gateway\Table::find</a>(), <a href="pq-gateway/pq/Gateway/Table/by">pq\Gateway\Table::by</a>() and <a href="pq-gateway/pq/Gateway/Row/allOf">pq\Gateway\Row::allOf</a>().</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Gateway/Table/of#Params:">#</a>
+</h2><ul>
+<li>
+<a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var" id="$row">$row<a class="permalink" href="pq-gateway/pq/Gateway/Table/of#%24row">#</a></span><br>
 A row of a table referencing this table through a foreign key.</li>
-<li>Optional string $ref = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$ref">$ref<a class="permalink" href="pq-gateway/pq/Gateway/Table/of#%24ref">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The identifying name of the relation.</li>
-<li>Optional string $order = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$order">$order<a class="permalink" href="pq-gateway/pq/Gateway/Table/of#%24order">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Sorting clause.</li>
-<li>Optional int $limit = 0<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$limit">$limit<a class="permalink" href="pq-gateway/pq/Gateway/Table/of#%24limit">#</a></span> = 0<br>
 Row count limit.</li>
-<li>Optional int $offset = 0<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$offset">$offset<a class="permalink" href="pq-gateway/pq/Gateway/Table/of#%24offset">#</a></span> = 0<br>
 Row count offset.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Gateway/Table/of#Returns:">#</a>
+</h2><ul>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using <a href="pq-gateway/pq/Query/AsyncExecutor">pq\Query\AsyncExecutor</a>, the asynchronous executor.<br>
 Else:</li>
-<li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
-<li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
-<li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Gateway\Table;
-
-$accounts = new Table(&quot;account&quot;);
-$account = $accounts-&gt;find([&quot;id=&quot; =&gt; 1])-&gt;current();
-
-$account_emails = new Table(&quot;account_emails&quot;);
-$emails = $account_emails-&gt;of($account);
-
-?&gt;
-</code></pre>
-
-
-
-		
+<li>
+<a href="pq/Result">pq\Result</a>, if <a href="pq/Result#%24status">pq\Result::$status</a> != <a href="pq/Result#TUPLES_OK">pq\Result::TUPLES_OK</a>.</li>
+<li>
+<a href="pq/Result">pq\Result</a>, if the rowset prototype <a href="pq-gateway/pq/Gateway/Table#%24rowset">pq\Gateway\Table::$rowset</a> is empty.</li>
+<li>
+<a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a>, an instance of the rowset prototype.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Gateway/Table/of#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$accounts </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$account </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$accounts</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">find</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"id=" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">])-&gt;</span><span style="color: inherit" class="default">current</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">$account_emails </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account_emails"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$emails </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$account_emails</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">of</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$account</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -83,43 +83,25 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>string pq\Query\Writer::param(mixed $param[, int $type = NULL])</h1>
-<p>Remember the parameter with any associated type and return $N to be written to the query string.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>mixed $param<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Query/Writer/param#">#</a><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="pq-gateway/pq/Query/Writer/param">pq\Query\Writer::param</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$param</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$type</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>Remember the parameter with any associated type and return <span class="var">$N</span> to be written to the query <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Query/Writer/param#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$param">$param<a class="permalink" href="pq-gateway/pq/Query/Writer/param#%24param">#</a></span><br>
 Query parameter value.</li>
-<li>Optional int $type = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$type">$type<a class="permalink" href="pq-gateway/pq/Query/Writer/param#%24type">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The type OID of the parameter.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string, '$N', to be used with pq\Query\Writer::write(), where N is the number of this parameter.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Query;
-
-$writer = new Query\Writer;
-$writer-&gt;write(&quot;SELECT&quot;, $writer-&gt;param(1));
-
-var_dump((string) $writer, $writer-&gt;getParams());
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>string(9) &quot;SELECT $1&quot;
-array(1) {
-  [0]=&gt;
-  int(1)
-}
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Query/Writer/param#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code>, '<span class="var" id="$N">$N<a class="permalink" href="pq-gateway/pq/Query/Writer/param#%24N">#</a></span>', to be used with <a href="pq-gateway/pq/Query/Writer/write">pq\Query\Writer::write</a>(), where N is the number of this parameter.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Query/Writer/param#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Query</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$writer </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Query\Writer</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$writer</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">write</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$writer</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">param</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">));<br><br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">((string) </span><span style="color: inherit" class="default">$writer</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$writer</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getParams</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+string(9) "SELECT $1"<br>array(1) {<br>  [0]=&gt;<br>  int(1)<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

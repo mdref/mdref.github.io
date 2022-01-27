@@ -188,103 +188,117 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class http\Client\Request extends http\Message</h1>
-<p>The http\Client\Request class provides an HTTP message implementation tailored to represent a request message to be sent by the client.</p>
-<p>See http\Client::enqueue().</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>None.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected array $options = NULL<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/Request#">#</a><em>class</em> <a href="http/Client/Request">http\Client\Request</a> <br>&nbsp;<em>extends</em> <a href="http/Message">http\Message</a>
+</h1><p>The <a href="http/Client/Request">http\Client\Request</a> <em>class</em> provides an HTTP message implementation tailored to represent a request message to be sent by the client.</p><p>See <a href="http/Client/enqueue">http\Client::enqueue</a>().</p><h2 id="Constants:">Constants:<a class="permalink" href="http/Client/Request#Constants:">#</a>
+</h2><p>None.</p><h2 id="Properties:">Properties:<a class="permalink" href="http/Client/Request#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$options">$options<a class="permalink" href="http/Client/Request#%24options">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Array of options for this request, which override client options.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Client/Request#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Client/Request/__construct">Request::__construct</a></h3>
-		<p>Create a new client request message to be enqueued and sent by http\Client.</p>
+		<h3 id="Request::__construct">
+<a href="http/Client/Request/__construct">Request::__construct</a><a class="permalink" href="http/Client/Request#Request::__construct">#</a>
+</h3>
+		<p>Create a new client request message to be enqueued and sent by <a href="http/Client">http\Client</a>.</p>
 
-		<p>void http\Client\Request::__construct([string $meth = NULL[, string $url = NULL[, array $headers = NULL[, http\Message\Body $body = NULL]]]])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Client/Request/__construct">http\Client\Request::__construct</a>([<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$meth</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$url</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$headers</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <a href="http/Message/Body">http\Message\Body</a> <span class="var">$body</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]]]])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Request/addQuery">Request::addQuery</a></h3>
+		<h3 id="Request::addQuery">
+<a href="http/Client/Request/addQuery">Request::addQuery</a><a class="permalink" href="http/Client/Request#Request::addQuery">#</a>
+</h3>
 		<p>Add querystring data.</p>
 
-		<p>http\Client\Request http\Client\Request::addQuery(mixed $query_data)</p>
+		<p><a href="http/Client/Request">http\Client\Request</a> <a href="http/Client/Request/addQuery">http\Client\Request::addQuery</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$query_data</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Request/addSslOptions">Request::addSslOptions</a></h3>
+		<h3 id="Request::addSslOptions">
+<a href="http/Client/Request/addSslOptions">Request::addSslOptions</a><a class="permalink" href="http/Client/Request#Request::addSslOptions">#</a>
+</h3>
 		<p>Add specific SSL options.</p>
 
-		<p>http\Client\Request http\Client\Request::addSslOptions([array $ssl_options = NULL])</p>
+		<p><a href="http/Client/Request">http\Client\Request</a> <a href="http/Client/Request/addSslOptions">http\Client\Request::addSslOptions</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$ssl_options</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Request/getContentType">Request::getContentType</a></h3>
-		<p>Extract the currently set &quot;Content-Type&quot; header.</p>
+		<h3 id="Request::getContentType">
+<a href="http/Client/Request/getContentType">Request::getContentType</a><a class="permalink" href="http/Client/Request#Request::getContentType">#</a>
+</h3>
+		<p>Extract the currently set "Content-Type" header.</p>
 
-		<p>string http\Client\Request::getContentType()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Client/Request/getContentType">http\Client\Request::getContentType</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Request/getOptions">Request::getOptions</a></h3>
+		<h3 id="Request::getOptions">
+<a href="http/Client/Request/getOptions">Request::getOptions</a><a class="permalink" href="http/Client/Request#Request::getOptions">#</a>
+</h3>
 		<p>Get priorly set options.</p>
 
-		<p>array http\Client\Request::getOptions()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Client/Request/getOptions">http\Client\Request::getOptions</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Request/getQuery">Request::getQuery</a></h3>
+		<h3 id="Request::getQuery">
+<a href="http/Client/Request/getQuery">Request::getQuery</a><a class="permalink" href="http/Client/Request#Request::getQuery">#</a>
+</h3>
 		<p>Retrieve the currently set querystring.</p>
 
-		<p>string http\Client\Request::getQuery()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.string">string</a></code> <a href="http/Client/Request/getQuery">http\Client\Request::getQuery</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Request/getSslOptions">Request::getSslOptions</a></h3>
+		<h3 id="Request::getSslOptions">
+<a href="http/Client/Request/getSslOptions">Request::getSslOptions</a><a class="permalink" href="http/Client/Request#Request::getSslOptions">#</a>
+</h3>
 		<p>Retrieve priorly set SSL options.</p>
 
-		<p>array http\Client\Request::getSslOptions()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="http/Client/Request/getSslOptions">http\Client\Request::getSslOptions</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Request/setContentType">Request::setContentType</a></h3>
+		<h3 id="Request::setContentType">
+<a href="http/Client/Request/setContentType">Request::setContentType</a><a class="permalink" href="http/Client/Request#Request::setContentType">#</a>
+</h3>
 		<p>Set the MIME content type of the request message.</p>
 
-		<p>http\Client\Request http\Client\Request::setContentType(string $content_type)</p>
+		<p><a href="http/Client/Request">http\Client\Request</a> <a href="http/Client/Request/setContentType">http\Client\Request::setContentType</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$content_type</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Request/setOptions">Request::setOptions</a></h3>
+		<h3 id="Request::setOptions">
+<a href="http/Client/Request/setOptions">Request::setOptions</a><a class="permalink" href="http/Client/Request#Request::setOptions">#</a>
+</h3>
 		<p>Set client options.</p>
 
-		<p>http\Client\Request http\Client\Request::setOptions([array $options = NULL])</p>
+		<p><a href="http/Client/Request">http\Client\Request</a> <a href="http/Client/Request/setOptions">http\Client\Request::setOptions</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$options</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Request/setQuery">Request::setQuery</a></h3>
+		<h3 id="Request::setQuery">
+<a href="http/Client/Request/setQuery">Request::setQuery</a><a class="permalink" href="http/Client/Request#Request::setQuery">#</a>
+</h3>
 		<p>(Re)set the querystring.</p>
 
-		<p>http\Client\Request http\Client\Request::setQuery([mixed $query_data = NULL])</p>
+		<p><a href="http/Client/Request">http\Client\Request</a> <a href="http/Client/Request/setQuery">http\Client\Request::setQuery</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$query_data</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Client/Request/setSslOptions">Request::setSslOptions</a></h3>
+		<h3 id="Request::setSslOptions">
+<a href="http/Client/Request/setSslOptions">Request::setSslOptions</a><a class="permalink" href="http/Client/Request#Request::setSslOptions">#</a>
+</h3>
 		<p>Specifically set SSL options.</p>
 
-		<p>http\Client\Request http\Client\Request::setSslOptions([array $ssl_options = NULL])</p>
+		<p><a href="http/Client/Request">http\Client\Request</a> <a href="http/Client/Request/setSslOptions">http\Client\Request::setSslOptions</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$ssl_options</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

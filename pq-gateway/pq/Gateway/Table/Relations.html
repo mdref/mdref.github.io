@@ -153,98 +153,67 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Gateway\Table\Relations implements Countable, IteratorAggregate</h1>
-<p>Retrieve any relations referenced by the table through foreign keys.
-See pq\Gateway\Table::by() and pq\Gateway\Table::with().</p>
-<h2>Query:<a id="Query:" href="#Query:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The following query is executed by the current executor of the table to retrieve the table references:</p>
-<pre><code>select
-	regexp_replace(att1.attname, '_'||att2.attname||'$', '')
-				  as &quot;name&quot;
-	,cl1.relname  as &quot;foreignTable&quot;
-	,att1.attname as &quot;foreignColumn&quot;
-	,cl2.relname  as &quot;referencedTable&quot;
-	,att2.attname as &quot;referencedColumn&quot;
-from
-	 pg_constraint co
-	,pg_class      cl1
-	,pg_class      cl2
-	,pg_attribute  att1
-	,pg_attribute  att2
-where
-	 cl1.relname  = \$1
-and co.confrelid != 0
-and co.conrelid   = cl1.oid
-and co.conkey[1]  = att1.attnum and cl1.oid = att1.attrelid
-and co.confrelid  = cl2.oid
-and co.confkey[1] = att2.attnum and cl2.oid = att2.attrelid
-order by 
-	att1.attnum
-</code></pre>
-<h2>Cache:<a id="Cache:" href="#Cache:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The result of this query is cached in the metadata cache under the following key, where $table is converted to a string by pq\Gateway\Table::__toString():</p>
-<pre><code>&quot;$table:relations&quot;
-</code></pre>
-<h2>Foreign key access:<a id="Foreign.key.access:" href="#Foreign.key.access:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>Relations can be accessed as virtual properties or through pq\Gateway\Table\Relations::getReference().</p>
-<pre><code>&lt;?php
-
-use pq\Gateway\Table;
-
-$relations = new Table\Relations(new Table(&quot;account_email&quot;));
-
-var_dump($relations-&gt;getReference(&quot;account&quot;, &quot;account&quot;));
-var_dump($relations-&gt;account[&quot;account&quot;]);
-
-?&gt;
-</code></pre>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#">#</a><em>class</em> <a href="pq-gateway/pq/Gateway/Table/Relations">pq\Gateway\Table\Relations</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>, <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code>
+</h1><p>Retrieve any relations referenced by the table through foreign keys.
+See <a href="pq-gateway/pq/Gateway/Table/by">pq\Gateway\Table::by</a>() and <a href="pq-gateway/pq/Gateway/Table/with">pq\Gateway\Table::with</a>().</p><h2 id="Query:">Query:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#Query:">#</a>
+</h2><p>The following query is executed by the current executor of the table to retrieve the table references:</p><pre><code><span style="color: inherit" class="html">
+select<br>    regexp_replace(att1.attname, '_'||att2.attname||'$', '')<br>                  as "name"<br>    ,cl1.relname  as "foreignTable"<br>    ,att1.attname as "foreignColumn"<br>    ,cl2.relname  as "referencedTable"<br>    ,att2.attname as "referencedColumn"<br>from<br>     pg_constraint co<br>    ,pg_class      cl1<br>    ,pg_class      cl2<br>    ,pg_attribute  att1<br>    ,pg_attribute  att2<br>where<br>     cl1.relname  = \$1<br>and co.confrelid != 0<br>and co.conrelid   = cl1.oid<br>and co.conkey[1]  = att1.attnum and cl1.oid = att1.attrelid<br>and co.confrelid  = cl2.oid<br>and co.confkey[1] = att2.attnum and cl2.oid = att2.attrelid<br>order by <br>    att1.attnum<br></span>
+</code></pre><h2 id="Cache:">Cache:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#Cache:">#</a>
+</h2><p>The result of this query is cached in the metadata cache under the following key, where <span class="var">$table</span> is converted to a <code><a href="https://php.net/manual/en/language.types.string">string</a></code> by <a href="pq-gateway/pq/Gateway/Table/__toString">pq\Gateway\Table::__toString</a>():</p><pre><code><span style="color: inherit" class="html">
+"$table:relations"<br></span>
+</code></pre><h2 id="Foreign.key.access:">Foreign key access:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#Foreign.key.access:">#</a>
+</h2><p>Relations can be accessed as virtual properties or through <a href="pq-gateway/pq/Gateway/Table/Relations/getReference">pq\Gateway\Table\Relations::getReference</a>().</p><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$relations </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table\Relations</span><span style="color: inherit" class="keyword">(new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account_email"</span><span style="color: inherit" class="keyword">));<br><br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$relations</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getReference</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">));<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$relations</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">account</span><span style="color: inherit" class="keyword">[</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">]);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
 The relation name is the column name of the foreign key with the column name of the referenced column cut off the end.</p>
-</blockquote>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected array $references<br />
+</blockquote><h2 id="Properties:">Properties:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$references">$references<a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#%24references">#</a></span><br>
 The table's foreign keys.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Relations/__construct">Relations::__construct</a></h3>
+		<h3 id="Relations::__construct">
+<a href="pq-gateway/pq/Gateway/Table/Relations/__construct">Relations::__construct</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#Relations::__construct">#</a>
+</h3>
 		<p>Retrieve the table's relations (foreign keys).</p>
 
-		<p>void pq\Gateway\Table\Relations::__construct(pq\Gateway\Table $table)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Table/Relations/__construct">pq\Gateway\Table\Relations::__construct</a>(<a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <span class="var">$table</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Relations/count">Relations::count</a></h3>
-		<p>Implements Countable.</p>
+		<h3 id="Relations::count">
+<a href="pq-gateway/pq/Gateway/Table/Relations/count">Relations::count</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#Relations::count">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>.</p>
 
-		<p>int pq\Gateway\Table\Relations::count()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq-gateway/pq/Gateway/Table/Relations/count">pq\Gateway\Table\Relations::count</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Relations/getIterator">Relations::getIterator</a></h3>
-		<p>Implements IteratorAggregate.</p>
+		<h3 id="Relations::getIterator">
+<a href="pq-gateway/pq/Gateway/Table/Relations/getIterator">Relations::getIterator</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#Relations::getIterator">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code>.</p>
 
-		<p>ArrayIterator pq\Gateway\Table\Relations::getIterator()</p>
+		<p><code><a href="https://php.net/manual/en/class.arrayiterator">ArrayIterator</a></code> <a href="pq-gateway/pq/Gateway/Table/Relations/getIterator">pq\Gateway\Table\Relations::getIterator</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Table/Relations/getReference">Relations::getReference</a></h3>
+		<h3 id="Relations::getReference">
+<a href="pq-gateway/pq/Gateway/Table/Relations/getReference">Relations::getReference</a><a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#Relations::getReference">#</a>
+</h3>
 		<p>Retrieve the foreign key of the table to another table.</p>
 
-		<p>pq\Gateway\Table\Reference pq\Gateway\Table\Relations::getReference(string $table[, string $ref = NULL])</p>
+		<p><a href="pq-gateway/pq/Gateway/Table#Reference">pq\Gateway\Table\Reference</a> <a href="pq-gateway/pq/Gateway/Table/Relations/getReference">pq\Gateway\Table\Relations::getReference</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$table</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$ref</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

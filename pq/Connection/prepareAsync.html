@@ -125,36 +125,30 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Statement pq\Connection::prepareAsync(string $name, string $query[, array $types = NULL])</h1>
-<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> prepare a named statement for later execution with pq\Statement::exec().</p>
-<blockquote>
-<p><em><strong>NOTE</strong></em>:<br />
-If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $name<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/prepareAsync#">#</a><a href="pq/Statement">pq\Statement</a> <a href="pq/Connection/prepareAsync">pq\Connection::prepareAsync</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$types</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> prepare a named statement for later execution with <a href="pq/Statement/exec">pq\Statement::exec</a>().</p><blockquote>
+<p><em><strong>NOTE</strong></em>:<br>
+If <a href="pq/Connection#%24unbuffered">pq\Connection::$unbuffered</a> is <code><a href="https://php.net/manual/en/language.types.boolean">TRUE</a></code>, each call to <a href="pq/Connection/getResult">pq\Connection::getResult</a>() will generate a distinct <a href="pq/Result">pq\Result</a> containing exactly one row.</p>
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="pq/Connection/prepareAsync#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$name">$name<a class="permalink" href="pq/Connection/prepareAsync#%24name">#</a></span><br>
 The identifying name of the prepared statement.</li>
-<li>string $query<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$query">$query<a class="permalink" href="pq/Connection/prepareAsync#%24query">#</a></span><br>
 The query to prepare.</li>
-<li>Optional array $types = NULL<br />
-An array of type OIDs for the substitution parameters.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Statement, a prepared statement instance.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-
-
-
-		
+<li>Optional <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$types">$types<a class="permalink" href="pq/Connection/prepareAsync#%24types">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+An <code><a href="https://php.net/manual/en/language.types.array">array</a></code> of type OIDs for the substitution parameters.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/Connection/prepareAsync#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="pq/Statement">pq\Statement</a>, a prepared statement instance.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Connection/prepareAsync#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

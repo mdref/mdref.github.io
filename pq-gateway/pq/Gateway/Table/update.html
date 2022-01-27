@@ -129,45 +129,33 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>mixed pq\Gateway\Table::update(array $where, array $data[, string $returning = &quot;*&quot;])</h1>
-<p>Update rows in the table.
-See pq\Query\Expr for using SQL constructs as parameters or arguments.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array $where<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/update#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/update">pq\Gateway\Table::update</a>(<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$where</span>, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$data</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$returning</span> = "*"])</h1><p>Update rows in the table.
+See <a href="pq-gateway/pq/Query/Expr">pq\Query\Expr</a> for using SQL constructs as parameters or arguments.</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Gateway/Table/update#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$where">$where<a class="permalink" href="pq-gateway/pq/Gateway/Table/update#%24where">#</a></span><br>
 Criteria for the update.</li>
-<li>array $data<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$data">$data<a class="permalink" href="pq-gateway/pq/Gateway/Table/update#%24data">#</a></span><br>
 Updated row data.</li>
-<li>Optional string $returniung = &quot;*&quot;<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$returniung">$returniung<a class="permalink" href="pq-gateway/pq/Gateway/Table/update#%24returniung">#</a></span> = "*"<br>
 What the UPDATE should return.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Gateway/Table/update#Returns:">#</a>
+</h2><ul>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using <a href="pq-gateway/pq/Query/AsyncExecutor">pq\Query\AsyncExecutor</a>, the asynchronous executor.<br>
 Else:</li>
-<li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
-<li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
-<li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Gateway\Table;
-use pq\Query\Expr;
-
-$table = new Table(&quot;data&quot;);
-$table-&gt;update([&quot;id=&quot; =&gt; 1], [
-	&quot;foo&quot; =&gt; &quot;bar&quot;, 
-	&quot;ts&quot; =&gt; new Expr(&quot;NOW()&quot;
-]);
-
-?&gt;
-</code></pre>
-
-
-
-		
+<li>
+<a href="pq/Result">pq\Result</a>, if <a href="pq/Result#%24status">pq\Result::$status</a> != <a href="pq/Result#TUPLES_OK">pq\Result::TUPLES_OK</a>.</li>
+<li>
+<a href="pq/Result">pq\Result</a>, if the rowset prototype <a href="pq-gateway/pq/Gateway/Table#%24rowset">pq\Gateway\Table::$rowset</a> is empty.</li>
+<li>
+<a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a>, an instance of the rowset prototype.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Gateway/Table/update#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">;<br>use </span><span style="color: inherit" class="default">pq\Query\Expr</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$table </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"data"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$table</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">update</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"id=" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">], [<br>    </span><span style="color: inherit" class="string">"foo" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"bar"</span><span style="color: inherit" class="keyword">, <br>    </span><span style="color: inherit" class="string">"ts" </span><span style="color: inherit" class="keyword">=&gt; new </span><span style="color: inherit" class="default">Expr</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"NOW()"<br></span><span style="color: inherit" class="keyword">]);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -129,54 +129,35 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>mixed pq\Gateway\Table::find([array $where = NULL[, string $order = NULL[, int $limit = 0[, int $offset = 0[, string $lock = NULL]]]]])</h1>
-<p>Find rows in the table.
-See pq\Gateway\Table::execute() and pq\Gateway\Table::onResult().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional array $where = NULL<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Table/find#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Table/find">pq\Gateway\Table::find</a>([<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$where</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$order</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$limit</span> = 0[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$offset</span> = 0[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$lock</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]]]]])</h1><p>Find rows in the table.
+See <a href="pq-gateway/pq/Gateway/Table/execute">pq\Gateway\Table::execute</a>() and <a href="pq-gateway/pq/Gateway/Table/onResult">pq\Gateway\Table::onResult</a>().</p><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Gateway/Table/find#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$where">$where<a class="permalink" href="pq-gateway/pq/Gateway/Table/find#%24where">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Lookup criteria.</li>
-<li>Optional string $order = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$order">$order<a class="permalink" href="pq-gateway/pq/Gateway/Table/find#%24order">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Sorting clauses.</li>
-<li>Optional int $limit = 0<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$limit">$limit<a class="permalink" href="pq-gateway/pq/Gateway/Table/find#%24limit">#</a></span> = 0<br>
 A row count limit.</li>
-<li>Optional int $offset = 0<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$offset">$offset<a class="permalink" href="pq-gateway/pq/Gateway/Table/find#%24offset">#</a></span> = 0<br>
 A row count offset.</li>
-<li>Optional string $lock = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$lock">$lock<a class="permalink" href="pq-gateway/pq/Gateway/Table/find#%24lock">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 A FOR lock clause (SHARE/UPDATE/KEY SHARE/NO KEY UPDATE).</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using pq\Query\AsyncExecutor, the asynchronous executor.<br />
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Gateway/Table/find#Returns:">#</a>
+</h2><ul>
+<li>a <a href="https://github.com/reactphp/promise#deferred-1">deferred promise of React/Promise</a>, when using <a href="pq-gateway/pq/Query/AsyncExecutor">pq\Query\AsyncExecutor</a>, the asynchronous executor.<br>
 Else:</li>
-<li>pq\Result, if pq\Result::$status != pq\Result::TUPLES_OK.</li>
-<li>pq\Result, if the rowset prototype pq\Gateway\Table::$rowset is empty.</li>
-<li>pq\Gateway\Rowset, an instance of the rowset prototype.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-use pq\Gateway\Table;
-
-$table = new Table(&quot;account_email&quot;);
-$transaction = $table-&gt;getConnection()-&gt;startTransaction();
-
-$rowset = $table-&gt;find([&quot;email=&quot; =&gt; &quot;mike@php.net&quot;], null, 0, 0, &quot;UPDATE&quot;);
-
-$rowset-&gt;apply(function(pq\Gateway\Row $row) {
-	$row-&gt;email = &quot;mike@PHP.net&quot;;
-});
-
-$rowset-&gt;update(false);
-$transaction-&gt;commit();
-
-?&gt;
-</code></pre>
-
-
-
-		
+<li>
+<a href="pq/Result">pq\Result</a>, if <a href="pq/Result#%24status">pq\Result::$status</a> != <a href="pq/Result#TUPLES_OK">pq\Result::TUPLES_OK</a>.</li>
+<li>
+<a href="pq/Result">pq\Result</a>, if the rowset prototype <a href="pq-gateway/pq/Gateway/Table#%24rowset">pq\Gateway\Table::$rowset</a> is empty.</li>
+<li>
+<a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a>, an instance of the rowset prototype.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq-gateway/pq/Gateway/Table/find#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$table </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account_email"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$transaction </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$table</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getConnection</span><span style="color: inherit" class="keyword">()-&gt;</span><span style="color: inherit" class="default">startTransaction</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">$rowset </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$table</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">find</span><span style="color: inherit" class="keyword">([</span><span style="color: inherit" class="string">"email=" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="string">"mike@php.net"</span><span style="color: inherit" class="keyword">], </span><span style="color: inherit" class="default">null</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"UPDATE"</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">$rowset</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">apply</span><span style="color: inherit" class="keyword">(function(</span><span style="color: inherit" class="default">pq\Gateway\Row $row</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">email </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="string">"mike@PHP.net"</span><span style="color: inherit" class="keyword">;<br>});<br><br></span><span style="color: inherit" class="default">$rowset</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">update</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">false</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$transaction</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">commit</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

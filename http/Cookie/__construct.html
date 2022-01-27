@@ -107,72 +107,26 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>void http\Cookie::__construct([mixed $cookies = NULL[, int $flags = 0[, array $allowed_extras = NULL]]])</h1>
-<p>Create a new cookie list.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional mixed $cookies = NULL<br />
-The string or list of cookies to parse or set.</li>
-<li>Optional int $flags = 0<br />
-Parse flags. See http\Cookie::PARSE_* constants.</li>
-<li>Optional array $allowed_extras = NULL<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Cookie/__construct#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="http/Cookie/__construct">http\Cookie::__construct</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$cookies</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span> = 0[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$allowed_extras</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]]])</h1><p>Create a new cookie list.</p><h2 id="Params:">Params:<a class="permalink" href="http/Cookie/__construct#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$cookies">$cookies<a class="permalink" href="http/Cookie/__construct#%24cookies">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The <code><a href="https://php.net/manual/en/language.types.string">string</a></code> or list of cookies to parse or set.</li>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$flags">$flags<a class="permalink" href="http/Cookie/__construct#%24flags">#</a></span> = 0<br>
+Parse flags. See <a href="http/Cookie#PARSE_*">http\Cookie::PARSE_*</a> constants.</li>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$allowed_extras">$allowed_extras<a class="permalink" href="http/Cookie/__construct#%24allowed_extras">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 List of extra attribute names to recognize.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$cookie = new http\Cookie(&quot;c1=v1; c2=v2; extra=foo; &quot;.
-    &quot;expires=Thu, Nov  7 2013 10:00:00 GMT; path=/a/b/c&quot;, 
-    0, [&quot;extra&quot;]);
-var_dump([
-    &quot;cookies&quot; =&gt; $cookie-&gt;getCookies(),
-    &quot;extras&quot; =&gt; $cookie-&gt;getExtras(),
-    &quot;expires&quot; =&gt; $cookie-&gt;getExpires(),
-    &quot;max-age&quot; =&gt; $cookie-&gt;getMaxAge(),
-    &quot;domain&quot; =&gt; $cookie-&gt;getDomain(),
-    &quot;path&quot; =&gt; $cookie-&gt;getPath(),
-    &quot;flags&quot; =&gt; $cookie-&gt;getFlags(),
-    &quot;string&quot; =&gt; (string) $cookie
-]);
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>array(8) {
-  [&quot;cookies&quot;]=&gt;
-  array(2) {
-    [&quot;c1&quot;]=&gt;
-    string(2) &quot;v1&quot;
-    [&quot;c2&quot;]=&gt;
-    string(2) &quot;v2&quot;
-  }
-  [&quot;extras&quot;]=&gt;
-  array(1) {
-    [&quot;extra&quot;]=&gt;
-    string(3) &quot;foo&quot;
-  }
-  [&quot;expires&quot;]=&gt;
-  int(1383818400)
-  [&quot;max-age&quot;]=&gt;
-  int(-1)
-  [&quot;domain&quot;]=&gt;
-  NULL
-  [&quot;path&quot;]=&gt;
-  string(6) &quot;/a/b/c&quot;
-  [&quot;flags&quot;]=&gt;
-  int(0)
-  [&quot;string&quot;]=&gt;
-  string(77) &quot;c1=v1; c2=v2; path=/a/b/c; expires=Thu, 07 Nov 2013 10:00:00 GMT; extra=foo; &quot;
-}
-</code></pre>
-
-
-
-		
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Cookie/__construct#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/RuntimeException">http\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Cookie/__construct#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$cookie </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Cookie</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"c1=v1; c2=v2; extra=foo; "</span><span style="color: inherit" class="keyword">.<br>    </span><span style="color: inherit" class="string">"expires=Thu, Nov  7 2013 10:00:00 GMT; path=/a/b/c"</span><span style="color: inherit" class="keyword">, <br>    </span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">, [</span><span style="color: inherit" class="string">"extra"</span><span style="color: inherit" class="keyword">]);<br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">([<br>    </span><span style="color: inherit" class="string">"cookies" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getCookies</span><span style="color: inherit" class="keyword">(),<br>    </span><span style="color: inherit" class="string">"extras" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getExtras</span><span style="color: inherit" class="keyword">(),<br>    </span><span style="color: inherit" class="string">"expires" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getExpires</span><span style="color: inherit" class="keyword">(),<br>    </span><span style="color: inherit" class="string">"max-age" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMaxAge</span><span style="color: inherit" class="keyword">(),<br>    </span><span style="color: inherit" class="string">"domain" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getDomain</span><span style="color: inherit" class="keyword">(),<br>    </span><span style="color: inherit" class="string">"path" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getPath</span><span style="color: inherit" class="keyword">(),<br>    </span><span style="color: inherit" class="string">"flags" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$cookie</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getFlags</span><span style="color: inherit" class="keyword">(),<br>    </span><span style="color: inherit" class="string">"string" </span><span style="color: inherit" class="keyword">=&gt; (string) </span><span style="color: inherit" class="default">$cookie<br></span><span style="color: inherit" class="keyword">]);<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+array(8) {<br>  ["cookies"]=&gt;<br>  array(2) {<br>    ["c1"]=&gt;<br>    string(2) "v1"<br>    ["c2"]=&gt;<br>    string(2) "v2"<br>  }<br>  ["extras"]=&gt;<br>  array(1) {<br>    ["extra"]=&gt;<br>    string(3) "foo"<br>  }<br>  ["expires"]=&gt;<br>  int(1383818400)<br>  ["max-age"]=&gt;<br>  int(-1)<br>  ["domain"]=&gt;<br>  NULL<br>  ["path"]=&gt;<br>  string(6) "/a/b/c"<br>  ["flags"]=&gt;<br>  int(0)<br>  ["string"]=&gt;<br>  string(77) "c1=v1; c2=v2; path=/a/b/c; expires=Thu, 07 Nov 2013 10:00:00 GMT; extra=foo; "<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

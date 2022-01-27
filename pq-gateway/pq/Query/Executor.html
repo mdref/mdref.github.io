@@ -120,92 +120,107 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Query\Executor implements pq\Query\ExecutorInterface</h1>
-<p>A synchronous query executor implementation.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected pq\Connection $conn<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Query/Executor#">#</a><em>class</em> <a href="pq-gateway/pq/Query/Executor">pq\Query\Executor</a> <br>&nbsp;<em>implements</em> <a href="pq-gateway/pq/Query/ExecutorInterface">pq\Query\ExecutorInterface</a>
+</h1><p>A synchronous query executor implementation.</p><h2 id="Properties:">Properties:<a class="permalink" href="pq-gateway/pq/Query/Executor#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <a href="pq/Connection">pq\Connection</a> <span class="var" id="$conn">$conn<a class="permalink" href="pq-gateway/pq/Query/Executor#%24conn">#</a></span><br>
 The PostgreSQL connection.</li>
-<li>protected SplObjectStorage $observers<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/class.splobjectstorage">SplObjectStorage</a></code> <span class="var" id="$observers">$observers<a class="permalink" href="pq-gateway/pq/Query/Executor#%24observers">#</a></span><br>
 Attached observers.</li>
-<li>protected pq\Query\WriterInterface<br />
+<li>
+<em>protected</em> <a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a><br>
 The query being executed.</li>
-<li>protected pq\Result $result<br />
+<li>
+<em>protected</em> <a href="pq/Result">pq\Result</a> <span class="var" id="$result">$result<a class="permalink" href="pq-gateway/pq/Query/Executor#%24result">#</a></span><br>
 The query result.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Query/Executor#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Executor/__construct">Executor::__construct</a></h3>
+		<h3 id="Executor::__construct">
+<a href="pq-gateway/pq/Query/Executor/__construct">Executor::__construct</a><a class="permalink" href="pq-gateway/pq/Query/Executor#Executor::__construct">#</a>
+</h3>
 		<p>Create a new query executor.</p>
 
-		<p>void pq\Query\Executor::__construct(pq\Connection $conn)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Query/Executor/__construct">pq\Query\Executor::__construct</a>(<a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Executor/attach">Executor::attach</a></h3>
-		<p>Implements SplSubject.</p>
+		<h3 id="Executor::attach">
+<a href="pq-gateway/pq/Query/Executor/attach">Executor::attach</a><a class="permalink" href="pq-gateway/pq/Query/Executor#Executor::attach">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>.</p>
 
-		<p>void pq\Query\Executor::attach(SplObserver $observer)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Query/Executor/attach">pq\Query\Executor::attach</a>(<code><a href="https://php.net/manual/en/class.splobserver">SplObserver</a></code> <span class="var">$observer</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Executor/detach">Executor::detach</a></h3>
-		<p>Implements SplSubject.</p>
+		<h3 id="Executor::detach">
+<a href="pq-gateway/pq/Query/Executor/detach">Executor::detach</a><a class="permalink" href="pq-gateway/pq/Query/Executor#Executor::detach">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>.</p>
 
-		<p>void pq\Query\Executor::detach(SplObserver $observer)</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Query/Executor/detach">pq\Query\Executor::detach</a>(<code><a href="https://php.net/manual/en/class.splobserver">SplObserver</a></code> <span class="var">$observer</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Executor/execute">Executor::execute</a></h3>
-		<p>Execute the query and process the result with the callback.</p>
+		<h3 id="Executor::execute">
+<a href="pq-gateway/pq/Query/Executor/execute">Executor::execute</a><a class="permalink" href="pq-gateway/pq/Query/Executor#Executor::execute">#</a>
+</h3>
+		<p>Execute the query and process the result with the <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>.</p>
 
-		<p>mixed pq\Query\Executor pq\Query\Executor::execute(\pq\Query\Writer $query, callable $callback);</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Query/Executor">pq\Query\Executor</a> <a href="pq-gateway/pq/Query/Executor/execute">pq\Query\Executor::execute</a>(<a href="pq-gateway/pq/Query/Writer">\pq\Query\Writer</a> <span class="var">$query</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>);</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Executor/getConnection">Executor::getConnection</a></h3>
+		<h3 id="Executor::getConnection">
+<a href="pq-gateway/pq/Query/Executor/getConnection">Executor::getConnection</a><a class="permalink" href="pq-gateway/pq/Query/Executor#Executor::getConnection">#</a>
+</h3>
 		<p>Retrieve the coonection used by the executor.</p>
 
-		<p>pq\Connection pq\Query\Executor::getConnection()</p>
+		<p><a href="pq/Connection">pq\Connection</a> <a href="pq-gateway/pq/Query/Executor/getConnection">pq\Query\Executor::getConnection</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Executor/getQuery">Executor::getQuery</a></h3>
+		<h3 id="Executor::getQuery">
+<a href="pq-gateway/pq/Query/Executor/getQuery">Executor::getQuery</a><a class="permalink" href="pq-gateway/pq/Query/Executor#Executor::getQuery">#</a>
+</h3>
 		<p>Retrieve the current query.</p>
 
-		<p>pq\Query\Writer pq\Query\Executor::getQuery()</p>
+		<p><a href="pq-gateway/pq/Query/Writer">pq\Query\Writer</a> <a href="pq-gateway/pq/Query/Executor/getQuery">pq\Query\Executor::getQuery</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Executor/getResult">Executor::getResult</a></h3>
+		<h3 id="Executor::getResult">
+<a href="pq-gateway/pq/Query/Executor/getResult">Executor::getResult</a><a class="permalink" href="pq-gateway/pq/Query/Executor#Executor::getResult">#</a>
+</h3>
 		<p>Retrieve the result of the current query.</p>
 
-		<p>pq\Result pq\Query\Executor::getResult()</p>
+		<p><a href="pq/Result">pq\Result</a> <a href="pq-gateway/pq/Query/Executor/getResult">pq\Query\Executor::getResult</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Executor/notify">Executor::notify</a></h3>
-		<p>Implements SplSubject.</p>
+		<h3 id="Executor::notify">
+<a href="pq-gateway/pq/Query/Executor/notify">Executor::notify</a><a class="permalink" href="pq-gateway/pq/Query/Executor#Executor::notify">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>.</p>
 
-		<p>void pq\Query\Executor::notify()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Query/Executor/notify">pq\Query\Executor::notify</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Query/Executor/setConnection">Executor::setConnection</a></h3>
+		<h3 id="Executor::setConnection">
+<a href="pq-gateway/pq/Query/Executor/setConnection">Executor::setConnection</a><a class="permalink" href="pq-gateway/pq/Query/Executor#Executor::setConnection">#</a>
+</h3>
 		<p>Set the connection the executor should use.</p>
 
-		<p>pq\Query\Executor pq\Query\Executor::setConnection(pq\Connection $conn)</p>
+		<p><a href="pq-gateway/pq/Query/Executor">pq\Query\Executor</a> <a href="pq-gateway/pq/Query/Executor/setConnection">pq\Query\Executor::setConnection</a>(<a href="pq/Connection">pq\Connection</a> <span class="var">$conn</span>)</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

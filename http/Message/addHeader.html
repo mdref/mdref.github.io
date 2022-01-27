@@ -143,38 +143,27 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Message http\Message::addHeader(string $name, mixed $value)</h1>
-<p>Add an header, appending to already existing headers.
-See http\Message::addHeaders() and http\Message::setHeader().</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $name<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/addHeader#">#</a><a href="http/Message">http\Message</a> <a href="http/Message/addHeader">http\Message::addHeader</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$name</span>, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$value</span>)</h1><p>Add an header, appending to already existing headers.
+See <a href="http/Message/addHeaders">http\Message::addHeaders</a>() and <a href="http/Message/setHeader">http\Message::setHeader</a>().</p><h2 id="Params:">Params:<a class="permalink" href="http/Message/addHeader#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$name">$name<a class="permalink" href="http/Message/addHeader#%24name">#</a></span><br>
 The header name.</li>
-<li>mixed $value<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$value">$value<a class="permalink" href="http/Message/addHeader#%24value">#</a></span><br>
 The header value.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Message, self.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-$msg = new http\Message;
-
-$msg-&gt;addHeader(&quot;X-Num&quot;, &quot;123&quot;);
-$msg-&gt;addHeader(&quot;X-Num&quot;, &quot;456&quot;);
-
-echo $msg;
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>X-Num: 123, 456
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Message/addHeader#Returns:">#</a>
+</h2><ul>
+<li>
+<a href="http/Message">http\Message</a>, <em>self</em>.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Message/addHeader#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br>$msg </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Message</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">addHeader</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"X-Num"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"123"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">addHeader</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"X-Num"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"456"</span><span style="color: inherit" class="keyword">);<br><br>echo </span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+X-Num: 123, 456<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

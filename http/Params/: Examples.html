@@ -75,134 +75,21 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>http\Params Examples</h1>
-<h2>RFC5987 example:<a id="RFC5987.example:" href="#RFC5987.example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$u = urlencode(&quot;ü&quot;);
-$s = urlencode(&quot;ß&quot;);
-
-$t = &quot;p1*=utf-8'de's$u$s,p2*=utf-8''hei$s;a1*=utf-8''a$s;a2*=utf-8''e$s;a3=no,p3=not&quot;;
-$p = new http\Params($t);
-
-var_dump($p-&gt;params, $p-&gt;toString());
-
-?&gt;
-</code></pre>
-<h3>Yields:<a id="Yields:" href="#Yields:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<pre><code>array(3) {
-	[&quot;p1&quot;]=&gt;
-	array(2) {
-		[&quot;*rfc5987*&quot;]=&gt;
-		array(1) {
-		  [&quot;de&quot;]=&gt;
-		  string(5) &quot;süß&quot;
-		}
-		[&quot;arguments&quot;]=&gt;
-		array(0) {
-		}
-	}
-	[&quot;p2&quot;]=&gt;
-	array(2) {
-		[&quot;*rfc5987*&quot;]=&gt;
-		array(1) {
-		  [&quot;&quot;]=&gt;
-		  string(5) &quot;heiß&quot;
-		}
-		[&quot;arguments&quot;]=&gt;
-		array(2) {
-			[&quot;*rfc5987*&quot;]=&gt;
-			array(2) {
-				[&quot;a1&quot;]=&gt;
-				array(1) {
-				  [&quot;&quot;]=&gt;
-				  string(3) &quot;aß&quot;
-				}
-				[&quot;a2&quot;]=&gt;
-				array(1) {
-				  [&quot;&quot;]=&gt;
-				  string(3) &quot;eß&quot;
-				}
-			}
-			[&quot;a3&quot;]=&gt;
-			string(2) &quot;no&quot;
-		}
-	}
-	[&quot;p3&quot;]=&gt;
-	array(2) {
-		[&quot;value&quot;]=&gt;
-		string(3) &quot;not&quot;
-		[&quot;arguments&quot;]=&gt;
-		array(0) {
-		}
-	}
-}
-string(98) &quot;p1*=utf-8'de's%C3%BC%C3%9F,p2*=utf-8''hei%C3%9F;a1*=utf-8''a%C3%9F;a2*=utf-8''e%C3%9F;a3=no,p3=not&quot;
-</code></pre>
-<h2>Web Linking Example:<a id="Web.Linking.Example:" href="#Web.Linking.Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>$link = &lt;&lt;&lt;EOF
-Link: &lt;/TheBook/chapter2&gt;;
-		 rel=&quot;previous&quot;; title*=UTF-8'de'letztes%20Kapitel,
-		 &lt;/TheBook/chapter4&gt;;
-		 rel=&quot;next&quot;; title*=UTF-8'de'n%c3%a4chstes%20Kapitel
-EOF;
-
-$p = current(http\Header::parse($link, &quot;http\\Header&quot;))-&gt;getParams(
-	http\Params::DEF_PARAM_SEP,
-	http\Params::DEF_ARG_SEP,
-	http\Params::DEF_VAL_SEP,
-	http\Params::PARSE_RFC5988 | http\Params::PARSE_ESCAPED
-);
-
-var_dump($p-&gt;params);
-var_dump((string)$p);
-</code></pre>
-<h3>Yields:<a id="Yields:-1" href="#Yields:-1" class="permalink" aria-hidden="true" title="">#</a></h3>
-<pre><code>array(2) {
-  [&quot;/TheBook/chapter2&quot;]=&gt;
-  array(2) {
-	[&quot;value&quot;]=&gt;
-	bool(true)
-	[&quot;arguments&quot;]=&gt;
-	array(2) {
-	  [&quot;rel&quot;]=&gt;
-	  string(8) &quot;previous&quot;
-	  [&quot;*rfc5987*&quot;]=&gt;
-	  array(1) {
-		[&quot;title&quot;]=&gt;
-		array(1) {
-		  [&quot;de&quot;]=&gt;
-		  string(15) &quot;letztes Kapitel&quot;
-		}
-	  }
-	}
-  }
-  [&quot;/TheBook/chapter4&quot;]=&gt;
-  array(2) {
-	[&quot;value&quot;]=&gt;
-	bool(true)
-	[&quot;arguments&quot;]=&gt;
-	array(2) {
-	  [&quot;rel&quot;]=&gt;
-	  string(4) &quot;next&quot;
-	  [&quot;*rfc5987*&quot;]=&gt;
-	  array(1) {
-		[&quot;title&quot;]=&gt;
-		array(1) {
-		  [&quot;de&quot;]=&gt;
-		  string(17) &quot;nächstes Kapitel&quot;
-		}
-	  }
-	}
-  }
-}
-string(139) &quot;&lt;/TheBook/chapter2&gt;;rel=&quot;previous&quot;;title*=utf-8'de'letztes%20Kapitel,&lt;/TheBook/chapter4&gt;;rel=&quot;next&quot;;title*=utf-8'de'n%C3%A4chstes%20Kapitel&quot;
-</code></pre>
-
-
-
-		
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Params/:%20Examples#">#</a><a href="http/Params">http\Params</a> Examples</h1><h2 id="RFC5987.example:">RFC5987 example:<a class="permalink" href="http/Params/:%20Examples#RFC5987.example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$u </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">urlencode</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Ã¼"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$s </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">urlencode</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Ã"</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">$t </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="string">"p1*=utf-8'de's</span><span style="color: inherit" class="default">$u$s</span><span style="color: inherit" class="string">,p2*=utf-8''hei</span><span style="color: inherit" class="default">$s</span><span style="color: inherit" class="string">;a1*=utf-8''a</span><span style="color: inherit" class="default">$s</span><span style="color: inherit" class="string">;a2*=utf-8''e</span><span style="color: inherit" class="default">$s</span><span style="color: inherit" class="string">;a3=no,p3=not"</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$p </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Params</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$t</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$p</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">params</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$p</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">toString</span><span style="color: inherit" class="keyword">());<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h3 id="Yields:">Yields:<a class="permalink" href="http/Params/:%20Examples#Yields:">#</a>
+</h3><pre><code><span style="color: inherit" class="html">
+array(3) {<br>    ["p1"]=&gt;<br>    array(2) {<br>        ["*rfc5987*"]=&gt;<br>        array(1) {<br>          ["de"]=&gt;<br>          string(5) "sÃ¼Ã"<br>        }<br>        ["arguments"]=&gt;<br>        array(0) {<br>        }<br>    }<br>    ["p2"]=&gt;<br>    array(2) {<br>        ["*rfc5987*"]=&gt;<br>        array(1) {<br>          [""]=&gt;<br>          string(5) "heiÃ"<br>        }<br>        ["arguments"]=&gt;<br>        array(2) {<br>            ["*rfc5987*"]=&gt;<br>            array(2) {<br>                ["a1"]=&gt;<br>                array(1) {<br>                  [""]=&gt;<br>                  string(3) "aÃ"<br>                }<br>                ["a2"]=&gt;<br>                array(1) {<br>                  [""]=&gt;<br>                  string(3) "eÃ"<br>                }<br>            }<br>            ["a3"]=&gt;<br>            string(2) "no"<br>        }<br>    }<br>    ["p3"]=&gt;<br>    array(2) {<br>        ["value"]=&gt;<br>        string(3) "not"<br>        ["arguments"]=&gt;<br>        array(0) {<br>        }<br>    }<br>}<br>string(98) "p1*=utf-8'de's%C3%BC%C3%9F,p2*=utf-8''hei%C3%9F;a1*=utf-8''a%C3%9F;a2*=utf-8''e%C3%9F;a3=no,p3=not"<br></span>
+</code></pre><h2 id="Web.Linking.Example:">Web Linking Example:<a class="permalink" href="http/Params/:%20Examples#Web.Linking.Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+$link = &lt;&lt;&lt;EOF<br>Link: &lt;/TheBook/chapter2&gt;;<br>         rel="previous"; title*=UTF-8'de'letztes%20Kapitel,<br>         &lt;/TheBook/chapter4&gt;;<br>         rel="next"; title*=UTF-8'de'n%c3%a4chstes%20Kapitel<br>EOF;<br><br>$p = current(http\Header::parse($link, "http\\Header"))-&gt;getParams(<br>    http\Params::DEF_PARAM_SEP,<br>    http\Params::DEF_ARG_SEP,<br>    http\Params::DEF_VAL_SEP,<br>    http\Params::PARSE_RFC5988 | http\Params::PARSE_ESCAPED<br>);<br><br>var_dump($p-&gt;params);<br>var_dump((string)$p);<br></span>
+</code></pre><h3 id="Yields:">Yields:<a class="permalink" href="http/Params/:%20Examples#Yields:">#</a>
+</h3><pre><code><span style="color: inherit" class="html">
+array(2) {<br>  ["/TheBook/chapter2"]=&gt;<br>  array(2) {<br>    ["value"]=&gt;<br>    bool(true)<br>    ["arguments"]=&gt;<br>    array(2) {<br>      ["rel"]=&gt;<br>      string(8) "previous"<br>      ["*rfc5987*"]=&gt;<br>      array(1) {<br>        ["title"]=&gt;<br>        array(1) {<br>          ["de"]=&gt;<br>          string(15) "letztes Kapitel"<br>        }<br>      }<br>    }<br>  }<br>  ["/TheBook/chapter4"]=&gt;<br>  array(2) {<br>    ["value"]=&gt;<br>    bool(true)<br>    ["arguments"]=&gt;<br>    array(2) {<br>      ["rel"]=&gt;<br>      string(4) "next"<br>      ["*rfc5987*"]=&gt;<br>      array(1) {<br>        ["title"]=&gt;<br>        array(1) {<br>          ["de"]=&gt;<br>          string(17) "nÃ¤chstes Kapitel"<br>        }<br>      }<br>    }<br>  }<br>}<br>string(139) "&lt;/TheBook/chapter2&gt;;rel="previous";title*=utf-8'de'letztes%20Kapitel,&lt;/TheBook/chapter4&gt;;rel="next";title*=utf-8'de'n%C3%A4chstes%20Kapitel"<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

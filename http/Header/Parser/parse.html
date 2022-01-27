@@ -71,84 +71,32 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>int http\Header\Parser::parse(string $data, int $flags, array &amp;$message = NULL)</h1>
-<p>Parse a string.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $data<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Header/Parser/parse#">#</a><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="http/Header/Parser/parse">http\Header\Parser::parse</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$data</span>, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$flags</span>, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> &amp;<span class="var">$message</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>)</h1><p>Parse a <code><a href="https://php.net/manual/en/language.types.string">string</a></code>.</p><h2 id="Params:">Params:<a class="permalink" href="http/Header/Parser/parse#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$data">$data<a class="permalink" href="http/Header/Parser/parse#%24data">#</a></span><br>
 The (part of the) header to parse.</li>
-<li>int $flags<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$flags">$flags<a class="permalink" href="http/Header/Parser/parse#%24flags">#</a></span><br>
 Any combination of <a href="http/Header/Parser#Parser.flags:">parser flags</a>.</li>
-<li>array &amp;$header = NULL
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> &amp;<span class="var" id="$header">$header<a class="permalink" href="http/Header/Parser/parse#%24header">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>
 Successfully parsed headers.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>int, http\Header\Parser::STATE_* constant.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$headers = [
-	&quot;One: &quot;,&quot;header\n&quot;,
-	&quot;Two: header\n\tlines\n&quot;,
-	&quot;Three&quot;,&quot;: header\n lines\n here\n&quot;,
-	&quot;More: than one header\n&quot;,
-	&quot;More: &quot;, &quot;than: &quot;, &quot;you: &quot;, &quot;expect\n&quot;,
-	&quot;\n&quot;,
-];
-
-$states = [-1=&gt;&quot;FAILURE&quot;,0=&gt;&quot;START&quot;,&quot;KEY&quot;,&quot;VALUE&quot;,&quot;VALUE_EX&quot;,&quot;HEADER_DONE&quot;,&quot;DONE&quot;];
-$parser = new http\Header\Parser;
-do {
-	$state = $parser-&gt;parse($part = array_shift($headers), 
-		$headers ? 0 : http\Header\Parser::CLEANUP, 
-		$result);
-	printf(&quot;%2\$-32s | %1\$s\n&quot;, $states[$state], addcslashes($part, &quot;\r\n\t\0&quot;));
-} while ($headers &amp;&amp; $state !== http\Header\Parser::STATE_FAILURE);
-
-var_dump($result);
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>Test
-One:                             | VALUE
-header\n                         | VALUE_EX
-Two: header\n\tlines\n           | VALUE_EX
-Three                            | KEY
-: header\n lines\n here\n        | VALUE_EX
-More: than one header\n          | VALUE_EX
-More:                            | VALUE
-than:                            | VALUE
-you:                             | VALUE
-expect\n                         | VALUE_EX
-\n                               | DONE
-array(4) {
-  [&quot;One&quot;]=&gt;
-  string(6) &quot;header&quot;
-  [&quot;Two&quot;]=&gt;
-  string(12) &quot;header lines&quot;
-  [&quot;Three&quot;]=&gt;
-  string(17) &quot;header lines here&quot;
-  [&quot;More&quot;]=&gt;
-  array(2) {
-	[0]=&gt;
-	string(15) &quot;than one header&quot;
-	[1]=&gt;
-	string(17) &quot;than: you: expect&quot;
-  }
-}
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Header/Parser/parse#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.integer">int</a></code>, <a href="http/Header/Parser#STATE_*">http\Header\Parser::STATE_*</a> constant.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Header/Parser/parse#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Header/Parser/parse#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$headers </span><span style="color: inherit" class="keyword">= [<br>    </span><span style="color: inherit" class="string">"One: "</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="string">"header\n"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"Two: header\n\tlines\n"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"Three"</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="string">": header\n lines\n here\n"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"More: than one header\n"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"More: "</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"than: "</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"you: "</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"expect\n"</span><span style="color: inherit" class="keyword">,<br>    </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">,<br>];<br><br></span><span style="color: inherit" class="default">$states </span><span style="color: inherit" class="keyword">= [-</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">=&gt;</span><span style="color: inherit" class="string">"FAILURE"</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">=&gt;</span><span style="color: inherit" class="string">"START"</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="string">"KEY"</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="string">"VALUE"</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="string">"VALUE_EX"</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="string">"HEADER_DONE"</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="string">"DONE"</span><span style="color: inherit" class="keyword">];<br></span><span style="color: inherit" class="default">$parser </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Header\Parser</span><span style="color: inherit" class="keyword">;<br>do {<br>    </span><span style="color: inherit" class="default">$state </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$parser</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">parse</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$part </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">array_shift</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$headers</span><span style="color: inherit" class="keyword">), <br>        </span><span style="color: inherit" class="default">$headers </span><span style="color: inherit" class="keyword">? </span><span style="color: inherit" class="default">0 </span><span style="color: inherit" class="keyword">: </span><span style="color: inherit" class="default">http\Header\Parser</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">CLEANUP</span><span style="color: inherit" class="keyword">, <br>        </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">);<br>    </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%2\$-32s | %1\$s\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$states</span><span style="color: inherit" class="keyword">[</span><span style="color: inherit" class="default">$state</span><span style="color: inherit" class="keyword">], </span><span style="color: inherit" class="default">addcslashes</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$part</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"\r\n\t\0"</span><span style="color: inherit" class="keyword">));<br>} while (</span><span style="color: inherit" class="default">$headers </span><span style="color: inherit" class="keyword">&amp;&amp; </span><span style="color: inherit" class="default">$state </span><span style="color: inherit" class="keyword">!== </span><span style="color: inherit" class="default">http\Header\Parser</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">STATE_FAILURE</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+Test<br>One:                             | VALUE<br>header\n                         | VALUE_EX<br>Two: header\n\tlines\n           | VALUE_EX<br>Three                            | KEY<br>: header\n lines\n here\n        | VALUE_EX<br>More: than one header\n          | VALUE_EX<br>More:                            | VALUE<br>than:                            | VALUE<br>you:                             | VALUE<br>expect\n                         | VALUE_EX<br>\n                               | DONE<br>array(4) {<br>  ["One"]=&gt;<br>  string(6) "header"<br>  ["Two"]=&gt;<br>  string(12) "header lines"<br>  ["Three"]=&gt;<br>  string(17) "header lines here"<br>  ["More"]=&gt;<br>  array(2) {<br>    [0]=&gt;<br>    string(15) "than one header"<br>    [1]=&gt;<br>    string(17) "than: you: expect"<br>  }<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

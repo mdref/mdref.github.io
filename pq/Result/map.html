@@ -77,70 +77,31 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>array pq\Result::map([mixed $keys = 0[, mixed $vals = NULL[, int $fetch_type = pq\Result::$fetchType]]])</h1>
-<p>Fetch the complete result set as a simple map, a <em>multi dimensional array</em>, each dimension indexed by a column.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>Optional mixed $keys = 0<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Result/map#">#</a><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq/Result/map">pq\Result::map</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$keys</span> = 0[, <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$vals</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$fetch_type</span> = <a href="pq/Result#%24fetchType">pq\Result::$fetchType</a>]]])</h1><p>Fetch the complete result set as a simple map, a <em>multi dimensional array</em>, each dimension indexed by a column.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Result/map#Params:">#</a>
+</h2><ul>
+<li>Optional <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$keys">$keys<a class="permalink" href="pq/Result/map#%24keys">#</a></span> = 0<br>
 The the column indices/names used to index the map.</li>
-<li>Optional mixed $vals = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$vals">$vals<a class="permalink" href="pq/Result/map#%24vals">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The column indices/names which should build up the leaf entry of the map.</li>
-<li>Optional int $fetch_type<br />
-The type the return value should have, see pq\Result::FETCH_* constants, defaults to pq\Result::$fetchType.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>array|object, the mapped columns.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-try {
-	$connection = new pq\Connection;
-	
-	$result = $connection-&gt;exec(&quot;SELECT a,b,c from generate_series(1,3) a, 
-												   generate_series(4,6) b, 
-												   generate_series(7,9) c&quot;);
-
-	foreach($result-&gt;map(array(0,1,2)) as $a =&gt; $aa) {
-		foreach ($aa as $b =&gt; $bb) {
-			foreach ($bb as $c =&gt; $res) {
-				printf(&quot;%s,%s,%s = %s   &quot;, $a, $b, $c, implode(&quot;,&quot;, $res));
-			}
-			printf(&quot;\n&quot;);
-		}
-		printf(&quot;\n&quot;);
-	}
-} catch (\pq\Exception $e) {
-	echo $e-&gt;getMessage(), &quot;\n&quot;;
-}
-
-?&gt;
-</code></pre>
-<p>It should produce:</p>
-<pre><code>1,4,7 = 1,4,7   1,4,8 = 1,4,8   1,4,9 = 1,4,9   
-1,5,7 = 1,5,7   1,5,8 = 1,5,8   1,5,9 = 1,5,9   
-1,6,7 = 1,6,7   1,6,8 = 1,6,8   1,6,9 = 1,6,9   
-
-2,4,7 = 2,4,7   2,4,8 = 2,4,8   2,4,9 = 2,4,9  // This should help generate maps 
-2,5,7 = 2,5,7   2,5,8 = 2,5,8   2,5,9 = 2,5,9  // of f.e. statistical data with   
-2,6,7 = 2,6,7   2,6,8 = 2,6,8   2,6,9 = 2,6,9  // some GROUP BYs etc.           
-
-3,4,7 = 3,4,7   3,4,8 = 3,4,8   3,4,9 = 3,4,9   
-3,5,7 = 3,5,7   3,5,8 = 3,5,8   3,5,9 = 3,5,9   
-3,6,7 = 3,6,7   3,6,8 = 3,6,8   3,6,9 = 3,6,9   
-</code></pre>
-
-
-
-		
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$fetch_type">$fetch_type<a class="permalink" href="pq/Result/map#%24fetch_type">#</a></span><br>
+The type the return value should have, see <a href="pq/Result#FETCH_*">pq\Result::FETCH_*</a> constants, defaults to <a href="pq/Result#%24fetchType">pq\Result::$fetchType</a>.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/Result/map#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code>|object, the mapped columns.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Result/map#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Result/map#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>    <br>    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT a,b,c from generate_series(1,3) a, <br>                                                   generate_series(4,6) b, <br>                                                   generate_series(7,9) c"</span><span style="color: inherit" class="keyword">);<br><br>    foreach(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">map</span><span style="color: inherit" class="keyword">(array(</span><span style="color: inherit" class="default">0</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">)) as </span><span style="color: inherit" class="default">$a </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$aa</span><span style="color: inherit" class="keyword">) {<br>        foreach (</span><span style="color: inherit" class="default">$aa </span><span style="color: inherit" class="keyword">as </span><span style="color: inherit" class="default">$b </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$bb</span><span style="color: inherit" class="keyword">) {<br>            foreach (</span><span style="color: inherit" class="default">$bb </span><span style="color: inherit" class="keyword">as </span><span style="color: inherit" class="default">$c </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">) {<br>                </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%s,%s,%s = %s   "</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$a</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$b</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">implode</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">","</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$res</span><span style="color: inherit" class="keyword">));<br>            }<br>            </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">);<br>        }<br>        </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">);<br>    }<br>} catch (</span><span style="color: inherit" class="default">\pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    echo </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>It should produce:</p><pre><code><span style="color: inherit" class="html">
+1,4,7 = 1,4,7   1,4,8 = 1,4,8   1,4,9 = 1,4,9   <br>1,5,7 = 1,5,7   1,5,8 = 1,5,8   1,5,9 = 1,5,9   <br>1,6,7 = 1,6,7   1,6,8 = 1,6,8   1,6,9 = 1,6,9   <br><br>2,4,7 = 2,4,7   2,4,8 = 2,4,8   2,4,9 = 2,4,9  // This should help generate maps <br>2,5,7 = 2,5,7   2,5,8 = 2,5,8   2,5,9 = 2,5,9  // of f.e. statistical data with   <br>2,6,7 = 2,6,7   2,6,8 = 2,6,8   2,6,9 = 2,6,9  // some GROUP BYs etc.           <br><br>3,4,7 = 3,4,7   3,4,8 = 3,4,8   3,4,9 = 3,4,9   <br>3,5,7 = 3,5,7   3,5,8 = 3,5,8   3,5,9 = 3,5,9   <br>3,6,7 = 3,6,7   3,6,8 = 3,6,8   3,6,9 = 3,6,9   <br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

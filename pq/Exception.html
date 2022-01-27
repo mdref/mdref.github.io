@@ -95,78 +95,81 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>interface pq\Exception</h1>
-<p>A base interface for all pq\Exception classes.</p>
-<h2>Constants:<a id="Constants:" href="#Constants:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>INVALID_ARGUMENT<br />
-An invalid argument was passed to a method (pq\Exception\InvalidArgumentException).</li>
-<li>RUNTIME<br />
-A runtime exception occurred (pq\Exception\RuntimeException).</li>
-<li>CONNECTION_FAILED<br />
-The connection failed (pq\Exception\RuntimeException).</li>
-<li>IO<br />
-An input/output exception occurred (pq\Exception\RuntimeException).</li>
-<li>ESCAPE<br />
-Escaping an argument or identifier failed internally (pq\Exception\RuntimeException).</li>
-<li>UNINITIALIZED<br />
-An object's constructor was not called (pq\Exception\BadMethodCallException).</li>
-<li>BAD_METHODCALL<br />
-Calling this method was not expected (yet) (pq\Exception\BadMethodCallException).</li>
-<li>SQL<br />
-SQL syntax error (pq\Exception\DomainException).</li>
-<li>DOMAIN<br />
-Implementation domain error (pq\Exception\DomainException).</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-try {
-	$connection = new pq\Connection;
-} catch (pq\Exception $e) {
-	printf(&quot;%s (%d)\n&quot;, $e-&gt;getMessage(), $e-&gt;getCode());
-}
-
-?&gt;
-</code></pre>
-
-
-
-
-<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
-<ul>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Exception#">#</a><em>interface</em> <a href="pq/Exception">pq\Exception</a>
+</h1><p>A base <em>interface</em> for all <a href="pq/Exception">pq\Exception</a> classes.</p><h2 id="Constants:">Constants:<a class="permalink" href="pq/Exception#Constants:">#</a>
+</h2><ul>
+<li>
+<span class="constant" id="INVALID_ARGUMENT">INVALID_ARGUMENT<a class="permalink" href="pq/Exception#INVALID_ARGUMENT">#</a></span><br>
+An invalid argument was passed to a method (<a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a>).</li>
+<li>
+<span class="constant" id="RUNTIME">RUNTIME<a class="permalink" href="pq/Exception#RUNTIME">#</a></span><br>
+A runtime exception occurred (<a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a>).</li>
+<li>
+<span class="constant" id="CONNECTION_FAILED">CONNECTION_FAILED<a class="permalink" href="pq/Exception#CONNECTION_FAILED">#</a></span><br>
+The connection failed (<a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a>).</li>
+<li>
+<span class="constant" id="IO">IO<a class="permalink" href="pq/Exception#IO">#</a></span><br>
+An input/output exception occurred (<a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a>).</li>
+<li>
+<span class="constant" id="ESCAPE">ESCAPE<a class="permalink" href="pq/Exception#ESCAPE">#</a></span><br>
+Escaping an argument or identifier failed internally (<a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a>).</li>
+<li>
+<span class="constant" id="UNINITIALIZED">UNINITIALIZED<a class="permalink" href="pq/Exception#UNINITIALIZED">#</a></span><br>
+An object's constructor was not called (<a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a>).</li>
+<li>
+<span class="constant" id="BAD_METHODCALL">BAD_METHODCALL<a class="permalink" href="pq/Exception#BAD_METHODCALL">#</a></span><br>
+Calling this method was not expected (yet) (<a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a>).</li>
+<li>
+<span class="constant" id="SQL">SQL<a class="permalink" href="pq/Exception#SQL">#</a></span><br>
+<span class="constant">SQL</span> syntax error (<a href="pq/Exception/DomainException">pq\Exception\DomainException</a>).</li>
+<li>
+<span class="constant" id="DOMAIN">DOMAIN<a class="permalink" href="pq/Exception#DOMAIN">#</a></span><br>
+Implementation domain error (<a href="pq/Exception/DomainException">pq\Exception\DomainException</a>).</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Exception#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>} catch (</span><span style="color: inherit" class="default">pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%s (%d)\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getCode</span><span style="color: inherit" class="keyword">());<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="pq/Exception#Namespaces.Interfaces.and.Classes:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq/Exception/BadMethodCallException">BadMethodCallException</a></h3>
+		<h3 id="BadMethodCallException">
+<a href="pq/Exception/BadMethodCallException">BadMethodCallException</a><a class="permalink" href="pq/Exception#BadMethodCallException">#</a>
+</h3>
 		<p>A method call was not expected.</p>
 
-		<p>class pq\Exception\BadMethodCallException extends BadMethodCallException implements pq\Exception</p>
+		<p><em>class</em> <a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.badmethodcallexception">BadMethodCallException</a></code> <em>implements</em> <a href="pq/Exception">pq\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Exception/DomainException">DomainException</a></h3>
+		<h3 id="DomainException">
+<a href="pq/Exception/DomainException">DomainException</a><a class="permalink" href="pq/Exception#DomainException">#</a>
+</h3>
 		<p>Implementation or SQL syntax error.</p>
 
-		<p>class pq\Exception\DomainException extends DomainException implements pq\Exception</p>
+		<p><em>class</em> <a href="pq/Exception/DomainException">pq\Exception\DomainException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.domainexception">DomainException</a></code> <em>implements</em> <a href="pq/Exception">pq\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Exception/InvalidArgumentException">InvalidArgumentException</a></h3>
+		<h3 id="InvalidArgumentException">
+<a href="pq/Exception/InvalidArgumentException">InvalidArgumentException</a><a class="permalink" href="pq/Exception#InvalidArgumentException">#</a>
+</h3>
 		<p>An invalid argument was passed to a method.</p>
 
-		<p>class pq\Exception\InvalidArgumentException extends InvalidArgumentException implements pq\Exception</p>
+		<p><em>class</em> <a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.invalidargumentexception">InvalidArgumentException</a></code> <em>implements</em> <a href="pq/Exception">pq\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="pq/Exception/RuntimeException">RuntimeException</a></h3>
+		<h3 id="RuntimeException">
+<a href="pq/Exception/RuntimeException">RuntimeException</a><a class="permalink" href="pq/Exception#RuntimeException">#</a>
+</h3>
 		<p>A runtime exception occurred.</p>
 
-		<p>class pq\Exception\RuntimeException extends RuntimeException implements pq\Exception</p>
+		<p><em>class</em> <a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.runtimeexception">RuntimeException</a></code> <em>implements</em> <a href="pq/Exception">pq\Exception</a></p>
 	</li>
 	
-</ul>
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

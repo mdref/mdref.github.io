@@ -75,30 +75,25 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>mixed pq\Query\ExecutorInterface pq\Query\ExecutorInterface::execute(\pq\Query\WriterInterface $query, callable $callback);</h1>
-<p>Execute the query and process the result with the callback.</p>
-<blockquote>
-<p><em><strong>NOTE:</strong></em><br />
-This method should notify the observers twice.<br />
-Once before the query gets executed and can be retrieved by pq\Query\ExecutorInterface::getQuery().<br />
-And once after executing the query and the result can be retrieved by pq\Query\ExecutorInterface::getResult().</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Query\WriterInterface $query<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Query/ExecutorInterface/execute#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Query/ExecutorInterface">pq\Query\ExecutorInterface</a> <a href="pq-gateway/pq/Query/ExecutorInterface/execute">pq\Query\ExecutorInterface::execute</a>(<a href="pq-gateway/pq/Query/WriterInterface">\pq\Query\WriterInterface</a> <span class="var">$query</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$callback</span>);</h1><p>Execute the query and process the result with the <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>.</p><blockquote>
+<p><em><strong>NOTE:</strong></em><br>
+This method should notify the observers twice.<br>
+Once before the query gets executed and can be retrieved by <a href="pq-gateway/pq/Query/ExecutorInterface/getQuery">pq\Query\ExecutorInterface::getQuery</a>().<br>
+And once after executing the query and the result can be retrieved by <a href="pq-gateway/pq/Query/ExecutorInterface/getResult">pq\Query\ExecutorInterface::getResult</a>().</p>
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="pq-gateway/pq/Query/ExecutorInterface/execute#Params:">#</a>
+</h2><ul>
+<li>
+<a href="pq-gateway/pq/Query/WriterInterface">pq\Query\WriterInterface</a> <span class="var" id="$query">$query<a class="permalink" href="pq-gateway/pq/Query/ExecutorInterface/execute#%24query">#</a></span><br>
 The query to execute.</li>
-<li>callable $callback<br />
-The result processing callback as function(pq\Result $result)</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>mixed, the return value of the callback.</li>
-</ul>
-
-
-
-		
+<li>
+<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var" id="$callback">$callback<a class="permalink" href="pq-gateway/pq/Query/ExecutorInterface/execute#%24callback">#</a></span><br>
+The result processing <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> as function(<a href="pq/Result">pq\Result</a> <span class="var" id="$result">$result<a class="permalink" href="pq-gateway/pq/Query/ExecutorInterface/execute#%24result">#</a></span>)</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq-gateway/pq/Query/ExecutorInterface/execute#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code>, the return value of the <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>.</li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

@@ -208,124 +208,102 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pecl/http</h1>
-<h2>About:<a id="About:" href="#About:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>Extended HTTP support. Again.</p>
-<ul>
-<li>Introduces the http namespace.</li>
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http#">#</a>pecl/http</h1><h2 id="About:">About:<a class="permalink" href="http#About:">#</a>
+</h2><p>Extended HTTP support. Again.</p><ul>
+<li>Introduces the http <em>namespace</em>.</li>
 <li>PHP stream based message bodies.</li>
 <li>Encapsulated env request/response.</li>
 <li>Modular client support.</li>
-</ul>
-<h2>Installation:<a id="Installation:" href="#Installation:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>This extension is hosted at <a href="http://pecl.php.net">PECL</a> and can be installed with <a href="http://pear.php.net">PEAR</a>'s pecl command:</p>
-<pre><code># pecl install pecl_http
-</code></pre>
-<h2>Dependencies:<a id="Dependencies:" href="#Dependencies:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>pecl/http depends on a number of system libraries and PHP extensions for special features.</p>
-<h4>Required system libraries:<a id="Required.system.libraries:" href="#Required.system.libraries:" class="permalink" aria-hidden="true" title="">#</a></h4>
-<p>The following system libraries are required to build this extension:</p>
-<dl>
+</ul><h2 id="Installation:">Installation:<a class="permalink" href="http#Installation:">#</a>
+</h2><p>This extension is hosted at <a href="http://pecl.php.net">PECL</a> and can be installed with <a href="http://pear.php.net">PEAR</a>'s pecl command:</p><pre><code><span style="color: inherit" class="html">
+# pecl install pecl_http<br></span>
+</code></pre><h2 id="Dependencies:">Dependencies:<a class="permalink" href="http#Dependencies:">#</a>
+</h2><p>pecl/http depends on a number of system libraries and PHP extensions for special features.</p><h4 id="Required.system.libraries:">Required system libraries:<a class="permalink" href="http#Required.system.libraries:">#</a>
+</h4><p>The following system libraries are required to build this extension:</p><dl>
 <dt>zlib</dt>
-<dd>Provides gzip/zlib/deflate encoding.<br />
-Configure: <code>--with-http-zlib-dir</code><br />
-Minimum version: 1.2.0.4<br />
-Install on Debian: <code>apt-get install zlib1g-dev</code></dd>
-</dl>
-<h4>Optional system libraries:<a id="Optional.system.libraries:" href="#Optional.system.libraries:" class="permalink" aria-hidden="true" title="">#</a></h4>
-<p>The following system libraries are optional and provide additional features:</p>
-<dl>
+<dd>Provides gzip/zlib/deflate encoding.<br>
+Configure: <code>--with-http-zlib-dir</code><br>
+Minimum version: 1.2.0.4<br>
+Install on Debian: <code>apt-get install zlib1g-dev</code>
+</dd>
+</dl><h4 id="Optional.system.libraries:">Optional system libraries:<a class="permalink" href="http#Optional.system.libraries:">#</a>
+</h4><p>The following system libraries are optional and provide additional features:</p><dl>
 <dt>libcurl</dt>
-<dd>Provides HTTP request functionality.<br />
-Configure: <code>--with-http-libcurl-dir</code><br />
-Minimum version: 7.18.2<br />
-Install on Debian: <code>apt-get install libcurl4-openssl-dev</code></dd>
+<dd>Provides HTTP request functionality.<br>
+Configure: <code>--with-http-libcurl-dir</code><br>
+Minimum version: 7.18.2<br>
+Install on Debian: <code>apt-get install libcurl4-openssl-dev</code>
+</dd>
 <dt>libbrotli</dt>
-<dd>Provides brotli encoding.<br />
-Configure: <code>--with-http-libbrotli-dir</code><br />
-Minimum version: 1.0<br />
-Install on Debian: <code>apt-get install libbrotli-dev</code></dd>
+<dd>Provides brotli encoding.<br>
+Configure: <code>--with-http-libbrotli-dir</code><br>
+Minimum version: 1.0<br>
+Install on Debian: <code>apt-get install libbrotli-dev</code>
+</dd>
 <dt>libevent</dt>
-<dd>Internal event loop support for the HTTP client.<br />
-Configure: <code>--with-http-libevent-dir</code><br />
-Minimum version: none<br />
-Install on Debian: <code>apt-get install libevent-dev</code></dd>
+<dd>Internal event loop support for the HTTP client.<br>
+Configure: <code>--with-http-libevent-dir</code><br>
+Minimum version: none<br>
+Install on Debian: <code>apt-get install libevent-dev</code>
+</dd>
 <dt>libicu</dt>
-<dd>Provides IDNA2003 and/or IDNA2008 support in URLs.<br />
-Configure: <code>--with-http-libicu-dir</code><br />
-Minimum version: none<br />
-Install on Debian: <code>apt-get install libicu-dev</code></dd>
+<dd>Provides IDNA2003 and/or IDNA2008 support in URLs.<br>
+Configure: <code>--with-http-libicu-dir</code><br>
+Minimum version: none<br>
+Install on Debian: <code>apt-get install libicu-dev</code>
+</dd>
 <dt>libidn</dt>
-<dd>Provides IDNA2003 support in URLs.<br />
-Configure: <code>--with-http-libidn-dir</code><br />
-Minimum version: none<br />
-Install on Debian: <code>apt-get install libidn11-dev</code></dd>
+<dd>Provides IDNA2003 support in URLs.<br>
+Configure: <code>--with-http-libidn-dir</code><br>
+Minimum version: none<br>
+Install on Debian: <code>apt-get install libidn11-dev</code>
+</dd>
 <dt>libidn2</dt>
-<dd>Provides IDNA2008 support in URLs.<br />
-Configure: <code>--with-http-libidn2-dir</code><br />
-Minimum version: none<br />
-Install on Debian: <code>apt-get install libidn2-0-dev</code></dd>
+<dd>Provides IDNA2008 support in URLs.<br>
+Configure: <code>--with-http-libidn2-dir</code><br>
+Minimum version: none<br>
+Install on Debian: <code>apt-get install libidn2-0-dev</code>
+</dd>
 <dt>libidnkit</dt>
-<dd>Provides IDNA2003 support in URLs. Conflicts with libidnkit2.<br />
-Configure: <code>--with-http-libidnkit-dir</code><br />
-Minimum version: none<br />
+<dd>Provides IDNA2003 support in URLs. Conflicts with libidnkit2.<br>
+Configure: <code>--with-http-libidnkit-dir</code><br>
+Minimum version: none<br>
 Install on Debian: N/A</dd>
 <dt>libidnkit2</dt>
-<dd>Provides IDNA2008 support in URLs. Conflicts with libidnkit.<br />
-Configure: <code>--with-http-libidnkit2-dir</code><br />
-Minimum version: none<br />
+<dd>Provides IDNA2008 support in URLs. Conflicts with libidnkit.<br>
+Configure: <code>--with-http-libidnkit2-dir</code><br>
+Minimum version: none<br>
 Install on Debian: N/A</dd>
-</dl>
-<h5>A note on IDNA libraries:<a id="A.note.on.IDNA.libraries:" href="#A.note.on.IDNA.libraries:" class="permalink" aria-hidden="true" title="">#</a></h5>
-<p>If configured with multiple IDNA libraries' support, there's a run-time precedence of ICU over GNU libidn, which in turn has precendence over idnkit. If neither IDNA2008, nor IDNA2003 is explicitly requested, IDNA2008 has precendence.</p>
-<h5>A note on the CURL library:<a id="A.note.on.the.CURL.library:" href="#A.note.on.the.CURL.library:" class="permalink" aria-hidden="true" title="">#</a></h5>
-<p>There are usually different styles of SSL support for libcurl available, so you can choose between 'openssl' and f.e. 'nss' or 'gnutls' when installing libcurl.</p>
-<h3>PHP extensions:<a id="PHP.extensions:" href="#PHP.extensions:" class="permalink" aria-hidden="true" title="">#</a></h3>
-<p>This extension unconditionally depends on the pre-loaded presence of the following PHP extensions:</p>
-<ul>
+</dl><h5 id="A.note.on.IDNA.libraries:">A note on IDNA libraries:<a class="permalink" href="http#A.note.on.IDNA.libraries:">#</a>
+</h5><p>If configured with multiple IDNA libraries' support, there's a run-time precedence of ICU over GNU libidn, which in turn has precendence over idnkit. If neither IDNA2008, nor IDNA2003 is explicitly requested, IDNA2008 has precendence.</p><h5 id="A.note.on.the.CURL.library:">A note on the CURL library:<a class="permalink" href="http#A.note.on.the.CURL.library:">#</a>
+</h5><p>There are usually different styles of SSL support for libcurl available, so you can choose between 'openssl' and f.e. 'nss' or 'gnutls' when installing libcurl.</p><h3 id="PHP.extensions:">PHP extensions:<a class="permalink" href="http#PHP.extensions:">#</a>
+</h3><p>This extension unconditionally depends on the pre-loaded presence of the following PHP extensions:</p><ul>
 <li>raphf</li>
 <li>propro (only until &lt; 4.0.0, resp. PHP 8)</li>
 <li>spl</li>
-</ul>
-<p>If configured <code>--with-http-shared-deps</code> (default) it depends on the pre-loaded presence of the following extensions, as long as they were available at build time:</p>
-<ul>
+</ul><p>If configured <code>--with-http-shared-deps</code> (default) it depends on the pre-loaded presence of the following extensions, as <code><a href="https://php.net/manual/en/language.types.integer">long</a></code> as they were available at build time:</p><ul>
 <li>hash</li>
 <li>iconv</li>
 <li>json (only until &lt; 2.4.0)</li>
-</ul>
-<p>Please ensure that all extension on which pecl/http depends, are loaded before it, e.g in your <code>php.ini</code>:</p>
-<pre><code>; obligatory deps
-extension = raphf.so
-extension = propro.so (PHP &lt; 8.0, ext-http &lt; 3.0 only)
-
-; if shared deps were enabled
-extension = hash.so
-extension = iconv.so
-extension = json.so
-
-; finally load pecl/http
-extension = http.so
-</code></pre>
-<h2>INI Directives:<a id="INI.Directives:" href="#INI.Directives:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http.etag.mode = &quot;crc32b&quot;<br />
+</ul><p>Please ensure that all extension on which pecl/http depends, are loaded before it, e.g in your <code>php.ini</code>:</p><pre><code><span style="color: inherit" class="html">
+; obligatory deps<br>extension = raphf.so<br>extension = propro.so (PHP &lt; 8.0, ext-http &lt; 3.0 only)<br><br>; if shared deps were enabled<br>extension = hash.so<br>extension = iconv.so<br>extension = json.so<br><br>; finally load pecl/http<br>extension = http.so<br></span>
+</code></pre><h2 id="INI.Directives:">INI Directives:<a class="permalink" href="http#INI.Directives:">#</a>
+</h2><ul>
+<li>http.etag.mode = "crc32b"<br>
 Default hash method for dynamic response payloads to generate an ETag.</li>
-</ul>
-<h2>Stream Filters:<a id="Stream.Filters:" href="#Stream.Filters:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The http extension registers the <code>http.*</code> namespace for its stream filters. Provided stream filters are:</p>
-<ul>
-<li>http.chunked_decode<br />
+</ul><h2 id="Stream.Filters:">Stream Filters:<a class="permalink" href="http#Stream.Filters:">#</a>
+</h2><p>The http extension registers the <code>http.*</code> <em>namespace</em> for its stream filters. Provided stream filters are:</p><ul>
+<li>http.chunked_decode<br>
 Decode a stream encoded with chunked transfer encoding.</li>
-<li>http.chunked_encode<br />
+<li>http.chunked_encode<br>
 Encode a stream with chunked transfer encoding.</li>
-<li>http.inflate<br />
+<li>http.inflate<br>
 Decode a stream encoded with deflate/zlib/gzip encoding.</li>
-<li>http.deflate<br />
+<li>http.deflate<br>
 Encode a stream with deflate/zlib/gzip encoding.</li>
-</ul>
-<h2>Changelog:<a id="Changelog:" href="#Changelog:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ol start="0">
+</ul><h2 id="Changelog:">Changelog:<a class="permalink" href="http#Changelog:">#</a>
+</h2><ol start="0">
 <li>v2.0.4
 <ul>
 <li>Dropped the pecl/event conflict.</li>
@@ -354,98 +332,110 @@ Encode a stream with deflate/zlib/gzip encoding.</li>
 <li>Added brotli encoding support.</li>
 </ul>
 </li>
-</ol>
-
-	<h2 id="Editor.Stub:">Editor Stub:</h2>
-	<p>This extension provides a stub file four your editor's auto-completion.</p>
-					<div>
+</ol><h2 id="Editor.Stub:">Editor Stub:<a class="permalink" href="http#Editor.Stub:">#</a>
+</h2><p>This extension provides a stub file four your editor's auto-completion.</p><div>
 					<p><strong>Download the Stub file:</strong></p>
-					<ul style="list-style-type: '&raquo;'">
+					<ul style="list-style-type: '»'">
 						<li>
 														<a href="http.stub.php">http.stub.php</a><br>
 														<small>
 								Last modified:
-								2022-01-25 10:53:10 UTC							</small>
+								2022-01-27 15:09:10 UTC							</small>
 						</li>
 					</ul>
-				</div>
-
-
-
-<h2 id="Namespaces,.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:</h2>
-<ul>
+				</div><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="http#Namespaces.Interfaces.and.Classes:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="http/Client">Client</a></h3>
-		<p>The HTTP client. See http\Client\Curl's <a href="http/Client/Curl#Options:">options</a> which is the only driver currently supported.</p>
+		<h3 id="Client">
+<a href="http/Client">Client</a><a class="permalink" href="http#Client">#</a>
+</h3>
+		<p>The HTTP client. See <a href="http/Client/Curl">http\Client\Curl</a>'s <a href="http/Client/Curl#Options:">options</a> which is the only driver currently supported.</p>
 
-		<p>class http\Client implements SplSubject, Countable</p>
+		<p><em>class</em> <a href="http/Client">http\Client</a> <em>implements</em> <code><a href="https://php.net/manual/en/class.splsubject">SplSubject</a></code>, <code><a href="https://php.net/manual/en/class.countable">Countable</a></code></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Cookie">Cookie</a></h3>
-		<p>A class representing a list of cookies with specific attributes.</p>
+		<h3 id="Cookie">
+<a href="http/Cookie">Cookie</a><a class="permalink" href="http#Cookie">#</a>
+</h3>
+		<p>A <em>class</em> representing a list of cookies with specific attributes.</p>
 
-		<p>class http\Cookie</p>
+		<p><em>class</em> <a href="http/Cookie">http\Cookie</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Encoding">Encoding</a></h3>
+		<h3 id="Encoding">
+<a href="http/Encoding">Encoding</a><a class="permalink" href="http#Encoding">#</a>
+</h3>
 		
-		<p>namespace http\Encoding</p>
+		<p><em>namespace</em> <a href="http/Encoding">http\Encoding</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Env">Env</a></h3>
-		<p>The http\Env class provides static methods to manipulate and inspect the server's current request's HTTP environment.</p>
+		<h3 id="Env">
+<a href="http/Env">Env</a><a class="permalink" href="http#Env">#</a>
+</h3>
+		<p>The <a href="http/Env">http\Env</a> <em>class</em> provides <em>static</em> methods to manipulate and inspect the server's current request's HTTP environment.</p>
 
-		<p>class http\Env</p>
+		<p><em>class</em> <a href="http/Env">http\Env</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Exception">Exception</a></h3>
-		<p>The http extension's Exception interface.</p>
+		<h3 id="Exception">
+<a href="http/Exception">Exception</a><a class="permalink" href="http#Exception">#</a>
+</h3>
+		<p>The http extension's <code><a href="https://php.net/manual/en/class.exception">Exception</a></code> <em>interface</em>.</p>
 
-		<p>interface http\Exception</p>
+		<p><em>interface</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Header">Header</a></h3>
-		<p>The http\Header class provides methods to manipulate, match, negotiate and serialize HTTP headers.</p>
+		<h3 id="Header">
+<a href="http/Header">Header</a><a class="permalink" href="http#Header">#</a>
+</h3>
+		<p>The <a href="http/Header">http\Header</a> <em>class</em> provides methods to manipulate, match, negotiate and serialize HTTP headers.</p>
 
-		<p>class http\Header implements Serializable</p>
+		<p><em>class</em> <a href="http/Header">http\Header</a> <em>implements</em> <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Message">Message</a></h3>
-		<p>The message class builds the foundation for any request and response message.</p>
+		<h3 id="Message">
+<a href="http/Message">Message</a><a class="permalink" href="http#Message">#</a>
+</h3>
+		<p>The message <em>class</em> builds the foundation for any request and response message.</p>
 
-		<p>class http\Message implements Countable, Serializable, Iterator</p>
+		<p><em>class</em> <a href="http/Message">http\Message</a> <em>implements</em> <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>, <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>, <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Params">Params</a></h3>
+		<h3 id="Params">
+<a href="http/Params">Params</a><a class="permalink" href="http#Params">#</a>
+</h3>
 		<p>Parse, interpret and compose HTTP (header) parameters.</p>
 
-		<p>class http\Params implements ArrayAccess</p>
+		<p><em>class</em> <a href="http/Params">http\Params</a> <em>implements</em> <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/QueryString">QueryString</a></h3>
-		<p>The http\QueryString class provides versatile facilities to retrieve, use and manipulate query strings and form data.</p>
+		<h3 id="QueryString">
+<a href="http/QueryString">QueryString</a><a class="permalink" href="http#QueryString">#</a>
+</h3>
+		<p>The <a href="http/QueryString">http\QueryString</a> <em>class</em> provides versatile facilities to retrieve, use and manipulate query strings and form data.</p>
 
-		<p>class http\QueryString implements Serializable, ArrayAccess, IteratorAggregate</p>
+		<p><em>class</em> <a href="http/QueryString">http\QueryString</a> <em>implements</em> <code><a href="https://php.net/manual/en/class.serializable">Serializable</a></code>, <code><a href="https://php.net/manual/en/class.arrayaccess">ArrayAccess</a></code>, <code><a href="https://php.net/manual/en/class.iteratoraggregate">IteratorAggregate</a></code></p>
 	</li>
 	
 	<li>
-		<h3><a href="http/Url">Url</a></h3>
-		<p>The http\Url class provides versatile means to parse, construct and manipulate URLs.</p>
+		<h3 id="Url">
+<a href="http/Url">Url</a><a class="permalink" href="http#Url">#</a>
+</h3>
+		<p>The <a href="http/Url">http\Url</a> <em>class</em> provides versatile means to parse, construct and manipulate URLs.</p>
 
-		<p>class http\Url</p>
+		<p><em>class</em> <a href="http/Url">http\Url</a></p>
 	</li>
 	
-</ul>
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

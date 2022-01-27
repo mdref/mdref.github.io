@@ -172,176 +172,215 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>class pq\Gateway\Rowset implements SeekableIterator, JsonSerializable, Countable</h1>
-<p>The rowset gateway.</p>
-<h2>Properties:<a id="Properties:" href="#Properties:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>protected pq\Table $table<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq-gateway/pq/Gateway/Rowset#">#</a><em>class</em> <a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <br>&nbsp;<em>implements</em> <code><a href="https://php.net/manual/en/class.seekableiterator">SeekableIterator</a></code>, <code><a href="https://php.net/manual/en/class.jsonserializable">JsonSerializable</a></code>, <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>
+</h1><p>The rowset gateway.</p><h2 id="Properties:">Properties:<a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Properties:">#</a>
+</h2><ul>
+<li>
+<em>protected</em> <a href="pq#Table">pq\Table</a> <span class="var" id="$table">$table<a class="permalink" href="pq-gateway/pq/Gateway/Rowset#%24table">#</a></span><br>
 The originating table.</li>
-<li>protected int $index = 0<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$index">$index<a class="permalink" href="pq-gateway/pq/Gateway/Rowset#%24index">#</a></span> = 0<br>
 The iterator index.</li>
-<li>protected array $rows<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$rows">$rows<a class="permalink" href="pq-gateway/pq/Gateway/Rowset#%24rows">#</a></span><br>
 The rows of the set.</li>
-<li>protected mixed $row = &quot;\pq\Gateway\Row&quot;<br />
+<li>
+<em>protected</em> <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var" id="$row">$row<a class="permalink" href="pq-gateway/pq/Gateway/Rowset#%24row">#</a></span> = "<a href="pq-gateway/pq/Gateway/Row">\pq\Gateway\Row</a>"<br>
 The row prototype.</li>
-</ul>
-
-
-
-<h2 id="Functions:">Functions:</h2>
-<ul>
+</ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Functions:">#</a>
+</h2><ul>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/__construct">Rowset::__construct</a></h3>
+		<h3 id="Rowset::__construct">
+<a href="pq-gateway/pq/Gateway/Rowset/__construct">Rowset::__construct</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::__construct">#</a>
+</h3>
 		<p>Create a new rowset gateway.</p>
 
-		<p>void pq\Gateway\Rowset::__construct(pq\Gateway\Table $table[, pq\Result $result = NULL])</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Rowset/__construct">pq\Gateway\Rowset::__construct</a>(<a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <span class="var">$table</span>[, <a href="pq/Result">pq\Result</a> <span class="var">$result</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/__invoke">Rowset::__invoke</a></h3>
+		<h3 id="Rowset::__invoke">
+<a href="pq-gateway/pq/Gateway/Rowset/__invoke">Rowset::__invoke</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::__invoke">#</a>
+</h3>
 		<p>Copy constructor.</p>
 
-		<p>pq\Gateway\Rowset pq\Gateway\Rowset::__invoke([pq\Result $result = NULL])</p>
+		<p><a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/__invoke">pq\Gateway\Rowset::__invoke</a>([<a href="pq/Result">pq\Result</a> <span class="var">$result</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/append">Rowset::append</a></h3>
+		<h3 id="Rowset::append">
+<a href="pq-gateway/pq/Gateway/Rowset/append">Rowset::append</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::append">#</a>
+</h3>
 		<p>Append a row to the rowset.</p>
 
-		<p>pq\Gateway\Rowset pq\Gateway\Rowset::append(pq\Gateway\Row $row)</p>
+		<p><a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/append">pq\Gateway\Rowset::append</a>(<a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <span class="var">$row</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/apply">Rowset::apply</a></h3>
-		<p>Apply a callback to each row of this rowset.</p>
+		<h3 id="Rowset::apply">
+<a href="pq-gateway/pq/Gateway/Rowset/apply">Rowset::apply</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::apply">#</a>
+</h3>
+		<p>Apply a <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code> to each row of this rowset.</p>
 
-		<p>pq\Gateway\Rowset pq\Gateway\Rowset::apply(callable $cb)</p>
+		<p><a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/apply">pq\Gateway\Rowset::apply</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$cb</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/count">Rowset::count</a></h3>
-		<p>Implements Countable.</p>
+		<h3 id="Rowset::count">
+<a href="pq-gateway/pq/Gateway/Rowset/count">Rowset::count</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::count">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.countable">Countable</a></code>.</p>
 
-		<p>int pq\Gateway\Rowset::count()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq-gateway/pq/Gateway/Rowset/count">pq\Gateway\Rowset::count</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/create">Rowset::create</a></h3>
+		<h3 id="Rowset::create">
+<a href="pq-gateway/pq/Gateway/Rowset/create">Rowset::create</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::create">#</a>
+</h3>
 		<p>Create all rows in this rowset.</p>
 
-		<p>pq\Gateway\Rowset pq\Gateway\Rowset::create([mixed $txn = TRUE])</p>
+		<p><a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/create">pq\Gateway\Rowset::create</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$txn</span> = <code><a href="https://php.net/manual/en/language.types.boolean">TRUE</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/current">Rowset::current</a></h3>
-		<p>Implements Iterator.</p>
+		<h3 id="Rowset::current">
+<a href="pq-gateway/pq/Gateway/Rowset/current">Rowset::current</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::current">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code>.</p>
 
-		<p>pq\Gateway\Row pq\Gateway\Rowset::current()</p>
+		<p><a href="pq-gateway/pq/Gateway/Row">pq\Gateway\Row</a> <a href="pq-gateway/pq/Gateway/Rowset/current">pq\Gateway\Rowset::current</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/delete">Rowset::delete</a></h3>
+		<h3 id="Rowset::delete">
+<a href="pq-gateway/pq/Gateway/Rowset/delete">Rowset::delete</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::delete">#</a>
+</h3>
 		<p>Delete all rows in this rowset.</p>
 
-		<p>pq\Gateway\Rowset pq\Gateway\Rowset::delete([mixed $txn = TRUE])</p>
+		<p><a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/delete">pq\Gateway\Rowset::delete</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$txn</span> = <code><a href="https://php.net/manual/en/language.types.boolean">TRUE</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/filter">Rowset::filter</a></h3>
+		<h3 id="Rowset::filter">
+<a href="pq-gateway/pq/Gateway/Rowset/filter">Rowset::filter</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::filter">#</a>
+</h3>
 		<p>Filter the rows a copy of the rowset should contain.</p>
 
-		<p>pq\Gateway\Rowset pq\Gateway\Rowset::filter(callable $cb)</p>
+		<p><a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/filter">pq\Gateway\Rowset::filter</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$cb</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/getRowPrototype">Rowset::getRowPrototype</a></h3>
+		<h3 id="Rowset::getRowPrototype">
+<a href="pq-gateway/pq/Gateway/Rowset/getRowPrototype">Rowset::getRowPrototype</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::getRowPrototype">#</a>
+</h3>
 		<p>Retrieve the row prototype.</p>
 
-		<p>mixed pq\Gateway\Rowset::getRowPrototype()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="pq-gateway/pq/Gateway/Rowset/getRowPrototype">pq\Gateway\Rowset::getRowPrototype</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/getRows">Rowset::getRows</a></h3>
+		<h3 id="Rowset::getRows">
+<a href="pq-gateway/pq/Gateway/Rowset/getRows">Rowset::getRows</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::getRows">#</a>
+</h3>
 		<p>Retrieve the rows this rowset contains.</p>
 
-		<p>array pq\Gateway\Rowset::getRows()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Gateway/Rowset/getRows">pq\Gateway\Rowset::getRows</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/getTable">Rowset::getTable</a></h3>
+		<h3 id="Rowset::getTable">
+<a href="pq-gateway/pq/Gateway/Rowset/getTable">Rowset::getTable</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::getTable">#</a>
+</h3>
 		<p>Retrieve the table from which this rowset originates.</p>
 
-		<p>pq\Gateway\Table pq\Gateway\Rowset::getTable()</p>
+		<p><a href="pq-gateway/pq/Gateway/Table">pq\Gateway\Table</a> <a href="pq-gateway/pq/Gateway/Rowset/getTable">pq\Gateway\Rowset::getTable</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/hydrate">Rowset::hydrate</a></h3>
+		<h3 id="Rowset::hydrate">
+<a href="pq-gateway/pq/Gateway/Rowset/hydrate">Rowset::hydrate</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::hydrate">#</a>
+</h3>
 		<p>Hydrate a result.</p>
 
-		<p>protected pq\Gateway\Rowset pq\Gateway\Rowset::hydrate([pq\Result $result = NULL])</p>
+		<p><em>protected</em> <a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/hydrate">pq\Gateway\Rowset::hydrate</a>([<a href="pq/Result">pq\Result</a> <span class="var">$result</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/jsonSerialize">Rowset::jsonSerialize</a></h3>
-		<p>Implements JsonSerializable.</p>
+		<h3 id="Rowset::jsonSerialize">
+<a href="pq-gateway/pq/Gateway/Rowset/jsonSerialize">Rowset::jsonSerialize</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::jsonSerialize">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.jsonserializable">JsonSerializable</a></code>.</p>
 
-		<p>array pq\Gateway\Rowset::jsonSerialize()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.array">array</a></code> <a href="pq-gateway/pq/Gateway/Rowset/jsonSerialize">pq\Gateway\Rowset::jsonSerialize</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/key">Rowset::key</a></h3>
-		<p>Implements Iterator.</p>
+		<h3 id="Rowset::key">
+<a href="pq-gateway/pq/Gateway/Rowset/key">Rowset::key</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::key">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code>.</p>
 
-		<p>int pq\Gateway\Rowset::key()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq-gateway/pq/Gateway/Rowset/key">pq\Gateway\Rowset::key</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/next">Rowset::next</a></h3>
-		<p>Implements Iterator.</p>
+		<h3 id="Rowset::next">
+<a href="pq-gateway/pq/Gateway/Rowset/next">Rowset::next</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::next">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code>.</p>
 
-		<p>void pq\Gateway\Rowset::next()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Rowset/next">pq\Gateway\Rowset::next</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/rewind">Rowset::rewind</a></h3>
-		<p>Implements Iterator.</p>
+		<h3 id="Rowset::rewind">
+<a href="pq-gateway/pq/Gateway/Rowset/rewind">Rowset::rewind</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::rewind">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code>.</p>
 
-		<p>void pq\Gateway\Rowset::rewind()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Gateway/Rowset/rewind">pq\Gateway\Rowset::rewind</a>()</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/seek">Rowset::seek</a></h3>
-		<p>Implements SeekableIterator.</p>
+		<h3 id="Rowset::seek">
+<a href="pq-gateway/pq/Gateway/Rowset/seek">Rowset::seek</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::seek">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.seekableiterator">SeekableIterator</a></code>.</p>
 
-		<p>pq\Gateway\Rowset pq\Gateway\Rowset::seek(int $pos)</p>
+		<p><a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/seek">pq\Gateway\Rowset::seek</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$pos</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/setRowPrototype">Rowset::setRowPrototype</a></h3>
+		<h3 id="Rowset::setRowPrototype">
+<a href="pq-gateway/pq/Gateway/Rowset/setRowPrototype">Rowset::setRowPrototype</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::setRowPrototype">#</a>
+</h3>
 		<p>Set the row prototype.</p>
 
-		<p>pq\Gateway\Rowset pq\Gateway\Rowset::setRowPrototype(mixed $row)</p>
+		<p><a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/setRowPrototype">pq\Gateway\Rowset::setRowPrototype</a>(<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$row</span>)</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/update">Rowset::update</a></h3>
+		<h3 id="Rowset::update">
+<a href="pq-gateway/pq/Gateway/Rowset/update">Rowset::update</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::update">#</a>
+</h3>
 		<p>Update all rows in this rowset.</p>
 
-		<p>pq\Gateway\Rowset pq\Gateway\Rowset::update([mixed $txn = TRUE])</p>
+		<p><a href="pq-gateway/pq/Gateway/Rowset">pq\Gateway\Rowset</a> <a href="pq-gateway/pq/Gateway/Rowset/update">pq\Gateway\Rowset::update</a>([<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <span class="var">$txn</span> = <code><a href="https://php.net/manual/en/language.types.boolean">TRUE</a></code>])</p>
 	</li>
 	
 	<li>
-		<h3><a href="pq-gateway/pq/Gateway/Rowset/valid">Rowset::valid</a></h3>
-		<p>Implements Iterator.</p>
+		<h3 id="Rowset::valid">
+<a href="pq-gateway/pq/Gateway/Rowset/valid">Rowset::valid</a><a class="permalink" href="pq-gateway/pq/Gateway/Rowset#Rowset::valid">#</a>
+</h3>
+		<p>Implements <code><a href="https://php.net/manual/en/class.iterator">Iterator</a></code>.</p>
 
-		<p>bool pq\Gateway\Rowset::valid()</p>
+		<p><code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <a href="pq-gateway/pq/Gateway/Rowset/valid">pq\Gateway\Rowset::valid</a>()</p>
 	</li>
 	
-</ul>
-
-		
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

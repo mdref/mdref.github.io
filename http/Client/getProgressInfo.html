@@ -129,47 +129,25 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>object http\Client::getProgressInfo(http\Client\Request $request)</h1>
-<p>Retrieve the progress information for $request.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Client\Request $request<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Client/getProgressInfo#">#</a>object <a href="http/Client/getProgressInfo">http\Client::getProgressInfo</a>(<a href="http/Client/Request">http\Client\Request</a> <span class="var">$request</span>)</h1><p>Retrieve the progress information for <span class="var">$request</span>.</p><h2 id="Params:">Params:<a class="permalink" href="http/Client/getProgressInfo#Params:">#</a>
+</h2><ul>
+<li>
+<a href="http/Client/Request">http\Client\Request</a> <span class="var" id="$request">$request<a class="permalink" href="http/Client/getProgressInfo#%24request">#</a></span><br>
 The request to retrieve the current progress information for.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>object, stdClass instance holding progress information.</li>
-<li>NULL, if $request is not enqueued.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>http\Exception\InvalidArgumentException</li>
-<li>http\Exception\UnexpectedValueException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<p>The progress info may look like follows:</p>
-<pre><code>object(stdClass)#6 (7) {
-  [&quot;started&quot;]=&gt;
-  bool(true)
-  [&quot;finished&quot;]=&gt;
-  bool(true)
-  [&quot;info&quot;]=&gt;
-  string(8) &quot;finished&quot;
-  [&quot;dltotal&quot;]=&gt;
-  float(0)
-  [&quot;dlnow&quot;]=&gt;
-  float(33561)
-  [&quot;ultotal&quot;]=&gt;
-  float(0)
-  [&quot;ulnow&quot;]=&gt;
-  float(0)
-}
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Client/getProgressInfo#Returns:">#</a>
+</h2><ul>
+<li>object, <code><a href="https://php.net/manual/en/class.stdclass">stdClass</a></code> instance holding progress information.</li>
+<li>
+<code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>, if <span class="var">$request</span> is not enqueued.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="http/Client/getProgressInfo#Throws:">#</a>
+</h2><ul>
+<li><a href="http/Exception/InvalidArgumentException">http\Exception\InvalidArgumentException</a></li>
+<li><a href="http/Exception/UnexpectedValueException">http\Exception\UnexpectedValueException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/getProgressInfo#Example:">#</a>
+</h2><p>The progress info may look like follows:</p><pre><code><span style="color: inherit" class="html">
+object(stdClass)#6 (7) {<br>  ["started"]=&gt;<br>  bool(true)<br>  ["finished"]=&gt;<br>  bool(true)<br>  ["info"]=&gt;<br>  string(8) "finished"<br>  ["dltotal"]=&gt;<br>  float(0)<br>  ["dlnow"]=&gt;<br>  float(33561)<br>  ["ultotal"]=&gt;<br>  float(0)<br>  ["ulnow"]=&gt;<br>  float(0)<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

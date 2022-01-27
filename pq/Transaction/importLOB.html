@@ -87,54 +87,30 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>int pq\Transaction::importLOB(string $local_path[, int $oid = pq\LOB::INVALID_OID)</h1>
-<p>Import a local file into a <em>large object</em>.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $local_path<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Transaction/importLOB#">#</a><code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <a href="pq/Transaction/importLOB">pq\Transaction::importLOB</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$local_path</span>[, <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$oid</span> = <a href="pq/LOB#INVALID_OID">pq\LOB::INVALID_OID</a>)</h1><p>Import a local file into a <em>large object</em>.</p><h2 id="Params:">Params:<a class="permalink" href="pq/Transaction/importLOB#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$local_path">$local_path<a class="permalink" href="pq/Transaction/importLOB#%24local_path">#</a></span><br>
 A path to a local file to import.</li>
-<li>Optional int $oid = pq\LOB::INVALID_OID<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var" id="$oid">$oid<a class="permalink" href="pq/Transaction/importLOB#%24oid">#</a></span> = <a href="pq/LOB#INVALID_OID">pq\LOB::INVALID_OID</a><br>
 The target OID. A new <em>large object</em> will be created if INVALID_OID.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>int, the (new) OID of the <em>large object</em>.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\BadMethodCallException</li>
-<li>pq\Exception\RuntimeException</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-
-$connection = new pq\Connection;
-$transaction = $connection-&gt;startTransaction();
-
-$oid = $transaction-&gt;importLOB(__FILE__);
-$lob = $transaction-&gt;openLOB($oid);
-
-var_dump($lob);
-
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>object(pq\LOB)#5 (3) {
-  [&quot;transaction&quot;]=&gt; {
-  	...
-  }
-  [&quot;oid&quot;]=&gt;
-  int(74492)
-  [&quot;stream&quot;]=&gt;
-  resource(6) of type (stream)
-}
-</code></pre>
-
-
-
-		
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="pq/Transaction/importLOB#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.integer">int</a></code>, the (new) OID of the <em>large object</em>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Transaction/importLOB#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="pq/Transaction/importLOB#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br><br>$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$transaction </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">startTransaction</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">$oid </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$transaction</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">importLOB</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">__FILE__</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$lob </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$transaction</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">openLOB</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$oid</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$lob</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+object(pq\LOB)#5 (3) {<br>  ["transaction"]=&gt; {<br>      ...<br>  }<br>  ["oid"]=&gt;<br>  int(74492)<br>  ["stream"]=&gt;<br>  resource(6) of type (stream)<br>}<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

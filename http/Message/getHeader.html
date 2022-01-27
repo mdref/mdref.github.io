@@ -143,46 +143,30 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>mixed http\Message::getHeader(string $header[, string $into_class = NULL])</h1>
-<p>Retrieve a single header, optionally hydrated into a http\Header extending class.</p>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $header<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="http/Message/getHeader#">#</a><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code> <a href="http/Message/getHeader">http\Message::getHeader</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$header</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$into_class</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</h1><p>Retrieve a single header, optionally hydrated into a <a href="http/Header">http\Header</a> extending <em>class</em>.</p><h2 id="Params:">Params:<a class="permalink" href="http/Message/getHeader#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$header">$header<a class="permalink" href="http/Message/getHeader#%24header">#</a></span><br>
 The header's name.</li>
-<li>Optional string $into_class = NULL<br />
-The name of a class extending http\Header.</li>
-</ul>
-<h2>Returns:<a id="Returns:" href="#Returns:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>mixed, the header value if $into_class is NULL.</li>
-<li>http\Header, descendant.</li>
-</ul>
-<h2>Warnings:<a id="Warnings:" href="#Warnings:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>If $into_class is specified but is not a descendant of http\Header.</li>
-</ul>
-<h2>Example:<a id="Example:" href="#Example:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<pre><code>&lt;?php
-class hdr extends http\Header {
-    function __construct($name, $value) {
-        var_dump($name, $value);
-        parent::__construct($name, $value);
-    }
-}
-
-$msg = new http\Message(&quot;Foo: bar&quot;);
-$msg-&gt;getHeader(&quot;foo&quot;, &quot;hdr&quot;);
-?&gt;
-</code></pre>
-<p>Yields:</p>
-<pre><code>string(3) &quot;foo&quot;
-string(3) &quot;bar&quot;
-</code></pre>
-
-
-
-		
+<li>Optional <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$into_class">$into_class<a class="permalink" href="http/Message/getHeader#%24into_class">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
+The name of a <em>class</em> extending <a href="http/Header">http\Header</a>.</li>
+</ul><h2 id="Returns:">Returns:<a class="permalink" href="http/Message/getHeader#Returns:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.mixed">mixed</a></code>, the header value if <span class="var">$into_class</span> is <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>.</li>
+<li>
+<a href="http/Header">http\Header</a>, descendant.</li>
+</ul><h2 id="Warnings:">Warnings:<a class="permalink" href="http/Message/getHeader#Warnings:">#</a>
+</h2><ul>
+<li>If <span class="var">$into_class</span> is specified but is not a descendant of <a href="http/Header">http\Header</a>.</li>
+</ul><h2 id="Example:">Example:<a class="permalink" href="http/Message/getHeader#Example:">#</a>
+</h2><pre><code><span style="color: inherit" class="html">
+<span style="color: inherit" class="default">&lt;?php<br></span><span style="color: inherit" class="keyword">class </span><span style="color: inherit" class="default">hdr </span><span style="color: inherit" class="keyword">extends </span><span style="color: inherit" class="default">http\Header </span><span style="color: inherit" class="keyword">{<br>    function </span><span style="color: inherit" class="default">__construct</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$name</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$value</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$name</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$value</span><span style="color: inherit" class="keyword">);<br>        </span><span style="color: inherit" class="default">parent</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">__construct</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$name</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$value</span><span style="color: inherit" class="keyword">);<br>    }<br>}<br><br></span><span style="color: inherit" class="default">$msg </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Message</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Foo: bar"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$msg</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getHeader</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"foo"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"hdr"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">?&gt;<br></span>
+</span>
+</code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
+string(3) "foo"<br>string(3) "bar"<br></span>
+</code></pre>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';

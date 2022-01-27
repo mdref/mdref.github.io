@@ -125,34 +125,28 @@
 		</li>
 	</ul>
 </div>
-					
-<h1>pq\Result pq\Connection::execParamsAsync(string $query, array $params[, array $types = NULL, [callable $cb = NULL]])</h1>
-<p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> <a href="pq/Connection:%20Executing%20Queries">execute an SQL query</a> with properly escaped parameters substituted.</p>
-<blockquote>
-<p><em><strong>NOTE</strong></em>:<br />
-If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.</p>
-</blockquote>
-<h2>Params:<a id="Params:" href="#Params:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>string $query<br />
+					<meta charset="utf-8"><h1>
+<a class="permalink" href="pq/Connection/execParamsAsync#">#</a><a href="pq/Result">pq\Result</a> <a href="pq/Connection/execParamsAsync">pq\Connection::execParamsAsync</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$query</span>, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$params</span>[, <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var">$types</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>, [<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$cb</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>]])</h1><p><a href="pq/Connection/:%20Asynchronous%20Usage">Asynchronously</a> <a href="pq/Connection:%20Executing%20Queries">execute an SQL query</a> with properly escaped parameters substituted.</p><blockquote>
+<p><em><strong>NOTE</strong></em>:<br>
+If <a href="pq/Connection#%24unbuffered">pq\Connection::$unbuffered</a> is <code><a href="https://php.net/manual/en/language.types.boolean">TRUE</a></code>, each call to <a href="pq/Connection/getResult">pq\Connection::getResult</a>() will generate a distinct <a href="pq/Result">pq\Result</a> containing exactly one row.</p>
+</blockquote><h2 id="Params:">Params:<a class="permalink" href="pq/Connection/execParamsAsync#Params:">#</a>
+</h2><ul>
+<li>
+<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var" id="$query">$query<a class="permalink" href="pq/Connection/execParamsAsync#%24query">#</a></span><br>
 The query to execute.</li>
-<li>array $params<br />
+<li>
+<code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$params">$params<a class="permalink" href="pq/Connection/execParamsAsync#%24params">#</a></span><br>
 The parameter list to substitute.</li>
-<li>Optional array $types = NULL<br />
+<li>Optional <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$types">$types<a class="permalink" href="pq/Connection/execParamsAsync#%24types">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 Corresponding list of type OIDs for the parameters.</li>
-<li>Optional callable $cb as function(\pq\Result $res) : void<br />
-Result handler callback.</li>
-</ul>
-<h2>Throws:<a id="Throws:" href="#Throws:" class="permalink" aria-hidden="true" title="">#</a></h2>
-<ul>
-<li>pq\Exception\InvalidArgumentException</li>
-<li>pq\Exception\RuntimeException</li>
-<li>pq\Exception\BadMethodCallException</li>
-</ul>
-
-
-
-		
+<li>Optional <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var" id="$cb">$cb<a class="permalink" href="pq/Connection/execParamsAsync#%24cb">#</a></span> as function(<a href="pq/Result">\pq\Result</a> <span class="var" id="$res">$res<a class="permalink" href="pq/Connection/execParamsAsync#%24res">#</a></span>) : <code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code><br>
+Result handler <code><a href="https://php.net/manual/en/language.types.callable">callback</a></code>.</li>
+</ul><h2 id="Throws:">Throws:<a class="permalink" href="pq/Connection/execParamsAsync#Throws:">#</a>
+</h2><ul>
+<li><a href="pq/Exception/InvalidArgumentException">pq\Exception\InvalidArgumentException</a></li>
+<li><a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a></li>
+<li><a href="pq/Exception/BadMethodCallException">pq\Exception\BadMethodCallException</a></li>
+</ul>		
 			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
 			<script>
 				var disqus_shortname = 'mdref';
