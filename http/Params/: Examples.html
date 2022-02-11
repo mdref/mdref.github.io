@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Params/: Examples">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -89,13 +87,30 @@ $link = &lt;&lt;&lt;EOF<br>Link: &lt;/TheBook/chapter2&gt;;<br>       
 </code></pre><h3 id="Yields:">Yields:<a class="permalink" href="http/Params/:%20Examples#Yields:">#</a>
 </h3><pre><code><span style="color: inherit" class="html">
 array(2) {<br>  ["/TheBook/chapter2"]=&gt;<br>  array(2) {<br>    ["value"]=&gt;<br>    bool(true)<br>    ["arguments"]=&gt;<br>    array(2) {<br>      ["rel"]=&gt;<br>      string(8) "previous"<br>      ["*rfc5987*"]=&gt;<br>      array(1) {<br>        ["title"]=&gt;<br>        array(1) {<br>          ["de"]=&gt;<br>          string(15) "letztes Kapitel"<br>        }<br>      }<br>    }<br>  }<br>  ["/TheBook/chapter4"]=&gt;<br>  array(2) {<br>    ["value"]=&gt;<br>    bool(true)<br>    ["arguments"]=&gt;<br>    array(2) {<br>      ["rel"]=&gt;<br>      string(4) "next"<br>      ["*rfc5987*"]=&gt;<br>      array(1) {<br>        ["title"]=&gt;<br>        array(1) {<br>          ["de"]=&gt;<br>          string(17) "nÃ¤chstes Kapitel"<br>        }<br>      }<br>    }<br>  }<br>}<br>string(139) "&lt;/TheBook/chapter2&gt;;rel="previous";title*=utf-8'de'letztes%20Kapitel,&lt;/TheBook/chapter4&gt;;rel="next";title*=utf-8'de'n%C3%A4chstes%20Kapitel"<br></span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Params/: Examples';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -108,7 +123,7 @@ array(2) {<br>  ["/TheBook/chapter2"]=&gt;<br>  array(2) {<br>    ["va
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

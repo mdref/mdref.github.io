@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Cookie/__construct">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -126,13 +124,30 @@ List of extra attribute names to recognize.</li>
 </span>
 </code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
 array(8) {<br>  ["cookies"]=&gt;<br>  array(2) {<br>    ["c1"]=&gt;<br>    string(2) "v1"<br>    ["c2"]=&gt;<br>    string(2) "v2"<br>  }<br>  ["extras"]=&gt;<br>  array(1) {<br>    ["extra"]=&gt;<br>    string(3) "foo"<br>  }<br>  ["expires"]=&gt;<br>  int(1383818400)<br>  ["max-age"]=&gt;<br>  int(-1)<br>  ["domain"]=&gt;<br>  NULL<br>  ["path"]=&gt;<br>  string(6) "/a/b/c"<br>  ["flags"]=&gt;<br>  int(0)<br>  ["string"]=&gt;<br>  string(77) "c1=v1; c2=v2; path=/a/b/c; expires=Thu, 07 Nov 2013 10:00:00 GMT; extra=foo; "<br>}<br></span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Cookie/__construct';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -145,7 +160,7 @@ array(8) {<br>  ["cookies"]=&gt;<br>  array(2) {<br>    ["c1"]=&gt;<br
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

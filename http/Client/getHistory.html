@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Client/getHistory">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -147,13 +145,30 @@ The history is only recorded while <a href="http/Client#%24recordHistory">http\C
 </span>
 </code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
 HEAD / HTTP/1.1<br>User-Agent: PECL::HTTP/2.0.0dev (PHP/5.5.5)<br>Host: pear.php.net<br>Accept: */*<br>Content-Length: 0<br><br>HTTP/1.1 200 OK<br>Date: Mon, 04 Nov 2013 15:41:48 GMT<br>Server: ...<br>X-Powered-By: PHP/5.3.6<br>Connection: close<br>Content-Type: text/html; charset=UTF-8<br>Content-Length: 0<br><br>HEAD / HTTP/1.1<br>User-Agent: PECL::HTTP/2.0.0dev (PHP/5.5.5)<br>Host: pecl.php.net<br>Accept: */*<br>Content-Length: 0<br><br>HTTP/1.1 200 OK<br>Date: Mon, 04 Nov 2013 14:34:02 GMT<br>Server: ...<br>X-Powered-By: PHP/5.2.17<br>Set-Cookie: ...<br>Expires: Thu, 19 Nov 1981 08:52:00 GMT<br>Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0<br>Pragma: no-cache<br>Connection: close<br>Content-Type: text/html; charset=ISO-8859-1<br>Content-Length: 0<br><br>HEAD / HTTP/1.1<br>User-Agent: PECL::HTTP/2.0.0dev (PHP/5.5.5)<br>Host: php.net<br>Accept: */*<br>Content-Length: 0<br><br>HTTP/1.1 200 OK<br>Server: ...<br>Date: Mon, 04 Nov 2013 14:34:08 GMT<br>Content-Type: text/html;charset=utf-8<br>Connection: keep-alive<br>X-Powered-By: PHP/5.5.4-1<br>Content-Language: en<br>Set-Cookie: ...<br>Last-Modified: Mon, 04 Nov 2013 21:00:36 GMT<br>Content-Length: 0<br></span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Client/getHistory';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -166,7 +181,7 @@ HEAD / HTTP/1.1<br>User-Agent: PECL::HTTP/2.0.0dev (PHP/5.5.5)<br>Host: pea
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

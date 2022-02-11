@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Client/notify">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -150,13 +148,30 @@ The request to notify about.</li>
 </span>
 </code></pre><p>May yield:</p><pre><code><span style="color: inherit" class="html">
 start 0%<br>setup 0%<br>setup 0%<br>setup 0%<br>setup 0%<br>setup 0%<br>resolve 0%<br>connect 0%<br>connected 0%<br>connected 0%<br>connected 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>ssl negotiation 0%<br>blacklist check 0%<br>receive 10%<br>receive 20%<br>receive 30%<br>receive 40%<br>receive 50%<br>receive 60%<br>receive 70%<br>receive 80%<br>receive 90%<br>receive 100%<br>receive 100%<br>not disconnected 100%<br>finished 100%<br></span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Client/notify';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -169,7 +184,7 @@ start 0%<br>setup 0%<br>setup 0%<br>setup 0%<br>setup 0%<br>setup 0%<br>re
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Query/AsyncExecutor">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -97,7 +95,7 @@ See <a href="pq-gateway/pq/Query/Executor">pq\Query\Executor</a> for inherited m
 <span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">pq\Result</span><span style="color: inherit" class="keyword">;<br>use </span><span style="color: inherit" class="default">pq\Query\AsyncExecutor</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">pq\Query\Writer</span><span style="color: inherit" class="keyword">;<br><br>use </span><span style="color: inherit" class="default">Amphp\Deferred</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$conn </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$exec </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">AsyncExecutor</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$exec</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">setCallbacks</span><span style="color: inherit" class="keyword">(<br></span><span style="color: inherit" class="comment"># init context<br></span><span style="color: inherit" class="keyword">function() {<br>    return new </span><span style="color: inherit" class="default">Deferred</span><span style="color: inherit" class="keyword">;<br>},<br></span><span style="color: inherit" class="comment"># done<br></span><span style="color: inherit" class="keyword">function(</span><span style="color: inherit" class="default">Deferred $context</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">$context</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">succeed</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">);<br>},<br></span><span style="color: inherit" class="comment"># then<br></span><span style="color: inherit" class="keyword">function(</span><span style="color: inherit" class="default">Deferred $context</span><span style="color: inherit" class="keyword">, callable </span><span style="color: inherit" class="default">$cb</span><span style="color: inherit" class="keyword">) {<br>    return </span><span style="color: inherit" class="default">$context</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">promise</span><span style="color: inherit" class="keyword">()-&gt;</span><span style="color: inherit" class="default">when</span><span style="color: inherit" class="keyword">(function(</span><span style="color: inherit" class="default">$error</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">) use (</span><span style="color: inherit" class="default">$cb</span><span style="color: inherit" class="keyword">) {<br>        </span><span style="color: inherit" class="default">$cb</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">);<br>    });<br>});<br><br></span><span style="color: inherit" class="comment"># a contrived query<br></span><span style="color: inherit" class="default">$query </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Writer</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT \$1::int, \$2::int"</span><span style="color: inherit" class="keyword">, [</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">]);<br></span><span style="color: inherit" class="default">$exec</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">execute</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$query</span><span style="color: inherit" class="keyword">, function(</span><span style="color: inherit" class="default">Result $result</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">var_dump</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchAll</span><span style="color: inherit" class="keyword">());<br>});<br><br></span><span style="color: inherit" class="comment"># this call blocks; see pq\Connection::getResult() etc.<br></span><span style="color: inherit" class="default">$conn</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getResult</span><span style="color: inherit" class="keyword">();<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
 </span>
 </code></pre><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Query/AsyncExecutor#Functions:">#</a>
-</h2><ul>
+</h2><ul class="sub-entries sub-functions">
 	
 	<li>
 		<h3 id="AsyncExecutor::execute">
@@ -117,13 +115,30 @@ See <a href="pq-gateway/pq/Query/Executor">pq\Query\Executor</a> for inherited m
 		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq-gateway/pq/Query/AsyncExecutor/setCallbacks">pq\Query\AsyncExecutor::setCallbacks</a>(<code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$init</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$done</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var">$then</span>)</p>
 	</li>
 	
-</ul>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq-gateway/pq/Query/AsyncExecutor';
-			</script>
-
+</ul>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq-gateway');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyNTE1NzkwNw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAX_hE84CBHtz');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -136,7 +151,7 @@ See <a href="pq-gateway/pq/Query/Executor">pq\Query\Executor</a> for inherited m
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

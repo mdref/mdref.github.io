@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq/Transaction">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -186,7 +184,7 @@ Whether this transaction performs read only queries.</li>
 <em>public</em> <code><a href="https://php.net/manual/en/language.types.boolean">bool</a></code> <span class="var" id="$deferrable">$deferrable<a class="permalink" href="pq/Transaction#%24deferrable">#</a></span> = <code><a href="https://php.net/manual/en/language.types.boolean">FALSE</a></code><br>
 Whether the transaction is deferrable. See <a href="pq/Connection/startTransaction">pq\Connection::startTransaction</a>().</li>
 </ul><h2 id="Functions:">Functions:<a class="permalink" href="pq/Transaction#Functions:">#</a>
-</h2><ul>
+</h2><ul class="sub-entries sub-functions">
 	
 	<li>
 		<h3 id="Transaction::__construct">
@@ -332,13 +330,30 @@ Whether the transaction is deferrable. See <a href="pq/Connection/startTransacti
 		<p><code><a href="https://php.net/manual/en/language.types.declarations#language.types.declarations.void">void</a></code> <a href="pq/Transaction/unlinkLOB">pq\Transaction::unlinkLOB</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$oid</span>)</p>
 	</li>
 	
-</ul>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq/Transaction';
-			</script>
-
+</ul>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyMTg1MDYzOA==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAU1qDs4CBHt5');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -351,7 +366,7 @@ Whether the transaction is deferrable. See <a href="pq/Connection/startTransacti
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

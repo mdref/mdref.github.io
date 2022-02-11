@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Client/setDebug">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -157,13 +155,30 @@ and (<a href="http/Client#DEBUG_HEADER">http\Client::DEBUG_HEADER</a> or <a href
 </blockquote><h3 id="Yields:">Yields:<a class="permalink" href="http/Client/setDebug#Yields:">#</a>
 </h3><pre><code><span style="color: inherit" class="html">
 INFO:   Trying 93.184.216.34...<br><br>INFO: Connected to example.com (93.184.216.34) port 80 (#0)<br><br>&gt; GET / HTTP/1.1<br>&gt; Host: example.com<br>&gt; User-Agent: PECL_HTTP/2.6.0dev PHP/5.6.19RC1 libcurl/7.50.0-DEV<br>&gt; Accept: */*<br>&gt;<br>&lt; HTTP/1.1 200 OK<br>&lt; Cache-Control: max-age=604800<br>&lt; Content-Type: text/html<br>&lt; Date: Thu, 18 Aug 2016 17:55:10 GMT<br>&lt; Etag: "359670651+gzip+ident"<br>&lt; Expires: Thu, 25 Aug 2016 17:55:10 GMT<br>&lt; Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT<br>&lt; Server: ECS (iad/182A)<br>&lt; Vary: Accept-Encoding<br>&lt; X-Cache: HIT<br>&lt; x-ec-custom-error: 1<br>&lt; Content-Length: 1270<br>&lt;<br>&lt; &lt;!doctype html&gt;<br>&lt; &lt;html&gt;<br>&lt; &lt;head&gt;<br>&lt;     &lt;title&gt;Example Domain&lt;/title&gt;<br>&lt;<br>&lt;     &lt;meta charset="utf-8" /&gt;<br>&lt;     &lt;meta http-equiv="Content-type" content="text/html; charset=utf-8" /&gt;<br>&lt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;<br>&lt;     &lt;style type="text/css"&gt;<br>&lt;     body {<br>&lt;         background-color: #f0f0f2;<br>&lt;         margin: 0;<br>&lt;         padding: 0;<br>&lt;         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;<br>&lt;<br>&lt;     }<br>&lt;     div {<br>&lt;         width: 600px;<br>&lt;         margin: 5em auto;<br>&lt;         padding: 50px;<br>&lt;         background-color: #fff;<br>&lt;         border-radius: 1em;<br>&lt;     }<br>&lt;     a:link, a:visited {<br>&lt;         color: #38488f;<br>&lt;         text-decoration: none;<br>&lt;     }<br>&lt;     @media (max-width: 700px) {<br>&lt;         body {<br>&lt;             background-color: #fff;<br>&lt;         }<br>&lt;         div {<br>&lt;             width: auto;<br>&lt;             margin: 0 auto;<br>&lt;             border-radius: 0;<br>&lt;             padding: 1em;<br>&lt;         }<br>&lt;     }<br>&lt;     &lt;/style&gt;<br>&lt; &lt;/head&gt;<br>&lt;<br>&lt; &lt;body&gt;<br>&lt; &lt;div&gt;<br>&lt;     &lt;h1&gt;Example Domain&lt;/h1&gt;<br>&lt;     &lt;p&gt;This domain is established to be used for illustrative examples in documents. You may use this<br>&lt;     domain in examples without prior coordination or asking for permission.&lt;/p&gt;<br>&lt;     &lt;p&gt;&lt;a href="http://www.iana.org/domains/example"&gt;More information...&lt;/a&gt;&lt;/p&gt;<br>&lt; &lt;/div&gt;<br>&lt; &lt;/body&gt;<br>&lt; &lt;/html&gt;<br>INFO: Connection #0 to host example.com left intact<br></span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Client/setDebug';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -176,7 +191,7 @@ INFO:   Trying 93.184.216.34...<br><br>INFO: Connected to example.com (9
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

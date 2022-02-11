@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq/Exception">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -131,7 +129,7 @@ Implementation domain error (<a href="pq/Exception/DomainException">pq\Exception
 <span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>} catch (</span><span style="color: inherit" class="default">pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"%s (%d)\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getCode</span><span style="color: inherit" class="keyword">());<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
 </span>
 </code></pre><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="pq/Exception#Namespaces.Interfaces.and.Classes:">#</a>
-</h2><ul>
+</h2><ul class="sub-entries sub-ns-classes">
 	
 	<li>
 		<h3 id="BadMethodCallException">
@@ -169,13 +167,30 @@ Implementation domain error (<a href="pq/Exception/DomainException">pq\Exception
 		<p><em>class</em> <a href="pq/Exception/RuntimeException">pq\Exception\RuntimeException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.runtimeexception">RuntimeException</a></code> <em>implements</em> <a href="pq/Exception">pq\Exception</a></p>
 	</li>
 	
-</ul>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq/Exception';
-			</script>
-
+</ul>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyMTg1MDYzOA==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAU1qDs4CBHt5');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -188,7 +203,7 @@ Implementation domain error (<a href="pq/Exception/DomainException">pq\Exception
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

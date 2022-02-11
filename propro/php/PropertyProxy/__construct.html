@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/propro/php/PropertyProxy/__construct">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -74,13 +72,30 @@ Any <em>parent</em> property proxy.</li>
 class c {<br>    private $storage = array();<br>    function __get($p) {<br>        return new php\PropertyProxy($this-&gt;storage, $p);<br>    }<br>    function __set($p, $v) {<br>        $this-&gt;storage[$p] = $v;<br>    }<br>}<br><br>$c = new c;<br>$c-&gt;data["foo"] = 1;<br><br>var_dump($c);<br><br>$c-&gt;data[] = 1;<br>$c-&gt;data[] = 2;<br>$c-&gt;data[] = 3;<br>$c-&gt;data["bar"][] = 123;<br>$c-&gt;data["bar"][] = 456;<br><br>var_dump($c);<br>unset($c-&gt;data["bar"][0]);<br><br>var_dump($c);<br></span>
 </code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
 object(c)#1 (1) {<br>  ["storage":"c":private]=&gt;<br>  array(1) {<br>    ["data"]=&gt;<br>    array(1) {<br>      ["foo"]=&gt;<br>      int(1)<br>    }<br>  }<br>}<br>object(c)#1 (1) {<br>  ["storage":"c":private]=&gt;<br>  array(1) {<br>    ["data"]=&gt;<br>    array(5) {<br>      ["foo"]=&gt;<br>      int(1)<br>      [0]=&gt;<br>      int(1)<br>      [1]=&gt;<br>      int(2)<br>      [2]=&gt;<br>      int(3)<br>      ["bar"]=&gt;<br>      array(2) {<br>        [0]=&gt;<br>        int(123)<br>        [1]=&gt;<br>        int(456)<br>      }<br>    }<br>  }<br>}<br>object(c)#1 (1) {<br>  ["storage":"c":private]=&gt;<br>  array(1) {<br>    ["data"]=&gt;<br>    array(5) {<br>      ["foo"]=&gt;<br>      int(1)<br>      [0]=&gt;<br>      int(1)<br>      [1]=&gt;<br>      int(2)<br>      [2]=&gt;<br>      int(3)<br>      ["bar"]=&gt;<br>      array(1) {<br>        [1]=&gt;<br>        int(456)<br>      }<br>    }<br>  }<br>}<br></span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'propro/php/PropertyProxy/__construct';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-propro');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODc2NQ==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mLc4CBHtt');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -93,7 +108,7 @@ object(c)#1 (1) {<br>  ["storage":"c":private]=&gt;<br>  array(1) {<br> 
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

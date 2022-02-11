@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Message/Body/addForm">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -125,13 +123,30 @@ List of form files to add.</p>
 </span>
 </code></pre><p>Yields:</p><pre><code><span style="color: inherit" class="html">
 --32260b4b.3fea9114<br>Content-Disposition: form-data; name="field_name"<br><br>value<br>--32260b4b.3fea9114<br>Content-Disposition: form-data; name="multi_field[0]"<br><br>value1<br>--32260b4b.3fea9114<br>Content-Disposition: form-data; name="multi_field[1]"<br><br>value2<br>--32260b4b.3fea9114<br>Content-Disposition: form-data; name="field_name"; filename="gpm.pid"<br>Content-Transfer-Encoding: binary<br>Content-Type: application/octet-stream<br><br>316<br><br>--32260b4b.3fea9114<br>Content-Disposition: form-data; name="field_name2"; filename="signature.txt"<br>Content-Transfer-Encoding: binary<br>Content-Type: text/plain<br><br>--  <br>Mike<br><br>--32260b4b.3fea9114<br>Content-Disposition: form-data; name="field_name3"; filename="picture.jpg"<br>Content-Transfer-Encoding: binary<br>Content-Type: image/jpeg<br><br>...JPEG...<br>--32260b4b.3fea9114--<br></span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Message/Body/addForm';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -144,7 +159,7 @@ List of form files to add.</p>
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Gateway/Table/Attributes">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -172,7 +170,7 @@ select <br>     attnum         as index<br>    ,attname  �
 <em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$columns">$columns<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#%24columns">#</a></span><br>
 The table attributes.</li>
 </ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Attributes#Functions:">#</a>
-</h2><ul>
+</h2><ul class="sub-entries sub-functions">
 	
 	<li>
 		<h3 id="Attributes::__construct">
@@ -219,13 +217,30 @@ The table attributes.</li>
 		<p><code><a href="https://php.net/manual/en/class.arrayiterator">ArrayIterator</a></code> <a href="pq-gateway/pq/Gateway/Table/Attributes/getIterator">pq\Gateway\Table\Attributes::getIterator</a>()</p>
 	</li>
 	
-</ul>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq-gateway/pq/Gateway/Table/Attributes';
-			</script>
-
+</ul>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq-gateway');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyNTE1NzkwNw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAX_hE84CBHtz');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -238,7 +253,7 @@ The table attributes.</li>
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq/LOB/read">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -87,13 +85,30 @@ The amount of bytes actually read from the <em>large object</em>.</li>
 </h2><pre><code><span style="color: inherit" class="html">
 <span style="color: inherit" class="default">&lt;?php<br><br>$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br></span><span style="color: inherit" class="default">$transaction </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Transaction</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">$data </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$tansaction</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">openLOB</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">123</span><span style="color: inherit" class="keyword">)-&gt;</span><span style="color: inherit" class="default">read</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">100</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$read</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">printf</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"Read %d bytes: '%s'\n"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$read</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="default">$data</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
 </span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq/LOB/read';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyMTg1MDYzOA==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAU1qDs4CBHt5');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -106,7 +121,7 @@ The amount of bytes actually read from the <em>large object</em>.</li>
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

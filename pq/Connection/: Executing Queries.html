@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq/Connection/: Executing Queries">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -151,13 +149,30 @@ Only the last result will be returned, if the query <code><a href="https://php.n
 </h2><p><a href="pq/Connection/prepare">pq\Connection::prepare</a>() requires the <em><strong>statement name</strong></em> as <code><a href="https://php.net/manual/en/language.types.string">string</a></code> as first argument. This name is used later to refer to this prepared statement. See <a href="pq/Statement">Prepared statements</a> for details.</p><p>The second argument is a <em><strong>query string</strong></em> containing a single SQL query, which will be prepared on the server.</p><p>If the third argument is present, an <em><strong>array with pg_type OIDs</strong></em>, those types will be used for the parameters. See <a href="pq/Types/:%20Overview">Using types</a> for details.</p><pre><code><span style="color: inherit" class="html">
 <span style="color: inherit" class="default">&lt;?php<br><br>$statement </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$c</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">prepare</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"my_stm"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"SELECT \$1::int*s,\$2::int*s,\$3::int*s FROM generate_series(1,3) s"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$statement</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(array(</span><span style="color: inherit" class="default">1</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="default">2</span><span style="color: inherit" class="keyword">,</span><span style="color: inherit" class="default">3</span><span style="color: inherit" class="keyword">));<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
 </span>
-</code></pre><p>An object of <em>class</em> <a href="pq/Statement">pq\Statement</a> will be returned on success. See <a href="pq/Statement">Prepared statements</a> for details.</p>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq/Connection/: Executing Queries';
-			</script>
-
+</code></pre><p>An object of <em>class</em> <a href="pq/Statement">pq\Statement</a> will be returned on success. See <a href="pq/Statement">Prepared statements</a> for details.</p>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyMTg1MDYzOA==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAU1qDs4CBHt5');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -170,7 +185,7 @@ Only the last result will be returned, if the query <code><a href="https://php.n
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

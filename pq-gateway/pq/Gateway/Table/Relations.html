@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Gateway/Table/Relations">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -175,7 +173,7 @@ The relation name is the column name of the foreign key with the column name of 
 <em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$references">$references<a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#%24references">#</a></span><br>
 The table's foreign keys.</li>
 </ul><h2 id="Functions:">Functions:<a class="permalink" href="pq-gateway/pq/Gateway/Table/Relations#Functions:">#</a>
-</h2><ul>
+</h2><ul class="sub-entries sub-functions">
 	
 	<li>
 		<h3 id="Relations::__construct">
@@ -213,13 +211,30 @@ The table's foreign keys.</li>
 		<p><a href="pq-gateway/pq/Gateway/Table#Reference">pq\Gateway\Table\Reference</a> <a href="pq-gateway/pq/Gateway/Table/Relations/getReference">pq\Gateway\Table\Relations::getReference</a>(<code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$table</span>[, <code><a href="https://php.net/manual/en/language.types.string">string</a></code> <span class="var">$ref</span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code>])</p>
 	</li>
 	
-</ul>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq-gateway/pq/Gateway/Table/Relations';
-			</script>
-
+</ul>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq-gateway');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyNTE1NzkwNw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAX_hE84CBHtz');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -232,7 +247,7 @@ The table's foreign keys.</li>
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

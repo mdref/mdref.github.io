@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq/Result/fetchAll">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -94,13 +92,30 @@ The type the return value should have, see <a href="pq/Result#FETCH_*">pq\Result
 </h2><pre><code><span style="color: inherit" class="html">
 <span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">try {<br>    </span><span style="color: inherit" class="default">$connection </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">pq\Connection</span><span style="color: inherit" class="keyword">;<br>    <br>    </span><span style="color: inherit" class="default">$result </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$connection</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">exec</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"SELECT id, name, email FROM accounts WHERE email LIKE '_@%'"</span><span style="color: inherit" class="keyword">);<br>    <br>    foreach (</span><span style="color: inherit" class="default">$result</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">fetchAll</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">pq\Result</span><span style="color: inherit" class="keyword">::</span><span style="color: inherit" class="default">FETCH_OBJECT</span><span style="color: inherit" class="keyword">) as </span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">)  {<br>        echo </span><span style="color: inherit" class="string">"ID:   </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">id</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Name: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">name</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n"</span><span style="color: inherit" class="keyword">;<br>        echo </span><span style="color: inherit" class="string">"Mail: </span><span style="color: inherit" class="keyword">{</span><span style="color: inherit" class="default">$row</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">email</span><span style="color: inherit" class="keyword">}</span><span style="color: inherit" class="string">\n\n"</span><span style="color: inherit" class="keyword">;<br>    }<br>} catch (</span><span style="color: inherit" class="default">\pq\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    echo </span><span style="color: inherit" class="default">$e</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getMessage</span><span style="color: inherit" class="keyword">(), </span><span style="color: inherit" class="string">"\n"</span><span style="color: inherit" class="keyword">;<br>}<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
 </span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq/Result/fetchAll';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyMTg1MDYzOA==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAU1qDs4CBHt5');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -113,7 +128,7 @@ The type the return value should have, see <a href="pq/Result#FETCH_*">pq\Result
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

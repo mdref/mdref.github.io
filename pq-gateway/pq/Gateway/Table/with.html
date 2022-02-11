@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Gateway/Table/with">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -158,13 +156,30 @@ Else:</li>
 </h2><pre><code><span style="color: inherit" class="html">
 <span style="color: inherit" class="default">&lt;?php<br><br></span><span style="color: inherit" class="keyword">use </span><span style="color: inherit" class="default">pq\Gateway\Table</span><span style="color: inherit" class="keyword">;<br><br></span><span style="color: inherit" class="default">$emails </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account_email"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$accounts </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">);<br></span><span style="color: inherit" class="default">$notifications </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">Table</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"notification"</span><span style="color: inherit" class="keyword">);<br><br></span><span style="color: inherit" class="default">$relations </span><span style="color: inherit" class="keyword">= [<br>    </span><span style="color: inherit" class="default">$emails</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getRelation</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account"</span><span style="color: inherit" class="keyword">),<br>    </span><span style="color: inherit" class="default">$notifications</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">getRelation</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="string">"account_email"</span><span style="color: inherit" class="keyword">, </span><span style="color: inherit" class="string">"email"</span><span style="color: inherit" class="keyword">)<br>];<br><br></span><span style="color: inherit" class="default">$bouncers </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$accounts</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">with</span><span style="color: inherit" class="keyword">(</span><span style="color: inherit" class="default">$relations</span><span style="color: inherit" class="keyword">, [</span><span style="color: inherit" class="string">"bounces&gt;" </span><span style="color: inherit" class="keyword">=&gt; </span><span style="color: inherit" class="default">3</span><span style="color: inherit" class="keyword">]);<br><br></span><span style="color: inherit" class="default">?&gt;<br></span>
 </span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq-gateway/pq/Gateway/Table/with';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq-gateway');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyNTE1NzkwNw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAX_hE84CBHtz');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -177,7 +192,7 @@ Else:</li>
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

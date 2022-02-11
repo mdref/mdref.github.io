@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Env/Response">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -220,7 +218,7 @@ The chunk to send every <span class="var">$throttleDelay</span> seconds.</li>
 <em>protected</em> <code><a href="https://php.net/manual/en/language.types.array">array</a></code> <span class="var" id="$cookies">$cookies<a class="permalink" href="http/Env/Response#%24cookies">#</a></span> = <code><a href="https://php.net/manual/en/language.types.null">NULL</a></code><br>
 The response's cookies.</li>
 </ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Env/Response#Functions:">#</a>
-</h2><ul>
+</h2><ul class="sub-entries sub-functions">
 	
 	<li>
 		<h3 id="Response::__construct">
@@ -348,13 +346,30 @@ The response's cookies.</li>
 		<p><a href="http/Env/Response">http\Env\Response</a> <a href="http/Env/Response/setThrottleRate">http\Env\Response::setThrottleRate</a>(<code><a href="https://php.net/manual/en/language.types.integer">int</a></code> <span class="var">$chunk_size</span>[, <code><a href="https://php.net/manual/en/language.types.float">float</a></code> <span class="var">$delay</span> = 1])</p>
 	</li>
 	
-</ul>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Env/Response';
-			</script>
-
+</ul>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -367,7 +382,7 @@ The response's cookies.</li>
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

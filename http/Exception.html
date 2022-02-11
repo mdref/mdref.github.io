@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Exception">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -124,7 +122,7 @@
 <span style="color: inherit" class="default">&lt;?php<br>$req </span><span style="color: inherit" class="keyword">= new </span><span style="color: inherit" class="default">http\Env\Request</span><span style="color: inherit" class="keyword">;<br><br>try {<br>    </span><span style="color: inherit" class="default">$messages </span><span style="color: inherit" class="keyword">= </span><span style="color: inherit" class="default">$req</span><span style="color: inherit" class="keyword">-&gt;</span><span style="color: inherit" class="default">splitMultipartBody</span><span style="color: inherit" class="keyword">();<br>} catch (</span><span style="color: inherit" class="default">http\Exception\BadMethodCallException $e</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="comment">// doh, no multipart message<br></span><span style="color: inherit" class="keyword">} catch (</span><span style="color: inherit" class="default">http\Exception\BadMessageException $e</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="comment">// failure while parsing<br></span><span style="color: inherit" class="keyword">} catch (</span><span style="color: inherit" class="default">http\Exception $e</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="comment">// here we used the interface to catch any http\Exception<br></span><span style="color: inherit" class="keyword">} catch (</span><span style="color: inherit" class="default">Exception $e</span><span style="color: inherit" class="keyword">) {<br>    </span><span style="color: inherit" class="comment">// catch any other exception (unlikely, though)<br></span><span style="color: inherit" class="keyword">}<br></span><span style="color: inherit" class="default">?&gt;<br></span>
 </span>
 </code></pre><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="http/Exception#Namespaces.Interfaces.and.Classes:">#</a>
-</h2><ul>
+</h2><ul class="sub-entries sub-ns-classes">
 	
 	<li>
 		<h3 id="BadConversionException">
@@ -207,13 +205,30 @@
 		<p><em>class</em> <a href="http/Exception/UnexpectedValueException">http\Exception\UnexpectedValueException</a> <em>extends</em> <code><a href="https://php.net/manual/en/class.unexpectedvalueexception">UnexpectedValueException</a></code> <em>implements</em> <a href="http/Exception">http\Exception</a></p>
 	</li>
 	
-</ul>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Exception';
-			</script>
-
+</ul>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -226,7 +241,7 @@
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

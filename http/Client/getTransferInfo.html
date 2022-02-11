@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Client/getTransferInfo">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -145,13 +143,30 @@ The request to probe for transfer info.</li>
 </ul><h2 id="Example:">Example:<a class="permalink" href="http/Client/getTransferInfo#Example:">#</a>
 </h2><p>The transfer info might look as follows:</p><pre><code><span style="color: inherit" class="html">
 object(stdClass)#6 (37) {<br>  ["effective_url"]=&gt;<br>  string(16) "https://php.net/"<br>  ["response_code"]=&gt;<br>  int(302)<br>  ["total_time"]=&gt;<br>  float(1.011938)<br>  ["namelookup_time"]=&gt;<br>  float(0.203125)<br>  ["connect_time"]=&gt;<br>  float(0.387202)<br>  ["pretransfer_time"]=&gt;<br>  float(0.794423)<br>  ["size_upload"]=&gt;<br>  float(0)<br>  ["size_download"]=&gt;<br>  float(272)<br>  ["speed_download"]=&gt;<br>  float(268)<br>  ["speed_upload"]=&gt;<br>  float(0)<br>  ["header_size"]=&gt;<br>  int(197)<br>  ["request_size"]=&gt;<br>  int(91)<br>  ["ssl_verifyresult"]=&gt;<br>  int(0)<br>  ["filetime"]=&gt;<br>  int(-1)<br>  ["content_length_download"]=&gt;<br>  float(272)<br>  ["content_length_upload"]=&gt;<br>  float(0)<br>  ["starttransfer_time"]=&gt;<br>  float(1.011835)<br>  ["content_type"]=&gt;<br>  string(29) "text/html; charset=iso-8859-1"<br>  ["redirect_time"]=&gt;<br>  float(0)<br>  ["redirect_count"]=&gt;<br>  int(0)<br>  ["connect_code"]=&gt;<br>  int(0)<br>  ["httpauth_avail"]=&gt;<br>  int(0)<br>  ["proxyauth_avail"]=&gt;<br>  int(0)<br>  ["os_errno"]=&gt;<br>  int(0)<br>  ["num_connects"]=&gt;<br>  int(1)<br>  ["ssl_engines"]=&gt;<br>  array(3) {<br>    [0]=&gt;<br>    string(4) "rsax"<br>    [1]=&gt;<br>    string(6) "rdrand"<br>    [2]=&gt;<br>    string(7) "dynamic"<br>  }<br>  ["redirect_url"]=&gt;<br>  string(15) "http://php.net/"<br>  ["primary_ip"]=&gt;<br>  string(11) "72.52.91.14"<br>  ["appconnect_time"]=&gt;<br>  float(0.794327)<br>  ["condition_unmet"]=&gt;<br>  int(0)<br>  ["primary_port"]=&gt;<br>  int(443)<br>  ["local_ip"]=&gt;<br>  string(13) "192.168.1.120"<br>  ["local_port"]=&gt;<br>  int(51507)<br>  ["certinfo"]=&gt;<br>  array(0) {<br>  }<br>  ["curlcode"]=&gt;<br>  int(0)<br>  ["error"]=&gt;<br>  string(0) ""<br>}<br></span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Client/getTransferInfo';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -164,7 +179,7 @@ object(stdClass)#6 (37) {<br>  ["effective_url"]=&gt;<br>  string(16) "ht
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

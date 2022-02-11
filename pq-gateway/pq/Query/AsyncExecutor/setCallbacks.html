@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq-gateway/pq/Query/AsyncExecutor/setCallbacks">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -82,13 +80,30 @@ Result resolver, as function(<span class="var" id="$context">$context<a class="p
 <li>
 <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var" id="$then">$then<a class="permalink" href="pq-gateway/pq/Query/AsyncExecutor/setCallbacks#%24then">#</a></span><br>
 Callback forwarder, as function(<span class="var">$context</span>, <code><a href="https://php.net/manual/en/language.types.callable">callable</a></code> <span class="var" id="$cb">$cb<a class="permalink" href="pq-gateway/pq/Query/AsyncExecutor/setCallbacks#%24cb">#</a></span>).</li>
-</ul>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq-gateway/pq/Query/AsyncExecutor/setCallbacks';
-			</script>
-
+</ul>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq-gateway');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyNTE1NzkwNw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAX_hE84CBHtz');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -101,7 +116,7 @@ Callback forwarder, as function(<span class="var">$context</span>, <code><a href
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/pq/Result/: Fetching Results">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -122,13 +120,30 @@ Fetch the row as <code><a href="https://php.net/manual/en/class.stdclass">stdCla
 </span>
 </code></pre><p>It should produce:</p><pre><code><span style="color: inherit" class="html">
 1,4,7 = 1,4,7   1,4,8 = 1,4,8   1,4,9 = 1,4,9   <br>1,5,7 = 1,5,7   1,5,8 = 1,5,8   1,5,9 = 1,5,9   <br>1,6,7 = 1,6,7   1,6,8 = 1,6,8   1,6,9 = 1,6,9   <br><br>2,4,7 = 2,4,7   2,4,8 = 2,4,8   2,4,9 = 2,4,9  // This should help generate maps <br>2,5,7 = 2,5,7   2,5,8 = 2,5,8   2,5,9 = 2,5,9  // of f.e. statistical data with   <br>2,6,7 = 2,6,7   2,6,8 = 2,6,8   2,6,9 = 2,6,9  // some GROUP BYs etc.           <br><br>3,4,7 = 3,4,7   3,4,8 = 3,4,8   3,4,9 = 3,4,9   <br>3,5,7 = 3,5,7   3,5,8 = 3,5,8   3,5,9 = 3,5,9   <br>3,6,7 = 3,6,7   3,6,8 = 3,6,8   3,6,9 = 3,6,9   <br></span>
-</code></pre><p><a href="pq/Result/map">pq\Result::map</a>() optionally expects an <em><strong>array containing the column indices/names used to index the map</strong></em> as first argument, and uses the first column (at index 0) by default. The second argument can optionally be an <em><strong>array of column indices/names</strong></em> which should build up the leaf entry of the map. A <em><strong>fetch type</strong></em> can also be specified as optional third argument.</p>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'pq/Result/: Fetching Results';
-			</script>
-
+</code></pre><p><a href="pq/Result/map">pq\Result::map</a>() optionally expects an <em><strong>array containing the column indices/names used to index the map</strong></em> as first argument, and uses the first column (at index 0) by default. The second argument can optionally be an <em><strong>array of column indices/names</strong></em> which should build up the leaf entry of the map. A <em><strong>fetch type</strong></em> can also be specified as optional third argument.</p>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-pq');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkyMTg1MDYzOA==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAU1qDs4CBHt5');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -141,7 +156,7 @@ Fetch the row as <code><a href="https://php.net/manual/en/class.stdclass">stdCla
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

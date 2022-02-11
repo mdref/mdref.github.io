@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Env/Request/getFiles">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -88,13 +86,30 @@
 $r = new http\Env\Request;<br>$f = array();<br><br>foreach ($_FILES as $name =&gt; $data) {<br>    foreach ((array) $data["tmp_name"] as $i =&gt; $file) {<br>        $f[$name][$i] = array(<br>            "file" =&gt; $file,<br>            "name" =&gt; $data["name"][$i],<br>            "size" =&gt; $data["size"][$i],<br>            "type" =&gt; $data["type"][$i],<br>            "error"=&gt; $data["error"][$i]<br>        );<br>    }<br>}<br>assert($f == $r-&gt;getFiles());<br></span>
 </code></pre><p>You can see that the second and third dimensions are swapped and <code>tmp_name</code> became <code>file</code>, e.g:</p><pre><code><span style="color: inherit" class="html">
 array(<br>    "upload" =&gt; array(<br>        array(<br>            "file" =&gt; "/tmp/phpXXXXXX",<br>            "name" =&gt; "picture.jpeg",<br>            "size" =&gt; 12345,<br>            "type" =&gt; "image/jpeg",<br>            "error"=&gt; 0<br>        )<br>    )<br>);<br></span>
-</code></pre>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Env/Request/getFiles';
-			</script>
-
+</code></pre>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -107,7 +122,7 @@ array(<br>    "upload" =&gt; array(<br>        array(<br>    �
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>

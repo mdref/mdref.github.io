@@ -11,8 +11,6 @@
 			<meta http-equiv="Content-Location" content="/http/Message">
 			<link rel="stylesheet" href="index.css">
 		
-		<link href="https://fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin-ext" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="shortcut icon" href="/favicon.ico">
 	</head>
 	<body>
@@ -334,7 +332,7 @@ Any message headers.</li>
 <em>protected</em> <a href="http/Message">http\Message</a> <span class="var" id="$parentMessage">$parentMessage<a class="permalink" href="http/Message#%24parentMessage">#</a></span><br>
 Any <em>parent</em> message.</li>
 </ul><h2 id="Functions:">Functions:<a class="permalink" href="http/Message#Functions:">#</a>
-</h2><ul>
+</h2><ul class="sub-entries sub-functions">
 	
 	<li>
 		<h3 id="Message::__construct">
@@ -715,7 +713,7 @@ Any <em>parent</em> message.</li>
 	</li>
 	
 </ul><h2 id="Namespaces.Interfaces.and.Classes:">Namespaces, Interfaces and Classes:<a class="permalink" href="http/Message#Namespaces.Interfaces.and.Classes:">#</a>
-</h2><ul>
+</h2><ul class="sub-entries sub-ns-classes">
 	
 	<li>
 		<h3 id="Body">
@@ -735,13 +733,30 @@ Any <em>parent</em> message.</li>
 		<p><em>class</em> <a href="http/Message/Parser">http\Message\Parser</a></p>
 	</li>
 	
-</ul>		
-			<div id="disqus_thread"><button id="disqus_activator">Show <span> </span> Comment(s)</button></div>
-			<script>
-				var disqus_shortname = 'mdref';
-				var disqus_identifier = 'http/Message';
-			</script>
-
+</ul>				
+			<div class="comments">
+										<style>.giscus-frame {min-height: 16em;}</style>
+	<script>
+		function giscus_load(button) {
+			let script = document.createElement("script");
+						script.setAttribute("data-repo", 'mdref/mdref-http');
+						script.setAttribute("data-category", 'Comments');
+						script.setAttribute("data-repo-id", 'MDEwOlJlcG9zaXRvcnkxNDU1ODg0Nw==');
+						script.setAttribute("data-category-id", 'DIC_kwDOAN4mf84CBHcK');
+						script.setAttribute("data-mapping", 'pathname');
+						script.setAttribute("data-input-position", 'bottom');
+						script.setAttribute("data-reactions-enabled", false);
+						script.setAttribute("data-theme", 'light');
+						script.setAttribute("data-lang", 'en');
+			
+			script.src = "//giscus.app/client.js";
+			button.parentNode.replaceChild(script, button);
+		}
+	</script>
+	<button class="activator" onclick="giscus_load(this)">Show Comments from Github Discussions</button>
+				
+			</div>
+		
 			<footer>
 				
 <ul>
@@ -754,7 +769,7 @@ Any <em>parent</em> message.</li>
 
 			</footer>
 		
-			<script src="index.js"></script>
+			<script src="index.js" defer></script>
 		
 		</div>
 	</body>
