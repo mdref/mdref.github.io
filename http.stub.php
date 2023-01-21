@@ -1503,7 +1503,7 @@ class QueryString implements \Serializable, \ArrayAccess, \IteratorAggregate {
 	/**
 	 * Cast requested value to bool.
 	 */
-	const TYPE_BOOL = 17;
+	const TYPE_BOOL = 18;
 	/**
 	 * Cast requested value to int.
 	 */
@@ -1935,13 +1935,13 @@ namespace http\Client\Curl;
  * Bitmask of available libcurl features.
  *   See http\Client\Curl\Features namespace.
  */
-const FEATURES = 12568477;
+const FEATURES = 364890013;
 /**
  * List of library versions of or linked into libcurl,
  *   e.g. "libcurl/7.50.0 OpenSSL/1.0.2h zlib/1.2.8 libidn/1.32 nghttp2/1.12.0".
  *   See http\Client\Curl\Versions namespace.
  */
-const VERSIONS = 'libcurl/7.68.0 OpenSSL/1.1.1f zlib/1.2.11 brotli/1.0.7 libidn2/2.2.0 libpsl/0.21.0 (+libidn2/2.2.0) libssh/0.9.3/openssl/zlib nghttp2/1.40.0 librtmp/2.3';
+const VERSIONS = 'libcurl/7.81.0 OpenSSL/3.0.2 zlib/1.2.11 brotli/1.0.9 zstd/1.4.8 libidn2/2.3.2 libpsl/0.21.0 (+libidn2/2.3.2) libssh/0.9.6/openssl/zlib nghttp2/1.43.0 librtmp/2.3 OpenLDAP/2.5.13';
 /**
  * Use HTTP/1.0 protocol version.
  */
@@ -2137,11 +2137,11 @@ const ALTSVC_H3 = 32;
 /**
  * Enable the cache. Available if libcurl is v7.74.0 or more recent.
  */
-const HSTS_ENABLE = NULL;
+const HSTS_ENABLE = 1;
 /**
  * Do only read from but not write to the HSTS cache file. Available if libcurl is v7.74.0 or more recent.
  */
-const HSTS_READONLYFILE = NULL;
+const HSTS_READONLYFILE = 2;
 namespace http\Client;
 /**
  * The http\Client\Request class provides an HTTP message implementation tailored to represent a request message to be sent by the client.
@@ -2446,11 +2446,11 @@ namespace http\Client\Curl\Versions;
 /**
  * Version string of libcurl, e.g. "7.50.0".
  */
-const CURL = '7.68.0';
+const CURL = '7.81.0';
 /**
  * Version string of the SSL/TLS library, e.g. "OpenSSL/1.0.2h".
  */
-const SSL = 'OpenSSL/1.1.1f';
+const SSL = 'OpenSSL/3.0.2';
 /**
  * Version string of the zlib compression library, e.g. "1.2.8".
  */
@@ -2462,7 +2462,7 @@ const ARES = NULL;
 /**
  * Version string of the IDN library, e.g. "1.32".
  */
-const IDN = '2.2.0';
+const IDN = '2.3.2';
 /**
  * Version string of the iconv library. Added in v4.1.0.
  */
@@ -2470,11 +2470,11 @@ const ICONV = NULL;
 /**
  * Version string of the brotli library. Added in v4.1.0. Available if libcurl is v7.57.0 or more recent.
  */
-const BROTLI = '1.0.7';
+const BROTLI = '1.0.9';
 /**
  * Version string of nghttp2. Added in v4.1.0. Available if libcurl is v7.66.0 or more recent.
  */
-const NGHTTP2 = '1.40.0';
+const NGHTTP2 = '1.43.0';
 /**
  * Version string of quiche/nghttp3. Added in v4.1.0. Available if libcurl is v7.66.0 or more recent.
  */
@@ -2482,15 +2482,15 @@ const QUIC = NULL;
 /**
  * Default path to the certificate bundle file. Added in v4.1.0. Available if libcurl is v7.70.0 or more recent.
  */
-const CAINFO = NULL;
+const CAINFO = '/etc/ssl/certs/ca-certificates.crt';
 /**
  * Default path to the certificate bundle directory. Added in v4.1.0. Available if libcurl is v7.70.0 or more recent.
  */
-const CAPATH = NULL;
+const CAPATH = '/etc/ssl/certs';
 /**
  * Version string of the zstd library. Added in v4.1.0. Available if libcurl is v7.72.0 or more recent.
  */
-const ZSTD = NULL;
+const ZSTD = '1.4.8';
 /**
  * Version string of the hyper library. Added in v4.1.0. Available if libcurl is v7.75.0 or more recent.
  */
